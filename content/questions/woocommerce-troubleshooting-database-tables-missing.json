@@ -1,0 +1,17 @@
+{
+  "slug": "database-tables-missing",
+  "category": "woocommerce",
+  "subcategory": "troubleshooting",
+  "question": "What Do I Do If WooCommerce Database Tables Are Missing or Corrupted?",
+  "metaDescription": "Back up first, then run WooCommerce's own built-in database repair tool under Status → Tools before attempting anything more invasive.",
+  "readTime": "3 min read",
+  "datePublished": "2026-09-07",
+  "dateModified": "2026-09-07",
+  "shortAnswer": "<p>Before anything else, take a full database backup, since any repair attempt carries some risk and you want a rollback point. WooCommerce includes a built-in database tool under WooCommerce &rarr; Status &rarr; Tools with options to recreate missing tables and verify database structure, which resolves many cases of missing or corrupted tables without needing manual database intervention.</p>",
+  "image": {
+    "alt": "WooCommerce's built-in database repair tool recreating a missing or corrupted table structure",
+    "prompt": "Create a clean, professional technical illustration of a database table icon showing a gap or crack being repaired by a built-in diagnostic tool. Dark navy background, red and indigo accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"why-this-happens\">Why This Happens</h2>\n<p>WooCommerce relies on several custom database tables beyond WordPress's own core tables (for things like sessions, tax rates, and depending on configuration, order data under HPOS). These can go missing or become corrupted from an interrupted installation, a botched manual database migration, a hosting issue, or in rare cases a plugin conflict that deletes or damages a table incorrectly.</p>\n\n<h2 id=\"common-causes\">Common Causes</h2>\n<ul>\n<li><strong>An interrupted WooCommerce installation or update</strong> (a timeout, a server issue mid-process) leaving the database in a partially migrated state.</li>\n<li><strong>A manual database migration or restoration</strong> done incompletely, missing WooCommerce-specific tables that aren't part of WordPress's core table set.</li>\n<li><strong>A hosting-level database issue</strong> (corruption, a failed backup restore) affecting specific tables.</li>\n<li><strong>A poorly coded plugin or a manual database query</strong> accidentally dropping or altering a WooCommerce table.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">How to Fix It</h2>\n<ol>\n<li><strong>Take a full database backup immediately,</strong> before attempting any repair, regardless of the current state.</li>\n<li><strong>Go to WooCommerce &rarr; Status &rarr; Tools</strong> and use the \"Create default WooCommerce pages\" and database-related repair tools available there, which handle many common table issues automatically.</li>\n<li><strong>Check the Status &rarr; Tools &rarr; Database section</strong> (if using a WooCommerce version that exposes it) for a table verification/update tool specifically.</li>\n<li><strong>If the built-in tools don't resolve it,</strong> a direct database-level investigation is needed, ideally by someone comfortable working safely with the store's live data, given the risk involved.</li>\n</ol>\n<p>Dealing with database-level issues and need this handled carefully? See <a href=\"../../../../services/woocommerce-fix/\">WooCommerce fixes</a>.</p>",
+  "hasCode": false
+}

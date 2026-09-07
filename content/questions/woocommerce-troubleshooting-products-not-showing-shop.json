@@ -1,0 +1,17 @@
+{
+  "slug": "products-not-showing-shop",
+  "category": "woocommerce",
+  "subcategory": "troubleshooting",
+  "question": "Why Aren't My Products Showing on the Shop Page?",
+  "metaDescription": "Product visibility settings, stock status, and category/tag filters on the shop page itself are the three most common causes, in that order.",
+  "readTime": "3 min read",
+  "datePublished": "2026-09-07",
+  "dateModified": "2026-09-07",
+  "shortAnswer": "<p>The most common causes, roughly in order of likelihood: a product's own catalog visibility setting excluding it from the shop page specifically, a stock status set to hide out-of-stock products combined with the product actually being out of stock, or a shop-page display filter (by category, tag, or attribute) that excludes it. Checking these three settings first resolves the large majority of \"missing product\" cases.</p>",
+  "image": {
+    "alt": "A product hidden from the shop page due to a catalog visibility setting, stock status, or category filter excluding it",
+    "prompt": "Create a clean, professional technical illustration of a product icon sitting outside a shop page's visible grid, connected to a visibility settings toggle. Dark navy background, indigo and amber accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"why-this-happens\">Why This Happens</h2>\n<p>WooCommerce gives fairly granular control over exactly where and how a product appears, which is powerful but means several independent settings can each, on their own, remove a product from the shop page without any error or warning &mdash; the product still exists and can even still be ordered directly by URL, it just won't appear in the shop listing.</p>\n\n<h2 id=\"common-causes\">Common Causes</h2>\n<ul>\n<li><strong>Catalog visibility set to \"Search results only\" or \"Hidden\"</strong> instead of \"Shop and search results,\" found in the product's own Publish/visibility settings &mdash; this is the single most common cause of a specific missing product.</li>\n<li><strong>Product marked out of stock,</strong> combined with a store setting to hide out-of-stock products from the catalog (WooCommerce &rarr; Settings &rarr; Products &rarr; Inventory).</li>\n<li><strong>A shop page filtered by category, tag, or attribute</strong> via a shortcode parameter or a page builder's product grid settings, which can unintentionally exclude products that don't match the specific filter criteria.</li>\n<li><strong>The product's publish status</strong> still set to Draft or Pending Review rather than Published.</li>\n<li><strong>A caching issue</strong> showing a stale version of the shop page from before the product was added or its settings changed.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">How to Diagnose and Fix It</h2>\n<ol>\n<li><strong>Check the specific product's catalog visibility setting</strong> first, since this is the most likely single cause.</li>\n<li><strong>Confirm stock status and the store's out-of-stock visibility setting</strong> if the product is genuinely out of stock.</li>\n<li><strong>Check whether the shop page itself has any category/tag/attribute filter</strong> applied that would exclude this specific product.</li>\n<li><strong>Confirm the product is Published,</strong> not Draft, and clear any caching after making changes.</li>\n</ol>\n<p>Need a proper catalog visibility audit across the whole store? See <a href=\"../../../../services/woocommerce-fix/\">WooCommerce fixes</a>.</p>",
+  "hasCode": false
+}

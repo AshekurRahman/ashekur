@@ -1,0 +1,17 @@
+{
+  "slug": "find-plugin-conflict",
+  "category": "woocommerce",
+  "subcategory": "troubleshooting",
+  "question": "How Do I Find Which Plugin Is Conflicting With WooCommerce?",
+  "metaDescription": "Systematic isolation on staging — deactivate everything, confirm the issue clears, then reactivate one at a time until it reappears.",
+  "readTime": "3 min read",
+  "datePublished": "2026-09-07",
+  "dateModified": "2026-09-07",
+  "shortAnswer": "<p>The reliable method is systematic isolation, not guessing based on symptoms: on a staging copy, deactivate every plugin except WooCommerce itself, switch to a default theme, and confirm the issue actually clears in that minimal state. Then reactivate plugins one at a time, testing after each, until the issue reappears &mdash; whichever plugin's reactivation brings it back is the conflict.</p>",
+  "image": {
+    "alt": "Plugins being reactivated one at a time on a staging site until the specific conflicting plugin is identified",
+    "prompt": "Create a clean, professional technical illustration of a row of plugin icons being switched on individually in sequence, with one flagged as the source of a conflict. Dark navy background, red and indigo accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"why-this-happens\">Why Guessing Doesn't Work Reliably</h2>\n<p>Plugin conflicts can stem from a JavaScript error, a PHP hook collision, a CSS clash, or two plugins modifying the same data in incompatible ways &mdash; and the visible symptom often gives no direct clue about the actual cause. Systematic isolation removes the guesswork entirely by testing one variable at a time.</p>\n\n<h2 id=\"common-causes\">The Isolation Process</h2>\n<ul>\n<li><strong>Always do this on a staging copy,</strong> never the live site, since deactivating plugins can itself disrupt real customers and orders.</li>\n<li><strong>Switch to a default WordPress theme temporarily,</strong> since a custom theme's own code is a common, easily overlooked source of conflicts that isn't a \"plugin\" in the traditional sense but behaves identically.</li>\n<li><strong>Deactivate every plugin except WooCommerce,</strong> confirm the issue is genuinely gone in that minimal baseline, then reactivate one at a time, retesting fully after each reactivation.</li>\n<li><strong>Test the exact scenario that showed the original issue,</strong> not just a general site check, since some conflicts only appear under specific conditions (a particular page, a specific product type, a specific checkout flow).</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">Once the Conflicting Plugin Is Found</h2>\n<ol>\n<li><strong>Check both plugins' changelogs and support forums</strong> for a known, already-documented compatibility issue, which sometimes has an existing fix or workaround.</li>\n<li><strong>Update both plugins to their latest versions</strong> if not already current, since active maintainers often resolve these conflicts over time.</li>\n<li><strong>If no existing fix works,</strong> a small, targeted code adjustment (hook priority changes, conditional logic) can usually resolve the conflict without losing either plugin's functionality.</li>\n</ol>\n<p>Need help isolating and fixing a stubborn plugin conflict? See <a href=\"../../../../services/woocommerce-fix/\">WooCommerce fixes</a>.</p>",
+  "hasCode": false
+}
