@@ -1,0 +1,17 @@
+{
+  "slug": "order-date-time-wrong",
+  "category": "woocommerce",
+  "subcategory": "troubleshooting",
+  "question": "Why Do Order Dates or Times Look Wrong in WooCommerce?",
+  "metaDescription": "WordPress's timezone setting, not the server's actual location, controls what's displayed — a mismatch there is the near-universal cause.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-07",
+  "dateModified": "2026-09-07",
+  "shortAnswer": "<p>WordPress stores timestamps internally in UTC and displays them converted to whatever timezone is configured under Settings &rarr; General, regardless of where the server physically sits &mdash; a timezone setting that doesn't match the store's actual local time is by far the most common cause of order times looking \"wrong\" by a consistent, predictable offset.</p>",
+  "image": {
+    "alt": "Order timestamps stored in UTC internally, displayed in whatever timezone WordPress is configured for rather than the server's own location",
+    "prompt": "Create a clean, professional technical illustration of a UTC clock icon converting to a locally displayed time based on a settings configuration, not the server's physical location. Dark navy background, indigo and teal accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"why-this-happens\">Why This Happens</h2>\n<p>Internally, WordPress (and WooCommerce on top of it) stores every timestamp in UTC, then converts it for display based purely on the timezone value configured in Settings &rarr; General &mdash; this setting has nothing to do with where the physical server is hosted, which is a common source of confusion, since people sometimes assume the displayed time reflects the server's location rather than a separate, explicitly configured value.</p>\n\n<h2 id=\"common-causes\">Common Causes</h2>\n<ul>\n<li><strong>The timezone setting simply not matching the store's actual local timezone,</strong> which is by far the most common cause and produces a consistent, predictable offset in every displayed time.</li>\n<li><strong>A site that migrated hosts or regions</strong> without anyone revisiting the timezone setting, which doesn't change automatically with a server move.</li>\n<li><strong>Daylight saving time transitions</strong> occasionally causing a temporary one-hour discrepancy if the selected timezone setting doesn't handle DST the same way the store owner expects.</li>\n<li><strong>A plugin displaying a raw, unconverted UTC timestamp</strong> rather than using WordPress's proper timezone-aware date functions, in rarer cases, producing an offset in just that one specific display rather than sitewide.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">How to Fix It</h2>\n<ol>\n<li><strong>Check and correct the timezone setting</strong> under Settings &rarr; General, selecting the actual city/region matching the store's local time rather than just a UTC offset (city-based selection correctly handles daylight saving automatically).</li>\n<li><strong>Confirm order times display correctly</strong> after the change, checking both new and existing orders.</li>\n<li><strong>If only one specific plugin's display looks wrong</strong> even after the site-wide setting is correct, that points to a plugin-specific bug worth reporting to its developer.</li>\n</ol>\n<p>Need help with a broader date/time or reporting discrepancy? See <a href=\"../../../../services/woocommerce-fix/\">WooCommerce fixes</a>.</p>",
+  "hasCode": false
+}

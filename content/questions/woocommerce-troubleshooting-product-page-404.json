@@ -1,0 +1,17 @@
+{
+  "slug": "product-page-404",
+  "category": "woocommerce",
+  "subcategory": "troubleshooting",
+  "question": "Why Are My Product Page URLs Returning 404 Errors?",
+  "metaDescription": "Stale permalink rules, a product's status not set to Published, or a URL structure change without redirects are the three usual suspects.",
+  "readTime": "3 min read",
+  "datePublished": "2026-09-07",
+  "dateModified": "2026-09-07",
+  "shortAnswer": "<p>Product page 404s typically trace back to one of three things: stale permalink rewrite rules (the same underlying issue behind several other WooCommerce 404 scenarios), the product's own status not actually being Published, or the store's permalink/URL structure having changed at some point without old URLs being redirected to their new equivalents.</p>",
+  "image": {
+    "alt": "A product page returning a 404 error due to stale permalink rules, an unpublished status, or a changed URL structure",
+    "prompt": "Create a clean, professional technical illustration of a product page URL leading to a broken 404 page, with three possible causes branching from it. Dark navy background, red and indigo accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"why-this-happens\">Why This Happens</h2>\n<p>Product URLs depend on WordPress's rewrite rules correctly routing the clean URL to the actual product post, and several independent things can break that routing or the underlying product's availability without any obvious warning &mdash; the product still exists in the database in most cases, it's just not reachable at the URL being requested.</p>\n\n<h2 id=\"common-causes\">Common Causes</h2>\n<ul>\n<li><strong>Stale permalink rewrite rules,</strong> particularly after a plugin change, server migration, or a bulk product import that should have but didn't trigger a rule refresh.</li>\n<li><strong>The product's status</strong> set to Draft, Pending, or Private rather than Published, which is easy to overlook after a bulk edit or an import that didn't set status correctly.</li>\n<li><strong>A permalink or URL structure change</strong> (switching the product base slug, or a broader site permalink structure change) without setting up redirects from the old URLs to the new ones, breaking any bookmarked or externally linked product URLs.</li>\n<li><strong>A duplicate slug conflict,</strong> where two products or a product and another piece of content ended up with the same URL slug, causing WordPress to serve the wrong one or neither correctly.</li>\n<li><strong>The product genuinely deleted or trashed,</strong> which is worth confirming directly rather than assuming a technical routing issue.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">How to Diagnose and Fix It</h2>\n<ol>\n<li><strong>Go to Settings &rarr; Permalinks and click Save</strong> to refresh rewrite rules, resolving many cases immediately.</li>\n<li><strong>Check the specific product's status</strong> in the admin, confirming it's actually Published.</li>\n<li><strong>If a URL structure change happened recently,</strong> set up 301 redirects from old product URLs to their new equivalents to avoid losing SEO value and breaking external links.</li>\n<li><strong>Check for slug conflicts</strong> if the issue affects one specific product rather than the whole catalog.</li>\n</ol>\n<p>Need broken product URLs fixed and properly redirected? See <a href=\"../../../../services/woocommerce-fix/\">WooCommerce fixes</a>.</p>",
+  "hasCode": false
+}

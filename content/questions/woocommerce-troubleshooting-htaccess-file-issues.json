@@ -1,0 +1,17 @@
+{
+  "slug": "htaccess-file-issues",
+  "category": "woocommerce",
+  "subcategory": "troubleshooting",
+  "question": "How Do I Fix a Broken or Missing .htaccess File Affecting WooCommerce?",
+  "metaDescription": "WordPress regenerates the standard rewrite rules automatically on a Permalinks settings save — this alone fixes most missing .htaccess problems.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-07",
+  "dateModified": "2026-09-07",
+  "shortAnswer": "<p>On Apache hosting, WordPress's standard rewrite rules live in the site's <code>.htaccess</code> file, and a missing or corrupted file typically breaks clean URLs sitewide, including WooCommerce pages, producing widespread 404 errors. Simply visiting Settings &rarr; Permalinks and clicking Save regenerates the standard WordPress rewrite block automatically, which resolves the majority of cases without needing to manually recreate the file.</p>",
+  "image": {
+    "alt": "WordPress regenerating a missing .htaccess file's rewrite rules automatically after saving the permalink settings",
+    "prompt": "Create a clean, professional technical illustration of a missing configuration file icon being automatically regenerated after a settings save action. Dark navy background, indigo and teal accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"why-this-happens\">Why This Happens</h2>\n<p>The <code>.htaccess</code> file, on Apache-based hosting, contains the rewrite rules that translate clean, readable URLs into the actual WordPress page requests behind them. This file can go missing or become corrupted from a server migration, a hosting-side reset, a security plugin's own rewrite rules conflicting with WordPress's, or simply a manual editing mistake &mdash; and when it's broken, nearly every non-homepage URL on the site can start returning a 404, WooCommerce pages included.</p>\n\n<h2 id=\"common-causes\">Common Causes</h2>\n<ul>\n<li><strong>A server migration or restore</strong> that didn't correctly transfer the existing <code>.htaccess</code> file, or reset it to a generic default.</li>\n<li><strong>A security plugin or CDN</strong> writing its own rules into <code>.htaccess</code> in a way that conflicts with or overwrites WordPress's expected block.</li>\n<li><strong>Manual editing</strong> (adding a custom rule, a redirect) that introduced a syntax error, breaking the whole file's processing.</li>\n<li><strong>File permission issues</strong> preventing WordPress from writing to the file when it needs to regenerate rules automatically.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">How to Fix It</h2>\n<ol>\n<li><strong>Go to Settings &rarr; Permalinks and click Save</strong> without changing anything &mdash; this forces WordPress to regenerate its standard rewrite block, resolving most cases.</li>\n<li><strong>If that doesn't work,</strong> check file permissions on <code>.htaccess</code> and its containing directory, ensuring WordPress can actually write to it.</li>\n<li><strong>If a plugin's own rules are suspected of conflicting,</strong> temporarily deactivate it and regenerate permalinks again to test.</li>\n<li><strong>As a last resort,</strong> manually recreate the file with WordPress's standard rewrite block, available in the WordPress documentation, then re-add any legitimate custom rules afterward.</li>\n</ol>\n<p>Site returning widespread 404 errors and need this fixed urgently? See <a href=\"../../../../services/woocommerce-fix/\">WooCommerce fixes</a>.</p>",
+  "hasCode": false
+}

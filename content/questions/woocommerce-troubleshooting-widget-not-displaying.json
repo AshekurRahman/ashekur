@@ -1,0 +1,17 @@
+{
+  "slug": "widget-not-displaying",
+  "category": "woocommerce",
+  "subcategory": "troubleshooting",
+  "question": "Why Isn't a WooCommerce Widget Displaying in My Sidebar?",
+  "metaDescription": "The theme may not support the sidebar area the widget was added to, or a block-theme setup needs widgets placed differently than classic themes.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-07",
+  "dateModified": "2026-09-07",
+  "shortAnswer": "<p>A missing widget is usually one of two things: the widget was added to a sidebar/widget area the active theme doesn't actually render on the specific page being viewed, or the theme is a modern block theme where the classic Widgets screen either doesn't apply the same way or requires using the Site Editor's template parts instead of the traditional widget areas.</p>",
+  "image": {
+    "alt": "A widget added to a sidebar area the active theme doesn't actually render on the page being viewed",
+    "prompt": "Create a clean, professional technical illustration of a widget block placed into a sidebar area that isn't connected to the visible page template. Dark navy background, indigo and amber accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"why-this-happens\">Why This Happens</h2>\n<p>Themes register their own specific widget areas (a main sidebar, a footer area, sometimes several more specialized ones), and a widget added to one area simply won't appear on pages that don't render that particular area &mdash; a widget placed in a \"Shop Sidebar\" area, for instance, won't show on the blog if the theme uses a separate \"Blog Sidebar\" for that page type. Modern block themes add another layer of complexity, since they may present widget areas differently or expect widgets to be placed via the Site Editor instead.</p>\n\n<h2 id=\"common-causes\">Common Causes</h2>\n<ul>\n<li><strong>Widget added to the wrong sidebar/widget area</strong> for the specific page type where it's expected to show &mdash; check the theme's documentation for which areas correspond to which page types.</li>\n<li><strong>A block theme</strong> where the classic Widgets screen doesn't map directly to visible template areas the way it did with classic themes, requiring the widget to be placed through the Site Editor instead.</li>\n<li><strong>A caching plugin serving a stale, pre-widget-addition version</strong> of the page.</li>\n<li><strong>A widget-specific display condition</strong> (some widget plugins support conditional display rules) unintentionally excluding the page being checked.</li>\n<li><strong>The widget itself having no content to display</strong> under current conditions (an empty cart for a cart widget, for instance), which isn't a bug but can look identical to one.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">How to Fix It</h2>\n<ol>\n<li><strong>Confirm which widget area actually renders</strong> on the specific page type, checking the theme's documentation if unclear.</li>\n<li><strong>For a block theme,</strong> check whether widgets need to be added via the Site Editor instead of the classic Widgets screen.</li>\n<li><strong>Clear all caching</strong> after adding or moving a widget.</li>\n<li><strong>Check for any conditional display settings</strong> on the specific widget that might be excluding the page in question.</li>\n</ol>\n<p>Need help getting theme widget areas working correctly? See <a href=\"../../../../services/woocommerce-fix/\">WooCommerce fixes</a>.</p>",
+  "hasCode": false
+}
