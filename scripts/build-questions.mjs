@@ -800,8 +800,8 @@ function buildCategoryArchive(cat) {
   const uPath = catUrlPath(cat.slug);
   const depth = depthOf(uPath);
   const prefix = relPrefix(depth);
-  const directQuestions = questions.filter((q) => q.category === cat.slug && !q.subcategory);
-  const totalInCategory = questions.filter((q) => q.category === cat.slug).length;
+  const allInCategory = questions.filter((q) => q.category === cat.slug).sort((a, b) => (b.datePublished || '').localeCompare(a.datePublished || ''));
+  const totalInCategory = allInCategory.length;
 
   const breadcrumbItems = [{ label: 'Home', href: prefix }, { label: 'Questions', href: `${prefix}questions/` }, { label: cat.shortName }];
 
@@ -833,9 +833,9 @@ function buildCategoryArchive(cat) {
     })
     .join('\n        ');
 
-  const directCards = directQuestions.length
+  const allCards = allInCategory.length
     ? `<div class="row row-cols-1 row-cols-md-2 g-4 blog-grid mt-2">
-        ${directQuestions.map((q) => questionCard(prefix, q)).join('\n        ')}
+        ${allInCategory.map((q) => questionCard(prefix, q)).join('\n        ')}
       </div>`
     : `<p class="body-lg">More ${escapeHtml(cat.name)} questions are being added regularly &mdash; check back soon, or <a href="${prefix}contact/">ask yours directly</a>.</p>`;
 
@@ -876,11 +876,11 @@ function buildCategoryArchive(cat) {
     <div class="container">
       <div class="row gx-0">
         <div class="section-head col-12 col-lg-6">
-          <p data-anim="fade" class="eyebrow"><span class="eyebrow-mark" aria-hidden="true"></span><span class="mono">QUESTIONS</span></p>
-          <h2 data-anim="lines">Directly under ${escapeHtml(cat.name)}</h2>
+          <p data-anim="fade" class="eyebrow"><span class="eyebrow-mark" aria-hidden="true"></span><span class="mono">ALL QUESTIONS</span></p>
+          <h2 data-anim="lines">Every ${escapeHtml(cat.name)} question</h2>
         </div>
       </div>
-      ${directCards}
+      ${allCards}
     </div>
   </section>
 
