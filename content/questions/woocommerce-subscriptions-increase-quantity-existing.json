@@ -1,0 +1,17 @@
+{
+  "slug": "increase-quantity-existing",
+  "category": "woocommerce",
+  "subcategory": "subscriptions",
+  "question": "Can a Customer Change the Quantity on an Existing WooCommerce Subscription?",
+  "metaDescription": "Quantity on an active WooCommerce subscription isn't self-service by default — an admin can edit it directly, but proration needs to be handled deliberately.",
+  "readTime": "3 min read",
+  "datePublished": "2026-09-11",
+  "dateModified": "2026-09-11",
+  "shortAnswer": "<p>Not through a self-service option by default &mdash; quantity is set at checkout and there's no built-in \"change quantity\" button in My Account. An admin can edit the quantity directly on the subscription's line item from the WooCommerce admin screen, which updates the recurring total for future renewals, but doesn't automatically prorate a mid-cycle change unless that's handled deliberately.</p>",
+  "image": {
+    "alt": "An admin editing the quantity field on an active subscription's line item to update the recurring total",
+    "prompt": "Create a clean, professional technical illustration of an admin cursor editing a quantity number field on a subscription line item, with the connected total price updating accordingly. Dark navy background, indigo and amber accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"how-it-works\">How It Works</h2>\n<p>A subscription's line items, including quantity, can be edited directly from its admin screen the same way you'd edit a regular order's line items &mdash; changing the quantity there updates the recurring total that future renewals will charge. This is an admin action, not something exposed to the customer through My Account by default.</p>\n\n<h2 id=\"common-causes\">What's Not Handled Automatically</h2>\n<ul>\n<li><strong>Proration for a mid-cycle change.</strong> Editing quantity partway through a billing period doesn't automatically calculate a prorated charge or credit for the remainder of that period &mdash; the new quantity just applies from the next renewal onward unless you build proration logic explicitly.</li>\n<li><strong>Self-service quantity changes.</strong> A customer wanting to add or remove units themselves needs either a compatible extension or custom development adding that capability to My Account, since it isn't there natively.</li>\n<li><strong>Notification of the change.</strong> An admin-side quantity edit doesn't automatically email the customer confirming the new total &mdash; worth doing manually or building into any custom self-service flow, so customers aren't surprised by a changed charge.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">Handling It Properly</h2>\n<ol>\n<li><strong>For an occasional, admin-handled quantity change,</strong> editing the line item directly works, but confirm the new recurring total is correct before saving, and consider notifying the customer of the change.</li>\n<li><strong>For proration on a mid-cycle change,</strong> that needs to be calculated and applied manually (a one-time adjustment order) or through custom logic &mdash; it isn't automatic.</li>\n<li><strong>For genuine self-service quantity changes at scale,</strong> that's the same territory as seat-based billing covered separately &mdash; worth treating as one connected feature rather than two.</li>\n</ol>\n<p>See <a href=\"../../../../services/woocommerce-development/\">custom WooCommerce development</a> for self-service quantity changes with proper proration built in.</p>",
+  "hasCode": false
+}
