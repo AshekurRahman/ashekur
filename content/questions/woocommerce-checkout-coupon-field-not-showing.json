@@ -1,0 +1,17 @@
+{
+  "slug": "coupon-field-not-showing",
+  "category": "woocommerce",
+  "subcategory": "checkout",
+  "question": "Why Isn't the Coupon Code Field Showing at Checkout?",
+  "metaDescription": "Coupons must be explicitly enabled in WooCommerce settings first — this is off by default in some configurations and easy to overlook.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-07",
+  "dateModified": "2026-09-07",
+  "shortAnswer": "<p>WooCommerce has a dedicated setting (\"Enable the use of coupon codes\") under Settings &rarr; Products &rarr; General that controls whether the coupon field appears at all, on both the cart and checkout pages &mdash; if this is unchecked, the field simply won't render anywhere, regardless of whether valid coupons actually exist in the store.</p>",
+  "image": {
+    "alt": "A coupon code field appearing at checkout only once coupon functionality is explicitly enabled in store settings",
+    "prompt": "Create a clean, professional technical illustration of a coupon code field appearing on a checkout form only after a settings toggle for coupon functionality is switched on. Dark navy background, indigo and amber accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"why-this-happens\">Why This Happens</h2>\n<p>WooCommerce treats coupon functionality as an optional feature that can be turned off entirely, and when disabled, the coupon field and its related processing simply don't appear anywhere in the store, rather than showing but doing nothing. This setting is separate from whether any coupons actually exist, which is why creating a coupon doesn't automatically make the field appear if the feature itself is switched off.</p>\n\n<h2 id=\"common-causes\">Other Possible Causes</h2>\n<ul>\n<li><strong>A theme or checkout customization</strong> deliberately hiding the coupon field via CSS or a template override, sometimes intentionally (to reduce checkout distractions) and sometimes as an unintended side effect of an unrelated change.</li>\n<li><strong>The block-based checkout's coupon field</strong> is configured slightly differently than the classic shortcode version, and a customization built for one may not apply to the other after switching checkout types.</li>\n<li><strong>A caching plugin serving a stale, pre-setting-change version</strong> of the checkout page after coupons were enabled.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">How to Fix It</h2>\n<ol>\n<li><strong>Check WooCommerce &rarr; Settings &rarr; Products &rarr; General</strong> and confirm \"Enable the use of coupon codes\" is checked.</li>\n<li><strong>Clear all caches</strong> after enabling it, to rule out a stale cached version of the page.</li>\n<li><strong>Check for theme CSS or template overrides</strong> hiding the coupon field specifically, if the setting is already enabled but the field still doesn't appear.</li>\n<li><strong>Confirm which checkout type is active</strong> (block vs. classic) and test the coupon field specifically in that context.</li>\n</ol>\n<p>Need this fixed alongside other checkout issues? See <a href=\"../../../../services/woocommerce-fix/\">WooCommerce fixes</a>.</p>",
+  "hasCode": false
+}

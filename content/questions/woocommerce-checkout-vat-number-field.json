@@ -1,0 +1,17 @@
+{
+  "slug": "vat-number-field",
+  "category": "woocommerce",
+  "subcategory": "checkout",
+  "question": "How Do I Add a VAT Number Field to Checkout for B2B Customers?",
+  "metaDescription": "A dedicated EU VAT plugin handles both the field and the validation/reverse-charge logic — a plain custom field alone won't verify the number is real.",
+  "readTime": "3 min read",
+  "datePublished": "2026-09-07",
+  "dateModified": "2026-09-07",
+  "shortAnswer": "<p>Adding a plain text field is straightforward with a small custom snippet, but a genuinely useful VAT number field needs more than that: validating the number against the EU's VIES database, applying reverse-charge VAT rules correctly for valid B2B customers, and storing it properly on the order for accounting. A dedicated EU VAT plugin handles all of this together, which is worth using instead of building the validation and tax-rule logic from scratch.</p>",
+  "image": {
+    "alt": "A VAT number field at checkout being validated against an official database and triggering reverse-charge tax rules for valid B2B customers",
+    "prompt": "Create a clean, professional technical illustration of a VAT number input field connected to a validation checkmark and a tax-rule adjustment icon for business customers. Dark navy background, indigo and amber accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"how-it-works\">Why This Needs More Than a Text Field</h2>\n<p>For EU B2B transactions specifically, a valid VAT number often triggers the \"reverse charge\" mechanism, where VAT isn't charged on the sale itself, and the responsibility for accounting for it shifts to the buyer's own VAT return. Getting this right requires actually verifying the VAT number is valid and active (via the EU's VIES lookup service), not just accepting whatever's typed into a field, since applying reverse charge based on an unverified or fake number is a real compliance risk.</p>\n\n<h2 id=\"common-causes\">What a Proper Setup Needs</h2>\n<ul>\n<li><strong>Live validation against VIES</strong> (the EU's official VAT number verification system) at checkout, rejecting or flagging numbers that don't validate rather than accepting anything typed in.</li>\n<li><strong>Correct reverse-charge tax logic</strong> applied only when the validated VAT number and the customer's country combination actually qualify, since the rules differ for domestic versus cross-border B2B transactions within the EU.</li>\n<li><strong>The VAT number stored properly on the order</strong> for accounting and audit purposes, not just displayed at checkout and then discarded.</li>\n<li><strong>Handling for customers outside this specific scenario</strong> (non-EU businesses, or EU consumers rather than businesses) who shouldn't see or need this field at all.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">Setting This Up Properly</h2>\n<ol>\n<li><strong>Use a dedicated EU VAT number plugin</strong> that handles VIES validation and reverse-charge tax logic together, rather than building a plain custom field alone.</li>\n<li><strong>Test the full flow with both valid and invalid VAT numbers</strong> to confirm tax is applied correctly in each case.</li>\n<li><strong>Confirm the VAT number is properly recorded on orders</strong> for accounting and reporting purposes.</li>\n</ol>\n<p>Need proper EU VAT handling set up for a B2B store? See <a href=\"../../../../services/woocommerce-development/\">custom WooCommerce development</a>.</p>",
+  "hasCode": false
+}

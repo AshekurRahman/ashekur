@@ -1,0 +1,17 @@
+{
+  "slug": "order-notes-field-missing",
+  "category": "woocommerce",
+  "subcategory": "checkout",
+  "question": "Why Is the Order Notes Field Missing From Checkout?",
+  "metaDescription": "It's hidden by default in newer WooCommerce versions and needs to be explicitly re-enabled, or restored via a small filter for the block checkout.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-07",
+  "dateModified": "2026-09-07",
+  "shortAnswer": "<p>The order notes field (\"Notes about your order\") isn't always shown by default in current WooCommerce versions, having been deprioritized in favor of a cleaner checkout with fewer optional fields by default. It can be restored: for the block checkout, through the checkout block's own field visibility settings; for the classic checkout, via a small filter re-enabling it, since it was never fully removed from WooCommerce core, just hidden.</p>",
+  "image": {
+    "alt": "An order notes field being restored to checkout after being hidden by default in a newer WooCommerce version",
+    "prompt": "Create a clean, professional technical illustration of a hidden text field being toggled back to visible on a checkout form. Dark navy background, indigo and teal accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"why-this-happens\">Why This Happens</h2>\n<p>WooCommerce has trimmed several optional fields from the default checkout experience over time in the interest of reducing friction, and the order notes field is one of them &mdash; it still exists in the underlying code and can be restored, but isn't shown out of the box the way it once was in older versions many store owners may remember.</p>\n\n<h2 id=\"common-causes\">How to Restore It</h2>\n<ul>\n<li><strong>Block checkout:</strong> check the checkout block's own editor settings for an order notes / additional information field option, since newer WooCommerce versions expose this as a toggle rather than requiring code.</li>\n<li><strong>Classic shortcode checkout:</strong> a small filter re-enabling the field is the standard approach, since the underlying field definition remains in WooCommerce core even when hidden by default.</li>\n<li><strong>A theme or checkout customization plugin</strong> may have separately hidden this field regardless of the WooCommerce version, which is worth ruling out if it's still missing after checking the above.</li>\n</ul>\n<pre class=\"language-php\"><code class=\"language-php\">add_filter( 'woocommerce_enable_order_notes_field', '__return_true' );</code></pre>\n\n<h2 id=\"how-to-fix-it\">Setting It Up</h2>\n<ol>\n<li><strong>Check the block checkout editor</strong> first if that's the active checkout type, for a built-in toggle.</li>\n<li><strong>Use the <code>woocommerce_enable_order_notes_field</code> filter</strong> if on classic checkout, or if the block checkout doesn't expose this directly.</li>\n<li><strong>Test that notes entered at checkout</strong> actually appear correctly on the admin order screen afterward.</li>\n</ol>\n<p>Need checkout customized to fit your specific fulfillment process? See <a href=\"../../../../services/woocommerce-development/\">custom WooCommerce development</a>.</p>",
+  "hasCode": true
+}
