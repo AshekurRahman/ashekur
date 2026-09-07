@@ -1,0 +1,17 @@
+{
+  "slug": "gift-cards-partial-payment",
+  "category": "woocommerce",
+  "subcategory": "payments",
+  "question": "Can Store Credit or Gift Cards Be Used as a Partial Payment Method?",
+  "metaDescription": "Yes, with the right plugin — the gift card or credit balance covers part of the total, and a standard gateway handles the remaining amount.",
+  "readTime": "3 min read",
+  "datePublished": "2026-09-07",
+  "dateModified": "2026-09-07",
+  "shortAnswer": "<p>Yes, and this is well-supported territory &mdash; most established gift card and store credit plugins for WooCommerce are built specifically to apply a balance toward part of an order's total, with any remaining amount charged through whichever standard payment gateway the customer selects. This is a genuinely common pattern, not an edge case needing custom development in most stores.</p>",
+  "image": {
+    "alt": "A store credit balance covering part of an order total, with a standard payment gateway charging the remaining amount",
+    "prompt": "Create a clean, professional technical illustration of a gift card icon covering a portion of an order total bar, with a standard card payment icon covering the remaining portion. Dark navy background, indigo and amber accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"how-it-works\">How This Typically Works</h2>\n<p>A gift card or store credit plugin applies the available balance as a discount-like deduction against the cart total at checkout, and whatever amount remains (if any) is then processed normally through the customer's chosen payment gateway. If the balance fully covers the order, some plugins skip the gateway step entirely; if it only covers part, the customer still selects and completes payment through a regular gateway for the remainder.</p>\n\n<h2 id=\"common-causes\">Things Worth Checking</h2>\n<ul>\n<li><strong>Refund handling when store credit was used</strong> needs a clear policy &mdash; does a refund on that order return money to the original payment method, reissue store credit, or some combination, and does the specific plugin handle this correctly by default?</li>\n<li><strong>Partial refunds get more complex</strong> when both a gateway payment and store credit were used on the same order, since the refund needs to be split correctly between the two sources.</li>\n<li><strong>Tax calculation order</strong> (whether store credit is applied before or after tax) varies between plugins and needs to match the store's actual accounting requirements.</li>\n<li><strong>Fraud considerations</strong> around store credit specifically (some fraud schemes target gift card balances) are worth being aware of, though this is usually handled reasonably well by established plugins.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">Setting It Up</h2>\n<ol>\n<li><strong>Choose an established gift card/store credit plugin</strong> with explicit support for partial payment alongside a standard gateway.</li>\n<li><strong>Define and test the refund policy</strong> for orders that used a mix of credit and gateway payment, before launching this to customers.</li>\n<li><strong>Confirm tax calculation behaves as expected</strong> with the specific plugin and the store's accounting requirements.</li>\n</ol>\n<p>Need this set up and tested properly for a specific store? See <a href=\"../../../../services/woocommerce-development/\">custom WooCommerce development</a>.</p>",
+  "hasCode": false
+}
