@@ -1,0 +1,17 @@
+{
+  "slug": "404-error",
+  "category": "woocommerce",
+  "subcategory": "checkout",
+  "question": "Why Does My Checkout Page Show a 404 Error?",
+  "metaDescription": "Usually stale permalink rewrite rules, or the page assigned as checkout in WooCommerce settings having been deleted or unpublished.",
+  "readTime": "3 min read",
+  "datePublished": "2026-09-07",
+  "dateModified": "2026-09-07",
+  "shortAnswer": "<p>A checkout 404 almost always means either WordPress's permalink rewrite rules are out of date (common after a plugin update, server migration, or .htaccess change), or the actual page assigned as checkout under WooCommerce &rarr; Settings &rarr; Advanced has been deleted, unpublished, or moved to trash without anyone realizing it was the checkout page.</p>",
+  "image": {
+    "alt": "A checkout URL returning a 404 error because the assigned page was removed or the site's permalink rules went stale",
+    "prompt": "Create a clean, professional technical illustration of a broken checkout link icon leading to a 404 error page, with a missing page icon nearby. Dark navy background, red and indigo accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"why-this-happens\">Why This Happens</h2>\n<p>WordPress relies on rewrite rules to translate a clean URL like <code>/checkout/</code> into the correct page request internally, and these rules are cached and only regenerated in specific circumstances (a permalink settings save, certain plugin activations). A change to the server, a migration, or an update that alters URL structure without triggering a rule refresh can leave WordPress unable to correctly resolve the checkout URL, resulting in a 404 despite everything otherwise being configured correctly.</p>\n\n<h2 id=\"common-causes\">Common Causes</h2>\n<ul>\n<li><strong>Stale permalink rewrite rules,</strong> particularly after a server migration, a caching plugin change, or a .htaccess file being overwritten or reset.</li>\n<li><strong>The page assigned as checkout being deleted, unpublished, or moved to trash,</strong> sometimes accidentally during a content cleanup that didn't account for it being a functional page rather than regular content.</li>\n<li><strong>A conflicting page or post using the same slug</strong> as the checkout page, confusing which one WordPress should actually serve.</li>\n<li><strong>A caching or CDN layer</strong> serving a stale 404 response cached from before a fix was applied, making a genuinely resolved issue appear to persist.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">How to Fix It</h2>\n<ol>\n<li><strong>Go to WordPress &rarr; Settings &rarr; Permalinks and simply click Save</strong> (no changes needed) to force a rewrite rule refresh &mdash; this alone resolves many cases.</li>\n<li><strong>Confirm the checkout page still exists and is published,</strong> and re-select it under WooCommerce &rarr; Settings &rarr; Advanced if needed.</li>\n<li><strong>Check for a slug conflict</strong> with another page or post using the same URL.</li>\n<li><strong>Clear all caching and CDN layers</strong> after any fix, to rule out a stale cached 404 response.</li>\n</ol>\n<p>Checkout completely down and losing orders right now? See <a href=\"../../../../services/woocommerce-fix/\">WooCommerce fixes</a> for urgent help.</p>",
+  "hasCode": false
+}

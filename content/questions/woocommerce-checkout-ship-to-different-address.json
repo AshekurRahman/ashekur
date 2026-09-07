@@ -1,0 +1,17 @@
+{
+  "slug": "ship-to-different-address",
+  "category": "woocommerce",
+  "subcategory": "checkout",
+  "question": "Can Customers Ship to a Different Address Than Their Billing Address?",
+  "metaDescription": "Yes — a built-in \"ship to a different address\" checkbox handles this by default, though it can be hidden by a theme or checkout customization.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-07",
+  "dateModified": "2026-09-07",
+  "shortAnswer": "<p>Yes, this is built into WooCommerce checkout by default &mdash; a \"Ship to a different address?\" checkbox reveals a separate shipping address form when checked, keeping the billing address (used for payment verification) and shipping address (used for delivery) fully independent. If this option isn't showing, it's usually been hidden by a theme customization or a checkout field modification rather than being missing from WooCommerce itself.</p>",
+  "image": {
+    "alt": "A separate shipping address form revealed at checkout when a customer indicates delivery should go to a different address than billing",
+    "prompt": "Create a clean, professional technical illustration of a billing address form with a checkbox revealing an independent shipping address form beside it. Dark navy background, indigo and teal accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"how-it-works\">How This Works by Default</h2>\n<p>WooCommerce checkout separates billing and shipping address data as two distinct sets of fields from the start, defaulting to using the billing address for shipping too unless the customer explicitly indicates otherwise via the \"ship to a different address\" checkbox. This is standard, expected ecommerce behavior and doesn't require any additional plugin for physical products needing delivery to a different address than the billing details.</p>\n\n<h2 id=\"common-causes\">If This Option Is Missing</h2>\n<ul>\n<li><strong>A theme customization or checkout field modification</strong> may have hidden the checkbox or removed the separate shipping address fields entirely, which needs to be checked if it's genuinely missing.</li>\n<li><strong>A store selling only virtual/digital products</strong> may have shipping fields disabled entirely at the WooCommerce settings level, which is expected and correct behavior for that specific product type, not a bug.</li>\n<li><strong>A custom checkout plugin or block configuration</strong> might have simplified the form in a way that removed this option, sometimes unintentionally during an otherwise unrelated customization.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">How to Confirm and Fix It</h2>\n<ol>\n<li><strong>Confirm the store actually sells shippable (physical) products,</strong> since this option is intentionally absent for purely virtual/digital product stores.</li>\n<li><strong>Check WooCommerce's checkout settings and any active checkout customization</strong> for anything hiding the shipping address section or its toggle.</li>\n<li><strong>Test on a default theme temporarily</strong> if the issue persists, to rule out a theme-specific override.</li>\n</ol>\n<p>Need checkout address handling fixed or customized? See <a href=\"../../../../services/woocommerce-fix/\">WooCommerce fixes</a>.</p>",
+  "hasCode": false
+}

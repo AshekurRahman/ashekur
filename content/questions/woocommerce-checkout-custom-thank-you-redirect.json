@@ -1,0 +1,17 @@
+{
+  "slug": "custom-thank-you-redirect",
+  "category": "woocommerce",
+  "subcategory": "checkout",
+  "question": "Can I Redirect Customers to a Custom Page After Checkout Completes?",
+  "metaDescription": "Yes, through a simple hook — useful for a custom upsell page, a survey, or tracking-pixel-heavy thank-you page not tied to the default template.",
+  "readTime": "3 min read",
+  "datePublished": "2026-09-07",
+  "dateModified": "2026-09-07",
+  "shortAnswer": "<p>Yes, WooCommerce's <code>woocommerce_thankyou</code> hook fires after an order is successfully placed and can be used to redirect to a custom page instead of showing the default order-received template &mdash; commonly used for a custom post-purchase upsell offer, a customer survey, or a thank-you page with specific tracking/conversion pixels the default template doesn't accommodate as cleanly.</p>",
+  "image": {
+    "alt": "A customer being redirected to a custom post-purchase page instead of the default order confirmation after completing checkout",
+    "prompt": "Create a clean, professional technical illustration of a completed order icon branching to a custom destination page instead of a standard default confirmation page. Dark navy background, indigo and teal accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"how-it-works\">How to Implement This</h2>\n<p>The <code>woocommerce_thankyou</code> action passes the order ID, giving access to full order details before deciding where to redirect &mdash; this makes it possible to build conditional logic (redirect only for a specific product, or only for first-time customers, for instance) rather than a single, blanket redirect for every order.</p>\n<pre class=\"language-php\"><code class=\"language-php\">add_action( 'woocommerce_thankyou', function( $order_id ) {\n    if ( ! $order_id ) {\n        return;\n    }\n    wp_safe_redirect( home_url( '/thank-you-custom/?order=' . $order_id ) );\n    exit;\n} );</code></pre>\n\n<h2 id=\"common-causes\">Things Worth Getting Right</h2>\n<ul>\n<li><strong>Passing the order ID through to the custom page</strong> if it needs to display order-specific content, since the redirect can include it as a query parameter for the destination page to read.</li>\n<li><strong>Conditional redirects</strong> based on product, order total, or customer type need the logic built into the same hook, checking order details before deciding whether (and where) to redirect.</li>\n<li><strong>Analytics and conversion tracking scripts</strong> that expect to fire on the default order-received page need to be moved to the new custom page instead, or duplicated there, to avoid losing tracking data after this change.</li>\n<li><strong>Testing with a real completed order</strong> (not just a page preview) is essential, since this hook only fires in the actual post-checkout flow.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">Implementing It Properly</h2>\n<ol>\n<li><strong>Use the <code>woocommerce_thankyou</code> hook</strong> with a safe redirect, including the order ID if the destination page needs it.</li>\n<li><strong>Move any conversion tracking scripts</strong> from the default template to the new custom destination.</li>\n<li><strong>Test with real completed orders</strong> across different scenarios if the redirect is conditional.</li>\n</ol>\n<p>Need a custom post-purchase flow built and properly tracked? See <a href=\"../../../../services/woocommerce-development/\">custom WooCommerce development</a>.</p>",
+  "hasCode": true
+}

@@ -1,0 +1,17 @@
+{
+  "slug": "ssl-not-secure-warning",
+  "category": "woocommerce",
+  "subcategory": "checkout",
+  "question": "Why Does My Checkout Page Show a \"Not Secure\" Warning?",
+  "metaDescription": "Almost always mixed content — some resource on the page still loading over plain HTTP even though the page itself is served over HTTPS.",
+  "readTime": "3 min read",
+  "datePublished": "2026-09-07",
+  "dateModified": "2026-09-07",
+  "shortAnswer": "<p>Browsers show this warning specifically for mixed content: the checkout page itself is served over HTTPS, but at least one resource on it (an image, a script, a stylesheet) is still being loaded over plain HTTP. Any single hardcoded HTTP reference anywhere on the page is enough to trigger this warning, even if the rest of the page is fully secure, so finding that one insecure resource is the actual fix, not re-issuing the SSL certificate.</p>",
+  "image": {
+    "alt": "A checkout page served securely over HTTPS still showing a not-secure warning due to one remaining resource loaded over plain HTTP",
+    "prompt": "Create a clean, professional technical illustration of a secure padlock icon on a checkout page, undermined by one small unlocked resource icon loading insecurely alongside it. Dark navy background, red and indigo accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"why-this-happens\">Why This Happens</h2>\n<p>Modern browsers treat a page as fully secure only when every single resource it loads &mdash; not just the page's own HTML &mdash; comes over HTTPS. A single hardcoded <code>http://</code> image URL, an old script reference, or a stylesheet linked with the wrong protocol is enough to break that guarantee, and the browser flags the whole page as not secure even though the primary connection itself is properly encrypted.</p>\n\n<h2 id=\"common-causes\">Common Causes</h2>\n<ul>\n<li><strong>Content created or images uploaded before the site moved to HTTPS,</strong> with the original HTTP URL baked directly into the content rather than a protocol-relative or HTTPS link.</li>\n<li><strong>A theme or plugin hardcoding an HTTP URL</strong> for an asset (a font, an icon, a tracking script) rather than using a protocol-relative or dynamically generated HTTPS URL.</li>\n<li><strong>A payment gateway or third-party embed</strong> loading one of its own resources over HTTP, which is worth reporting to the gateway if found, since this is on their side to fix.</li>\n<li><strong>A caching plugin serving an old, pre-HTTPS-migration cached version</strong> of the page, which resolves simply by clearing the cache after confirming the underlying content is actually fixed.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">How to Find and Fix It</h2>\n<ol>\n<li><strong>Open the browser's developer console</strong> on the checkout page &mdash; mixed content warnings are typically listed explicitly there, naming the exact insecure resource URL.</li>\n<li><strong>Fix the specific resource reference</strong> to use HTTPS, whether that's in page content, theme code, or plugin settings.</li>\n<li><strong>Run a site-wide mixed-content scan</strong> if the console doesn't immediately reveal it, or if there are multiple instances across the site.</li>\n<li><strong>Clear all caching layers</strong> after fixing the underlying reference.</li>\n</ol>\n<p>Need this tracked down and fixed properly? See <a href=\"../../../../services/woocommerce-fix/\">WooCommerce fixes</a>.</p>",
+  "hasCode": false
+}

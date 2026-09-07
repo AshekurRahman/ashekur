@@ -1,0 +1,17 @@
+{
+  "slug": "phone-number-required",
+  "category": "woocommerce",
+  "subcategory": "checkout",
+  "question": "Should the Phone Number Field Be Required at Checkout?",
+  "metaDescription": "Usually yes for shippable orders (delivery issues need a fast contact method), often optional for purely digital products with no delivery to arrange.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-07",
+  "dateModified": "2026-09-07",
+  "shortAnswer": "<p>For stores shipping physical products, requiring a phone number is generally worth the small added friction &mdash; couriers and delivery services regularly need to contact a customer about a delivery issue, and having no phone number on file can turn a minor delivery hiccup into a failed delivery entirely. For purely digital or virtual product stores, there's less inherent need, and making it optional (or removing it) reduces friction with no real downside.</p>",
+  "image": {
+    "alt": "A required phone number field at checkout enabling delivery services to contact a customer directly about a shipping issue",
+    "prompt": "Create a clean, professional technical illustration of a checkout phone number field connected to a delivery courier icon able to make direct contact if needed. Dark navy background, indigo and teal accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"why-this-happens\">The Actual Tradeoff</h2>\n<p>Every required field at checkout adds a small amount of friction, and the phone number field specifically is one some customers are hesitant to provide, expecting marketing calls or texts they don't want. Weighed against that is a genuine operational benefit for shippable orders: couriers frequently need to reach a customer about access issues, missed deliveries, or address clarification, and not having a phone number on file removes that option entirely.</p>\n\n<h2 id=\"common-causes\">When to Require It vs. Make It Optional</h2>\n<ul>\n<li><strong>Physical/shippable products</strong> generally benefit from requiring it, given how often couriers need a fast way to reach the customer &mdash; the operational value tends to outweigh the small conversion friction.</li>\n<li><strong>Purely digital or virtual products</strong> with no delivery to coordinate have much less need for it, and requiring it anyway is pure friction without the corresponding benefit.</li>\n<li><strong>Clear communication about why it's needed</strong> (a short note like \"needed in case of a delivery issue\") can reduce hesitation compared to an unexplained mandatory field.</li>\n<li><strong>SMS order notifications,</strong> if the store offers them, are a legitimate additional reason to collect a phone number, separate from the delivery-contact use case.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">Deciding for a Specific Store</h2>\n<ol>\n<li><strong>Base the decision on whether the store ships physical products</strong> that could genuinely benefit from a delivery-contact phone number.</li>\n<li><strong>If requiring it, add a brief explanation</strong> near the field rather than leaving it unexplained.</li>\n<li><strong>For digital-only stores,</strong> consider making it optional or removing it entirely to reduce unnecessary friction.</li>\n</ol>\n<p>Need checkout fields optimized for your specific product type? See <a href=\"../../../../services/woocommerce-fix/\">WooCommerce fixes</a>.</p>",
+  "hasCode": false
+}

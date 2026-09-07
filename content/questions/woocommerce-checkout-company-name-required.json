@@ -1,0 +1,17 @@
+{
+  "slug": "company-name-required",
+  "category": "woocommerce",
+  "subcategory": "checkout",
+  "question": "Should the Company Name Field Be Required at Checkout?",
+  "metaDescription": "Usually not for a consumer-facing store — it adds friction for individual shoppers with nothing to enter, while B2B stores may genuinely need it.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-07",
+  "dateModified": "2026-09-07",
+  "shortAnswer": "<p>For a consumer-facing store, requiring a company name adds friction for the majority of shoppers who simply have nothing to enter there, and it's generally better left optional or removed entirely. For a B2B or wholesale-focused store, a company name is often genuinely needed for invoicing and account management, making it reasonable to require there &mdash; the right answer depends heavily on who the actual customer base is.</p>",
+  "image": {
+    "alt": "A company name field made optional for consumer checkouts but required for B2B stores where the information is actually needed",
+    "prompt": "Create a clean, professional technical illustration of a checkout form field for company name, shown as optional on one path and required on another depending on customer type. Dark navy background, indigo and teal accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"why-this-happens\">Why This Depends on the Store Type</h2>\n<p>An individual consumer buying a product for personal use has no company name to enter, so requiring the field either forces them to leave it blank if the validation allows that, or actively blocks them from completing a purchase if it's strictly enforced &mdash; a real, avoidable friction point for the majority customer type at a consumer store. A B2B store's typical customer, by contrast, usually needs the company name recorded for invoicing, account matching, and correspondence.</p>\n\n<h2 id=\"common-causes\">Getting the Setting Right</h2>\n<ul>\n<li><strong>WooCommerce's default behavior</strong> already makes the company name field optional, which is the sensible default for most consumer-facing stores &mdash; making it required is a deliberate choice that should match an actual business need.</li>\n<li><strong>A mixed B2B/B2C store</strong> might consider showing the field conditionally, or clearly labeling it as optional with a note like \"for business orders\" rather than making it required for everyone.</li>\n<li><strong>Removing the field entirely</strong> is worth considering for a purely B2C store where it serves no purpose at all, rather than leaving it optional and unused indefinitely.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">Deciding for a Specific Store</h2>\n<ol>\n<li><strong>Confirm the actual customer base</strong> &mdash; consumer, B2B, or a mix &mdash; before deciding whether to require, optionally show, or remove the field.</li>\n<li><strong>For a B2B-focused store,</strong> requiring it and pairing it with other B2B-specific fields (like a VAT number, covered elsewhere) makes sense together.</li>\n<li><strong>For a purely consumer store,</strong> leave it optional or remove it to reduce unnecessary friction.</li>\n</ol>\n<p>Need checkout fields tailored to your specific customer base? See <a href=\"../../../../services/woocommerce-development/\">custom WooCommerce development</a>.</p>",
+  "hasCode": false
+}
