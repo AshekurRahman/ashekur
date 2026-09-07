@@ -108,6 +108,16 @@ function escapeAttr(s) {
   return escapeHtml(s);
 }
 
+// Google's SERP title display starts truncating well before 90 characters.
+// The site's own existing pages top out around 87 chars total, so past
+// that, drop the " | Ashekur Rahman" suffix rather than let it get cut off
+// mid-word — Google usually appends the site name in results on its own
+// once the title alone approaches this length anyway.
+const SITE_TITLE_SUFFIX = ' | Ashekur Rahman';
+function pageTitle(base) {
+  return base.length + SITE_TITLE_SUFFIX.length > 87 ? base : `${base}${SITE_TITLE_SUFFIX}`;
+}
+
 function relPrefix(depth) {
   return depth === 0 ? './' : '../'.repeat(depth);
 }
@@ -370,11 +380,22 @@ function scripts(prefix, needsPrism) {
 <script src="${prefix}assets/js/main.js" defer></script>${prismScripts}`;
 }
 
-function page({ prefix, title, metaDescription, canonicalPath, ogImage, jsonLd, bodyHtml, needsPrism, ogType = 'website' }) {
+function page({ prefix, title, metaDescription, canonicalPath, ogImage, jsonLd, bodyHtml, needsPrism, ogType = 'website', noindex = false }) {
   const prismCss = needsPrism
     ? `<link rel="stylesheet" href="${prefix}assets/css/qa-code.css" />`
     : '';
   const ogImageUrl = ogImage ? `${SITE_URL}${ogImage}` : `${SITE_URL}/assets/images/og-default.jpg`;
+  // Empty category/subcategory archives (no questions tagged yet) are real,
+  // linked pages — useful for users browsing the taxonomy — but publishing
+  // several near-identical "nothing here yet" pages as index,follow is
+  // exactly the thin/near-duplicate-content pattern search engines flag.
+  // noindex,follow keeps them crawlable (so a new question underneath is
+  // still discovered) without asking Google to rank an empty page. Once a
+  // category/subcategory gets its first question, its next generator run
+  // switches this back to index,follow automatically.
+  const robotsContent = noindex
+    ? 'noindex, follow'
+    : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1';
   return `<!DOCTYPE html>
 <html lang="en" class="no-js">
 <head>
@@ -383,7 +404,7 @@ function page({ prefix, title, metaDescription, canonicalPath, ogImage, jsonLd, 
 <title>${escapeHtml(title)}</title>
 <meta name="description" content="${escapeAttr(metaDescription)}" />
 <meta name="author" content="Ashekur Rahman" />
-<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<meta name="robots" content="${robotsContent}" />
 <meta name="theme-color" content="#0F172A" />
 <link rel="canonical" href="${SITE_URL}${canonicalPath}" />
 <link rel="icon" href="${prefix}assets/images/mark.png" type="image/png" />
@@ -667,7 +688,7 @@ ${q.bodyHtml}
 
   const html = page({
     prefix,
-    title: `${q.question} | Ashekur Rahman`,
+    title: pageTitle(q.question),
     metaDescription: q.metaDescription,
     canonicalPath: uPath,
     ogImage: imgPublicPath,
@@ -758,18 +779,21 @@ function buildSubcategoryArchive(catSlug, sub) {
 
   const html = page({
     prefix,
-    title: `${sub.name} Questions &amp; Answers | Ashekur Rahman`,
+    title: pageTitle(`${sub.name} Questions & Answers`),
     metaDescription: sub.description,
     canonicalPath: uPath,
     jsonLd: JSON.stringify(jsonLd, null, 2),
     bodyHtml,
     needsPrism: false,
+    noindex: list.length === 0,
   });
 
   const outFile = path.join(OUT_DIR, catSlug, sub.slug, 'index.html');
   fs.mkdirSync(path.dirname(outFile), { recursive: true });
   fs.writeFileSync(outFile, html);
-  generatedUrls.push({ loc: uPath, lastmod: TODAY });
+  // Don't ask Google to index a page we're simultaneously telling it not
+  // to — leave empty archives out of the sitemap until they have content.
+  if (list.length > 0) generatedUrls.push({ loc: uPath, lastmod: TODAY });
 }
 
 function buildCategoryArchive(cat) {
@@ -777,6 +801,7 @@ function buildCategoryArchive(cat) {
   const depth = depthOf(uPath);
   const prefix = relPrefix(depth);
   const directQuestions = questions.filter((q) => q.category === cat.slug && !q.subcategory);
+  const totalInCategory = questions.filter((q) => q.category === cat.slug).length;
 
   const breadcrumbItems = [{ label: 'Home', href: prefix }, { label: 'Questions', href: `${prefix}questions/` }, { label: cat.shortName }];
 
@@ -863,18 +888,19 @@ function buildCategoryArchive(cat) {
 
   const html = page({
     prefix,
-    title: `${cat.name} Questions &amp; Answers | Ashekur Rahman`,
+    title: pageTitle(`${cat.name} Questions & Answers`),
     metaDescription: cat.description,
     canonicalPath: uPath,
     jsonLd: JSON.stringify(jsonLd, null, 2),
     bodyHtml,
     needsPrism: false,
+    noindex: totalInCategory === 0,
   });
 
   const outFile = path.join(OUT_DIR, cat.slug, 'index.html');
   fs.mkdirSync(path.dirname(outFile), { recursive: true });
   fs.writeFileSync(outFile, html);
-  generatedUrls.push({ loc: uPath, lastmod: TODAY });
+  if (totalInCategory > 0) generatedUrls.push({ loc: uPath, lastmod: TODAY });
 }
 
 function buildHub() {
@@ -961,7 +987,7 @@ function buildHub() {
 
   const html = page({
     prefix,
-    title: 'Questions & Answers Knowledge Base | WooCommerce, WordPress & Elementor | Ashekur Rahman',
+    title: 'WooCommerce, WordPress & Elementor Q&A | Ashekur Rahman',
     metaDescription: 'Practical answers to real WooCommerce, WooCommerce Subscriptions, WordPress and Elementor questions, from an eleven-year WordPress and WooCommerce developer.',
     canonicalPath: uPath,
     jsonLd: JSON.stringify(jsonLd, null, 2),

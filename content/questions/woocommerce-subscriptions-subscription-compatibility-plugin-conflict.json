@@ -3,7 +3,7 @@
   "category": "woocommerce",
   "subcategory": "subscriptions",
   "question": "Why Is a Plugin Update Breaking My WooCommerce Subscriptions?",
-  "metaDescription": "WooCommerce Subscriptions hooks deeply into checkout, orders and payment gateways \u2014 here's why an unrelated plugin update can break it, and how to isolate which one.",
+  "metaDescription": "WooCommerce Subscriptions hooks deeply into checkout and payment gateways \u2014 here's why an unrelated plugin update can break it, and how to isolate which one.",
   "readTime": "3 min read",
   "datePublished": "2026-09-07",
   "dateModified": "2026-09-07",
