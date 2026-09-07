@@ -1,0 +1,17 @@
+{
+  "slug": "multiple-gateways-setup",
+  "category": "woocommerce",
+  "subcategory": "payments",
+  "question": "Can I Offer Multiple Payment Gateways at Checkout, and How Do I Prioritize Them?",
+  "metaDescription": "Yes — WooCommerce supports any number of active gateways, with display order set by a simple drag-and-drop list in Payments settings.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-07",
+  "dateModified": "2026-09-07",
+  "shortAnswer": "<p>Yes, and it's a normal, supported setup &mdash; most stores offer at least a card gateway (Stripe or similar) alongside PayPal, and often an offline option like bank transfer too. Under WooCommerce &rarr; Settings &rarr; Payments, every enabled gateway appears in a drag-and-drop list controlling the order they're shown at checkout, so the preferred option can simply be dragged to the top.</p>",
+  "image": {
+    "alt": "Multiple payment gateway options listed at checkout in a specific priority order, controlled by a simple drag-and-drop settings list",
+    "prompt": "Create a clean, professional technical illustration of several payment method icons stacked in an ordered list with a drag handle, above a checkout page mockup showing the same order. Dark navy background, indigo and teal accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"how-it-works\">How It Works</h2>\n<p>WooCommerce treats every payment gateway as an independent, self-contained option, and there's no limit on how many can be active simultaneously. The Payments settings tab lists all installed gateways with a toggle to enable/disable each, and a drag handle to reorder them &mdash; whatever order they're arranged in there is exactly the order customers see at checkout, top to bottom.</p>\n\n<h2 id=\"common-causes\">Things Worth Considering</h2>\n<ul>\n<li><strong>Too many options can hurt conversion</strong> just as much as too few &mdash; most successful stores settle on 2-4 well-chosen gateways rather than enabling everything available.</li>\n<li><strong>Some gateways can be restricted to specific countries or currencies</strong> individually, which is useful for offering a locally preferred payment method only to customers where it actually applies.</li>\n<li><strong>Gateway-specific fees differ,</strong> so the \"cheapest for the store\" option isn't always the one customers prefer &mdash; the two considerations often pull in different directions.</li>\n<li><strong>The default/top gateway matters more than the rest,</strong> since some checkout designs pre-select it, making its position genuinely influence completion rates, not just visual order.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">Setting It Up Well</h2>\n<ol>\n<li><strong>Enable only the gateways actually relevant</strong> to the store's customer base, rather than every option available by default.</li>\n<li><strong>Order them by actual customer preference data</strong> if available (checkout analytics, past order gateway split), not just gut feeling.</li>\n<li><strong>Test the checkout flow with each gateway</strong> individually after any reordering, since some page-builder or custom checkout templates render the list differently than the default.</li>\n</ol>\n<p>Need help deciding which gateways make sense for a specific store? See <a href=\"../../../../services/woocommerce-fix/\">WooCommerce fixes</a>.</p>",
+  "hasCode": false
+}
