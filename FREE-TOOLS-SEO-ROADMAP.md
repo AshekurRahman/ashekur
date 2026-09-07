@@ -6,7 +6,9 @@
 
 This file is intentionally kept out of the public site (`.htaccess` blocks `/FREE-TOOLS-SEO-ROADMAP.md` the same way it already blocks `/README.md` and `/SEO.md`). Treat it as a living document — update phase status and keyword notes as tools ship and data comes in.
 
-**Status as of 2026-09-05:** All 8 scanner/calculator tools (Tools 0-8) are shipped and wired into the `/tools/` hub, sitemap, and their named internal links. This remains a living roadmap with real work still open: the Tool 6 supporting blog post, "Divi 4 vs Divi 5: What Actually Changes, and Whether You Should Migrate" (Phase 2 item 9), still not written; the embeddable "scanned clean" badge for Tool 1 (Phase 2 item 10), still not started; the Google Safe Browsing API key for Tool 1's malware checker, still not configured (`GOOGLE_SAFE_BROWSING_API_KEY` unset, so that check still no-ops); the first backlink push using real usage data (Phase 3 item 13), not started; and the quarterly Search Console review (Phase 3 item 14), pending until a full quarter of data exists. The monthly SEO & content plan below is ongoing by design and has no end state.
+**Status as of 2026-09-05:** All 8 scanner/calculator tools (Tools 0-8) are shipped and wired into the `/tools/` hub, sitemap, and their named internal links. This remains a living roadmap with real work still open: the embeddable "scanned clean" badge for Tool 1 (Phase 2 item 10), still not started; the Google Safe Browsing API key for Tool 1's malware checker, still not configured (`GOOGLE_SAFE_BROWSING_API_KEY` unset, so that check still no-ops); the first backlink push using real usage data (Phase 3 item 13), not started; and the quarterly Search Console review (Phase 3 item 14), pending until a full quarter of data exists. The monthly SEO & content plan below is ongoing by design and has no end state.
+
+**Update 2026-09-07:** The Tool 6 supporting blog post, "Divi 4 vs Divi 5: What Actually Changes, and Whether You Should Migrate" (Phase 2 item 9), is now written and live at `blog/divi-4-vs-divi-5-migration/` — added to `blog/index.html` (grid card + JSON-LD), `sitemap.xml`, and cross-linked from `tools/divi-5-migration-checker/` (prose link + related-services sidebar), `services/divi-5-migration/` and `services/divi-customization/` ("Also worth reading" grids), and `blog/elementor-vs-divi/` (Divi section paragraph).
 
 ---
 
@@ -29,7 +31,7 @@ Two things already exist that everything below builds on:
 | 3 | WordPress Website Cost Calculator | 1 | **Low** | Medium | Very high (direct-to-quote) | wordpress-development, pricing | Done |
 | 4 | Elementor Speed & Bloat Checker | 2 | Medium-high | Low | High | elementor-fix, wordpress-speed-optimization | Done |
 | 5 | WooCommerce Store Health Checker | 2 | Medium-high | Low | High | woocommerce-fix, woocommerce-development | Done |
-| 6 | Divi 5 Migration Readiness Checker | 2 | Medium | Very low (near-zero competition) | Medium | divi-customization | Done (supporting blog post still pending) |
+| 6 | Divi 5 Migration Readiness Checker | 2 | Medium | Very low (near-zero competition) | Medium | divi-customization | Done |
 | 7 | Redirect Map Generator | 3 | High | Low | Medium (warm, low-volume) | wordpress-migration | Shipped 2026-09-05 |
 | 8 | Plugin Conflict Diagnostic (interactive checklist) | 3 | Low | Low-medium | Medium | wordpress-bug-fix, elementor-fix | Shipped 2026-09-05 |
 
@@ -360,7 +362,7 @@ Goal: go deeper into the three named platforms (Elementor, WooCommerce, Divi) no
 6. Elementor Speed & Bloat Checker (Tool 4).
 7. WooCommerce Store Health Checker (Tool 5).
 8. Divi 5 Migration Readiness Checker (Tool 6) — can be pulled forward given how low-competition and comparatively simple it is, if capacity allows.
-9. New supporting blog post: "Divi 4 vs Divi 5: What Actually Changes."
+9. New supporting blog post: "Divi 4 vs Divi 5: What Actually Changes." — Done 2026-09-07.
 10. Begin the embeddable "scanned clean" badge for Tool 1, if usage data supports it.
 
 ### Phase 3 — Long-tail and warm-audience tools
