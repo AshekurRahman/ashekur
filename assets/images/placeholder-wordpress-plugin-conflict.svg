@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" role="img" aria-hidden="true">
+  <title>Abstract dark tech visual representing two WordPress plugins conflicting with each other</title>
+  <defs>
+    <radialGradient id="bgFade_pcon" cx="50%" cy="36%" r="78%">
+      <stop offset="0%" stop-color="#141f38"/>
+      <stop offset="100%" stop-color="#0a1020"/>
+    </radialGradient>
+    <pattern id="grid_pcon" width="64" height="64" patternUnits="userSpaceOnUse">
+      <path d="M 64 0 L 0 0 0 64" fill="none" stroke="rgba(148,163,184,0.10)" stroke-width="1"/>
+    </pattern>
+    <radialGradient id="gridMask_pcon" cx="50%" cy="32%" r="70%">
+      <stop offset="0%" stop-color="#fff" stop-opacity="0.9"/>
+      <stop offset="65%" stop-color="#fff" stop-opacity="0.32"/>
+      <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+    </radialGradient>
+    <mask id="gridMaskEl_pcon">
+      <rect width="1280" height="720" fill="url(#gridMask_pcon)"/>
+    </mask>
+    <radialGradient id="gPink_pcon" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#7c3aed" stop-opacity="0.45"/>
+      <stop offset="66%" stop-color="#7c3aed" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="gIndigo_pcon" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#4f46e5" stop-opacity="0.4"/>
+      <stop offset="66%" stop-color="#4f46e5" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="gDanger_pcon" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fca5a5" stop-opacity="0.55"/>
+      <stop offset="66%" stop-color="#fca5a5" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bgFade_pcon)"/>
+  <rect width="1280" height="720" fill="url(#grid_pcon)" mask="url(#gridMaskEl_pcon)"/>
+  <circle cx="360" cy="220" r="340" fill="url(#gPink_pcon)"/><circle cx="980" cy="560" r="360" fill="url(#gIndigo_pcon)"/><circle cx="640" cy="360" r="150" fill="url(#gDanger_pcon)"/>
+
+  <!-- left plugin block -->
+  <g transform="translate(470,360)">
+    <rect x="-140" y="-70" width="140" height="140" rx="14" fill="#141b2b" stroke="#818cf8" stroke-width="1.5" opacity="0.9"/>
+    <rect x="-90" y="-24" width="40" height="48" rx="6" fill="#1d2142"/>
+    <rect x="-104" y="-6" width="14" height="12" rx="3" fill="#4f46e5"/>
+    <rect x="-104" y="12" width="14" height="12" rx="3" fill="#4f46e5"/>
+    <circle cx="-118" cy="-52" r="4" fill="#a5b4fc"/>
+    <circle cx="-102" cy="-52" r="4" fill="#475569"/>
+  </g>
+
+  <!-- right plugin block -->
+  <g transform="translate(810,360)">
+    <rect x="0" y="-70" width="140" height="140" rx="14" fill="#141b2b" stroke="#818cf8" stroke-width="1.5" opacity="0.9"/>
+    <rect x="50" y="-24" width="40" height="48" rx="6" fill="#1d2142"/>
+    <rect x="64" y="-6" width="14" height="12" rx="3" fill="#7c3aed"/>
+    <rect x="64" y="12" width="14" height="12" rx="3" fill="#7c3aed"/>
+    <circle cx="118" cy="-52" r="4" fill="#a5b4fc"/>
+    <circle cx="102" cy="-52" r="4" fill="#475569"/>
+  </g>
+
+  <!-- collision spark between the two plugin blocks -->
+  <g transform="translate(640,360)">
+    <path d="M 0 -46 L 12 -10 L 46 -6 L 16 14 L 26 50 L 0 28 L -26 50 L -16 14 L -46 -6 L -12 -10 Z" fill="#fca5a5" opacity="0.9"/>
+    <circle r="64" fill="none" stroke="#fca5a5" stroke-width="2" opacity="0.35"/>
+    <circle r="90" fill="none" stroke="#fca5a5" stroke-width="1.5" opacity="0.2"/>
+  </g>
+  <text x="640" y="470" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" fill="#8aa0b9" letter-spacing="1">CONFLICT</text>
+</svg>

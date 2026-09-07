@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Free WordPress Website Health Checker | Ashekur Rahman</title>
+<meta name="description" content="Check your WordPress website for common SEO, security, technical, and performance issues with this free website health checker." />
+<meta name="keywords" content="WordPress health checker, free WordPress health check, WordPress SEO checker, WordPress security checker, WordPress security scan, WordPress site audit tool, website audit tool free, check WordPress site security, WordPress crawlability checker, website checker tool" />
+<meta name="author" content="Ashekur Rahman" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<meta name="theme-color" content="#0F172A" />
+<link rel="canonical" href="https://ashekur.com/tools/wordpress-website-health-checker/" />
+<link rel="icon" href="../../assets/images/mark.png" type="image/png" />
+<link rel="apple-touch-icon" href="../../assets/images/mark.png" />
+<link rel="manifest" href="../../site.webmanifest" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Ashekur Rahman" />
+<meta property="og:url" content="https://ashekur.com/tools/wordpress-website-health-checker/" />
+<meta property="og:title" content="Free WordPress Website Health Checker | Ashekur Rahman" />
+<meta property="og:description" content="Check your WordPress website for common SEO, security, technical, and performance issues with this free website health checker." />
+<meta property="og:image" content="https://ashekur.com/assets/images/og-default.jpg" />
+<meta property="og:locale" content="en_US" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Free WordPress Website Health Checker | Ashekur Rahman" />
+<meta name="twitter:description" content="Check your WordPress website for common SEO, security, technical, and performance issues with this free website health checker." />
+<meta name="twitter:image" content="https://ashekur.com/assets/images/og-default.jpg" />
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://www.googletagmanager.com" />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+<link rel="stylesheet" href="../../assets/fonts/remixicon.css" />
+<link rel="stylesheet" href="../../assets/css/template.css" />
+<script>var d=document.documentElement;d.classList.remove('no-js');d.classList.add('js-anim');</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://ashekur.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Tools", "item": "https://ashekur.com/tools/" },
+        { "@type": "ListItem", "position": 3, "name": "WordPress Website Health Checker", "item": "https://ashekur.com/tools/wordpress-website-health-checker/" }
+      ]
+    },
+    {
+      "@type": "WebApplication",
+      "@id": "https://ashekur.com/tools/wordpress-website-health-checker/#app",
+      "name": "WordPress Website Health Checker",
+      "description": "A free tool that checks a website's HTTP status, HTTPS, basic SEO tags, WordPress signals, publicly observable security headers, crawlability files and basic page structure.",
+      "url": "https://ashekur.com/tools/wordpress-website-health-checker/",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any (web-based)",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "author": { "@type": "Person", "@id": "https://ashekur.com/#person", "name": "Ashekur Rahman", "url": "https://ashekur.com/" }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is this website health checker actually free?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. There's no signup, no email gate and no limit on how many times you can use it. It's here because a real diagnostic tool is more useful to you than a lead-capture form, and because most people who find something wrong end up wanting help fixing it anyway." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does this replace Google PageSpeed Insights or a Core Web Vitals test?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No, and it doesn't try to. The response time shown here is basic server/request information from a single request made by our server — useful as a rough signal, but not a substitute for PageSpeed Insights, which measures real rendering performance in an actual browser. Use both for a full picture." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is it safe to check my website with this tool?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. It only reads what's already publicly visible — the homepage, robots.txt and sitemap files — the same way a browser or search engine already does. It doesn't log in, doesn't modify anything, and can't reach anything that isn't already public." }
+        },
+        {
+          "@type": "Question",
+          "name": "Why does it say \"WordPress likely\" instead of giving a definite answer?",
+          "acceptedAnswer": { "@type": "Answer", "text": "WordPress detection here is based only on public signals in the page source and response headers — things like /wp-content/ paths or a generator tag. When only one signal is present, we say \"likely\" rather than presenting a guess as certainty. Some WordPress sites hide these signals deliberately, which can show as \"not detected\" even when the site does run WordPress." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I check a staging site or a password-protected page?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Only if it's genuinely reachable on the public internet without a login. The tool can't authenticate, and for security reasons it also refuses to check anything that resolves to a private, internal or otherwise non-public network address." }
+        },
+        {
+          "@type": "Question",
+          "name": "The checker found issues — what should I do next?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Start with whatever's marked \"Needs attention\" and read what it actually means in the results — several are quick fixes. If it's a WordPress-specific error, the WordPress Fix Library below covers the most common ones step by step. If you'd rather have it looked at directly, send it over." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SGTGDFXH6K"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-SGTGDFXH6K');
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header" id="siteHeader">
+  <div class="container header-inner">
+    <a class="brand" href="../../" aria-label="Ashekur Rahman &mdash; home">
+      <picture>
+        <source srcset="../../assets/images/ashekur-logo-light.webp" type="image/webp" />
+        <img src="../../assets/images/ashekur-logo-light.png" alt="Ashekur Rahman" width="480" height="125" fetchpriority="high" decoding="async" />
+      </picture>
+    </a>
+    <nav class="nav-desktop" aria-label="Main">
+      <a href="../../" class="nav-link">Home</a>
+      <a href="../../tools/" class="nav-link">Tools</a>
+      <div class="nav-item" data-dropdown>
+        <div class="nav-row">
+          <a href="../../services/" class="nav-link">Services</a>
+          <button class="nav-caret" type="button" aria-label="Services submenu" aria-expanded="false" aria-controls="navDrop-services" data-dropdown-toggle><i class="ri-arrow-down-s-line" aria-hidden="true"></i></button>
+        </div>
+        <div class="nav-panel" id="navDrop-services">
+          <a class="nav-panel-all" href="../../services/">All services</a>
+          <div class="nav-panel-cols">
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">WordPress</p>
+              <a href="../../services/wordpress-development/">WordPress Development</a>
+              <a href="../../services/wordpress-customization/">WordPress Customization</a>
+              <a href="../../services/wordpress-bug-fix/">WordPress Bug Fix</a>
+              <a href="../../services/wordpress-maintenance/">WordPress Maintenance<em>New</em></a>
+            </div>
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">Page Builders</p>
+              <a href="../../services/elementor-fix/">Elementor Bug Fix</a>
+              <a href="../../services/elementor-customization/">Elementor Customization</a>
+              <a href="../../services/elementor-custom-widgets/">Elementor Custom Widgets</a>
+              <a href="../../services/divi-customization/">Divi Customization</a>
+              <a href="../../services/divi-5-migration/">Divi 5 Migration<em>New</em></a>
+            </div>
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">WooCommerce</p>
+              <a href="../../services/woocommerce-development/">WooCommerce Development</a>
+              <a href="../../services/woocommerce-fix/">WooCommerce Fixes</a>
+            </div>
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">Performance &amp; Security</p>
+              <a href="../../services/wordpress-speed-optimization/">WordPress Speed Optimization</a>
+              <a href="../../services/core-web-vitals-fix/">Core Web Vitals Fix<em>New</em></a>
+              <a href="../../services/wordpress-malware-removal/">WordPress Malware Removal</a>
+              <a href="../../services/google-blacklist-removal/">Google Blacklist Removal<em>New</em></a>
+              <a href="../../services/caching-cdn-setup/">Caching &amp; CDN Setup<em>New</em></a>
+              <a href="../../services/wordpress-security-hardening/">WordPress Security Hardening<em>New</em></a>
+            </div>
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">Migration</p>
+              <a href="../../services/wordpress-migration/">WordPress Migration</a>
+              <a href="../../services/domain-migration-redirects/">Domain Migration &amp; 301 Redirects<em>New</em></a>
+              <a href="../../services/wordpress-migration/#hosting">Host Migration</a>
+            </div>
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">SEO</p>
+              <a href="../../services/seo/">SEO</a>
+              <a href="../../services/technical-seo-audit/">Technical SEO Audit<em>New</em></a>
+            </div>
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">Other</p>
+              <a href="../../services/webflow-development/">Webflow Development</a>
+              <a href="../../services/frontend-development/">Frontend Development</a>
+              <a href="../../services/website-redesign/">Website Redesign<em>New</em></a>
+              <a href="../../services/white-label-wordpress-development/">White Label Development<em>New</em></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="../../pricing/" class="nav-link">Pricing</a>
+      <a href="../../portfolio/" class="nav-link">Portfolio</a>
+      <a href="../../blog/" class="nav-link">Blog</a>
+      <a href="../../contact/" class="btn btn-primary btn-sm nav-cta">Start a project</a>
+    </nav>
+    <button class="burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="nav-mobile" id="mobileNav" aria-label="Mobile" hidden>
+    <a href="../../">Home</a>
+    <a href="../../tools/">Tools</a>
+    <div class="nav-item" data-dropdown>
+      <div class="nav-row">
+        <a href="../../services/">Services</a>
+        <button class="nav-caret" type="button" aria-label="Services submenu" aria-expanded="false" aria-controls="navDropM-services" data-dropdown-toggle><i class="ri-arrow-down-s-line" aria-hidden="true"></i></button>
+      </div>
+      <div class="nav-panel" id="navDropM-services">
+        <a href="../../services/">All services</a>
+        <a href="../../services/wordpress-development/">WordPress Development</a>
+        <a href="../../services/wordpress-customization/">WordPress Customization</a>
+        <a href="../../services/wordpress-bug-fix/">WordPress Bug Fix</a>
+        <a href="../../services/wordpress-maintenance/">WordPress Maintenance</a>
+        <a href="../../services/elementor-fix/">Elementor Bug Fix</a>
+        <a href="../../services/elementor-customization/">Elementor Customization</a>
+        <a href="../../services/divi-customization/">Divi Customization</a>
+        <a href="../../services/divi-5-migration/">Divi 5 Migration</a>
+        <a href="../../services/elementor-custom-widgets/">Elementor Custom Widgets</a>
+        <a href="../../services/wordpress-speed-optimization/">WordPress Speed Optimization</a>
+        <a href="../../services/core-web-vitals-fix/">Core Web Vitals Fix</a>
+        <a href="../../services/woocommerce-fix/">WooCommerce Fixes</a>
+        <a href="../../services/woocommerce-development/">WooCommerce Development</a>
+        <a href="../../services/wordpress-migration/">WordPress Migration</a>
+        <a href="../../services/domain-migration-redirects/">Domain Migration &amp; 301 Redirects</a>
+        <a href="../../services/seo/">WordPress SEO</a>
+        <a href="../../services/wordpress-malware-removal/">WordPress Malware Removal</a>
+        <a href="../../services/google-blacklist-removal/">Google Blacklist Removal</a>
+        <a href="../../services/wordpress-security-hardening/">WordPress Security Hardening</a>
+        <a href="../../services/webflow-development/">Webflow Development</a>
+        <a href="../../services/frontend-development/">Frontend Development</a>
+        <a href="../../services/website-redesign/">Website Redesign</a>
+        <a href="../../services/white-label-wordpress-development/">White Label Development</a>
+      </div>
+    </div>
+    <a href="../../pricing/">Pricing</a>
+    <a href="../../portfolio/">Portfolio</a>
+    <a href="../../blog/">Blog</a>
+    <a href="../../contact/" class="btn btn-primary">Start a project</a>
+  </nav>
+</header>
+
+<div id="smooth-wrapper">
+<div id="smooth-content">
+<main id="main" class="page-shell">
+
+  <section class="section section-dark page-intro page-hero">
+    <div class="hero-grid-bg" aria-hidden="true"></div>
+    <div class="glow glow-a" aria-hidden="true"></div>
+    <div class="glow glow-b" aria-hidden="true"></div>
+    <div class="container">
+      <div class="row hero-split">
+        <div data-anim-hero class="col-12 col-lg-9">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <ol>
+              <li><a href="../../">Home</a></li>
+              <li><a href="../">Tools</a></li>
+              <li><span aria-current="page">Website Health Checker</span></li>
+            </ol>
+          </nav>
+          <p class="badge badge-live"><span class="dot" aria-hidden="true"></span>Free &middot; No signup required</p>
+          <h1 data-anim="lines">Free WordPress Website Health Checker</h1>
+          <p class="body-lg">A free WordPress SEO checker and security scan in one: check your site&rsquo;s SEO tags, WordPress signals, security headers and crawlability. Enter a URL below and get a plain-language audit in a few seconds.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-white">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-12 col-lg-9">
+          <form class="contact-form checker-form mt-0" id="healthCheckerForm" novalidate data-endpoint="../../assets/php/website-health-checker.php">
+            <label>
+              <span class="mono field-label">WEBSITE URL</span>
+              <input type="text" id="checkerUrl" name="url" required inputmode="url" autocomplete="url" placeholder="yourwebsite.com" />
+            </label>
+            <div class="btn-row mt-0">
+              <button class="btn btn-primary" type="submit">Check Website <i class="ri-arrow-right-line" aria-hidden="true"></i></button>
+            </div>
+            <div class="checker-note mt-3 d-none" id="checkerNote" role="status" aria-live="polite"></div>
+          </form>
+
+          <div class="checker-results mt-5" id="checkerResults" aria-live="polite">
+            <h2 id="checkerResultsHeading" class="mb-4" tabindex="-1">Results</h2>
+            <div class="row row-cols-1 g-4" id="checkerResultsGrid"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-dark section-contact">
+    <div class="hero-grid-bg contact-grid-bg" aria-hidden="true"></div>
+    <div class="glow glow-d" aria-hidden="true"></div>
+    <div class="container">
+      <div class="contact-cta-shell">
+        <div class="contact-cta-card">
+          <div class="contact-cta-copy">
+            <p class="eyebrow eyebrow-center"><span class="eyebrow-mark eyebrow-mark-light" aria-hidden="true"></span><span class="mono">FOUND AN ISSUE?</span></p>
+            <h2 data-anim="lines">Found an issue?</h2>
+            <p class="body-lg">I can help fix WordPress errors, improve website speed, resolve plugin conflicts, and optimize your site.</p>
+          </div>
+          <div class="contact-cta-actions">
+            <a class="btn btn-primary" href="../../wordpress-fixes/">WordPress Fixes <i class="ri-arrow-right-line" aria-hidden="true"></i></a>
+            <a class="btn btn-ghost" href="../../services/wordpress-development/">WordPress Development</a>
+            <a class="btn btn-ghost" href="../../contact/">Contact Me</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-light">
+    <div class="container">
+      <div class="row gx-5">
+        <div class="col-12 col-lg-8">
+          <div class="prose">
+
+<h2>What this WordPress SEO and security checker tests</h2>
+<p>This tool makes a small number of read-only requests to the URL you enter &mdash; the homepage, <code>robots.txt</code>, <code>sitemap.xml</code> and, where relevant, WordPress's own <code>wp-sitemap.xml</code> &mdash; the same public pages a browser or search engine crawler would already load. From those responses it runs a free site audit across six areas: basic website status (HTTP status, HTTPS, redirects, response time), an SEO checker pass over your core SEO tags, public WordPress signals, a security scan of publicly observable response headers, a crawlability check of your robots.txt and sitemap files, and basic page structure like heading counts and image alt text.</p>
+
+<h2>What the results mean</h2>
+<p>Each item gets one of four plain statuses: <strong>Good</strong>, <strong>Needs attention</strong>, <strong>Not found</strong>, or <strong>Could not check</strong>. &ldquo;Needs attention&rdquo; means worth a look, not necessarily broken &mdash; a missing <code>Content-Security-Policy</code> header, for example, is common and not automatically a vulnerability. Nothing here is labeled a security vulnerability unless the check genuinely supports that. The response-time figure is a single request from our server to yours, useful as a rough signal, not a Core Web Vitals or PageSpeed measurement.</p>
+
+<h2>Why WordPress websites develop these issues</h2>
+<p>Most of what this tool flags isn&rsquo;t the result of one big mistake &mdash; it&rsquo;s small drift that builds up over time. A plugin update changes a meta tag. A migration leaves the site URL slightly wrong. A caching layer starts serving a stale version of a page. A security plugin gets installed and configured once, then never revisited as the site changes around it. None of that is unusual; it&rsquo;s just what happens to a site that&rsquo;s actively used and rarely audited.</p>
+
+<h2>When professional WordPress help may be needed</h2>
+<p>Plenty of what shows up here is a quick, safe fix on your own &mdash; adding a meta description, writing missing alt text, adding a security header through your host or a plugin. It&rsquo;s worth bringing in a developer when several items need attention at once, when a fix isn&rsquo;t obvious from the result alone, or when the issue turns out to be a genuine WordPress error rather than a missing tag &mdash; a white screen, a 500 error, a stuck Elementor editor, a broken WooCommerce checkout. The <a href="../../wordpress-fixes/">WordPress Fix Library</a> covers the most common of those step by step, and <a href="../../services/wordpress-bug-fix/">WordPress Bug Fix</a> is there for when you&rsquo;d rather have it handled directly. If several items under Security Basics need attention at once, that&rsquo;s usually a sign worth a proper look rather than a header added one at a time &mdash; see <a href="../../services/wordpress-security-hardening/">WordPress Security Hardening</a> for a full pass.</p>
+
+          </div>
+        </div>
+        <div class="col-12 col-lg-4">
+          <aside class="post-aside">
+            <div class="checker-links-card">
+              <p class="mono post-cta-head">RELATED SERVICES</p>
+              <ul class="mt-3">
+                <li><a href="../../services/wordpress-bug-fix/"><i class="ri-arrow-right-s-line" aria-hidden="true"></i>WordPress Bug Fix</a></li>
+                <li><a href="../../services/wordpress-speed-optimization/"><i class="ri-arrow-right-s-line" aria-hidden="true"></i>WordPress Speed Optimization</a></li>
+                <li><a href="../../services/seo/"><i class="ri-arrow-right-s-line" aria-hidden="true"></i>WordPress SEO</a></li>
+                <li><a href="../../services/wordpress-malware-removal/"><i class="ri-arrow-right-s-line" aria-hidden="true"></i>WordPress Malware Removal</a></li>
+                <li><a href="../../services/wordpress-security-hardening/"><i class="ri-arrow-right-s-line" aria-hidden="true"></i>WordPress Security Hardening</a></li>
+                <li><a href="../../wordpress-fixes/"><i class="ri-arrow-right-s-line" aria-hidden="true"></i>WordPress Fix Library</a></li>
+                <li><a href="../wordpress-cost-calculator/"><i class="ri-arrow-right-s-line" aria-hidden="true"></i>Website Cost Calculator</a></li>
+                <li><a href="../what-theme-is-this/"><i class="ri-arrow-right-s-line" aria-hidden="true"></i>What Theme Is This?</a></li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-tint">
+    <div class="container">
+      <div class="row gx-5 gy-4">
+        <div class="col-12 col-lg-4">
+          <div class="section-head sticky-head mb-4 mb-lg-0">
+            <p data-anim="fade" class="eyebrow"><span class="eyebrow-mark" aria-hidden="true"></span><span class="mono">FAQ</span></p>
+            <h2 data-anim="lines">Questions about this checker</h2>
+          </div>
+        </div>
+        <div class="col-12 col-lg-8">
+          <div data-anim="stagger" class="faq-list">
+            <details data-anim="item" class="faq-item">
+              <summary>Is this website health checker actually free?</summary>
+              <p class="faq-body">Yes. There's no signup, no email gate and no limit on how many times you can use it. It's here because a real diagnostic tool is more useful to you than a lead-capture form, and because most people who find something wrong end up wanting help fixing it anyway.</p>
+            </details>
+            <details data-anim="item" class="faq-item">
+              <summary>Does this replace Google PageSpeed Insights or a Core Web Vitals test?</summary>
+              <p class="faq-body">No, and it doesn't try to. The response time shown here is basic server/request information from a single request made by our server &mdash; useful as a rough signal, but not a substitute for PageSpeed Insights, which measures real rendering performance in an actual browser. Use both for a full picture.</p>
+            </details>
+            <details data-anim="item" class="faq-item">
+              <summary>Is it safe to check my website with this tool?</summary>
+              <p class="faq-body">Yes. It only reads what's already publicly visible &mdash; the homepage, robots.txt and sitemap files &mdash; the same way a browser or search engine already does. It doesn't log in, doesn't modify anything, and can't reach anything that isn't already public.</p>
+            </details>
+            <details data-anim="item" class="faq-item">
+              <summary>Why does it say "WordPress likely" instead of giving a definite answer?</summary>
+              <p class="faq-body">WordPress detection here is based only on public signals in the page source and response headers &mdash; things like /wp-content/ paths or a generator tag. When only one signal is present, we say "likely" rather than presenting a guess as certainty. Some WordPress sites hide these signals deliberately, which can show as "not detected" even when the site does run WordPress.</p>
+            </details>
+            <details data-anim="item" class="faq-item">
+              <summary>Can I check a staging site or a password-protected page?</summary>
+              <p class="faq-body">Only if it's genuinely reachable on the public internet without a login. The tool can't authenticate, and for security reasons it also refuses to check anything that resolves to a private, internal or otherwise non-public network address.</p>
+            </details>
+            <details data-anim="item" class="faq-item">
+              <summary>The checker found issues &mdash; what should I do next?</summary>
+              <p class="faq-body">Start with whatever's marked "Needs attention" and read what it actually means in the results &mdash; several are quick fixes. If it's a WordPress-specific error, the WordPress Fix Library below covers the most common ones step by step. If you'd rather have it looked at directly, send it over.</p>
+            </details>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-white">
+    <div class="container">
+      <div class="row gx-0">
+        <div class="section-head col-12 col-lg-6">
+          <p data-anim="fade" class="eyebrow"><span class="eyebrow-mark" aria-hidden="true"></span><span class="mono">KEEP GOING</span></p>
+          <h2 data-anim="lines">If this turned up a specific WordPress error</h2>
+          <p data-anim="fade" class="body-lg">These guides walk through the most common ones step by step, free to read and use.</p>
+        </div>
+      </div>
+      <div data-anim="stagger" class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4 related-grid">
+        <div class="col">
+          <a data-anim="item" class="related-card h-100" href="../../wordpress-fixes/wordpress-white-screen/">
+            <strong>WordPress White Screen of Death</strong>
+            <span>The free diagnostic guide for a blank page with no visible error.</span>
+          </a>
+        </div>
+        <div class="col">
+          <a data-anim="item" class="related-card h-100" href="../../wordpress-fixes/wordpress-critical-error/">
+            <strong>&ldquo;There Has Been a Critical Error&rdquo;</strong>
+            <span>WordPress's own fatal-error screen, and how to use its recovery-mode link.</span>
+          </a>
+        </div>
+        <div class="col">
+          <a data-anim="item" class="related-card h-100" href="../../wordpress-fixes/">
+            <strong>WordPress Fix Library</strong>
+            <span>The full library of WordPress problems people actually search for.</span>
+          </a>
+        </div>
+        <div class="col">
+          <a data-anim="item" class="related-card h-100" href="../../services/wordpress-maintenance/">
+            <strong>WordPress Maintenance Plan</strong>
+            <span>For catching what this checker finds before it becomes a fix you need.</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-dark section-contact">
+    <div class="hero-grid-bg contact-grid-bg" aria-hidden="true"></div>
+    <div class="glow glow-d" aria-hidden="true"></div>
+    <div class="container">
+      <div class="contact-cta-shell">
+        <div data-anim="fade" class="contact-cta-card">
+          <div class="contact-cta-copy">
+            <p class="badge badge-live mx-auto"><span class="dot" aria-hidden="true"></span>Available for new projects</p>
+            <p class="eyebrow eyebrow-center"><span class="eyebrow-mark eyebrow-mark-light" aria-hidden="true"></span><span class="mono">NEXT STEP</span></p>
+            <h2 data-anim="lines">Send me your results, and let&rsquo;s get it fixed.</h2>
+            <p class="body-lg">Based in Bangladesh, working with clients worldwide. Send over what the checker found &mdash; every serious enquiry gets a reply within one working day.</p>
+          </div>
+          <ul class="tech-chips justify-content-center">
+            <li>Reply within one working day</li>
+            <li>Fixed quote before work starts</li>
+            <li>UK, EU and US hours covered</li>
+          </ul>
+          <div class="contact-cta-actions">
+            <a class="btn btn-primary" href="../../contact/">Start a project <i class="ri-arrow-right-line" aria-hidden="true"></i></a>
+            <a class="btn btn-ghost" href="mailto:hello@ashekur.com">hello@ashekur.com</a>
+            <a class="btn btn-ghost" href="https://wa.me/8801812764112" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-top">
+    <div class="row gx-4 gy-5 align-items-start">
+      <div class="footer-brand col-12 col-lg-5">
+        <div class="brand brand-lg">
+          <picture>
+            <source srcset="../../assets/images/ashekur-logo-light.webp" type="image/webp" />
+            <img src="../../assets/images/ashekur-logo-light.png" alt="ashekur.com" width="480" height="125" loading="lazy" decoding="async" />
+          </picture>
+        </div>
+        <p class="footer-blurb">Frontend development and WordPress engineering for teams that care how it feels, not just how it looks. Based in Bangladesh &mdash; serving clients worldwide.</p>
+      </div>
+      <div class="col-12 col-lg-7">
+        <div class="footer-cols row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4">
+          <nav class="col" aria-label="Services">
+            <p class="mono footer-head">SERVICES</p>
+            <a href="../../services/wordpress-development/">WordPress Development</a>
+            <a href="../../services/wordpress-customization/">WordPress Customization</a>
+            <a href="../../services/elementor-customization/">Elementor Customization</a>
+            <a href="../../services/woocommerce-development/">WooCommerce Development</a>
+            <a href="../../services/wordpress-speed-optimization/">WordPress Speed Optimization</a>
+            <a href="../../services/wordpress-bug-fix/">WordPress Bug Fix</a>
+            <a href="../../services/elementor-fix/">Elementor Bug Fix</a>
+            <a href="../../services/wordpress-migration/">WordPress Migration</a>
+            <a href="../../services/seo/">WordPress SEO</a>
+          </nav>
+          <nav class="col" aria-label="Site">
+            <p class="mono footer-head">SITEMAP</p>
+            <a href="../../">Home</a>
+            <a href="../../tools/">Tools</a>
+            <a href="../../portfolio/">Portfolio</a>
+            <a href="../../blog/">Blog</a>
+            <a href="../../wordpress-fixes/">WordPress Fixes</a>
+            <a href="../">Tools</a>
+            <a href="../../contact/">Contact</a>
+            <a href="../../privacy/">Privacy Policy</a>
+          </nav>
+          <div class="col">
+            <p class="mono footer-head">ELSEWHERE</p>
+            <a href="mailto:hello@ashekur.com"><i class="ri-mail-line" aria-hidden="true"></i>hello@ashekur.com</a>
+            <a href="https://wa.me/8801812764112" target="_blank" rel="noopener noreferrer"><i class="ri-whatsapp-line" aria-hidden="true"></i>WhatsApp</a>
+            <a href="https://www.linkedin.com/in/ashekur-rahman-1ab205122/" target="_blank" rel="noopener noreferrer"><i class="ri-linkedin-fill" aria-hidden="true"></i>LinkedIn</a>
+            <a href="https://github.com/AshekurRahman" target="_blank" rel="noopener noreferrer"><i class="ri-github-fill" aria-hidden="true"></i>GitHub</a>
+            <a href="https://www.upwork.com/freelancers/~010aabe60ec2ae6679" target="_blank" rel="noopener noreferrer"><i class="ri-upwork-fill" aria-hidden="true"></i>Upwork</a>
+            <a href="https://www.facebook.com/ashekur.rahman.hridoy" target="_blank" rel="noopener noreferrer"><i class="ri-facebook-circle-fill" aria-hidden="true"></i>Facebook</a>
+            <a href="https://www.instagram.com/ashekurhridoy/" target="_blank" rel="noopener noreferrer"><i class="ri-instagram-line" aria-hidden="true"></i>Instagram</a>
+            <a href="https://www.youtube.com/@ashekurrahman1431" target="_blank" rel="noopener noreferrer"><i class="ri-youtube-fill" aria-hidden="true"></i>YouTube</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <p class="mono copyright">&copy; 2026 Ashekur Rahman. All rights reserved.</p>
+    <a class="to-top-inline" href="#main"><i class="ri-arrow-up-line" aria-hidden="true"></i> Back to top</a>
+  </div>
+</footer>
+</div>
+</div>
+
+
+<a class="wa-float" href="https://wa.me/8801812764112" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp"><i class="ri-whatsapp-fill" aria-hidden="true"></i></a>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" integrity="sha384-HOvlOYPIs/zjoIkWUGXkVmXsjr8GuZLV+Q+rcPwmJOVZVpvTSXQChiN4t9Euv9Vc" crossorigin="anonymous" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js" integrity="sha384-P8VzCVnT9NBUkMrpcIZrJbA7EBjJvh/fJS6PmP+4nLIM284DtsImIv8D0fFjIkeh" crossorigin="anonymous" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js" integrity="sha384-xb96EMJeax+NLXMC88ZBa1xAeAW+kn+horHh/zFlbMLG2UPWhMJJSlv7fi57hS+Q" crossorigin="anonymous" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollSmoother.min.js" integrity="sha384-dd8lT3AimXbI347qlZzlijPa4qnSlgGxuTqK2HlcfvF5+aOIeddPdMFmFpypQPZN" crossorigin="anonymous" defer></script>
+<script src="../../assets/js/anim.js" defer></script>
+<script src="../../assets/js/main.js" defer></script>
+<script src="../../assets/js/website-health-checker.js" defer></script>
+</body>
+</html>

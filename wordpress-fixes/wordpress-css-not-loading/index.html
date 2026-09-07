@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>WordPress Site Loading Without CSS? Why Your Styling Disappeared | Ashekur Rahman</title>
+<meta name="description" content="Site rendering as plain unstyled HTML, or missing CSS on some pages? Here's what actually breaks stylesheet loading in WordPress and how to fix it." />
+<meta name="keywords" content="WordPress CSS not loading, WordPress site unstyled, WordPress missing styling, WordPress stylesheet not loading, WordPress broken layout after update, WordPress site looks broken" />
+<meta name="author" content="Ashekur Rahman" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<meta name="theme-color" content="#0F172A" />
+<link rel="canonical" href="https://ashekur.com/wordpress-fixes/wordpress-css-not-loading/" />
+<link rel="icon" href="../../assets/images/mark.png" type="image/png" />
+<link rel="apple-touch-icon" href="../../assets/images/mark.png" />
+<link rel="manifest" href="../../site.webmanifest" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-09-02" />
+<meta property="article:author" content="Ashekur Rahman" />
+<meta property="article:section" content="WordPress Fixes" />
+<meta property="og:site_name" content="Ashekur Rahman" />
+<meta property="og:url" content="https://ashekur.com/wordpress-fixes/wordpress-css-not-loading/" />
+<meta property="og:title" content="WordPress Site Loading Without CSS? Why Your Styling Disappeared | Ashekur Rahman" />
+<meta property="og:description" content="Site rendering as plain unstyled HTML, or missing CSS on some pages but not others? Here's what actually breaks stylesheet loading in WordPress and how to fix it." />
+<meta property="og:image" content="https://ashekur.com/assets/images/og-default.jpg" />
+<meta property="og:locale" content="en_US" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="WordPress Site Loading Without CSS? Why Your Styling Disappeared | Ashekur Rahman" />
+<meta name="twitter:description" content="Site rendering as plain unstyled HTML, or missing CSS on some pages but not others? Here's what actually breaks stylesheet loading and how to fix it." />
+<meta name="twitter:image" content="https://ashekur.com/assets/images/og-default.jpg" />
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://www.googletagmanager.com" />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+<link rel="stylesheet" href="../../assets/fonts/remixicon.css" />
+<link rel="stylesheet" href="../../assets/css/template.css" />
+<script>var d=document.documentElement;d.classList.remove('no-js');d.classList.add('js-anim');</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://ashekur.com/" },
+        { "@type": "ListItem", "position": 2, "name": "WordPress Fixes", "item": "https://ashekur.com/wordpress-fixes/" },
+        { "@type": "ListItem", "position": 3, "name": "WordPress CSS Not Loading", "item": "https://ashekur.com/wordpress-fixes/wordpress-css-not-loading/" }
+      ]
+    },
+    {
+      "@type": "TechArticle",
+      "@id": "https://ashekur.com/wordpress-fixes/wordpress-css-not-loading/#article",
+      "headline": "WordPress Site Loading Without CSS (Styling Missing)",
+      "description": "Site rendering as plain unstyled HTML, or missing CSS on some pages but not others? Here's what actually breaks stylesheet loading in WordPress and how to fix it.",
+      "url": "https://ashekur.com/wordpress-fixes/wordpress-css-not-loading/",
+      "mainEntityOfPage": { "@type": "WebPage", "@id": "https://ashekur.com/wordpress-fixes/wordpress-css-not-loading/" },
+      "image": "https://ashekur.com/assets/images/og-default.jpg",
+      "datePublished": "2026-09-02",
+      "dateModified": "2026-09-02",
+      "author": {
+        "@type": "Person", "@id": "https://ashekur.com/#person", "name": "Ashekur Rahman", "url": "https://ashekur.com/",
+        "jobTitle": "Frontend Developer & WordPress Expert", "email": "hello@ashekur.com", "telephone": "+8801812764112",
+        "address": { "@type": "PostalAddress", "addressCountry": "BD" }
+      },
+      "publisher": {
+        "@type": "Person", "@id": "https://ashekur.com/#person", "name": "Ashekur Rahman", "url": "https://ashekur.com/",
+        "jobTitle": "Frontend Developer & WordPress Expert", "email": "hello@ashekur.com", "telephone": "+8801812764112",
+        "address": { "@type": "PostalAddress", "addressCountry": "BD" }
+      },
+      "articleSection": "WordPress Fixes",
+      "proficiencyLevel": "Beginner",
+      "dependencies": "WordPress, theme or page builder, hosting/CDN configuration",
+      "wordCount": 3000,
+      "inLanguage": "en",
+      "isAccessibleForFree": true
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Why does my site look fine to me but broken to visitors?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Usually a caching or CDN layer. Your browser may be serving you a locally cached copy of the correct CSS file, while a visitor hitting a different CDN edge server, or loading the page for the first time, gets whatever stale or broken version is stored there. Clearing your own browser cache doesn't clear theirs." }
+        },
+        {
+          "@type": "Question",
+          "name": "Will a database search-and-replace break my content?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Not if it's done with a proper tool built for the job, such as WP-CLI's search-replace command or a dedicated plugin that understands serialized PHP data. Those update matching URLs everywhere, including inside serialized arrays, without corrupting them. A blind text editor find-and-replace on a raw database export is the version that causes damage." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is this the same problem as Elementor not loading?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. Elementor not loading is specifically about the page builder's editor interface failing to open inside wp-admin. This is about the live, public-facing page failing to load its stylesheet, which happens on the front end and has nothing to do with whether Elementor's editor works or not." }
+        },
+        {
+          "@type": "Question",
+          "name": "Why did this start right after I installed an SSL certificate?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Almost always mixed content. If any of your stylesheet links are still hardcoded as http:// while the rest of the page now loads over https://, browsers block the insecure request rather than risk serving mixed secure and insecure content, and your styling silently disappears." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can a plugin update cause CSS to stop loading?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes, particularly performance and caching plugins with a 'minify' or 'optimize CSS delivery' feature. An update can change how that feature combines or defers stylesheets, and if it generates a broken combined file or defers a stylesheet the page actually needs immediately, the result looks identical to CSS not loading at all." }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I know if it's a caching issue or a real break?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Open the page in a private/incognito window on a different network (mobile data works well) with no cache to fall back on. If styling loads correctly there, the underlying files are fine and you're dealing with a caching or CDN problem. If it's still broken, the cause is in the files or the database, not a cache." }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need to touch code to fix this myself?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Often not. Correcting a site URL mismatch, purging a cache, or disabling a plugin's minify feature all happen through the WordPress admin or your host's control panel. Editing wp-config.php, running a WP-CLI search-replace, or fixing an enqueue call in functions.php does require comfort with code or FTP." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SGTGDFXH6K"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-SGTGDFXH6K');
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header" id="siteHeader">
+  <div class="container header-inner">
+    <a class="brand" href="../../" aria-label="Ashekur Rahman &mdash; home">
+      <picture>
+        <source srcset="../../assets/images/ashekur-logo-light.webp" type="image/webp" />
+        <img src="../../assets/images/ashekur-logo-light.png" alt="Ashekur Rahman" width="480" height="125" fetchpriority="high" decoding="async" />
+      </picture>
+    </a>
+    <nav class="nav-desktop" aria-label="Main">
+      <a href="../../" class="nav-link">Home</a>
+      <a href="../../tools/" class="nav-link">Tools</a>
+      <div class="nav-item" data-dropdown>
+        <div class="nav-row">
+          <a href="../../services/" class="nav-link">Services</a>
+          <button class="nav-caret" type="button" aria-label="Services submenu" aria-expanded="false" aria-controls="navDrop-services" data-dropdown-toggle><i class="ri-arrow-down-s-line" aria-hidden="true"></i></button>
+        </div>
+        <div class="nav-panel" id="navDrop-services">
+          <a class="nav-panel-all" href="../../services/">All services</a>
+          <div class="nav-panel-cols">
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">WordPress</p>
+              <a href="../../services/wordpress-development/">WordPress Development</a>
+              <a href="../../services/wordpress-customization/">WordPress Customization</a>
+              <a href="../../services/wordpress-bug-fix/">WordPress Bug Fix</a>
+              <a href="../../services/wordpress-maintenance/">WordPress Maintenance<em>New</em></a>
+            </div>
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">Page Builders</p>
+              <a href="../../services/elementor-fix/">Elementor Bug Fix</a>
+              <a href="../../services/elementor-customization/">Elementor Customization</a>
+              <a href="../../services/elementor-custom-widgets/">Elementor Custom Widgets</a>
+              <a href="../../services/divi-customization/">Divi Customization</a>
+              <a href="../../services/divi-5-migration/">Divi 5 Migration<em>New</em></a>
+            </div>
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">WooCommerce</p>
+              <a href="../../services/woocommerce-development/">WooCommerce Development</a>
+              <a href="../../services/woocommerce-fix/">WooCommerce Fixes</a>
+            </div>
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">Performance &amp; Security</p>
+              <a href="../../services/wordpress-speed-optimization/">WordPress Speed Optimization</a>
+              <a href="../../services/core-web-vitals-fix/">Core Web Vitals Fix<em>New</em></a>
+              <a href="../../services/wordpress-malware-removal/">WordPress Malware Removal</a>
+              <a href="../../services/google-blacklist-removal/">Google Blacklist Removal<em>New</em></a>
+              <a href="../../services/caching-cdn-setup/">Caching &amp; CDN Setup<em>New</em></a>
+              <a href="../../services/wordpress-security-hardening/">WordPress Security Hardening<em>New</em></a>
+            </div>
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">Migration</p>
+              <a href="../../services/wordpress-migration/">WordPress Migration</a>
+              <a href="../../services/domain-migration-redirects/">Domain Migration &amp; 301 Redirects<em>New</em></a>
+              <a href="../../services/wordpress-migration/#hosting">Host Migration</a>
+            </div>
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">SEO</p>
+              <a href="../../services/seo/">SEO</a>
+              <a href="../../services/technical-seo-audit/">Technical SEO Audit<em>New</em></a>
+            </div>
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">Other</p>
+              <a href="../../services/webflow-development/">Webflow Development</a>
+              <a href="../../services/frontend-development/">Frontend Development</a>
+              <a href="../../services/website-redesign/">Website Redesign<em>New</em></a>
+              <a href="../../services/white-label-wordpress-development/">White Label Development<em>New</em></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="../../pricing/" class="nav-link">Pricing</a>
+      <a href="../../portfolio/" class="nav-link">Portfolio</a>
+      <a href="../../blog/" class="nav-link">Blog</a>
+      <a href="../../contact/" class="btn btn-primary btn-sm nav-cta">Start a project</a>
+    </nav>
+    <button class="burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="nav-mobile" id="mobileNav" aria-label="Mobile" hidden>
+    <a href="../../">Home</a>
+    <a href="../../tools/">Tools</a>
+    <div class="nav-item" data-dropdown>
+      <div class="nav-row">
+        <a href="../../services/">Services</a>
+        <button class="nav-caret" type="button" aria-label="Services submenu" aria-expanded="false" aria-controls="navDropM-services" data-dropdown-toggle><i class="ri-arrow-down-s-line" aria-hidden="true"></i></button>
+      </div>
+      <div class="nav-panel" id="navDropM-services">
+        <a href="../../services/">All services</a>
+        <a href="../../services/wordpress-development/">WordPress Development</a>
+        <a href="../../services/wordpress-customization/">WordPress Customization</a>
+        <a href="../../services/wordpress-bug-fix/">WordPress Bug Fix</a>
+        <a href="../../services/wordpress-maintenance/">WordPress Maintenance</a>
+        <a href="../../services/elementor-fix/">Elementor Bug Fix</a>
+        <a href="../../services/elementor-customization/">Elementor Customization</a>
+        <a href="../../services/divi-customization/">Divi Customization</a>
+        <a href="../../services/divi-5-migration/">Divi 5 Migration</a>
+        <a href="../../services/elementor-custom-widgets/">Elementor Custom Widgets</a>
+        <a href="../../services/wordpress-speed-optimization/">WordPress Speed Optimization</a>
+        <a href="../../services/core-web-vitals-fix/">Core Web Vitals Fix</a>
+        <a href="../../services/woocommerce-fix/">WooCommerce Fixes</a>
+        <a href="../../services/woocommerce-development/">WooCommerce Development</a>
+        <a href="../../services/wordpress-migration/">WordPress Migration</a>
+        <a href="../../services/domain-migration-redirects/">Domain Migration &amp; 301 Redirects</a>
+        <a href="../../services/seo/">WordPress SEO</a>
+        <a href="../../services/wordpress-malware-removal/">WordPress Malware Removal</a>
+        <a href="../../services/google-blacklist-removal/">Google Blacklist Removal</a>
+        <a href="../../services/wordpress-security-hardening/">WordPress Security Hardening</a>
+        <a href="../../services/webflow-development/">Webflow Development</a>
+        <a href="../../services/frontend-development/">Frontend Development</a>
+        <a href="../../services/website-redesign/">Website Redesign</a>
+        <a href="../../services/white-label-wordpress-development/">White Label Development</a>
+      </div>
+    </div>
+    <a href="../../pricing/">Pricing</a>
+    <a href="../../portfolio/">Portfolio</a>
+    <a href="../../blog/">Blog</a>
+    <a href="../../contact/" class="btn btn-primary">Start a project</a>
+  </nav>
+</header>
+
+<div id="smooth-wrapper">
+<div id="smooth-content">
+<main id="main" class="page-shell">
+
+  <article>
+  <section class="section section-dark page-intro page-hero">
+    <div class="hero-grid-bg" aria-hidden="true"></div>
+    <div class="glow glow-a" aria-hidden="true"></div>
+    <div class="glow glow-b" aria-hidden="true"></div>
+    <div class="container">
+      <div class="row hero-split">
+        <div data-anim-hero class="col-12 col-lg-9">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <ol>
+              <li><a href="../../">Home</a></li>
+              <li><a href="../../wordpress-fixes/">WordPress Fixes</a></li>
+              <li><span aria-current="page">WordPress CSS Not Loading</span></li>
+            </ol>
+          </nav>
+          <p class="post-meta mono"><span class="post-cat">Page builder</span><span>10 min read</span><span>2026-09-02</span><span>Ashekur Rahman</span></p>
+          <h1 data-anim="lines">WordPress Site Loading Without CSS? Here's Why Your Styling Disappeared.</h1>
+          <p class="body-lg">Plain black text on a white page, the wrong font, no layout at all &mdash; your site still exists, it just isn't wearing its stylesheet. That's a specific, fixable failure with a short list of usual suspects, and none of them mean you've lost your design.</p>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="../../contact/">Send me your site <i class="ri-arrow-right-line" aria-hidden="true"></i></a>
+            <a class="btn btn-ghost" href="../../services/wordpress-bug-fix/">See the bug fix service</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-white">
+    <div class="container">
+      <figure data-anim="reveal" class="shot mb-5">
+        <picture>
+          <source srcset="../../assets/images/wordpress-css-not-loading.webp" type="image/webp" />
+          <img src="../../assets/images/wordpress-css-not-loading.jpeg" alt="Split comparison of a WordPress page rendering as plain unstyled text on the left and the same page correctly styled on the right, connected by a broken chain link where the stylesheet should load" width="1280" height="720" loading="lazy" decoding="async" />
+        </picture>
+        <!-- Image prompt: Realistic side-by-side photo composite on a single monitor split screen, left half showing a webpage rendered in default browser typography with no layout, right half showing the same page fully styled with cards and spacing. Studio lighting, shallow depth of field, a small broken chain-link icon overlay at the seam. Photorealistic, professional tech-editorial style, no visible faces, no readable personal data. 1280x720, 16:9. -->
+        <figcaption>The content is all there. What's missing is the file that turns it into a design.</figcaption>
+      </figure>
+
+      <div class="row gx-5 gy-4">
+        <aside class="col-12 col-lg-4 order-lg-2">
+          <div class="post-aside">
+            <nav class="toc" aria-label="On this page">
+              <p class="toc-head mono">ON THIS PAGE</p>
+              <ol>
+                <li><a href="#what-is-the-problem">What is the problem?</a></li>
+                <li><a href="#common-symptoms">Common symptoms</a></li>
+                <li><a href="#why-does-this-happen">Why does this happen?</a></li>
+                <li><a href="#common-technical-causes">Common technical causes</a></li>
+                <li><a href="#how-to-diagnose-it">How to diagnose it</a></li>
+                <li><a href="#how-to-fix-it-step-by-step">How to fix it, step by step</a></li>
+                <li><a href="#when-this-needs-professional-help">When this needs professional help</a></li>
+                <li><a href="#how-i-can-help">How I can help</a></li>
+              </ol>
+            </nav>
+          </div>
+        </aside>
+        <div class="col-12 col-lg-8 order-lg-1">
+          <div class="prose">
+
+<h2 id="what-is-the-problem">What is the problem?</h2>
+<p>The HTML is there. The words, the images, the navigation links &mdash; everything you actually wrote is present on the page. What's missing is the file that turns that raw markup into the design you built: the fonts, the colours, the spacing, the columns. Without it, a browser falls back to its own defaults, which is why the page suddenly looks like something typed into Notepad rather than the site you paid to have built.</p>
+<blockquote>Quick answer: your stylesheet request is being blocked, misdirected, or served broken &mdash; not deleted. The fix is almost always about tracing which layer (browser, CDN, plugin, or the file itself) is stopping it, not rebuilding any design work.</blockquote>
+<p>This is a front-end delivery problem, not a content problem. WordPress generates a <code>&lt;link rel="stylesheet"&gt;</code> tag pointing at a CSS file, and the browser fetches that file separately from the page's HTML. Anything that breaks that second request &mdash; a wrong URL, a blocked protocol, a corrupted cache, a permissions error &mdash; leaves the HTML intact and the styling gone, which is exactly the split you're seeing.</p>
+
+<h2 id="common-symptoms">Common symptoms</h2>
+<ul>
+  <li>The whole site renders in plain black text, default serif font, no layout columns or spacing at all</li>
+  <li>It's happening on every page, or oddly, only on a handful of specific ones</li>
+  <li>It started right after installing an SSL certificate or switching the site to https://</li>
+  <li>The browser's address bar shows a "not fully secure" warning, or the padlock icon has a strike through it</li>
+  <li>It started right after activating a caching plugin or turning on an "optimize CSS delivery" setting</li>
+  <li>The black WordPress admin bar at the top still looks correct, but everything below it doesn't</li>
+  <li>It looks fine on your phone but broken on desktop, or fine for you logged in but broken for a logged-out visitor</li>
+</ul>
+
+<h2 id="why-does-this-happen">Why does this happen?</h2>
+<p>A WordPress theme doesn't ship its design as one thing. It enqueues one or more separate CSS files through PHP, and the browser has to successfully request and download each one, over the correct protocol, from the correct URL, before the page looks right. That's several independent points where the chain can break: the URL WordPress generates, the server or CDN that has to serve the file, and the browser deciding whether it's allowed to load it at all.</p>
+<p>Because the HTML itself doesn't depend on any of that, it renders regardless. The page "works" in the sense that the content is there &mdash; it's only the separate, secondary request for the stylesheet that's failing, and browsers don't show an error for that the way they might for a broken page. They just quietly fall back to unstyled defaults and carry on.</p>
+
+<h2 id="common-technical-causes">Common technical causes</h2>
+<ul>
+  <li><strong>Mixed content after moving to HTTPS</strong> &mdash; a stylesheet URL is still hardcoded as <code>http://</code> while the rest of the page loads over <code>https://</code>, and the browser silently blocks the insecure request rather than mix the two</li>
+  <li><strong>A site URL mismatch</strong> &mdash; the WordPress Address or Site Address in Settings, or the <code>siteurl</code>/<code>home</code> values directly in the database, don't match the domain actually being visited, often left over from a migration or domain change</li>
+  <li><strong>A broken "minify" or "combine CSS" cache feature</strong> &mdash; a performance plugin merges every stylesheet into one file to save requests, and that combined file is empty, truncated, or fails to regenerate after an update</li>
+  <li><strong>Stale CDN-cached files</strong> &mdash; a CDN edge node is still serving an old or broken copy of a CSS file after a deploy, which is why the problem can look different depending on the visitor's location</li>
+  <li><strong>Incorrect file permissions or a missing file</strong> &mdash; usually left behind by an incomplete migration or a theme update that didn't finish writing every file</li>
+  <li><strong>A plugin's aggressive asset-loading rules</strong> stripping a stylesheet it doesn't recognise as necessary for a given page or post type</li>
+  <li><strong>A broken <code>wp_enqueue_style()</code> call</strong> pointing at the wrong file path or an outdated version parameter after a manual file rename in the theme</li>
+  <li><strong>A corrupted or half-written <code>.htaccess</code> file</strong> blocking direct access to files inside <code>/wp-content/</code>, which stops static assets like CSS and images loading regardless of what WordPress itself is doing correctly</li>
+</ul>
+
+<h2 id="how-to-diagnose-it">How to diagnose it</h2>
+<ol>
+  <li><strong>View the page source</strong> (Ctrl/Cmd + U) and check whether any <code>&lt;link rel="stylesheet"&gt;</code> tags are even present in the <code>&lt;head&gt;</code>. If they're missing entirely, the problem is in how WordPress is generating the page, not in loading a file that's genuinely being requested.</li>
+  <li><strong>Open DevTools (F12) &rarr; Network tab, filter for "CSS", and reload.</strong> Look for any entry showing 404, 403, or a small warning icon next to it &mdash; that tells you the request is being made but failing, and exactly at what URL.</li>
+  <li><strong>Check the address bar for a security warning.</strong> "Not fully secure" or a padlock with a line through it confirms mixed content is at least part of the cause.</li>
+  <li><strong>Compare Settings &rarr; General's WordPress Address and Site Address</strong> against the domain actually shown in your browser's address bar. Even a stray <code>www.</code> mismatch is enough to cause this.</li>
+  <li><strong>Temporarily disable any caching or optimization plugin and hard-refresh</strong> (Ctrl/Cmd + Shift + R). If styling comes back immediately, the cache or minify feature is the cause.</li>
+  <li><strong>Test on a different network</strong>, such as mobile data instead of wifi, to rule out a CDN edge node or ISP-level cache serving you specifically a broken copy while other visitors are unaffected.</li>
+</ol>
+
+<h2 id="how-to-fix-it-step-by-step">How to fix it, step by step</h2>
+<ol>
+  <li><strong>If it's mixed content from an SSL move, run a proper database search-and-replace</strong> changing <code>http://</code> to <code>https://</code> for your own domain, using WP-CLI's <code>wp search-replace</code> command or a dedicated plugin built for it. Never do this with a plain text-editor find-and-replace on a raw export &mdash; it corrupts WordPress's serialized data.</li>
+  <li><strong>Correct the WordPress Address and Site Address</strong> in Settings &rarr; General. If the admin area itself won't load correctly because of the mismatch, edit the <code>siteurl</code> and <code>home</code> rows directly in the <code>wp_options</code> table via phpMyAdmin instead.</li>
+  <li><strong>Disable the caching plugin's minify or combine-CSS feature</strong>, clear its cache, and reload to confirm that was the cause. Re-enable optimisation features one at a time afterwards so you know exactly which one, if any, is safe to keep.</li>
+  <li><strong>Purge every caching layer, not just one</strong> &mdash; the plugin's own cache, your browser (hard refresh), and any CDN in front of the site (Cloudflare's "Purge Everything," if that's what you're using).</li>
+  <li><strong>Check file permissions on <code>wp-content/themes</code> and <code>wp-content/uploads</code></strong> via FTP if a migration is the likely cause, and re-upload any file that's missing or shows as zero bytes.</li>
+  <li><strong>If one specific plugin is stripping the stylesheet</strong>, exclude that file from its optimisation rules, or disable the plugin's asset-loading feature for the affected page or post type.</li>
+  <li><strong>Fix a broken enqueue call</strong> in <code>functions.php</code> if a manual file rename broke the path, using <code>get_stylesheet_directory_uri()</code> to build the URL rather than a hardcoded string that will break again the next time something moves.</li>
+  <li><strong>Rebuild <code>.htaccess</code></strong> from Settings &rarr; Permalinks (just resave your permalink structure) if server rules are blocking static asset requests to <code>/wp-content/</code>.</li>
+  <li><strong>Retest in a private window on a different network</strong> after each fix, so a local or CDN cache masking the real state doesn't tell you it's fixed when it isn't yet, or vice versa.</li>
+</ol>
+
+<h2 id="when-this-needs-professional-help">When this needs professional help</h2>
+<p>Several of the steps above are safe to do from the WordPress admin or your host's control panel with no coding involved. It's worth bringing in a developer when:</p>
+<ul>
+  <li>The database search-and-replace needs to span many hardcoded URLs across post content, widgets and theme settings, and getting it wrong risks corrupting that data</li>
+  <li>The problem comes back every time a cache is cleared, which means the real cause is still active somewhere you haven't found yet</li>
+  <li>It's inconsistent across visitors or locations in a way that points to CDN-level configuration you don't have direct access to</li>
+  <li>Fixing it means editing <code>wp-config.php</code>, a theme's <code>functions.php</code>, or working over FTP, and you'd rather not risk the live site doing it yourself</li>
+</ul>
+
+<h2 id="how-i-can-help">How I can help</h2>
+<p>This one gets misdiagnosed a lot, usually as "my site got hacked" or "the theme broke," when it's actually a specific request failing somewhere between four possible layers &mdash; the database, a cache, a CDN, or the enqueue code itself. I trace which one is actually responsible before touching anything, fix that layer specifically, and confirm it holds after a real cache clear rather than just looking fixed in one browser tab. Eleven years of freelance WordPress work means this particular failure is one I've already seen from every one of those four angles.</p>
+          </div>
+
+          <aside class="post-cta">
+            <p class="mono post-cta-head">RELATED SERVICE</p>
+            <h2>WordPress Bug Fix</h2>
+            <p>If tracing this down isn't how you want to spend your afternoon, that page covers what's included, how fast it usually runs, and what it costs to find out.</p>
+            <div data-anim="fade" class="btn-row">
+              <a class="btn btn-primary" href="../../services/wordpress-bug-fix/">WordPress Bug Fix <i class="ri-arrow-right-line" aria-hidden="true"></i></a>
+              <a class="btn btn-ghost" href="../../contact/">Ask a question</a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </section>
+  </article>
+
+  <section class="section section-light">
+    <div class="container">
+      <div class="row gx-0">
+        <div class="section-head col-12 col-lg-6">
+          <p data-anim="fade" class="eyebrow"><span class="eyebrow-mark" aria-hidden="true"></span><span class="mono">RELATED PROBLEMS</span></p>
+          <h2 data-anim="lines">If this isn't quite your issue</h2>
+          <p data-anim="fade" class="body-lg">Unstyled pages are sometimes confused with a different failure entirely.</p>
+        </div>
+      </div>
+      <div data-anim="stagger" class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4 related-grid">
+        <div class="col">
+          <a data-anim="item" class="related-card h-100" href="../elementor-not-loading/">
+            <strong>Elementor Editor Not Loading</strong>
+            <span>That's the page builder's editor failing to open in wp-admin &mdash; a different failure from the live page losing its styling.</span>
+          </a>
+        </div>
+        <div class="col">
+          <a data-anim="item" class="related-card h-100" href="../../services/frontend-development/">
+            <strong>Frontend Development</strong>
+            <span>For rebuilding or hardening the front-end templates once the immediate break is fixed.</span>
+          </a>
+        </div>
+        <div class="col">
+          <a data-anim="item" class="related-card h-100" href="../../services/wordpress-speed-optimization/">
+            <strong>WordPress Speed Optimization</strong>
+            <span>Caching and minification plugins cause this often enough that it's worth having them configured properly, not just switched on.</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-white">
+    <div class="container">
+      <div class="row gx-0">
+        <div class="section-head col-12 col-lg-6">
+          <p data-anim="fade" class="eyebrow"><span class="eyebrow-mark" aria-hidden="true"></span><span class="mono">RELEVANT WORK</span></p>
+          <h2 data-anim="lines">Responsive builds where styling had to hold up everywhere</h2>
+          <p data-anim="fade" class="body-lg">Two projects where getting the design layer right, and keeping it right, was most of the job.</p>
+        </div>
+      </div>
+      <div data-anim="stagger" class="row row-cols-1 row-cols-md-2 g-4 case-grid">
+        <div class="col">
+          <article data-anim="item" class="case-card h-100">
+            <a href="../../portfolio/freizeitcenter-dietz/" tabindex="-1" aria-hidden="true">
+              <picture>
+                <source srcset="../../assets/images/project-dietz.webp" type="image/webp" />
+                <img src="../../assets/images/project-dietz.jpeg" alt="Freizeitcenter Dietz motorhome dealership website, built in WordPress with Divi 5" width="1200" height="624" loading="lazy" decoding="async" />
+              </picture>
+            </a>
+            <div class="case-card-body">
+              <h3><a href="../../portfolio/freizeitcenter-dietz/">Freizeitcenter Dietz</a></h3>
+              <p>A motorhome dealership site built in Divi 5, where consistent styling across a large vehicle inventory and its templates was non-negotiable.</p>
+              <ul class="tech-chips"><li>WordPress</li><li>Divi 5</li><li>Responsive</li></ul>
+              <div class="btn-row">
+                <a class="btn btn-primary btn-sm" href="../../portfolio/freizeitcenter-dietz/">Read the case study</a>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="col">
+          <article data-anim="item" class="case-card h-100">
+            <a href="../../portfolio/kinder-city/" tabindex="-1" aria-hidden="true">
+              <picture>
+                <source srcset="../../assets/images/project-kindercity.webp" type="image/webp" />
+                <img src="../../assets/images/project-kindercity.jpeg" alt="Kinder City nursery and pre-school group website built with Elementor" width="1200" height="624" loading="lazy" decoding="async" />
+              </picture>
+            </a>
+            <div class="case-card-body">
+              <h3><a href="../../portfolio/kinder-city/">Kinder City</a></h3>
+              <p>A nursery group with several settings, each needing the same styling to render correctly across dozens of responsive templates.</p>
+              <ul class="tech-chips"><li>WordPress</li><li>Elementor</li><li>Responsive templates</li></ul>
+              <div class="btn-row">
+                <a class="btn btn-primary btn-sm" href="../../portfolio/kinder-city/">Read the case study</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-tint">
+    <div class="container">
+      <div class="row gx-5 gy-4">
+        <div class="col-12 col-lg-4">
+          <div class="section-head sticky-head mb-4 mb-lg-0">
+            <p data-anim="fade" class="eyebrow"><span class="eyebrow-mark" aria-hidden="true"></span><span class="mono">FAQ</span></p>
+            <h2 data-anim="lines">Questions about missing WordPress styling</h2>
+            <p data-anim="fade" class="body-lg">What people ask before sending over the site.</p>
+          </div>
+        </div>
+        <div class="col-12 col-lg-8">
+          <div data-anim="stagger" class="faq-list">
+            <details data-anim="item" class="faq-item">
+              <summary>Why does my site look fine to me but broken to visitors?</summary>
+              <p class="faq-body">Usually a caching or CDN layer. Your browser may be serving you a locally cached copy of the correct CSS file, while a visitor hitting a different CDN edge server, or loading the page for the first time, gets whatever stale or broken version is stored there. Clearing your own browser cache doesn't clear theirs.</p>
+            </details>
+            <details data-anim="item" class="faq-item">
+              <summary>Will a database search-and-replace break my content?</summary>
+              <p class="faq-body">Not if it's done with a proper tool built for the job, such as WP-CLI's search-replace command or a dedicated plugin that understands serialized PHP data. Those update matching URLs everywhere, including inside serialized arrays, without corrupting them. A blind text editor find-and-replace on a raw database export is the version that causes damage.</p>
+            </details>
+            <details data-anim="item" class="faq-item">
+              <summary>Is this the same problem as Elementor not loading?</summary>
+              <p class="faq-body">No. Elementor not loading is specifically about the page builder's editor interface failing to open inside wp-admin. This is about the live, public-facing page failing to load its stylesheet, which happens on the front end and has nothing to do with whether Elementor's editor works or not.</p>
+            </details>
+            <details data-anim="item" class="faq-item">
+              <summary>Why did this start right after I installed an SSL certificate?</summary>
+              <p class="faq-body">Almost always mixed content. If any of your stylesheet links are still hardcoded as http:// while the rest of the page now loads over https://, browsers block the insecure request rather than risk serving mixed secure and insecure content, and your styling silently disappears.</p>
+            </details>
+            <details data-anim="item" class="faq-item">
+              <summary>Can a plugin update cause CSS to stop loading?</summary>
+              <p class="faq-body">Yes, particularly performance and caching plugins with a "minify" or "optimize CSS delivery" feature. An update can change how that feature combines or defers stylesheets, and if it generates a broken combined file or defers a stylesheet the page actually needs immediately, the result looks identical to CSS not loading at all.</p>
+            </details>
+            <details data-anim="item" class="faq-item">
+              <summary>How do I know if it's a caching issue or a real break?</summary>
+              <p class="faq-body">Open the page in a private/incognito window on a different network (mobile data works well) with no cache to fall back on. If styling loads correctly there, the underlying files are fine and you're dealing with a caching or CDN problem. If it's still broken, the cause is in the files or the database, not a cache.</p>
+            </details>
+            <details data-anim="item" class="faq-item">
+              <summary>Do I need to touch code to fix this myself?</summary>
+              <p class="faq-body">Often not. Correcting a site URL mismatch, purging a cache, or disabling a plugin's minify feature all happen through the WordPress admin or your host's control panel. Editing wp-config.php, running a WP-CLI search-replace, or fixing an enqueue call in functions.php does require comfort with code or FTP.</p>
+            </details>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-dark section-contact">
+    <div class="hero-grid-bg contact-grid-bg" aria-hidden="true"></div>
+    <div class="glow glow-d" aria-hidden="true"></div>
+    <div class="container">
+      <div class="contact-cta-shell">
+        <div data-anim="fade" class="contact-cta-card">
+          <div class="contact-cta-copy">
+            <p class="badge badge-live mx-auto"><span class="dot" aria-hidden="true"></span>Available for new projects</p>
+            <p class="eyebrow eyebrow-center"><span class="eyebrow-mark eyebrow-mark-light" aria-hidden="true"></span><span class="mono">NEXT STEP</span></p>
+            <h2 data-anim="lines">Need help fixing this WordPress issue?</h2>
+            <p class="body-lg">Send me your website and I'll help identify the problem &mdash; no charge just to take a look. Based in Bangladesh, working with clients worldwide, with a reply within one working day.</p>
+          </div>
+          <ul class="tech-chips justify-content-center">
+            <li>Reply within one working day</li>
+            <li>Fixed quote before work starts</li>
+            <li>UK, EU and US hours covered</li>
+          </ul>
+          <div class="contact-cta-actions">
+            <a class="btn btn-primary" href="../../contact/">Start a project <i class="ri-arrow-right-line" aria-hidden="true"></i></a>
+            <a class="btn btn-ghost" href="mailto:hello@ashekur.com">hello@ashekur.com</a>
+            <a class="btn btn-ghost" href="https://wa.me/8801812764112" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-top">
+    <div class="row gx-4 gy-5 align-items-start">
+      <div class="footer-brand col-12 col-lg-5">
+        <div class="brand brand-lg">
+          <picture>
+            <source srcset="../../assets/images/ashekur-logo-light.webp" type="image/webp" />
+            <img src="../../assets/images/ashekur-logo-light.png" alt="ashekur.com" width="480" height="125" loading="lazy" decoding="async" />
+          </picture>
+        </div>
+        <p class="footer-blurb">Frontend development and WordPress engineering for teams that care how it feels, not just how it looks. Based in Bangladesh &mdash; serving clients worldwide.</p>
+      </div>
+      <div class="col-12 col-lg-7">
+        <div class="footer-cols row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4">
+          <nav class="col" aria-label="Services">
+            <p class="mono footer-head">SERVICES</p>
+            <a href="../../services/wordpress-development/">WordPress Development</a>
+            <a href="../../services/wordpress-customization/">WordPress Customization</a>
+            <a href="../../services/elementor-customization/">Elementor Customization</a>
+            <a href="../../services/woocommerce-development/">WooCommerce Development</a>
+            <a href="../../services/wordpress-speed-optimization/">WordPress Speed Optimization</a>
+            <a href="../../services/wordpress-bug-fix/">WordPress Bug Fix</a>
+            <a href="../../services/elementor-fix/">Elementor Bug Fix</a>
+            <a href="../../services/wordpress-migration/">WordPress Migration</a>
+            <a href="../../services/seo/">WordPress SEO</a>
+          </nav>
+          <nav class="col" aria-label="Site">
+            <p class="mono footer-head">SITEMAP</p>
+            <a href="../../">Home</a>
+            <a href="../../tools/">Tools</a>
+            <a href="../../portfolio/">Portfolio</a>
+            <a href="../../blog/">Blog</a>
+            <a href="../../wordpress-fixes/">WordPress Fixes</a>
+            <a href="../../#experience">Experience</a>
+            <a href="../../contact/">Contact</a>
+            <a href="../../privacy/">Privacy Policy</a>
+          </nav>
+          <div class="col">
+            <p class="mono footer-head">ELSEWHERE</p>
+            <a href="mailto:hello@ashekur.com"><i class="ri-mail-line" aria-hidden="true"></i>hello@ashekur.com</a>
+            <a href="https://wa.me/8801812764112" target="_blank" rel="noopener noreferrer"><i class="ri-whatsapp-line" aria-hidden="true"></i>WhatsApp</a>
+            <a href="https://www.linkedin.com/in/ashekur-rahman-1ab205122/" target="_blank" rel="noopener noreferrer"><i class="ri-linkedin-fill" aria-hidden="true"></i>LinkedIn</a>
+            <a href="https://github.com/AshekurRahman" target="_blank" rel="noopener noreferrer"><i class="ri-github-fill" aria-hidden="true"></i>GitHub</a>
+            <a href="https://www.upwork.com/freelancers/~010aabe60ec2ae6679" target="_blank" rel="noopener noreferrer"><i class="ri-upwork-fill" aria-hidden="true"></i>Upwork</a>
+            <a href="https://www.facebook.com/ashekur.rahman.hridoy" target="_blank" rel="noopener noreferrer"><i class="ri-facebook-circle-fill" aria-hidden="true"></i>Facebook</a>
+            <a href="https://www.instagram.com/ashekurhridoy/" target="_blank" rel="noopener noreferrer"><i class="ri-instagram-line" aria-hidden="true"></i>Instagram</a>
+            <a href="https://www.youtube.com/@ashekurrahman1431" target="_blank" rel="noopener noreferrer"><i class="ri-youtube-fill" aria-hidden="true"></i>YouTube</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <p class="mono copyright">&copy; 2026 Ashekur Rahman. All rights reserved.</p>
+    <a class="to-top-inline" href="#main"><i class="ri-arrow-up-line" aria-hidden="true"></i> Back to top</a>
+  </div>
+</footer>
+</div>
+</div>
+
+
+<a class="wa-float" href="https://wa.me/8801812764112" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp"><i class="ri-whatsapp-fill" aria-hidden="true"></i></a>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" integrity="sha384-HOvlOYPIs/zjoIkWUGXkVmXsjr8GuZLV+Q+rcPwmJOVZVpvTSXQChiN4t9Euv9Vc" crossorigin="anonymous" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js" integrity="sha384-P8VzCVnT9NBUkMrpcIZrJbA7EBjJvh/fJS6PmP+4nLIM284DtsImIv8D0fFjIkeh" crossorigin="anonymous" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js" integrity="sha384-xb96EMJeax+NLXMC88ZBa1xAeAW+kn+horHh/zFlbMLG2UPWhMJJSlv7fi57hS+Q" crossorigin="anonymous" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollSmoother.min.js" integrity="sha384-dd8lT3AimXbI347qlZzlijPa4qnSlgGxuTqK2HlcfvF5+aOIeddPdMFmFpypQPZN" crossorigin="anonymous" defer></script>
+<script src="../../assets/js/anim.js" defer></script>
+<script src="../../assets/js/main.js" defer></script>
+</body>
+</html>

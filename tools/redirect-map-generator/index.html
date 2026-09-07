@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Free Redirect Map Generator for Website Migrations</title>
+<meta name="description" content="Free redirect map generator: paste old and new URLs or sitemaps for a fuzzy-matched 301 redirect map, downloadable as CSV or .htaccess. Instant, no signup." />
+<meta name="keywords" content="redirect map generator, 301 redirect generator wordpress, website migration redirect tool, redirect mapping tool, htaccess redirect generator" />
+<meta name="author" content="Ashekur Rahman" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<meta name="theme-color" content="#0F172A" />
+<link rel="canonical" href="https://ashekur.com/tools/redirect-map-generator/" />
+<link rel="icon" href="../../assets/images/mark.png" type="image/png" />
+<link rel="apple-touch-icon" href="../../assets/images/mark.png" />
+<link rel="manifest" href="../../site.webmanifest" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Ashekur Rahman" />
+<meta property="og:url" content="https://ashekur.com/tools/redirect-map-generator/" />
+<meta property="og:title" content="Free Redirect Map Generator for Website Migrations" />
+<meta property="og:description" content="Paste your old and new site URLs (or sitemap links) and get a fuzzy-matched 301 redirect map &mdash; downloadable as CSV or an .htaccess-ready snippet, with unmatched URLs clearly flagged. Free, instant, no signup." />
+<meta property="og:image" content="https://ashekur.com/assets/images/og-default.jpg" />
+<meta property="og:locale" content="en_US" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Free Redirect Map Generator for Website Migrations" />
+<meta name="twitter:description" content="Paste your old and new site URLs (or sitemap links) and get a fuzzy-matched 301 redirect map &mdash; downloadable as CSV or an .htaccess-ready snippet, with unmatched URLs clearly flagged. Free, instant, no signup." />
+<meta name="twitter:image" content="https://ashekur.com/assets/images/og-default.jpg" />
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://www.googletagmanager.com" />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+<link rel="stylesheet" href="../../assets/fonts/remixicon.css" />
+<link rel="stylesheet" href="../../assets/css/template.css" />
+<script>var d=document.documentElement;d.classList.remove('no-js');d.classList.add('js-anim');</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://ashekur.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Tools", "item": "https://ashekur.com/tools/" },
+        { "@type": "ListItem", "position": 3, "name": "Redirect Map Generator", "item": "https://ashekur.com/tools/redirect-map-generator/" }
+      ]
+    },
+    {
+      "@type": "WebApplication",
+      "@id": "https://ashekur.com/tools/redirect-map-generator/#app",
+      "name": "Redirect Map Generator",
+      "description": "A free tool that fuzzy-matches an old site's URLs against a new site's URLs and builds a downloadable 301 redirect map, flagging any old URL that couldn't be confidently matched.",
+      "url": "https://ashekur.com/tools/redirect-map-generator/",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any (web-based)",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "author": { "@type": "Person", "@id": "https://ashekur.com/#person", "name": "Ashekur Rahman", "url": "https://ashekur.com/" }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is this redirect map generator actually free?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. There's no signup, no email gate and no limit on how many times you can run it. Provide your old and new URLs and get a result in a few seconds." }
+        },
+        {
+          "@type": "Question",
+          "name": "What can I provide as input?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Either a single link to a sitemap.xml (this tool fetches and reads it, including a sitemap index's child sitemaps), or a pasted list of URLs or paths, one per line. Use whichever is easier to get your hands on for the old and new site." }
+        },
+        {
+          "@type": "Question",
+          "name": "How does the matching actually work?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Old and new URLs that are identical after normalizing get matched first, as an exact match. Everything left over is scored by how much of the URL's wording overlaps, weighted toward the final path segment (the slug), and matched highest-confidence first so no URL is used twice. Anything that never clears a minimum confidence bar is left unmatched rather than force-matched to the nearest guess." }
+        },
+        {
+          "@type": "Question",
+          "name": "Why do some URLs come back unmatched?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Because guessing wrong here is worse than saying nothing &mdash; a bad automatic match can quietly send real traffic to the wrong page. An unmatched URL usually means the content moved somewhere genuinely unpredictable from the URL alone (a renamed category, a merged page, content that didn't carry over), and needs a person to decide where it goes." }
+        },
+        {
+          "@type": "Question",
+          "name": "What do I do with the CSV and .htaccess downloads?",
+          "acceptedAnswer": { "@type": "Answer", "text": "The CSV lists every matched pair plus every unmatched URL, for review or handing to a developer. The .htaccess snippet contains only the matched redirects as ready-to-paste Redirect 301 lines &mdash; add it near the top of your .htaccess, above the WordPress block, and still decide the unmatched URLs manually before launch." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there a limit on how many URLs it can handle?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Up to 500 URLs per side in one run, which covers the overwhelming majority of small-to-mid-size site migrations. A larger migration is exactly the kind of thing worth having planned properly rather than run through in one pass." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SGTGDFXH6K"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-SGTGDFXH6K');
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header" id="siteHeader">
+  <div class="container header-inner">
+    <a class="brand" href="../../" aria-label="Ashekur Rahman &mdash; home">
+      <picture>
+        <source srcset="../../assets/images/ashekur-logo-light.webp" type="image/webp" />
+        <img src="../../assets/images/ashekur-logo-light.png" alt="Ashekur Rahman" width="480" height="125" fetchpriority="high" decoding="async" />
+      </picture>
+    </a>
+    <nav class="nav-desktop" aria-label="Main">
+      <a href="../../" class="nav-link">Home</a>
+      <a href="../../tools/" class="nav-link">Tools</a>
+      <div class="nav-item" data-dropdown>
+        <div class="nav-row">
+          <a href="../../services/" class="nav-link">Services</a>
+          <button class="nav-caret" type="button" aria-label="Services submenu" aria-expanded="false" aria-controls="navDrop-services" data-dropdown-toggle><i class="ri-arrow-down-s-line" aria-hidden="true"></i></button>
+        </div>
+        <div class="nav-panel" id="navDrop-services">
+          <a class="nav-panel-all" href="../../services/">All services</a>
+          <div class="nav-panel-cols">
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">WordPress</p>
+              <a href="../../services/wordpress-development/">WordPress Development</a>
+              <a href="../../services/wordpress-customization/">WordPress Customization</a>
+              <a href="../../services/wordpress-bug-fix/">WordPress Bug Fix</a>
+              <a href="../../services/wordpress-maintenance/">WordPress Maintenance<em>New</em></a>
+            </div>
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">Page Builders</p>
+              <a href="../../services/elementor-fix/">Elementor Bug Fix</a>
+              <a href="../../services/elementor-customization/">Elementor Customization</a>
+              <a href="../../services/elementor-custom-widgets/">Elementor Custom Widgets</a>
+              <a href="../../services/divi-customization/">Divi Customization</a>
+              <a href="../../services/divi-5-migration/">Divi 5 Migration<em>New</em></a>
+            </div>
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">WooCommerce</p>
+              <a href="../../services/woocommerce-development/">WooCommerce Development</a>
+              <a href="../../services/woocommerce-fix/">WooCommerce Fixes</a>
+            </div>
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">Performance &amp; Security</p>
+              <a href="../../services/wordpress-speed-optimization/">WordPress Speed Optimization</a>
+              <a href="../../services/core-web-vitals-fix/">Core Web Vitals Fix<em>New</em></a>
+              <a href="../../services/wordpress-malware-removal/">WordPress Malware Removal</a>
+              <a href="../../services/google-blacklist-removal/">Google Blacklist Removal<em>New</em></a>
+              <a href="../../services/caching-cdn-setup/">Caching &amp; CDN Setup<em>New</em></a>
+              <a href="../../services/wordpress-security-hardening/">WordPress Security Hardening<em>New</em></a>
+            </div>
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">Migration</p>
+              <a href="../../services/wordpress-migration/">WordPress Migration</a>
+              <a href="../../services/domain-migration-redirects/">Domain Migration &amp; 301 Redirects<em>New</em></a>
+              <a href="../../services/wordpress-migration/#hosting">Host Migration</a>
+            </div>
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">SEO</p>
+              <a href="../../services/seo/">SEO</a>
+              <a href="../../services/technical-seo-audit/">Technical SEO Audit<em>New</em></a>
+            </div>
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">Other</p>
+              <a href="../../services/webflow-development/">Webflow Development</a>
+              <a href="../../services/frontend-development/">Frontend Development</a>
+              <a href="../../services/website-redesign/">Website Redesign<em>New</em></a>
+              <a href="../../services/white-label-wordpress-development/">White Label Development<em>New</em></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="../../pricing/" class="nav-link">Pricing</a>
+      <a href="../../portfolio/" class="nav-link">Portfolio</a>
+      <a href="../../blog/" class="nav-link">Blog</a>
+      <a href="../../contact/" class="btn btn-primary btn-sm nav-cta">Start a project</a>
+    </nav>
+    <button class="burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="nav-mobile" id="mobileNav" aria-label="Mobile" hidden>
+    <a href="../../">Home</a>
+    <a href="../../tools/">Tools</a>
+    <div class="nav-item" data-dropdown>
+      <div class="nav-row">
+        <a href="../../services/">Services</a>
+        <button class="nav-caret" type="button" aria-label="Services submenu" aria-expanded="false" aria-controls="navDropM-services" data-dropdown-toggle><i class="ri-arrow-down-s-line" aria-hidden="true"></i></button>
+      </div>
+      <div class="nav-panel" id="navDropM-services">
+        <a href="../../services/">All services</a>
+        <a href="../../services/wordpress-development/">WordPress Development</a>
+        <a href="../../services/wordpress-customization/">WordPress Customization</a>
+        <a href="../../services/wordpress-bug-fix/">WordPress Bug Fix</a>
+        <a href="../../services/wordpress-maintenance/">WordPress Maintenance</a>
+        <a href="../../services/elementor-fix/">Elementor Bug Fix</a>
+        <a href="../../services/elementor-customization/">Elementor Customization</a>
+        <a href="../../services/divi-customization/">Divi Customization</a>
+        <a href="../../services/divi-5-migration/">Divi 5 Migration</a>
+        <a href="../../services/elementor-custom-widgets/">Elementor Custom Widgets</a>
+        <a href="../../services/wordpress-speed-optimization/">WordPress Speed Optimization</a>
+        <a href="../../services/core-web-vitals-fix/">Core Web Vitals Fix</a>
+        <a href="../../services/woocommerce-fix/">WooCommerce Fixes</a>
+        <a href="../../services/woocommerce-development/">WooCommerce Development</a>
+        <a href="../../services/wordpress-migration/">WordPress Migration</a>
+        <a href="../../services/domain-migration-redirects/">Domain Migration &amp; 301 Redirects</a>
+        <a href="../../services/seo/">WordPress SEO</a>
+        <a href="../../services/wordpress-malware-removal/">WordPress Malware Removal</a>
+        <a href="../../services/google-blacklist-removal/">Google Blacklist Removal</a>
+        <a href="../../services/wordpress-security-hardening/">WordPress Security Hardening</a>
+        <a href="../../services/webflow-development/">Webflow Development</a>
+        <a href="../../services/frontend-development/">Frontend Development</a>
+        <a href="../../services/website-redesign/">Website Redesign</a>
+        <a href="../../services/white-label-wordpress-development/">White Label Development</a>
+      </div>
+    </div>
+    <a href="../../pricing/">Pricing</a>
+    <a href="../../portfolio/">Portfolio</a>
+    <a href="../../blog/">Blog</a>
+    <a href="../../contact/" class="btn btn-primary">Start a project</a>
+  </nav>
+</header>
+
+<div id="smooth-wrapper">
+<div id="smooth-content">
+<main id="main" class="page-shell">
+
+  <section class="section section-dark page-intro page-hero">
+    <div class="hero-grid-bg" aria-hidden="true"></div>
+    <div class="glow glow-a" aria-hidden="true"></div>
+    <div class="glow glow-b" aria-hidden="true"></div>
+    <div class="container">
+      <div class="row hero-split">
+        <div data-anim-hero class="col-12 col-lg-9">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <ol>
+              <li><a href="../../">Home</a></li>
+              <li><a href="../">Tools</a></li>
+              <li><span aria-current="page">Redirect Map Generator</span></li>
+            </ol>
+          </nav>
+          <p class="badge badge-live"><span class="dot" aria-hidden="true"></span>Free &middot; No signup required</p>
+          <h1 data-anim="lines">Build your 301 redirect map before you migrate, not after.</h1>
+          <p class="body-lg">Provide your old and new site's URLs &mdash; a sitemap link for each, or a pasted list &mdash; and get a fuzzy-matched redirect map back, with any URL that couldn't be confidently matched clearly flagged for a human decision. Free, instant, no signup.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-white">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-12 col-lg-10">
+          <form class="contact-form checker-form mt-0" id="redirectForm" novalidate data-endpoint="../../assets/php/redirect-map-generator.php">
+            <div class="row row-cols-1 row-cols-lg-2 g-4">
+              <div class="col">
+                <label>
+                  <span class="mono field-label">OLD SITE &mdash; SITEMAP URL OR PASTED LIST</span>
+                  <textarea id="redirectOld" name="old" required placeholder="https://oldsite.com/sitemap.xml&#10;&#10;&#8212; or, one URL per line &#8212;&#10;/about-us&#10;/our-services/web-design"></textarea>
+                </label>
+              </div>
+              <div class="col">
+                <label>
+                  <span class="mono field-label">NEW SITE &mdash; SITEMAP URL OR PASTED LIST</span>
+                  <textarea id="redirectNew" name="new" required placeholder="https://newsite.com/sitemap.xml&#10;&#10;&#8212; or, one URL per line &#8212;&#10;/about&#10;/services/web-design"></textarea>
+                </label>
+              </div>
+            </div>
+            <p class="checker-row-note mt-3">A single line is fetched as a sitemap link. More than one line is treated as a pasted URL list &mdash; put each URL on its own line.</p>
+            <div class="btn-row mt-3">
+              <button class="btn btn-primary" type="submit">Build Redirect Map <i class="ri-arrow-right-line" aria-hidden="true"></i></button>
+            </div>
+            <div class="checker-note mt-3 d-none" id="redirectNote" role="status" aria-live="polite"></div>
+          </form>
+
+          <div class="checker-results mt-5" id="redirectResults" aria-live="polite">
+            <h2 id="redirectResultsHeading" class="mb-4" tabindex="-1">Results</h2>
+            <div id="redirectResultsBody"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-dark section-contact">
+    <div class="hero-grid-bg contact-grid-bg" aria-hidden="true"></div>
+    <div class="glow glow-d" aria-hidden="true"></div>
+    <div class="container">
+      <div class="contact-cta-shell">
+        <div class="contact-cta-card">
+          <div class="contact-cta-copy">
+            <p class="eyebrow eyebrow-center"><span class="eyebrow-mark eyebrow-mark-light" aria-hidden="true"></span><span class="mono">FOUND SOME UNMATCHED URLS?</span></p>
+            <h2 data-anim="lines">Let's get those mapped properly.</h2>
+            <p class="body-lg">A migration planned properly, not left half-done &mdash; redirects included.</p>
+          </div>
+          <div class="contact-cta-actions">
+            <a class="btn btn-primary" href="../../services/domain-migration-redirects/">Domain Change &amp; 301 Redirects <i class="ri-arrow-right-line" aria-hidden="true"></i></a>
+            <a class="btn btn-ghost" href="../../contact/">Contact Me</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-light">
+    <div class="container">
+      <div class="row gx-5">
+        <div class="col-12 col-lg-8">
+          <div class="prose">
+
+<h2>What this tool does</h2>
+<p>Provide your old site's URLs and your new site's URLs &mdash; each either a single link to a <code>sitemap.xml</code> (this tool fetches it, including a sitemap index's child sitemaps) or a pasted list of URLs or paths, one per line. It then builds a 301 redirect map: old URLs that are identical to a new URL once normalized are matched first, as an exact match, and everything left over is scored by how much of the wording overlaps &mdash; weighted toward the final path segment, since that's usually the strongest signal that two pages are "the same page." Matches are assigned highest-confidence first, so no URL on either side is ever used twice.</p>
+
+<h2>Why some URLs come back unmatched</h2>
+<p>Guessing wrong here is worse than saying nothing. A redirect map is only useful if it's trustworthy, and a plausible-looking but wrong automatic match quietly sends real visitors and search-engine crawlers to the wrong page &mdash; often unnoticed until rankings have already dropped. So any old URL that never clears a minimum confidence bar is left unmatched rather than force-matched to whatever candidate happened to score highest. As the roadmap for this tool puts it: a URL that couldn't be auto-matched is exactly the kind of judgment call worth getting right, not the kind worth guessing at.</p>
+
+<h2>Why a redirect map matters for a migration</h2>
+<p>Every URL that changes without a 301 redirect in place is a dead end &mdash; for a visitor who bookmarked or linked to it, and for search engines that have to rediscover and re-rank the new URL from scratch instead of carrying forward the old one's authority. Building the map <em>before</em> the new site goes live, rather than reactively from a spike in 404s afterward, is the difference between a migration that keeps its rankings and one that quietly loses months of them. See <a href="../../blog/redesign-without-losing-rankings/">Redesign Without Losing Rankings</a> for the fuller picture of what else that involves.</p>
+
+<h2>What to do with the result</h2>
+<p>Download the CSV for the full picture &mdash; every matched pair plus every unmatched URL, useful for reviewing or handing to a developer. Download the .htaccess snippet for the matched redirects only, ready to paste near the top of your .htaccess file, above the WordPress block. The unmatched URLs still need a person to decide where they go &mdash; that's exactly what <a href="../../services/wordpress-migration/">WordPress Migration</a> covers, planned properly rather than left half-done.</p>
+
+          </div>
+        </div>
+        <div class="col-12 col-lg-4">
+          <aside class="post-aside">
+            <div class="checker-links-card">
+              <p class="mono post-cta-head">RELATED SERVICES</p>
+              <ul class="mt-3">
+                <li><a href="../../services/domain-migration-redirects/"><i class="ri-arrow-right-s-line" aria-hidden="true"></i>Domain Change &amp; 301 Redirects</a></li>
+                <li><a href="../../blog/redesign-without-losing-rankings/"><i class="ri-arrow-right-s-line" aria-hidden="true"></i>Redesign Without Losing Rankings</a></li>
+                <li><a href="../../services/seo/"><i class="ri-arrow-right-s-line" aria-hidden="true"></i>WordPress SEO</a></li>
+                <li><a href="../wordpress-website-health-checker/"><i class="ri-arrow-right-s-line" aria-hidden="true"></i>Website Health Checker</a></li>
+                <li><a href="../what-theme-is-this/"><i class="ri-arrow-right-s-line" aria-hidden="true"></i>What Theme Is This?</a></li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-tint">
+    <div class="container">
+      <div class="row gx-5 gy-4">
+        <div class="col-12 col-lg-4">
+          <div class="section-head sticky-head mb-4 mb-lg-0">
+            <p data-anim="fade" class="eyebrow"><span class="eyebrow-mark" aria-hidden="true"></span><span class="mono">FAQ</span></p>
+            <h2 data-anim="lines">Questions about this generator</h2>
+          </div>
+        </div>
+        <div class="col-12 col-lg-8">
+          <div data-anim="stagger" class="faq-list">
+            <details data-anim="item" class="faq-item">
+              <summary>Is this redirect map generator actually free?</summary>
+              <p class="faq-body">Yes. There's no signup, no email gate and no limit on how many times you can run it. Provide your old and new URLs and get a result in a few seconds.</p>
+            </details>
+            <details data-anim="item" class="faq-item">
+              <summary>What can I provide as input?</summary>
+              <p class="faq-body">Either a single link to a sitemap.xml (this tool fetches and reads it, including a sitemap index's child sitemaps), or a pasted list of URLs or paths, one per line. Use whichever is easier to get your hands on for the old and new site.</p>
+            </details>
+            <details data-anim="item" class="faq-item">
+              <summary>How does the matching actually work?</summary>
+              <p class="faq-body">Old and new URLs that are identical after normalizing get matched first, as an exact match. Everything left over is scored by how much of the URL's wording overlaps, weighted toward the final path segment (the slug), and matched highest-confidence first so no URL is used twice. Anything that never clears a minimum confidence bar is left unmatched rather than force-matched to the nearest guess.</p>
+            </details>
+            <details data-anim="item" class="faq-item">
+              <summary>Why do some URLs come back unmatched?</summary>
+              <p class="faq-body">Because guessing wrong here is worse than saying nothing &mdash; a bad automatic match can quietly send real traffic to the wrong page. An unmatched URL usually means the content moved somewhere genuinely unpredictable from the URL alone (a renamed category, a merged page, content that didn't carry over), and needs a person to decide where it goes.</p>
+            </details>
+            <details data-anim="item" class="faq-item">
+              <summary>What do I do with the CSV and .htaccess downloads?</summary>
+              <p class="faq-body">The CSV lists every matched pair plus every unmatched URL, for review or handing to a developer. The .htaccess snippet contains only the matched redirects as ready-to-paste Redirect 301 lines &mdash; add it near the top of your .htaccess, above the WordPress block, and still decide the unmatched URLs manually before launch.</p>
+            </details>
+            <details data-anim="item" class="faq-item">
+              <summary>Is there a limit on how many URLs it can handle?</summary>
+              <p class="faq-body">Up to 500 URLs per side in one run, which covers the overwhelming majority of small-to-mid-size site migrations. A larger migration is exactly the kind of thing worth having planned properly rather than run through in one pass.</p>
+            </details>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-white">
+    <div class="container">
+      <div class="row gx-0">
+        <div class="section-head col-12 col-lg-6">
+          <p data-anim="fade" class="eyebrow"><span class="eyebrow-mark" aria-hidden="true"></span><span class="mono">KEEP GOING</span></p>
+          <h2 data-anim="lines">More free tools</h2>
+          <p data-anim="fade" class="body-lg">No signup, no gated results &mdash; just the tool.</p>
+        </div>
+      </div>
+      <div data-anim="stagger" class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4 related-grid">
+        <div class="col">
+          <a data-anim="item" class="related-card h-100" href="../wordpress-website-health-checker/">
+            <strong>Website Health Checker</strong>
+            <span>A full public-facing health scan for any website.</span>
+          </a>
+        </div>
+        <div class="col">
+          <a data-anim="item" class="related-card h-100" href="../what-theme-is-this/">
+            <strong>What Theme Is This?</strong>
+            <span>Find out what theme, page builder and plugins any site is running.</span>
+          </a>
+        </div>
+        <div class="col">
+          <a data-anim="item" class="related-card h-100" href="../">
+            <strong>All Free Tools</strong>
+            <span>The full, growing list of free diagnostic tools.</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-dark section-contact">
+    <div class="hero-grid-bg contact-grid-bg" aria-hidden="true"></div>
+    <div class="glow glow-d" aria-hidden="true"></div>
+    <div class="container">
+      <div class="contact-cta-shell">
+        <div data-anim="fade" class="contact-cta-card">
+          <div class="contact-cta-copy">
+            <p class="badge badge-live mx-auto"><span class="dot" aria-hidden="true"></span>Available for new projects</p>
+            <p class="eyebrow eyebrow-center"><span class="eyebrow-mark eyebrow-mark-light" aria-hidden="true"></span><span class="mono">NEXT STEP</span></p>
+            <h2 data-anim="lines">Send me what this turned up, and let&rsquo;s talk.</h2>
+            <p class="body-lg">Based in Bangladesh, working with clients worldwide. Every serious enquiry gets a reply within one working day.</p>
+          </div>
+          <ul class="tech-chips justify-content-center">
+            <li>Reply within one working day</li>
+            <li>Fixed quote before work starts</li>
+            <li>UK, EU and US hours covered</li>
+          </ul>
+          <div class="contact-cta-actions">
+            <a class="btn btn-primary" href="../../contact/">Start a project <i class="ri-arrow-right-line" aria-hidden="true"></i></a>
+            <a class="btn btn-ghost" href="mailto:hello@ashekur.com">hello@ashekur.com</a>
+            <a class="btn btn-ghost" href="https://wa.me/8801812764112" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-top">
+    <div class="row gx-4 gy-5 align-items-start">
+      <div class="footer-brand col-12 col-lg-5">
+        <div class="brand brand-lg">
+          <picture>
+            <source srcset="../../assets/images/ashekur-logo-light.webp" type="image/webp" />
+            <img src="../../assets/images/ashekur-logo-light.png" alt="ashekur.com" width="480" height="125" loading="lazy" decoding="async" />
+          </picture>
+        </div>
+        <p class="footer-blurb">Frontend development and WordPress engineering for teams that care how it feels, not just how it looks. Based in Bangladesh &mdash; serving clients worldwide.</p>
+      </div>
+      <div class="col-12 col-lg-7">
+        <div class="footer-cols row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4">
+          <nav class="col" aria-label="Services">
+            <p class="mono footer-head">SERVICES</p>
+            <a href="../../services/wordpress-development/">WordPress Development</a>
+            <a href="../../services/wordpress-customization/">WordPress Customization</a>
+            <a href="../../services/elementor-customization/">Elementor Customization</a>
+            <a href="../../services/woocommerce-development/">WooCommerce Development</a>
+            <a href="../../services/wordpress-speed-optimization/">WordPress Speed Optimization</a>
+            <a href="../../services/wordpress-bug-fix/">WordPress Bug Fix</a>
+            <a href="../../services/elementor-fix/">Elementor Bug Fix</a>
+            <a href="../../services/wordpress-migration/">WordPress Migration</a>
+            <a href="../../services/seo/">WordPress SEO</a>
+          </nav>
+          <nav class="col" aria-label="Site">
+            <p class="mono footer-head">SITEMAP</p>
+            <a href="../../">Home</a>
+            <a href="../../tools/">Tools</a>
+            <a href="../../portfolio/">Portfolio</a>
+            <a href="../../blog/">Blog</a>
+            <a href="../../wordpress-fixes/">WordPress Fixes</a>
+            <a href="../">Tools</a>
+            <a href="../../contact/">Contact</a>
+            <a href="../../privacy/">Privacy Policy</a>
+          </nav>
+          <div class="col">
+            <p class="mono footer-head">ELSEWHERE</p>
+            <a href="mailto:hello@ashekur.com"><i class="ri-mail-line" aria-hidden="true"></i>hello@ashekur.com</a>
+            <a href="https://wa.me/8801812764112" target="_blank" rel="noopener noreferrer"><i class="ri-whatsapp-line" aria-hidden="true"></i>WhatsApp</a>
+            <a href="https://www.linkedin.com/in/ashekur-rahman-1ab205122/" target="_blank" rel="noopener noreferrer"><i class="ri-linkedin-fill" aria-hidden="true"></i>LinkedIn</a>
+            <a href="https://github.com/AshekurRahman" target="_blank" rel="noopener noreferrer"><i class="ri-github-fill" aria-hidden="true"></i>GitHub</a>
+            <a href="https://www.upwork.com/freelancers/~010aabe60ec2ae6679" target="_blank" rel="noopener noreferrer"><i class="ri-upwork-fill" aria-hidden="true"></i>Upwork</a>
+            <a href="https://www.facebook.com/ashekur.rahman.hridoy" target="_blank" rel="noopener noreferrer"><i class="ri-facebook-circle-fill" aria-hidden="true"></i>Facebook</a>
+            <a href="https://www.instagram.com/ashekurhridoy/" target="_blank" rel="noopener noreferrer"><i class="ri-instagram-line" aria-hidden="true"></i>Instagram</a>
+            <a href="https://www.youtube.com/@ashekurrahman1431" target="_blank" rel="noopener noreferrer"><i class="ri-youtube-fill" aria-hidden="true"></i>YouTube</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <p class="mono copyright">&copy; 2026 Ashekur Rahman. All rights reserved.</p>
+    <a class="to-top-inline" href="#main"><i class="ri-arrow-up-line" aria-hidden="true"></i> Back to top</a>
+  </div>
+</footer>
+</div>
+</div>
+
+
+<a class="wa-float" href="https://wa.me/8801812764112" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp"><i class="ri-whatsapp-fill" aria-hidden="true"></i></a>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" integrity="sha384-HOvlOYPIs/zjoIkWUGXkVmXsjr8GuZLV+Q+rcPwmJOVZVpvTSXQChiN4t9Euv9Vc" crossorigin="anonymous" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js" integrity="sha384-P8VzCVnT9NBUkMrpcIZrJbA7EBjJvh/fJS6PmP+4nLIM284DtsImIv8D0fFjIkeh" crossorigin="anonymous" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js" integrity="sha384-xb96EMJeax+NLXMC88ZBa1xAeAW+kn+horHh/zFlbMLG2UPWhMJJSlv7fi57hS+Q" crossorigin="anonymous" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollSmoother.min.js" integrity="sha384-dd8lT3AimXbI347qlZzlijPa4qnSlgGxuTqK2HlcfvF5+aOIeddPdMFmFpypQPZN" crossorigin="anonymous" defer></script>
+<script src="../../assets/js/anim.js" defer></script>
+<script src="../../assets/js/main.js" defer></script>
+<script src="../../assets/js/redirect-map-generator.js" defer></script>
+</body>
+</html>

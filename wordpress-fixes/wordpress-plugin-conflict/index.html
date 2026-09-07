@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>How to Find and Fix a WordPress Plugin Conflict (Step by Step) | Ashekur Rahman</title>
+<meta name="description" content="Something broke after a plugin update and you don't know which one? A structured way to isolate the real conflict without disabling everything blind." />
+<meta name="keywords" content="WordPress plugin conflict, find WordPress plugin conflict, WordPress plugin broke site, isolate WordPress plugin conflict, WordPress plugin compatibility issue, deactivate plugins WordPress troubleshooting" />
+<meta name="author" content="Ashekur Rahman" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<meta name="theme-color" content="#0F172A" />
+<link rel="canonical" href="https://ashekur.com/wordpress-fixes/wordpress-plugin-conflict/" />
+<link rel="icon" href="../../assets/images/mark.png" type="image/png" />
+<link rel="apple-touch-icon" href="../../assets/images/mark.png" />
+<link rel="manifest" href="../../site.webmanifest" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-09-02" />
+<meta property="article:author" content="Ashekur Rahman" />
+<meta property="article:section" content="WordPress Fixes" />
+<meta property="og:site_name" content="Ashekur Rahman" />
+<meta property="og:url" content="https://ashekur.com/wordpress-fixes/wordpress-plugin-conflict/" />
+<meta property="og:title" content="How to Find and Fix a WordPress Plugin Conflict (Step by Step) | Ashekur Rahman" />
+<meta property="og:description" content="Something broke right after a plugin update and you don't know which one caused it? Here's a structured way to isolate the real conflict without disabling everything blind." />
+<meta property="og:image" content="https://ashekur.com/assets/images/og-default.jpg" />
+<meta property="og:locale" content="en_US" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="How to Find and Fix a WordPress Plugin Conflict (Step by Step) | Ashekur Rahman" />
+<meta name="twitter:description" content="Something broke right after a plugin update and you don't know which one caused it? Here's a structured way to isolate the real conflict." />
+<meta name="twitter:image" content="https://ashekur.com/assets/images/og-default.jpg" />
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://www.googletagmanager.com" />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+<link rel="stylesheet" href="../../assets/fonts/remixicon.css" />
+<link rel="stylesheet" href="../../assets/css/template.css" />
+<script>var d=document.documentElement;d.classList.remove('no-js');d.classList.add('js-anim');</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://ashekur.com/" },
+        { "@type": "ListItem", "position": 2, "name": "WordPress Fixes", "item": "https://ashekur.com/wordpress-fixes/" },
+        { "@type": "ListItem", "position": 3, "name": "WordPress Plugin Conflict", "item": "https://ashekur.com/wordpress-fixes/wordpress-plugin-conflict/" }
+      ]
+    },
+    {
+      "@type": "TechArticle",
+      "@id": "https://ashekur.com/wordpress-fixes/wordpress-plugin-conflict/#article",
+      "headline": "How to Find and Fix a WordPress Plugin Conflict, Without Guessing",
+      "description": "Something broke right after a plugin update and you don't know which one caused it? Here's a structured way to isolate the real conflict without disabling everything blind.",
+      "url": "https://ashekur.com/wordpress-fixes/wordpress-plugin-conflict/",
+      "mainEntityOfPage": { "@type": "WebPage", "@id": "https://ashekur.com/wordpress-fixes/wordpress-plugin-conflict/" },
+      "image": "https://ashekur.com/assets/images/og-default.jpg",
+      "datePublished": "2026-09-02",
+      "dateModified": "2026-09-02",
+      "author": {
+        "@type": "Person", "@id": "https://ashekur.com/#person", "name": "Ashekur Rahman", "url": "https://ashekur.com/",
+        "jobTitle": "Frontend Developer & WordPress Expert", "email": "hello@ashekur.com", "telephone": "+8801812764112",
+        "address": { "@type": "PostalAddress", "addressCountry": "BD" }
+      },
+      "publisher": {
+        "@type": "Person", "@id": "https://ashekur.com/#person", "name": "Ashekur Rahman", "url": "https://ashekur.com/",
+        "jobTitle": "Frontend Developer & WordPress Expert", "email": "hello@ashekur.com", "telephone": "+8801812764112",
+        "address": { "@type": "PostalAddress", "addressCountry": "BD" }
+      },
+      "articleSection": "WordPress Fixes",
+      "proficiencyLevel": "Beginner",
+      "dependencies": "WordPress, one or more plugins",
+      "wordCount": 3050,
+      "inLanguage": "en",
+      "isAccessibleForFree": true
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Will deactivating plugins to test this delete any of my data?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. Deactivating a plugin switches off its code but leaves its settings and data in the database untouched, ready to pick up again the moment you reactivate it. The only exception is a plugin that explicitly warns it will remove its own data on deactivation, which is rare and stated clearly on that plugin's settings screen if it applies." }
+        },
+        {
+          "@type": "Question",
+          "name": "How many plugins is \"too many\" before conflicts become likely?",
+          "acceptedAnswer": { "@type": "Answer", "text": "There's no fixed number. Sites with eighty carefully chosen plugins can run for years without a single conflict, and sites with twelve can break constantly. What matters is how much functional overlap they have and how aggressively each one hooks into the same areas — caching, security, forms, and checkout are the highest-risk categories, regardless of plugin count." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can two well-coded, reputable plugins still conflict?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes, and it's more common than people expect. \"Well-coded\" doesn't mean a plugin was written anticipating every other plugin in the WordPress ecosystem. A shared-library version mismatch or a hook-priority collision can happen between two plugins that are each perfectly solid on their own — it's the specific combination that causes the problem, not a flaw in either one individually." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is the Health Check plugin safe to use on a live, active site?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Its troubleshooting mode only changes what you see while logged in as yourself — it disables other plugins and switches the theme purely for your own session. Every other visitor continues to see the site exactly as normal, with all plugins and the real theme still active, the whole time you're testing." }
+        },
+        {
+          "@type": "Question",
+          "name": "What if the conflict is between a plugin and my theme, not two plugins?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Same process, just widen it. Health Check's troubleshooting mode already switches to a default theme as part of isolating plugins, so if the issue disappears there, don't stop at reactivating plugins one by one — also test switching back to your real theme on its own, with plugins still off, to see if the theme itself is the other half of the conflict." }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I stop the same conflict from coming back after an update?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Write down exactly which two plugins were involved and what the fix was, then check that note before updating either one in future. A conflict resolved by one developer's patch can quietly return if the other plugin ships an update that reintroduces the same clash — update one at a time and retest, rather than updating everything in a single batch." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is it worth just picking one plugin over the other instead of debugging the conflict?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Often, yes — if one of the two is easily replaceable and isn't central to how the site works, swapping it for a functionally similar alternative is usually faster than waiting on either developer to patch a niche conflict. It's not worth it if both plugins are essential and neither has a real substitute; that's when it's worth actually isolating and fixing the specific clash." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SGTGDFXH6K"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-SGTGDFXH6K');
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header" id="siteHeader">
+  <div class="container header-inner">
+    <a class="brand" href="../../" aria-label="Ashekur Rahman &mdash; home">
+      <picture>
+        <source srcset="../../assets/images/ashekur-logo-light.webp" type="image/webp" />
+        <img src="../../assets/images/ashekur-logo-light.png" alt="Ashekur Rahman" width="480" height="125" fetchpriority="high" decoding="async" />
+      </picture>
+    </a>
+    <nav class="nav-desktop" aria-label="Main">
+      <a href="../../" class="nav-link">Home</a>
+      <a href="../../tools/" class="nav-link">Tools</a>
+      <div class="nav-item" data-dropdown>
+        <div class="nav-row">
+          <a href="../../services/" class="nav-link">Services</a>
+          <button class="nav-caret" type="button" aria-label="Services submenu" aria-expanded="false" aria-controls="navDrop-services" data-dropdown-toggle><i class="ri-arrow-down-s-line" aria-hidden="true"></i></button>
+        </div>
+        <div class="nav-panel" id="navDrop-services">
+          <a class="nav-panel-all" href="../../services/">All services</a>
+          <div class="nav-panel-cols">
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">WordPress</p>
+              <a href="../../services/wordpress-development/">WordPress Development</a>
+              <a href="../../services/wordpress-customization/">WordPress Customization</a>
+              <a href="../../services/wordpress-bug-fix/">WordPress Bug Fix</a>
+              <a href="../../services/wordpress-maintenance/">WordPress Maintenance<em>New</em></a>
+            </div>
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">Page Builders</p>
+              <a href="../../services/elementor-fix/">Elementor Bug Fix</a>
+              <a href="../../services/elementor-customization/">Elementor Customization</a>
+              <a href="../../services/elementor-custom-widgets/">Elementor Custom Widgets</a>
+              <a href="../../services/divi-customization/">Divi Customization</a>
+              <a href="../../services/divi-5-migration/">Divi 5 Migration<em>New</em></a>
+            </div>
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">WooCommerce</p>
+              <a href="../../services/woocommerce-development/">WooCommerce Development</a>
+              <a href="../../services/woocommerce-fix/">WooCommerce Fixes</a>
+            </div>
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">Performance &amp; Security</p>
+              <a href="../../services/wordpress-speed-optimization/">WordPress Speed Optimization</a>
+              <a href="../../services/core-web-vitals-fix/">Core Web Vitals Fix<em>New</em></a>
+              <a href="../../services/wordpress-malware-removal/">WordPress Malware Removal</a>
+              <a href="../../services/google-blacklist-removal/">Google Blacklist Removal<em>New</em></a>
+              <a href="../../services/caching-cdn-setup/">Caching &amp; CDN Setup<em>New</em></a>
+              <a href="../../services/wordpress-security-hardening/">WordPress Security Hardening<em>New</em></a>
+            </div>
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">Migration</p>
+              <a href="../../services/wordpress-migration/">WordPress Migration</a>
+              <a href="../../services/domain-migration-redirects/">Domain Migration &amp; 301 Redirects<em>New</em></a>
+              <a href="../../services/wordpress-migration/#hosting">Host Migration</a>
+            </div>
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">SEO</p>
+              <a href="../../services/seo/">SEO</a>
+              <a href="../../services/technical-seo-audit/">Technical SEO Audit<em>New</em></a>
+            </div>
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">Other</p>
+              <a href="../../services/webflow-development/">Webflow Development</a>
+              <a href="../../services/frontend-development/">Frontend Development</a>
+              <a href="../../services/website-redesign/">Website Redesign<em>New</em></a>
+              <a href="../../services/white-label-wordpress-development/">White Label Development<em>New</em></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="../../pricing/" class="nav-link">Pricing</a>
+      <a href="../../portfolio/" class="nav-link">Portfolio</a>
+      <a href="../../blog/" class="nav-link">Blog</a>
+      <a href="../../contact/" class="btn btn-primary btn-sm nav-cta">Start a project</a>
+    </nav>
+    <button class="burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="nav-mobile" id="mobileNav" aria-label="Mobile" hidden>
+    <a href="../../">Home</a>
+    <a href="../../tools/">Tools</a>
+    <div class="nav-item" data-dropdown>
+      <div class="nav-row">
+        <a href="../../services/">Services</a>
+        <button class="nav-caret" type="button" aria-label="Services submenu" aria-expanded="false" aria-controls="navDropM-services" data-dropdown-toggle><i class="ri-arrow-down-s-line" aria-hidden="true"></i></button>
+      </div>
+      <div class="nav-panel" id="navDropM-services">
+        <a href="../../services/">All services</a>
+        <a href="../../services/wordpress-development/">WordPress Development</a>
+        <a href="../../services/wordpress-customization/">WordPress Customization</a>
+        <a href="../../services/wordpress-bug-fix/">WordPress Bug Fix</a>
+        <a href="../../services/wordpress-maintenance/">WordPress Maintenance</a>
+        <a href="../../services/elementor-fix/">Elementor Bug Fix</a>
+        <a href="../../services/elementor-customization/">Elementor Customization</a>
+        <a href="../../services/divi-customization/">Divi Customization</a>
+        <a href="../../services/divi-5-migration/">Divi 5 Migration</a>
+        <a href="../../services/elementor-custom-widgets/">Elementor Custom Widgets</a>
+        <a href="../../services/wordpress-speed-optimization/">WordPress Speed Optimization</a>
+        <a href="../../services/core-web-vitals-fix/">Core Web Vitals Fix</a>
+        <a href="../../services/woocommerce-fix/">WooCommerce Fixes</a>
+        <a href="../../services/woocommerce-development/">WooCommerce Development</a>
+        <a href="../../services/wordpress-migration/">WordPress Migration</a>
+        <a href="../../services/domain-migration-redirects/">Domain Migration &amp; 301 Redirects</a>
+        <a href="../../services/seo/">WordPress SEO</a>
+        <a href="../../services/wordpress-malware-removal/">WordPress Malware Removal</a>
+        <a href="../../services/google-blacklist-removal/">Google Blacklist Removal</a>
+        <a href="../../services/wordpress-security-hardening/">WordPress Security Hardening</a>
+        <a href="../../services/webflow-development/">Webflow Development</a>
+        <a href="../../services/frontend-development/">Frontend Development</a>
+        <a href="../../services/website-redesign/">Website Redesign</a>
+        <a href="../../services/white-label-wordpress-development/">White Label Development</a>
+      </div>
+    </div>
+    <a href="../../pricing/">Pricing</a>
+    <a href="../../portfolio/">Portfolio</a>
+    <a href="../../blog/">Blog</a>
+    <a href="../../contact/" class="btn btn-primary">Start a project</a>
+  </nav>
+</header>
+
+<div id="smooth-wrapper">
+<div id="smooth-content">
+<main id="main" class="page-shell">
+
+  <article>
+  <section class="section section-dark page-intro page-hero">
+    <div class="hero-grid-bg" aria-hidden="true"></div>
+    <div class="glow glow-a" aria-hidden="true"></div>
+    <div class="glow glow-b" aria-hidden="true"></div>
+    <div class="container">
+      <div class="row hero-split">
+        <div data-anim-hero class="col-12 col-lg-9">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <ol>
+              <li><a href="../../">Home</a></li>
+              <li><a href="../../wordpress-fixes/">WordPress Fixes</a></li>
+              <li><span aria-current="page">WordPress Plugin Conflict</span></li>
+            </ol>
+          </nav>
+          <p class="post-meta mono"><span class="post-cat">Plugins</span><span>11 min read</span><span>2026-09-02</span><span>Ashekur Rahman</span></p>
+          <h1 data-anim="lines">How to Find and Fix a WordPress Plugin Conflict, Without Guessing</h1>
+          <p class="body-lg">&ldquo;Plugin conflict&rdquo; isn&rsquo;t a symptom &mdash; it&rsquo;s a diagnosis, and most people reach it by process of elimination after everything else has been ruled out. This is the structured way to actually find the pair responsible, instead of deactivating things at random and hoping.</p>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="../../contact/">Send me your site <i class="ri-arrow-right-line" aria-hidden="true"></i></a>
+            <a class="btn btn-ghost" href="../../services/wordpress-bug-fix/">See the bug fix service</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-white">
+    <div class="container">
+      <figure data-anim="reveal" class="shot mb-5">
+        <picture>
+          <source srcset="../../assets/images/wordpress-plugin-conflict.webp" type="image/webp" />
+          <img src="../../assets/images/wordpress-plugin-conflict.jpeg" alt="Two plugin icons colliding with a spark between them, representing two WordPress plugins interfering with each other" width="1280" height="720" loading="lazy" decoding="async" />
+        </picture>
+        <!-- Image prompt: Realistic close-up photo of a laptop screen showing the WordPress Plugins admin screen with two plugin rows highlighted, one showing an "Active" toggle and a small red conflict warning icon between them. Soft office lighting, shallow depth of field, sticky notes visible nearby with plugin names scribbled. Photorealistic, professional tech-editorial style, no visible faces, no readable personal data. 1280x720, 16:9. -->
+        <figcaption>Two plugins can each be perfectly well-built and still clash the moment they're active together.</figcaption>
+      </figure>
+
+      <div class="row gx-5 gy-4">
+        <aside class="col-12 col-lg-4 order-lg-2">
+          <div class="post-aside">
+            <nav class="toc" aria-label="On this page">
+              <p class="toc-head mono">ON THIS PAGE</p>
+              <ol>
+                <li><a href="#what-is-the-problem">What is the problem?</a></li>
+                <li><a href="#common-symptoms">Common symptoms</a></li>
+                <li><a href="#why-does-this-happen">Why does this happen?</a></li>
+                <li><a href="#common-technical-causes">Common technical causes</a></li>
+                <li><a href="#how-to-diagnose-it">How to diagnose it</a></li>
+                <li><a href="#how-to-fix-it-step-by-step">How to fix it, step by step</a></li>
+                <li><a href="#when-this-needs-professional-help">When this needs professional help</a></li>
+                <li><a href="#how-i-can-help">How I can help</a></li>
+              </ol>
+            </nav>
+          </div>
+        </aside>
+        <div class="col-12 col-lg-8 order-lg-1">
+          <div class="prose">
+
+<h2 id="what-is-the-problem">What is the problem?</h2>
+<p>Every other guide in this library starts from something you can see &mdash; a blank page, a stuck editor, a checkout that won&rsquo;t complete. This one is different, because &ldquo;plugin conflict&rdquo; isn&rsquo;t what you see, it&rsquo;s the conclusion you reach once you&rsquo;ve ruled out a server problem, a single broken plugin, and a theme issue. Something on your site stopped working &mdash; right after you installed or updated a plugin &mdash; and the actual cause is two (or occasionally three) pieces of code stepping on each other, neither one broken on its own.</p>
+<blockquote>Quick answer: don&rsquo;t start by guessing which plugin is at fault. Start by proving whether it&rsquo;s a conflict at all, using WordPress&rsquo;s own troubleshooting mode, which isolates the problem on your screen only &mdash; visitors keep seeing the site normally the entire time you test.</blockquote>
+<p>This matters because the fix is completely different depending on what you find. A single broken plugin gets updated, replaced, or reported to its developer. A genuine conflict between two working plugins needs a different kind of fix &mdash; often a load-order change, a compatibility setting, or picking one plugin over the other &mdash; and applying a single-plugin fix to a two-plugin problem just wastes your afternoon.</p>
+
+<h2 id="common-symptoms">Common symptoms</h2>
+<ul>
+  <li>A feature that worked yesterday stopped working right after you installed or updated a plugin &mdash; the timing is the biggest clue you have</li>
+  <li>The browser console shows an error naming a specific script file, often ending in <code>.min.js</code>, or a message like &ldquo;<code>$ is not a function</code>&rdquo; pointing at a jQuery-related clash</li>
+  <li>A fatal PHP error names a function or class that sounds like it could belong to either of two active plugins</li>
+  <li>Layout or spacing breaks on some pages but not others, rather than site-wide, which usually means it&rsquo;s tied to a specific plugin&rsquo;s output, not a global stylesheet</li>
+  <li>Requests to <code>admin-ajax.php</code> fail with a 400 or 500 status in the Network tab, often on a form, filter, or interactive element</li>
+  <li>A button, form, or interactive widget appears normal but does nothing when clicked, with no visible error at all on the page itself</li>
+</ul>
+
+<h2 id="why-does-this-happen">Why does this happen?</h2>
+<p>WordPress plugins are built independently, by different teams, on different schedules, and almost never tested against each other directly &mdash; there are tens of thousands of active plugins, and no developer can realistically test their code against all of them. Most of the time this works out fine, because plugins are supposed to hook into WordPress through a shared, well-documented system of actions and filters that&rsquo;s designed to let many plugins coexist.</p>
+<p>The trouble starts when two plugins both need the same narrow piece of ground &mdash; the same script library, the same hook, the same database key, the same visual real estate on a page &mdash; and neither one was written expecting the other to be there. Individually, both plugins pass their own testing. Together, on your specific site, with your specific combination of theme and other plugins, one of them loses.</p>
+
+<h2 id="common-technical-causes">Common technical causes</h2>
+<ul>
+  <li><strong>Two plugins both loading their own version of a shared JavaScript library</strong> &mdash; jQuery, Select2, and Swiper are the most common &mdash; leaving the browser with two versions fighting over the same global object</li>
+  <li><strong>Two plugins hooking the same WordPress action or filter at different priorities</strong>, where whichever one runs last silently overwrites the other's change without either plugin knowing</li>
+  <li><strong>A CSS specificity fight between two plugin stylesheets</strong> both trying to style the same element, producing layout that looks broken but isn&rsquo;t actually a bug in either file</li>
+  <li><strong>A PHP function or class name collision</strong>, where two plugins weren&rsquo;t written with distinct enough naming prefixes and one triggers a fatal &ldquo;cannot redeclare&rdquo; error</li>
+  <li><strong>Two plugins writing to the same database option or transient key</strong>, each overwriting the other's stored value on save</li>
+  <li><strong>A security or firewall plugin blocking another plugin's own REST API or AJAX request</strong> as if it were suspicious traffic, because it doesn't recognise the request pattern as legitimate</li>
+  <li><strong>A plugin update shipping a genuinely breaking change</strong> that only shows up when one specific other plugin is also active, which is why it can pass the developer's own testing and still break your site</li>
+</ul>
+
+<h2 id="how-to-diagnose-it">How to diagnose it</h2>
+<ol>
+  <li><strong>Open the browser console and read the exact error.</strong> Press F12, click Console, reproduce the problem, and write down the script file or function name mentioned &mdash; this alone often narrows it to one plugin before you test anything.</li>
+  <li><strong>Install Health Check &amp; Troubleshooting</strong>, the official free plugin from WordPress.org, and switch on its Troubleshooting Mode. This disables every other plugin and switches to a default theme, but only for your own logged-in session &mdash; every visitor keeps seeing the live site normally the whole time.</li>
+  <li><strong>Check if the problem is gone in Troubleshooting Mode.</strong> If it is, you've confirmed it's a plugin or theme conflict, not a server or core issue. Re-enable plugins one at a time from inside that same mode, checking after each, until the problem comes back &mdash; the last one you enabled is your culprit, or half of it.</li>
+  <li><strong>If you'd rather not install another plugin, do it manually.</strong> Go to Plugins, note which ones are active, deactivate all of them, confirm the site works, then reactivate one at a time via Bulk Actions, testing after each.</li>
+  <li><strong>Install Query Monitor</strong>, another free WordPress.org plugin, to see every hook, filter, database query and PHP notice firing on a page load. It can point directly at which plugin's code is running at the exact moment something breaks, often skipping the trial-and-error entirely.</li>
+  <li><strong>Search the flagged plugin's support forum</strong> for &ldquo;conflict&rdquo; alongside the name of the other plugin involved. This exact pairing has very often already been reported and sometimes already has a documented fix.</li>
+</ol>
+<p>Prefer to work through this as an interactive checklist instead of the full write-up? The free <a href="../../tools/plugin-conflict-diagnostic/">WordPress Plugin Conflict Diagnostic</a> walks through the same steps one at a time and ends in a specific next step.</p>
+
+<h2 id="how-to-fix-it-step-by-step">How to fix it, step by step</h2>
+<ol>
+  <li><strong>Confirm the exact pair before changing anything.</strong> Use the diagnosis steps above to name both plugins with confidence &mdash; fixing blind based on a guess wastes time and risks breaking something unrelated.</li>
+  <li><strong>Check both plugins for a recent update.</strong> Update the older one first; a real percentage of conflicts get silently resolved by a version bump neither plugin advertised as a &ldquo;conflict fix.&rdquo;</li>
+  <li><strong>If one plugin is clearly replaceable, swap it.</strong> A functionally similar alternative that doesn't clash is often faster to implement than waiting on either developer to patch a niche conflict.</li>
+  <li><strong>For a shared-library version mismatch,</strong> check whether either plugin has a compatibility setting, a &ldquo;load scripts in footer&rdquo; option, or a way to defer its own copy of the library &mdash; this resolves load-order clashes without touching either plugin's core files.</li>
+  <li><strong>For a hook-priority collision,</strong> a short custom code snippet adjusting one hook's priority can resolve it cleanly if you're comfortable writing and testing one &mdash; this is the one step on this list that benefits from developer experience.</li>
+  <li><strong>For a security plugin blocking a legitimate request,</strong> add a specific allow-rule for that endpoint rather than disabling the whole firewall, which trades one problem for a bigger one.</li>
+  <li><strong>Test the fix inside the same Health Check troubleshooting mode</strong> before trusting it, then confirm it holds with everything reactivated and running normally.</li>
+  <li><strong>Write down which two plugins conflicted and what fixed it.</strong> The same pairing can resurface after either plugin's next update, and this note saves you re-diagnosing from scratch.</li>
+  <li><strong>If the site is business-critical, test on a staging copy first</strong> rather than deactivating plugins on the live site while customers or visitors are using it.</li>
+</ol>
+
+<h2 id="when-this-needs-professional-help">When this needs professional help</h2>
+<p>Plenty of plugin conflicts are realistic to isolate and fix yourself with Health Check and a bit of patience. It's worth bringing in a developer when:</p>
+<ul>
+  <li>The conflict only reproduces on the live site, and Troubleshooting Mode doesn't quite replicate the conditions that trigger it</li>
+  <li>The actual fix needs a small custom code snippet &mdash; adjusting a hook priority, for example &mdash; and you're not confident writing or safely testing one</li>
+  <li>The same conflict keeps resurfacing after every update cycle, which usually means neither plugin developer has permanently fixed it upstream</li>
+  <li>You've isolated two genuinely essential plugins that conflict and neither one has a workable substitute</li>
+  <li>The site is business-critical and you don't have a staging environment to test deactivation safely</li>
+</ul>
+
+<h2 id="how-i-can-help">How I can help</h2>
+<p>This is one of the more genuinely time-consuming problems in this library, because the fix depends entirely on correctly identifying the pair first &mdash; and after eleven years of freelance WordPress work, I've built a fast, evidence-based process for exactly that: browser console, Query Monitor, and isolated testing rather than deactivating things at random. Once the actual conflict is confirmed, I apply the smallest fix that resolves it and survives the next update, not a patch that quietly breaks again in a month.</p>
+          </div>
+
+          <aside class="post-cta">
+            <p class="mono post-cta-head">RELATED SERVICE</p>
+            <h2>WordPress Bug Fix</h2>
+            <p>If you'd rather hand this over than isolate it yourself, that page covers what's included, how fast it usually runs, and what it costs to find out.</p>
+            <div data-anim="fade" class="btn-row">
+              <a class="btn btn-primary" href="../../services/wordpress-bug-fix/">WordPress Bug Fix <i class="ri-arrow-right-line" aria-hidden="true"></i></a>
+              <a class="btn btn-ghost" href="../../contact/">Ask a question</a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </section>
+  </article>
+
+  <section class="section section-light">
+    <div class="container">
+      <div class="row gx-0">
+        <div class="section-head col-12 col-lg-6">
+          <p data-anim="fade" class="eyebrow"><span class="eyebrow-mark" aria-hidden="true"></span><span class="mono">RELATED PROBLEMS</span></p>
+          <h2 data-anim="lines">If this isn't quite your issue</h2>
+          <p data-anim="fade" class="body-lg">A plugin conflict often shows up disguised as one of these, or causes them directly.</p>
+        </div>
+      </div>
+      <div data-anim="stagger" class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4 related-grid">
+        <div class="col">
+          <a data-anim="item" class="related-card h-100" href="../woocommerce-checkout-not-working/">
+            <strong>WooCommerce Checkout Not Working</strong>
+            <span>Checkout is one of the single most common places a plugin conflict actually shows up.</span>
+          </a>
+        </div>
+        <div class="col">
+          <a data-anim="item" class="related-card h-100" href="../../services/woocommerce-fix/">
+            <strong>WooCommerce Fixes</strong>
+            <span>When the conflict specifically breaks a store &mdash; cart, checkout or product display &mdash; rather than a general feature.</span>
+          </a>
+        </div>
+        <div class="col">
+          <a data-anim="item" class="related-card h-100" href="../../services/wordpress-development/">
+            <strong>WordPress Development</strong>
+            <span>If the real fix is a small custom snippet or a more resilient setup going forward, this is that work.</span>
+          </a>
+        </div>
+        <div class="col">
+          <a data-anim="item" class="related-card h-100" href="../wordpress-theme-conflict/">
+            <strong>WordPress Theme Conflict</strong>
+            <span>If a default theme test still shows the problem while plugins are ruled out, the theme itself is the more likely cause.</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-white">
+    <div class="container">
+      <div class="row gx-0">
+        <div class="section-head col-12 col-lg-6">
+          <p data-anim="fade" class="eyebrow"><span class="eyebrow-mark" aria-hidden="true"></span><span class="mono">RELEVANT WORK</span></p>
+          <h2 data-anim="lines">Multi-plugin builds I've kept running cleanly</h2>
+          <p data-anim="fade" class="body-lg">Two case studies where the build carries a real plugin stack, not just a page builder in isolation.</p>
+        </div>
+      </div>
+      <div data-anim="stagger" class="row row-cols-1 row-cols-md-2 g-4 case-grid">
+        <div class="col">
+          <article data-anim="item" class="case-card h-100">
+            <a href="../../portfolio/dgsors-advertising/" tabindex="-1" aria-hidden="true">
+              <picture>
+                <source srcset="../../assets/images/project-dgsors.webp" type="image/webp" />
+                <img src="../../assets/images/project-dgsors.jpeg" alt="DGsors Advertising agency website on a custom WordPress theme" width="1200" height="615" loading="lazy" decoding="async" />
+              </picture>
+            </a>
+            <div class="case-card-body">
+              <h3><a href="../../portfolio/dgsors-advertising/">DGsors Advertising</a></h3>
+              <p>Custom WordPress theme layered with Elementor Pro and several third-party add-ons, where keeping the plugin stack conflict-free through every update was part of ongoing maintenance.</p>
+              <ul class="tech-chips"><li>WordPress</li><li>Custom theme</li><li>Elementor Pro</li></ul>
+              <div class="btn-row">
+                <a class="btn btn-primary btn-sm" href="../../portfolio/dgsors-advertising/">Read the case study</a>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="col">
+          <article data-anim="item" class="case-card h-100">
+            <a href="../../portfolio/canvascroft/" tabindex="-1" aria-hidden="true">
+              <picture>
+                <source srcset="../../assets/images/project-canvascroft.webp" type="image/webp" />
+                <img src="../../assets/images/project-canvascroft.jpeg" alt="Canvascroft branding and design studio website built in WordPress with Elementor" width="1200" height="613" loading="lazy" decoding="async" />
+              </picture>
+            </a>
+            <div class="case-card-body">
+              <h3><a href="../../portfolio/canvascroft/">Canvascroft</a></h3>
+              <p>WooCommerce running alongside Elementor and a booking flow &mdash; three separate systems sharing hooks and script queues that need to stay out of each other's way.</p>
+              <ul class="tech-chips"><li>WordPress</li><li>Elementor</li><li>WooCommerce</li></ul>
+              <div class="btn-row">
+                <a class="btn btn-primary btn-sm" href="../../portfolio/canvascroft/">Read the case study</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-tint">
+    <div class="container">
+      <div class="row gx-5 gy-4">
+        <div class="col-12 col-lg-4">
+          <div class="section-head sticky-head mb-4 mb-lg-0">
+            <p data-anim="fade" class="eyebrow"><span class="eyebrow-mark" aria-hidden="true"></span><span class="mono">FAQ</span></p>
+            <h2 data-anim="lines">Questions about isolating a plugin conflict</h2>
+            <p data-anim="fade" class="body-lg">What people ask before sending over the site.</p>
+          </div>
+        </div>
+        <div class="col-12 col-lg-8">
+          <div data-anim="stagger" class="faq-list">
+            <details data-anim="item" class="faq-item">
+              <summary>Will deactivating plugins to test this delete any of my data?</summary>
+              <p class="faq-body">No. Deactivating a plugin switches off its code but leaves its settings and data in the database untouched, ready to pick up again the moment you reactivate it. The only exception is a plugin that explicitly warns it will remove its own data on deactivation, which is rare and stated clearly on that plugin's settings screen if it applies.</p>
+            </details>
+            <details data-anim="item" class="faq-item">
+              <summary>How many plugins is "too many" before conflicts become likely?</summary>
+              <p class="faq-body">There's no fixed number. Sites with eighty carefully chosen plugins can run for years without a single conflict, and sites with twelve can break constantly. What matters is how much functional overlap they have and how aggressively each one hooks into the same areas &mdash; caching, security, forms, and checkout are the highest-risk categories, regardless of plugin count.</p>
+            </details>
+            <details data-anim="item" class="faq-item">
+              <summary>Can two well-coded, reputable plugins still conflict?</summary>
+              <p class="faq-body">Yes, and it's more common than people expect. "Well-coded" doesn't mean a plugin was written anticipating every other plugin in the WordPress ecosystem. A shared-library version mismatch or a hook-priority collision can happen between two plugins that are each perfectly solid on their own &mdash; it's the specific combination that causes the problem, not a flaw in either one individually.</p>
+            </details>
+            <details data-anim="item" class="faq-item">
+              <summary>Is the Health Check plugin safe to use on a live, active site?</summary>
+              <p class="faq-body">Yes. Its troubleshooting mode only changes what you see while logged in as yourself &mdash; it disables other plugins and switches the theme purely for your own session. Every other visitor continues to see the site exactly as normal, with all plugins and the real theme still active, the whole time you're testing.</p>
+            </details>
+            <details data-anim="item" class="faq-item">
+              <summary>What if the conflict is between a plugin and my theme, not two plugins?</summary>
+              <p class="faq-body">Same process, just widen it. Health Check's troubleshooting mode already switches to a default theme as part of isolating plugins, so if the issue disappears there, don't stop at reactivating plugins one by one &mdash; also test switching back to your real theme on its own, with plugins still off, to see if the theme itself is the other half of the conflict.</p>
+            </details>
+            <details data-anim="item" class="faq-item">
+              <summary>How do I stop the same conflict from coming back after an update?</summary>
+              <p class="faq-body">Write down exactly which two plugins were involved and what the fix was, then check that note before updating either one in future. A conflict resolved by one developer's patch can quietly return if the other plugin ships an update that reintroduces the same clash &mdash; update one at a time and retest, rather than updating everything in a single batch.</p>
+            </details>
+            <details data-anim="item" class="faq-item">
+              <summary>Is it worth just picking one plugin over the other instead of debugging the conflict?</summary>
+              <p class="faq-body">Often, yes &mdash; if one of the two is easily replaceable and isn't central to how the site works, swapping it for a functionally similar alternative is usually faster than waiting on either developer to patch a niche conflict. It's not worth it if both plugins are essential and neither has a real substitute; that's when it's worth actually isolating and fixing the specific clash.</p>
+            </details>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-dark section-contact">
+    <div class="hero-grid-bg contact-grid-bg" aria-hidden="true"></div>
+    <div class="glow glow-d" aria-hidden="true"></div>
+    <div class="container">
+      <div class="contact-cta-shell">
+        <div data-anim="fade" class="contact-cta-card">
+          <div class="contact-cta-copy">
+            <p class="badge badge-live mx-auto"><span class="dot" aria-hidden="true"></span>Available for new projects</p>
+            <p class="eyebrow eyebrow-center"><span class="eyebrow-mark eyebrow-mark-light" aria-hidden="true"></span><span class="mono">NEXT STEP</span></p>
+            <h2 data-anim="lines">Need help fixing this WordPress issue?</h2>
+            <p class="body-lg">Send me your website and I'll help identify the problem &mdash; no charge just to take a look. Based in Bangladesh, working with clients worldwide, with a reply within one working day.</p>
+          </div>
+          <ul class="tech-chips justify-content-center">
+            <li>Reply within one working day</li>
+            <li>Fixed quote before work starts</li>
+            <li>UK, EU and US hours covered</li>
+          </ul>
+          <div class="contact-cta-actions">
+            <a class="btn btn-primary" href="../../contact/">Start a project <i class="ri-arrow-right-line" aria-hidden="true"></i></a>
+            <a class="btn btn-ghost" href="mailto:hello@ashekur.com">hello@ashekur.com</a>
+            <a class="btn btn-ghost" href="https://wa.me/8801812764112" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-top">
+    <div class="row gx-4 gy-5 align-items-start">
+      <div class="footer-brand col-12 col-lg-5">
+        <div class="brand brand-lg">
+          <picture>
+            <source srcset="../../assets/images/ashekur-logo-light.webp" type="image/webp" />
+            <img src="../../assets/images/ashekur-logo-light.png" alt="ashekur.com" width="480" height="125" loading="lazy" decoding="async" />
+          </picture>
+        </div>
+        <p class="footer-blurb">Frontend development and WordPress engineering for teams that care how it feels, not just how it looks. Based in Bangladesh &mdash; serving clients worldwide.</p>
+      </div>
+      <div class="col-12 col-lg-7">
+        <div class="footer-cols row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4">
+          <nav class="col" aria-label="Services">
+            <p class="mono footer-head">SERVICES</p>
+            <a href="../../services/wordpress-development/">WordPress Development</a>
+            <a href="../../services/wordpress-customization/">WordPress Customization</a>
+            <a href="../../services/elementor-customization/">Elementor Customization</a>
+            <a href="../../services/woocommerce-development/">WooCommerce Development</a>
+            <a href="../../services/wordpress-speed-optimization/">WordPress Speed Optimization</a>
+            <a href="../../services/wordpress-bug-fix/">WordPress Bug Fix</a>
+            <a href="../../services/elementor-fix/">Elementor Bug Fix</a>
+            <a href="../../services/wordpress-migration/">WordPress Migration</a>
+            <a href="../../services/seo/">WordPress SEO</a>
+          </nav>
+          <nav class="col" aria-label="Site">
+            <p class="mono footer-head">SITEMAP</p>
+            <a href="../../">Home</a>
+            <a href="../../tools/">Tools</a>
+            <a href="../../portfolio/">Portfolio</a>
+            <a href="../../blog/">Blog</a>
+            <a href="../../wordpress-fixes/">WordPress Fixes</a>
+            <a href="../../#experience">Experience</a>
+            <a href="../../contact/">Contact</a>
+            <a href="../../privacy/">Privacy Policy</a>
+          </nav>
+          <div class="col">
+            <p class="mono footer-head">ELSEWHERE</p>
+            <a href="mailto:hello@ashekur.com"><i class="ri-mail-line" aria-hidden="true"></i>hello@ashekur.com</a>
+            <a href="https://wa.me/8801812764112" target="_blank" rel="noopener noreferrer"><i class="ri-whatsapp-line" aria-hidden="true"></i>WhatsApp</a>
+            <a href="https://www.linkedin.com/in/ashekur-rahman-1ab205122/" target="_blank" rel="noopener noreferrer"><i class="ri-linkedin-fill" aria-hidden="true"></i>LinkedIn</a>
+            <a href="https://github.com/AshekurRahman" target="_blank" rel="noopener noreferrer"><i class="ri-github-fill" aria-hidden="true"></i>GitHub</a>
+            <a href="https://www.upwork.com/freelancers/~010aabe60ec2ae6679" target="_blank" rel="noopener noreferrer"><i class="ri-upwork-fill" aria-hidden="true"></i>Upwork</a>
+            <a href="https://www.facebook.com/ashekur.rahman.hridoy" target="_blank" rel="noopener noreferrer"><i class="ri-facebook-circle-fill" aria-hidden="true"></i>Facebook</a>
+            <a href="https://www.instagram.com/ashekurhridoy/" target="_blank" rel="noopener noreferrer"><i class="ri-instagram-line" aria-hidden="true"></i>Instagram</a>
+            <a href="https://www.youtube.com/@ashekurrahman1431" target="_blank" rel="noopener noreferrer"><i class="ri-youtube-fill" aria-hidden="true"></i>YouTube</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <p class="mono copyright">&copy; 2026 Ashekur Rahman. All rights reserved.</p>
+    <a class="to-top-inline" href="#main"><i class="ri-arrow-up-line" aria-hidden="true"></i> Back to top</a>
+  </div>
+</footer>
+</div>
+</div>
+
+
+<a class="wa-float" href="https://wa.me/8801812764112" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp"><i class="ri-whatsapp-fill" aria-hidden="true"></i></a>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" integrity="sha384-HOvlOYPIs/zjoIkWUGXkVmXsjr8GuZLV+Q+rcPwmJOVZVpvTSXQChiN4t9Euv9Vc" crossorigin="anonymous" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js" integrity="sha384-P8VzCVnT9NBUkMrpcIZrJbA7EBjJvh/fJS6PmP+4nLIM284DtsImIv8D0fFjIkeh" crossorigin="anonymous" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js" integrity="sha384-xb96EMJeax+NLXMC88ZBa1xAeAW+kn+horHh/zFlbMLG2UPWhMJJSlv7fi57hS+Q" crossorigin="anonymous" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollSmoother.min.js" integrity="sha384-dd8lT3AimXbI347qlZzlijPa4qnSlgGxuTqK2HlcfvF5+aOIeddPdMFmFpypQPZN" crossorigin="anonymous" defer></script>
+<script src="../../assets/js/anim.js" defer></script>
+<script src="../../assets/js/main.js" defer></script>
+</body>
+</html>

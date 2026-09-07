@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>WordPress Plugin Conflict Diagnostic (Free Interactive Checklist)</title>
+<meta name="description" content="Something broke after a plugin, theme or core update? Work through this free checklist to isolate the cause and get a specific next step. No signup." />
+<meta name="keywords" content="wordpress plugin conflict checker, which plugin is breaking my site, wordpress site broken after plugin update, wordpress plugin conflict diagnostic" />
+<meta name="author" content="Ashekur Rahman" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<meta name="theme-color" content="#0F172A" />
+<link rel="canonical" href="https://ashekur.com/tools/plugin-conflict-diagnostic/" />
+<link rel="icon" href="../../assets/images/mark.png" type="image/png" />
+<link rel="apple-touch-icon" href="../../assets/images/mark.png" />
+<link rel="manifest" href="../../site.webmanifest" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Ashekur Rahman" />
+<meta property="og:url" content="https://ashekur.com/tools/plugin-conflict-diagnostic/" />
+<meta property="og:title" content="WordPress Plugin Conflict Diagnostic (Free Interactive Checklist)" />
+<meta property="og:description" content="Something broke right after a plugin, theme or core update? Work through this interactive checklist in order to isolate the cause and get a specific next step &mdash; free, no signup." />
+<meta property="og:image" content="https://ashekur.com/assets/images/og-default.jpg" />
+<meta property="og:locale" content="en_US" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="WordPress Plugin Conflict Diagnostic (Free Interactive Checklist)" />
+<meta name="twitter:description" content="Something broke right after a plugin, theme or core update? Work through this interactive checklist in order to isolate the cause and get a specific next step &mdash; free, no signup." />
+<meta name="twitter:image" content="https://ashekur.com/assets/images/og-default.jpg" />
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://www.googletagmanager.com" />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+<link rel="stylesheet" href="../../assets/fonts/remixicon.css" />
+<link rel="stylesheet" href="../../assets/css/template.css" />
+<script>var d=document.documentElement;d.classList.remove('no-js');d.classList.add('js-anim');</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://ashekur.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Tools", "item": "https://ashekur.com/tools/" },
+        { "@type": "ListItem", "position": 3, "name": "Plugin Conflict Diagnostic", "item": "https://ashekur.com/tools/plugin-conflict-diagnostic/" }
+      ]
+    },
+    {
+      "@type": "WebApplication",
+      "@id": "https://ashekur.com/tools/plugin-conflict-diagnostic/#app",
+      "name": "WordPress Plugin Conflict Diagnostic",
+      "description": "A free interactive checklist that walks through the triage steps for a WordPress site that broke after a plugin, theme or core update, ending in either a specific self-service fix or a named next step.",
+      "url": "https://ashekur.com/tools/plugin-conflict-diagnostic/",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any (web-based)",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "author": { "@type": "Person", "@id": "https://ashekur.com/#person", "name": "Ashekur Rahman", "url": "https://ashekur.com/" }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is this plugin conflict diagnostic actually free?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. There's no signup, no email gate and no limit on how many times you can run it. It's a checklist, not a scan, so there's nothing to wait for either." }
+        },
+        {
+          "@type": "Question",
+          "name": "Why isn't this a URL scanner like the other free tools?",
+          "acceptedAnswer": { "@type": "Answer", "text": "A plugin conflict happens on your own site, often inside wp-admin or only visible to you specifically — fetching a public page can't see that. This works as an interactive decision tree instead, the same triage a developer would actually run through by hand." }
+        },
+        {
+          "@type": "Question",
+          "name": "Will any of these steps delete my data or break anything further?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. Deactivating a plugin to test switches off its code but leaves its settings and data untouched, ready the moment you reactivate it. Nothing this checklist suggests is destructive, and testing on staging first is called out wherever it matters." }
+        },
+        {
+          "@type": "Question",
+          "name": "What if I can't isolate it to one specific plugin?",
+          "acceptedAnswer": { "@type": "Answer", "text": "That's flagged directly — a conflict that survives one-at-a-time isolation, or spans several plugins at once, usually means a hook-priority collision or a shared-library clash that needs a tool like Query Monitor or a developer's eyes, not more guessing." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does this cover Elementor specifically?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes — a broken editor, a missing widget, or a licensing/template-library issue each get their own branch, since those are some of the most common ways a WordPress site actually breaks after an update." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SGTGDFXH6K"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-SGTGDFXH6K');
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header" id="siteHeader">
+  <div class="container header-inner">
+    <a class="brand" href="../../" aria-label="Ashekur Rahman &mdash; home">
+      <picture>
+        <source srcset="../../assets/images/ashekur-logo-light.webp" type="image/webp" />
+        <img src="../../assets/images/ashekur-logo-light.png" alt="Ashekur Rahman" width="480" height="125" fetchpriority="high" decoding="async" />
+      </picture>
+    </a>
+    <nav class="nav-desktop" aria-label="Main">
+      <a href="../../" class="nav-link">Home</a>
+      <a href="../../tools/" class="nav-link">Tools</a>
+      <div class="nav-item" data-dropdown>
+        <div class="nav-row">
+          <a href="../../services/" class="nav-link">Services</a>
+          <button class="nav-caret" type="button" aria-label="Services submenu" aria-expanded="false" aria-controls="navDrop-services" data-dropdown-toggle><i class="ri-arrow-down-s-line" aria-hidden="true"></i></button>
+        </div>
+        <div class="nav-panel" id="navDrop-services">
+          <a class="nav-panel-all" href="../../services/">All services</a>
+          <div class="nav-panel-cols">
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">WordPress</p>
+              <a href="../../services/wordpress-development/">WordPress Development</a>
+              <a href="../../services/wordpress-customization/">WordPress Customization</a>
+              <a href="../../services/wordpress-bug-fix/">WordPress Bug Fix</a>
+              <a href="../../services/wordpress-maintenance/">WordPress Maintenance<em>New</em></a>
+            </div>
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">Page Builders</p>
+              <a href="../../services/elementor-fix/">Elementor Bug Fix</a>
+              <a href="../../services/elementor-customization/">Elementor Customization</a>
+              <a href="../../services/elementor-custom-widgets/">Elementor Custom Widgets</a>
+              <a href="../../services/divi-customization/">Divi Customization</a>
+              <a href="../../services/divi-5-migration/">Divi 5 Migration<em>New</em></a>
+            </div>
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">WooCommerce</p>
+              <a href="../../services/woocommerce-development/">WooCommerce Development</a>
+              <a href="../../services/woocommerce-fix/">WooCommerce Fixes</a>
+            </div>
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">Performance &amp; Security</p>
+              <a href="../../services/wordpress-speed-optimization/">WordPress Speed Optimization</a>
+              <a href="../../services/core-web-vitals-fix/">Core Web Vitals Fix<em>New</em></a>
+              <a href="../../services/wordpress-malware-removal/">WordPress Malware Removal</a>
+              <a href="../../services/google-blacklist-removal/">Google Blacklist Removal<em>New</em></a>
+              <a href="../../services/caching-cdn-setup/">Caching &amp; CDN Setup<em>New</em></a>
+              <a href="../../services/wordpress-security-hardening/">WordPress Security Hardening<em>New</em></a>
+            </div>
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">Migration</p>
+              <a href="../../services/wordpress-migration/">WordPress Migration</a>
+              <a href="../../services/domain-migration-redirects/">Domain Migration &amp; 301 Redirects<em>New</em></a>
+              <a href="../../services/wordpress-migration/#hosting">Host Migration</a>
+            </div>
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">SEO</p>
+              <a href="../../services/seo/">SEO</a>
+              <a href="../../services/technical-seo-audit/">Technical SEO Audit<em>New</em></a>
+            </div>
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">Other</p>
+              <a href="../../services/webflow-development/">Webflow Development</a>
+              <a href="../../services/frontend-development/">Frontend Development</a>
+              <a href="../../services/website-redesign/">Website Redesign<em>New</em></a>
+              <a href="../../services/white-label-wordpress-development/">White Label Development<em>New</em></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="../../pricing/" class="nav-link">Pricing</a>
+      <a href="../../portfolio/" class="nav-link">Portfolio</a>
+      <a href="../../blog/" class="nav-link">Blog</a>
+      <a href="../../contact/" class="btn btn-primary btn-sm nav-cta">Start a project</a>
+    </nav>
+    <button class="burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="nav-mobile" id="mobileNav" aria-label="Mobile" hidden>
+    <a href="../../">Home</a>
+    <a href="../../tools/">Tools</a>
+    <div class="nav-item" data-dropdown>
+      <div class="nav-row">
+        <a href="../../services/">Services</a>
+        <button class="nav-caret" type="button" aria-label="Services submenu" aria-expanded="false" aria-controls="navDropM-services" data-dropdown-toggle><i class="ri-arrow-down-s-line" aria-hidden="true"></i></button>
+      </div>
+      <div class="nav-panel" id="navDropM-services">
+        <a href="../../services/">All services</a>
+        <a href="../../services/wordpress-development/">WordPress Development</a>
+        <a href="../../services/wordpress-customization/">WordPress Customization</a>
+        <a href="../../services/wordpress-bug-fix/">WordPress Bug Fix</a>
+        <a href="../../services/wordpress-maintenance/">WordPress Maintenance</a>
+        <a href="../../services/elementor-fix/">Elementor Bug Fix</a>
+        <a href="../../services/elementor-customization/">Elementor Customization</a>
+        <a href="../../services/divi-customization/">Divi Customization</a>
+        <a href="../../services/divi-5-migration/">Divi 5 Migration</a>
+        <a href="../../services/elementor-custom-widgets/">Elementor Custom Widgets</a>
+        <a href="../../services/wordpress-speed-optimization/">WordPress Speed Optimization</a>
+        <a href="../../services/core-web-vitals-fix/">Core Web Vitals Fix</a>
+        <a href="../../services/woocommerce-fix/">WooCommerce Fixes</a>
+        <a href="../../services/woocommerce-development/">WooCommerce Development</a>
+        <a href="../../services/wordpress-migration/">WordPress Migration</a>
+        <a href="../../services/domain-migration-redirects/">Domain Migration &amp; 301 Redirects</a>
+        <a href="../../services/seo/">WordPress SEO</a>
+        <a href="../../services/wordpress-malware-removal/">WordPress Malware Removal</a>
+        <a href="../../services/google-blacklist-removal/">Google Blacklist Removal</a>
+        <a href="../../services/wordpress-security-hardening/">WordPress Security Hardening</a>
+        <a href="../../services/webflow-development/">Webflow Development</a>
+        <a href="../../services/frontend-development/">Frontend Development</a>
+        <a href="../../services/website-redesign/">Website Redesign</a>
+        <a href="../../services/white-label-wordpress-development/">White Label Development</a>
+      </div>
+    </div>
+    <a href="../../pricing/">Pricing</a>
+    <a href="../../portfolio/">Portfolio</a>
+    <a href="../../blog/">Blog</a>
+    <a href="../../contact/" class="btn btn-primary">Start a project</a>
+  </nav>
+</header>
+
+<div id="smooth-wrapper">
+<div id="smooth-content">
+<main id="main" class="page-shell">
+
+  <section class="section section-dark page-intro page-hero">
+    <div class="hero-grid-bg" aria-hidden="true"></div>
+    <div class="glow glow-a" aria-hidden="true"></div>
+    <div class="glow glow-b" aria-hidden="true"></div>
+    <div class="container">
+      <div class="row hero-split">
+        <div data-anim-hero class="col-12 col-lg-9">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <ol>
+              <li><a href="../../">Home</a></li>
+              <li><a href="../">Tools</a></li>
+              <li><span aria-current="page">Plugin Conflict Diagnostic</span></li>
+            </ol>
+          </nav>
+          <p class="badge badge-live"><span class="dot" aria-hidden="true"></span>Free &middot; No signup required</p>
+          <h1 data-anim="lines">Something broke after an update? Work through this in order.</h1>
+          <p class="body-lg">Not a scanner &mdash; a plugin conflict happens on your own site, so this walks through the same triage a developer would run by hand: a few questions, answered one at a time, ending in either a specific fix to try or a named next step.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-white">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-12 col-lg-8">
+
+          <div class="checker-form" id="pcdApp">
+            <p class="mono calc-progress" id="pcdBreadcrumb" hidden></p>
+
+            <div class="calc-step">
+              <div class="calc-step-head">
+                <h2 id="pcdHeading" tabindex="-1"></h2>
+              </div>
+
+              <div id="pcdBody" hidden></div>
+
+              <div class="calc-options" id="pcdOptions" role="radiogroup" aria-label="Choose the option that matches your situation"></div>
+
+              <div id="pcdCta" hidden></div>
+
+              <div class="calc-nav" id="pcdNav" hidden>
+                <button class="btn btn-ghost" type="button" id="pcdBack"><i class="ri-arrow-left-line" aria-hidden="true"></i> Back</button>
+                <button class="btn btn-ghost btn-sm" type="button" id="pcdRestart"><i class="ri-restart-line" aria-hidden="true"></i> Start over</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-dark section-contact">
+    <div class="hero-grid-bg contact-grid-bg" aria-hidden="true"></div>
+    <div class="glow glow-d" aria-hidden="true"></div>
+    <div class="container">
+      <div class="contact-cta-shell">
+        <div class="contact-cta-card">
+          <div class="contact-cta-copy">
+            <p class="eyebrow eyebrow-center"><span class="eyebrow-mark eyebrow-mark-light" aria-hidden="true"></span><span class="mono">STILL STUCK?</span></p>
+            <h2 data-anim="lines">Skip the checklist, send me the site.</h2>
+            <p class="body-lg">If the conflict survives isolation, or you'd rather not spend the afternoon on it, a proper diagnosis is exactly what this covers.</p>
+          </div>
+          <div class="contact-cta-actions">
+            <a class="btn btn-primary" href="../../services/wordpress-bug-fix/">WordPress Bug Fix <i class="ri-arrow-right-line" aria-hidden="true"></i></a>
+            <a class="btn btn-ghost" href="../../contact/">Contact Me</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-light">
+    <div class="container">
+      <div class="row gx-5">
+        <div class="col-12 col-lg-8">
+          <div class="prose">
+
+<h2>Why this is a checklist, not a scan</h2>
+<p>Every other free tool on this site works by fetching a public page and reading what's actually there. A plugin conflict doesn't show up that way &mdash; it's usually inside <code>wp-admin</code>, sometimes only visible to you specifically, and it can't be diagnosed from the outside. So this works as an interactive decision tree instead: answer where you are, and it walks straight to the next relevant question, skipping everything that doesn't apply to your situation.</p>
+
+<h2>How the questions are ordered</h2>
+<p>The order follows how a real diagnosis actually runs: first confirm something changed and rule out your own browser cache, then narrow down where the problem is actually showing up, then isolate it properly with WordPress's own Troubleshooting Mode before guessing at which plugin is responsible. Elementor gets its own branches &mdash; a broken editor, a missing widget, and a licensing issue are three different causes with three different fixes, not one generic "Elementor is broken" answer.</p>
+
+<h2>What "isolating it properly" means</h2>
+<p>Deactivating plugins one at a time and retesting after each is the only reliable way to actually confirm which one is responsible &mdash; guessing from a hunch, or deactivating several at once, tells you less than it feels like it does. The free, official <strong>Health Check &amp; Troubleshooting</strong> plugin from WordPress.org does this without affecting other visitors: its Troubleshooting Mode only changes what you see while logged in as yourself.</p>
+
+<h2>What to do with the result</h2>
+<p>Every path through this checklist ends one of two ways: a specific fix to try yourself, or a clear point where more guessing stops helping and a proper look is worth it. If that's where you land, <a href="../../services/wordpress-bug-fix/">WordPress Bug Fix</a> covers the exact isolation and fix, and <a href="../../services/elementor-fix/">Elementor Bug Fix</a> covers it specifically when Elementor is the piece involved.</p>
+
+          </div>
+        </div>
+        <div class="col-12 col-lg-4">
+          <aside class="post-aside">
+            <div class="checker-links-card">
+              <p class="mono post-cta-head">RELATED SERVICES</p>
+              <ul class="mt-3">
+                <li><a href="../../services/wordpress-bug-fix/"><i class="ri-arrow-right-s-line" aria-hidden="true"></i>WordPress Bug Fix</a></li>
+                <li><a href="../../services/elementor-fix/"><i class="ri-arrow-right-s-line" aria-hidden="true"></i>Elementor Bug Fix</a></li>
+                <li><a href="../../wordpress-fixes/wordpress-plugin-conflict/"><i class="ri-arrow-right-s-line" aria-hidden="true"></i>WordPress Plugin Conflict (full guide)</a></li>
+                <li><a href="../../blog/elementor-broken-after-update/"><i class="ri-arrow-right-s-line" aria-hidden="true"></i>Fixing a Broken Elementor Site</a></li>
+                <li><a href="../wordpress-website-health-checker/"><i class="ri-arrow-right-s-line" aria-hidden="true"></i>Website Health Checker</a></li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-tint">
+    <div class="container">
+      <div class="row gx-5 gy-4">
+        <div class="col-12 col-lg-4">
+          <div class="section-head sticky-head mb-4 mb-lg-0">
+            <p data-anim="fade" class="eyebrow"><span class="eyebrow-mark" aria-hidden="true"></span><span class="mono">FAQ</span></p>
+            <h2 data-anim="lines">Questions about this checklist</h2>
+          </div>
+        </div>
+        <div class="col-12 col-lg-8">
+          <div data-anim="stagger" class="faq-list">
+            <details data-anim="item" class="faq-item">
+              <summary>Is this plugin conflict diagnostic actually free?</summary>
+              <p class="faq-body">Yes. There's no signup, no email gate and no limit on how many times you can run it. It's a checklist, not a scan, so there's nothing to wait for either.</p>
+            </details>
+            <details data-anim="item" class="faq-item">
+              <summary>Why isn't this a URL scanner like the other free tools?</summary>
+              <p class="faq-body">A plugin conflict happens on your own site, often inside wp-admin or only visible to you specifically — fetching a public page can't see that. This works as an interactive decision tree instead, the same triage a developer would actually run through by hand.</p>
+            </details>
+            <details data-anim="item" class="faq-item">
+              <summary>Will any of these steps delete my data or break anything further?</summary>
+              <p class="faq-body">No. Deactivating a plugin to test switches off its code but leaves its settings and data untouched, ready the moment you reactivate it. Nothing this checklist suggests is destructive, and testing on staging first is called out wherever it matters.</p>
+            </details>
+            <details data-anim="item" class="faq-item">
+              <summary>What if I can't isolate it to one specific plugin?</summary>
+              <p class="faq-body">That's flagged directly — a conflict that survives one-at-a-time isolation, or spans several plugins at once, usually means a hook-priority collision or a shared-library clash that needs a tool like Query Monitor or a developer's eyes, not more guessing.</p>
+            </details>
+            <details data-anim="item" class="faq-item">
+              <summary>Does this cover Elementor specifically?</summary>
+              <p class="faq-body">Yes — a broken editor, a missing widget, or a licensing/template-library issue each get their own branch, since those are some of the most common ways a WordPress site actually breaks after an update.</p>
+            </details>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-white">
+    <div class="container">
+      <div class="row gx-0">
+        <div class="section-head col-12 col-lg-6">
+          <p data-anim="fade" class="eyebrow"><span class="eyebrow-mark" aria-hidden="true"></span><span class="mono">KEEP GOING</span></p>
+          <h2 data-anim="lines">More free tools</h2>
+          <p data-anim="fade" class="body-lg">No signup, no gated results &mdash; just the tool.</p>
+        </div>
+      </div>
+      <div data-anim="stagger" class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4 related-grid">
+        <div class="col">
+          <a data-anim="item" class="related-card h-100" href="../wordpress-website-health-checker/">
+            <strong>Website Health Checker</strong>
+            <span>A full public-facing health scan for any website.</span>
+          </a>
+        </div>
+        <div class="col">
+          <a data-anim="item" class="related-card h-100" href="../elementor-speed-checker/">
+            <strong>Elementor Speed &amp; Bloat Checker</strong>
+            <span>A cause-first check for Elementor add-on bloat and slow hosting.</span>
+          </a>
+        </div>
+        <div class="col">
+          <a data-anim="item" class="related-card h-100" href="../">
+            <strong>All Free Tools</strong>
+            <span>The full, growing list of free diagnostic tools.</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-dark section-contact">
+    <div class="hero-grid-bg contact-grid-bg" aria-hidden="true"></div>
+    <div class="glow glow-d" aria-hidden="true"></div>
+    <div class="container">
+      <div class="contact-cta-shell">
+        <div data-anim="fade" class="contact-cta-card">
+          <div class="contact-cta-copy">
+            <p class="badge badge-live mx-auto"><span class="dot" aria-hidden="true"></span>Available for new projects</p>
+            <p class="eyebrow eyebrow-center"><span class="eyebrow-mark eyebrow-mark-light" aria-hidden="true"></span><span class="mono">NEXT STEP</span></p>
+            <h2 data-anim="lines">Send me what this turned up, and let&rsquo;s talk.</h2>
+            <p class="body-lg">Based in Bangladesh, working with clients worldwide. Every serious enquiry gets a reply within one working day.</p>
+          </div>
+          <ul class="tech-chips justify-content-center">
+            <li>Reply within one working day</li>
+            <li>Fixed quote before work starts</li>
+            <li>UK, EU and US hours covered</li>
+          </ul>
+          <div class="contact-cta-actions">
+            <a class="btn btn-primary" href="../../contact/">Start a project <i class="ri-arrow-right-line" aria-hidden="true"></i></a>
+            <a class="btn btn-ghost" href="mailto:hello@ashekur.com">hello@ashekur.com</a>
+            <a class="btn btn-ghost" href="https://wa.me/8801812764112" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-top">
+    <div class="row gx-4 gy-5 align-items-start">
+      <div class="footer-brand col-12 col-lg-5">
+        <div class="brand brand-lg">
+          <picture>
+            <source srcset="../../assets/images/ashekur-logo-light.webp" type="image/webp" />
+            <img src="../../assets/images/ashekur-logo-light.png" alt="ashekur.com" width="480" height="125" loading="lazy" decoding="async" />
+          </picture>
+        </div>
+        <p class="footer-blurb">Frontend development and WordPress engineering for teams that care how it feels, not just how it looks. Based in Bangladesh &mdash; serving clients worldwide.</p>
+      </div>
+      <div class="col-12 col-lg-7">
+        <div class="footer-cols row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4">
+          <nav class="col" aria-label="Services">
+            <p class="mono footer-head">SERVICES</p>
+            <a href="../../services/wordpress-development/">WordPress Development</a>
+            <a href="../../services/wordpress-customization/">WordPress Customization</a>
+            <a href="../../services/elementor-customization/">Elementor Customization</a>
+            <a href="../../services/woocommerce-development/">WooCommerce Development</a>
+            <a href="../../services/wordpress-speed-optimization/">WordPress Speed Optimization</a>
+            <a href="../../services/wordpress-bug-fix/">WordPress Bug Fix</a>
+            <a href="../../services/elementor-fix/">Elementor Bug Fix</a>
+            <a href="../../services/wordpress-migration/">WordPress Migration</a>
+            <a href="../../services/seo/">WordPress SEO</a>
+          </nav>
+          <nav class="col" aria-label="Site">
+            <p class="mono footer-head">SITEMAP</p>
+            <a href="../../">Home</a>
+            <a href="../../tools/">Tools</a>
+            <a href="../../portfolio/">Portfolio</a>
+            <a href="../../blog/">Blog</a>
+            <a href="../../wordpress-fixes/">WordPress Fixes</a>
+            <a href="../">Tools</a>
+            <a href="../../contact/">Contact</a>
+            <a href="../../privacy/">Privacy Policy</a>
+          </nav>
+          <div class="col">
+            <p class="mono footer-head">ELSEWHERE</p>
+            <a href="mailto:hello@ashekur.com"><i class="ri-mail-line" aria-hidden="true"></i>hello@ashekur.com</a>
+            <a href="https://wa.me/8801812764112" target="_blank" rel="noopener noreferrer"><i class="ri-whatsapp-line" aria-hidden="true"></i>WhatsApp</a>
+            <a href="https://www.linkedin.com/in/ashekur-rahman-1ab205122/" target="_blank" rel="noopener noreferrer"><i class="ri-linkedin-fill" aria-hidden="true"></i>LinkedIn</a>
+            <a href="https://github.com/AshekurRahman" target="_blank" rel="noopener noreferrer"><i class="ri-github-fill" aria-hidden="true"></i>GitHub</a>
+            <a href="https://www.upwork.com/freelancers/~010aabe60ec2ae6679" target="_blank" rel="noopener noreferrer"><i class="ri-upwork-fill" aria-hidden="true"></i>Upwork</a>
+            <a href="https://www.facebook.com/ashekur.rahman.hridoy" target="_blank" rel="noopener noreferrer"><i class="ri-facebook-circle-fill" aria-hidden="true"></i>Facebook</a>
+            <a href="https://www.instagram.com/ashekurhridoy/" target="_blank" rel="noopener noreferrer"><i class="ri-instagram-line" aria-hidden="true"></i>Instagram</a>
+            <a href="https://www.youtube.com/@ashekurrahman1431" target="_blank" rel="noopener noreferrer"><i class="ri-youtube-fill" aria-hidden="true"></i>YouTube</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <p class="mono copyright">&copy; 2026 Ashekur Rahman. All rights reserved.</p>
+    <a class="to-top-inline" href="#main"><i class="ri-arrow-up-line" aria-hidden="true"></i> Back to top</a>
+  </div>
+</footer>
+</div>
+</div>
+
+
+<a class="wa-float" href="https://wa.me/8801812764112" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp"><i class="ri-whatsapp-fill" aria-hidden="true"></i></a>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" integrity="sha384-HOvlOYPIs/zjoIkWUGXkVmXsjr8GuZLV+Q+rcPwmJOVZVpvTSXQChiN4t9Euv9Vc" crossorigin="anonymous" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js" integrity="sha384-P8VzCVnT9NBUkMrpcIZrJbA7EBjJvh/fJS6PmP+4nLIM284DtsImIv8D0fFjIkeh" crossorigin="anonymous" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js" integrity="sha384-xb96EMJeax+NLXMC88ZBa1xAeAW+kn+horHh/zFlbMLG2UPWhMJJSlv7fi57hS+Q" crossorigin="anonymous" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollSmoother.min.js" integrity="sha384-dd8lT3AimXbI347qlZzlijPa4qnSlgGxuTqK2HlcfvF5+aOIeddPdMFmFpypQPZN" crossorigin="anonymous" defer></script>
+<script src="../../assets/js/anim.js" defer></script>
+<script src="../../assets/js/main.js" defer></script>
+<script src="../../assets/js/plugin-conflict-diagnostic.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" role="img" aria-hidden="true">
+  <title>Abstract dark tech visual representing a server rack moving to a new server rack</title>
+  <defs>
+    <radialGradient id="bgFadehmg" cx="50%" cy="36%" r="78%">
+      <stop offset="0%" stop-color="#141f38"/>
+      <stop offset="100%" stop-color="#0a1020"/>
+    </radialGradient>
+    <pattern id="gridhmg" width="64" height="64" patternUnits="userSpaceOnUse">
+      <path d="M 64 0 L 0 0 0 64" fill="none" stroke="rgba(148,163,184,0.10)" stroke-width="1"/>
+    </pattern>
+    <radialGradient id="gridMaskhmg" cx="50%" cy="32%" r="70%">
+      <stop offset="0%" stop-color="#fff" stop-opacity="0.9"/>
+      <stop offset="65%" stop-color="#fff" stop-opacity="0.32"/>
+      <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+    </radialGradient>
+    <mask id="gridMaskElhmg">
+      <rect width="1280" height="720" fill="url(#gridMaskhmg)"/>
+    </mask>
+    <radialGradient id="gA_hmg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#4f46e5" stop-opacity="0.46"/>
+      <stop offset="66%" stop-color="#4f46e5" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="gB_hmg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#6ee7b7" stop-opacity="0.4"/>
+      <stop offset="66%" stop-color="#6ee7b7" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bgFadehmg)"/>
+  <rect width="1280" height="720" fill="url(#gridhmg)" mask="url(#gridMaskElhmg)"/>
+  <circle cx="380" cy="230" r="320" fill="url(#gA_hmg)"/><circle cx="980" cy="500" r="320" fill="url(#gB_hmg)"/>
+  <rect x="720" y="320" width="90" height="120" rx="6" fill="none" stroke="#a5b4fc" stroke-width="3"/>
+  <line x1="732" y1="345" x2="798" y2="345" stroke="#a5b4fc" stroke-width="3" opacity="0.6"/>
+  <line x1="732" y1="370" x2="798" y2="370" stroke="#a5b4fc" stroke-width="3" opacity="0.6"/>
+  <line x1="732" y1="395" x2="798" y2="395" stroke="#a5b4fc" stroke-width="3" opacity="0.6"/>
+  <line x1="825" y1="380" x2="900" y2="380" stroke="#e2e8f0" stroke-width="4" opacity="0.7"/>
+  <path d="M 888 368 L 904 380 L 888 392" fill="none" stroke="#e2e8f0" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity="0.7"/>
+  <rect x="930" y="320" width="90" height="120" rx="6" fill="none" stroke="#6ee7b7" stroke-width="3"/>
+  <line x1="942" y1="345" x2="1008" y2="345" stroke="#6ee7b7" stroke-width="3" opacity="0.7"/>
+  <line x1="942" y1="370" x2="1008" y2="370" stroke="#6ee7b7" stroke-width="3" opacity="0.7"/>
+  <line x1="942" y1="395" x2="1008" y2="395" stroke="#6ee7b7" stroke-width="3" opacity="0.7"/>
+</svg>

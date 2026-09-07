@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>WordPress Caching &amp; CDN Setup Service | Ashekur Rahman</title>
+  <meta name="description"
+    content="WordPress caching and CDN setup done right for your specific host and stack &mdash; not a generic plugin install. Faster TTFB and LCP, measured before and after." />
+  <meta name="keywords" content="wordpress caching setup service, wordpress cdn setup, setup cloudflare wordpress, wordpress caching plugin setup, reduce wordpress server response time" />
+  <meta name="author" content="Ashekur Rahman" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="theme-color" content="#0F172A" />
+  <link rel="canonical" href="https://ashekur.com/services/caching-cdn-setup/" />
+  <link rel="icon" href="../../assets/images/mark.png" type="image/png" />
+  <link rel="apple-touch-icon" href="../../assets/images/mark.png" />
+  <link rel="manifest" href="../../site.webmanifest" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Ashekur Rahman" />
+  <meta property="og:url" content="https://ashekur.com/services/caching-cdn-setup/" />
+  <meta property="og:title" content="WordPress Caching &amp; CDN Setup Service | Ashekur Rahman" />
+  <meta property="og:description"
+    content="WordPress caching and CDN setup done right for your specific host and stack &mdash; not a generic plugin install. Faster TTFB and LCP, measured before and after." />
+  <meta property="og:image" content="https://ashekur.com/assets/images/og-default.jpg" />
+  <meta property="og:locale" content="en_US" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="WordPress Caching &amp; CDN Setup Service | Ashekur Rahman" />
+  <meta name="twitter:description"
+    content="WordPress caching and CDN setup done right for your specific host and stack &mdash; not a generic plugin install. Faster TTFB and LCP, measured before and after." />
+  <meta name="twitter:image" content="https://ashekur.com/assets/images/og-default.jpg" />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://www.googletagmanager.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap"
+    rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+  <link rel="stylesheet" href="../../assets/fonts/remixicon.css" />
+  <link rel="stylesheet" href="../../assets/css/template.css" />
+  <script>var d = document.documentElement; d.classList.remove('no-js'); d.classList.add('js-anim');</script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://ashekur.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Services",
+          "item": "https://ashekur.com/services/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Caching & CDN Setup",
+          "item": "https://ashekur.com/services/caching-cdn-setup/"
+        }
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://ashekur.com/services/caching-cdn-setup/#service",
+      "name": "WordPress Caching & CDN Setup",
+      "serviceType": "WordPress Caching and CDN Setup Service",
+      "description": "Server-side and page caching plus CDN configuration matched to your specific host and stack, not a generic plugin install left on default settings. Delivered with a before-and-after TTFB and LCP report.",
+      "url": "https://ashekur.com/services/caching-cdn-setup/",
+      "provider": {
+        "@type": "Person",
+        "name": "Ashekur Rahman",
+        "url": "https://ashekur.com/",
+        "jobTitle": "Frontend Developer & WordPress Expert",
+        "email": "hello@ashekur.com",
+        "telephone": "+8801812764112",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "BD"
+        }
+      },
+      "areaServed": {
+        "@type": "Place",
+        "name": "Worldwide"
+      },
+      "availableChannel": {
+        "@type": "ServiceChannel",
+        "serviceUrl": "https://ashekur.com/contact/",
+        "servicePhone": {
+          "@type": "ContactPoint",
+          "telephone": "+8801812764112",
+          "contactType": "sales"
+        }
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "WordPress Caching & CDN Setup deliverables",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Page and object caching configured for your specific host, not a one-size plugin default"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "A CDN set up and configured for your visitors' actual geography, with correct cache headers and purge rules"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Cache-exclusion rules set correctly for cart, checkout, account pages and any logged-in views"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Conflicts checked and resolved between the caching layer and your host's own built-in caching"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "A before-and-after TTFB and Core Web Vitals report, so the improvement is measured, not assumed"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How is this different from WordPress Speed Optimization?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "WordPress Speed Optimization looks at everything that could be slowing the site down — images, plugin bloat, code path, hosting and caching together. This service is the caching and CDN piece specifically: if that's already been diagnosed as the cause, or you just want the caching layer done properly, this is the narrower, faster booking."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is this different from Core Web Vitals Fix?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Core Web Vitals Fix diagnoses and fixes whichever metric Search Console actually flagged — that could be LCP, INP or CLS, and the cause might have nothing to do with caching at all. This service is one specific implementation: server-side/page caching plus CDN configuration. If you already know caching is the gap, book this directly."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will this conflict with my host's built-in caching?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "That's checked as part of the setup. Some hosts already run their own server-level caching, and stacking a plugin's caching on top without coordinating the two is a common cause of stale pages or broken checkouts. The configuration is matched to what your host already does, not layered on blindly."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need a paid CDN?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No — a free-tier CDN is enough for most WordPress sites, and that's the default unless your traffic or geography genuinely needs a paid tier. You get a straight recommendation either way, not an upsell to the more expensive option."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will this break my cart or checkout pages?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Not if it's configured correctly, which is the point of doing it as a dedicated setup rather than a quick plugin install. Cart, checkout, account and any logged-in views are explicitly excluded from page caching so pricing, stock and session data stay accurate."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you work with clients outside Bangladesh?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most of my clients are outside Bangladesh — the UK, Germany and the US primarily. I am based in Bangladesh and work across European and North American time zones without difficulty, with a same-day reply to anything urgent."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SGTGDFXH6K"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-SGTGDFXH6K');
+</script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a class="brand" href="../../" aria-label="Ashekur Rahman &mdash; home">
+        <picture>
+          <source srcset="../../assets/images/ashekur-logo-light.webp" type="image/webp" />
+          <img src="../../assets/images/ashekur-logo-light.png" alt="Ashekur Rahman" width="480" height="125"
+            fetchpriority="high" decoding="async" />
+        </picture>
+      </a>
+      <nav class="nav-desktop" aria-label="Main">
+        <a href="../../" class="nav-link">Home</a>
+        <a href="../../tools/" class="nav-link">Tools</a>
+        <div class="nav-item" data-dropdown>
+          <div class="nav-row">
+            <a href="../../services/" class="nav-link is-active">Services</a>
+            <button class="nav-caret" type="button" aria-label="Services submenu" aria-expanded="false" aria-controls="navDrop-services" data-dropdown-toggle><i class="ri-arrow-down-s-line" aria-hidden="true"></i></button>
+          </div>
+          <div class="nav-panel" id="navDrop-services">
+            <a class="nav-panel-all" href="../../services/">All services</a>
+            <div class="nav-panel-cols">
+              <div class="nav-panel-col">
+                <p class="nav-panel-col-head">WordPress</p>
+                <a href="../../services/wordpress-development/">WordPress Development</a>
+                <a href="../../services/wordpress-customization/">WordPress Customization</a>
+                <a href="../../services/wordpress-bug-fix/">WordPress Bug Fix</a>
+                <a href="../../services/wordpress-maintenance/">WordPress Maintenance<em>New</em></a>
+              </div>
+              <div class="nav-panel-col">
+                <p class="nav-panel-col-head">Page Builders</p>
+                <a href="../../services/elementor-fix/">Elementor Bug Fix</a>
+                <a href="../../services/elementor-customization/">Elementor Customization</a>
+                <a href="../../services/elementor-custom-widgets/">Elementor Custom Widgets</a>
+                <a href="../../services/divi-customization/">Divi Customization</a>
+                <a href="../../services/divi-5-migration/">Divi 5 Migration<em>New</em></a>
+              </div>
+              <div class="nav-panel-col">
+                <p class="nav-panel-col-head">WooCommerce</p>
+                <a href="../../services/woocommerce-development/">WooCommerce Development</a>
+                <a href="../../services/woocommerce-fix/">WooCommerce Fixes</a>
+              </div>
+              <div class="nav-panel-col">
+                <p class="nav-panel-col-head">Performance &amp; Security</p>
+                <a href="../../services/wordpress-speed-optimization/">WordPress Speed Optimization</a>
+                <a href="../../services/core-web-vitals-fix/">Core Web Vitals Fix<em>New</em></a>
+                <a href="../../services/wordpress-malware-removal/">WordPress Malware Removal</a>
+                <a href="../../services/google-blacklist-removal/">Google Blacklist Removal<em>New</em></a>
+                <a href="../../services/caching-cdn-setup/">Caching &amp; CDN Setup<em>New</em></a>
+                <a href="../../services/wordpress-security-hardening/">WordPress Security Hardening<em>New</em></a>
+              </div>
+              <div class="nav-panel-col">
+                <p class="nav-panel-col-head">Migration</p>
+                <a href="../../services/wordpress-migration/">WordPress Migration</a>
+                <a href="../../services/domain-migration-redirects/">Domain Migration &amp; 301 Redirects<em>New</em></a>
+                <a href="../../services/wordpress-migration/#hosting">Host Migration</a>
+              </div>
+              <div class="nav-panel-col">
+                <p class="nav-panel-col-head">SEO</p>
+                <a href="../../services/seo/">SEO</a>
+                <a href="../../services/technical-seo-audit/">Technical SEO Audit<em>New</em></a>
+              </div>
+              <div class="nav-panel-col">
+                <p class="nav-panel-col-head">Other</p>
+                <a href="../../services/webflow-development/">Webflow Development</a>
+                <a href="../../services/frontend-development/">Frontend Development</a>
+                <a href="../../services/website-redesign/">Website Redesign<em>New</em></a>
+                <a href="../../services/white-label-wordpress-development/">White Label Development<em>New</em></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="../../pricing/" class="nav-link">Pricing</a>
+        <a href="../../portfolio/" class="nav-link">Portfolio</a>
+        <a href="../../blog/" class="nav-link">Blog</a>
+        <a href="../../contact/" class="btn btn-primary btn-sm nav-cta">Start a project</a>
+      </nav>
+      <button class="burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false"
+        aria-controls="mobileNav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <nav class="nav-mobile" id="mobileNav" aria-label="Mobile" hidden>
+      <a href="../../">Home</a>
+      <a href="../../tools/">Tools</a>
+      <div class="nav-item" data-dropdown>
+        <div class="nav-row">
+          <a href="../../services/">Services</a>
+          <button class="nav-caret" type="button" aria-label="Services submenu" aria-expanded="false" aria-controls="navDropM-services" data-dropdown-toggle><i class="ri-arrow-down-s-line" aria-hidden="true"></i></button>
+        </div>
+        <div class="nav-panel" id="navDropM-services">
+          <a href="../../services/">All services</a>
+          <a href="../../services/wordpress-development/">WordPress Development</a>
+          <a href="../../services/wordpress-customization/">WordPress Customization</a>
+          <a href="../../services/wordpress-bug-fix/">WordPress Bug Fix</a>
+          <a href="../../services/wordpress-maintenance/">WordPress Maintenance</a>
+          <a href="../../services/elementor-fix/">Elementor Bug Fix</a>
+          <a href="../../services/elementor-customization/">Elementor Customization</a>
+          <a href="../../services/divi-customization/">Divi Customization</a>
+          <a href="../../services/divi-5-migration/">Divi 5 Migration</a>
+          <a href="../../services/elementor-custom-widgets/">Elementor Custom Widgets</a>
+          <a href="../../services/wordpress-speed-optimization/">WordPress Speed Optimization</a>
+          <a href="../../services/core-web-vitals-fix/">Core Web Vitals Fix</a>
+          <a href="../../services/caching-cdn-setup/">Caching &amp; CDN Setup</a>
+          <a href="../../services/woocommerce-fix/">WooCommerce Fixes</a>
+          <a href="../../services/woocommerce-development/">WooCommerce Development</a>
+          <a href="../../services/wordpress-migration/">WordPress Migration</a>
+          <a href="../../services/domain-migration-redirects/">Domain Migration &amp; 301 Redirects</a>
+          <a href="../../services/seo/">WordPress SEO</a>
+          <a href="../../services/wordpress-malware-removal/">WordPress Malware Removal</a>
+          <a href="../../services/google-blacklist-removal/">Google Blacklist Removal</a>
+          <a href="../../services/wordpress-security-hardening/">WordPress Security Hardening</a>
+          <a href="../../services/webflow-development/">Webflow Development</a>
+          <a href="../../services/frontend-development/">Frontend Development</a>
+          <a href="../../services/website-redesign/">Website Redesign</a>
+          <a href="../../services/white-label-wordpress-development/">White Label Development</a>
+        </div>
+      </div>
+      <a href="../../pricing/">Pricing</a>
+      <a href="../../portfolio/">Portfolio</a>
+      <a href="../../blog/">Blog</a>
+      <a href="../../contact/" class="btn btn-primary">Start a project</a>
+    </nav>
+  </header>
+
+  <div id="smooth-wrapper">
+<div id="smooth-content">
+<main id="main" class="page-shell">
+
+    <section class="section section-dark page-intro page-hero">
+      <div class="hero-grid-bg" aria-hidden="true"></div>
+      <div class="glow glow-a" aria-hidden="true"></div>
+      <div class="glow glow-b" aria-hidden="true"></div>
+      <div data-anim-hero class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <ol>
+            <li><a href="../../">Home</a></li>
+            <li><a href="../../services/">Services</a></li>
+            <li><span aria-current="page">Caching &amp; CDN Setup</span></li>
+          </ol>
+        </nav>
+        <h1 data-anim="lines">Caching and a CDN, configured for your host &mdash; not a plugin left on default.</h1>
+        <p class="body-lg">Page and object caching, plus CDN configuration matched to your specific stack and visitors' geography. Cart, checkout and logged-in pages excluded correctly, with a before-and-after TTFB and Core Web Vitals report.</p>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="../../contact/">Start a project <i class="ri-arrow-right-line"
+              aria-hidden="true"></i></a>
+          <a class="btn btn-ghost" href="../../tools/wordpress-website-health-checker/">Not sure where you stand? Check free first</a>
+          <a class="btn btn-ghost" href="../../portfolio/">See the work</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-light">
+      <div class="container">
+        <div class="row gx-0">
+          <div class="section-head col-12 col-lg-6">
+            <p data-anim="fade" class="eyebrow"><span class="eyebrow-mark" aria-hidden="true"></span><span
+                class="mono">THE PROBLEM</span></p>
+            <h2 data-anim="lines">What a generic caching plugin install usually gets wrong</h2>
+            <p data-anim="fade" class="body-lg">Installing a caching plugin and leaving it on default settings is not the same as having caching configured. Most of the problems it causes trace back to the same handful of gaps.</p>
+          </div>
+        </div>
+        <h3 class="mono mini-head">WHAT USUALLY GETS SKIPPED</h3>
+        <ul data-anim="stagger" class="check-list row row-cols-1 row-cols-md-2 g-3">
+          <li data-anim="item" class="col">Checkout, cart or account pages cached by accident, serving one visitor's session or pricing to another</li>
+          <li data-anim="item" class="col">A CDN pointed at the wrong origin or geography, adding latency instead of removing it</li>
+          <li data-anim="item" class="col">The plugin's caching layer fighting the host's own built-in caching, producing stale pages that need a hard refresh</li>
+          <li data-anim="item" class="col">Cache headers left unset, so the browser and CDN re-fetch assets that should have been served instantly</li>
+          <li data-anim="item" class="col">No purge rule tied to actual content changes, so edits don't show up until someone remembers to clear the cache manually</li>
+          <li data-anim="item" class="col">Server response time (TTFB) never actually measured, so nobody knows if the setup even helped</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section section-white">
+      <div class="container">
+        <div class="row gx-0">
+          <div class="section-head col-12 col-lg-6">
+
+              <p data-anim="fade" class="eyebrow"><span class="eyebrow-mark" aria-hidden="true"></span><span
+                  class="mono">WHO THIS IS FOR</span></p>
+              <h2 data-anim="lines">When this is the right booking</h2>
+              <p data-anim="fade" class="body-lg">This is the caching-and-CDN implementation specifically &mdash; not a full diagnosis. If you're not sure caching is actually the problem, <a href="../wordpress-speed-optimization/">WordPress Speed Optimization</a> or <a href="../core-web-vitals-fix/">Core Web Vitals Fix</a> will find the real cause first.</p>
+          </div>
+        </div>
+        <div data-anim="stagger" class="row row-cols-1 row-cols-md-2 g-4 feature-grid">
+          <div class="col">
+            <article data-anim="item" class="feature-card h-100">
+              <span class="feature-icon" aria-hidden="true"><i class="ri-timer-flash-line"></i></span>
+              <h3>A speed audit already pointed at caching</h3>
+              <p>PageSpeed, GTmetrix or a developer already told you "set up caching and a CDN" &mdash; this is that, done properly.</p>
+            </article>
+          </div>
+          <div class="col">
+            <article data-anim="item" class="feature-card h-100">
+              <span class="feature-icon" aria-hidden="true"><i class="ri-global-line"></i></span>
+              <h3>Visitors are spread across regions</h3>
+              <p>Traffic coming from outside your server's own region, adding latency a CDN is built to remove.</p>
+            </article>
+          </div>
+          <div class="col">
+            <article data-anim="item" class="feature-card h-100">
+              <span class="feature-icon" aria-hidden="true"><i class="ri-shopping-cart-2-line"></i></span>
+              <h3>Running WooCommerce and worried about caching it wrong</h3>
+              <p>Cart, checkout and account pages need explicit exclusion rules &mdash; getting this wrong breaks orders, not just speed.</p>
+            </article>
+          </div>
+          <div class="col">
+            <article data-anim="item" class="feature-card h-100">
+              <span class="feature-icon" aria-hidden="true"><i class="ri-refresh-line"></i></span>
+              <h3>A caching plugin is already installed but misbehaving</h3>
+              <p>Stale content, broken checkout, or conflicts with the host's own caching &mdash; reconfigured rather than replaced where possible.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-light">
+      <div class="container">
+        <div class="row gx-0">
+          <div class="section-head col-12 col-lg-6">
+            <p data-anim="fade" class="eyebrow"><span class="eyebrow-mark" aria-hidden="true"></span><span
+                class="mono">SCOPE</span></p>
+            <h2>What I deliver</h2>
+          </div>
+        </div>
+        <ul data-anim="stagger" class="check-list row row-cols-1 row-cols-md-2 g-3">
+          <li data-anim="item" class="col">Page and object caching configured for your specific host, not a one-size plugin default</li>
+          <li data-anim="item" class="col">A CDN set up and configured for your visitors' actual geography, with correct cache headers and purge rules</li>
+          <li data-anim="item" class="col">Cache-exclusion rules set correctly for cart, checkout, account pages and any logged-in views</li>
+          <li data-anim="item" class="col">Conflicts checked and resolved between the caching layer and your host's own built-in caching</li>
+          <li data-anim="item" class="col">A before-and-after TTFB and Core Web Vitals report, so the improvement is measured, not assumed</li>
+        </ul>
+        <h3 class="mono mini-head">TECHNOLOGY I USE</h3>
+        <ul class="tech-chips">
+          <li>WordPress</li>
+          <li>WP Rocket</li>
+          <li>W3 Total Cache</li>
+          <li>Cloudflare</li>
+          <li>Redis / Object Cache</li>
+          <li>.htaccess</li>
+          <li>Nginx</li>
+          <li>PageSpeed Insights</li>
+        </ul>
+        <div class="row gx-0 justify-content-center mt-5">
+          <div class="col-12 col-lg-10">
+            <figure data-anim="reveal" class="shot mt-5 mb-5">
+              <img src="../../assets/images/caching-cdn-setup.jpeg" alt="Abstract dark tech graphic representing a WordPress site's caching layer and CDN edge network" width="1280" height="720" loading="lazy" decoding="async"/>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-tint">
+      <div class="container">
+        <div class="row gx-5">
+          <div class="col-12 col-lg-5">
+            <div class="section-head sticky-head">
+              <p data-anim="fade" class="eyebrow"><span class="eyebrow-mark" aria-hidden="true"></span><span
+                  class="mono">PROCESS</span></p>
+              <h2>How a caching &amp; CDN setup runs</h2>
+            </div>
+          </div>
+          <div class="col-12 col-lg-7">
+            <ol data-anim="stagger" class="process-list">
+              <li data-anim="item">
+                <h3>Baseline the current state</h3>
+                <p>TTFB, cache headers and any existing caching layer measured and recorded first, so the before-and-after report is real.</p>
+              </li>
+              <li data-anim="item">
+                <h3>Check host-level caching</h3>
+                <p>Confirm what your host already does at server level, so the plugin and CDN layers are configured to work with it, not against it.</p>
+              </li>
+              <li data-anim="item">
+                <h3>Configure page and object caching</h3>
+                <p>Set up and tuned for your specific stack, with exclusion rules for cart, checkout, account pages and any logged-in views.</p>
+              </li>
+              <li data-anim="item">
+                <h3>Set up the CDN</h3>
+                <p>Pointed at the right origin, with correct cache headers and a purge rule tied to actual content changes.</p>
+              </li>
+              <li data-anim="item">
+                <h3>Test the exclusions</h3>
+                <p>Cart and checkout tested directly to confirm nothing gets served stale to the wrong visitor.</p>
+              </li>
+              <li data-anim="item">
+                <h3>Deliver the report</h3>
+                <p>A before-and-after TTFB and Core Web Vitals comparison, so the improvement is measured, not assumed.</p>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-dark">
+      <div class="glow glow-c" aria-hidden="true"></div>
+      <div class="container">
+        <div class="row gx-0">
+          <div class="section-head col-12 col-lg-6">
+
+              <p data-anim="fade" class="eyebrow"><span class="eyebrow-mark eyebrow-mark-light"
+                  aria-hidden="true"></span><span class="mono">BENEFITS</span></p>
+              <h2 data-anim="lines">What you get out of it</h2>
+              <p data-anim="fade" class="body-lg">Caching and a CDN done right is one of the highest-impact, lowest-risk performance changes a WordPress site can make &mdash; done wrong, it's also one of the most common causes of a broken checkout.</p>
+          </div>
+        </div>
+        <div data-anim="stagger" class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4 feature-grid feature-grid-3">
+          <div class="col">
+            <article data-anim="item" class="feature-card h-100">
+              <h3>Faster TTFB, measured</h3>
+              <p>A concrete before-and-after comparison, not a plugin dashboard that just says "optimized."</p>
+            </article>
+          </div>
+          <div class="col">
+            <article data-anim="item" class="feature-card h-100">
+              <h3>Nothing cached that shouldn't be</h3>
+              <p>Cart, checkout and account pages explicitly excluded and tested, so speed doesn't come at the cost of broken orders.</p>
+            </article>
+          </div>
+          <div class="col">
+            <article data-anim="item" class="feature-card h-100">
+              <h3>Matched to your host, not generic</h3>
+              <p>Configured against what your specific host and stack actually do, so the caching layer and CDN work together instead of colliding.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-white">
+      <div class="container">
+        <div class="row gx-0">
+          <div class="section-head col-12 col-lg-6">
+
+              <p data-anim="fade" class="eyebrow"><span class="eyebrow-mark" aria-hidden="true"></span><span
+                  class="mono">RELEVANT WORK</span></p>
+              <h2 data-anim="lines">Projects built with performance as a requirement</h2>
+              <p data-anim="fade" class="body-lg">Each of these is written up as a full case study &mdash; the problem, the
+                approach, the stack and the outcome.</p>
+          </div>
+        </div>
+        <div data-anim="stagger" class="row row-cols-1 row-cols-md-2 g-4 case-grid">
+          <div class="col">
+            <article data-anim="item" class="case-card h-100">
+              <a href="../../portfolio/formatry/" tabindex="-1" aria-hidden="true">
+                <picture>
+                  <source srcset="../../assets/images/project-formatry.webp" type="image/webp" />
+                  <img src="../../assets/images/project-formatry.jpeg" alt="Formatry SaaS marketing site built for speed and conversion" width="1200" height="624" loading="lazy" decoding="async" />
+                </picture>
+              </a>
+              <div class="case-card-body">
+                <h3><a href="../../portfolio/formatry/">Formatry</a></h3>
+                <p>A SaaS marketing site where TTFB and caching were tied directly to trial sign-up conversion, not just a scoring exercise.</p>
+                <ul class="tech-chips"><li>Webflow</li><li>CMS</li><li>Performance</li></ul>
+                <div class="btn-row">
+                  <a class="btn btn-primary btn-sm" href="../../portfolio/formatry/">Read the case study</a>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="col">
+            <article data-anim="item" class="case-card h-100">
+              <a href="../../portfolio/canvascroft/" tabindex="-1" aria-hidden="true">
+                <picture>
+                  <source srcset="../../assets/images/project-canvascroft.webp" type="image/webp" />
+                  <img src="../../assets/images/project-canvascroft.jpeg" alt="Canvascroft branding and design studio website built in WordPress" width="1200" height="613" loading="lazy" decoding="async" />
+                </picture>
+              </a>
+              <div class="case-card-body">
+                <h3><a href="../../portfolio/canvascroft/">Canvascroft</a></h3>
+                <p>An image-heavy WooCommerce site where caching and CDN delivery needed to hold up without breaking checkout.</p>
+                <ul class="tech-chips"><li>WordPress</li><li>Elementor</li><li>WooCommerce</li></ul>
+                <div class="btn-row">
+                  <a class="btn btn-primary btn-sm" href="../../portfolio/canvascroft/">Read the case study</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+        <div data-anim="fade" class="btn-row btn-row-center section-cta">
+          <a class="btn btn-ghost" href="../../portfolio/">View the full portfolio</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-light">
+      <div class="container">
+        <p data-anim="fade" class="eyebrow"><span class="eyebrow-mark" aria-hidden="true"></span><span
+            class="mono">TESTIMONIALS</span></p>
+        <h2>What clients say</h2>
+        <p data-anim="fade" class="body-lg">Every completed Upwork contract to date, each rated 5.0 &mdash; quoted as written.</p>
+        <div data-anim="stagger" class="row row-cols-1 row-cols-lg-3 g-4">
+          <div class="col">
+            <article data-anim="item" class="t-item h-100">
+              <div class="t-card">
+                <div class="t-stars" role="img" aria-label="Rated 5 out of 5"><i class="ri-star-fill" aria-hidden="true"></i><i class="ri-star-fill" aria-hidden="true"></i><i class="ri-star-fill" aria-hidden="true"></i><i class="ri-star-fill" aria-hidden="true"></i><i class="ri-star-fill" aria-hidden="true"></i></div>
+                <blockquote class="t-quote">&ldquo;He is very punctual on timelines and has a complete inside out knowledge of WordPress theme development.&rdquo;</blockquote>
+                <footer class="t-foot">
+                  <span class="testimonial-avatar" aria-hidden="true"><i class="ri-upwork-fill"></i></span>
+                  <cite>
+                    <span class="t-name"><a href="https://www.upwork.com/freelancers/~010aabe60ec2ae6679" target="_blank" rel="noopener noreferrer">Verified Upwork review</a></span>
+                    <span class="t-role font-monospace">Premium theme update &middot; Nov 2021</span>
+                  </cite>
+                </footer>
+              </div>
+            </article>
+          </div>
+          <div class="col">
+            <article data-anim="item" class="t-item h-100">
+              <div class="t-card">
+                <div class="t-stars" role="img" aria-label="Rated 5 out of 5"><i class="ri-star-fill" aria-hidden="true"></i><i class="ri-star-fill" aria-hidden="true"></i><i class="ri-star-fill" aria-hidden="true"></i><i class="ri-star-fill" aria-hidden="true"></i><i class="ri-star-fill" aria-hidden="true"></i></div>
+                <blockquote class="t-quote">&ldquo;He completed the customer theme development work before time. The work delivered is awesome and he delivered more than expected. Really a good and honest freelancer to work with.&rdquo;</blockquote>
+                <footer class="t-foot">
+                  <span class="testimonial-avatar" aria-hidden="true"><i class="ri-upwork-fill"></i></span>
+                  <cite>
+                    <span class="t-name"><a href="https://www.upwork.com/freelancers/~010aabe60ec2ae6679" target="_blank" rel="noopener noreferrer">Verified Upwork review</a></span>
+                    <span class="t-role font-monospace">Custom premium theme &middot; Oct 2021</span>
+                  </cite>
+                </footer>
+              </div>
+            </article>
+          </div>
+          <div class="col">
+            <article data-anim="item" class="t-item h-100">
+              <div class="t-card">
+                <div class="t-stars" role="img" aria-label="Rated 5 out of 5"><i class="ri-star-fill" aria-hidden="true"></i><i class="ri-star-fill" aria-hidden="true"></i><i class="ri-star-fill" aria-hidden="true"></i><i class="ri-star-fill" aria-hidden="true"></i><i class="ri-star-fill" aria-hidden="true"></i></div>
+                <blockquote class="t-quote">&ldquo;Ashekur Rahman delivers the work timely and perfectly. His knowledge in wordpress is very vast and he can do anything in wordpress and web developement.&rdquo;</blockquote>
+                <footer class="t-foot">
+                  <span class="testimonial-avatar" aria-hidden="true"><i class="ri-upwork-fill"></i></span>
+                  <cite>
+                    <span class="t-name"><a href="https://www.upwork.com/freelancers/~010aabe60ec2ae6679" target="_blank" rel="noopener noreferrer">Verified Upwork review</a></span>
+                    <span class="t-role font-monospace">Bug, plugin and theme fixes &middot; Oct 2021</span>
+                  </cite>
+                </footer>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-tint">
+      <div class="container">
+        <div class="row gx-5 gy-4">
+          <div class="col-12 col-lg-4">
+            <div class="section-head sticky-head mb-4 mb-lg-0">
+              <p data-anim="fade" class="eyebrow"><span class="eyebrow-mark" aria-hidden="true"></span><span class="mono">FAQ</span></p>
+              <h2 data-anim="lines">Questions I get asked</h2>
+              <p data-anim="fade" class="body-lg">What people ask before booking, mostly about how this differs from the other performance services and whether it's safe for a store.</p>
+            </div>
+          </div>
+          <div class="col-12 col-lg-8">
+            <div data-anim="stagger" class="faq-list">
+                <details data-anim="item" class="faq-item">
+                  <summary>How is this different from WordPress Speed Optimization?</summary>
+                  <p class="faq-body"><a href="../wordpress-speed-optimization/">WordPress Speed Optimization</a> looks at everything that could be slowing the site down &mdash; images, plugin bloat, code path, hosting and caching together. This service is the caching and CDN piece specifically: if that's already been diagnosed as the cause, or you just want the caching layer done properly, this is the narrower, faster booking.</p>
+                </details>
+                <details data-anim="item" class="faq-item">
+                  <summary>How is this different from Core Web Vitals Fix?</summary>
+                  <p class="faq-body"><a href="../core-web-vitals-fix/">Core Web Vitals Fix</a> diagnoses and fixes whichever metric Search Console actually flagged &mdash; that could be LCP, INP or CLS, and the cause might have nothing to do with caching at all. This service is one specific implementation: server-side/page caching plus CDN configuration. If you already know caching is the gap, book this directly.</p>
+                </details>
+                <details data-anim="item" class="faq-item">
+                  <summary>Will this conflict with my host's built-in caching?</summary>
+                  <p class="faq-body">That's checked as part of the setup. Some hosts already run their own server-level caching, and stacking a plugin's caching on top without coordinating the two is a common cause of stale pages or broken checkouts. The configuration is matched to what your host already does, not layered on blindly.</p>
+                </details>
+                <details data-anim="item" class="faq-item">
+                  <summary>Do I need a paid CDN?</summary>
+                  <p class="faq-body">No &mdash; a free-tier CDN is enough for most WordPress sites, and that's the default unless your traffic or geography genuinely needs a paid tier. You get a straight recommendation either way, not an upsell to the more expensive option.</p>
+                </details>
+                <details data-anim="item" class="faq-item">
+                  <summary>Will this break my cart or checkout pages?</summary>
+                  <p class="faq-body">Not if it's configured correctly, which is the point of doing it as a dedicated setup rather than a quick plugin install. Cart, checkout, account and any logged-in views are explicitly excluded from page caching so pricing, stock and session data stay accurate.</p>
+                </details>
+                <details data-anim="item" class="faq-item">
+                  <summary>Do you work with clients outside Bangladesh?</summary>
+                  <p class="faq-body">Most of my clients are outside Bangladesh &mdash; the UK, Germany and the US primarily.
+          I am based in Bangladesh and work across European and North American time zones without difficulty, with a
+          same-day reply to anything urgent.</p>
+                </details>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-dark section-contact">
+      <div class="hero-grid-bg contact-grid-bg" aria-hidden="true"></div>
+      <div class="glow glow-d" aria-hidden="true"></div>
+      <div class="container">
+        <div class="contact-cta-shell">
+          <div data-anim="fade" class="contact-cta-card">
+            <div class="contact-cta-copy">
+              <p class="badge badge-live mx-auto"><span class="dot" aria-hidden="true"></span>Available for new projects</p>
+              <p class="eyebrow eyebrow-center"><span class="eyebrow-mark eyebrow-mark-light" aria-hidden="true"></span><span class="mono">NEXT STEP</span></p>
+              <h2 data-anim="lines">Tell me about the host and stack, and I&rsquo;ll scope the setup.</h2>
+              <p class="body-lg">Based in Bangladesh, working with clients worldwide. Whether caching's never been configured or something's already conflicting &mdash; every serious enquiry gets a reply within one working day.</p>
+            </div>
+            <ul class="tech-chips justify-content-center">
+              <li>Reply within one working day</li>
+              <li>Fixed quote before work starts</li>
+              <li>UK, EU and US hours covered</li>
+            </ul>
+            <div class="contact-cta-actions">
+              <a class="btn btn-primary" href="../../contact/">Start a project <i class="ri-arrow-right-line" aria-hidden="true"></i></a>
+              <a class="btn btn-ghost" href="mailto:hello@ashekur.com">hello@ashekur.com</a>
+              <a class="btn btn-ghost" href="https://wa.me/8801812764112" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+          <section class="section section-dark">
+            <div class="container">
+              <p data-anim="fade" class="eyebrow mb-4"><span class="eyebrow-mark eyebrow-mark-light" aria-hidden="true"></span><span class="mono">ALSO WORTH READING</span></p>
+              <div data-anim="stagger" class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4 related-grid">
+                <div class="col">
+                  <a data-anim="item" class="related-card h-100" href="../wordpress-speed-optimization/">
+                    <strong>WordPress Speed Optimization</strong>
+                    <span>Not sure caching is the whole story? Start with the full diagnosis instead.</span>
+                  </a>
+                </div>
+                <div class="col">
+                  <a data-anim="item" class="related-card h-100" href="../core-web-vitals-fix/">
+                    <strong>Core Web Vitals Fix</strong>
+                    <span>Search Console flagged a specific metric? That gets diagnosed and fixed there.</span>
+                  </a>
+                </div>
+                <div class="col">
+                  <a data-anim="item" class="related-card h-100" href="../../tools/elementor-speed-checker/">
+                    <strong>Elementor Speed &amp; Bloat Checker</strong>
+                    <span>Free &mdash; check whether server response time or missing cache headers are part of the problem.</span>
+                  </a>
+                </div>
+                <div class="col">
+                  <a data-anim="item" class="related-card h-100" href="../../tools/wordpress-website-health-checker/">
+                    <strong>Website Health Checker</strong>
+                    <span>Free &mdash; check where the site stands before booking a setup.</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </section>
+
+  </main>
+
+    <footer class="site-footer">
+    <div class="container footer-top">
+      <div class="row gx-4 gy-5 align-items-start">
+        <div class="footer-brand col-12 col-lg-5">
+          <div class="brand brand-lg">
+            <picture>
+              <source srcset="../../assets/images/ashekur-logo-light.webp" type="image/webp" />
+              <img src="../../assets/images/ashekur-logo-light.png" alt="ashekur.com" width="480" height="125"
+                loading="lazy" decoding="async" />
+            </picture>
+          </div>
+          <p class="footer-blurb">Frontend development and WordPress engineering for teams that care how it feels, not
+            just how it looks. Based in Bangladesh &mdash; serving clients worldwide.</p>
+        </div>
+        <div class="col-12 col-lg-7">
+          <div class="footer-cols row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4">
+            <nav class="col" aria-label="Services">
+              <p class="mono footer-head">SERVICES</p>
+              <a href="../../services/wordpress-development/">WordPress Development</a>
+              <a href="../../services/wordpress-customization/">WordPress Customization</a>
+              <a href="../../services/elementor-customization/">Elementor Customization</a>
+              <a href="../../services/woocommerce-development/">WooCommerce Development</a>
+              <a href="../../services/wordpress-speed-optimization/">WordPress Speed Optimization</a>
+              <a href="../../services/wordpress-bug-fix/">WordPress Bug Fix</a>
+              <a href="../../services/elementor-fix/">Elementor Bug Fix</a>
+              <a href="../../services/wordpress-migration/">WordPress Migration</a>
+              <a href="../../services/seo/">WordPress SEO</a>
+            </nav>
+            <nav class="col" aria-label="Site">
+              <p class="mono footer-head">SITEMAP</p>
+              <a href="../../">Home</a>
+              <a href="../../tools/">Tools</a>
+              <a href="../../portfolio/">Portfolio</a>
+              <a href="../../blog/">Blog</a>
+              <a href="../../#experience">Experience</a>
+              <a href="../../contact/">Contact</a>
+              <a href="../../privacy/">Privacy Policy</a>
+            </nav>
+            <div class="col">
+              <p class="mono footer-head">ELSEWHERE</p>
+              <a href="mailto:hello@ashekur.com"><i class="ri-mail-line" aria-hidden="true"></i>hello@ashekur.com</a>
+              <a href="https://wa.me/8801812764112" target="_blank" rel="noopener noreferrer"><i
+                  class="ri-whatsapp-line" aria-hidden="true"></i>WhatsApp</a>
+              <a href="https://www.linkedin.com/in/ashekur-rahman-1ab205122/" target="_blank"
+                rel="noopener noreferrer"><i class="ri-linkedin-fill" aria-hidden="true"></i>LinkedIn</a>
+              <a href="https://github.com/AshekurRahman" target="_blank" rel="noopener noreferrer"><i
+                  class="ri-github-fill" aria-hidden="true"></i>GitHub</a>
+              <a href="https://www.upwork.com/freelancers/~010aabe60ec2ae6679" target="_blank" rel="noopener noreferrer"><i
+                  class="ri-upwork-fill" aria-hidden="true"></i>Upwork</a>
+              <a href="https://www.facebook.com/ashekur.rahman.hridoy" target="_blank" rel="noopener noreferrer"><i
+                  class="ri-facebook-circle-fill" aria-hidden="true"></i>Facebook</a>
+              <a href="https://www.instagram.com/ashekurhridoy/" target="_blank" rel="noopener noreferrer"><i
+                  class="ri-instagram-line" aria-hidden="true"></i>Instagram</a>
+            <a href="https://www.youtube.com/@ashekurrahman1431" target="_blank" rel="noopener noreferrer"><i class="ri-youtube-fill" aria-hidden="true"></i>YouTube</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p class="mono copyright">&copy; 2026 Ashekur Rahman. All rights reserved.</p>
+      <a class="to-top-inline" href="#main"><i class="ri-arrow-up-line" aria-hidden="true"></i> Back to top</a>
+    </div>
+  </footer>
+</div>
+</div>
+
+
+  <a class="wa-float" href="https://wa.me/8801812764112" target="_blank" rel="noopener noreferrer"
+    aria-label="Chat on WhatsApp"><i class="ri-whatsapp-fill" aria-hidden="true"></i></a>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"
+    integrity="sha384-HOvlOYPIs/zjoIkWUGXkVmXsjr8GuZLV+Q+rcPwmJOVZVpvTSXQChiN4t9Euv9Vc" crossorigin="anonymous"
+    defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"
+    integrity="sha384-P8VzCVnT9NBUkMrpcIZrJbA7EBjJvh/fJS6PmP+4nLIM284DtsImIv8D0fFjIkeh" crossorigin="anonymous"
+    defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"
+    integrity="sha384-xb96EMJeax+NLXMC88ZBa1xAeAW+kn+horHh/zFlbMLG2UPWhMJJSlv7fi57hS+Q" crossorigin="anonymous"
+    defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollSmoother.min.js" integrity="sha384-dd8lT3AimXbI347qlZzlijPa4qnSlgGxuTqK2HlcfvF5+aOIeddPdMFmFpypQPZN" crossorigin="anonymous" defer></script>
+  <script src="../../assets/js/anim.js" defer></script>
+  <script src="../../assets/js/main.js" defer></script>
+</body>
+
+</html>

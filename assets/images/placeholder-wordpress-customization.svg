@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" role="img" aria-hidden="true">
+  <title>Abstract dark tech visual representing WordPress theme customization</title>
+  <defs>
+    <radialGradient id="bgFadewpc" cx="50%" cy="36%" r="78%">
+      <stop offset="0%" stop-color="#141f38"/>
+      <stop offset="100%" stop-color="#0a1020"/>
+    </radialGradient>
+    <pattern id="gridwpc" width="64" height="64" patternUnits="userSpaceOnUse">
+      <path d="M 64 0 L 0 0 0 64" fill="none" stroke="rgba(148,163,184,0.10)" stroke-width="1"/>
+    </pattern>
+    <radialGradient id="gridMaskwpc" cx="50%" cy="32%" r="70%">
+      <stop offset="0%" stop-color="#fff" stop-opacity="0.9"/>
+      <stop offset="65%" stop-color="#fff" stop-opacity="0.32"/>
+      <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+    </radialGradient>
+    <mask id="gridMaskElwpc">
+      <rect width="1280" height="720" fill="url(#gridMaskwpc)"/>
+    </mask>
+
+    <radialGradient id="gBlue_wpc" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#2563eb" stop-opacity="0.48"/>
+      <stop offset="66%" stop-color="#2563eb" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="gPink_wpc" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#f472b6" stop-opacity="0.34"/>
+      <stop offset="66%" stop-color="#f472b6" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bgFadewpc)"/>
+  <rect width="1280" height="720" fill="url(#gridwpc)" mask="url(#gridMaskElwpc)"/>
+  <circle cx="340" cy="220" r="340" fill="url(#gBlue_wpc)"/><circle cx="980" cy="540" r="360" fill="url(#gPink_wpc)"/>
+
+  <!-- a browser frame with a swatch/layout being edited -->
+  <g>
+    <rect x="740" y="230" width="300" height="220" rx="10" fill="#0a1020" stroke="#a5b4fc" stroke-width="2" opacity="0.9"/>
+    <rect x="740" y="230" width="300" height="30" rx="10" fill="#141f38" stroke="#a5b4fc" stroke-width="2" opacity="0.9"/>
+    <circle cx="758" cy="245" r="4" fill="#f472b6"/>
+    <circle cx="772" cy="245" r="4" fill="#a5b4fc"/>
+    <circle cx="786" cy="245" r="4" fill="#6ee7b7"/>
+    <rect x="756" y="278" width="120" height="60" rx="4" fill="none" stroke="#a5b4fc" stroke-width="2" opacity="0.7"/>
+    <rect x="884" y="278" width="140" height="18" rx="3" fill="#a5b4fc" opacity="0.4"/>
+    <rect x="884" y="304" width="140" height="10" rx="3" fill="#a5b4fc" opacity="0.28"/>
+    <rect x="884" y="322" width="100" height="10" rx="3" fill="#a5b4fc" opacity="0.28"/>
+    <rect x="756" y="356" width="268" height="70" rx="4" fill="none" stroke="#f472b6" stroke-width="2" stroke-dasharray="6 5" opacity="0.85"/>
+  </g>
+  <!-- a cursor/edit mark -->
+  <path d="M 1000 360 L 1000 400 L 1012 390 L 1020 405 L 1030 399 L 1022 384 L 1036 384 Z" fill="#6ee7b7" opacity="0.9"/>
+
+  <g fill="#a5b4fc" opacity="0.4">
+    <rect x="600" y="480" width="18" height="18" rx="3"/>
+    <rect x="1060" y="220" width="16" height="16" rx="3"/>
+    <rect x="700" y="180" width="14" height="14" rx="3"/>
+  </g>
+</svg>

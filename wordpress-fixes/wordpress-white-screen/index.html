@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>WordPress White Screen of Death: Why It Happens & How to Fix It | Ashekur Rahman</title>
+<meta name="description" content="Blank white page, no error text, nothing at all? Here's how to reveal the hidden PHP fatal error behind a WordPress white screen of death and fix it safely." />
+<meta name="keywords" content="WordPress white screen of death, WordPress blank page, WordPress white screen, WSOD WordPress, fix WordPress blank page, WordPress showing blank page" />
+<meta name="author" content="Ashekur Rahman" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<meta name="theme-color" content="#0F172A" />
+<link rel="canonical" href="https://ashekur.com/wordpress-fixes/wordpress-white-screen/" />
+<link rel="icon" href="../../assets/images/mark.png" type="image/png" />
+<link rel="apple-touch-icon" href="../../assets/images/mark.png" />
+<link rel="manifest" href="../../site.webmanifest" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-09-01" />
+<meta property="article:author" content="Ashekur Rahman" />
+<meta property="article:section" content="WordPress Fixes" />
+<meta property="og:site_name" content="Ashekur Rahman" />
+<meta property="og:url" content="https://ashekur.com/wordpress-fixes/wordpress-white-screen/" />
+<meta property="og:title" content="WordPress White Screen of Death: Why It Happens & How to Fix It | Ashekur Rahman" />
+<meta property="og:description" content="Blank white page, no error text, nothing at all? Here's how to reveal the hidden PHP fatal error behind a WordPress white screen of death and fix it safely." />
+<meta property="og:image" content="https://ashekur.com/assets/images/og-default.jpg" />
+<meta property="og:locale" content="en_US" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="WordPress White Screen of Death: Why It Happens & How to Fix It | Ashekur Rahman" />
+<meta name="twitter:description" content="Blank white page, no error text, nothing at all? Here's how to reveal the hidden PHP fatal error behind a WordPress white screen and fix it safely." />
+<meta name="twitter:image" content="https://ashekur.com/assets/images/og-default.jpg" />
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://www.googletagmanager.com" />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+<link rel="stylesheet" href="../../assets/fonts/remixicon.css" />
+<link rel="stylesheet" href="../../assets/css/template.css" />
+<script>var d=document.documentElement;d.classList.remove('no-js');d.classList.add('js-anim');</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://ashekur.com/" },
+        { "@type": "ListItem", "position": 2, "name": "WordPress Fixes", "item": "https://ashekur.com/wordpress-fixes/" },
+        { "@type": "ListItem", "position": 3, "name": "WordPress White Screen", "item": "https://ashekur.com/wordpress-fixes/wordpress-white-screen/" }
+      ]
+    },
+    {
+      "@type": "TechArticle",
+      "@id": "https://ashekur.com/wordpress-fixes/wordpress-white-screen/#article",
+      "headline": "WordPress White Screen of Death (Blank Page, No Error)",
+      "description": "Blank white page, no error text, nothing at all? Here's how to reveal the hidden PHP fatal error behind a WordPress white screen of death and fix it safely.",
+      "url": "https://ashekur.com/wordpress-fixes/wordpress-white-screen/",
+      "mainEntityOfPage": { "@type": "WebPage", "@id": "https://ashekur.com/wordpress-fixes/wordpress-white-screen/" },
+      "image": "https://ashekur.com/assets/images/og-default.jpg",
+      "datePublished": "2026-09-01",
+      "dateModified": "2026-09-01",
+      "author": {
+        "@type": "Person", "@id": "https://ashekur.com/#person", "name": "Ashekur Rahman", "url": "https://ashekur.com/",
+        "jobTitle": "Frontend Developer & WordPress Expert", "email": "hello@ashekur.com", "telephone": "+8801812764112",
+        "address": { "@type": "PostalAddress", "addressCountry": "BD" }
+      },
+      "publisher": {
+        "@type": "Person", "@id": "https://ashekur.com/#person", "name": "Ashekur Rahman", "url": "https://ashekur.com/",
+        "jobTitle": "Frontend Developer & WordPress Expert", "email": "hello@ashekur.com", "telephone": "+8801812764112",
+        "address": { "@type": "PostalAddress", "addressCountry": "BD" }
+      },
+      "articleSection": "WordPress Fixes",
+      "proficiencyLevel": "Beginner",
+      "dependencies": "WordPress, PHP",
+      "wordCount": 1700,
+      "inLanguage": "en",
+      "isAccessibleForFree": true
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Why is my WordPress site showing a completely blank white page?",
+          "acceptedAnswer": { "@type": "Answer", "text": "A PHP fatal error is happening while the page tries to build, but your server has display_errors turned off (standard on production hosting for security), so instead of showing an error message, PHP just stops and sends nothing. The cause is real; you just can't see it without checking a log." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is white screen of death the same thing as a 500 error?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No, and the difference matters for diagnosis. A white screen is a blank page with an HTTP 200 status and no visible error, usually a PHP-level fatal with error display switched off. A 500 error shows an actual \"Internal Server Error\" page with a different HTTP status, usually pointing to a server-level failure such as .htaccess corruption or a crashed PHP process." }
+        },
+        {
+          "@type": "Question",
+          "name": "Will I lose my content if my site shows a white screen?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. A white screen is almost always a display problem caused by a PHP error, not data loss. Your posts, pages and settings are still in the database; the site just can't finish rendering them until the underlying error is fixed." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I fix white screen of death without a developer?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Often, yes, especially when it followed a specific plugin or theme update. Enabling debug logging, reading the exact error, and deactivating the plugin named in it (via FTP if wp-admin is also blank) resolves a large share of cases without needing to write any code." }
+        },
+        {
+          "@type": "Question",
+          "name": "Why does WordPress hide the error instead of just showing it?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Showing raw PHP errors to visitors can leak file paths, plugin names and server details that make a site an easier target, so production hosting disables error display by default. The trade-off is that you have to turn on logging deliberately to see what actually failed." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does a plugin conflict always cause white screen of death?",
+          "acceptedAnswer": { "@type": "Answer", "text": "It's the single most common cause, but not the only one. A PHP version incompatibility, a memory limit, a manual code edit with a syntax error, or a corrupted core file after an interrupted update can all produce the exact same blank page." }
+        },
+        {
+          "@type": "Question",
+          "name": "What if wp-admin is showing a white screen too, not just the front end?",
+          "acceptedAnswer": { "@type": "Answer", "text": "You'll need FTP, SFTP or your host's File Manager instead of wp-admin to make any changes, since the dashboard is affected by the same fatal error. Renaming the suspect plugin's folder there deactivates it immediately and usually restores access to both the front end and the dashboard." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SGTGDFXH6K"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-SGTGDFXH6K');
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header" id="siteHeader">
+  <div class="container header-inner">
+    <a class="brand" href="../../" aria-label="Ashekur Rahman &mdash; home">
+      <picture>
+        <source srcset="../../assets/images/ashekur-logo-light.webp" type="image/webp" />
+        <img src="../../assets/images/ashekur-logo-light.png" alt="Ashekur Rahman" width="480" height="125" fetchpriority="high" decoding="async" />
+      </picture>
+    </a>
+    <nav class="nav-desktop" aria-label="Main">
+      <a href="../../" class="nav-link">Home</a>
+      <a href="../../tools/" class="nav-link">Tools</a>
+      <div class="nav-item" data-dropdown>
+        <div class="nav-row">
+          <a href="../../services/" class="nav-link">Services</a>
+          <button class="nav-caret" type="button" aria-label="Services submenu" aria-expanded="false" aria-controls="navDrop-services" data-dropdown-toggle><i class="ri-arrow-down-s-line" aria-hidden="true"></i></button>
+        </div>
+        <div class="nav-panel" id="navDrop-services">
+          <a class="nav-panel-all" href="../../services/">All services</a>
+          <div class="nav-panel-cols">
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">WordPress</p>
+              <a href="../../services/wordpress-development/">WordPress Development</a>
+              <a href="../../services/wordpress-customization/">WordPress Customization</a>
+              <a href="../../services/wordpress-bug-fix/">WordPress Bug Fix</a>
+              <a href="../../services/wordpress-maintenance/">WordPress Maintenance<em>New</em></a>
+            </div>
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">Page Builders</p>
+              <a href="../../services/elementor-fix/">Elementor Bug Fix</a>
+              <a href="../../services/elementor-customization/">Elementor Customization</a>
+              <a href="../../services/elementor-custom-widgets/">Elementor Custom Widgets</a>
+              <a href="../../services/divi-customization/">Divi Customization</a>
+              <a href="../../services/divi-5-migration/">Divi 5 Migration<em>New</em></a>
+            </div>
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">WooCommerce</p>
+              <a href="../../services/woocommerce-development/">WooCommerce Development</a>
+              <a href="../../services/woocommerce-fix/">WooCommerce Fixes</a>
+            </div>
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">Performance &amp; Security</p>
+              <a href="../../services/wordpress-speed-optimization/">WordPress Speed Optimization</a>
+              <a href="../../services/core-web-vitals-fix/">Core Web Vitals Fix<em>New</em></a>
+              <a href="../../services/wordpress-malware-removal/">WordPress Malware Removal</a>
+              <a href="../../services/google-blacklist-removal/">Google Blacklist Removal<em>New</em></a>
+              <a href="../../services/caching-cdn-setup/">Caching &amp; CDN Setup<em>New</em></a>
+              <a href="../../services/wordpress-security-hardening/">WordPress Security Hardening<em>New</em></a>
+            </div>
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">Migration</p>
+              <a href="../../services/wordpress-migration/">WordPress Migration</a>
+              <a href="../../services/domain-migration-redirects/">Domain Migration &amp; 301 Redirects<em>New</em></a>
+              <a href="../../services/wordpress-migration/#hosting">Host Migration</a>
+            </div>
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">SEO</p>
+              <a href="../../services/seo/">SEO</a>
+              <a href="../../services/technical-seo-audit/">Technical SEO Audit<em>New</em></a>
+            </div>
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">Other</p>
+              <a href="../../services/webflow-development/">Webflow Development</a>
+              <a href="../../services/frontend-development/">Frontend Development</a>
+              <a href="../../services/website-redesign/">Website Redesign<em>New</em></a>
+              <a href="../../services/white-label-wordpress-development/">White Label Development<em>New</em></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="../../pricing/" class="nav-link">Pricing</a>
+      <a href="../../portfolio/" class="nav-link">Portfolio</a>
+      <a href="../../blog/" class="nav-link">Blog</a>
+      <a href="../../contact/" class="btn btn-primary btn-sm nav-cta">Start a project</a>
+    </nav>
+    <button class="burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="nav-mobile" id="mobileNav" aria-label="Mobile" hidden>
+    <a href="../../">Home</a>
+    <a href="../../tools/">Tools</a>
+    <div class="nav-item" data-dropdown>
+      <div class="nav-row">
+        <a href="../../services/">Services</a>
+        <button class="nav-caret" type="button" aria-label="Services submenu" aria-expanded="false" aria-controls="navDropM-services" data-dropdown-toggle><i class="ri-arrow-down-s-line" aria-hidden="true"></i></button>
+      </div>
+      <div class="nav-panel" id="navDropM-services">
+        <a href="../../services/">All services</a>
+        <a href="../../services/wordpress-development/">WordPress Development</a>
+        <a href="../../services/wordpress-customization/">WordPress Customization</a>
+        <a href="../../services/wordpress-bug-fix/">WordPress Bug Fix</a>
+        <a href="../../services/wordpress-maintenance/">WordPress Maintenance</a>
+        <a href="../../services/elementor-fix/">Elementor Bug Fix</a>
+        <a href="../../services/elementor-customization/">Elementor Customization</a>
+        <a href="../../services/divi-customization/">Divi Customization</a>
+        <a href="../../services/divi-5-migration/">Divi 5 Migration</a>
+        <a href="../../services/elementor-custom-widgets/">Elementor Custom Widgets</a>
+        <a href="../../services/wordpress-speed-optimization/">WordPress Speed Optimization</a>
+        <a href="../../services/core-web-vitals-fix/">Core Web Vitals Fix</a>
+        <a href="../../services/woocommerce-fix/">WooCommerce Fixes</a>
+        <a href="../../services/woocommerce-development/">WooCommerce Development</a>
+        <a href="../../services/wordpress-migration/">WordPress Migration</a>
+        <a href="../../services/domain-migration-redirects/">Domain Migration &amp; 301 Redirects</a>
+        <a href="../../services/seo/">WordPress SEO</a>
+        <a href="../../services/wordpress-malware-removal/">WordPress Malware Removal</a>
+        <a href="../../services/google-blacklist-removal/">Google Blacklist Removal</a>
+        <a href="../../services/wordpress-security-hardening/">WordPress Security Hardening</a>
+        <a href="../../services/webflow-development/">Webflow Development</a>
+        <a href="../../services/frontend-development/">Frontend Development</a>
+        <a href="../../services/website-redesign/">Website Redesign</a>
+        <a href="../../services/white-label-wordpress-development/">White Label Development</a>
+      </div>
+    </div>
+    <a href="../../pricing/">Pricing</a>
+    <a href="../../portfolio/">Portfolio</a>
+    <a href="../../blog/">Blog</a>
+    <a href="../../contact/" class="btn btn-primary">Start a project</a>
+  </nav>
+</header>
+
+<div id="smooth-wrapper">
+<div id="smooth-content">
+<main id="main" class="page-shell">
+
+  <article>
+  <section class="section section-dark page-intro page-hero">
+    <div class="hero-grid-bg" aria-hidden="true"></div>
+    <div class="glow glow-a" aria-hidden="true"></div>
+    <div class="glow glow-b" aria-hidden="true"></div>
+    <div class="container">
+      <div class="row hero-split">
+        <div data-anim-hero class="col-12 col-lg-9">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <ol>
+              <li><a href="../../">Home</a></li>
+              <li><a href="../../wordpress-fixes/">WordPress Fixes</a></li>
+              <li><span aria-current="page">WordPress White Screen</span></li>
+            </ol>
+          </nav>
+          <p class="post-meta mono"><span class="post-cat">Site down</span><span>12 min read</span><span>2026-09-01</span><span>Ashekur Rahman</span></p>
+          <h1 data-anim="lines">WordPress White Screen of Death: What It Is and How to Fix It</h1>
+          <p class="body-lg">A totally blank white page, no error, no text, nothing &mdash; not a crash you can read, just silence. It looks worse than it is: nearly every case is a normal PHP fatal error that your server is deliberately hiding from view, and there's a fast, safe way to reveal it.</p>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="../../contact/">Send me your site <i class="ri-arrow-right-line" aria-hidden="true"></i></a>
+            <a class="btn btn-ghost" href="../../services/wordpress-bug-fix/">See the bug fix service</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-white">
+    <div class="container">
+      <figure data-anim="reveal" class="shot mb-5">
+        <picture>
+          <source srcset="../../assets/images/wordpress-white-screen.webp" type="image/webp" />
+          <img src="../../assets/images/wordpress-white-screen.jpeg" alt="Browser window showing a completely blank white page with zero bytes rendered, against a dark diagnostic background with a debug log icon" width="1280" height="720" loading="lazy" decoding="async" />
+        </picture>
+        <!-- Image prompt: Realistic photo of a laptop screen displaying a totally blank white browser tab with only the address bar visible, sitting on a desk beside a second monitor showing a terminal window with a PHP fatal error log entry highlighted in red. Neutral office lighting, shallow depth of field, photorealistic tech-editorial style, no visible faces, no readable personal data. 1280x720, 16:9. -->
+        <figcaption>Nothing on screen doesn't mean nothing went wrong &mdash; it means the error is being hidden from you.</figcaption>
+      </figure>
+
+      <div class="row gx-5 gy-4">
+        <aside class="col-12 col-lg-4 order-lg-2">
+          <div class="post-aside">
+            <nav class="toc" aria-label="On this page">
+              <p class="toc-head mono">ON THIS PAGE</p>
+              <ol>
+                <li><a href="#what-is-the-problem">What is the problem?</a></li>
+                <li><a href="#common-symptoms">Common symptoms</a></li>
+                <li><a href="#why-does-this-happen">Why does this happen?</a></li>
+                <li><a href="#common-technical-causes">Common technical causes</a></li>
+                <li><a href="#how-to-diagnose-it">How to diagnose it</a></li>
+                <li><a href="#how-to-fix-it-step-by-step">How to fix it, step by step</a></li>
+                <li><a href="#when-this-needs-professional-help">When this needs professional help</a></li>
+                <li><a href="#how-i-can-help">How I can help</a></li>
+              </ol>
+            </nav>
+          </div>
+        </aside>
+        <div class="col-12 col-lg-8 order-lg-1">
+          <div class="prose">
+
+<h2 id="what-is-the-problem">What is the problem?</h2>
+<p>The white screen of death, often shortened to WSOD, is exactly what it sounds like: you load your site and get a completely blank white page. Not an error message, not a broken layout with missing images &mdash; nothing. If you view the page source, the body is empty or cuts off mid-way through. The browser reports the page loaded successfully (a normal HTTP 200 status), which is precisely why it's so disorienting: as far as the browser is concerned, nothing went wrong.</p>
+<blockquote>Quick answer: a PHP fatal error is happening on the server, but display_errors is switched off (the default on production hosting, for security), so instead of an error message you get silence. Turn on error logging and the exact cause appears within minutes.</blockquote>
+<p>This is different from a page that shows an actual error message. If your site displays a red "critical error" notice, or a page titled "500 Internal Server Error", you have a related but distinct problem &mdash; see <a href="../wordpress-critical-error/">WordPress critical error</a> or <a href="../wordpress-500-error/">WordPress 500 error</a> instead, since the diagnostic path is slightly different for each.</p>
+
+<h2 id="common-symptoms">Common symptoms</h2>
+<ul>
+  <li>The front end of the site loads a completely blank white page, with no text or error visible anywhere</li>
+  <li>The wp-admin dashboard is sometimes blank too, locking you out of the backend entirely</li>
+  <li>Viewing the page source in your browser shows an empty <code>&lt;body&gt;</code>, or content that cuts off partway through</li>
+  <li>Only specific pages are blank while others load normally, which usually points to a widget, shortcode or template file specific to those pages</li>
+  <li>It started immediately after updating a plugin or theme, installing something new, an automatic WordPress core update, editing <code>functions.php</code> or <code>wp-config.php</code> directly, or restoring a backup</li>
+  <li>The site was fine a moment ago and nobody knowingly changed anything &mdash; often an automatic background update is the actual trigger</li>
+</ul>
+
+<h2 id="why-does-this-happen">Why does this happen?</h2>
+<p>WordPress runs on PHP, and PHP has one particular failure mode that behaves this way: a <strong>fatal error</strong>. When PHP hits code it genuinely cannot continue past &mdash; a function that doesn't exist, a class that was never loaded, memory that ran out &mdash; execution stops immediately, right where it failed. Everything the page was supposed to output after that point simply never gets sent to the browser.</p>
+<p>On a development setup, PHP would print that error directly onto the page. On production hosting, <code>display_errors</code> is switched off by default, specifically so a fatal error doesn't leak file paths, plugin names or other details to a stranger visiting your site. The error still happens and still gets recorded &mdash; just to a log file instead of the screen. That's the entire mechanism behind a white screen: a real, specific, fixable error that's being logged rather than shown to you.</p>
+
+<h2 id="common-technical-causes">Common technical causes</h2>
+<ul>
+  <li><strong>PHP's memory_limit was exhausted</strong> by a plugin, theme process, or import/export job mid-run</li>
+  <li><strong>A plugin or theme update removed or renamed a function</strong> that another active plugin or the theme still calls, causing an "undefined function" fatal</li>
+  <li><strong>A syntax error from a manual edit</strong> to <code>functions.php</code>, <code>wp-config.php</code>, or a code-snippet plugin entry &mdash; a missing semicolon or bracket is enough</li>
+  <li><strong>A PHP version incompatibility</strong>, where an older plugin or theme uses a function that's since been deprecated or removed from PHP itself</li>
+  <li><strong>Two plugins declaring the same function or class name</strong>, which PHP cannot allow and treats as fatal</li>
+  <li><strong>A corrupted core, theme or plugin file</strong> from an update that was interrupted partway, or a bad file transfer</li>
+  <li><strong>A hacked or injected file</strong> that broke while trying to run, which is worth ruling out if this followed no update you're aware of &mdash; see <a href="../../services/wordpress-malware-removal/">WordPress malware removal</a> if that looks likely</li>
+</ul>
+
+<h2 id="how-to-diagnose-it">How to diagnose it</h2>
+<ol>
+  <li><strong>Turn on debug logging without displaying it.</strong> Open <code>wp-config.php</code> via FTP and add, or edit, these three lines above the line that says "That's all, stop editing!":
+    <br><code>define('WP_DEBUG', true);</code><br><code>define('WP_DEBUG_LOG', true);</code><br><code>define('WP_DEBUG_DISPLAY', false);</code>
+    This writes every error to <code>wp-content/debug.log</code> without showing anything to visitors.</li>
+  <li><strong>Reproduce the blank page, then open the log.</strong> Visit the file at <code>wp-content/debug.log</code> via FTP or your host's File Manager and check the newest entries at the bottom &mdash; the exact file and line number are usually right there.</li>
+  <li><strong>Check your host's PHP error log directly</strong> if <code>debug.log</code> is empty. Most cPanel-based hosts have an "Errors" section in the control panel; it's often faster than waiting on WordPress's own logging.</li>
+  <li><strong>If wp-admin is also blank</strong>, you'll need FTP, SFTP or File Manager access instead, since the dashboard is affected by the same underlying error.</li>
+  <li><strong>Rename the plugins folder</strong> (or one plugin's folder at a time) via FTP to <code>plugins-disabled</code> temporarily. WordPress automatically deactivates any plugin whose files it can't find, which restores the site immediately if a plugin is the cause.</li>
+  <li><strong>Switch the active theme by renaming its folder</strong> via FTP. WordPress falls back to a default theme automatically when the active one's files go missing, confirming or ruling out a theme conflict in seconds.</li>
+  <li><strong>Sort your files by modification date</strong> via FTP to see exactly what changed right before the white screen appeared, if the timing isn't already obvious.</li>
+</ol>
+
+<h2 id="how-to-fix-it-step-by-step">How to fix it, step by step</h2>
+<ol>
+  <li><strong>Get the exact error text first.</strong> Following the diagnosis steps above, find the line that says something like <code>Fatal error: Uncaught Error: Call to undefined function...</code> &mdash; it names the exact file, line, and often the plugin responsible.</li>
+  <li><strong>If a plugin update caused it</strong>, rename that plugin's folder via FTP to deactivate it immediately and restore the site, then update it to its latest version (or replace it) before reactivating.</li>
+  <li><strong>If it's a manual code edit</strong>, open the exact file and line the error names, and either fix the syntax error or remove the line entirely. Restoring that one file from a recent backup works just as well if you have one.</li>
+  <li><strong>If it's a memory limit</strong>, add <code>define('WP_MEMORY_LIMIT', '256M');</code> to <code>wp-config.php</code>. If the error persists, the server's PHP-level memory ceiling needs raising too &mdash; ask your host, since a wp-config value can't exceed what the server allows.</li>
+  <li><strong>If a core file looks corrupted</strong>, re-upload fresh copies of the <code>wp-admin</code> and <code>wp-includes</code> folders from a matching WordPress version, downloaded directly from wordpress.org. Never overwrite <code>wp-content</code>, since that's where your themes, plugins and uploads live.</li>
+  <li><strong>Clear every caching layer</strong> once the site is back &mdash; a cache can keep serving the blank result even after the underlying error is fixed.</li>
+  <li><strong>Turn <code>WP_DEBUG_DISPLAY</code> and <code>WP_DEBUG</code> back off</strong> once you've confirmed the fix, so raw errors are never shown to visitors in normal operation going forward.</li>
+</ol>
+
+<h2 id="when-this-needs-professional-help">When this needs professional help</h2>
+<p>Plenty of white screens are a five-minute fix once you can see the actual error. It's worth bringing in a developer when:</p>
+<ul>
+  <li>The site is fully down and every minute matters &mdash; an active store losing orders, a client site with visitors arriving right now</li>
+  <li>wp-admin is blank too, so FTP or File Manager is the only way in, and you're not comfortable working there directly</li>
+  <li>The error text points to a core file, an unfamiliar file that shouldn't exist, or anything that looks like it could be a hack rather than a normal update conflict</li>
+  <li>The same white screen keeps coming back after every plugin or theme update, which means the underlying conflict was patched over rather than actually resolved</li>
+  <li>You don't have a recent backup and are unsure which change to revert</li>
+</ul>
+
+<h2 id="how-i-can-help">How I can help</h2>
+<p>A blank white page with no visible error is one of the more stressful ways for a site to fail, precisely because it gives you nothing to search for. I read the actual PHP error log first rather than guessing, so I know the exact cause before I change anything, and I take a backup and staging copy before touching a live site so there's always a working version to fall back to. Most white screens are fixed within 24&ndash;48 hours once I have access, and genuinely urgent cases &mdash; a store that's fully down &mdash; get priority.</p>
+          </div>
+
+          <aside class="post-cta">
+            <p class="mono post-cta-head">RELATED SERVICE</p>
+            <h2>WordPress Bug Fix</h2>
+            <p>If you'd rather have this fixed than fix it yourself, that page covers the process, typical turnaround, and what it costs to find out.</p>
+            <div data-anim="fade" class="btn-row">
+              <a class="btn btn-primary" href="../../services/wordpress-bug-fix/">WordPress Bug Fix <i class="ri-arrow-right-line" aria-hidden="true"></i></a>
+              <a class="btn btn-ghost" href="../../contact/">Ask a question</a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </section>
+  </article>
+
+  <section class="section section-light">
+    <div class="container">
+      <div class="row gx-0">
+        <div class="section-head col-12 col-lg-6">
+          <p data-anim="fade" class="eyebrow"><span class="eyebrow-mark" aria-hidden="true"></span><span class="mono">RELATED PROBLEMS</span></p>
+          <h2 data-anim="lines">If this isn't quite your issue</h2>
+          <p data-anim="fade" class="body-lg">A blank white page gets confused with these often enough that it's worth checking you're on the right guide.</p>
+        </div>
+      </div>
+      <div data-anim="stagger" class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4 related-grid">
+        <div class="col">
+          <a data-anim="item" class="related-card h-100" href="../elementor-not-loading/">
+            <strong>Elementor Not Loading</strong>
+            <span>If it's specifically the editor that's blank, not the whole site, this is the more likely cause.</span>
+          </a>
+        </div>
+        <div class="col">
+          <a data-anim="item" class="related-card h-100" href="../../services/wordpress-malware-removal/">
+            <strong>WordPress Malware Removal</strong>
+            <span>If the fatal error traces back to a file you don't recognise, this is the page you actually need.</span>
+          </a>
+        </div>
+        <div class="col">
+          <a data-anim="item" class="related-card h-100" href="../../services/wordpress-development/">
+            <strong>WordPress Development</strong>
+            <span>For when the site needs more than a fix &mdash; a rebuild done properly, on modern foundations.</span>
+          </a>
+        </div>
+        <div class="col">
+          <a data-anim="item" class="related-card h-100" href="../elementor-white-screen/">
+            <strong>Elementor Editor Blank White Screen</strong>
+            <span>If only the Elementor editor is blank while the published page loads fine, that's a narrower, editor-specific cause.</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-white">
+    <div class="container">
+      <div class="row gx-0">
+        <div class="section-head col-12 col-lg-6">
+          <p data-anim="fade" class="eyebrow"><span class="eyebrow-mark" aria-hidden="true"></span><span class="mono">RELEVANT WORK</span></p>
+          <h2 data-anim="lines">Projects fixed the same way</h2>
+          <p data-anim="fade" class="body-lg">Diagnosed from the real error log first, fixed at the cause, tested before handover.</p>
+        </div>
+      </div>
+      <div data-anim="stagger" class="row row-cols-1 row-cols-md-2 g-4 case-grid">
+        <div class="col">
+          <article data-anim="item" class="case-card h-100">
+            <a href="../../portfolio/freizeitcenter-dietz/" tabindex="-1" aria-hidden="true">
+              <picture>
+                <source srcset="../../assets/images/project-dietz.webp" type="image/webp" />
+                <img src="../../assets/images/project-dietz.jpeg" alt="Freizeitcenter Dietz motorhome dealership website, built in WordPress with Divi 5" width="1200" height="624" loading="lazy" decoding="async" />
+              </picture>
+            </a>
+            <div class="case-card-body">
+              <h3><a href="../../portfolio/freizeitcenter-dietz/">Freizeitcenter Dietz</a></h3>
+              <p>German motorhome dealership running sales, rental and workshop booking side by side, with dealer ranges for four major brands.</p>
+              <ul class="tech-chips"><li>WordPress</li><li>WooCommerce</li><li>PHP</li></ul>
+              <div class="btn-row">
+                <a class="btn btn-primary btn-sm" href="../../portfolio/freizeitcenter-dietz/">Read the case study</a>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="col">
+          <article data-anim="item" class="case-card h-100">
+            <a href="../../portfolio/dgsors-advertising/" tabindex="-1" aria-hidden="true">
+              <picture>
+                <source srcset="../../assets/images/project-dgsors.webp" type="image/webp" />
+                <img src="../../assets/images/project-dgsors.jpeg" alt="DGsors Advertising agency website on a custom WordPress theme" width="1200" height="615" loading="lazy" decoding="async" />
+              </picture>
+            </a>
+            <div class="case-card-body">
+              <h3><a href="../../portfolio/dgsors-advertising/">DGsors Advertising</a></h3>
+              <p>Advertising agency covering branding, content production and 3D rendered commercials, on a custom WordPress and WooCommerce build.</p>
+              <ul class="tech-chips"><li>WordPress</li><li>Elementor</li><li>WooCommerce</li></ul>
+              <div class="btn-row">
+                <a class="btn btn-primary btn-sm" href="../../portfolio/dgsors-advertising/">Read the case study</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-tint">
+    <div class="container">
+      <div class="row gx-5 gy-4">
+        <div class="col-12 col-lg-4">
+          <div class="section-head sticky-head mb-4 mb-lg-0">
+            <p data-anim="fade" class="eyebrow"><span class="eyebrow-mark" aria-hidden="true"></span><span class="mono">FAQ</span></p>
+            <h2 data-anim="lines">Questions about a blank WordPress site</h2>
+            <p data-anim="fade" class="body-lg">What people ask before sending over the site.</p>
+          </div>
+        </div>
+        <div class="col-12 col-lg-8">
+          <div data-anim="stagger" class="faq-list">
+            <details data-anim="item" class="faq-item">
+              <summary>Why is my WordPress site showing a completely blank white page?</summary>
+              <p class="faq-body">A PHP fatal error is happening while the page tries to build, but your server has display_errors turned off (standard on production hosting for security), so instead of showing an error message, PHP just stops and sends nothing. The cause is real; you just can't see it without checking a log.</p>
+            </details>
+            <details data-anim="item" class="faq-item">
+              <summary>Is white screen of death the same thing as a 500 error?</summary>
+              <p class="faq-body">No, and the difference matters for diagnosis. A white screen is a blank page with an HTTP 200 status and no visible error, usually a PHP-level fatal with error display switched off. A 500 error shows an actual "Internal Server Error" page with a different HTTP status, usually pointing to a server-level failure such as .htaccess corruption or a crashed PHP process. See <a href="../wordpress-500-error/">WordPress 500 error</a> if that's what you're actually seeing.</p>
+            </details>
+            <details data-anim="item" class="faq-item">
+              <summary>Will I lose my content if my site shows a white screen?</summary>
+              <p class="faq-body">No. A white screen is almost always a display problem caused by a PHP error, not data loss. Your posts, pages and settings are still in the database; the site just can't finish rendering them until the underlying error is fixed.</p>
+            </details>
+            <details data-anim="item" class="faq-item">
+              <summary>Can I fix white screen of death without a developer?</summary>
+              <p class="faq-body">Often, yes, especially when it followed a specific plugin or theme update. Enabling debug logging, reading the exact error, and deactivating the plugin named in it (via FTP if wp-admin is also blank) resolves a large share of cases without needing to write any code.</p>
+            </details>
+            <details data-anim="item" class="faq-item">
+              <summary>Why does WordPress hide the error instead of just showing it?</summary>
+              <p class="faq-body">Showing raw PHP errors to visitors can leak file paths, plugin names and server details that make a site an easier target, so production hosting disables error display by default. The trade-off is that you have to turn on logging deliberately to see what actually failed.</p>
+            </details>
+            <details data-anim="item" class="faq-item">
+              <summary>Does a plugin conflict always cause white screen of death?</summary>
+              <p class="faq-body">It's the single most common cause, but not the only one. A PHP version incompatibility, a memory limit, a manual code edit with a syntax error, or a corrupted core file after an interrupted update can all produce the exact same blank page.</p>
+            </details>
+            <details data-anim="item" class="faq-item">
+              <summary>What if wp-admin is showing a white screen too, not just the front end?</summary>
+              <p class="faq-body">You'll need FTP, SFTP or your host's File Manager instead of wp-admin to make any changes, since the dashboard is affected by the same fatal error. Renaming the suspect plugin's folder there deactivates it immediately and usually restores access to both the front end and the dashboard.</p>
+            </details>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-dark section-contact">
+    <div class="hero-grid-bg contact-grid-bg" aria-hidden="true"></div>
+    <div class="glow glow-d" aria-hidden="true"></div>
+    <div class="container">
+      <div class="contact-cta-shell">
+        <div data-anim="fade" class="contact-cta-card">
+          <div class="contact-cta-copy">
+            <p class="badge badge-live mx-auto"><span class="dot" aria-hidden="true"></span>Available for new projects</p>
+            <p class="eyebrow eyebrow-center"><span class="eyebrow-mark eyebrow-mark-light" aria-hidden="true"></span><span class="mono">NEXT STEP</span></p>
+            <h2 data-anim="lines">Need help fixing this WordPress issue?</h2>
+            <p class="body-lg">Send me your website and I'll help identify the problem &mdash; no charge just to take a look. Based in Bangladesh, working with clients worldwide, with a reply within one working day.</p>
+          </div>
+          <ul class="tech-chips justify-content-center">
+            <li>Reply within one working day</li>
+            <li>Fixed quote before work starts</li>
+            <li>UK, EU and US hours covered</li>
+          </ul>
+          <div class="contact-cta-actions">
+            <a class="btn btn-primary" href="../../contact/">Start a project <i class="ri-arrow-right-line" aria-hidden="true"></i></a>
+            <a class="btn btn-ghost" href="mailto:hello@ashekur.com">hello@ashekur.com</a>
+            <a class="btn btn-ghost" href="https://wa.me/8801812764112" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-top">
+    <div class="row gx-4 gy-5 align-items-start">
+      <div class="footer-brand col-12 col-lg-5">
+        <div class="brand brand-lg">
+          <picture>
+            <source srcset="../../assets/images/ashekur-logo-light.webp" type="image/webp" />
+            <img src="../../assets/images/ashekur-logo-light.png" alt="ashekur.com" width="480" height="125" loading="lazy" decoding="async" />
+          </picture>
+        </div>
+        <p class="footer-blurb">Frontend development and WordPress engineering for teams that care how it feels, not just how it looks. Based in Bangladesh &mdash; serving clients worldwide.</p>
+      </div>
+      <div class="col-12 col-lg-7">
+        <div class="footer-cols row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4">
+          <nav class="col" aria-label="Services">
+            <p class="mono footer-head">SERVICES</p>
+            <a href="../../services/wordpress-development/">WordPress Development</a>
+            <a href="../../services/wordpress-customization/">WordPress Customization</a>
+            <a href="../../services/elementor-customization/">Elementor Customization</a>
+            <a href="../../services/woocommerce-development/">WooCommerce Development</a>
+            <a href="../../services/wordpress-speed-optimization/">WordPress Speed Optimization</a>
+            <a href="../../services/wordpress-bug-fix/">WordPress Bug Fix</a>
+            <a href="../../services/elementor-fix/">Elementor Bug Fix</a>
+            <a href="../../services/wordpress-migration/">WordPress Migration</a>
+            <a href="../../services/seo/">WordPress SEO</a>
+          </nav>
+          <nav class="col" aria-label="Site">
+            <p class="mono footer-head">SITEMAP</p>
+            <a href="../../">Home</a>
+            <a href="../../tools/">Tools</a>
+            <a href="../../portfolio/">Portfolio</a>
+            <a href="../../blog/">Blog</a>
+            <a href="../../wordpress-fixes/">WordPress Fixes</a>
+            <a href="../../#experience">Experience</a>
+            <a href="../../contact/">Contact</a>
+            <a href="../../privacy/">Privacy Policy</a>
+          </nav>
+          <div class="col">
+            <p class="mono footer-head">ELSEWHERE</p>
+            <a href="mailto:hello@ashekur.com"><i class="ri-mail-line" aria-hidden="true"></i>hello@ashekur.com</a>
+            <a href="https://wa.me/8801812764112" target="_blank" rel="noopener noreferrer"><i class="ri-whatsapp-line" aria-hidden="true"></i>WhatsApp</a>
+            <a href="https://www.linkedin.com/in/ashekur-rahman-1ab205122/" target="_blank" rel="noopener noreferrer"><i class="ri-linkedin-fill" aria-hidden="true"></i>LinkedIn</a>
+            <a href="https://github.com/AshekurRahman" target="_blank" rel="noopener noreferrer"><i class="ri-github-fill" aria-hidden="true"></i>GitHub</a>
+            <a href="https://www.upwork.com/freelancers/~010aabe60ec2ae6679" target="_blank" rel="noopener noreferrer"><i class="ri-upwork-fill" aria-hidden="true"></i>Upwork</a>
+            <a href="https://www.facebook.com/ashekur.rahman.hridoy" target="_blank" rel="noopener noreferrer"><i class="ri-facebook-circle-fill" aria-hidden="true"></i>Facebook</a>
+            <a href="https://www.instagram.com/ashekurhridoy/" target="_blank" rel="noopener noreferrer"><i class="ri-instagram-line" aria-hidden="true"></i>Instagram</a>
+            <a href="https://www.youtube.com/@ashekurrahman1431" target="_blank" rel="noopener noreferrer"><i class="ri-youtube-fill" aria-hidden="true"></i>YouTube</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <p class="mono copyright">&copy; 2026 Ashekur Rahman. All rights reserved.</p>
+    <a class="to-top-inline" href="#main"><i class="ri-arrow-up-line" aria-hidden="true"></i> Back to top</a>
+  </div>
+</footer>
+</div>
+</div>
+
+
+<a class="wa-float" href="https://wa.me/8801812764112" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp"><i class="ri-whatsapp-fill" aria-hidden="true"></i></a>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" integrity="sha384-HOvlOYPIs/zjoIkWUGXkVmXsjr8GuZLV+Q+rcPwmJOVZVpvTSXQChiN4t9Euv9Vc" crossorigin="anonymous" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js" integrity="sha384-P8VzCVnT9NBUkMrpcIZrJbA7EBjJvh/fJS6PmP+4nLIM284DtsImIv8D0fFjIkeh" crossorigin="anonymous" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js" integrity="sha384-xb96EMJeax+NLXMC88ZBa1xAeAW+kn+horHh/zFlbMLG2UPWhMJJSlv7fi57hS+Q" crossorigin="anonymous" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollSmoother.min.js" integrity="sha384-dd8lT3AimXbI347qlZzlijPa4qnSlgGxuTqK2HlcfvF5+aOIeddPdMFmFpypQPZN" crossorigin="anonymous" defer></script>
+<script src="../../assets/js/anim.js" defer></script>
+<script src="../../assets/js/main.js" defer></script>
+</body>
+</html>

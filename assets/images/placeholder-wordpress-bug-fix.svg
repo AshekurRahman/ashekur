@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" role="img" aria-hidden="true">
+  <title>Abstract dark tech visual representing a WordPress bug fix</title>
+  <defs>
+    <radialGradient id="bgFadebug" cx="50%" cy="36%" r="78%">
+      <stop offset="0%" stop-color="#141f38"/>
+      <stop offset="100%" stop-color="#0a1020"/>
+    </radialGradient>
+    <pattern id="gridbug" width="64" height="64" patternUnits="userSpaceOnUse">
+      <path d="M 64 0 L 0 0 0 64" fill="none" stroke="rgba(148,163,184,0.10)" stroke-width="1"/>
+    </pattern>
+    <radialGradient id="gridMaskbug" cx="50%" cy="32%" r="70%">
+      <stop offset="0%" stop-color="#fff" stop-opacity="0.9"/>
+      <stop offset="65%" stop-color="#fff" stop-opacity="0.32"/>
+      <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+    </radialGradient>
+    <mask id="gridMaskElbug">
+      <rect width="1280" height="720" fill="url(#gridMaskbug)"/>
+    </mask>
+
+    <radialGradient id="gBlue_bug" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#2563eb" stop-opacity="0.5"/>
+      <stop offset="66%" stop-color="#2563eb" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="gIndigo_bug" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#4f46e5" stop-opacity="0.4"/>
+      <stop offset="66%" stop-color="#4f46e5" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="gDanger_bug" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fca5a5" stop-opacity="0.55"/>
+      <stop offset="66%" stop-color="#fca5a5" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bgFadebug)"/>
+  <rect width="1280" height="720" fill="url(#gridbug)" mask="url(#gridMaskElbug)"/>
+  <circle cx="360" cy="220" r="340" fill="url(#gBlue_bug)"/><circle cx="980" cy="560" r="360" fill="url(#gIndigo_bug)"/><circle cx="860" cy="360" r="130" fill="url(#gDanger_bug)"/>
+  
+  <g stroke="#818cf8" stroke-width="2" fill="none" opacity="0.55" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M 560 300 L 660 300 L 660 260 L 720 260 L 720 340 L 780 340" opacity="0.5"/>
+    <path d="M 960 420 L 900 420 L 900 460 L 840 460 L 840 400" opacity="0.5"/>
+    <circle cx="560" cy="300" r="4" fill="#818cf8" stroke="none" opacity="0.7"/>
+    <circle cx="780" cy="340" r="4" fill="#818cf8" stroke="none" opacity="0.7"/>
+    <circle cx="960" cy="420" r="4" fill="#818cf8" stroke="none" opacity="0.7"/>
+    <circle cx="840" cy="400" r="4" fill="#818cf8" stroke="none" opacity="0.7"/>
+  </g>
+  <path d="M 560 360 L 760 360 L 792 300 L 824 420 L 856 340 L 888 360 L 1160 360"
+        stroke="#c7d2fe" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.85"/>
+  <circle cx="824" cy="360" r="9" fill="#fca5a5"/>
+  <circle cx="824" cy="360" r="20" fill="none" stroke="#fca5a5" stroke-width="1.5" opacity="0.6"/>
+
+</svg>

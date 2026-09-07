@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>WooCommerce Checkout Not Working? Why Orders Are Failing | Ashekur Rahman</title>
+<meta name="description" content="Customers reach checkout but orders never complete? What breaks WooCommerce checkout — payment gateways, caching, plugin conflicts — and how to fix it." />
+<meta name="keywords" content="WooCommerce checkout not working, WooCommerce orders failing, WooCommerce checkout error, fix WooCommerce checkout, WooCommerce payment not working, WooCommerce place order button not working" />
+<meta name="author" content="Ashekur Rahman" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<meta name="theme-color" content="#0F172A" />
+<link rel="canonical" href="https://ashekur.com/wordpress-fixes/woocommerce-checkout-not-working/" />
+<link rel="icon" href="../../assets/images/mark.png" type="image/png" />
+<link rel="apple-touch-icon" href="../../assets/images/mark.png" />
+<link rel="manifest" href="../../site.webmanifest" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-09-02" />
+<meta property="article:author" content="Ashekur Rahman" />
+<meta property="article:section" content="WordPress Fixes" />
+<meta property="og:site_name" content="Ashekur Rahman" />
+<meta property="og:url" content="https://ashekur.com/wordpress-fixes/woocommerce-checkout-not-working/" />
+<meta property="og:title" content="WooCommerce Checkout Not Working? Why Orders Are Failing | Ashekur Rahman" />
+<meta property="og:description" content="Customers reaching checkout but orders never complete? Here's what actually breaks WooCommerce checkout — payment gateways, caching, and plugin conflicts — and how to fix it." />
+<meta property="og:image" content="https://ashekur.com/assets/images/og-default.jpg" />
+<meta property="og:locale" content="en_US" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="WooCommerce Checkout Not Working? Why Orders Are Failing | Ashekur Rahman" />
+<meta name="twitter:description" content="Customers reaching checkout but orders never complete? Here's what actually breaks WooCommerce checkout and how to fix it." />
+<meta name="twitter:image" content="https://ashekur.com/assets/images/og-default.jpg" />
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://www.googletagmanager.com" />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+<link rel="stylesheet" href="../../assets/fonts/remixicon.css" />
+<link rel="stylesheet" href="../../assets/css/template.css" />
+<script>var d=document.documentElement;d.classList.remove('no-js');d.classList.add('js-anim');</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://ashekur.com/" },
+        { "@type": "ListItem", "position": 2, "name": "WordPress Fixes", "item": "https://ashekur.com/wordpress-fixes/" },
+        { "@type": "ListItem", "position": 3, "name": "WooCommerce Checkout Not Working", "item": "https://ashekur.com/wordpress-fixes/woocommerce-checkout-not-working/" }
+      ]
+    },
+    {
+      "@type": "TechArticle",
+      "@id": "https://ashekur.com/wordpress-fixes/woocommerce-checkout-not-working/#article",
+      "headline": "WooCommerce Checkout Not Working: Why Orders Are Failing",
+      "description": "Customers reaching checkout but orders never complete? Here's what actually breaks WooCommerce checkout — payment gateways, caching, and plugin conflicts — and how to fix it.",
+      "url": "https://ashekur.com/wordpress-fixes/woocommerce-checkout-not-working/",
+      "mainEntityOfPage": { "@type": "WebPage", "@id": "https://ashekur.com/wordpress-fixes/woocommerce-checkout-not-working/" },
+      "image": "https://ashekur.com/assets/images/og-default.jpg",
+      "datePublished": "2026-09-02",
+      "dateModified": "2026-09-02",
+      "author": {
+        "@type": "Person", "@id": "https://ashekur.com/#person", "name": "Ashekur Rahman", "url": "https://ashekur.com/",
+        "jobTitle": "Frontend Developer & WordPress Expert", "email": "hello@ashekur.com", "telephone": "+8801812764112",
+        "address": { "@type": "PostalAddress", "addressCountry": "BD" }
+      },
+      "publisher": {
+        "@type": "Person", "@id": "https://ashekur.com/#person", "name": "Ashekur Rahman", "url": "https://ashekur.com/",
+        "jobTitle": "Frontend Developer & WordPress Expert", "email": "hello@ashekur.com", "telephone": "+8801812764112",
+        "address": { "@type": "PostalAddress", "addressCountry": "BD" }
+      },
+      "articleSection": "WordPress Fixes",
+      "proficiencyLevel": "Beginner",
+      "dependencies": "WordPress, WooCommerce, a payment gateway plugin",
+      "wordCount": 3200,
+      "inLanguage": "en",
+      "isAccessibleForFree": true
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Why does checkout fail for some customers but not others?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Usually a caching or session problem, or a gateway rule tied to region, currency or card type. If the cart or checkout page is being cached, one visitor's cart total or session can bleed into another's, which fails inconsistently rather than every time. Region-restricted payment methods produce the same pattern for a different reason." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is this a WooCommerce bug or a problem with my specific site?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Almost always your site's specific combination of caching rules, gateway configuration and plugins, not a bug in WooCommerce itself. WooCommerce processes an enormous volume of checkouts daily across millions of stores; a core-level checkout bug would be patched within hours, not left for individual stores to work around." }
+        },
+        {
+          "@type": "Question",
+          "name": "Will I lose the orders that failed while this was broken?",
+          "acceptedAnswer": { "@type": "Answer", "text": "You won't lose data, but you will lose the sale itself in most cases — a customer whose order fails to place rarely retries later, they buy elsewhere. WooCommerce → Orders will show any orders that reached a pending or failed state, which at least tells you how many attempts were made while it was down." }
+        },
+        {
+          "@type": "Question",
+          "name": "Should I just switch payment gateways to fix this?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Usually not, and it can mask the real problem rather than fix it. If the underlying cause is caching, a plugin conflict or an SSL issue, a new gateway will eventually show the same symptom. Diagnose first with the WooCommerce Status → Logs screen before assuming the gateway itself is at fault." }
+        },
+        {
+          "@type": "Question",
+          "name": "Why did checkout break right after a WooCommerce update?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Version drift between WooCommerce core and your payment gateway plugin is one of the most common triggers. WooCommerce ships frequent updates; if your gateway plugin, a checkout-field add-on, or your theme's checkout template hasn't been updated to match, the two can disagree about how the checkout page should render or submit." }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I know how much this is actually costing me while it's broken?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Compare your normal daily order count and average order value against what's come through since the issue started, and treat every hour of downtime as that daily rate divided by 24. It's rarely as small as it feels in the moment, which is the main reason this particular problem is worth fixing fast rather than working through slowly." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SGTGDFXH6K"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-SGTGDFXH6K');
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header" id="siteHeader">
+  <div class="container header-inner">
+    <a class="brand" href="../../" aria-label="Ashekur Rahman &mdash; home">
+      <picture>
+        <source srcset="../../assets/images/ashekur-logo-light.webp" type="image/webp" />
+        <img src="../../assets/images/ashekur-logo-light.png" alt="Ashekur Rahman" width="480" height="125" fetchpriority="high" decoding="async" />
+      </picture>
+    </a>
+    <nav class="nav-desktop" aria-label="Main">
+      <a href="../../" class="nav-link">Home</a>
+      <a href="../../tools/" class="nav-link">Tools</a>
+      <div class="nav-item" data-dropdown>
+        <div class="nav-row">
+          <a href="../../services/" class="nav-link">Services</a>
+          <button class="nav-caret" type="button" aria-label="Services submenu" aria-expanded="false" aria-controls="navDrop-services" data-dropdown-toggle><i class="ri-arrow-down-s-line" aria-hidden="true"></i></button>
+        </div>
+        <div class="nav-panel" id="navDrop-services">
+          <a class="nav-panel-all" href="../../services/">All services</a>
+          <div class="nav-panel-cols">
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">WordPress</p>
+              <a href="../../services/wordpress-development/">WordPress Development</a>
+              <a href="../../services/wordpress-customization/">WordPress Customization</a>
+              <a href="../../services/wordpress-bug-fix/">WordPress Bug Fix</a>
+              <a href="../../services/wordpress-maintenance/">WordPress Maintenance<em>New</em></a>
+            </div>
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">Page Builders</p>
+              <a href="../../services/elementor-fix/">Elementor Bug Fix</a>
+              <a href="../../services/elementor-customization/">Elementor Customization</a>
+              <a href="../../services/elementor-custom-widgets/">Elementor Custom Widgets</a>
+              <a href="../../services/divi-customization/">Divi Customization</a>
+              <a href="../../services/divi-5-migration/">Divi 5 Migration<em>New</em></a>
+            </div>
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">WooCommerce</p>
+              <a href="../../services/woocommerce-development/">WooCommerce Development</a>
+              <a href="../../services/woocommerce-fix/">WooCommerce Fixes</a>
+            </div>
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">Performance &amp; Security</p>
+              <a href="../../services/wordpress-speed-optimization/">WordPress Speed Optimization</a>
+              <a href="../../services/core-web-vitals-fix/">Core Web Vitals Fix<em>New</em></a>
+              <a href="../../services/wordpress-malware-removal/">WordPress Malware Removal</a>
+              <a href="../../services/google-blacklist-removal/">Google Blacklist Removal<em>New</em></a>
+              <a href="../../services/caching-cdn-setup/">Caching &amp; CDN Setup<em>New</em></a>
+              <a href="../../services/wordpress-security-hardening/">WordPress Security Hardening<em>New</em></a>
+            </div>
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">Migration</p>
+              <a href="../../services/wordpress-migration/">WordPress Migration</a>
+              <a href="../../services/domain-migration-redirects/">Domain Migration &amp; 301 Redirects<em>New</em></a>
+              <a href="../../services/wordpress-migration/#hosting">Host Migration</a>
+            </div>
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">SEO</p>
+              <a href="../../services/seo/">SEO</a>
+              <a href="../../services/technical-seo-audit/">Technical SEO Audit<em>New</em></a>
+            </div>
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">Other</p>
+              <a href="../../services/webflow-development/">Webflow Development</a>
+              <a href="../../services/frontend-development/">Frontend Development</a>
+              <a href="../../services/website-redesign/">Website Redesign<em>New</em></a>
+              <a href="../../services/white-label-wordpress-development/">White Label Development<em>New</em></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="../../pricing/" class="nav-link">Pricing</a>
+      <a href="../../portfolio/" class="nav-link">Portfolio</a>
+      <a href="../../blog/" class="nav-link">Blog</a>
+      <a href="../../contact/" class="btn btn-primary btn-sm nav-cta">Start a project</a>
+    </nav>
+    <button class="burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="nav-mobile" id="mobileNav" aria-label="Mobile" hidden>
+    <a href="../../">Home</a>
+    <a href="../../tools/">Tools</a>
+    <div class="nav-item" data-dropdown>
+      <div class="nav-row">
+        <a href="../../services/">Services</a>
+        <button class="nav-caret" type="button" aria-label="Services submenu" aria-expanded="false" aria-controls="navDropM-services" data-dropdown-toggle><i class="ri-arrow-down-s-line" aria-hidden="true"></i></button>
+      </div>
+      <div class="nav-panel" id="navDropM-services">
+        <a href="../../services/">All services</a>
+        <a href="../../services/wordpress-development/">WordPress Development</a>
+        <a href="../../services/wordpress-customization/">WordPress Customization</a>
+        <a href="../../services/wordpress-bug-fix/">WordPress Bug Fix</a>
+        <a href="../../services/wordpress-maintenance/">WordPress Maintenance</a>
+        <a href="../../services/elementor-fix/">Elementor Bug Fix</a>
+        <a href="../../services/elementor-customization/">Elementor Customization</a>
+        <a href="../../services/divi-customization/">Divi Customization</a>
+        <a href="../../services/divi-5-migration/">Divi 5 Migration</a>
+        <a href="../../services/elementor-custom-widgets/">Elementor Custom Widgets</a>
+        <a href="../../services/wordpress-speed-optimization/">WordPress Speed Optimization</a>
+        <a href="../../services/core-web-vitals-fix/">Core Web Vitals Fix</a>
+        <a href="../../services/woocommerce-fix/">WooCommerce Fixes</a>
+        <a href="../../services/woocommerce-development/">WooCommerce Development</a>
+        <a href="../../services/wordpress-migration/">WordPress Migration</a>
+        <a href="../../services/domain-migration-redirects/">Domain Migration &amp; 301 Redirects</a>
+        <a href="../../services/seo/">WordPress SEO</a>
+        <a href="../../services/wordpress-malware-removal/">WordPress Malware Removal</a>
+        <a href="../../services/google-blacklist-removal/">Google Blacklist Removal</a>
+        <a href="../../services/wordpress-security-hardening/">WordPress Security Hardening</a>
+        <a href="../../services/webflow-development/">Webflow Development</a>
+        <a href="../../services/frontend-development/">Frontend Development</a>
+        <a href="../../services/website-redesign/">Website Redesign</a>
+        <a href="../../services/white-label-wordpress-development/">White Label Development</a>
+      </div>
+    </div>
+    <a href="../../pricing/">Pricing</a>
+    <a href="../../portfolio/">Portfolio</a>
+    <a href="../../blog/">Blog</a>
+    <a href="../../contact/" class="btn btn-primary">Start a project</a>
+  </nav>
+</header>
+
+<div id="smooth-wrapper">
+<div id="smooth-content">
+<main id="main" class="page-shell">
+
+  <article>
+  <section class="section section-dark page-intro page-hero">
+    <div class="hero-grid-bg" aria-hidden="true"></div>
+    <div class="glow glow-a" aria-hidden="true"></div>
+    <div class="glow glow-b" aria-hidden="true"></div>
+    <div class="container">
+      <div class="row hero-split">
+        <div data-anim-hero class="col-12 col-lg-9">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <ol>
+              <li><a href="../../">Home</a></li>
+              <li><a href="../../wordpress-fixes/">WordPress Fixes</a></li>
+              <li><span aria-current="page">WooCommerce Checkout Not Working</span></li>
+            </ol>
+          </nav>
+          <p class="post-meta mono"><span class="post-cat">WooCommerce</span><span>13 min read</span><span>2026-09-02</span><span>Ashekur Rahman</span></p>
+          <h1 data-anim="lines">WooCommerce Checkout Not Working? Why Orders Are Failing at the Last Step</h1>
+          <p class="body-lg">Traffic looks normal, products are in stock, and customers are still leaving without buying &mdash; because the order never actually goes through. This is the one WordPress problem where every hour it stays broken has a real number attached to it, so here's how to find the actual cause fast.</p>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="../../contact/">Send me your site <i class="ri-arrow-right-line" aria-hidden="true"></i></a>
+            <a class="btn btn-ghost" href="../../services/woocommerce-fix/">See the WooCommerce fix service</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-white">
+    <div class="container">
+      <figure data-anim="reveal" class="shot mb-5">
+        <picture>
+          <source srcset="../../assets/images/woocommerce-checkout-not-working.webp" type="image/webp" />
+          <img src="../../assets/images/woocommerce-checkout-not-working.jpeg" alt="Shopping cart icon above a three-step checkout progress bar, stalled with a red X on the final payment step" width="1280" height="720" loading="lazy" decoding="async" />
+        </picture>
+        <!-- Image prompt: Realistic photo of a laptop screen showing a WooCommerce checkout page with a spinning "Place Order" button that never resolves, a card payment form visible below it, shot from a slight angle in natural window light, shallow depth of field, no visible faces or readable personal/payment data, photorealistic tech-editorial style, 1280x720, 16:9. -->
+        <figcaption>The order doesn't fail loudly. It just never finishes &mdash; and the customer leaves.</figcaption>
+      </figure>
+
+      <div class="row gx-5 gy-4">
+        <aside class="col-12 col-lg-4 order-lg-2">
+          <div class="post-aside">
+            <nav class="toc" aria-label="On this page">
+              <p class="toc-head mono">ON THIS PAGE</p>
+              <ol>
+                <li><a href="#what-is-the-problem">What is the problem?</a></li>
+                <li><a href="#common-symptoms">Common symptoms</a></li>
+                <li><a href="#why-does-this-happen">Why does this happen?</a></li>
+                <li><a href="#common-technical-causes">Common technical causes</a></li>
+                <li><a href="#how-to-diagnose-it">How to diagnose it</a></li>
+                <li><a href="#how-to-fix-it-step-by-step">How to fix it, step by step</a></li>
+                <li><a href="#when-this-needs-professional-help">When this needs professional help</a></li>
+                <li><a href="#how-i-can-help">How I can help</a></li>
+              </ol>
+            </nav>
+          </div>
+        </aside>
+        <div class="col-12 col-lg-8 order-lg-1">
+          <div class="prose">
+
+<h2 id="what-is-the-problem">What is the problem?</h2>
+<p>A customer adds items to their cart, gets all the way to checkout, fills in their details, clicks <strong>Place Order</strong> &mdash; and nothing happens the way it should. Maybe the button spins and never stops. Maybe it throws a vague error. Maybe the payment is declined even though the card is fine. Whatever the exact shape, the result is the same: a shopper who was ready to buy leaves with an empty cart and no order in your system.</p>
+<blockquote>Quick answer: checkout failures are almost never WooCommerce itself breaking. The two most common root causes, by a wide margin, are the checkout or cart page being served from cache when it should never be cached, and a payment gateway configuration issue &mdash; wrong keys, sandbox mode left on, or an SSL problem on the checkout URL specifically.</blockquote>
+<p>WooCommerce checkout is not a static page. Every time it loads, it's calculating a live cart total, applying tax and shipping rules, checking stock, generating a session, and then handing the payment step off to a gateway plugin that talks to an external payment processor over an API call. That's a long chain, and checkout has to get every link right, every single time, for every single customer &mdash; which is exactly why it's more fragile than the rest of the store.</p>
+
+<h2 id="common-symptoms">Common symptoms</h2>
+<ul>
+  <li>Clicking <strong>Place Order</strong> spins indefinitely, or the page just sits there with no visible response</li>
+  <li>A generic message appears &mdash; &ldquo;An error occurred, please try again&rdquo; &mdash; with no useful detail behind it</li>
+  <li>A payment gateway declines cards that should work, including your own test cards</li>
+  <li>The checkout page itself loads with missing fields, a broken layout, or fields that won't accept input</li>
+  <li>One payment method completes fine while another fails every time</li>
+  <li>The cart empties unexpectedly the moment checkout is reached, before payment is even attempted</li>
+  <li>It works perfectly on a staging copy of the site but fails on the live one, or the other way round</li>
+  <li>Some customers report it working fine while others can't get past it at all</li>
+</ul>
+
+<h2 id="why-does-this-happen">Why does this happen?</h2>
+<p>WooCommerce checkout sits at the intersection of more moving parts than almost any other page on a WordPress site: your theme's checkout template, WooCommerce core, a payment gateway plugin talking to a third-party processor, your caching setup, your SSL certificate, and usually at least one or two extra plugins handling things like custom fields, order bumps, or tax rules. Every one of those has to be configured correctly and stay compatible with the others as each updates independently.</p>
+<p>Checkout is also the one part of the store that must never be cached and must always run correctly under a live session, which makes it uniquely vulnerable to a caching plugin's default rules that were written with normal pages in mind. A setting that speeds up your blog posts can quietly break the one page where speed matters least and correctness matters most.</p>
+
+<h2 id="common-technical-causes">Common technical causes</h2>
+<ul>
+  <li><strong>Payment gateway API keys that are wrong, expired, or still set to test/sandbox mode</strong> on the live site &mdash; the single most common cause of a gateway simply refusing every transaction</li>
+  <li><strong>SSL not properly configured on the checkout page specifically</strong>, not just the homepage &mdash; most gateways refuse to process a payment over a connection they can't verify as secure</li>
+  <li><strong>The cart or checkout page being served from a page cache</strong> that should never touch it, which corrupts session data, cart totals, or nonces between visitors and produces exactly the kind of intermittent failure that's hardest to reproduce on demand</li>
+  <li><strong>The newer block-based WooCommerce Checkout conflicting with a plugin or custom field built for the older shortcode checkout</strong> &mdash; a real and increasingly common cause since WooCommerce shifted its default checkout experience</li>
+  <li><strong>A JavaScript error from a theme or plugin breaking the checkout form's own client-side validation</strong>, which stops the Place Order button from ever successfully submitting</li>
+  <li><strong>A broken tax or shipping zone rule</strong> throwing a PHP error mid-calculation for certain carts, regions, or product combinations</li>
+  <li><strong>The gateway's own response taking longer than the site's PHP execution time limit allows</strong>, which times out a transaction that was actually about to succeed</li>
+  <li><strong>A silent currency, country, or shipping-zone restriction</strong> excluding a customer without ever showing them a clear reason why</li>
+</ul>
+
+<h2 id="how-to-diagnose-it">How to diagnose it</h2>
+<ol>
+  <li><strong>Check WooCommerce &rarr; Status &rarr; Logs first.</strong> This is the single most useful step and the one most people skip. Find the log file matching your payment gateway, and look for an entry timestamped to your failed attempt &mdash; it will usually name the exact rejection reason from the gateway's own API response.</li>
+  <li><strong>Open the browser console during a real checkout attempt.</strong> Add something to the cart and go through checkout yourself with developer tools open (F12 &rarr; Console). A JavaScript error here means the form itself is breaking before payment is even attempted.</li>
+  <li><strong>Confirm the checkout page isn't cached.</strong> Check the page's response headers for caching indicators, or just exclude <code>/cart/</code> and <code>/checkout/</code> from your caching plugin's rules as a direct test &mdash; or run the <a href="../../tools/woocommerce-store-checker/">free WooCommerce Store Health Checker</a>, which checks exactly this along with HTTPS and payment gateway detection.</li>
+  <li><strong>Test with a built-in gateway like Cash on Delivery or Direct Bank Transfer temporarily enabled.</strong> If an order completes fine through one of those, the fault is specific to your card/PayPal gateway, not checkout as a whole.</li>
+  <li><strong>Note whether you're on the classic shortcode checkout or the newer block-based checkout</strong> (check the Checkout page's content in the editor). This matters directly for the fix, since a plugin conflict is often specific to one or the other.</li>
+  <li><strong>Verify SSL specifically on the checkout URL</strong>, not the homepage &mdash; look for a padlock warning while actually on that page, since a certificate can be valid site-wide but still misconfigured for a subdomain or a specific asset loaded on that page.</li>
+</ol>
+
+<h2 id="how-to-fix-it-step-by-step">How to fix it, step by step</h2>
+<ol>
+  <li><strong>Exclude the cart and checkout pages from every caching layer</strong> &mdash; your caching plugin, any CDN, and any server-level page cache your host runs. These pages must generate fresh on every request.</li>
+  <li><strong>Re-verify your payment gateway's live API keys</strong>, and confirm the gateway is explicitly switched out of test/sandbox mode in its settings. This single setting being left on after launch is a very common, very avoidable cause.</li>
+  <li><strong>Fix any SSL or mixed-content warning on the checkout page itself</strong>, since a gateway will refuse to run over a connection it can't verify as fully secure.</li>
+  <li><strong>If block versus classic checkout is a suspect, switch between them</strong> under WooCommerce &rarr; Settings &rarr; Advanced &rarr; Features, and retest. Whichever version clears the conflict tells you which one your problem plugin was actually built to support.</li>
+  <li><strong>Deactivate other plugins one at a time</strong>, starting with anything that touches the checkout form directly &mdash; custom field add-ons, order bumps, upsells, or checkout-page tracking scripts.</li>
+  <li><strong>Check WooCommerce &rarr; Settings &rarr; Tax and Shipping</strong> for a broken zone rule if failures correlate with a specific region or cart contents rather than happening universally.</li>
+  <li><strong>Raise PHP's max_execution_time slightly</strong> if the gateway's own response is simply slow under normal conditions, and confirm with the gateway's support what a typical response time should be.</li>
+  <li><strong>Update WooCommerce core and your payment gateway plugin together</strong>, to versions that are explicitly listed as compatible with each other &mdash; checkout is the most version-sensitive part of the whole store.</li>
+  <li><strong>Place a real, complete test order yourself after every change</strong>, start to finish, rather than assuming a setting looks correct. This is the only way to confirm the fix actually holds under real conditions.</li>
+</ol>
+
+<h2 id="when-this-needs-professional-help">When this needs professional help</h2>
+<p>Most causes above are fixable by a comfortable site owner. It's worth bringing in a developer immediately when:</p>
+<ul>
+  <li>It's actively costing revenue right now and you need a fast, correct diagnosis rather than trial and error</li>
+  <li>You genuinely can't tell whether the fault is on the site or on the payment gateway/merchant account side, and need someone who can check both</li>
+  <li>The failure is intermittent rather than constant, which usually means a caching or session-layer problem stacked with something else, and those are hard to isolate without server access</li>
+  <li>A custom checkout-field or fee plugin needs actual code changes to work correctly with the block-based checkout</li>
+  <li>You've made several changes already and are no longer sure which setting is currently correct</li>
+</ul>
+
+<h2 id="how-i-can-help">How I can help</h2>
+<p>A broken checkout is the one WordPress problem I treat as genuinely urgent rather than schedule in around other work, because every hour it stays broken has a real, calculable cost attached to it. I start exactly where the diagnosis above starts &mdash; the WooCommerce logs, the gateway configuration, and the caching exclusions, in that order, because that's where this fails most often &mdash; rather than guessing or recommending a gateway switch before I know what's actually wrong. WooCommerce stores are a regular part of what I've built and fixed over eleven years of freelance WordPress work, and I test the full order flow end to end before calling it resolved.</p>
+          </div>
+
+          <aside class="post-cta">
+            <p class="mono post-cta-head">RELATED SERVICE</p>
+            <h2>WooCommerce Fixes</h2>
+            <p>If you'd rather this was handled directly and quickly, that page covers exactly what's included, how fast it usually runs, and what it costs to find out.</p>
+            <div data-anim="fade" class="btn-row">
+              <a class="btn btn-primary" href="../../services/woocommerce-fix/">WooCommerce Fixes <i class="ri-arrow-right-line" aria-hidden="true"></i></a>
+              <a class="btn btn-ghost" href="../../contact/">Ask a question</a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </section>
+  </article>
+
+  <section class="section section-light">
+    <div class="container">
+      <div class="row gx-0">
+        <div class="section-head col-12 col-lg-6">
+          <p data-anim="fade" class="eyebrow"><span class="eyebrow-mark" aria-hidden="true"></span><span class="mono">RELATED PROBLEMS</span></p>
+          <h2 data-anim="lines">If this isn't quite your issue</h2>
+          <p data-anim="fade" class="body-lg">A broken checkout is often, underneath, one of these wearing a WooCommerce-shaped disguise.</p>
+        </div>
+      </div>
+      <div data-anim="stagger" class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4 related-grid">
+        <div class="col">
+          <a data-anim="item" class="related-card h-100" href="../wordpress-plugin-conflict/">
+            <strong>WordPress Plugin Conflict</strong>
+            <span>Checkout issues are frequently a plugin conflict wearing a WooCommerce-shaped disguise. Start here to isolate it properly.</span>
+          </a>
+        </div>
+        <div class="col">
+          <a data-anim="item" class="related-card h-100" href="../../services/woocommerce-fix/">
+            <strong>WooCommerce Fixes</strong>
+            <span>The dedicated service for checkout, cart, payment and order issues on a live store.</span>
+          </a>
+        </div>
+        <div class="col">
+          <a data-anim="item" class="related-card h-100" href="../../services/wordpress-speed-optimization/">
+            <strong>WordPress Speed Optimization</strong>
+            <span>Caching rules that speed up the rest of your store are often exactly what breaks checkout. This is how I set caching exclusions correctly.</span>
+          </a>
+        </div>
+        <div class="col">
+          <a data-anim="item" class="related-card h-100" href="../../tools/woocommerce-store-checker/">
+            <strong>WooCommerce Store Health Checker</strong>
+            <span>Free tool: instant, cause-first check of checkout caching, HTTPS and payment gateway detection.</span>
+          </a>
+        </div>
+        <div class="col">
+          <a data-anim="item" class="related-card h-100" href="../woocommerce-cart-not-updating/">
+            <strong>WooCommerce Cart Not Updating</strong>
+            <span>If the problem shows up before checkout even starts &mdash; stuck quantities or totals &mdash; this is the earlier-stage guide.</span>
+          </a>
+        </div>
+        <div class="col">
+          <a data-anim="item" class="related-card h-100" href="../woocommerce-order-emails-not-sending/">
+            <strong>WooCommerce Order Emails Not Sending</strong>
+            <span>If the order actually completes but no confirmation email arrives, that's a separate, mail-delivery cause.</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-white">
+    <div class="container">
+      <div class="row gx-0">
+        <div class="section-head col-12 col-lg-6">
+          <p data-anim="fade" class="eyebrow"><span class="eyebrow-mark" aria-hidden="true"></span><span class="mono">RELEVANT WORK</span></p>
+          <h2 data-anim="lines">Stores and booking flows I've built and fixed</h2>
+          <p data-anim="fade" class="body-lg">Two projects where getting a transaction to actually complete was the whole point of the build.</p>
+        </div>
+      </div>
+      <div data-anim="stagger" class="row row-cols-1 row-cols-md-2 g-4 case-grid">
+        <div class="col">
+          <article data-anim="item" class="case-card h-100">
+            <a href="../../portfolio/canvascroft/" tabindex="-1" aria-hidden="true">
+              <picture>
+                <source srcset="../../assets/images/project-canvascroft.webp" type="image/webp" />
+                <img src="../../assets/images/project-canvascroft.jpeg" alt="Canvascroft branding and design studio website built in WordPress with Elementor" width="1200" height="613" loading="lazy" decoding="async" />
+              </picture>
+            </a>
+            <div class="case-card-body">
+              <h3><a href="../../portfolio/canvascroft/">Canvascroft</a></h3>
+              <p>A live WooCommerce store on Elementor, where a reliable checkout was the difference between a booked project and a lost one.</p>
+              <ul class="tech-chips"><li>WordPress</li><li>Elementor</li><li>WooCommerce</li></ul>
+              <div class="btn-row">
+                <a class="btn btn-primary btn-sm" href="../../portfolio/canvascroft/">Read the case study</a>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="col">
+          <article data-anim="item" class="case-card h-100">
+            <a href="../../portfolio/kinder-city/" tabindex="-1" aria-hidden="true">
+              <picture>
+                <source srcset="../../assets/images/project-kindercity.webp" type="image/webp" />
+                <img src="../../assets/images/project-kindercity.jpeg" alt="Kinder City nursery and pre-school group website built with Elementor" width="1200" height="624" loading="lazy" decoding="async" />
+              </picture>
+            </a>
+            <div class="case-card-body">
+              <h3><a href="../../portfolio/kinder-city/">Kinder City</a></h3>
+              <p>A multi-setting booking flow where a form that silently failed to submit would have meant the same lost conversion as a broken checkout.</p>
+              <ul class="tech-chips"><li>WordPress</li><li>Elementor</li><li>Responsive templates</li></ul>
+              <div class="btn-row">
+                <a class="btn btn-primary btn-sm" href="../../portfolio/kinder-city/">Read the case study</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-tint">
+    <div class="container">
+      <div class="row gx-5 gy-4">
+        <div class="col-12 col-lg-4">
+          <div class="section-head sticky-head mb-4 mb-lg-0">
+            <p data-anim="fade" class="eyebrow"><span class="eyebrow-mark" aria-hidden="true"></span><span class="mono">FAQ</span></p>
+            <h2 data-anim="lines">Questions about a broken WooCommerce checkout</h2>
+            <p data-anim="fade" class="body-lg">What people ask before sending over the site.</p>
+          </div>
+        </div>
+        <div class="col-12 col-lg-8">
+          <div data-anim="stagger" class="faq-list">
+            <details data-anim="item" class="faq-item">
+              <summary>Why does checkout fail for some customers but not others?</summary>
+              <p class="faq-body">Usually a caching or session problem, or a gateway rule tied to region, currency or card type. If the cart or checkout page is being cached, one visitor's cart total or session can bleed into another's, which fails inconsistently rather than every time. Region-restricted payment methods produce the same pattern for a different reason.</p>
+            </details>
+            <details data-anim="item" class="faq-item">
+              <summary>Is this a WooCommerce bug or a problem with my specific site?</summary>
+              <p class="faq-body">Almost always your site's specific combination of caching rules, gateway configuration and plugins, not a bug in WooCommerce itself. WooCommerce processes an enormous volume of checkouts daily across millions of stores; a core-level checkout bug would be patched within hours, not left for individual stores to work around.</p>
+            </details>
+            <details data-anim="item" class="faq-item">
+              <summary>Will I lose the orders that failed while this was broken?</summary>
+              <p class="faq-body">You won't lose data, but you will lose the sale itself in most cases &mdash; a customer whose order fails to place rarely retries later, they buy elsewhere. WooCommerce &rarr; Orders will show any orders that reached a pending or failed state, which at least tells you how many attempts were made while it was down.</p>
+            </details>
+            <details data-anim="item" class="faq-item">
+              <summary>Should I just switch payment gateways to fix this?</summary>
+              <p class="faq-body">Usually not, and it can mask the real problem rather than fix it. If the underlying cause is caching, a plugin conflict or an SSL issue, a new gateway will eventually show the same symptom. Diagnose first with the WooCommerce Status &rarr; Logs screen before assuming the gateway itself is at fault.</p>
+            </details>
+            <details data-anim="item" class="faq-item">
+              <summary>Why did checkout break right after a WooCommerce update?</summary>
+              <p class="faq-body">Version drift between WooCommerce core and your payment gateway plugin is one of the most common triggers. WooCommerce ships frequent updates; if your gateway plugin, a checkout-field add-on, or your theme's checkout template hasn't been updated to match, the two can disagree about how the checkout page should render or submit.</p>
+            </details>
+            <details data-anim="item" class="faq-item">
+              <summary>How do I know how much this is actually costing me while it's broken?</summary>
+              <p class="faq-body">Compare your normal daily order count and average order value against what's come through since the issue started, and treat every hour of downtime as that daily rate divided by 24. It's rarely as small as it feels in the moment, which is the main reason this particular problem is worth fixing fast rather than working through slowly.</p>
+            </details>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-dark section-contact">
+    <div class="hero-grid-bg contact-grid-bg" aria-hidden="true"></div>
+    <div class="glow glow-d" aria-hidden="true"></div>
+    <div class="container">
+      <div class="contact-cta-shell">
+        <div data-anim="fade" class="contact-cta-card">
+          <div class="contact-cta-copy">
+            <p class="badge badge-live mx-auto"><span class="dot" aria-hidden="true"></span>Available for new projects</p>
+            <p class="eyebrow eyebrow-center"><span class="eyebrow-mark eyebrow-mark-light" aria-hidden="true"></span><span class="mono">NEXT STEP</span></p>
+            <h2 data-anim="lines">Need help fixing this WordPress issue?</h2>
+            <p class="body-lg">Send me your website and I'll help identify the problem &mdash; no charge just to take a look. Based in Bangladesh, working with clients worldwide, with a reply within one working day.</p>
+          </div>
+          <ul class="tech-chips justify-content-center">
+            <li>Reply within one working day</li>
+            <li>Fixed quote before work starts</li>
+            <li>UK, EU and US hours covered</li>
+          </ul>
+          <div class="contact-cta-actions">
+            <a class="btn btn-primary" href="../../contact/">Start a project <i class="ri-arrow-right-line" aria-hidden="true"></i></a>
+            <a class="btn btn-ghost" href="mailto:hello@ashekur.com">hello@ashekur.com</a>
+            <a class="btn btn-ghost" href="https://wa.me/8801812764112" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-top">
+    <div class="row gx-4 gy-5 align-items-start">
+      <div class="footer-brand col-12 col-lg-5">
+        <div class="brand brand-lg">
+          <picture>
+            <source srcset="../../assets/images/ashekur-logo-light.webp" type="image/webp" />
+            <img src="../../assets/images/ashekur-logo-light.png" alt="ashekur.com" width="480" height="125" loading="lazy" decoding="async" />
+          </picture>
+        </div>
+        <p class="footer-blurb">Frontend development and WordPress engineering for teams that care how it feels, not just how it looks. Based in Bangladesh &mdash; serving clients worldwide.</p>
+      </div>
+      <div class="col-12 col-lg-7">
+        <div class="footer-cols row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4">
+          <nav class="col" aria-label="Services">
+            <p class="mono footer-head">SERVICES</p>
+            <a href="../../services/wordpress-development/">WordPress Development</a>
+            <a href="../../services/wordpress-customization/">WordPress Customization</a>
+            <a href="../../services/elementor-customization/">Elementor Customization</a>
+            <a href="../../services/woocommerce-development/">WooCommerce Development</a>
+            <a href="../../services/wordpress-speed-optimization/">WordPress Speed Optimization</a>
+            <a href="../../services/wordpress-bug-fix/">WordPress Bug Fix</a>
+            <a href="../../services/elementor-fix/">Elementor Bug Fix</a>
+            <a href="../../services/wordpress-migration/">WordPress Migration</a>
+            <a href="../../services/seo/">WordPress SEO</a>
+          </nav>
+          <nav class="col" aria-label="Site">
+            <p class="mono footer-head">SITEMAP</p>
+            <a href="../../">Home</a>
+            <a href="../../tools/">Tools</a>
+            <a href="../../portfolio/">Portfolio</a>
+            <a href="../../blog/">Blog</a>
+            <a href="../../wordpress-fixes/">WordPress Fixes</a>
+            <a href="../../#experience">Experience</a>
+            <a href="../../contact/">Contact</a>
+            <a href="../../privacy/">Privacy Policy</a>
+          </nav>
+          <div class="col">
+            <p class="mono footer-head">ELSEWHERE</p>
+            <a href="mailto:hello@ashekur.com"><i class="ri-mail-line" aria-hidden="true"></i>hello@ashekur.com</a>
+            <a href="https://wa.me/8801812764112" target="_blank" rel="noopener noreferrer"><i class="ri-whatsapp-line" aria-hidden="true"></i>WhatsApp</a>
+            <a href="https://www.linkedin.com/in/ashekur-rahman-1ab205122/" target="_blank" rel="noopener noreferrer"><i class="ri-linkedin-fill" aria-hidden="true"></i>LinkedIn</a>
+            <a href="https://github.com/AshekurRahman" target="_blank" rel="noopener noreferrer"><i class="ri-github-fill" aria-hidden="true"></i>GitHub</a>
+            <a href="https://www.upwork.com/freelancers/~010aabe60ec2ae6679" target="_blank" rel="noopener noreferrer"><i class="ri-upwork-fill" aria-hidden="true"></i>Upwork</a>
+            <a href="https://www.facebook.com/ashekur.rahman.hridoy" target="_blank" rel="noopener noreferrer"><i class="ri-facebook-circle-fill" aria-hidden="true"></i>Facebook</a>
+            <a href="https://www.instagram.com/ashekurhridoy/" target="_blank" rel="noopener noreferrer"><i class="ri-instagram-line" aria-hidden="true"></i>Instagram</a>
+            <a href="https://www.youtube.com/@ashekurrahman1431" target="_blank" rel="noopener noreferrer"><i class="ri-youtube-fill" aria-hidden="true"></i>YouTube</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <p class="mono copyright">&copy; 2026 Ashekur Rahman. All rights reserved.</p>
+    <a class="to-top-inline" href="#main"><i class="ri-arrow-up-line" aria-hidden="true"></i> Back to top</a>
+  </div>
+</footer>
+</div>
+</div>
+
+
+<a class="wa-float" href="https://wa.me/8801812764112" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp"><i class="ri-whatsapp-fill" aria-hidden="true"></i></a>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" integrity="sha384-HOvlOYPIs/zjoIkWUGXkVmXsjr8GuZLV+Q+rcPwmJOVZVpvTSXQChiN4t9Euv9Vc" crossorigin="anonymous" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js" integrity="sha384-P8VzCVnT9NBUkMrpcIZrJbA7EBjJvh/fJS6PmP+4nLIM284DtsImIv8D0fFjIkeh" crossorigin="anonymous" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js" integrity="sha384-xb96EMJeax+NLXMC88ZBa1xAeAW+kn+horHh/zFlbMLG2UPWhMJJSlv7fi57hS+Q" crossorigin="anonymous" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollSmoother.min.js" integrity="sha384-dd8lT3AimXbI347qlZzlijPa4qnSlgGxuTqK2HlcfvF5+aOIeddPdMFmFpypQPZN" crossorigin="anonymous" defer></script>
+<script src="../../assets/js/anim.js" defer></script>
+<script src="../../assets/js/main.js" defer></script>
+</body>
+</html>

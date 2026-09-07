@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" role="img" aria-hidden="true">
+  <title>Abstract dark tech visual representing a library of WordPress problems being diagnosed and fixed</title>
+  <defs>
+    <radialGradient id="bgFadehub" cx="50%" cy="36%" r="78%">
+      <stop offset="0%" stop-color="#141f38"/>
+      <stop offset="100%" stop-color="#0a1020"/>
+    </radialGradient>
+    <pattern id="gridhub" width="64" height="64" patternUnits="userSpaceOnUse">
+      <path d="M 64 0 L 0 0 0 64" fill="none" stroke="rgba(148,163,184,0.10)" stroke-width="1"/>
+    </pattern>
+    <radialGradient id="gridMaskhub" cx="50%" cy="32%" r="70%">
+      <stop offset="0%" stop-color="#fff" stop-opacity="0.9"/>
+      <stop offset="65%" stop-color="#fff" stop-opacity="0.32"/>
+      <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+    </radialGradient>
+    <mask id="gridMaskElhub">
+      <rect width="1280" height="720" fill="url(#gridMaskhub)"/>
+    </mask>
+    <radialGradient id="gBlue_hub" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#2563eb" stop-opacity="0.5"/>
+      <stop offset="66%" stop-color="#2563eb" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="gIndigo_hub" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#4f46e5" stop-opacity="0.4"/>
+      <stop offset="66%" stop-color="#4f46e5" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="gGreen_hub" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#34d399" stop-opacity="0.45"/>
+      <stop offset="66%" stop-color="#34d399" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bgFadehub)"/>
+  <rect width="1280" height="720" fill="url(#gridhub)" mask="url(#gridMaskElhub)"/>
+  <circle cx="340" cy="230" r="330" fill="url(#gBlue_hub)"/><circle cx="980" cy="540" r="360" fill="url(#gIndigo_hub)"/><circle cx="900" cy="260" r="200" fill="url(#gGreen_hub)"/>
+
+  <!-- scattered problem nodes (warning) converging toward a central resolved node (check) -->
+  <g stroke="#818cf8" stroke-width="1.6" fill="none" opacity="0.5" stroke-linecap="round">
+    <path d="M 430 250 L 560 320"/>
+    <path d="M 470 480 L 570 380"/>
+    <path d="M 760 220 L 660 330"/>
+    <path d="M 880 470 L 720 390"/>
+    <path d="M 720 390 L 660 330"/>
+    <path d="M 570 380 L 660 330"/>
+  </g>
+
+  <g fill="none" stroke="#fca5a5" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" opacity="0.9">
+    <path d="M 430 232 L 452 268 L 408 268 Z"/>
+    <path d="M 462 462 L 484 498 L 440 498 Z"/>
+    <path d="M 762 202 L 784 238 L 740 238 Z"/>
+    <path d="M 882 452 L 904 488 L 860 488 Z"/>
+  </g>
+  <circle cx="430" cy="255" r="3" fill="#fca5a5"/>
+  <circle cx="462" cy="485" r="3" fill="#fca5a5"/>
+  <circle cx="762" cy="225" r="3" fill="#fca5a5"/>
+  <circle cx="882" cy="475" r="3" fill="#fca5a5"/>
+
+  <circle cx="660" cy="330" r="46" fill="#141b2b" stroke="#34d399" stroke-width="2.5" opacity="0.95"/>
+  <path d="M 640 331 L 654 346 L 684 312" fill="none" stroke="#34d399" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

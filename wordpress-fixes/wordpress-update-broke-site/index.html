@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>WordPress Site Broken After an Update? Here's Why | Ashekur Rahman</title>
+<meta name="description" content="Site broke right after a WordPress core, plugin or theme update? Here's what actually causes it, how to find out which update did it, and how to fix it safely." />
+<meta name="keywords" content="wordpress broke after update, wordpress update broke my site, site down after wordpress update, plugin update broke site, wordpress core update error, rollback wordpress update" />
+<meta name="author" content="Ashekur Rahman" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<meta name="theme-color" content="#0F172A" />
+<link rel="canonical" href="https://ashekur.com/wordpress-fixes/wordpress-update-broke-site/" />
+<link rel="icon" href="../../assets/images/mark.png" type="image/png" />
+<link rel="apple-touch-icon" href="../../assets/images/mark.png" />
+<link rel="manifest" href="../../site.webmanifest" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-09-05" />
+<meta property="article:author" content="Ashekur Rahman" />
+<meta property="article:section" content="WordPress Fixes" />
+<meta property="og:site_name" content="Ashekur Rahman" />
+<meta property="og:url" content="https://ashekur.com/wordpress-fixes/wordpress-update-broke-site/" />
+<meta property="og:title" content="WordPress Site Broken After an Update? Here's Why | Ashekur Rahman" />
+<meta property="og:description" content="Site broke right after a WordPress core, plugin or theme update? Here's what actually causes it, how to find out which update did it, and how to fix it safely." />
+<meta property="og:image" content="https://ashekur.com/assets/images/og-default.jpg" />
+<meta property="og:locale" content="en_US" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="WordPress Site Broken After an Update? Here's Why | Ashekur Rahman" />
+<meta name="twitter:description" content="Site broke right after a WordPress core, plugin or theme update? Here's what actually causes it and how to fix it safely." />
+<meta name="twitter:image" content="https://ashekur.com/assets/images/og-default.jpg" />
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://www.googletagmanager.com" />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+<link rel="stylesheet" href="../../assets/fonts/remixicon.css" />
+<link rel="stylesheet" href="../../assets/css/template.css" />
+<script>var d=document.documentElement;d.classList.remove('no-js');d.classList.add('js-anim');</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://ashekur.com/" },
+        { "@type": "ListItem", "position": 2, "name": "WordPress Fixes", "item": "https://ashekur.com/wordpress-fixes/" },
+        { "@type": "ListItem", "position": 3, "name": "WordPress Broke After Update", "item": "https://ashekur.com/wordpress-fixes/wordpress-update-broke-site/" }
+      ]
+    },
+    {
+      "@type": "TechArticle",
+      "@id": "https://ashekur.com/wordpress-fixes/wordpress-update-broke-site/#article",
+      "headline": "WordPress Broke Right After an Update? Here's What Actually Happened.",
+      "description": "Site broke right after a WordPress core, plugin or theme update? Here's what actually causes it, how to find out which update did it, and how to fix it safely.",
+      "url": "https://ashekur.com/wordpress-fixes/wordpress-update-broke-site/",
+      "mainEntityOfPage": { "@type": "WebPage", "@id": "https://ashekur.com/wordpress-fixes/wordpress-update-broke-site/" },
+      "image": "https://ashekur.com/assets/images/og-default.jpg",
+      "datePublished": "2026-09-05",
+      "dateModified": "2026-09-05",
+      "author": {
+        "@type": "Person", "@id": "https://ashekur.com/#person", "name": "Ashekur Rahman", "url": "https://ashekur.com/",
+        "jobTitle": "Frontend Developer & WordPress Expert", "email": "hello@ashekur.com", "telephone": "+8801812764112",
+        "address": { "@type": "PostalAddress", "addressCountry": "BD" }
+      },
+      "publisher": {
+        "@type": "Person", "@id": "https://ashekur.com/#person", "name": "Ashekur Rahman", "url": "https://ashekur.com/",
+        "jobTitle": "Frontend Developer & WordPress Expert", "email": "hello@ashekur.com", "telephone": "+8801812764112",
+        "address": { "@type": "PostalAddress", "addressCountry": "BD" }
+      },
+      "articleSection": "WordPress Fixes",
+      "proficiencyLevel": "Beginner",
+      "dependencies": "WordPress",
+      "wordCount": 1650,
+      "inLanguage": "en",
+      "isAccessibleForFree": true
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I know if it was core, a plugin, or a theme that broke it?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Check your host's update log or your email for update notifications timestamped right before the site broke. If several things updated overnight, WordPress's own site health screen and your plugin list's \"last updated\" dates usually narrow it down fast; deactivating plugins one at a time from oldest-suspect to newest confirms it when the log is ambiguous." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is it safe to just roll back the update?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Usually yes for a single plugin, using a version-rollback tool or a manual re-upload of the previous release. It's riskier for a WordPress core rollback, since core updates sometimes include database changes that don't cleanly reverse. Take a backup before rolling anything back, either way." }
+        },
+        {
+          "@type": "Question",
+          "name": "Why didn't I test this on staging first, and does that matter now?",
+          "acceptedAnswer": { "@type": "Answer", "text": "It would have caught this before it reached visitors, but that's about prevention, not about fixing what's already broken. Right now the priority is identifying and reversing the specific change; staging is worth setting up afterward so the next update doesn't repeat this." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can auto-updates cause this even if nobody touched the site?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes, and it's one of the more common ways this happens. Plugins with auto-updates enabled can update themselves overnight to a version that's incompatible with another plugin, the active theme, or the server's PHP version, with nobody at the keyboard when it happened." }
+        },
+        {
+          "@type": "Question",
+          "name": "Will disabling auto-updates prevent this from happening again?",
+          "acceptedAnswer": { "@type": "Answer", "text": "It removes the surprise-timing element, but not the underlying risk, since you'll eventually need to update anyway and could hit the same incompatibility manually. Testing updates on a staging copy first is what actually prevents a repeat; disabling auto-updates just means you control when you find out." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is this the same as a WordPress critical error?",
+          "acceptedAnswer": { "@type": "Answer", "text": "They overlap but aren't identical. A critical error is WordPress's own fatal-error screen, which an update can absolutely trigger, but an update can also break a site in other ways, like a visual layout collapse, a broken checkout, or a JavaScript conflict, with no fatal-error screen at all. If you're specifically seeing WordPress's branded critical-error message, the dedicated guide for that goes into more diagnostic detail." }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I tell a PHP version mismatch from an actual bug in the update?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Check the plugin's own changelog and support forum first, since a widespread bug in a fresh release usually has other users reporting the exact same thing within hours. A PHP mismatch is more likely if the plugin's minimum-PHP requirement was quietly raised in that release and your host's PHP version is older than that." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SGTGDFXH6K"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-SGTGDFXH6K');
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header" id="siteHeader">
+  <div class="container header-inner">
+    <a class="brand" href="../../" aria-label="Ashekur Rahman &mdash; home">
+      <picture>
+        <source srcset="../../assets/images/ashekur-logo-light.webp" type="image/webp" />
+        <img src="../../assets/images/ashekur-logo-light.png" alt="Ashekur Rahman" width="480" height="125" fetchpriority="high" decoding="async" />
+      </picture>
+    </a>
+    <nav class="nav-desktop" aria-label="Main">
+      <a href="../../" class="nav-link">Home</a>
+      <a href="../../tools/" class="nav-link">Tools</a>
+      <div class="nav-item" data-dropdown>
+        <div class="nav-row">
+          <a href="../../services/" class="nav-link">Services</a>
+          <button class="nav-caret" type="button" aria-label="Services submenu" aria-expanded="false" aria-controls="navDrop-services" data-dropdown-toggle><i class="ri-arrow-down-s-line" aria-hidden="true"></i></button>
+        </div>
+        <div class="nav-panel" id="navDrop-services">
+          <a class="nav-panel-all" href="../../services/">All services</a>
+          <div class="nav-panel-cols">
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">WordPress</p>
+              <a href="../../services/wordpress-development/">WordPress Development</a>
+              <a href="../../services/wordpress-customization/">WordPress Customization</a>
+              <a href="../../services/wordpress-bug-fix/">WordPress Bug Fix</a>
+              <a href="../../services/wordpress-maintenance/">WordPress Maintenance<em>New</em></a>
+            </div>
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">Page Builders</p>
+              <a href="../../services/elementor-fix/">Elementor Bug Fix</a>
+              <a href="../../services/elementor-customization/">Elementor Customization</a>
+              <a href="../../services/elementor-custom-widgets/">Elementor Custom Widgets</a>
+              <a href="../../services/divi-customization/">Divi Customization</a>
+              <a href="../../services/divi-5-migration/">Divi 5 Migration<em>New</em></a>
+            </div>
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">WooCommerce</p>
+              <a href="../../services/woocommerce-development/">WooCommerce Development</a>
+              <a href="../../services/woocommerce-fix/">WooCommerce Fixes</a>
+            </div>
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">Performance &amp; Security</p>
+              <a href="../../services/wordpress-speed-optimization/">WordPress Speed Optimization</a>
+              <a href="../../services/core-web-vitals-fix/">Core Web Vitals Fix<em>New</em></a>
+              <a href="../../services/wordpress-malware-removal/">WordPress Malware Removal</a>
+              <a href="../../services/google-blacklist-removal/">Google Blacklist Removal<em>New</em></a>
+              <a href="../../services/caching-cdn-setup/">Caching &amp; CDN Setup<em>New</em></a>
+              <a href="../../services/wordpress-security-hardening/">WordPress Security Hardening<em>New</em></a>
+            </div>
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">Migration</p>
+              <a href="../../services/wordpress-migration/">WordPress Migration</a>
+              <a href="../../services/domain-migration-redirects/">Domain Migration &amp; 301 Redirects<em>New</em></a>
+              <a href="../../services/wordpress-migration/#hosting">Host Migration</a>
+            </div>
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">SEO</p>
+              <a href="../../services/seo/">SEO</a>
+              <a href="../../services/technical-seo-audit/">Technical SEO Audit<em>New</em></a>
+            </div>
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">Other</p>
+              <a href="../../services/webflow-development/">Webflow Development</a>
+              <a href="../../services/frontend-development/">Frontend Development</a>
+              <a href="../../services/website-redesign/">Website Redesign<em>New</em></a>
+              <a href="../../services/white-label-wordpress-development/">White Label Development<em>New</em></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="../../pricing/" class="nav-link">Pricing</a>
+      <a href="../../portfolio/" class="nav-link">Portfolio</a>
+      <a href="../../blog/" class="nav-link">Blog</a>
+      <a href="../../contact/" class="btn btn-primary btn-sm nav-cta">Start a project</a>
+    </nav>
+    <button class="burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="nav-mobile" id="mobileNav" aria-label="Mobile" hidden>
+    <a href="../../">Home</a>
+    <a href="../../tools/">Tools</a>
+    <div class="nav-item" data-dropdown>
+      <div class="nav-row">
+        <a href="../../services/">Services</a>
+        <button class="nav-caret" type="button" aria-label="Services submenu" aria-expanded="false" aria-controls="navDropM-services" data-dropdown-toggle><i class="ri-arrow-down-s-line" aria-hidden="true"></i></button>
+      </div>
+      <div class="nav-panel" id="navDropM-services">
+        <a href="../../services/">All services</a>
+        <a href="../../services/wordpress-development/">WordPress Development</a>
+        <a href="../../services/wordpress-customization/">WordPress Customization</a>
+        <a href="../../services/wordpress-bug-fix/">WordPress Bug Fix</a>
+        <a href="../../services/wordpress-maintenance/">WordPress Maintenance</a>
+        <a href="../../services/elementor-fix/">Elementor Bug Fix</a>
+        <a href="../../services/elementor-customization/">Elementor Customization</a>
+        <a href="../../services/divi-customization/">Divi Customization</a>
+        <a href="../../services/divi-5-migration/">Divi 5 Migration</a>
+        <a href="../../services/elementor-custom-widgets/">Elementor Custom Widgets</a>
+        <a href="../../services/wordpress-speed-optimization/">WordPress Speed Optimization</a>
+        <a href="../../services/core-web-vitals-fix/">Core Web Vitals Fix</a>
+        <a href="../../services/woocommerce-fix/">WooCommerce Fixes</a>
+        <a href="../../services/woocommerce-development/">WooCommerce Development</a>
+        <a href="../../services/wordpress-migration/">WordPress Migration</a>
+        <a href="../../services/domain-migration-redirects/">Domain Migration &amp; 301 Redirects</a>
+        <a href="../../services/seo/">WordPress SEO</a>
+        <a href="../../services/wordpress-malware-removal/">WordPress Malware Removal</a>
+        <a href="../../services/google-blacklist-removal/">Google Blacklist Removal</a>
+        <a href="../../services/wordpress-security-hardening/">WordPress Security Hardening</a>
+        <a href="../../services/webflow-development/">Webflow Development</a>
+        <a href="../../services/frontend-development/">Frontend Development</a>
+        <a href="../../services/website-redesign/">Website Redesign</a>
+        <a href="../../services/white-label-wordpress-development/">White Label Development</a>
+      </div>
+    </div>
+    <a href="../../pricing/">Pricing</a>
+    <a href="../../portfolio/">Portfolio</a>
+    <a href="../../blog/">Blog</a>
+    <a href="../../contact/" class="btn btn-primary">Start a project</a>
+  </nav>
+</header>
+
+<div id="smooth-wrapper">
+<div id="smooth-content">
+<main id="main" class="page-shell">
+
+  <article>
+  <section class="section section-dark page-intro page-hero">
+    <div class="hero-grid-bg" aria-hidden="true"></div>
+    <div class="glow glow-a" aria-hidden="true"></div>
+    <div class="glow glow-b" aria-hidden="true"></div>
+    <div class="container">
+      <div class="row hero-split">
+        <div data-anim-hero class="col-12 col-lg-9">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <ol>
+              <li><a href="../../">Home</a></li>
+              <li><a href="../../wordpress-fixes/">WordPress Fixes</a></li>
+              <li><span aria-current="page">WordPress Broke After Update</span></li>
+            </ol>
+          </nav>
+          <p class="post-meta mono"><span class="post-cat">Site down</span><span>12 min read</span><span>2026-09-05</span><span>Ashekur Rahman</span></p>
+          <h1 data-anim="lines">WordPress Broke Right After an Update? Here&rsquo;s What Actually Happened.</h1>
+          <p class="body-lg">Everything was fine, then a plugin, theme or WordPress core update ran and now something isn&rsquo;t. That timing isn&rsquo;t a coincidence &mdash; here&rsquo;s how to find the exact update responsible and reverse it without breaking anything else.</p>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="../../contact/">Send me your site <i class="ri-arrow-right-line" aria-hidden="true"></i></a>
+            <a class="btn btn-ghost" href="../../services/wordpress-bug-fix/">See the bug fix service</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-white">
+    <div class="container">
+      <figure data-anim="reveal" class="shot mb-5">
+        <picture>
+          <source srcset="../../assets/images/wordpress-update-broke-site.webp" type="image/webp" />
+          <img src="../../assets/images/wordpress-update-broke-site.jpeg" alt="A WordPress update refresh icon breaking apart into a warning triangle, with a checkmark resolving it" width="1280" height="720" loading="lazy" decoding="async" />
+        </picture>
+        <!-- Image prompt: Realistic photo of a laptop screen showing a WordPress plugin update list with one plugin's version number highlighted, next to a browser tab showing a broken page layout. Soft desk lighting, shallow depth of field, photorealistic tech-editorial style, no visible faces, no readable personal data. 1280x720, 16:9. -->
+        <figcaption>The update log is usually the fastest place to find out what actually changed.</figcaption>
+      </figure>
+
+      <div class="row gx-5 gy-4">
+        <aside class="col-12 col-lg-4 order-lg-2">
+          <div class="post-aside">
+            <nav class="toc" aria-label="On this page">
+              <p class="toc-head mono">ON THIS PAGE</p>
+              <ol>
+                <li><a href="#what-is-the-problem">What is the problem?</a></li>
+                <li><a href="#common-symptoms">Common symptoms</a></li>
+                <li><a href="#why-does-this-happen">Why does this happen?</a></li>
+                <li><a href="#common-technical-causes">Common technical causes</a></li>
+                <li><a href="#how-to-diagnose-it">How to diagnose it</a></li>
+                <li><a href="#how-to-fix-it-step-by-step">How to fix it, step by step</a></li>
+                <li><a href="#when-this-needs-professional-help">When this needs professional help</a></li>
+                <li><a href="#how-i-can-help">How I can help</a></li>
+              </ol>
+            </nav>
+          </div>
+        </aside>
+        <div class="col-12 col-lg-8 order-lg-1">
+          <div class="prose">
+
+<h2 id="what-is-the-problem">What is the problem?</h2>
+<p>WordPress, its plugins and its theme are three separately maintained pieces of software running together, and each one updates on its own schedule, written by people who have never seen the other two. Most of the time that works fine. Occasionally a new release changes a function name, a database structure, or an assumption about what else is installed &mdash; and whatever depended on the old behavior breaks the moment the update finishes.</p>
+<blockquote>Quick answer: something updated, and something else wasn&rsquo;t written to expect that change. The fix is finding which update it was and either rolling it back, patching the conflict, or updating the other piece to a compatible version &mdash; not guessing at unrelated settings.</blockquote>
+<p>The failure itself can look like almost anything: a fatal error, a blank page, a layout that collapsed, a plugin that silently stopped working, or a checkout that no longer completes. What ties all of it together is the timing. If it started right after an update ran, the update is the first and most productive place to look, before touching anything else on the site.</p>
+
+<h2 id="common-symptoms">Common symptoms</h2>
+<ul>
+  <li>The site was working normally, then broke within minutes or hours of an update notification, an auto-update, or you manually clicking Update</li>
+  <li>A specific feature stopped working &mdash; a form, a slider, a payment method &mdash; while the rest of the site looks fine</li>
+  <li>The visual layout shifted, collapsed, or lost its styling, without any fatal error being shown</li>
+  <li>A JavaScript error appears in the browser console that references a script from the plugin or theme that just updated</li>
+  <li>The dashboard shows a plugin flagged as needing attention, or an update that failed partway through</li>
+  <li>Only one specific page or post type is affected, matching exactly what the updated plugin controls</li>
+</ul>
+
+<h2 id="why-does-this-happen">Why does this happen?</h2>
+<p>Every plugin and theme is built against a specific, current understanding of WordPress core, PHP, and whatever other plugins it expects to coexist with. An update to any one of those pieces can quietly invalidate that understanding: a function gets deprecated, a hook fires in a different order, a minimum PHP version gets raised, or two plugins that used to coexist peacefully both start trying to control the same thing. None of the individual pieces are necessarily buggy on their own &mdash; the break happens specifically in the gap between them.</p>
+<p>This is also why the same update can be completely safe on one site and break another: it depends entirely on which other plugins, theme, and PHP version that particular site happens to be running. A generic troubleshooting article can describe the pattern, but confirming the actual cause always comes down to your specific combination.</p>
+
+<h2 id="common-technical-causes">Common technical causes</h2>
+<ul>
+  <li><strong>A plugin update dropping support for an older PHP version</strong> your host is still running, causing a fatal error the moment the new code executes</li>
+  <li><strong>A theme built against an older version of a page builder</strong> (Elementor, Divi) that changed its own internal structure in a recent release</li>
+  <li><strong>A WordPress core update changing a deprecated function's behavior</strong> that an older, less-maintained plugin still relied on directly</li>
+  <li><strong>Two plugins updating independently and now conflicting</strong> over the same hook, shortcode, or JavaScript library version</li>
+  <li><strong>A database schema change shipped with an update</strong> that a caching layer or another plugin hadn't accounted for yet</li>
+  <li><strong>An update that was itself simply buggy</strong> at release and got walked back by the developer within days &mdash; rarer, but it happens even to well-known plugins</li>
+  <li><strong>A cached version of old CSS or JavaScript being served</strong> after the update, making it look broken when the underlying files are actually fine</li>
+</ul>
+
+<h2 id="how-to-diagnose-it">How to diagnose it</h2>
+<ol>
+  <li><strong>Check what actually updated, and when.</strong> Your host's control panel, WordPress's own update log, or email notifications usually show a timestamp you can line up against when the site broke.</li>
+  <li><strong>Clear every layer of cache first.</strong> Page cache, object cache, and CDN cache can all serve stale assets after an update and produce symptoms that look exactly like a real conflict.</li>
+  <li><strong>Check the browser console and your PHP error log</strong> for anything referencing the specific plugin, theme, or file that updated.</li>
+  <li><strong>If more than one thing updated at once</strong>, deactivate plugins one at a time, starting with whichever updated most recently, retesting after each.</li>
+  <li><strong>Search the plugin's own support forum or changelog</strong> for the version number involved &mdash; a widespread issue in a fresh release is usually reported by other users within hours.</li>
+</ol>
+
+<h2 id="how-to-fix-it-step-by-step">How to fix it, step by step</h2>
+<ol>
+  <li><strong>Take a backup before changing anything further</strong>, so there's a safe point to return to regardless of what the fix turns out to be.</li>
+  <li><strong>Confirm the exact update responsible</strong> using the timeline and console/error-log evidence from the diagnosis step, rather than assuming based on which plugin seems most likely.</li>
+  <li><strong>Roll the specific plugin back to its previous version</strong> if a compatible rollback is available, using a version-rollback plugin or a manual re-upload of the prior release from the WordPress.org repository.</li>
+  <li><strong>If it's a core update causing the conflict</strong>, update the outdated plugin or theme instead of rolling core back, since reversing WordPress core is riskier and rarely the right fix.</li>
+  <li><strong>If it's a genuine bug in the new release</strong>, check whether the developer has already shipped a patched point release before rolling back, since the fix may already exist.</li>
+  <li><strong>Clear all caching layers again</strong> once the fix is applied, so you're testing the corrected version rather than a stale cached copy.</li>
+  <li><strong>Test the specific feature that broke</strong>, not just that the site loads, since a fix that resolves a fatal error doesn't always restore the original functionality on its own.</li>
+  <li><strong>Set up a staging copy for future updates</strong> if one doesn't already exist, so the next update gets tested somewhere that isn't the live site.</li>
+</ol>
+
+<h2 id="when-this-needs-professional-help">When this needs professional help</h2>
+<p>A single obvious culprit with an available rollback is often a self-serve fix. It's worth bringing in a developer when:</p>
+<ul>
+  <li>Several things updated at once and it isn't clear which one is actually responsible</li>
+  <li>Rolling back isn't available and the fix means patching a genuine compatibility conflict directly</li>
+  <li>The site is business-critical (an active store, a lead-generation site) and downtime while troubleshooting has a real cost</li>
+  <li>The same kind of break keeps happening after routine updates, suggesting a deeper compatibility or hosting problem worth solving properly</li>
+  <li>There's no staging environment and you'd rather not experiment on the live site to find the fix</li>
+</ul>
+
+<h2 id="how-i-can-help">How I can help</h2>
+<p>This is one of the more common calls I get, and the fastest path through it is almost always reading the actual update log and error output first rather than guessing at which plugin looks suspicious. I identify the specific update responsible, apply the smallest safe fix &mdash; a rollback, a compatibility patch, or an update to the other side of the conflict &mdash; and set up a staging copy afterward if the site doesn't already have one, so the next update doesn't put you back here.</p>
+          </div>
+
+          <aside class="post-cta">
+            <p class="mono post-cta-head">RELATED SERVICE</p>
+            <h2>WordPress Bug Fix</h2>
+            <p>If you&rsquo;d rather have this diagnosed and fixed than do it yourself, that page covers exactly what&rsquo;s included, how fast it usually runs, and what it costs to find out.</p>
+            <div data-anim="fade" class="btn-row">
+              <a class="btn btn-primary" href="../../services/wordpress-bug-fix/">WordPress Bug Fix <i class="ri-arrow-right-line" aria-hidden="true"></i></a>
+              <a class="btn btn-ghost" href="../../contact/">Ask a question</a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </section>
+  </article>
+
+  <section class="section section-light">
+    <div class="container">
+      <div class="row gx-0">
+        <div class="section-head col-12 col-lg-6">
+          <p data-anim="fade" class="eyebrow"><span class="eyebrow-mark" aria-hidden="true"></span><span class="mono">RELATED PROBLEMS</span></p>
+          <h2 data-anim="lines">If this isn&rsquo;t quite your issue</h2>
+          <p data-anim="fade" class="body-lg">A few failures that often trace back to the same root cause: something updated.</p>
+        </div>
+      </div>
+      <div data-anim="stagger" class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4 related-grid">
+        <div class="col">
+          <a data-anim="item" class="related-card h-100" href="../wordpress-critical-error/">
+            <strong>WordPress Critical Error</strong>
+            <span>If you&rsquo;re seeing WordPress&rsquo;s own fatal-error screen specifically, start here instead.</span>
+          </a>
+        </div>
+        <div class="col">
+          <a data-anim="item" class="related-card h-100" href="../wordpress-plugin-conflict/">
+            <strong>WordPress Plugin Conflict</strong>
+            <span>A structured way to isolate which plugin is responsible when more than one updated at once.</span>
+          </a>
+        </div>
+        <div class="col">
+          <a data-anim="item" class="related-card h-100" href="../../services/wordpress-maintenance/">
+            <strong>WordPress Maintenance Plan</strong>
+            <span>Updates tested on staging before they reach your live site, so this stops happening.</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-white">
+    <div class="container">
+      <div class="row gx-0">
+        <div class="section-head col-12 col-lg-6">
+          <p data-anim="fade" class="eyebrow"><span class="eyebrow-mark" aria-hidden="true"></span><span class="mono">RELEVANT WORK</span></p>
+          <h2 data-anim="lines">Sites I&rsquo;ve kept stable through updates like this</h2>
+          <p data-anim="fade" class="body-lg">Two builds where plugin and theme version stability was as much the job as the design itself.</p>
+        </div>
+      </div>
+      <div data-anim="stagger" class="row row-cols-1 row-cols-md-2 g-4 case-grid">
+        <div class="col">
+          <article data-anim="item" class="case-card h-100">
+            <a href="../../portfolio/canvascroft/" tabindex="-1" aria-hidden="true">
+              <picture>
+                <source srcset="../../assets/images/project-canvascroft.webp" type="image/webp" />
+                <img src="../../assets/images/project-canvascroft.jpeg" alt="Canvascroft branding and design studio website built in WordPress with Elementor" width="1200" height="613" loading="lazy" decoding="async" />
+              </picture>
+            </a>
+            <div class="case-card-body">
+              <h3><a href="../../portfolio/canvascroft/">Canvascroft</a></h3>
+              <p>A live subscription creative service on Elementor and WooCommerce, where an untested update reaching production would mean lost bookings, not just a broken page.</p>
+              <ul class="tech-chips"><li>WordPress</li><li>Elementor</li><li>WooCommerce</li></ul>
+              <div class="btn-row">
+                <a class="btn btn-primary btn-sm" href="../../portfolio/canvascroft/">Read the case study</a>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="col">
+          <article data-anim="item" class="case-card h-100">
+            <a href="../../portfolio/freizeitcenter-dietz/" tabindex="-1" aria-hidden="true">
+              <picture>
+                <source srcset="../../assets/images/project-dietz.webp" type="image/webp" />
+                <img src="../../assets/images/project-dietz.jpeg" alt="Freizeitcenter Dietz motorhome dealership website, built in WordPress with Divi 5" width="1200" height="624" loading="lazy" decoding="async" />
+              </picture>
+            </a>
+            <div class="case-card-body">
+              <h3><a href="../../portfolio/freizeitcenter-dietz/">Freizeitcenter Dietz</a></h3>
+              <p>A Divi 5 rebuild where getting the theme and plugin versions to agree with each other was as important as the layout work itself.</p>
+              <ul class="tech-chips"><li>WordPress</li><li>Divi 5</li><li>Responsive</li></ul>
+              <div class="btn-row">
+                <a class="btn btn-primary btn-sm" href="../../portfolio/freizeitcenter-dietz/">Read the case study</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-tint">
+    <div class="container">
+      <div class="row gx-5 gy-4">
+        <div class="col-12 col-lg-4">
+          <div class="section-head sticky-head mb-4 mb-lg-0">
+            <p data-anim="fade" class="eyebrow"><span class="eyebrow-mark" aria-hidden="true"></span><span class="mono">FAQ</span></p>
+            <h2 data-anim="lines">Questions about updates breaking a site</h2>
+            <p data-anim="fade" class="body-lg">What people ask before sending over the site.</p>
+          </div>
+        </div>
+        <div class="col-12 col-lg-8">
+          <div data-anim="stagger" class="faq-list">
+            <details data-anim="item" class="faq-item">
+              <summary>How do I know if it was core, a plugin, or a theme that broke it?</summary>
+              <p class="faq-body">Check your host's update log or your email for update notifications timestamped right before the site broke. If several things updated overnight, WordPress's own site health screen and your plugin list's "last updated" dates usually narrow it down fast; deactivating plugins one at a time from oldest-suspect to newest confirms it when the log is ambiguous.</p>
+            </details>
+            <details data-anim="item" class="faq-item">
+              <summary>Is it safe to just roll back the update?</summary>
+              <p class="faq-body">Usually yes for a single plugin, using a version-rollback tool or a manual re-upload of the previous release. It's riskier for a WordPress core rollback, since core updates sometimes include database changes that don't cleanly reverse. Take a backup before rolling anything back, either way.</p>
+            </details>
+            <details data-anim="item" class="faq-item">
+              <summary>Why didn't I test this on staging first, and does that matter now?</summary>
+              <p class="faq-body">It would have caught this before it reached visitors, but that's about prevention, not about fixing what's already broken. Right now the priority is identifying and reversing the specific change; staging is worth setting up afterward so the next update doesn't repeat this.</p>
+            </details>
+            <details data-anim="item" class="faq-item">
+              <summary>Can auto-updates cause this even if nobody touched the site?</summary>
+              <p class="faq-body">Yes, and it's one of the more common ways this happens. Plugins with auto-updates enabled can update themselves overnight to a version that's incompatible with another plugin, the active theme, or the server's PHP version, with nobody at the keyboard when it happened.</p>
+            </details>
+            <details data-anim="item" class="faq-item">
+              <summary>Will disabling auto-updates prevent this from happening again?</summary>
+              <p class="faq-body">It removes the surprise-timing element, but not the underlying risk, since you'll eventually need to update anyway and could hit the same incompatibility manually. Testing updates on a staging copy first is what actually prevents a repeat; disabling auto-updates just means you control when you find out.</p>
+            </details>
+            <details data-anim="item" class="faq-item">
+              <summary>Is this the same as a WordPress critical error?</summary>
+              <p class="faq-body">They overlap but aren't identical. A critical error is WordPress's own fatal-error screen, which an update can absolutely trigger, but an update can also break a site in other ways, like a visual layout collapse, a broken checkout, or a JavaScript conflict, with no fatal-error screen at all. If you're specifically seeing WordPress's branded critical-error message, the dedicated guide for that goes into more diagnostic detail.</p>
+            </details>
+            <details data-anim="item" class="faq-item">
+              <summary>How do I tell a PHP version mismatch from an actual bug in the update?</summary>
+              <p class="faq-body">Check the plugin's own changelog and support forum first, since a widespread bug in a fresh release usually has other users reporting the exact same thing within hours. A PHP mismatch is more likely if the plugin's minimum-PHP requirement was quietly raised in that release and your host's PHP version is older than that.</p>
+            </details>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-dark section-contact">
+    <div class="hero-grid-bg contact-grid-bg" aria-hidden="true"></div>
+    <div class="glow glow-d" aria-hidden="true"></div>
+    <div class="container">
+      <div class="contact-cta-shell">
+        <div data-anim="fade" class="contact-cta-card">
+          <div class="contact-cta-copy">
+            <p class="badge badge-live mx-auto"><span class="dot" aria-hidden="true"></span>Available for new projects</p>
+            <p class="eyebrow eyebrow-center"><span class="eyebrow-mark eyebrow-mark-light" aria-hidden="true"></span><span class="mono">NEXT STEP</span></p>
+            <h2 data-anim="lines">Need help fixing this WordPress issue?</h2>
+            <p class="body-lg">Send me your website and I'll help identify the problem &mdash; no charge just to take a look. Based in Bangladesh, working with clients worldwide, with a reply within one working day.</p>
+          </div>
+          <ul class="tech-chips justify-content-center">
+            <li>Reply within one working day</li>
+            <li>Fixed quote before work starts</li>
+            <li>UK, EU and US hours covered</li>
+          </ul>
+          <div class="contact-cta-actions">
+            <a class="btn btn-primary" href="../../contact/">Start a project <i class="ri-arrow-right-line" aria-hidden="true"></i></a>
+            <a class="btn btn-ghost" href="mailto:hello@ashekur.com">hello@ashekur.com</a>
+            <a class="btn btn-ghost" href="https://wa.me/8801812764112" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-top">
+    <div class="row gx-4 gy-5 align-items-start">
+      <div class="footer-brand col-12 col-lg-5">
+        <div class="brand brand-lg">
+          <picture>
+            <source srcset="../../assets/images/ashekur-logo-light.webp" type="image/webp" />
+            <img src="../../assets/images/ashekur-logo-light.png" alt="ashekur.com" width="480" height="125" loading="lazy" decoding="async" />
+          </picture>
+        </div>
+        <p class="footer-blurb">Frontend development and WordPress engineering for teams that care how it feels, not just how it looks. Based in Bangladesh &mdash; serving clients worldwide.</p>
+      </div>
+      <div class="col-12 col-lg-7">
+        <div class="footer-cols row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4">
+          <nav class="col" aria-label="Services">
+            <p class="mono footer-head">SERVICES</p>
+            <a href="../../services/wordpress-development/">WordPress Development</a>
+            <a href="../../services/wordpress-customization/">WordPress Customization</a>
+            <a href="../../services/elementor-customization/">Elementor Customization</a>
+            <a href="../../services/woocommerce-development/">WooCommerce Development</a>
+            <a href="../../services/wordpress-speed-optimization/">WordPress Speed Optimization</a>
+            <a href="../../services/wordpress-bug-fix/">WordPress Bug Fix</a>
+            <a href="../../services/elementor-fix/">Elementor Bug Fix</a>
+            <a href="../../services/wordpress-migration/">WordPress Migration</a>
+            <a href="../../services/seo/">WordPress SEO</a>
+          </nav>
+          <nav class="col" aria-label="Site">
+            <p class="mono footer-head">SITEMAP</p>
+            <a href="../../">Home</a>
+            <a href="../../tools/">Tools</a>
+            <a href="../../portfolio/">Portfolio</a>
+            <a href="../../blog/">Blog</a>
+            <a href="../../wordpress-fixes/">WordPress Fixes</a>
+            <a href="../../#experience">Experience</a>
+            <a href="../../contact/">Contact</a>
+            <a href="../../privacy/">Privacy Policy</a>
+          </nav>
+          <div class="col">
+            <p class="mono footer-head">ELSEWHERE</p>
+            <a href="mailto:hello@ashekur.com"><i class="ri-mail-line" aria-hidden="true"></i>hello@ashekur.com</a>
+            <a href="https://wa.me/8801812764112" target="_blank" rel="noopener noreferrer"><i class="ri-whatsapp-line" aria-hidden="true"></i>WhatsApp</a>
+            <a href="https://www.linkedin.com/in/ashekur-rahman-1ab205122/" target="_blank" rel="noopener noreferrer"><i class="ri-linkedin-fill" aria-hidden="true"></i>LinkedIn</a>
+            <a href="https://github.com/AshekurRahman" target="_blank" rel="noopener noreferrer"><i class="ri-github-fill" aria-hidden="true"></i>GitHub</a>
+            <a href="https://www.upwork.com/freelancers/~010aabe60ec2ae6679" target="_blank" rel="noopener noreferrer"><i class="ri-upwork-fill" aria-hidden="true"></i>Upwork</a>
+            <a href="https://www.facebook.com/ashekur.rahman.hridoy" target="_blank" rel="noopener noreferrer"><i class="ri-facebook-circle-fill" aria-hidden="true"></i>Facebook</a>
+            <a href="https://www.instagram.com/ashekurhridoy/" target="_blank" rel="noopener noreferrer"><i class="ri-instagram-line" aria-hidden="true"></i>Instagram</a>
+            <a href="https://www.youtube.com/@ashekurrahman1431" target="_blank" rel="noopener noreferrer"><i class="ri-youtube-fill" aria-hidden="true"></i>YouTube</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <p class="mono copyright">&copy; 2026 Ashekur Rahman. All rights reserved.</p>
+    <a class="to-top-inline" href="#main"><i class="ri-arrow-up-line" aria-hidden="true"></i> Back to top</a>
+  </div>
+</footer>
+</div>
+</div>
+
+
+<a class="wa-float" href="https://wa.me/8801812764112" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp"><i class="ri-whatsapp-fill" aria-hidden="true"></i></a>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" integrity="sha384-HOvlOYPIs/zjoIkWUGXkVmXsjr8GuZLV+Q+rcPwmJOVZVpvTSXQChiN4t9Euv9Vc" crossorigin="anonymous" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js" integrity="sha384-P8VzCVnT9NBUkMrpcIZrJbA7EBjJvh/fJS6PmP+4nLIM284DtsImIv8D0fFjIkeh" crossorigin="anonymous" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js" integrity="sha384-xb96EMJeax+NLXMC88ZBa1xAeAW+kn+horHh/zFlbMLG2UPWhMJJSlv7fi57hS+Q" crossorigin="anonymous" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollSmoother.min.js" integrity="sha384-dd8lT3AimXbI347qlZzlijPa4qnSlgGxuTqK2HlcfvF5+aOIeddPdMFmFpypQPZN" crossorigin="anonymous" defer></script>
+<script src="../../assets/js/anim.js" defer></script>
+<script src="../../assets/js/main.js" defer></script>
+</body>
+</html>

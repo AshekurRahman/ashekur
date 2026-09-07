@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" role="img" aria-hidden="true">
+  <title>Abstract dark tech visual representing an Elementor page load gauge in the red zone</title>
+  <defs>
+    <radialGradient id="bgFadeesl" cx="50%" cy="36%" r="78%">
+      <stop offset="0%" stop-color="#141f38"/>
+      <stop offset="100%" stop-color="#0a1020"/>
+    </radialGradient>
+    <pattern id="gridesl" width="64" height="64" patternUnits="userSpaceOnUse">
+      <path d="M 64 0 L 0 0 0 64" fill="none" stroke="rgba(148,163,184,0.10)" stroke-width="1"/>
+    </pattern>
+    <radialGradient id="gridMaskesl" cx="50%" cy="32%" r="70%">
+      <stop offset="0%" stop-color="#fff" stop-opacity="0.9"/>
+      <stop offset="65%" stop-color="#fff" stop-opacity="0.32"/>
+      <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+    </radialGradient>
+    <mask id="gridMaskElesl">
+      <rect width="1280" height="720" fill="url(#gridMaskesl)"/>
+    </mask>
+    <radialGradient id="gA_esl" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#4f46e5" stop-opacity="0.46"/>
+      <stop offset="66%" stop-color="#4f46e5" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="gB_esl" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fca5a5" stop-opacity="0.4"/>
+      <stop offset="66%" stop-color="#fca5a5" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bgFadeesl)"/>
+  <rect width="1280" height="720" fill="url(#gridesl)" mask="url(#gridMaskElesl)"/>
+  <circle cx="380" cy="230" r="320" fill="url(#gA_esl)"/><circle cx="980" cy="500" r="320" fill="url(#gB_esl)"/>
+  <circle cx="860" cy="380" r="80" fill="none" stroke="rgba(148,163,184,0.25)" stroke-width="12"/>
+  <path d="M 860 300 A 80 80 0 0 1 928 420" stroke="#fca5a5" stroke-width="12" fill="none" stroke-linecap="round"/>
+  <line x1="860" y1="380" x2="900" y2="345" stroke="#e2e8f0" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="860" cy="380" r="6" fill="#e2e8f0"/>
+</svg>

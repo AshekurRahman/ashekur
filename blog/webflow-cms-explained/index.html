@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Webflow CMS Explained: How It Actually Works</title>
+<meta name="description" content="What Webflow's CMS actually is, how collections and fields work, and whether it fits your site better than WordPress. Plain-terms guide." />
+<meta name="author" content="Ashekur Rahman" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<meta name="theme-color" content="#0F172A" />
+<link rel="canonical" href="https://ashekur.com/blog/webflow-cms-explained/" />
+<link rel="icon" href="../../assets/images/mark.png" type="image/png" />
+<link rel="apple-touch-icon" href="../../assets/images/mark.png" />
+<link rel="manifest" href="../../site.webmanifest" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-08-28" />
+<meta property="article:author" content="Ashekur Rahman" />
+<meta property="article:section" content="Platforms" />
+<meta property="og:site_name" content="Ashekur Rahman" />
+<meta property="og:url" content="https://ashekur.com/blog/webflow-cms-explained/" />
+<meta property="og:title" content="Webflow CMS Explained: How It Actually Works" />
+<meta property="og:description" content="What Webflow's CMS actually is, how collections and fields work, and whether it fits your site better than WordPress. Plain-terms guide." />
+<meta property="og:image" content="https://ashekur.com/assets/images/service-webflow.jpeg" />
+<meta property="og:locale" content="en_US" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Webflow CMS Explained: How It Actually Works" />
+<meta name="twitter:description" content="What Webflow's CMS actually is, how collections and fields work, and whether it fits your site better than WordPress. Plain-terms guide." />
+<meta name="twitter:image" content="https://ashekur.com/assets/images/service-webflow.jpeg" />
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://www.googletagmanager.com" />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+<link rel="stylesheet" href="../../assets/fonts/remixicon.css" />
+<link rel="stylesheet" href="../../assets/css/template.css" />
+<script>var d=document.documentElement;d.classList.remove('no-js');d.classList.add('js-anim');</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://ashekur.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://ashekur.com/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Webflow CMS Explained: How It Actually Works",
+          "item": "https://ashekur.com/blog/webflow-cms-explained/"
+        }
+      ]
+    },
+    {
+      "@type": "BlogPosting",
+      "@id": "https://ashekur.com/blog/webflow-cms-explained/#article",
+      "headline": "Webflow CMS Explained: How It Actually Works",
+      "description": "What Webflow's CMS actually is, how collections and fields work, and whether it fits your site better than WordPress. Plain-terms guide.",
+      "url": "https://ashekur.com/blog/webflow-cms-explained/",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://ashekur.com/blog/webflow-cms-explained/"
+      },
+      "image": "https://ashekur.com/assets/images/service-webflow.jpeg",
+      "datePublished": "2026-08-28",
+      "dateModified": "2026-08-28",
+      "author": {
+        "@type": "Person",
+        "@id": "https://ashekur.com/#person",
+        "name": "Ashekur Rahman",
+        "url": "https://ashekur.com/",
+        "jobTitle": "Frontend Developer & WordPress Expert",
+        "email": "hello@ashekur.com",
+        "telephone": "+8801812764112",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "BD"
+        }
+      },
+      "publisher": {
+        "@type": "Person",
+        "@id": "https://ashekur.com/#person",
+        "name": "Ashekur Rahman",
+        "url": "https://ashekur.com/",
+        "jobTitle": "Frontend Developer & WordPress Expert",
+        "email": "hello@ashekur.com",
+        "telephone": "+8801812764112",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "BD"
+        }
+      },
+      "articleSection": "Platforms",
+      "wordCount": 1304,
+      "inLanguage": "en",
+      "isAccessibleForFree": true
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is Webflow CMS good for a blog?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, for most business blogs. You design the post template once, and every new post becomes an item filled into it — no separate theme or plugin needed. It gets less comfortable if you are publishing at very high volume or need editorial workflow features like roles and approval stages, which is where WordPress is still the stronger fit."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I edit Webflow CMS content without a developer?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, once the collections and templates are built. Adding, editing or removing items — text, images, rich content — is a content-editor job with no code involved. Changing the structure itself, like adding a new field or redesigning the template, is a developer task, the same as it would be on any platform."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How many items can a Webflow CMS collection hold?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It depends on your site plan — Webflow sets a per-collection item cap that scales with the plan tier, and those numbers do change over time. If you are planning a large content operation, check the current limit for the plan you intend to use before committing to it, rather than assuming it is unlimited."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SGTGDFXH6K"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-SGTGDFXH6K');
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header" id="siteHeader">
+  <div class="container header-inner">
+    <a class="brand" href="../../" aria-label="Ashekur Rahman &mdash; home">
+      <picture>
+        <source srcset="../../assets/images/ashekur-logo-light.webp" type="image/webp" />
+        <img src="../../assets/images/ashekur-logo-light.png" alt="Ashekur Rahman" width="480" height="125" fetchpriority="high" decoding="async" />
+      </picture>
+    </a>
+    <nav class="nav-desktop" aria-label="Main">
+      <a href="../../" class="nav-link">Home</a>
+      <a href="../../tools/" class="nav-link">Tools</a>
+      <div class="nav-item" data-dropdown>
+        <div class="nav-row">
+          <a href="../../services/" class="nav-link">Services</a>
+          <button class="nav-caret" type="button" aria-label="Services submenu" aria-expanded="false" aria-controls="navDrop-services" data-dropdown-toggle><i class="ri-arrow-down-s-line" aria-hidden="true"></i></button>
+        </div>
+        <div class="nav-panel" id="navDrop-services">
+          <a class="nav-panel-all" href="../../services/">All services</a>
+          <div class="nav-panel-cols">
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">WordPress</p>
+              <a href="../../services/wordpress-development/">WordPress Development</a>
+              <a href="../../services/wordpress-customization/">WordPress Customization</a>
+              <a href="../../services/wordpress-bug-fix/">WordPress Bug Fix</a>
+              <a href="../../services/wordpress-maintenance/">WordPress Maintenance<em>New</em></a>
+            </div>
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">Page Builders</p>
+              <a href="../../services/elementor-fix/">Elementor Bug Fix</a>
+              <a href="../../services/elementor-customization/">Elementor Customization</a>
+              <a href="../../services/elementor-custom-widgets/">Elementor Custom Widgets</a>
+              <a href="../../services/divi-customization/">Divi Customization</a>
+              <a href="../../services/divi-5-migration/">Divi 5 Migration<em>New</em></a>
+            </div>
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">WooCommerce</p>
+              <a href="../../services/woocommerce-development/">WooCommerce Development</a>
+              <a href="../../services/woocommerce-fix/">WooCommerce Fixes</a>
+            </div>
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">Performance &amp; Security</p>
+              <a href="../../services/wordpress-speed-optimization/">WordPress Speed Optimization</a>
+              <a href="../../services/core-web-vitals-fix/">Core Web Vitals Fix<em>New</em></a>
+              <a href="../../services/wordpress-malware-removal/">WordPress Malware Removal</a>
+              <a href="../../services/google-blacklist-removal/">Google Blacklist Removal<em>New</em></a>
+              <a href="../../services/caching-cdn-setup/">Caching &amp; CDN Setup<em>New</em></a>
+              <a href="../../services/wordpress-security-hardening/">WordPress Security Hardening<em>New</em></a>
+            </div>
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">Migration</p>
+              <a href="../../services/wordpress-migration/">WordPress Migration</a>
+              <a href="../../services/domain-migration-redirects/">Domain Migration &amp; 301 Redirects<em>New</em></a>
+              <a href="../../services/wordpress-migration/#hosting">Host Migration</a>
+            </div>
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">SEO</p>
+              <a href="../../services/seo/">SEO</a>
+              <a href="../../services/technical-seo-audit/">Technical SEO Audit<em>New</em></a>
+            </div>
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">Other</p>
+              <a href="../../services/webflow-development/">Webflow Development</a>
+              <a href="../../services/frontend-development/">Frontend Development</a>
+              <a href="../../services/website-redesign/">Website Redesign<em>New</em></a>
+              <a href="../../services/white-label-wordpress-development/">White Label Development<em>New</em></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="../../pricing/" class="nav-link">Pricing</a>
+      <a href="../../portfolio/" class="nav-link">Portfolio</a>
+      <a href="../../blog/" class="nav-link is-active">Blog</a>
+      <a href="../../contact/" class="btn btn-primary btn-sm nav-cta">Start a project</a>
+    </nav>
+    <button class="burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="nav-mobile" id="mobileNav" aria-label="Mobile" hidden>
+    <a href="../../">Home</a>
+    <a href="../../tools/">Tools</a>
+    <div class="nav-item" data-dropdown>
+      <div class="nav-row">
+        <a href="../../services/">Services</a>
+        <button class="nav-caret" type="button" aria-label="Services submenu" aria-expanded="false" aria-controls="navDropM-services" data-dropdown-toggle><i class="ri-arrow-down-s-line" aria-hidden="true"></i></button>
+      </div>
+      <div class="nav-panel" id="navDropM-services">
+        <a href="../../services/">All services</a>
+        <a href="../../services/wordpress-development/">WordPress Development</a>
+        <a href="../../services/wordpress-customization/">WordPress Customization</a>
+        <a href="../../services/wordpress-bug-fix/">WordPress Bug Fix</a>
+        <a href="../../services/wordpress-maintenance/">WordPress Maintenance</a>
+        <a href="../../services/elementor-fix/">Elementor Bug Fix</a>
+        <a href="../../services/elementor-customization/">Elementor Customization</a>
+        <a href="../../services/divi-customization/">Divi Customization</a>
+        <a href="../../services/divi-5-migration/">Divi 5 Migration</a>
+        <a href="../../services/elementor-custom-widgets/">Elementor Custom Widgets</a>
+        <a href="../../services/wordpress-speed-optimization/">WordPress Speed Optimization</a>
+        <a href="../../services/core-web-vitals-fix/">Core Web Vitals Fix</a>
+        <a href="../../services/woocommerce-fix/">WooCommerce Fixes</a>
+        <a href="../../services/woocommerce-development/">WooCommerce Development</a>
+        <a href="../../services/wordpress-migration/">WordPress Migration</a>
+        <a href="../../services/domain-migration-redirects/">Domain Migration &amp; 301 Redirects</a>
+        <a href="../../services/seo/">WordPress SEO</a>
+        <a href="../../services/wordpress-malware-removal/">WordPress Malware Removal</a>
+        <a href="../../services/google-blacklist-removal/">Google Blacklist Removal</a>
+        <a href="../../services/wordpress-security-hardening/">WordPress Security Hardening</a>
+        <a href="../../services/webflow-development/">Webflow Development</a>
+        <a href="../../services/frontend-development/">Frontend Development</a>
+        <a href="../../services/website-redesign/">Website Redesign</a>
+        <a href="../../services/white-label-wordpress-development/">White Label Development</a>
+      </div>
+    </div>
+    <a href="../../pricing/">Pricing</a>
+    <a href="../../portfolio/">Portfolio</a>
+    <a href="../../blog/">Blog</a>
+    <a href="../../contact/" class="btn btn-primary">Start a project</a>
+  </nav>
+</header>
+
+<div id="smooth-wrapper">
+<div id="smooth-content">
+<main id="main" class="page-shell">
+
+  <article>
+  <section class="section section-dark page-intro page-hero">
+    <div class="hero-grid-bg" aria-hidden="true"></div>
+    <div class="glow glow-a" aria-hidden="true"></div>
+    <div class="glow glow-b" aria-hidden="true"></div>
+    <div class="container">
+      <div class="row hero-split">
+        <div data-anim-hero class="col-12 col-lg-9">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <ol>
+              <li><a href="../../">Home</a></li>
+              <li><a href="../../blog/">Blog</a></li>
+              <li><span aria-current="page">Webflow CMS Explained: How It Actually Works</span></li>
+            </ol>
+          </nav>
+          <p class="post-meta mono"><span class="post-cat">Platforms</span><span>10 min read</span><span>2026-08-28</span><span>Ashekur Rahman</span></p>
+          <h1 data-anim="lines">Webflow CMS Explained: How It Actually Works</h1>
+          <p class="body-lg">Not the platform-vs-platform argument &mdash; that one lives on <a href="../wordpress-vs-webflow-vs-framer/">WordPress vs Webflow vs Framer</a>. This is what the CMS itself actually is, in the order you would meet each piece if you opened it for the first time.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-white">
+    <div class="container">
+      <figure data-anim="reveal" class="shot mb-5">
+        <!-- TEMP featured image: reusing service-webflow.jpeg until a dedicated
+             1280x720 image exists for this post. Replace when available. -->
+        <picture>
+          <source srcset="../../assets/images/service-webflow.webp" type="image/webp" />
+          <img src="../../assets/images/service-webflow.jpeg" alt="Webflow CMS collection list with fields and items, next to the designer canvas" width="1280" height="720" loading="lazy" decoding="async" />
+        </picture>
+        <figcaption>Collections, fields and items &mdash; the three pieces the rest of this is built from.</figcaption>
+      </figure>
+
+      <div class="row gx-5 gy-4">
+        <aside class="col-12 col-lg-4 order-lg-2">
+          <div class="post-aside">
+            <nav class="toc" aria-label="On this page">
+              <p class="toc-head mono">ON THIS PAGE</p>
+              <ol>
+              <li><a href="#the-short-answer">The short answer</a></li>
+              <li><a href="#what-webflows-cms-actually-is">What Webflow's CMS actually is</a></li>
+              <li><a href="#collections-fields-and-items">Collections, fields and items</a></li>
+              <li><a href="#static-pages-vs-cms-pages">Static pages vs CMS pages</a></li>
+              <li><a href="#what-your-team-can-manage">What your team can manage without a developer</a></li>
+              <li><a href="#webflow-cms-vs-wordpress">Webflow CMS vs WordPress</a></li>
+              <li><a href="#when-its-the-right-call">When it's the right call &mdash; and when it isn't</a></li>
+              <li><a href="#faq">FAQ</a></li>
+              <li><a href="#the-honest-conclusion">The honest conclusion</a></li>
+              </ol>
+            </nav>
+          </div>
+        </aside>
+        <div class="col-12 col-lg-8 order-lg-1">
+          <div class="prose">
+
+<p>Most explanations of Webflow's CMS assume you already know what a "collection" is, or they skip straight to arguing it beats WordPress. This is neither. It's a plain-terms walkthrough of how the CMS actually works, followed by an honest read on when it's the right tool for the job and when it isn't.</p>
+
+<h2 id="the-short-answer">The short answer</h2>
+<p>Webflow's CMS is a structured content database built into the same tool you design in. You define a <strong>Collection</strong> &mdash; say, Blog Posts &mdash; with <strong>Fields</strong> such as title, image, body and category. Every <strong>Item</strong> you add fills those fields into a template you design once. Change the template, and every item using it updates. That's the whole idea; everything below is detail.</p>
+
+<h2 id="what-webflows-cms-actually-is">What Webflow's CMS actually is</h2>
+<p>It helps to be clear about what it isn't first. It isn't a page builder for one-off pages &mdash; that's the regular Webflow Designer canvas, and you'd use it the same way for a Home or About page whether or not the CMS exists. The CMS is specifically for content that repeats in the same shape: blog posts, case studies, team members, locations, job listings. Anything where you'd otherwise be copy-pasting a page layout and swapping out the text.</p>
+<p>Under the hood it behaves like a lightweight database with a visual front end. Structurally, that's not far from what WordPress custom post types and Advanced Custom Fields do &mdash; the difference is Webflow's version is built in, with no plugin to install or theme code to write.</p>
+
+<h2 id="collections-fields-and-items">Collections, fields and items</h2>
+<p>Three terms carry the whole system:</p>
+<ul>
+  <li><strong>Collection</strong> &mdash; a content type. Think of it as a table: Blog Posts, Case Studies, Team Members. Each site can have multiple collections, and collections can reference each other (a blog post pointing to its author, say).</li>
+  <li><strong>Field</strong> &mdash; a column inside that collection. Plain text, rich text, image, number, date, a reference to another collection, a fixed set of options &mdash; Webflow ships a fixed list of field types, and every item in the collection has the same set of fields.</li>
+  <li><strong>Item</strong> &mdash; a single row. One blog post, one team member, one product. Content editors add, edit and remove items without touching the design.</li>
+</ul>
+<p>The piece that makes it click is the <strong>Collection Page</strong>: a single template you design once and bind to a collection's fields. Add a fortieth blog post item and you get a fortieth live page automatically, using that same template, with no extra design work. That's the entire mechanism &mdash; a template plus a list of items, multiplied.</p>
+<p>Item caps exist and vary by plan tier. If you're planning a large content operation, check the current limit for the plan you intend to use rather than assuming there isn't one &mdash; it's the one number in this article worth confirming directly with Webflow's pricing page before you commit, since it does change over time.</p>
+
+<h2 id="static-pages-vs-cms-pages">Static pages vs CMS pages</h2>
+<p>A <strong>static page</strong> is hand-built and one-off &mdash; Home, About, Contact, Pricing. You design it once and it stays that one page.</p>
+<p>A <strong>CMS page</strong> is the Collection Page described above &mdash; one template, many live pages, one per item. The test for which you need is simple: if the content repeats in a consistent structure and the list will grow over time, it's a CMS collection. If it's a single, permanent page with its own bespoke layout, it's static. Most business sites end up with a handful of static pages and one or two CMS collections &mdash; a blog, and sometimes case studies or locations.</p>
+
+<h2 id="what-your-team-can-manage">What your team can manage without a developer</h2>
+<p>Once the collections and templates exist, the ongoing work is genuinely non-technical:</p>
+<ul>
+  <li>Adding, editing or removing items &mdash; text, images, rich content &mdash; through the Editor or the CMS panel.</li>
+  <li>Publishing changes live immediately, with no deploy step or developer in the loop.</li>
+  <li>Reordering items where a sort field is set up for it.</li>
+</ul>
+<p>What still needs a developer is anything structural: adding a new field, creating a new collection, redesigning the template, or wiring up interactions that depend on a field that doesn't exist yet. That split &mdash; structure is a build task, content is an editing task &mdash; is exactly what makes the CMS useful for a marketing team, and it's true of pretty much any CMS, Webflow included.</p>
+
+<h2 id="webflow-cms-vs-wordpress">Webflow CMS vs WordPress</h2>
+<p>Neither is straightforwardly better; they trade off differently. WordPress can build the same kind of structured content with custom post types and a plugin like Advanced Custom Fields, and there's effectively no ceiling on how much content or how many field types you can add &mdash; but you're assembling that yourself, or paying someone to, and you own the resulting maintenance: plugin updates, hosting, security.</p>
+<p>Webflow's CMS comes built in, with no plugins to maintain and hosting handled for you, and it's tightly integrated with the same visual tool you designed the site in. Against that: item caps by plan, and the platform dependency that comes with any hosted tool &mdash; you don't own it, and leaving means rebuilding.</p>
+<p>Which one fits depends on content volume, who's editing it, and whether the site needs deep third-party integrations. That's the same set of questions the broader platform comparison walks through in more detail.</p>
+
+<h2 id="when-its-the-right-call">When it's the right call &mdash; and when it isn't</h2>
+<p><strong>Webflow CMS tends to be the right call when:</strong></p>
+<ul>
+  <li>You're running a marketing site with a blog, case studies or team bios &mdash; content in the low hundreds of items, not thousands.</li>
+  <li>Design precision matters and you want your marketing team publishing without a developer in the loop.</li>
+  <li>You'd rather not maintain plugins, and the CMS's built-in field types cover what you need.</li>
+</ul>
+<p><strong>It tends to be the wrong call when:</strong></p>
+<ul>
+  <li>You're running a large, fast-growing content operation that will outgrow item caps.</li>
+  <li>The site needs deep integrations &mdash; a CRM, booking system or inventory tool &mdash; that WordPress's plugin ecosystem already handles and Webflow doesn't.</li>
+  <li>You're selling products with real complexity: variations, tax rules, subscriptions.</li>
+  <li>Full data ownership and portability matters more than publishing convenience.</li>
+</ul>
+<p>If your project looks like the first list, that's exactly the kind of build covered on the <a href="../../services/webflow-development/">Webflow development</a> page &mdash; collection structure, templates and a training handover included.</p>
+
+<h2 id="faq">FAQ</h2>
+<div class="faq-list">
+  <details class="faq-item">
+    <summary>Is Webflow CMS good for a blog?</summary>
+    <p class="faq-body">Yes, for most business blogs. You design the post template once, and every new post becomes an item filled into it &mdash; no separate theme or plugin needed. It gets less comfortable if you are publishing at very high volume or need editorial workflow features like roles and approval stages, which is where WordPress is still the stronger fit.</p>
+  </details>
+  <details class="faq-item">
+    <summary>Can I edit Webflow CMS content without a developer?</summary>
+    <p class="faq-body">Yes, once the collections and templates are built. Adding, editing or removing items &mdash; text, images, rich content &mdash; is a content-editor job with no code involved. Changing the structure itself, like adding a new field or redesigning the template, is a developer task, the same as it would be on any platform.</p>
+  </details>
+  <details class="faq-item">
+    <summary>How many items can a Webflow CMS collection hold?</summary>
+    <p class="faq-body">It depends on your site plan &mdash; Webflow sets a per-collection item cap that scales with the plan tier, and those numbers do change over time. If you are planning a large content operation, check the current limit for the plan you intend to use before committing to it, rather than assuming it is unlimited.</p>
+  </details>
+</div>
+
+<h2 id="the-honest-conclusion">The honest conclusion</h2>
+<p>The CMS is a genuinely well-designed piece of engineering &mdash; a structured content system that shares Webflow's core strength (design precision, no-code publishing) and its core constraint (item caps, and you don't own the platform). It's not automatically better or worse than WordPress's equivalent; it's a different trade-off, and the right one depends on how much content you have, who's editing it, and what else the site needs to talk to.</p>
+<p>If you're still deciding between the platforms rather than just the CMS, that's the full argument on <a href="../wordpress-vs-webflow-vs-framer/">WordPress vs Webflow vs Framer</a>.</p>
+          </div>
+
+          <aside class="post-cta">
+            <p class="mono post-cta-head">RELATED SERVICE</p>
+            <h2>Webflow Development</h2>
+            <p>If this is the kind of build you need doing rather than reading about, that page covers the scope, the process and what it costs to find out.</p>
+            <div data-anim="fade" class="btn-row">
+              <a class="btn btn-primary" href="../../services/webflow-development/">Webflow Development <i class="ri-arrow-right-line" aria-hidden="true"></i></a>
+              <a class="btn btn-ghost" href="../../contact/">Ask a question</a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </section>
+  </article>
+
+  <section class="section section-light">
+    <div class="container">
+      <div class="row gx-0">
+        <div class="section-head col-12 col-lg-6">
+          <p data-anim="fade" class="eyebrow"><span class="eyebrow-mark" aria-hidden="true"></span><span class="mono">KEEP READING</span></p>
+          <h2 data-anim="lines">More from the blog</h2>
+          <p data-anim="fade" class="body-lg">Same idea every time &mdash; the question a client actually asked, answered as far as the honest answer goes.</p>
+        </div>
+      </div>
+      <div data-anim="stagger" class="row row-cols-1 row-cols-md-2 g-4 blog-grid">
+        <div class="col">
+          <article data-anim="item" class="post-card h-100">
+            <a href="../wordpress-vs-webflow-vs-framer/" tabindex="-1" aria-hidden="true"><img src="../../assets/images/blog-platform-comparison.jpeg" alt="WordPress vs Webflow vs Framer comparison for business websites" width="1280" height="720" loading="lazy" decoding="async" /></a>
+            <div class="post-card-body">
+              <p class="post-meta mono"><span class="post-cat">Platforms</span><span>9 min read</span></p>
+              <h3><a href="../wordpress-vs-webflow-vs-framer/">WordPress vs Webflow vs Framer: Which Is Best for a Business Website?</a></h3>
+              <p>Every comparison article you find is written by someone who sells one of the three. I build on all of them, so here is the version without a thumb on the scale.</p>
+              <a class="mono text-link" href="../wordpress-vs-webflow-vs-framer/">Read the article &rarr;</a>
+            </div>
+          </article>
+        </div>
+        <div class="col">
+          <article data-anim="item" class="post-card h-100">
+            <a href="../website-cost-2026/" tabindex="-1" aria-hidden="true"><img src="../../assets/images/services-overview.jpeg" alt="WordPress, SEO, Webflow and frontend workflows converging on one build process" width="1280" height="720" loading="lazy" decoding="async" /></a>
+            <div class="post-card-body">
+              <p class="post-meta mono"><span class="post-cat">Platforms</span><span>11 min read</span></p>
+              <h3><a href="../website-cost-2026/">How Much Does a Custom Website Cost in 2026? A Breakdown by Platform</a></h3>
+              <p>There is no single number that fairly describes what a website costs. Here is what actually drives it on WordPress, Webflow and custom frontend builds.</p>
+              <a class="mono text-link" href="../website-cost-2026/">Read the article &rarr;</a>
+            </div>
+          </article>
+        </div>
+      </div>
+      <div data-anim="fade" class="btn-row btn-row-center section-cta">
+        <a class="btn btn-ghost" href="../../blog/">All articles</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-dark section-contact">
+    <div class="hero-grid-bg contact-grid-bg" aria-hidden="true"></div>
+    <div class="glow glow-d" aria-hidden="true"></div>
+    <div class="container">
+      <div class="contact-cta-shell">
+        <div data-anim="fade" class="contact-cta-card">
+          <div class="contact-cta-copy">
+            <p class="badge badge-live mx-auto"><span class="dot" aria-hidden="true"></span>Available for new projects</p>
+            <p class="eyebrow eyebrow-center"><span class="eyebrow-mark eyebrow-mark-light" aria-hidden="true"></span><span class="mono">NEXT STEP</span></p>
+            <h2 data-anim="lines">Rather have it done than read about it?</h2>
+            <p class="body-lg">Based in Bangladesh &mdash; serving clients worldwide. Tell me what you are building and where it is stuck, and you will have a reply within one working day.</p>
+          </div>
+          <ul class="tech-chips justify-content-center">
+            <li>Reply within one working day</li>
+            <li>Fixed quote before work starts</li>
+            <li>UK, EU and US hours covered</li>
+          </ul>
+          <div class="contact-cta-actions">
+            <a class="btn btn-primary" href="../../contact/">Start a project <i class="ri-arrow-right-line" aria-hidden="true"></i></a>
+            <a class="btn btn-ghost" href="mailto:hello@ashekur.com">hello@ashekur.com</a>
+            <a class="btn btn-ghost" href="https://wa.me/8801812764112" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-top">
+    <div class="row gx-4 gy-5 align-items-start">
+      <div class="footer-brand col-12 col-lg-5">
+        <div class="brand brand-lg">
+          <picture>
+            <source srcset="../../assets/images/ashekur-logo-light.webp" type="image/webp" />
+            <img src="../../assets/images/ashekur-logo-light.png" alt="ashekur.com" width="480" height="125" loading="lazy" decoding="async" />
+          </picture>
+        </div>
+        <p class="footer-blurb">Frontend development and WordPress engineering for teams that care how it feels, not just how it looks. Based in Bangladesh &mdash; serving clients worldwide.</p>
+      </div>
+      <div class="col-12 col-lg-7">
+        <div class="footer-cols row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4">
+          <nav class="col" aria-label="Services">
+            <p class="mono footer-head">SERVICES</p>
+            <a href="../../services/wordpress-development/">WordPress Development</a>
+            <a href="../../services/wordpress-customization/">WordPress Customization</a>
+            <a href="../../services/elementor-customization/">Elementor Customization</a>
+            <a href="../../services/woocommerce-development/">WooCommerce Development</a>
+            <a href="../../services/wordpress-speed-optimization/">WordPress Speed Optimization</a>
+            <a href="../../services/wordpress-bug-fix/">WordPress Bug Fix</a>
+            <a href="../../services/elementor-fix/">Elementor Bug Fix</a>
+            <a href="../../services/wordpress-migration/">WordPress Migration</a>
+            <a href="../../services/seo/">WordPress SEO</a>
+          </nav>
+          <nav class="col" aria-label="Site">
+            <p class="mono footer-head">SITEMAP</p>
+            <a href="../../">Home</a>
+            <a href="../../tools/">Tools</a>
+            <a href="../../portfolio/">Portfolio</a>
+            <a href="../../blog/">Blog</a>
+            <a href="../../#experience">Experience</a>
+            <a href="../../contact/">Contact</a>
+            <a href="../../privacy/">Privacy Policy</a>
+          </nav>
+          <div class="col">
+            <p class="mono footer-head">ELSEWHERE</p>
+            <a href="mailto:hello@ashekur.com"><i class="ri-mail-line" aria-hidden="true"></i>hello@ashekur.com</a>
+            <a href="https://wa.me/8801812764112" target="_blank" rel="noopener noreferrer"><i class="ri-whatsapp-line" aria-hidden="true"></i>WhatsApp</a>
+            <a href="https://www.linkedin.com/in/ashekur-rahman-1ab205122/" target="_blank" rel="noopener noreferrer"><i class="ri-linkedin-fill" aria-hidden="true"></i>LinkedIn</a>
+            <a href="https://github.com/AshekurRahman" target="_blank" rel="noopener noreferrer"><i class="ri-github-fill" aria-hidden="true"></i>GitHub</a>
+            <a href="https://www.upwork.com/freelancers/~010aabe60ec2ae6679" target="_blank" rel="noopener noreferrer"><i class="ri-upwork-fill" aria-hidden="true"></i>Upwork</a>
+            <a href="https://www.facebook.com/ashekur.rahman.hridoy" target="_blank" rel="noopener noreferrer"><i class="ri-facebook-circle-fill" aria-hidden="true"></i>Facebook</a>
+            <a href="https://www.instagram.com/ashekurhridoy/" target="_blank" rel="noopener noreferrer"><i class="ri-instagram-line" aria-hidden="true"></i>Instagram</a>
+            <a href="https://www.youtube.com/@ashekurrahman1431" target="_blank" rel="noopener noreferrer"><i class="ri-youtube-fill" aria-hidden="true"></i>YouTube</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <p class="mono copyright">&copy; 2026 Ashekur Rahman. All rights reserved.</p>
+    <a class="to-top-inline" href="#main"><i class="ri-arrow-up-line" aria-hidden="true"></i> Back to top</a>
+  </div>
+</footer>
+</div>
+</div>
+
+
+<a class="wa-float" href="https://wa.me/8801812764112" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp"><i class="ri-whatsapp-fill" aria-hidden="true"></i></a>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" integrity="sha384-HOvlOYPIs/zjoIkWUGXkVmXsjr8GuZLV+Q+rcPwmJOVZVpvTSXQChiN4t9Euv9Vc" crossorigin="anonymous" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js" integrity="sha384-P8VzCVnT9NBUkMrpcIZrJbA7EBjJvh/fJS6PmP+4nLIM284DtsImIv8D0fFjIkeh" crossorigin="anonymous" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js" integrity="sha384-xb96EMJeax+NLXMC88ZBa1xAeAW+kn+horHh/zFlbMLG2UPWhMJJSlv7fi57hS+Q" crossorigin="anonymous" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollSmoother.min.js" integrity="sha384-dd8lT3AimXbI347qlZzlijPa4qnSlgGxuTqK2HlcfvF5+aOIeddPdMFmFpypQPZN" crossorigin="anonymous" defer></script>
+<script src="../../assets/js/anim.js" defer></script>
+<script src="../../assets/js/main.js" defer></script>
+</body>
+</html>

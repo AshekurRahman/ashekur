@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" role="img" aria-hidden="true">
+  <title>Abstract dark tech visual representing two theme swatches clashing</title>
+  <defs>
+    <radialGradient id="bgFadethc" cx="50%" cy="36%" r="78%">
+      <stop offset="0%" stop-color="#141f38"/>
+      <stop offset="100%" stop-color="#0a1020"/>
+    </radialGradient>
+    <pattern id="gridthc" width="64" height="64" patternUnits="userSpaceOnUse">
+      <path d="M 64 0 L 0 0 0 64" fill="none" stroke="rgba(148,163,184,0.10)" stroke-width="1"/>
+    </pattern>
+    <radialGradient id="gridMaskthc" cx="50%" cy="32%" r="70%">
+      <stop offset="0%" stop-color="#fff" stop-opacity="0.9"/>
+      <stop offset="65%" stop-color="#fff" stop-opacity="0.32"/>
+      <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+    </radialGradient>
+    <mask id="gridMaskElthc">
+      <rect width="1280" height="720" fill="url(#gridMaskthc)"/>
+    </mask>
+    <radialGradient id="gA_thc" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#4f46e5" stop-opacity="0.46"/>
+      <stop offset="66%" stop-color="#4f46e5" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="gB_thc" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fca5a5" stop-opacity="0.4"/>
+      <stop offset="66%" stop-color="#fca5a5" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bgFadethc)"/>
+  <rect width="1280" height="720" fill="url(#gridthc)" mask="url(#gridMaskElthc)"/>
+  <circle cx="380" cy="230" r="320" fill="url(#gA_thc)"/><circle cx="980" cy="500" r="320" fill="url(#gB_thc)"/>
+  <rect x="700" y="290" width="110" height="110" rx="10" fill="none" stroke="#a5b4fc" stroke-width="3"/>
+  <rect x="850" y="290" width="110" height="110" rx="10" fill="none" stroke="#6ee7b7" stroke-width="3"/>
+  <path d="M 812 345 L 848 345" stroke="#fca5a5" stroke-width="4"/>
+  <path d="M 822 330 L 838 360 M 838 330 L 822 360" stroke="#fca5a5" stroke-width="4" stroke-linecap="round"/>
+</svg>

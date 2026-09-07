@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Core Web Vitals Explained: What Actually Moves Rankings</title>
+<meta name="description" content="LCP, INP and CLS explained in plain terms &mdash; what causes poor Core Web Vitals, what actually fixes them, and why it is one signal among many for rankings." />
+<meta name="author" content="Ashekur Rahman" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<meta name="theme-color" content="#0F172A" />
+<link rel="canonical" href="https://ashekur.com/blog/core-web-vitals-explained/" />
+<link rel="icon" href="../../assets/images/mark.png" type="image/png" />
+<link rel="apple-touch-icon" href="../../assets/images/mark.png" />
+<link rel="manifest" href="../../site.webmanifest" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-08-28" />
+<meta property="article:author" content="Ashekur Rahman" />
+<meta property="article:section" content="SEO" />
+<meta property="og:site_name" content="Ashekur Rahman" />
+<meta property="og:url" content="https://ashekur.com/blog/core-web-vitals-explained/" />
+<meta property="og:title" content="Core Web Vitals Explained: What Actually Moves Rankings" />
+<meta property="og:description" content="LCP, INP and CLS explained in plain terms &mdash; what causes poor Core Web Vitals, what actually fixes them, and why it is one signal among many for rankings." />
+<!-- TEMP: reusing service-wordpress-speed.jpeg as featured image until a dedicated 1280x720 image exists for this post. -->
+<meta property="og:image" content="https://ashekur.com/assets/images/service-wordpress-speed.jpeg" />
+<meta property="og:locale" content="en_US" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Core Web Vitals Explained: What Actually Moves Rankings" />
+<meta name="twitter:description" content="LCP, INP and CLS explained in plain terms &mdash; what causes poor Core Web Vitals, what actually fixes them, and why it is one signal among many for rankings." />
+<meta name="twitter:image" content="https://ashekur.com/assets/images/service-wordpress-speed.jpeg" />
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://www.googletagmanager.com" />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+<link rel="stylesheet" href="../../assets/fonts/remixicon.css" />
+<link rel="stylesheet" href="../../assets/css/template.css" />
+<script>var d=document.documentElement;d.classList.remove('no-js');d.classList.add('js-anim');</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://ashekur.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://ashekur.com/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Core Web Vitals Explained: What Actually Moves Rankings",
+          "item": "https://ashekur.com/blog/core-web-vitals-explained/"
+        }
+      ]
+    },
+    {
+      "@type": "BlogPosting",
+      "@id": "https://ashekur.com/blog/core-web-vitals-explained/#article",
+      "headline": "Core Web Vitals Explained: What Actually Moves Rankings",
+      "description": "LCP, INP and CLS explained in plain terms — what causes poor Core Web Vitals, what actually fixes them, and why it is one signal among many for rankings.",
+      "url": "https://ashekur.com/blog/core-web-vitals-explained/",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://ashekur.com/blog/core-web-vitals-explained/"
+      },
+      "image": "https://ashekur.com/assets/images/service-wordpress-speed.jpeg",
+      "datePublished": "2026-08-28",
+      "dateModified": "2026-08-28",
+      "author": {
+        "@type": "Person",
+        "@id": "https://ashekur.com/#person",
+        "name": "Ashekur Rahman",
+        "url": "https://ashekur.com/",
+        "jobTitle": "Frontend Developer & WordPress Expert",
+        "email": "hello@ashekur.com",
+        "telephone": "+8801812764112",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "BD"
+        }
+      },
+      "publisher": {
+        "@type": "Person",
+        "@id": "https://ashekur.com/#person",
+        "name": "Ashekur Rahman",
+        "url": "https://ashekur.com/",
+        "jobTitle": "Frontend Developer & WordPress Expert",
+        "email": "hello@ashekur.com",
+        "telephone": "+8801812764112",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "BD"
+        }
+      },
+      "articleSection": "SEO",
+      "wordCount": 1360,
+      "inLanguage": "en",
+      "isAccessibleForFree": true
+    }
+  ]
+}
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SGTGDFXH6K"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-SGTGDFXH6K');
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header" id="siteHeader">
+  <div class="container header-inner">
+    <a class="brand" href="../../" aria-label="Ashekur Rahman &mdash; home">
+      <picture>
+        <source srcset="../../assets/images/ashekur-logo-light.webp" type="image/webp" />
+        <img src="../../assets/images/ashekur-logo-light.png" alt="Ashekur Rahman" width="480" height="125" fetchpriority="high" decoding="async" />
+      </picture>
+    </a>
+    <nav class="nav-desktop" aria-label="Main">
+      <a href="../../" class="nav-link">Home</a>
+      <a href="../../tools/" class="nav-link">Tools</a>
+      <div class="nav-item" data-dropdown>
+        <div class="nav-row">
+          <a href="../../services/" class="nav-link">Services</a>
+          <button class="nav-caret" type="button" aria-label="Services submenu" aria-expanded="false" aria-controls="navDrop-services" data-dropdown-toggle><i class="ri-arrow-down-s-line" aria-hidden="true"></i></button>
+        </div>
+        <div class="nav-panel" id="navDrop-services">
+          <a class="nav-panel-all" href="../../services/">All services</a>
+          <div class="nav-panel-cols">
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">WordPress</p>
+              <a href="../../services/wordpress-development/">WordPress Development</a>
+              <a href="../../services/wordpress-customization/">WordPress Customization</a>
+              <a href="../../services/wordpress-bug-fix/">WordPress Bug Fix</a>
+              <a href="../../services/wordpress-maintenance/">WordPress Maintenance<em>New</em></a>
+            </div>
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">Page Builders</p>
+              <a href="../../services/elementor-fix/">Elementor Bug Fix</a>
+              <a href="../../services/elementor-customization/">Elementor Customization</a>
+              <a href="../../services/elementor-custom-widgets/">Elementor Custom Widgets</a>
+              <a href="../../services/divi-customization/">Divi Customization</a>
+              <a href="../../services/divi-5-migration/">Divi 5 Migration<em>New</em></a>
+            </div>
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">WooCommerce</p>
+              <a href="../../services/woocommerce-development/">WooCommerce Development</a>
+              <a href="../../services/woocommerce-fix/">WooCommerce Fixes</a>
+            </div>
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">Performance &amp; Security</p>
+              <a href="../../services/wordpress-speed-optimization/">WordPress Speed Optimization</a>
+              <a href="../../services/core-web-vitals-fix/">Core Web Vitals Fix<em>New</em></a>
+              <a href="../../services/wordpress-malware-removal/">WordPress Malware Removal</a>
+              <a href="../../services/google-blacklist-removal/">Google Blacklist Removal<em>New</em></a>
+              <a href="../../services/caching-cdn-setup/">Caching &amp; CDN Setup<em>New</em></a>
+              <a href="../../services/wordpress-security-hardening/">WordPress Security Hardening<em>New</em></a>
+            </div>
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">Migration</p>
+              <a href="../../services/wordpress-migration/">WordPress Migration</a>
+              <a href="../../services/domain-migration-redirects/">Domain Migration &amp; 301 Redirects<em>New</em></a>
+              <a href="../../services/wordpress-migration/#hosting">Host Migration</a>
+            </div>
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">SEO</p>
+              <a href="../../services/seo/">SEO</a>
+              <a href="../../services/technical-seo-audit/">Technical SEO Audit<em>New</em></a>
+            </div>
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">Other</p>
+              <a href="../../services/webflow-development/">Webflow Development</a>
+              <a href="../../services/frontend-development/">Frontend Development</a>
+              <a href="../../services/website-redesign/">Website Redesign<em>New</em></a>
+              <a href="../../services/white-label-wordpress-development/">White Label Development<em>New</em></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="../../pricing/" class="nav-link">Pricing</a>
+      <a href="../../portfolio/" class="nav-link">Portfolio</a>
+      <a href="../../blog/" class="nav-link is-active">Blog</a>
+      <a href="../../contact/" class="btn btn-primary btn-sm nav-cta">Start a project</a>
+    </nav>
+    <button class="burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="nav-mobile" id="mobileNav" aria-label="Mobile" hidden>
+    <a href="../../">Home</a>
+    <a href="../../tools/">Tools</a>
+    <div class="nav-item" data-dropdown>
+      <div class="nav-row">
+        <a href="../../services/">Services</a>
+        <button class="nav-caret" type="button" aria-label="Services submenu" aria-expanded="false" aria-controls="navDropM-services" data-dropdown-toggle><i class="ri-arrow-down-s-line" aria-hidden="true"></i></button>
+      </div>
+      <div class="nav-panel" id="navDropM-services">
+        <a href="../../services/">All services</a>
+        <a href="../../services/wordpress-development/">WordPress Development</a>
+        <a href="../../services/wordpress-customization/">WordPress Customization</a>
+        <a href="../../services/wordpress-bug-fix/">WordPress Bug Fix</a>
+        <a href="../../services/wordpress-maintenance/">WordPress Maintenance</a>
+        <a href="../../services/elementor-fix/">Elementor Bug Fix</a>
+        <a href="../../services/elementor-customization/">Elementor Customization</a>
+        <a href="../../services/divi-customization/">Divi Customization</a>
+        <a href="../../services/divi-5-migration/">Divi 5 Migration</a>
+        <a href="../../services/elementor-custom-widgets/">Elementor Custom Widgets</a>
+        <a href="../../services/wordpress-speed-optimization/">WordPress Speed Optimization</a>
+        <a href="../../services/core-web-vitals-fix/">Core Web Vitals Fix</a>
+        <a href="../../services/woocommerce-fix/">WooCommerce Fixes</a>
+        <a href="../../services/woocommerce-development/">WooCommerce Development</a>
+        <a href="../../services/wordpress-migration/">WordPress Migration</a>
+        <a href="../../services/domain-migration-redirects/">Domain Migration &amp; 301 Redirects</a>
+        <a href="../../services/seo/">WordPress SEO</a>
+        <a href="../../services/wordpress-malware-removal/">WordPress Malware Removal</a>
+        <a href="../../services/google-blacklist-removal/">Google Blacklist Removal</a>
+        <a href="../../services/wordpress-security-hardening/">WordPress Security Hardening</a>
+        <a href="../../services/webflow-development/">Webflow Development</a>
+        <a href="../../services/frontend-development/">Frontend Development</a>
+        <a href="../../services/website-redesign/">Website Redesign</a>
+        <a href="../../services/white-label-wordpress-development/">White Label Development</a>
+      </div>
+    </div>
+    <a href="../../pricing/">Pricing</a>
+    <a href="../../portfolio/">Portfolio</a>
+    <a href="../../blog/">Blog</a>
+    <a href="../../contact/" class="btn btn-primary">Start a project</a>
+  </nav>
+</header>
+
+<div id="smooth-wrapper">
+<div id="smooth-content">
+<main id="main" class="page-shell">
+
+  <article>
+  <section class="section section-dark page-intro page-hero">
+    <div class="hero-grid-bg" aria-hidden="true"></div>
+    <div class="glow glow-a" aria-hidden="true"></div>
+    <div class="glow glow-b" aria-hidden="true"></div>
+    <div class="container">
+      <div class="row hero-split">
+        <div data-anim-hero class="col-12 col-lg-9">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <ol>
+              <li><a href="../../">Home</a></li>
+              <li><a href="../../blog/">Blog</a></li>
+              <li><span aria-current="page">Core Web Vitals Explained: What Actually Moves Rankings</span></li>
+            </ol>
+          </nav>
+          <p class="post-meta mono"><span class="post-cat">SEO</span><span>11 min read</span><span>2026-08-28</span><span>Ashekur Rahman</span></p>
+          <h1 data-anim="lines">Core Web Vitals Explained: What Actually Moves Rankings</h1>
+          <p class="body-lg">LCP, INP and CLS in plain terms &mdash; what actually causes poor scores, what actually fixes them, and an honest answer on what they do and do not do for rankings.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-white">
+    <div class="container">
+      <!-- TEMP featured image: reusing service-wordpress-speed.jpeg/webp until a dedicated
+           1280x720 image (e.g. blog-core-web-vitals.jpeg/.webp) is supplied. Swap the
+           src/srcset below, plus the matching og:image/twitter:image tags above and
+           the card image in blog/index.html — no structural change needed. -->
+      <figure data-anim="reveal" class="shot mb-5">
+        <picture>
+          <source srcset="../../assets/images/service-wordpress-speed.webp" type="image/webp" />
+          <img src="../../assets/images/service-wordpress-speed.jpeg" alt="Core Web Vitals dashboard showing passing LCP, INP and CLS scores after optimisation" width="1280" height="720" loading="lazy" decoding="async" />
+        </picture>
+        <figcaption>A passing score is the effect, not the goal &mdash; the page underneath still has to actually be fast.</figcaption>
+      </figure>
+
+      <div class="row gx-5 gy-4">
+        <aside class="col-12 col-lg-4 order-lg-2">
+          <div class="post-aside">
+            <nav class="toc" aria-label="On this page">
+              <p class="toc-head mono">ON THIS PAGE</p>
+              <ol>
+              <li><a href="#what-core-web-vitals-actually-measure">What Core Web Vitals actually measure</a></li>
+              <li><a href="#are-core-web-vitals-actually-a-ranking-factor">Are they actually a ranking factor?</a></li>
+              <li><a href="#what-causes-poor-core-web-vitals">What causes poor Core Web Vitals</a></li>
+              <li><a href="#what-actually-improves-them">What actually improves them</a></li>
+              <li><a href="#wordpress-specific-considerations">WordPress-specific considerations</a></li>
+              <li><a href="#platform-and-code-quality">Platform and code quality</a></li>
+              <li><a href="#what-businesses-should-actually-focus-on">What businesses should focus on</a></li>
+              </ol>
+            </nav>
+          </div>
+        </aside>
+        <div class="col-12 col-lg-8 order-lg-1">
+          <div class="prose">
+
+<p>Core Web Vitals get talked about like a magic lever &mdash; fix the score, watch rankings jump. That is not how it works, and treating it that way leads to the wrong priorities. Here is what LCP, INP and CLS actually measure, what really moves them, and what Google has and has not confirmed about their effect on rankings.</p>
+
+<h2 id="what-core-web-vitals-actually-measure">What Core Web Vitals actually measure</h2>
+<p>Core Web Vitals are three metrics Google uses to approximate whether a real visitor experienced a page as fast and stable, not whether a developer thinks it is fast.</p>
+<ul>
+  <li><strong>LCP (Largest Contentful Paint)</strong> &mdash; how long until the biggest visible element renders, usually a hero image or a headline. This is the closest thing to &ldquo;does the page feel like it has loaded.&rdquo;</li>
+  <li><strong>INP (Interaction to Next Paint)</strong> &mdash; how quickly the page responds after someone clicks, taps or types. This is &ldquo;does the page feel stuck&rdquo; &mdash; almost always a JavaScript problem.</li>
+  <li><strong>CLS (Cumulative Layout Shift)</strong> &mdash; how much content jumps around while the page loads. This is &ldquo;did I just click the wrong thing because an ad loaded underneath my cursor.&rdquo;</li>
+</ul>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Metric</th><th>Good</th><th>Needs improvement</th><th>Poor</th></tr></thead>
+  <tbody>
+    <tr><td>LCP</td><td>&le; 2.5s</td><td>2.5&ndash;4s</td><td>&gt; 4s</td></tr>
+    <tr><td>INP</td><td>&le; 200ms</td><td>200&ndash;500ms</td><td>&gt; 500ms</td></tr>
+    <tr><td>CLS</td><td>&le; 0.1</td><td>0.1&ndash;0.25</td><td>&gt; 0.25</td></tr>
+  </tbody>
+</table>
+</div>
+<p>These are Google&rsquo;s own published thresholds, measured from real visitors&rsquo; browsers via the Chrome User Experience Report &mdash; not a lab score from running a test once on a fast connection.</p>
+
+<h2 id="are-core-web-vitals-actually-a-ranking-factor">Are Core Web Vitals actually a ranking factor?</h2>
+<p>Yes, but the honest version of that answer matters more than the yes. Google has confirmed page experience, including Core Web Vitals, as a ranking signal since 2021. It is one signal among hundreds, and it carries far less weight than relevance and content quality. Google has been explicit that a slower page with genuinely better, more relevant content will still outrank a faster page that answers the query poorly.</p>
+<p>In practice, Core Web Vitals function more like a tie-breaker between pages that are already competing for the same query, and as a direct lever on user behaviour &mdash; bounce rate, time on page and conversion rate all move with speed, independent of any ranking effect. Search Console and independent studies consistently show slow, unstable pages losing visitors before they lose rankings. That is reason enough to fix them without needing to oversell what Google does with the score.</p>
+<p>If someone tells you a specific number of points will move you a specific number of ranking positions, that is not a claim Google has ever supported.</p>
+
+<h2 id="what-causes-poor-core-web-vitals">What causes poor Core Web Vitals</h2>
+<p>The same handful of causes show up on almost every site I audit:</p>
+<ul>
+  <li><strong>Oversized, unoptimised images</strong> &mdash; the single most common cause of poor LCP.</li>
+  <li><strong>Render-blocking CSS and JavaScript</strong> in the page head, delaying everything below it.</li>
+  <li><strong>Slow server response (TTFB)</strong> &mdash; the page cannot start rendering until the server replies, and no front-end fix compensates for a slow back end.</li>
+  <li><strong>Too many third-party scripts</strong> &mdash; chat widgets, ad tags, analytics tools and embeds, each adding its own JavaScript and its own delay.</li>
+  <li><strong>Web fonts blocking text render</strong>, or swapping in late and shifting the layout when they do.</li>
+  <li><strong>Ads, embeds or dynamically injected content with no reserved space</strong>, pushing everything else down once they load.</li>
+  <li><strong>Missing width and height on images</strong>, which is the most common single cause of layout shift.</li>
+</ul>
+
+<aside class="post-cta">
+  <p class="mono post-cta-head">CHECK BEFORE YOU DIG IN</p>
+  <h2>Which of these is actually happening on your site?</h2>
+  <p>The free <a href="../../tools/core-web-vitals-checker/">Core Web Vitals Checker</a> scans your homepage for exactly this list &mdash; missing image dimensions, render-blocking scripts and stylesheets, an unmanaged font load, and slow server response &mdash; and names the likely cause instead of a raw score.</p>
+  <div class="btn-row">
+    <a class="btn btn-primary" href="../../tools/core-web-vitals-checker/">Check your site now <i class="ri-arrow-right-line" aria-hidden="true"></i></a>
+  </div>
+</aside>
+
+<h2 id="what-actually-improves-them">What actually improves Core Web Vitals</h2>
+
+<h3>Images</h3>
+<p>On most business sites, images are 60&ndash;80% of total page weight and are usually the LCP element, which makes this the highest-leverage category. Serve modern formats such as WebP, size images to the slot they are actually displayed in rather than uploading full-resolution photos, set explicit width and height on every image, and lazy-load everything below the fold &mdash; but never the hero image, since lazy-loading it delays LCP rather than improving it.</p>
+
+<h3>CSS and JavaScript</h3>
+<p>Defer or async anything not required for the first paint. Render-blocking scripts in the page head stop the browser drawing until they finish downloading and executing. Remove unused CSS and JavaScript rather than shipping a whole framework for a handful of used features, and be deliberate about third-party scripts &mdash; every chat widget or tracking pixel is code you did not write, running on every page, whether or not it is doing anything useful there.</p>
+
+<h3>Caching and CDN</h3>
+<p>Caching stores a finished version of the page so the server is not rebuilding it from scratch on every visit, which is one of the largest and cheapest wins available on most platforms. A CDN serves static assets &mdash; images, CSS, JavaScript &mdash; from a server physically closer to the visitor, which matters more the further your visitors are from your hosting location.</p>
+
+<h3>Hosting and server performance</h3>
+<p>This is the one people most often skip because it is the least interesting to work on, and it is frequently the ceiling everything else sits under. Check your Time to First Byte in PageSpeed Insights. Consistently above roughly 600ms means the server is thinking too long before it sends anything, and no amount of image compression or script deferral fixes that. Budget shared hosting puts a hard limit on every other optimisation on this list.</p>
+
+<h2 id="wordpress-specific-considerations">WordPress-specific considerations</h2>
+<p>WordPress sites tend to accumulate Core Web Vitals problems for reasons specific to the platform: plugins that load their CSS and JavaScript on every page regardless of whether that page uses them, page builders that generate deeply nested, bloated markup, themes carrying years of unused legacy code, and a database that grows heavier with every post revision and expired transient nobody has cleared.</p>
+<p>None of that is a reason to avoid WordPress &mdash; it is a reason to audit what is actually running on it. I have written the full ranked breakdown separately: see <a href="../improve-wordpress-website-speed/">How to Improve WordPress Website Speed</a> for the fixes in the order they actually move the number, and <a href="../../services/wordpress-development/">WordPress development</a> for how that work gets scoped.</p>
+
+<h2 id="platform-and-code-quality">How platform and code quality affect performance</h2>
+<p>Core Web Vitals problems are not really about which platform a site is built on &mdash; they are about how well that platform is implemented and maintained. A tightly built WordPress site can post better field data than a bloated custom React application shipping three megabytes of JavaScript for a page that could have been static HTML. Equally, a Webflow site with a dozen stacked interactions and unoptimised images will struggle just like WordPress with too many plugins.</p>
+<p>What differs by platform is the ceiling and the effort required to hit it. Webflow and a well-scoped custom frontend tend to start closer to good Core Web Vitals by default, because there is less accumulated third-party code running by default. WordPress can match either, but it takes active maintenance to keep it there rather than a one-time setup. If you are choosing a platform partly on this basis, <a href="../wordpress-vs-webflow-vs-framer/">WordPress vs Webflow vs Framer</a> covers the wider trade-offs.</p>
+
+<h2 id="what-businesses-should-actually-focus-on">What businesses should actually focus on</h2>
+<p>Chasing a perfect Lighthouse score is the wrong goal, for a few concrete reasons:</p>
+<ul>
+  <li><strong>Lab scores and field data disagree, and field data is what Google actually uses.</strong> A single PageSpeed Insights run on a fast connection is a diagnostic tool, not the real number. Check Search Console&rsquo;s Core Web Vitals report for what your actual visitors experienced.</li>
+  <li><strong>The difference between a good score and a perfect one is mostly invisible to visitors and irrelevant to rankings.</strong> Time spent chasing 100/100 is time not spent on the fix that would actually move LCP from poor to good.</li>
+  <li><strong>Fix the worst metric first, not the easiest one.</strong> If LCP is poor because of hosting, no amount of CSS minification changes that. Establish a baseline, fix the biggest blocker, then re-measure.</li>
+  <li><strong>Core Web Vitals are one part of technical SEO, not the whole strategy.</strong> A fast page that Google has never crawled, or that targets the wrong query, will not rank regardless of its score. Speed work sits alongside indexation, site structure and content relevance &mdash; not ahead of all of them.</li>
+</ul>
+<p>The businesses that get real value from this work treat it as one input to both search visibility and conversion rate, measured before and after, rather than a score to maximise for its own sake.</p>
+          </div>
+
+          <aside class="post-cta">
+            <p class="mono post-cta-head">RELATED SERVICE</p>
+            <h2>Core Web Vitals Fix</h2>
+            <p>If Search Console or PageSpeed is flagging LCP, INP or CLS on your own site, that page covers the diagnosis, the fix and the before-and-after numbers.</p>
+            <div data-anim="fade" class="btn-row">
+              <a class="btn btn-primary" href="../../services/core-web-vitals-fix/">Core Web Vitals Fix <i class="ri-arrow-right-line" aria-hidden="true"></i></a>
+              <a class="btn btn-ghost" href="../../contact/">Ask a question</a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </section>
+  </article>
+
+  <section class="section section-light">
+    <div class="container">
+      <div class="row gx-0">
+        <div class="section-head col-12 col-lg-6">
+          <p data-anim="fade" class="eyebrow"><span class="eyebrow-mark" aria-hidden="true"></span><span class="mono">KEEP READING</span></p>
+          <h2 data-anim="lines">More from the blog</h2>
+          <p data-anim="fade" class="body-lg">Same idea every time &mdash; the question a client actually asked, answered as far as the honest answer goes.</p>
+        </div>
+      </div>
+      <div data-anim="stagger" class="row row-cols-1 row-cols-md-2 g-4 blog-grid">
+        <div class="col">
+          <article data-anim="item" class="post-card h-100">
+            <a href="../improve-wordpress-website-speed/" tabindex="-1" aria-hidden="true"><img src="../../assets/images/blog-wordpress-speed.jpeg" alt="How to improve WordPress website speed" width="1280" height="720" loading="lazy" decoding="async" /></a>
+            <div class="post-card-body">
+              <p class="post-meta mono"><span class="post-cat">WordPress</span><span>10 min read</span></p>
+              <h3><a href="../improve-wordpress-website-speed/">How to Improve WordPress Website Speed</a></h3>
+              <p>Most WordPress speed advice is a list of twenty tips in no particular order. Here they are ranked by how much they actually move the number.</p>
+              <a class="mono text-link" href="../improve-wordpress-website-speed/">Read the article &rarr;</a>
+            </div>
+          </article>
+        </div>
+        <div class="col">
+          <article data-anim="item" class="post-card h-100">
+            <a href="../why-isnt-my-website-showing-up-on-google/" tabindex="-1" aria-hidden="true"><img src="../../assets/images/blog-not-indexed.jpeg" alt="Why isn&#x27;t my website showing up on Google" width="1280" height="714" loading="lazy" decoding="async" /></a>
+            <div class="post-card-body">
+              <p class="post-meta mono"><span class="post-cat">SEO</span><span>8 min read</span></p>
+              <h3><a href="../why-isnt-my-website-showing-up-on-google/">Why Isn't My Website Showing Up on Google?</a></h3>
+              <p>Before you buy content or links, find out whether Google can even see your pages. Most of the time that is the whole problem.</p>
+              <a class="mono text-link" href="../why-isnt-my-website-showing-up-on-google/">Read the article &rarr;</a>
+            </div>
+          </article>
+        </div>
+      </div>
+      <div data-anim="fade" class="btn-row btn-row-center section-cta">
+        <a class="btn btn-ghost" href="../../blog/">All articles</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-dark section-contact">
+    <div class="hero-grid-bg contact-grid-bg" aria-hidden="true"></div>
+    <div class="glow glow-d" aria-hidden="true"></div>
+    <div class="container">
+      <div class="contact-cta-shell">
+        <div data-anim="fade" class="contact-cta-card">
+          <div class="contact-cta-copy">
+            <p class="badge badge-live mx-auto"><span class="dot" aria-hidden="true"></span>Available for new projects</p>
+            <p class="eyebrow eyebrow-center"><span class="eyebrow-mark eyebrow-mark-light" aria-hidden="true"></span><span class="mono">NEXT STEP</span></p>
+            <h2 data-anim="lines">Rather have it done than read about it?</h2>
+            <p class="body-lg">Based in Bangladesh &mdash; serving clients worldwide. Tell me what you are building and where it is stuck, and you will have a reply within one working day.</p>
+          </div>
+          <ul class="tech-chips justify-content-center">
+            <li>Reply within one working day</li>
+            <li>Fixed quote before work starts</li>
+            <li>UK, EU and US hours covered</li>
+          </ul>
+          <div class="contact-cta-actions">
+            <a class="btn btn-primary" href="../../contact/">Start a project <i class="ri-arrow-right-line" aria-hidden="true"></i></a>
+            <a class="btn btn-ghost" href="mailto:hello@ashekur.com">hello@ashekur.com</a>
+            <a class="btn btn-ghost" href="https://wa.me/8801812764112" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-top">
+    <div class="row gx-4 gy-5 align-items-start">
+      <div class="footer-brand col-12 col-lg-5">
+        <div class="brand brand-lg">
+          <picture>
+            <source srcset="../../assets/images/ashekur-logo-light.webp" type="image/webp" />
+            <img src="../../assets/images/ashekur-logo-light.png" alt="ashekur.com" width="480" height="125" loading="lazy" decoding="async" />
+          </picture>
+        </div>
+        <p class="footer-blurb">Frontend development and WordPress engineering for teams that care how it feels, not just how it looks. Based in Bangladesh &mdash; serving clients worldwide.</p>
+      </div>
+      <div class="col-12 col-lg-7">
+        <div class="footer-cols row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4">
+          <nav class="col" aria-label="Services">
+            <p class="mono footer-head">SERVICES</p>
+            <a href="../../services/wordpress-development/">WordPress Development</a>
+            <a href="../../services/wordpress-customization/">WordPress Customization</a>
+            <a href="../../services/elementor-customization/">Elementor Customization</a>
+            <a href="../../services/woocommerce-development/">WooCommerce Development</a>
+            <a href="../../services/wordpress-speed-optimization/">WordPress Speed Optimization</a>
+            <a href="../../services/wordpress-bug-fix/">WordPress Bug Fix</a>
+            <a href="../../services/elementor-fix/">Elementor Bug Fix</a>
+            <a href="../../services/wordpress-migration/">WordPress Migration</a>
+            <a href="../../services/seo/">WordPress SEO</a>
+          </nav>
+          <nav class="col" aria-label="Site">
+            <p class="mono footer-head">SITEMAP</p>
+            <a href="../../">Home</a>
+            <a href="../../tools/">Tools</a>
+            <a href="../../portfolio/">Portfolio</a>
+            <a href="../../blog/">Blog</a>
+            <a href="../../#experience">Experience</a>
+            <a href="../../contact/">Contact</a>
+            <a href="../../privacy/">Privacy Policy</a>
+          </nav>
+          <div class="col">
+            <p class="mono footer-head">ELSEWHERE</p>
+            <a href="mailto:hello@ashekur.com"><i class="ri-mail-line" aria-hidden="true"></i>hello@ashekur.com</a>
+            <a href="https://wa.me/8801812764112" target="_blank" rel="noopener noreferrer"><i class="ri-whatsapp-line" aria-hidden="true"></i>WhatsApp</a>
+            <a href="https://www.linkedin.com/in/ashekur-rahman-1ab205122/" target="_blank" rel="noopener noreferrer"><i class="ri-linkedin-fill" aria-hidden="true"></i>LinkedIn</a>
+            <a href="https://github.com/AshekurRahman" target="_blank" rel="noopener noreferrer"><i class="ri-github-fill" aria-hidden="true"></i>GitHub</a>
+            <a href="https://www.upwork.com/freelancers/~010aabe60ec2ae6679" target="_blank" rel="noopener noreferrer"><i class="ri-upwork-fill" aria-hidden="true"></i>Upwork</a>
+            <a href="https://www.facebook.com/ashekur.rahman.hridoy" target="_blank" rel="noopener noreferrer"><i class="ri-facebook-circle-fill" aria-hidden="true"></i>Facebook</a>
+            <a href="https://www.instagram.com/ashekurhridoy/" target="_blank" rel="noopener noreferrer"><i class="ri-instagram-line" aria-hidden="true"></i>Instagram</a>
+            <a href="https://www.youtube.com/@ashekurrahman1431" target="_blank" rel="noopener noreferrer"><i class="ri-youtube-fill" aria-hidden="true"></i>YouTube</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <p class="mono copyright">&copy; 2026 Ashekur Rahman. All rights reserved.</p>
+    <a class="to-top-inline" href="#main"><i class="ri-arrow-up-line" aria-hidden="true"></i> Back to top</a>
+  </div>
+</footer>
+</div>
+</div>
+
+
+<a class="wa-float" href="https://wa.me/8801812764112" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp"><i class="ri-whatsapp-fill" aria-hidden="true"></i></a>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" integrity="sha384-HOvlOYPIs/zjoIkWUGXkVmXsjr8GuZLV+Q+rcPwmJOVZVpvTSXQChiN4t9Euv9Vc" crossorigin="anonymous" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js" integrity="sha384-P8VzCVnT9NBUkMrpcIZrJbA7EBjJvh/fJS6PmP+4nLIM284DtsImIv8D0fFjIkeh" crossorigin="anonymous" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js" integrity="sha384-xb96EMJeax+NLXMC88ZBa1xAeAW+kn+horHh/zFlbMLG2UPWhMJJSlv7fi57hS+Q" crossorigin="anonymous" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollSmoother.min.js" integrity="sha384-dd8lT3AimXbI347qlZzlijPa4qnSlgGxuTqK2HlcfvF5+aOIeddPdMFmFpypQPZN" crossorigin="anonymous" defer></script>
+<script src="../../assets/js/anim.js" defer></script>
+<script src="../../assets/js/main.js" defer></script>
+</body>
+</html>

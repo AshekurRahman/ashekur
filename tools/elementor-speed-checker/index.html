@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Free Elementor Speed &amp; Bloat Checker | Ashekur Rahman</title>
+<meta name="description" content="Is Elementor slowing your site, or is it something else? Paste a URL for an instant check of add-on bloat, uncombined CSS and server response time." />
+<meta name="keywords" content="elementor site slow, elementor speed checker, why is my elementor site slow, elementor css bloat, elementor performance fix, reduce elementor page weight" />
+<meta name="author" content="Ashekur Rahman" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<meta name="theme-color" content="#0F172A" />
+<link rel="canonical" href="https://ashekur.com/tools/elementor-speed-checker/" />
+<link rel="icon" href="../../assets/images/mark.png" type="image/png" />
+<link rel="apple-touch-icon" href="../../assets/images/mark.png" />
+<link rel="manifest" href="../../site.webmanifest" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Ashekur Rahman" />
+<meta property="og:url" content="https://ashekur.com/tools/elementor-speed-checker/" />
+<meta property="og:title" content="Free Elementor Speed &amp; Bloat Checker | Ashekur Rahman" />
+<meta property="og:description" content="Is Elementor slowing your site down, or is it something else? Paste a URL for an instant check of add-on bloat, uncombined CSS and server response time &mdash; free, no signup." />
+<meta property="og:image" content="https://ashekur.com/assets/images/og-default.jpg" />
+<meta property="og:locale" content="en_US" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Free Elementor Speed &amp; Bloat Checker | Ashekur Rahman" />
+<meta name="twitter:description" content="Is Elementor slowing your site down, or is it something else? Paste a URL for an instant check of add-on bloat, uncombined CSS and server response time &mdash; free, no signup." />
+<meta name="twitter:image" content="https://ashekur.com/assets/images/og-default.jpg" />
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://www.googletagmanager.com" />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+<link rel="stylesheet" href="../../assets/fonts/remixicon.css" />
+<link rel="stylesheet" href="../../assets/css/template.css" />
+<script>var d=document.documentElement;d.classList.remove('no-js');d.classList.add('js-anim');</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://ashekur.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Tools", "item": "https://ashekur.com/tools/" },
+        { "@type": "ListItem", "position": 3, "name": "Elementor Speed Checker", "item": "https://ashekur.com/tools/elementor-speed-checker/" }
+      ]
+    },
+    {
+      "@type": "WebApplication",
+      "@id": "https://ashekur.com/tools/elementor-speed-checker/#app",
+      "name": "Elementor Speed & Bloat Checker",
+      "description": "A free tool that checks a homepage built in Elementor for known causes of slowdown &mdash; add-on library bloat, uncombined CSS, and slow server response time.",
+      "url": "https://ashekur.com/tools/elementor-speed-checker/",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any (web-based)",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "author": { "@type": "Person", "@id": "https://ashekur.com/#person", "name": "Ashekur Rahman", "url": "https://ashekur.com/" }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is this Elementor speed checker actually free?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. No signup, no email gate, and no limit on how many times you use it. Paste a URL and get a result in a few seconds." }
+        },
+        {
+          "@type": "Question",
+          "name": "How is this different from a PageSpeed or Lighthouse score?",
+          "acceptedAnswer": { "@type": "Answer", "text": "A speed score tells you the page is slow. This tool tries to tell you why, specifically for Elementor sites &mdash; add-on library bloat, uncombined CSS, or a slow server response &mdash; rather than a single number with no explanation." }
+        },
+        {
+          "@type": "Question",
+          "name": "What if it says my site doesn't use Elementor?",
+          "acceptedAnswer": { "@type": "Answer", "text": "It only runs the Elementor-specific checks when it actually finds Elementor on the homepage. If your site uses a different builder or a custom theme, it says so instead of forcing an Elementor-shaped answer onto it." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does it measure my full page weight, like images and fonts?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No, deliberately. Fetching every image, script and font from a third-party site to weigh them would multiply outbound requests per scan. Instead it reports the homepage document's own size and the number of separate CSS/JS files it links to &mdash; an honest, verifiable proxy for request-count bloat." }
+        },
+        {
+          "@type": "Question",
+          "name": "It found add-on bloat &mdash; what should I do with that?",
+          "acceptedAnswer": { "@type": "Answer", "text": "See <a href=\"https://ashekur.com/services/elementor-fix/\">Elementor Bug Fix</a> for the fix &mdash; trimming or reconfiguring add-on plugins so they stop loading assets on pages that don't use them. If the report instead points to server response time, that's a hosting issue, covered by <a href=\"https://ashekur.com/services/wordpress-speed-optimization/\">WordPress Speed Optimization</a>." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SGTGDFXH6K"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-SGTGDFXH6K');
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header" id="siteHeader">
+  <div class="container header-inner">
+    <a class="brand" href="../../" aria-label="Ashekur Rahman &mdash; home">
+      <picture>
+        <source srcset="../../assets/images/ashekur-logo-light.webp" type="image/webp" />
+        <img src="../../assets/images/ashekur-logo-light.png" alt="Ashekur Rahman" width="480" height="125" fetchpriority="high" decoding="async" />
+      </picture>
+    </a>
+    <nav class="nav-desktop" aria-label="Main">
+      <a href="../../" class="nav-link">Home</a>
+      <a href="../../tools/" class="nav-link">Tools</a>
+      <div class="nav-item" data-dropdown>
+        <div class="nav-row">
+          <a href="../../services/" class="nav-link">Services</a>
+          <button class="nav-caret" type="button" aria-label="Services submenu" aria-expanded="false" aria-controls="navDrop-services" data-dropdown-toggle><i class="ri-arrow-down-s-line" aria-hidden="true"></i></button>
+        </div>
+        <div class="nav-panel" id="navDrop-services">
+          <a class="nav-panel-all" href="../../services/">All services</a>
+          <div class="nav-panel-cols">
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">WordPress</p>
+              <a href="../../services/wordpress-development/">WordPress Development</a>
+              <a href="../../services/wordpress-customization/">WordPress Customization</a>
+              <a href="../../services/wordpress-bug-fix/">WordPress Bug Fix</a>
+              <a href="../../services/wordpress-maintenance/">WordPress Maintenance<em>New</em></a>
+            </div>
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">Page Builders</p>
+              <a href="../../services/elementor-fix/">Elementor Bug Fix</a>
+              <a href="../../services/elementor-customization/">Elementor Customization</a>
+              <a href="../../services/elementor-custom-widgets/">Elementor Custom Widgets</a>
+              <a href="../../services/divi-customization/">Divi Customization</a>
+              <a href="../../services/divi-5-migration/">Divi 5 Migration<em>New</em></a>
+            </div>
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">WooCommerce</p>
+              <a href="../../services/woocommerce-development/">WooCommerce Development</a>
+              <a href="../../services/woocommerce-fix/">WooCommerce Fixes</a>
+            </div>
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">Performance &amp; Security</p>
+              <a href="../../services/wordpress-speed-optimization/">WordPress Speed Optimization</a>
+              <a href="../../services/core-web-vitals-fix/">Core Web Vitals Fix<em>New</em></a>
+              <a href="../../services/wordpress-malware-removal/">WordPress Malware Removal</a>
+              <a href="../../services/google-blacklist-removal/">Google Blacklist Removal<em>New</em></a>
+              <a href="../../services/caching-cdn-setup/">Caching &amp; CDN Setup<em>New</em></a>
+              <a href="../../services/wordpress-security-hardening/">WordPress Security Hardening<em>New</em></a>
+            </div>
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">Migration</p>
+              <a href="../../services/wordpress-migration/">WordPress Migration</a>
+              <a href="../../services/domain-migration-redirects/">Domain Migration &amp; 301 Redirects<em>New</em></a>
+              <a href="../../services/wordpress-migration/#hosting">Host Migration</a>
+            </div>
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">SEO</p>
+              <a href="../../services/seo/">SEO</a>
+              <a href="../../services/technical-seo-audit/">Technical SEO Audit<em>New</em></a>
+            </div>
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">Other</p>
+              <a href="../../services/webflow-development/">Webflow Development</a>
+              <a href="../../services/frontend-development/">Frontend Development</a>
+              <a href="../../services/website-redesign/">Website Redesign<em>New</em></a>
+              <a href="../../services/white-label-wordpress-development/">White Label Development<em>New</em></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="../../pricing/" class="nav-link">Pricing</a>
+      <a href="../../portfolio/" class="nav-link">Portfolio</a>
+      <a href="../../blog/" class="nav-link">Blog</a>
+      <a href="../../contact/" class="btn btn-primary btn-sm nav-cta">Start a project</a>
+    </nav>
+    <button class="burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="nav-mobile" id="mobileNav" aria-label="Mobile" hidden>
+    <a href="../../">Home</a>
+    <a href="../../tools/">Tools</a>
+    <div class="nav-item" data-dropdown>
+      <div class="nav-row">
+        <a href="../../services/">Services</a>
+        <button class="nav-caret" type="button" aria-label="Services submenu" aria-expanded="false" aria-controls="navDropM-services" data-dropdown-toggle><i class="ri-arrow-down-s-line" aria-hidden="true"></i></button>
+      </div>
+      <div class="nav-panel" id="navDropM-services">
+        <a href="../../services/">All services</a>
+        <a href="../../services/wordpress-development/">WordPress Development</a>
+        <a href="../../services/wordpress-customization/">WordPress Customization</a>
+        <a href="../../services/wordpress-bug-fix/">WordPress Bug Fix</a>
+        <a href="../../services/wordpress-maintenance/">WordPress Maintenance</a>
+        <a href="../../services/elementor-fix/">Elementor Bug Fix</a>
+        <a href="../../services/elementor-customization/">Elementor Customization</a>
+        <a href="../../services/divi-customization/">Divi Customization</a>
+        <a href="../../services/divi-5-migration/">Divi 5 Migration</a>
+        <a href="../../services/elementor-custom-widgets/">Elementor Custom Widgets</a>
+        <a href="../../services/wordpress-speed-optimization/">WordPress Speed Optimization</a>
+        <a href="../../services/core-web-vitals-fix/">Core Web Vitals Fix</a>
+        <a href="../../services/woocommerce-fix/">WooCommerce Fixes</a>
+        <a href="../../services/woocommerce-development/">WooCommerce Development</a>
+        <a href="../../services/wordpress-migration/">WordPress Migration</a>
+        <a href="../../services/domain-migration-redirects/">Domain Migration &amp; 301 Redirects</a>
+        <a href="../../services/seo/">WordPress SEO</a>
+        <a href="../../services/wordpress-malware-removal/">WordPress Malware Removal</a>
+        <a href="../../services/google-blacklist-removal/">Google Blacklist Removal</a>
+        <a href="../../services/wordpress-security-hardening/">WordPress Security Hardening</a>
+        <a href="../../services/webflow-development/">Webflow Development</a>
+        <a href="../../services/frontend-development/">Frontend Development</a>
+        <a href="../../services/website-redesign/">Website Redesign</a>
+        <a href="../../services/white-label-wordpress-development/">White Label Development</a>
+      </div>
+    </div>
+    <a href="../../pricing/">Pricing</a>
+    <a href="../../portfolio/">Portfolio</a>
+    <a href="../../blog/">Blog</a>
+    <a href="../../contact/" class="btn btn-primary">Start a project</a>
+  </nav>
+</header>
+
+<div id="smooth-wrapper">
+<div id="smooth-content">
+<main id="main" class="page-shell">
+
+  <section class="section section-dark page-intro page-hero">
+    <div class="hero-grid-bg" aria-hidden="true"></div>
+    <div class="glow glow-a" aria-hidden="true"></div>
+    <div class="glow glow-b" aria-hidden="true"></div>
+    <div class="container">
+      <div class="row hero-split">
+        <div data-anim-hero class="col-12 col-lg-9">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <ol>
+              <li><a href="../../">Home</a></li>
+              <li><a href="../">Tools</a></li>
+              <li><span aria-current="page">Elementor Speed Checker</span></li>
+            </ol>
+          </nav>
+          <p class="badge badge-live"><span class="dot" aria-hidden="true"></span>Free &middot; No signup required</p>
+          <h1 data-anim="lines">Is Elementor slowing your site down &mdash; or is it something else?</h1>
+          <p class="body-lg">Paste your URL for an instant, cause-first check: add-on libraries loading on every page, uncombined Elementor CSS, and slow server response time. Free, no signup.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-white">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-12 col-lg-9">
+          <form class="contact-form checker-form mt-0" id="elementorForm" novalidate data-endpoint="../../assets/php/elementor-speed-checker.php">
+            <label>
+              <span class="mono field-label">WEBSITE URL</span>
+              <input type="text" id="elementorUrl" name="url" required inputmode="url" autocomplete="url" placeholder="yourwebsite.com" />
+            </label>
+            <div class="btn-row mt-0">
+              <button class="btn btn-primary" type="submit">Check My Site <i class="ri-arrow-right-line" aria-hidden="true"></i></button>
+            </div>
+            <div class="checker-note mt-3 d-none" id="elementorNote" role="status" aria-live="polite"></div>
+          </form>
+
+          <div class="checker-results mt-5" id="elementorResults" aria-live="polite">
+            <h2 id="elementorResultsHeading" class="mb-4" tabindex="-1">Results</h2>
+            <div id="elementorCta" class="mb-4"></div>
+            <div class="row row-cols-1 g-4" id="elementorResultsGrid"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-light">
+    <div class="container">
+      <div class="row gx-5">
+        <div class="col-12 col-lg-8">
+          <div class="prose">
+
+<h2>What this tool checks</h2>
+<p>Enter a URL and this tool fetches the site's public homepage &mdash; the same page a browser or search engine already loads &mdash; and first confirms Elementor is actually in use. Once that's confirmed, it looks for the publicly visible causes of a slow Elementor page: known add-on library suites (Essential Addons, Crocoblock, PowerPack, ElementsKit and others) that load their own CSS and JS on every page whether or not that page uses their widgets, a high count of separate Elementor-generated stylesheets, and server response time &mdash; a hosting issue, not an Elementor one.</p>
+
+<h2>How to read the result</h2>
+<p>The verdict names a likely cause instead of handing you a raw score: <strong>bloated</strong> means a specific, fixable cause was found, usually add-on libraries or uncombined CSS. <strong>Slow hosting</strong> means Elementor itself looks fine but the server took too long to respond. <strong>Watch</strong> means nothing major, but a couple of things are worth keeping an eye on. <strong>Clean</strong> means no obvious Elementor-specific bloat was found on this page.</p>
+
+<h2>What this can't do</h2>
+<p>It deliberately doesn't try to measure your full page weight &mdash; every image, script and font byte &mdash; because fetching every linked asset from a third-party origin would multiply outbound requests per scan. Instead it reports the homepage document's own size and how many separate stylesheets and scripts it links to: an honest, verifiable proxy for request-count bloat, not a claim of exact page weight. For the full picture, a real browser-based audit alongside a look at what's actually installed catches what a public homepage fetch structurally can't.</p>
+
+<h2>If it comes back bloated</h2>
+<p>Add-on libraries are the single most common cause of a slow Elementor site, and it's rarely obvious from the dashboard which one is doing it &mdash; see <a href="../../blog/improve-wordpress-website-speed/">how to improve WordPress website speed</a> for the full pattern, or <a href="../../services/elementor-fix/">Elementor Bug Fix</a> if you'd rather have it diagnosed and fixed directly. If the report instead points at server response time, that's a hosting problem, covered by <a href="../../services/wordpress-speed-optimization/">WordPress Speed Optimization</a>.</p>
+
+          </div>
+        </div>
+        <div class="col-12 col-lg-4">
+          <aside class="post-aside">
+            <div class="checker-links-card">
+              <p class="mono post-cta-head">RELATED</p>
+              <ul class="mt-3">
+                <li><a href="../../services/elementor-fix/"><i class="ri-arrow-right-s-line" aria-hidden="true"></i>Elementor Bug Fix</a></li>
+                <li><a href="../../services/wordpress-speed-optimization/"><i class="ri-arrow-right-s-line" aria-hidden="true"></i>WordPress Speed Optimization</a></li>
+                <li><a href="../../blog/elementor-broken-after-update/"><i class="ri-arrow-right-s-line" aria-hidden="true"></i>Elementor Broken After Update</a></li>
+                <li><a href="../what-theme-is-this/"><i class="ri-arrow-right-s-line" aria-hidden="true"></i>What Theme Is This?</a></li>
+                <li><a href="../wordpress-malware-checker/"><i class="ri-arrow-right-s-line" aria-hidden="true"></i>Malware &amp; Blacklist Checker</a></li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-tint">
+    <div class="container">
+      <div class="row gx-5 gy-4">
+        <div class="col-12 col-lg-4">
+          <div class="section-head sticky-head mb-4 mb-lg-0">
+            <p data-anim="fade" class="eyebrow"><span class="eyebrow-mark" aria-hidden="true"></span><span class="mono">FAQ</span></p>
+            <h2 data-anim="lines">Questions about this checker</h2>
+          </div>
+        </div>
+        <div class="col-12 col-lg-8">
+          <div data-anim="stagger" class="faq-list">
+            <details data-anim="item" class="faq-item">
+              <summary>Is this Elementor speed checker actually free?</summary>
+              <p class="faq-body">Yes. No signup, no email gate, and no limit on how many times you use it. Paste a URL and get a result in a few seconds.</p>
+            </details>
+            <details data-anim="item" class="faq-item">
+              <summary>How is this different from a PageSpeed or Lighthouse score?</summary>
+              <p class="faq-body">A speed score tells you the page is slow. This tool tries to tell you why, specifically for Elementor sites &mdash; add-on library bloat, uncombined CSS, or a slow server response &mdash; rather than a single number with no explanation.</p>
+            </details>
+            <details data-anim="item" class="faq-item">
+              <summary>What if it says my site doesn't use Elementor?</summary>
+              <p class="faq-body">It only runs the Elementor-specific checks when it actually finds Elementor on the homepage. If your site uses a different builder or a custom theme, it says so instead of forcing an Elementor-shaped answer onto it.</p>
+            </details>
+            <details data-anim="item" class="faq-item">
+              <summary>Does it measure my full page weight, like images and fonts?</summary>
+              <p class="faq-body">No, deliberately. Fetching every image, script and font from a third-party site to weigh them would multiply outbound requests per scan. Instead it reports the homepage document's own size and the number of separate CSS/JS files it links to &mdash; an honest, verifiable proxy for request-count bloat.</p>
+            </details>
+            <details data-anim="item" class="faq-item">
+              <summary>It found add-on bloat &mdash; what should I do with that?</summary>
+              <p class="faq-body">See <a href="../../services/elementor-fix/">Elementor Bug Fix</a> for the fix &mdash; trimming or reconfiguring add-on plugins so they stop loading assets on pages that don't use them. If the report instead points to server response time, that's a hosting issue, covered by <a href="../../services/wordpress-speed-optimization/">WordPress Speed Optimization</a>.</p>
+            </details>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-white">
+    <div class="container">
+      <div class="row gx-0">
+        <div class="section-head col-12 col-lg-6">
+          <p data-anim="fade" class="eyebrow"><span class="eyebrow-mark" aria-hidden="true"></span><span class="mono">KEEP GOING</span></p>
+          <h2 data-anim="lines">More free tools</h2>
+          <p data-anim="fade" class="body-lg">No signup, no gated results &mdash; just the tool.</p>
+        </div>
+      </div>
+      <div data-anim="stagger" class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4 related-grid">
+        <div class="col">
+          <a data-anim="item" class="related-card h-100" href="../wordpress-malware-checker/">
+            <strong>Malware &amp; Blacklist Checker</strong>
+            <span>Check if a WordPress site is hacked, blacklisted or serving malware.</span>
+          </a>
+        </div>
+        <div class="col">
+          <a data-anim="item" class="related-card h-100" href="../what-theme-is-this/">
+            <strong>What Theme Is This?</strong>
+            <span>Detect a site's WordPress theme, page builder and plugins.</span>
+          </a>
+        </div>
+        <div class="col">
+          <a data-anim="item" class="related-card h-100" href="../">
+            <strong>All Free Tools</strong>
+            <span>The full, growing list of free diagnostic tools.</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-dark section-contact">
+    <div class="hero-grid-bg contact-grid-bg" aria-hidden="true"></div>
+    <div class="glow glow-d" aria-hidden="true"></div>
+    <div class="container">
+      <div class="contact-cta-shell">
+        <div data-anim="fade" class="contact-cta-card">
+          <div class="contact-cta-copy">
+            <p class="badge badge-live mx-auto"><span class="dot" aria-hidden="true"></span>Available for new projects</p>
+            <p class="eyebrow eyebrow-center"><span class="eyebrow-mark eyebrow-mark-light" aria-hidden="true"></span><span class="mono">NEXT STEP</span></p>
+            <h2 data-anim="lines">Found something worth fixing?</h2>
+            <p class="body-lg">Based in Bangladesh, working with clients worldwide. Send over what this turned up, or just describe the problem &mdash; every serious enquiry gets a reply within one working day.</p>
+          </div>
+          <ul class="tech-chips justify-content-center">
+            <li>Reply within one working day</li>
+            <li>Fixed quote before work starts</li>
+            <li>UK, EU and US hours covered</li>
+          </ul>
+          <div class="contact-cta-actions">
+            <a class="btn btn-primary" href="../../contact/">Start a project <i class="ri-arrow-right-line" aria-hidden="true"></i></a>
+            <a class="btn btn-ghost" href="mailto:hello@ashekur.com">hello@ashekur.com</a>
+            <a class="btn btn-ghost" href="https://wa.me/8801812764112" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-top">
+    <div class="row gx-4 gy-5 align-items-start">
+      <div class="footer-brand col-12 col-lg-5">
+        <div class="brand brand-lg">
+          <picture>
+            <source srcset="../../assets/images/ashekur-logo-light.webp" type="image/webp" />
+            <img src="../../assets/images/ashekur-logo-light.png" alt="ashekur.com" width="480" height="125" loading="lazy" decoding="async" />
+          </picture>
+        </div>
+        <p class="footer-blurb">Frontend development and WordPress engineering for teams that care how it feels, not just how it looks. Based in Bangladesh &mdash; serving clients worldwide.</p>
+      </div>
+      <div class="col-12 col-lg-7">
+        <div class="footer-cols row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4">
+          <nav class="col" aria-label="Services">
+            <p class="mono footer-head">SERVICES</p>
+            <a href="../../services/wordpress-development/">WordPress Development</a>
+            <a href="../../services/wordpress-customization/">WordPress Customization</a>
+            <a href="../../services/elementor-customization/">Elementor Customization</a>
+            <a href="../../services/woocommerce-development/">WooCommerce Development</a>
+            <a href="../../services/wordpress-speed-optimization/">WordPress Speed Optimization</a>
+            <a href="../../services/wordpress-bug-fix/">WordPress Bug Fix</a>
+            <a href="../../services/elementor-fix/">Elementor Bug Fix</a>
+            <a href="../../services/wordpress-migration/">WordPress Migration</a>
+            <a href="../../services/seo/">WordPress SEO</a>
+          </nav>
+          <nav class="col" aria-label="Site">
+            <p class="mono footer-head">SITEMAP</p>
+            <a href="../../">Home</a>
+            <a href="../../tools/">Tools</a>
+            <a href="../../portfolio/">Portfolio</a>
+            <a href="../../blog/">Blog</a>
+            <a href="../../wordpress-fixes/">WordPress Fixes</a>
+            <a href="../">Tools</a>
+            <a href="../../contact/">Contact</a>
+            <a href="../../privacy/">Privacy Policy</a>
+          </nav>
+          <div class="col">
+            <p class="mono footer-head">ELSEWHERE</p>
+            <a href="mailto:hello@ashekur.com"><i class="ri-mail-line" aria-hidden="true"></i>hello@ashekur.com</a>
+            <a href="https://wa.me/8801812764112" target="_blank" rel="noopener noreferrer"><i class="ri-whatsapp-line" aria-hidden="true"></i>WhatsApp</a>
+            <a href="https://www.linkedin.com/in/ashekur-rahman-1ab205122/" target="_blank" rel="noopener noreferrer"><i class="ri-linkedin-fill" aria-hidden="true"></i>LinkedIn</a>
+            <a href="https://github.com/AshekurRahman" target="_blank" rel="noopener noreferrer"><i class="ri-github-fill" aria-hidden="true"></i>GitHub</a>
+            <a href="https://www.upwork.com/freelancers/~010aabe60ec2ae6679" target="_blank" rel="noopener noreferrer"><i class="ri-upwork-fill" aria-hidden="true"></i>Upwork</a>
+            <a href="https://www.facebook.com/ashekur.rahman.hridoy" target="_blank" rel="noopener noreferrer"><i class="ri-facebook-circle-fill" aria-hidden="true"></i>Facebook</a>
+            <a href="https://www.instagram.com/ashekurhridoy/" target="_blank" rel="noopener noreferrer"><i class="ri-instagram-line" aria-hidden="true"></i>Instagram</a>
+            <a href="https://www.youtube.com/@ashekurrahman1431" target="_blank" rel="noopener noreferrer"><i class="ri-youtube-fill" aria-hidden="true"></i>YouTube</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <p class="mono copyright">&copy; 2026 Ashekur Rahman. All rights reserved.</p>
+    <a class="to-top-inline" href="#main"><i class="ri-arrow-up-line" aria-hidden="true"></i> Back to top</a>
+  </div>
+</footer>
+</div>
+</div>
+
+
+<a class="wa-float" href="https://wa.me/8801812764112" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp"><i class="ri-whatsapp-fill" aria-hidden="true"></i></a>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" integrity="sha384-HOvlOYPIs/zjoIkWUGXkVmXsjr8GuZLV+Q+rcPwmJOVZVpvTSXQChiN4t9Euv9Vc" crossorigin="anonymous" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js" integrity="sha384-P8VzCVnT9NBUkMrpcIZrJbA7EBjJvh/fJS6PmP+4nLIM284DtsImIv8D0fFjIkeh" crossorigin="anonymous" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js" integrity="sha384-xb96EMJeax+NLXMC88ZBa1xAeAW+kn+horHh/zFlbMLG2UPWhMJJSlv7fi57hS+Q" crossorigin="anonymous" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollSmoother.min.js" integrity="sha384-dd8lT3AimXbI347qlZzlijPa4qnSlgGxuTqK2HlcfvF5+aOIeddPdMFmFpypQPZN" crossorigin="anonymous" defer></script>
+<script src="../../assets/js/anim.js" defer></script>
+<script src="../../assets/js/main.js" defer></script>
+<script src="../../assets/js/elementor-speed-checker.js" defer></script>
+</body>
+</html>

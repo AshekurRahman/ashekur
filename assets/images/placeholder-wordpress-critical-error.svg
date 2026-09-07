@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" role="img" aria-hidden="true">
+  <title>Abstract dark tech visual representing WordPress's own critical error screen with a recovery email</title>
+  <defs>
+    <radialGradient id="bgFade_crit" cx="50%" cy="36%" r="78%">
+      <stop offset="0%" stop-color="#141f38"/>
+      <stop offset="100%" stop-color="#0a1020"/>
+    </radialGradient>
+    <pattern id="grid_crit" width="64" height="64" patternUnits="userSpaceOnUse">
+      <path d="M 64 0 L 0 0 0 64" fill="none" stroke="rgba(148,163,184,0.10)" stroke-width="1"/>
+    </pattern>
+    <radialGradient id="gridMask_crit" cx="50%" cy="32%" r="70%">
+      <stop offset="0%" stop-color="#fff" stop-opacity="0.9"/>
+      <stop offset="65%" stop-color="#fff" stop-opacity="0.32"/>
+      <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+    </radialGradient>
+    <mask id="gridMaskEl_crit">
+      <rect width="1280" height="720" fill="url(#gridMask_crit)"/>
+    </mask>
+    <radialGradient id="gPink_crit" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#7c3aed" stop-opacity="0.45"/>
+      <stop offset="66%" stop-color="#7c3aed" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="gIndigo_crit" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#4f46e5" stop-opacity="0.4"/>
+      <stop offset="66%" stop-color="#4f46e5" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="gDanger_crit" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fca5a5" stop-opacity="0.5"/>
+      <stop offset="66%" stop-color="#fca5a5" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bgFade_crit)"/>
+  <rect width="1280" height="720" fill="url(#grid_crit)" mask="url(#gridMaskEl_crit)"/>
+  <circle cx="360" cy="220" r="340" fill="url(#gPink_crit)"/><circle cx="980" cy="560" r="360" fill="url(#gIndigo_crit)"/><circle cx="860" cy="380" r="140" fill="url(#gDanger_crit)"/>
+
+  <!-- browser frame showing WordPress's own critical error message -->
+  <rect x="400" y="188" width="480" height="300" rx="10" fill="#141b2b" stroke="#818cf8" stroke-width="1.5" opacity="0.9"/>
+  <rect x="400" y="188" width="480" height="34" rx="10" fill="#1d2142"/>
+  <circle cx="422" cy="205" r="4" fill="#fca5a5"/>
+  <circle cx="438" cy="205" r="4" fill="#475569"/>
+  <circle cx="454" cy="205" r="4" fill="#475569"/>
+
+  <!-- warning triangle -->
+  <g transform="translate(640,300)">
+    <path d="M 0 -46 L 50 44 L -50 44 Z" fill="none" stroke="#fca5a5" stroke-width="5" stroke-linejoin="round"/>
+    <line x1="0" y1="-14" x2="0" y2="16" stroke="#fca5a5" stroke-width="6" stroke-linecap="round"/>
+    <circle cx="0" cy="32" r="3.4" fill="#fca5a5"/>
+  </g>
+
+  <!-- message bar beneath -->
+  <rect x="452" y="392" width="376" height="14" rx="7" fill="#334155" opacity="0.8"/>
+  <rect x="484" y="416" width="312" height="10" rx="5" fill="#334155" opacity="0.5"/>
+
+  <!-- recovery-mode envelope icon -->
+  <g transform="translate(960,470)">
+    <rect x="-46" y="-30" width="92" height="60" rx="8" fill="#1d2142" stroke="#a5b4fc" stroke-width="2.4"/>
+    <path d="M -46 -22 L 0 8 L 46 -22" fill="none" stroke="#a5b4fc" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="30" cy="-24" r="6" fill="#0a1020"/>
+    <path d="M 30 -27 L 30 -21 M 27 -24 L 33 -24" stroke="#fca5a5" stroke-width="2" stroke-linecap="round"/>
+  </g>
+
+  <text x="640" y="520" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" fill="#8aa0b9" letter-spacing="1">CRITICAL ERROR</text>
+</svg>

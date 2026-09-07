@@ -1,0 +1,5262 @@
+/* ==========================================================================
+   template.css — design tokens, reset, and all project styles.
+
+   The grid comes from Bootstrap 5.3, linked in each page's <head> before
+   this file. Add new CSS here when Bootstrap has no utility that covers it.
+
+   Every multi-column layout on the site is a Bootstrap .row with .col-* or
+   .row-cols-* on it — there is no hand-written column CSS left. Where the
+   design calls for a gutter off Bootstrap's g-* scale, the row's own class
+   sets --bs-gutter-x/y rather than a gap, so the grid keeps owning the
+   negative margins that hold columns flush with the container edge.
+
+   Custom breakpoints sit on Bootstrap's own edges (575.98 / 767.98 / 991.98)
+   so a hand-written rule and a col-* utility can never disagree by a few
+   pixels mid-resize. Do not introduce a breakpoint between them.
+   ========================================================================== */
+
+/* ---------- Design tokens (was root.css) ---------- */
+:root {
+  --blue: #2563eb;
+  --indigo: #4f46e5;
+  --purple: #7c3aed;
+  --blue-300: #93c5fd;
+  --indigo-300: #a5b4fc;
+  --purple-300: #d8b4fe;
+  --dark: #0f172a;
+  --dark-deep: #0a1020;
+  --light: #f8fafc;
+  --white: #fff;
+  --gray: #63768c;
+  --gray-strong: #5b6c80;
+  --gray-on-dark: #8aa0b9;
+  --gray-700: #334155;
+  --gray-400: #c0cedd;
+  --slate-200: #e2e8f0;
+  --slate-300: #cbd5e1;
+  --slate-500: #475569;
+  --indigo-soft: #818cf8;
+  --success: #6ee7b7;
+  --danger: #fca5a5;
+  --sky-500: #60a5fa;
+  --sky-400: #60a5fa;
+  --violet-500: #a855f7;
+  --green-soft: #34d399;
+  --green-600: #059669;
+  --indigo-100: #c7d2fe;
+  --card-900: #141b2b;
+  --card-800: #1d2142;
+  --surface-100: #eef2f7;
+  --surface-200: #f1f5f9;
+  --surface-alt: #f6f6f6;
+  --surface-tint: #f0edfa;
+  --placeholder: #64748b;
+  --danger-strong: #f87171;
+  --whatsapp: #25d366;
+  --star: #f59e0b;
+  --star-empty: #d8dee8;
+  --line-light: #e8edf4;
+  --line-dark: rgba(148, 163, 184, 0.16);
+
+  --grad: linear-gradient(135deg, var(--blue), var(--indigo) 55%, var(--purple));
+  --grad-text: linear-gradient(100deg, var(--sky-500), var(--indigo-soft) 45%, var(--violet-500));
+
+  /* Layout tokens — these lived in the grid framework's own :root block and
+     came back here when it was replaced by Bootstrap. */
+  --shell: 1300px;
+  --gutter: clamp(24px, 4vw, 40px);
+  --section-y: clamp(72px, 9vw, 128px);
+  --head-gap: clamp(32px, 4vw, 44px);
+  --header-h: 72px;
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+
+  --font: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  /* Bootstrap's .font-monospace reads this; point it at the project stack so
+     the utility renders JetBrains Mono instead of its SFMono default. */
+  --bs-font-monospace: var(--mono);
+
+  /* Heading scale. Every heading gets a clamp by default; the two display sizes
+     below are the only deliberate departures from it. */
+  --h1: clamp(33px, 5.2vw, 60px);
+  --h2: clamp(27px, 3.6vw, 42px);
+  --h3: clamp(19px, 1.9vw, 24px);
+  --h4: clamp(17.5px, 1.5vw, 20px);
+  --h5: clamp(16px, 1.3vw, 17.5px);
+  --h6: clamp(14px, 1.1vw, 15px);
+  --h-hero: clamp(36px, 6.2vw, 76px);
+  --h-section: clamp(29px, 4.2vw, 50px);
+  --r-sm: 12px;
+  --r-md: 18px;
+  --r-lg: 24px;
+  --pill: 999px;
+  --shadow-card: 0 1px 2px rgba(15, 23, 42, 0.04), 0 12px 28px -22px rgba(15, 23, 42, 0.28);
+  --shadow-lift: 0 34px 64px -32px rgba(37, 99, 235, 0.4);
+  --shadow-btn: 0 14px 38px -12px rgba(79, 70, 229, 0.9);
+}
+
+/* ---------- Reset (was reset.css) ---------- */
+/* ---------- Reset ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-h) + 20px);
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  overflow-x: clip;
+  background: var(--dark);
+  color: var(--light);
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 1.5;
+  text-wrap: pretty;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  letter-spacing: -0.035em;
+  font-weight: 800;
+  line-height: 1.08;
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: var(--h1);
+}
+
+h2 {
+  font-size: var(--h2);
+}
+
+h3 {
+  font-size: var(--h3);
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+
+h4 {
+  font-size: var(--h4);
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.015em;
+}
+
+h5 {
+  font-size: var(--h5);
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+}
+
+h6 {
+  font-size: var(--h6);
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 0;
+}
+
+p {
+  margin: 0;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  color: var(--indigo);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--purple);
+}
+
+button {
+  font: inherit;
+}
+
+::selection {
+  background: rgba(124, 58, 237, 0.35);
+  color: var(--white);
+}
+
+:focus-visible {
+  outline: 2px solid var(--purple);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+.skip-link {
+  position: absolute;
+  left: 16px;
+  top: -60px;
+  z-index: 200;
+  padding: 12px 20px;
+  border-radius: var(--pill);
+  background: var(--white);
+  color: var(--dark);
+  font-weight: 700;
+  transition: top 0.25s var(--ease);
+}
+
+.skip-link:focus {
+  top: 16px;
+  color: var(--dark);
+}
+
+/* ==========================================================================
+   Project styles. Add new CSS here when Bootstrap has no utility that covers
+   it. Button rules stay first and the responsive block last, so the cascade
+   from the old split files is unchanged.
+   ========================================================================== */
+
+/* ---------- Buttons (was button.css) ---------- */
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 17px 32px;
+  border: 1px solid transparent;
+  border-radius: var(--pill);
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  text-align: center;
+  transition: transform 0.3s var(--ease), box-shadow 0.3s, background 0.3s, border-color 0.3s, color 0.3s;
+}
+
+.btn-sm {
+  padding: 12px 22px;
+  font-size: 14.5px;
+}
+
+.btn-primary {
+  color: var(--white);
+  background: var(--grad);
+  box-shadow: var(--shadow-btn);
+}
+
+.btn-primary:hover {
+  color: var(--white);
+  transform: translateY(-3px);
+  box-shadow: 0 22px 50px -14px rgba(124, 58, 237, 0.95);
+}
+
+.btn-ghost {
+  color: var(--slate-200);
+  background: rgba(148, 163, 184, 0.07);
+  border-color: rgba(148, 163, 184, 0.24);
+}
+
+.btn-ghost:hover {
+  color: var(--white);
+  transform: translateY(-3px);
+  border-color: rgba(129, 140, 248, 0.6);
+  background: rgba(99, 102, 241, 0.14);
+}
+
+.section-light .btn-ghost,
+.section-tint .btn-ghost,
+.section-white .btn-ghost,
+.notfound .btn-ghost {
+  color: var(--gray-700);
+  background: var(--white);
+  border-color: var(--slate-200);
+}
+
+.section-light .btn-ghost:hover,
+.section-tint .btn-ghost:hover,
+.section-white .btn-ghost:hover,
+.notfound .btn-ghost:hover {
+  color: var(--indigo);
+  background: var(--white);
+  border-color: var(--indigo-300);
+  box-shadow: 0 12px 28px -14px rgba(79, 70, 229, 0.5);
+}
+
+.section-dark .btn-ghost {
+  color: var(--slate-200);
+  background: rgba(148, 163, 184, 0.07);
+  border-color: rgba(148, 163, 184, 0.24);
+}
+
+.section-dark .btn-ghost:hover {
+  color: var(--white);
+  border-color: rgba(129, 140, 248, 0.6);
+  background: rgba(99, 102, 241, 0.14);
+}
+
+.btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.btn-row-center {
+  justify-content: center;
+}
+
+/* ashekur.com — personal portfolio
+   1. Tokens  2. Reset  3. Utilities  4. Buttons  5. Header/Nav
+   6. Hero    7. About  8. Skills    9. Experience 10. Projects
+   11. Contact 12. Footer 13. Motion 14. Responsive */
+
+/* ---------- 1. Tokens ---------- */
+
+/* ---------- 2. Utilities ---------- */
+.section {
+  position: relative;
+  padding-block: var(--section-y);
+  overflow: clip;
+}
+
+/* Four section bands. White, alt (cool grey) and tint (violet wash) are visibly
+   distinct from one another; build_* rotates them so no two adjacent sections match. */
+.section-light {
+  background: var(--surface-alt);
+  color: var(--dark);
+}
+
+.section-white {
+  background: var(--white);
+  color: var(--dark);
+}
+
+.section-tint {
+  background: var(--surface-tint);
+  color: var(--dark);
+}
+
+.section-tint .toc,
+.section-tint .post-cta {
+  background: rgba(255, 255, 255, 0.62);
+}
+
+.section-dark {
+  background: var(--dark);
+  color: var(--light);
+}
+
+/* Shared section-head pattern: .row.gx-0 > .section-head.col-12.col-lg-6.
+   The column sets the measure, so nothing here caps the width. */
+.section-head {
+  margin-bottom: var(--head-gap);
+}
+
+/* When .section-head sits in the flex row alongside a "view all" link, the row's
+   own gap handles the space between them -- but the head-gap below the whole
+   block still has to come from somewhere, so it moves to the wrapper. */
+.projects-head .section-head {
+  margin-bottom: 0;
+}
+
+.projects-head {
+  margin-bottom: var(--head-gap);
+}
+
+.testimonial-avatar {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--grad);
+  color: #fff;
+  font-family: var(--mono);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.section-head h2 {
+  margin-top: 20px;
+  font-size: var(--h-section);
+}
+
+.section-head .body-lg {
+  margin-top: 18px;
+}
+
+.body-lg {
+  font-size: clamp(16px, 1.2vw, 17.5px);
+  line-height: 1.7;
+  color: var(--gray);
+}
+
+.section-dark .body-lg {
+  color: var(--gray-400);
+}
+
+/* --gray clears 4.5:1 on pure white only. On the tinted bands it drops to ~4.15:1,
+   so body text there steps one shade darker to stay above AA. */
+.section-light .body-lg,
+.section-tint .body-lg,
+.section-light .stat-label,
+.section-tint .stat-label,
+.section-light .project-body>p,
+.section-tint .project-body>p {
+  color: var(--gray-strong);
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12.5px;
+  letter-spacing: 0.14em;
+  color: var(--indigo);
+}
+
+.section-dark .eyebrow {
+  color: var(--indigo-soft);
+}
+
+.eyebrow-center {
+  justify-content: center;
+}
+
+.eyebrow-mark {
+  width: 9px;
+  height: 9px;
+  border-radius: 2px;
+  background: var(--grad);
+}
+
+.eyebrow-mark-light {
+  background: linear-gradient(135deg, var(--sky-500), var(--violet-500));
+}
+
+.text-link {
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--indigo);
+  border-bottom: 1px solid rgba(79, 70, 229, 0.35);
+  padding-bottom: 3px;
+}
+
+.page-intro {
+  padding-top: clamp(130px, 15vw, 190px);
+}
+
+/* Inner-page hero. Mirrors the homepage hero so the transparent header has a dark
+   surface to sit on until it goes solid on scroll. */
+.page-hero {
+  padding-bottom: clamp(56px, 7vw, 96px);
+  background: linear-gradient(180deg, var(--dark-deep), var(--dark) 62%, var(--dark));
+}
+
+/* This section (/tools/) sits directly under the hero with no section-head
+   to visually anchor its own top padding, so the hero's padding-bottom and
+   this section's full standard --section-y top padding stacked into one
+   oversized gap (up to ~224px combined). Tightened here rather than
+   site-wide, since every other .page-hero-adjacent section on the site
+   leads with a heading that fills that space instead. */
+.tools-value-props {
+  padding-top: clamp(32px, 4vw, 56px);
+}
+
+.page-hero .container {
+  position: relative;
+  z-index: 1;
+}
+
+.page-hero .hero-grid-bg {
+  -webkit-mask-image: radial-gradient(ellipse 92% 82% at 50% 26%, #000, transparent 80%);
+  mask-image: radial-gradient(ellipse 92% 82% at 50% 26%, #000, transparent 80%);
+}
+
+.page-hero .glow-a {
+  top: -300px;
+  left: -220px;
+}
+
+.page-hero .glow-b {
+  top: -120px;
+  right: -260px;
+}
+
+.notfound.page-hero {
+  align-content: center;
+  /* Short page: the stock section padding left a large dead gap above the
+     footer, so it is tightened here rather than site-wide. */
+  padding-bottom: clamp(64px, 7vw, 96px);
+}
+
+/* Definition lists and figure captions sitting on the dark hero */
+.section-dark .case-meta>div {
+  border-color: var(--line-dark);
+}
+
+.section-dark .case-meta dt {
+  color: var(--indigo-soft);
+}
+
+.section-dark .case-meta dd {
+  color: var(--gray-400);
+}
+
+.section-dark .case-meta dd a {
+  color: var(--blue-300);
+}
+
+.section-dark .shot {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: var(--line-dark);
+}
+
+.section-dark .shot figcaption {
+  color: var(--gray-400);
+  border-color: var(--line-dark);
+}
+
+.page-intro h1 {
+  margin-top: 18px;
+}
+
+.page-intro .body-lg {
+  margin-top: 20px;
+}
+
+.page-intro .btn-row {
+  margin-top: 30px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Columns and gutters come from Bootstrap (.row / .row-cols-* / .g-*) on the
+   element itself; these rules only carry what the grid does not own. */
+.service-card {
+  /* Column stretches the card to the row's height, so the copy takes the slack
+     and every card's button lands on the same baseline. */
+  display: flex;
+  flex-direction: column;
+  background: var(--white);
+  border: 1px solid var(--line-light);
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow-card);
+  padding: clamp(24px, 4vw, 32px);
+}
+
+.service-card>.btn {
+  margin-top: auto;
+  align-self: flex-start;
+}
+
+.service-card h2,
+.service-card h3 {
+  font-size: clamp(22px, 2vw, 30px);
+  margin-top: 0;
+  margin-bottom: 14px;
+}
+
+.service-card h2 a,
+.service-card h3 a,
+.case-card h2 a,
+.case-card h3 a,
+.project h3 a,
+.related-card,
+.shot figcaption a {
+  color: inherit;
+}
+
+.service-card h2 a:hover,
+.service-card h3 a:hover,
+.case-card h2 a:hover,
+.case-card h3 a:hover,
+.project h3 a:hover,
+.shot figcaption a:hover {
+  color: var(--indigo);
+}
+
+.service-card h3+p,
+.service-card p,
+.service-card li {
+  color: var(--gray-700);
+  line-height: 1.7;
+}
+
+.service-card ul {
+  margin: 18px 0 24px;
+  padding-left: 20px;
+  list-style: disc;
+}
+
+/* Compact variant for icon + title + one-liner cards (no list, no button) so
+   they don't carry the same padding/heading scale as the full service-card. */
+.service-card--sm {
+  padding: clamp(18px, 3vw, 22px);
+}
+
+.service-card--sm .feature-icon {
+  width: 36px;
+  height: 36px;
+  margin-bottom: 12px;
+  border-radius: 10px;
+}
+
+.service-card--sm h3 {
+  font-size: var(--h4);
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.015em;
+  margin-bottom: 6px;
+}
+
+.service-card--sm p {
+  margin-bottom: 0;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Decorative background blobs only. Card text selectors had been merged into
+   this list, which absolutely positioned every service-card paragraph and list,
+   blurred it 30px and dropped it behind the card. */
+.glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(30px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.glow-a {
+  top: -220px;
+  left: -160px;
+  width: 620px;
+  height: 620px;
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.42), transparent 66%);
+  animation: glowPulse 9s ease-in-out infinite;
+}
+
+.glow-b {
+  top: 60px;
+  right: -200px;
+  width: 660px;
+  height: 660px;
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.36), transparent 66%);
+  animation: glowPulse 11s ease-in-out infinite;
+}
+
+.glow-c {
+  top: -120px;
+  right: -140px;
+  width: 520px;
+  height: 520px;
+  background: radial-gradient(circle, rgba(79, 70, 229, 0.3), transparent 66%);
+}
+
+.glow-d {
+  bottom: -240px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(820px, 120%);
+  height: 520px;
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.34), transparent 66%);
+}
+
+.section .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* ---------- 4. Header / Nav ---------- */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  background: rgba(10, 16, 32, 0);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(148, 163, 184, 0);
+  transform: translateY(0);
+  transition: 0.3s ease-in-out;
+}
+
+.site-header.is-scrolled {
+  background: rgba(10, 16, 32, 0.92);
+  box-shadow: 0 12px 34px -22px rgba(2, 6, 23, 0.9);
+}
+
+.site-header.is-hidden {
+  transform: translateY(-120%);
+}
+
+.site-header.is-up {
+  transform: translateY(0);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  min-height: var(--header-h);
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+  flex: 0 0 auto;
+  line-height: 1;
+}
+
+/* The logo file carries a strapline under the wordmark that turns to mush
+   below ~160px tall, so the box is sized to the lockup and object-fit trims
+   it: 206x39 shows the top 262 of the file's 362 rows. */
+.brand img {
+  display: block;
+  width: 206px;
+  object-fit: cover;
+  object-position: left top;
+}
+
+.brand-lg img {
+  width: 259px;
+}
+
+.nav-desktop {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-left: auto;
+}
+
+.nav-link {
+  padding: 9px 15px;
+  border-radius: var(--pill);
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--slate-300);
+  transition: color 0.25s, background 0.25s;
+}
+
+.nav-link:hover,
+.nav-link.is-active {
+  color: var(--white);
+  background: rgba(99, 102, 241, 0.16);
+}
+
+.nav-cta {
+  margin-left: 12px;
+  padding: 11px 22px;
+  font-size: 14.5px;
+  box-shadow: 0 8px 24px -8px rgba(79, 70, 229, 0.85);
+}
+
+.burger {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  width: 46px;
+  height: 46px;
+  margin-left: auto;
+  padding: 0;
+  border: 1px solid rgba(148, 163, 184, 0.24);
+  border-radius: 14px;
+  background: rgba(148, 163, 184, 0.08);
+  cursor: pointer;
+}
+
+.burger span {
+  display: block;
+  width: 19px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--light);
+  transition: transform 0.3s var(--ease), opacity 0.2s;
+}
+
+.burger span:last-child {
+  width: 13px;
+  background: var(--white);
+}
+
+.burger[aria-expanded="true"] span:first-child {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.burger[aria-expanded="true"] span:nth-child(2) {
+  opacity: 0;
+}
+
+.burger[aria-expanded="true"] span:last-child {
+  width: 19px;
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+.nav-mobile {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 12px var(--gutter) 24px;
+  border-top: 1px solid rgba(148, 163, 184, 0.14);
+  background: rgba(10, 16, 32, 0.97);
+  max-height: 70vh;
+  overflow-y: auto;
+  /* overscroll-behavior: contain; */
+}
+
+.nav-mobile[hidden] {
+  display: none;
+}
+
+.nav-mobile>a,
+.nav-mobile .nav-row>a {
+  padding: 15px 6px;
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--slate-200);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+}
+
+.nav-mobile>a:hover,
+.nav-mobile .nav-row>a:hover {
+  color: var(--white);
+}
+
+.nav-mobile>a.btn {
+  margin-top: 14px;
+  border-bottom: none;
+  color: var(--white);
+}
+
+/* Nav dropdown - one markup shape, two presentations: a floating card on
+   desktop, an inline accordion inside the mobile sheet. The parent stays a real
+   link to the hub page; the caret button is what opens the submenu. */
+.nav-item {
+  position: relative;
+}
+
+.nav-row {
+  display: flex;
+  align-items: center;
+}
+
+.nav-caret {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--slate-300);
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  transition: color 0.25s, background 0.25s, transform 0.25s var(--ease);
+}
+
+@media (hover: hover) {
+  .nav-caret:hover {
+    color: var(--white);
+    background: rgba(99, 102, 241, 0.16);
+  }
+}
+
+.nav-item.is-open>.nav-row>.nav-caret {
+  color: var(--white);
+  transform: rotate(180deg);
+}
+
+.nav-panel {
+  display: none;
+}
+
+@media (min-width: 992px) {
+
+  /* The item's own box is stretched down into the gap above the panel, so the
+     pointer never crosses dead space on its way from the link to the menu. */
+  .nav-desktop .nav-item {
+    margin-bottom: -10px;
+    padding-bottom: 10px;
+  }
+
+  .nav-desktop .nav-panel {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 90;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 252px;
+    padding: 10px;
+    border: 1px solid rgba(148, 163, 184, 0.16);
+    border-radius: 18px;
+    background: rgba(13, 20, 38, 0.98);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    box-shadow: 0 24px 54px -26px rgba(2, 6, 23, 0.95);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-6px);
+    transition: opacity 0.22s ease, transform 0.22s var(--ease), visibility 0.22s;
+  }
+
+  .nav-desktop .nav-item:hover>.nav-panel,
+  .nav-desktop .nav-item:focus-within>.nav-panel,
+  .nav-desktop .nav-item.is-open>.nav-panel {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .nav-desktop .nav-panel a {
+    padding: 10px 14px;
+    border-radius: 12px;
+    font-size: 14.5px;
+    font-weight: 600;
+    color: var(--slate-300);
+    white-space: nowrap;
+    transition: color 0.22s, background 0.22s;
+  }
+
+  .nav-desktop .nav-panel a:hover {
+    color: var(--white);
+    background: rgba(99, 102, 241, 0.16);
+  }
+
+  /* Label and caret are one pill, so the highlight wraps both instead of the
+     link drawing its own shape with the arrow stranded outside it. */
+  .nav-desktop .nav-row {
+    border-radius: var(--pill);
+    transition: background 0.25s;
+  }
+
+  .nav-desktop .nav-row>.nav-link {
+    padding-right: 3px;
+  }
+
+  .nav-desktop .nav-row>.nav-link:hover,
+  .nav-desktop .nav-row>.nav-link.is-active {
+    background: transparent;
+  }
+
+  .nav-desktop .nav-item:hover>.nav-row,
+  .nav-desktop .nav-item:focus-within>.nav-row,
+  .nav-desktop .nav-item.is-open>.nav-row,
+  .nav-desktop .nav-row:has(>.nav-link.is-active) {
+    background: rgba(99, 102, 241, 0.16);
+  }
+
+  .nav-desktop .nav-item:hover>.nav-row>.nav-link,
+  .nav-desktop .nav-row:has(>.nav-link.is-active)>.nav-link {
+    color: var(--white);
+  }
+
+  .nav-desktop .nav-caret {
+    width: 20px;
+    height: 20px;
+    margin-right: 12px;
+    font-size: 16px;
+  }
+
+  .nav-desktop .nav-caret:hover {
+    background: transparent;
+    color: var(--white);
+  }
+
+  /* Services mega-menu — #navDrop-services (desktop) only; the mobile
+     accordion (#navDropM-services) is a separate element and keeps its
+     original single-column list untouched. "All services" stays the
+     header/primary link, set off by the same border color the panel
+     itself already uses. The 7 approved categories render as explicit
+     .nav-panel-col columns, each with its own .nav-panel-col-head — the
+     category/item structure lives in the markup, not in nth-child math,
+     so adding, removing or reordering a category or an item never
+     reflows an unrelated neighbor. The grid is fixed at 4 columns, so the
+     first 4 categories fill row one and the remaining 3 wrap to row two,
+     left-aligned under it. A category item with no live page yet
+     is a plain .nav-panel-future span rather than an <a>, so there is
+     never a stale or 404-ing href for it to carry.
+
+     Width/position mirror the site's own .container (same --gutter-based
+     fluid width, capped at 1320px — Bootstrap's own largest .container
+     breakpoint) rather than a fixed pixel value, so the panel is never
+     wider than the page's main content column. This is only the no-JS/
+     before-first-hover fallback, though: this panel's containing block is
+     .nav-item (only as wide as the "Services" link + caret, ~130px), so
+     no percentage or vw-based left offset computed here can actually land
+     the panel flush with the real .container's edges — only reading that
+     container's live rect (main.js, "Services mega-menu" block) can. JS
+     sets left/width from that rect on every open; the right/left viewport
+     nudge afterwards is a safety fallback for the rare case that still
+     doesn't fit (zoom, unusual scrollbar width), not the primary sizing. */
+  #navDrop-services {
+    width: min(calc(100vw - 2 * var(--gutter)), 1320px);
+    max-width: calc(100vw - 24px);
+  }
+
+  #navDrop-services .nav-panel-all {
+    display: block;
+    margin-bottom: 10px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.16);
+    color: var(--success);
+  }
+
+  #navDrop-services .nav-panel-all:hover {
+    color: var(--green-soft);
+    background: rgba(52, 211, 153, 0.12);
+  }
+
+  #navDrop-services .nav-panel-cols {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    align-items: start;
+    gap: 14px 6px;
+  }
+
+  #navDrop-services .nav-panel-col {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    min-width: 0;
+  }
+
+  #navDrop-services .nav-panel-col-head {
+    margin: 0;
+    padding: 6px 12px 4px;
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--gray-on-dark);
+  }
+
+  /* A link/future item can carry a trailing <em> badge ("New" on a live
+     link, "Soon" on a future one) — flex + wrap lets the badge share the
+     line when it fits and drop to its own line otherwise, so it never
+     forces the column, or the panel's container-matched width, wider. */
+  #navDrop-services .nav-panel-col a,
+  #navDrop-services .nav-panel-future {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 6px;
+    padding: 7px 12px;
+    font-size: 13.5px;
+    white-space: normal;
+    overflow-wrap: break-word;
+  }
+
+  /* A future/planned item: same slot as a real link so the column reads
+     as one continuous list, but never an <a> — nothing to click, nothing
+     to point at a page that doesn't exist yet. */
+  #navDrop-services .nav-panel-future {
+    font-weight: 600;
+    color: var(--slate-500);
+    cursor: default;
+  }
+
+  /* Shared pill language for both badges — same neutral tone for "New"
+     and "Soon" on purpose, so the column stays as quiet as the rest of
+     the panel; the link's own color (live vs. muted future) already
+     tells the two states apart. */
+  #navDrop-services .nav-panel-col a em,
+  #navDrop-services .nav-panel-future em {
+    flex: none;
+    padding: 2px 8px;
+    border-radius: var(--pill);
+    background: rgba(71, 85, 105, 0.35);
+    font-family: var(--mono);
+    font-style: normal;
+    font-size: 9.5px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--slate-300);
+  }
+}
+
+.nav-mobile .nav-item.is-open>.nav-panel {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-mobile .nav-row {
+  border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+}
+
+.nav-mobile .nav-row>a {
+  flex: 1 1 auto;
+  border-bottom: 0;
+}
+
+/* Thumb-sized: the row is the link, so the caret needs its own target big
+   enough to hit without opening the page underneath it. */
+.nav-mobile .nav-caret {
+  flex: 0 0 auto;
+  width: 44px;
+  height: 44px;
+  font-size: 22px;
+}
+
+.nav-mobile .nav-panel {
+  margin: 4px 0 6px 8px;
+  padding-left: 14px;
+  border-left: 2px solid rgba(99, 102, 241, 0.4);
+}
+
+.nav-mobile .nav-panel a {
+  padding: 12px 6px;
+  font-size: 15.5px;
+  font-weight: 500;
+  color: var(--slate-300);
+}
+
+.nav-mobile .nav-panel a:hover {
+  color: var(--white);
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .nav-caret,
+  .nav-desktop .nav-panel {
+    transition: none;
+  }
+}
+
+/* ---------- 6. Hero ---------- */
+.hero-section {
+  position: relative;
+  overflow: hidden;
+  padding-top: 92px;
+}
+
+.hero-container {
+  padding-top: clamp(50px, 7vw, 60px);
+  padding-bottom: clamp(50px, 7vw, 100px);
+  z-index: 1;
+}
+
+.hero-grid-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image: linear-gradient(rgba(148, 163, 184, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.07) 1px, transparent 1px);
+  background-size: 64px 64px;
+  -webkit-mask-image: radial-gradient(ellipse 90% 70% at 50% 20%, #000, transparent 78%);
+  mask-image: radial-gradient(ellipse 90% 70% at 50% 20%, #000, transparent 78%);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 8px 16px 8px 12px;
+  margin-bottom: 16px;
+  border-radius: var(--pill);
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.badge-live {
+  border: 1px solid rgba(52, 211, 153, 0.28);
+  background: rgba(16, 185, 129, 0.1);
+  color: var(--success);
+}
+
+.badge-live .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--green-soft);
+  box-shadow: 0 0 0 4px rgba(52, 211, 153, 0.18);
+  animation: blink 2.4s ease-in-out infinite;
+}
+
+.hero-tag {
+  font-size: 14px;
+  color: var(--indigo-soft);
+}
+
+.hero-title {
+  font-size: var(--h-hero);
+  line-height: 1.03;
+  letter-spacing: -0.04em;
+}
+
+.hero-role {
+  font-size: clamp(20px, 2.6vw, 32px);
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  background: var(--grad-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-lede {
+  font-size: clamp(16px, 1.3vw, 18.5px);
+  line-height: 1.65;
+  color: var(--gray-400);
+}
+
+
+.hero-visual {
+  position: relative;
+  min-width: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  min-height: clamp(320px, 50vw, 560px);
+}
+
+.hero-visual-image {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.portrait-frame {
+  position: relative;
+  z-index: 2;
+  display: block;
+  width: min(88%, 430px);
+  overflow: hidden;
+  border-radius: 26px 26px 18px 18px;
+}
+
+.portrait-aura {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(96%, 470px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: conic-gradient(from 200deg, var(--blue), var(--indigo), var(--purple), var(--blue));
+  filter: blur(58px);
+  opacity: 0.5;
+}
+
+.portrait-plate {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(90%, 420px);
+  aspect-ratio: 1;
+  border-radius: 50% 50% 46% 46% / 48%;
+  background: linear-gradient(165deg, rgba(96, 165, 250, 0.22), rgba(124, 58, 237, 0.08));
+  border: 1px solid rgba(148, 163, 184, 0.18);
+}
+
+.portrait {
+  position: relative;
+  z-index: 2;
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: inherit;
+}
+
+.chip {
+  position: absolute;
+  z-index: 3;
+  padding: 11px 15px;
+  border-radius: 14px;
+  font-size: 12.5px;
+  white-space: nowrap;
+  background: rgba(15, 23, 42, 0.82);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 16px 40px -18px rgba(2, 6, 23, 0.9);
+}
+
+.chip-1 {
+  top: 14%;
+  left: 0;
+  color: var(--blue-300);
+  border: 1px solid rgba(129, 140, 248, 0.34);
+}
+
+.chip-2 {
+  top: 44%;
+  right: 0;
+  color: var(--purple-300);
+  border: 1px solid rgba(168, 85, 247, 0.34);
+}
+
+.chip-3 {
+  bottom: 16%;
+  left: 2%;
+  color: var(--indigo-300);
+  border: 1px solid rgba(96, 165, 250, 0.3);
+}
+
+.marquee {
+  position: relative;
+  z-index: 1;
+  padding-block: 22px;
+  overflow: hidden;
+  border-top: 1px solid rgba(148, 163, 184, 0.14);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+  cursor: grab;
+  touch-action: pan-y;
+}
+
+.marquee:active {
+  cursor: grabbing;
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  /* Two identical rows, so translating -50% loops seamlessly. Previously driven
+     by GSAP and then by Swiper; now pure CSS with no JS dependency. */
+  animation: marquee 26s linear infinite;
+}
+
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
+}
+
+.marquee-row {
+  display: flex;
+  gap: 52px;
+  padding-right: 52px;
+  flex: 0 0 auto;
+}
+
+.marquee-track span {
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  color: var(--gray-on-dark);
+}
+
+/* ---------- 7. About ---------- */
+.stat-card {
+  padding: 30px 26px;
+  border-radius: 22px;
+  background: var(--white);
+  border: 1px solid var(--line-light);
+  box-shadow: var(--shadow-card);
+  transition: transform 0.35s var(--ease), box-shadow 0.35s;
+}
+
+.stat-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 50px -24px rgba(37, 99, 235, 0.35);
+}
+
+.stat-num {
+  display: block;
+  font-size: clamp(34px, 4vw, 48px);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  background: var(--grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.stat-label {
+  display: block;
+  margin-top: 10px;
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--gray);
+}
+
+/* ---------- 8. Skills ---------- */
+.skill-grid {
+}
+
+.skill {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  /* The label is an anonymous flex item beside the icon. The column counts are
+     chosen so "WooCommerce" — the widest — always fits on one line, but these
+     two make a longer label wrap inside the card rather than spill over the
+     card beside it. */
+  min-width: 0;
+  overflow-wrap: anywhere;
+  padding: 20px;
+  border-radius: var(--r-md);
+  background: var(--light);
+  border: 1px solid var(--line-light);
+  font-size: 15.5px;
+  font-weight: 700;
+  color: var(--dark);
+  transition: transform 0.3s var(--ease), border-color 0.3s, background 0.3s;
+}
+
+.skill:hover {
+  transform: translateY(-5px);
+  border-color: var(--indigo-100);
+  background: var(--white);
+}
+
+.skill-icon {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: var(--r-sm);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.icon-blue {
+  background: rgba(37, 99, 235, 0.1);
+  color: var(--blue);
+}
+
+.icon-indigo {
+  background: rgba(79, 70, 229, 0.1);
+  color: var(--indigo);
+}
+
+.icon-purple {
+  background: rgba(124, 58, 237, 0.1);
+  color: var(--purple);
+}
+
+.icon-green {
+  background: rgba(16, 185, 129, 0.12);
+  color: var(--green-600);
+}
+
+.icon-dark {
+  background: rgba(15, 23, 42, 0.08);
+  color: var(--dark);
+}
+
+/* ---------- 9. Experience ---------- */
+.timeline {
+  /* No margin-top: the .section-head above already contributes --head-gap, the
+     same gap every other section gives the block under its heading. */
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.job {
+  padding: clamp(24px, 3vw, 34px);
+  border-radius: var(--r-lg);
+  /* Opaque, not translucent: each card has to occlude the one it slides over. */
+  background: var(--card-900);
+  border: 1px solid var(--line-dark);
+  transition: transform 0.35s var(--ease), border-color 0.35s;
+  /* Sticky stack — each card parks 16px lower than the one before it. */
+  position: sticky;
+  top: calc(var(--header-h) + 22px + var(--k, 0) * 16px);
+}
+
+/* Each card parks one step lower than the one before it. --k is the card's
+   index; a card past the end of this ladder falls back to 0 and would park on
+   top of the first one, so extend this if the timeline ever grows past eight. */
+.job:nth-child(1) { --k: 0; }
+.job:nth-child(2) { --k: 1; }
+.job:nth-child(3) { --k: 2; }
+.job:nth-child(4) { --k: 3; }
+.job:nth-child(5) { --k: 4; }
+.job:nth-child(6) { --k: 5; }
+.job:nth-child(7) { --k: 6; }
+.job:nth-child(8) { --k: 7; }
+
+.job:hover {
+  transform: translateY(-4px);
+  border-color: rgba(129, 140, 248, 0.45);
+}
+
+.job-current {
+  background: linear-gradient(140deg, var(--card-800), var(--card-900));
+  border-color: rgba(129, 140, 248, 0.26);
+}
+
+.job-current:hover {
+  border-color: rgba(168, 85, 247, 0.55);
+}
+
+.job-year {
+  font-size: 12.5px;
+  letter-spacing: 0.1em;
+  color: var(--gray-on-dark);
+}
+
+.job-current .job-year {
+  color: var(--indigo-300);
+}
+
+.job h3 {
+  margin-top: 12px;
+  font-size: clamp(19px, 2vw, 25px);
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  color: var(--light);
+}
+
+.job-company {
+  margin-top: 7px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--indigo-soft);
+}
+
+.job-desc {
+  align-self: center;
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--gray-400);
+}
+
+.section-dark .job-desc a {
+  color: var(--indigo-300);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.section-dark .job-desc a:hover {
+  color: var(--white);
+}
+
+/* ---------- 10. Projects ---------- */
+.project {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: var(--r-lg);
+  background: var(--white);
+  border: 1px solid var(--line-light);
+  box-shadow: var(--shadow-card);
+  transition: transform 0.4s var(--ease), box-shadow 0.4s;
+}
+
+.project:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lift);
+}
+
+.project-media {
+  aspect-ratio: 5 / 3;
+  overflow: hidden;
+  background: var(--surface-100);
+}
+
+.project-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s var(--ease);
+}
+
+.project:hover .project-media img {
+  transform: scale(1.06);
+}
+
+.project-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 26px;
+}
+
+.project-body h3 {
+  font-size: var(--h3);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--dark);
+}
+
+.project-body>p {
+  flex: 1;
+  font-size: 15.5px;
+  line-height: 1.65;
+  color: var(--gray);
+}
+
+.tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tech-list li {
+  padding: 6px 12px;
+  border-radius: 8px;
+  background: var(--surface-200);
+  font-size: 11.5px;
+  color: var(--slate-500);
+}
+
+.project .btn-row {
+  gap: 10px;
+  margin-top: 6px;
+}
+
+/* ---------- 11. Contact ---------- */
+.section-contact {
+  padding-bottom: clamp(80px, 9vw, 128px);
+}
+
+/* The closing CTA is a panel, so its container has to sit above the glow layer
+   the way the hero container does — otherwise the blur paints across the card. */
+.section-contact .container {
+  position: relative;
+  z-index: 1;
+}
+
+.contact-grid-bg {
+  -webkit-mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, #000, transparent 76%);
+  mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, #000, transparent 76%);
+}
+
+.contact-cta-shell {
+  max-width: 1040px;
+  margin: 0 auto;
+}
+
+.contact-cta-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 22px;
+  padding: clamp(20px, 6vw, 64px);
+  border-radius: 28px;
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.82), rgba(15, 23, 42, 0.72));
+  box-shadow: 0 22px 52px rgba(15, 23, 42, 0.2);
+}
+
+.contact-cta-copy {
+  display: grid;
+  gap: 14px;
+  align-content: center;
+  text-align: center;
+}
+
+.contact-cta-copy .badge {
+  margin-bottom: 0;
+}
+
+.contact-cta-copy .eyebrow {
+  justify-content: center;
+  margin: 0;
+}
+
+.contact-cta-card h2 {
+  margin: 0;
+  text-align: center;
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  line-height: 1.04;
+  letter-spacing: -0.05em;
+}
+
+.contact-cta-card .body-lg {
+  margin: 0 auto;
+  max-width: 680px;
+  color: rgba(226, 232, 240, 0.9);
+}
+
+.contact-cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+/* A centred row: each child is a column, so the measures that used to be
+   max-widths (title 800, lede 560, form 720) are column widths now. */
+.contact-inner {
+  text-align: center;
+}
+
+.contact-title {
+  margin-top: 22px;
+  font-size: clamp(30px, 5vw, 64px);
+  line-height: 1.06;
+  letter-spacing: -0.04em;
+}
+
+.contact-lede {
+  margin-top: 22px;
+}
+
+.contact-inner .btn-row {
+  margin-top: 38px;
+}
+
+.contact-form {
+  display: grid;
+  gap: 16px;
+  text-align: left;
+  margin-top: clamp(44px, 5vw, 68px);
+  padding: clamp(22px, 3vw, 36px);
+  border-radius: 26px;
+  background: rgba(148, 163, 184, 0.06);
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.contact-form label {
+  display: grid;
+  gap: 8px;
+}
+
+.field-label {
+  font-size: 11.5px;
+  letter-spacing: 0.1em;
+  color: var(--gray-400);
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+  width: 100%;
+  padding: 15px 16px;
+  border-radius: 14px;
+  border: 1px solid rgba(148, 163, 184, 0.24);
+  background: rgba(15, 23, 42, 0.55);
+  color: var(--light);
+  font-family: inherit;
+  font-size: 16px;
+  line-height: 1.6;
+  outline: none;
+  transition: border-color 0.25s;
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* Native select, themed to match text inputs rather than left as browser chrome. */
+.contact-form select {
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%2394A3B8' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  padding-right: 42px;
+}
+
+.contact-form select:invalid {
+  color: var(--placeholder);
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: var(--placeholder);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus,
+.contact-form select:focus {
+  border-color: var(--indigo-soft);
+}
+
+.contact-form input[aria-invalid="true"],
+.contact-form textarea[aria-invalid="true"],
+.contact-form select[aria-invalid="true"] {
+  border-color: var(--danger-strong);
+}
+
+/* Honeypot. Kept out of the layout and out of the accessibility tree rather than
+   display:none, which some bots skip. Real visitors never see or tab into it. */
+.form-hp {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.form-foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  margin-top: 4px;
+}
+
+.form-note {
+  font-size: 14px;
+  color: var(--gray-400);
+}
+
+.form-note.is-ok {
+  color: var(--success);
+}
+
+.form-note.is-error {
+  color: var(--danger);
+}
+
+/* Point-of-collection notice under the contact forms. Sits outside .form-foot so
+   it stays a full-width line rather than becoming a third item in that flex row. */
+.form-privacy {
+  margin: 14px 0 0;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--gray-400);
+}
+
+/* Contact page hero only. .contact-inner/.contact-title/.contact-form are shared
+   with the homepage's centred contact block, so nothing above is edited: the
+   two-column variant overrides here and the homepage keeps its own layout. */
+.contact-split {
+  text-align: left;
+}
+
+.contact-split .badge {
+  margin-bottom: 0;
+}
+
+.contact-split .contact-title {
+  margin-top: 20px;
+  font-size: clamp(30px, 4vw, 52px);
+}
+
+.contact-split .contact-lede {
+  margin-bottom: 0;
+}
+
+.contact-split .btn-row {
+  margin-top: 30px;
+}
+
+/* In one column the form followed the copy and needed the gap; beside it, the
+   two columns start together. */
+.contact-split .contact-form {
+  margin-top: 0;
+}
+
+/* The details band continues the hero, so it takes a reduced top gap rather than
+   a full section one. The label's own margin is dropped with it: at padding-top
+   0 that margin collapsed straight out of the section. */
+.section-details {
+  padding-top: clamp(40px, 5vw, 64px);
+}
+
+/* ---------- 12. Footer ---------- */
+.site-footer {
+  background: var(--dark-deep);
+  border-top: 1px solid rgba(148, 163, 184, 0.14);
+  padding: clamp(40px, 5vw, 60px) 0 34px;
+}
+
+.footer-top>.row {
+  --bs-gutter-x: clamp(32px, 5vw, 64px);
+  --bs-gutter-y: clamp(32px, 5vw, 64px);
+}
+
+/* The brand column is a .col-12.col-lg-5, so its width is the measure and
+   nothing here caps it. Note a cap must never go on the column itself: that
+   would stop it reaching col-lg-5 and leave the links column short of the
+   container edge. */
+
+.footer-blurb {
+  margin-top: 18px;
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--gray-on-dark);
+}
+
+.footer-cols nav,
+.footer-cols>div {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  min-width: 0;
+}
+
+.footer-head {
+  font-size: 11.5px;
+  letter-spacing: 0.1em;
+  /* Dark footer: --slate-500 lands at 2.5:1 here, well under the 4.5 these
+     11.5px labels need. --gray-on-dark is the token meant for this ground. */
+  color: var(--gray-on-dark);
+}
+
+.footer-cols a {
+  font-size: 14.5px;
+  line-height: 1.4;
+  color: var(--gray-400);
+  overflow-wrap: anywhere;
+  transition: color 0.25s;
+}
+
+.footer-cols a:hover {
+  color: var(--light);
+}
+
+.footer-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 34px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(148, 163, 184, 0.1);
+}
+
+.copyright {
+  font-size: 12.5px;
+  color: var(--gray-on-dark);
+}
+
+.to-top-inline {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 10px 18px;
+  border-radius: var(--pill);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--gray-400);
+  transition: color 0.25s, border-color 0.25s;
+}
+
+.to-top-inline:hover {
+  color: var(--light);
+  border-color: rgba(129, 140, 248, 0.5);
+}
+
+.wa-float {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 90;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--whatsapp);
+  color: var(--white);
+  box-shadow: 0 14px 34px -12px rgba(37, 211, 102, 0.85);
+  transition: transform 0.3s var(--ease), box-shadow 0.3s;
+}
+
+.wa-float:hover {
+  color: var(--white);
+  transform: translateY(-4px) scale(1.04);
+  box-shadow: 0 20px 40px -12px rgba(37, 211, 102, 0.95);
+}
+
+.wa-float svg {
+  display: block;
+}
+
+/* ---------- 13. Motion ---------- */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes glowPulse {
+
+  0%,
+  100% {
+    opacity: 0.55;
+  }
+
+  50% {
+    opacity: 0.9;
+  }
+}
+
+@keyframes blink {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.15;
+  }
+}
+
+.no-js
+
+/* ---------- 14. Responsive ---------- */
+/* ---------- 15. Inner pages: breadcrumb, process, FAQ, case studies ---------- */
+.breadcrumb {
+  margin-bottom: 22px;
+}
+
+.breadcrumb ol {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 13px;
+  font-family: var(--mono);
+}
+
+.breadcrumb li+li::before {
+  content: "/";
+  margin-right: 8px;
+  color: var(--slate-300);
+}
+
+.breadcrumb a {
+  color: var(--indigo);
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb [aria-current] {
+  color: var(--slate-500);
+}
+
+.section-dark .breadcrumb a {
+  color: var(--indigo-soft);
+}
+
+.section-dark .breadcrumb [aria-current] {
+  color: var(--gray-on-dark);
+}
+
+.section-dark .breadcrumb li+li::before {
+  color: var(--slate-500);
+}
+
+/* About page: the photo timeline. On desktop it is a centre spine with the
+   entries alternating either side, a year badge sitting on the rail and a short
+   connector reaching from the badge to the card. Below lg the spine is dropped
+   entirely and each entry becomes a stacked card with the year above it, which
+   keeps the photos full width instead of squeezing them into a gutter. */
+.photo-timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(30px, 4vw, 46px);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ptl-entry {
+  position: relative;
+}
+
+/* The thread is a sibling of the <ol>, not a child -- a list may only contain
+   list items -- so both sit in a positioned wrapper. */
+.ptl-wrap {
+  position: relative;
+}
+
+.ptl-line {
+  display: none;
+}
+
+.ptl-year {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 76px;
+  margin: 0 0 14px;
+  padding: 7px 14px;
+  border: 1px solid var(--line-light);
+  border-radius: 999px;
+  background: var(--white);
+  color: var(--indigo);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  box-shadow: var(--shadow-card);
+}
+
+.ptl-card {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--line-light);
+  border-radius: var(--r-lg);
+  background: var(--white);
+  box-shadow: var(--shadow-card);
+  transition:
+    transform 0.5s cubic-bezier(0.2, 0.7, 0.3, 1),
+    box-shadow 0.5s cubic-bezier(0.2, 0.7, 0.3, 1);
+}
+
+.ptl-shot {
+  overflow: hidden;
+  background: var(--surface-tint);
+}
+
+.ptl-shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.7s cubic-bezier(0.2, 0.7, 0.3, 1);
+}
+
+.ptl-body {
+  padding: clamp(22px, 2.6vw, 30px);
+  border-top: 1px solid var(--line-light);
+}
+
+.ptl-place {
+  margin: 0 0 10px;
+  font-size: 11.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gray-strong);
+}
+
+.ptl-body h3 {
+  margin: 0 0 12px;
+  font-size: clamp(20px, 2.1vw, 26px);
+}
+
+.ptl-body p:not(.ptl-place) {
+  margin: 0;
+  color: var(--gray-700);
+  line-height: 1.75;
+}
+
+@media (hover: hover) {
+  .ptl-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lift);
+  }
+
+  .ptl-card:hover .ptl-shot img {
+    transform: scale(1.04);
+  }
+}
+
+@media (min-width: 992px) {
+  /* The thread. The track is the full grey line; the fill is drawn over it by
+     anim.js as the section scrolls, with the drop riding the fill's leading
+     edge. The fill defaults to full height so a page without GSAP -- a CDN
+     failure, or prefers-reduced-motion, where anim.js stands down -- shows a
+     finished line rather than none at all. */
+  .ptl-line {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    transform: translateX(-50%);
+    background: var(--line-light);
+    border-radius: 2px;
+  }
+
+  .ptl-line-fill {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 2px;
+    background: linear-gradient(180deg, var(--blue), var(--indigo) 60%, var(--purple));
+  }
+
+  .ptl-drop {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 11px;
+    height: 11px;
+    transform: translate(-50%, 50%);
+    border-radius: 50%;
+    background: var(--indigo);
+    box-shadow:
+      0 0 0 4px var(--surface-tint),
+      0 0 0 6px rgba(79, 70, 229, 0.18),
+      0 6px 18px -4px rgba(79, 70, 229, 0.7);
+  }
+
+  .ptl-entry {
+    display: grid;
+    grid-template-columns: 1fr 120px 1fr;
+    align-items: start;
+  }
+
+  .ptl-line {
+    display: block;
+  }
+
+  /* The badge sticks inside its own grid area, so each year holds at the top of
+     the viewport for exactly as long as its entry is being read and is then
+     pushed out by the next one. Same offset as .sticky-head and .post-aside --
+     the header is fixed, so anything pinned has to clear it. */
+  .ptl-year {
+    position: sticky;
+    top: calc(var(--header-h) + 28px);
+    z-index: 1;
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: center;
+    margin: clamp(18px, 2vw, 30px) 0 0;
+  }
+
+  .ptl-card {
+    grid-row: 1;
+  }
+
+  .ptl-entry:nth-child(odd) .ptl-card {
+    grid-column: 1;
+  }
+
+  .ptl-entry:nth-child(even) .ptl-card {
+    grid-column: 3;
+  }
+
+  /* Connector from the badge out to the card it belongs to. It hangs off the
+     badge rather than the entry so that it stays attached while the badge is
+     pinned; the badge is centred in a 120px column, leaving 22px each side. */
+  .ptl-year::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 22px;
+    height: 1px;
+    background: var(--line-light);
+  }
+
+  .ptl-entry:nth-child(odd) .ptl-year::after {
+    right: 100%;
+  }
+
+  .ptl-entry:nth-child(even) .ptl-year::after {
+    left: 100%;
+  }
+}
+
+/* Portrait clip in the About hero. It is the hero's visual layer, so it carries
+   data-anim-layer="frame" and the box inside it data-anim-layer="image": the
+   frame fades in and clips while the clip slides up inside it on load.
+
+   The height is set rather than capped. It renders at the same 400px it always
+   did, but the inner box is now a percentage of the frame instead of a fixed
+   1200px -- a leftover from the YouTube embed, which had to be oversized to push
+   its letterboxing outside the crop. A local <video> crops with object-fit, and
+   an inner box eight hundred pixels taller than its mask made the slide-in
+   travel three frame-heights. */
+.about-video-frame {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  height: clamp(250px, 40vw, 400px);
+  overflow: hidden;
+  border-radius: var(--r-lg);
+  border: 1px solid var(--line-dark);
+  background: rgba(255, 255, 255, 0.04);
+  box-shadow: 0 30px 60px -30px rgba(2, 6, 23, 0.75);
+}
+
+.about-video-embed {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  border-radius: var(--r-md);
+  overflow: hidden;
+  background: var(--dark);
+}
+
+/* object-fit does the cropping the YouTube letterboxing used to do. Both the
+   still and the clip are cropped identically, so the handover from one to the
+   other is invisible. */
+.about-video-poster,
+.about-video-embed video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 0;
+}
+
+/* The still sits underneath and fills the box. The video paints over it once it
+   has frames; until then the video area is transparent and this shows through,
+   so there is no empty panel while the MP4 loads -- and if the MP4 never loads
+   at all, the frame still holds a picture. */
+.about-video-poster {
+  position: absolute;
+  inset: 0;
+}
+
+/* The clip crosses over the still once it has a frame. .is-loading is added by
+   the page's own script and removed on loadeddata, so the fade only exists when
+   there is JS to end it -- an opacity:0 default in CSS would strand the video
+   invisible on any page where the script did not run.
+
+   500ms with the site's standard easing: long enough to read as a dissolve
+   rather than a swap, short enough not to feel like a wait. */
+.about-video-embed video {
+  position: relative;
+  transition: opacity 0.5s var(--ease);
+}
+
+.about-video-embed video.is-loading {
+  opacity: 0;
+}
+
+/* Reduced motion still gets the handover, just not the animation of it. */
+@media (prefers-reduced-motion: reduce) {
+  .about-video-embed video {
+    transition: none;
+  }
+}
+
+/* Feature / benefit cards */
+.feature-card {
+  background: var(--white);
+  border: 1px solid var(--line-light);
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow-card);
+  padding: clamp(22px, 3vw, 30px);
+}
+
+.feature-card h3 {
+  margin: 0 0 10px;
+  font-size: var(--h4);
+}
+
+.feature-card p {
+  margin: 0;
+  color: var(--gray-700);
+  line-height: 1.7;
+}
+
+.feature-icon {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  margin-bottom: 16px;
+  border-radius: 12px;
+  background: var(--grad);
+  color: #fff;
+  font-family: var(--mono);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.feature-card--featured {
+  border-color: var(--indigo);
+  box-shadow: 0 0 0 1px var(--indigo), var(--shadow-card);
+  position: relative;
+}
+
+.feature-card--featured-tag {
+  display: inline-block;
+  margin-bottom: 12px;
+  padding: 4px 10px;
+  border-radius: var(--pill);
+  background: var(--indigo);
+  color: #fff;
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.section-dark .feature-card {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: var(--line-dark);
+}
+
+.section-dark .feature-card p {
+  color: var(--gray-400);
+}
+
+/* Numbered process */
+.process-list {
+  counter-reset: step;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 26px;
+}
+
+.process-list li {
+  counter-increment: step;
+  position: relative;
+  padding-left: 68px;
+}
+
+/* A rule from each badge down to the next one, so five steps read as one
+   sequence rather than five unrelated blocks. It softens downwards but stays
+   visible all the way to the next badge, so the steps read as connected. The
+   last step has nothing to connect to. */
+.process-list li:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  left: 22px;
+  top: 58px;
+  bottom: -26px;
+  width: 2px;
+  border-radius: 2px;
+  background: linear-gradient(to bottom, var(--indigo-300), rgba(165, 180, 252, 0.4));
+}
+
+.process-list li::before {
+  content: counter(step, decimal-leading-zero);
+  position: absolute;
+  left: 0;
+  top: 2px;
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 13px;
+  background: var(--grad);
+  color: #fff;
+  font-family: var(--mono);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.process-list h3 {
+  margin: 0 0 8px;
+  font-size: var(--h4);
+}
+
+.process-list p {
+  margin: 0;
+  color: var(--gray-700);
+  line-height: 1.7;
+}
+
+.section-dark .process-list p {
+  color: var(--gray-400);
+}
+
+/* Check list */
+/* Its own grid only when it is not a Bootstrap row. Where the list needs to run
+   in columns the markup adds .row.row-cols-*, and this must not fight it. */
+.check-list {
+  list-style: none;
+  padding: 0;
+}
+
+/* margin stays off the .row case: a blanket margin:0 would zero the negative
+   inline margins Bootstrap uses to keep column content flush with the container. */
+.check-list:not(.row) {
+  margin: 0;
+  display: grid;
+  gap: 13px;
+}
+
+/* As a Bootstrap column each item already carries half the row gutter in its
+   padding; the 32px the checkmark needs has to be added to that, not replace
+   it, or the icon space swallows the gutter and the columns sit lopsided. */
+.check-list.row > li {
+  padding-left: calc(var(--bs-gutter-x) * 0.5 + 32px);
+}
+
+.check-list.row > li::before {
+  left: calc(var(--bs-gutter-x) * 0.5);
+}
+
+.check-list li {
+  position: relative;
+  padding-left: 32px;
+  color: var(--gray-700);
+  line-height: 1.7;
+}
+
+.check-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 18px;
+  height: 18px;
+  border-radius: 6px;
+  background: var(--grad);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23fff' d='M9.6 16.2 5.4 12l-1.4 1.4 5.6 5.6L20.4 8.2 19 6.8z'/%3E%3C/svg%3E") center / 100% no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23fff' d='M9.6 16.2 5.4 12l-1.4 1.4 5.6 5.6L20.4 8.2 19 6.8z'/%3E%3C/svg%3E") center / 100% no-repeat;
+}
+
+.section-dark .check-list li {
+  color: var(--gray-400);
+}
+
+/* Tech chips */
+.tech-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.tech-chips li {
+  padding: 8px 15px;
+  border-radius: var(--pill);
+  border: 1px solid var(--line-light);
+  background: var(--white);
+  color: var(--slate-500);
+  font-family: var(--mono);
+  font-size: 12.5px;
+}
+
+.section-dark .tech-chips li {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--line-dark);
+  color: var(--gray-400);
+}
+
+/* FAQ */
+.section-faq-center {
+  text-align: center;
+}
+
+/* The head is a centred column now, so its width and centring come from the
+   grid; only the head-gap belongs here. */
+.section-faq-center .section-head {
+  margin-bottom: 26px;
+}
+
+.section-faq-center .eyebrow {
+  justify-content: center;
+}
+
+.section-faq-center .faq-list {
+  margin-inline: auto;
+  width: min(100%, 820px);
+}
+
+.section-faq-center .faq-item,
+.section-faq-center .faq-item summary,
+.section-faq-center .faq-body {
+  text-align: left;
+}
+
+.faq-list {
+  display: grid;
+  gap: 14px;
+  max-width: min(100%, 980px);
+}
+
+.faq-item {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid var(--line-light);
+  border-radius: var(--r-md);
+  overflow: hidden;
+  box-shadow: 0 18px 34px rgba(15, 23, 42, 0.04);
+  transition: border-color 0.3s var(--ease), box-shadow 0.3s var(--ease), transform 0.3s var(--ease);
+}
+
+.faq-item[open] {
+  border-color: rgba(99, 102, 241, 0.28);
+  box-shadow: 0 18px 34px rgba(79, 70, 229, 0.08);
+}
+
+.faq-item summary {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 20px 56px 20px 24px;
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--dark);
+  list-style: none;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary::after {
+  content: "\ea13";
+  /* ri-add-line */
+  position: absolute;
+  top: 21px;
+  right: 22px;
+  font-family: "remixicon";
+  font-size: 20px;
+  line-height: 1;
+  color: var(--indigo);
+  transition: transform 0.3s var(--ease);
+}
+
+.faq-item[open] summary::after {
+  content: "\f1af";
+  /* ri-subtract-line */
+  transform: rotate(180deg);
+}
+
+.faq-item .faq-body {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transition: grid-template-rows 0.25s ease, opacity 0.2s ease, padding 0.2s ease;
+}
+
+.faq-item[open] .faq-body {
+  grid-template-rows: 1fr;
+  opacity: 1;
+}
+
+.faq-item .faq-body > * {
+  overflow: hidden;
+}
+
+.faq-body {
+  padding: 0 24px 0;
+  margin: 0;
+  color: var(--gray-700);
+  line-height: 1.7;
+  max-width: 64ch;
+}
+
+.faq-item[open] .faq-body {
+  padding: 0 24px 22px;
+}
+
+/* Portfolio grid */
+.case-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--white);
+  border: 1px solid var(--line-light);
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
+}
+
+.case-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lift);
+}
+
+.case-card img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 5 / 3;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.case-card-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 12px;
+  padding: clamp(22px, 3vw, 28px);
+}
+
+.case-card h2,
+.case-card h3 {
+  margin: 0;
+  font-size: var(--h3);
+}
+
+.case-card p {
+  margin: 0;
+  color: var(--gray-700);
+  line-height: 1.7;
+}
+
+.case-card .btn-row {
+  margin-top: auto;
+  padding-top: 6px;
+}
+
+/* Case study detail */
+.case-meta {
+  margin: 0;
+}
+
+.case-meta>div {
+  --bs-gutter-x: 18px;
+  padding: 15px 0;
+  border-top: 1px solid var(--line-light);
+}
+
+.case-meta>div:last-child {
+  border-bottom: 1px solid var(--line-light);
+}
+
+.case-meta dt {
+  font-family: var(--mono);
+  font-size: 11.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--indigo);
+}
+
+.case-meta dd {
+  margin: 0;
+  color: var(--gray-700);
+  line-height: 1.7;
+}
+
+/* Case study hero: copy beside the screenshot, with the project's facts as one
+   scannable line underneath. */
+/* Split hero used by the case studies and the blog index: breadcrumb and copy
+   in one column, the visual in the other. The breadcrumb sits inside the copy
+   column, so the row starts at the top of the hero with no gap of its own. */
+.hero-split {
+  margin-top: 0;
+}
+
+.hero-split h1 {
+  margin-top: 0;
+}
+
+.case-hero-shot {
+  box-shadow: 0 30px 60px -30px rgba(2, 6, 23, 0.75);
+}
+
+.case-facts {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 18px;
+  margin: clamp(30px, 4vw, 44px) 0 0;
+  padding-top: 22px;
+  border-top: 1px solid var(--line-dark);
+  list-style: none;
+  font-size: 12.5px;
+  color: var(--gray-on-dark);
+}
+
+.case-facts li+li::before {
+  content: "\00b7";
+  margin-right: 18px;
+  color: var(--slate-500);
+}
+
+.case-facts a {
+  color: var(--indigo-soft);
+}
+
+.case-facts a:hover {
+  color: var(--white);
+}
+
+.case-facts i {
+  margin-left: 4px;
+  font-size: 13px;
+  vertical-align: -1px;
+}
+
+.page-intro .tech-chips {
+  margin-top: 24px;
+}
+
+/* ---- Case study page ---------------------------------------------------
+   The narrative runs as four labelled beats rather than four headings in a
+   column: a mono label and headline on the left, the prose on the right, with
+   a hairline between beats. .case-block below is the older single-column
+   version, still used by the other five case studies. */
+.case-split+.case-split {
+  margin-top: clamp(38px, 5vw, 60px);
+  padding-top: clamp(38px, 5vw, 60px);
+  border-top: 1px solid var(--line-light);
+}
+
+.case-split h2 {
+  margin: 0;
+  font-size: clamp(24px, 2.6vw, 34px);
+}
+
+.case-split .eyebrow {
+  margin-bottom: 12px;
+}
+
+.case-split p {
+  color: var(--gray-700);
+  line-height: 1.75;
+}
+
+/* A heading column that tracks the content beside it, so a long list never
+   leaves you reading with no idea which section it belongs to. Used by the
+   case-study beats and the service pages' process section. Desktop only: at
+   narrow widths the two are stacked and there is nothing to track.
+
+   It has to sit inside the Bootstrap column rather than on it — a stretched
+   flex item is already the full height of the row and has nowhere to stick. */
+@media (min-width: 992px) {
+  .sticky-head {
+    position: sticky;
+    top: calc(var(--header-h) + 28px);
+  }
+}
+
+/* Mono kicker inside a card — a sector on a case card, a beat name on a
+   summary card. Beats .case-card p / .feature-card p on specificity. */
+.case-label {
+  margin: 0 0 4px;
+  font-size: 11.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.feature-card .case-label,
+.case-card .case-label {
+  color: var(--indigo);
+}
+
+/* Screenshot framed as a browser window. The bar and the three dots are drawn
+   from the .shot box itself, so no second image ships for the chrome. */
+.shot-browser {
+  position: relative;
+  padding-top: 42px;
+}
+
+.shot-browser::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 42px;
+  background: var(--surface-200);
+  border-bottom: 1px solid var(--line-light);
+}
+
+.shot-browser::after {
+  content: "";
+  position: absolute;
+  top: 16px;
+  left: 18px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--slate-300);
+  box-shadow: 18px 0 0 var(--slate-300), 36px 0 0 var(--slate-300);
+}
+
+.section-dark .shot-browser::before {
+  background: rgba(255, 255, 255, 0.07);
+  border-bottom-color: var(--line-dark);
+}
+
+.section-dark .shot-browser::after {
+  background: var(--slate-500);
+  box-shadow: 18px 0 0 var(--slate-500), 36px 0 0 var(--slate-500);
+}
+
+.case-block+.case-block {
+  margin-top: 44px;
+}
+
+.case-block h2 {
+  font-size: clamp(24px, 2.6vw, 34px);
+  margin: 0 0 16px;
+}
+
+.case-block p {
+  color: var(--gray-700);
+  line-height: 1.75;
+}
+
+.shot {
+  margin: 0;
+  border: 1px solid var(--line-light);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  background: var(--white);
+}
+
+.shot img {
+  width: 100%;
+  height: auto;
+}
+
+.shot figcaption {
+  padding: 14px 20px;
+  font-size: 13.5px;
+  color: var(--slate-500);
+  border-top: 1px solid var(--line-light);
+}
+
+/* Placeholder images awaiting real artwork. The dashed border and the caption prefix
+   are deliberately loud so these cannot ship unnoticed — remove the `is-placeholder`
+   class from the <figure> once the real image is in place. */
+.shot.is-placeholder {
+  border: 2px dashed var(--indigo-soft);
+  background: rgba(79, 70, 229, 0.04);
+}
+
+.shot.is-placeholder figcaption {
+  color: var(--indigo);
+}
+
+.shot.is-placeholder figcaption::before {
+  content: "Placeholder \2014 ";
+  font-family: var(--mono);
+  font-size: 11.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* The generation prompt, printed on the page so it can be copied without opening
+   the source. Disappears with the is-placeholder class. */
+.ph-prompt {
+  display: block;
+  overflow-wrap: anywhere;
+  margin-top: 16px;
+  padding: 18px 20px;
+  border-radius: var(--r-sm);
+  border: 1px solid rgba(79, 70, 229, 0.28);
+  background: rgba(79, 70, 229, 0.06);
+  color: var(--slate-500);
+  font-size: 13.5px;
+  line-height: 1.65;
+  text-align: left;
+}
+
+.ph-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.ph-size,
+.ph-ratio {
+  padding: 4px 11px;
+  border-radius: var(--pill);
+  background: var(--grad);
+  color: #fff;
+  font-family: var(--mono);
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.ph-ratio {
+  background: rgba(79, 70, 229, 0.16);
+  /* --indigo on this tint is 4.0:1 at 11.5px; one step darker clears 4.5. */
+  color: #4338ca;
+}
+
+.ph-prompt code {
+  padding: 3px 8px;
+  border-radius: 6px;
+  background: rgba(15, 23, 42, 0.07);
+  font-family: var(--mono);
+  font-size: 11.5px;
+  color: var(--slate-500);
+}
+
+.ph-prompt strong {
+  display: block;
+  margin-bottom: 7px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--indigo);
+}
+
+.ph-text {
+  display: block;
+  /* Prompt text carries slash-separated runs and file paths, which have no
+     default break opportunity and would otherwise spill the block on phones. */
+  overflow-wrap: anywhere;
+  padding: 12px 14px;
+  border-radius: 8px;
+  background: var(--white);
+  border: 1px solid var(--line-light);
+  color: var(--gray-700);
+  font-family: var(--mono);
+  font-size: 12.5px;
+  line-height: 1.7;
+  user-select: all;
+}
+
+.ph-prompt em {
+  display: block;
+  margin-top: 12px;
+  font-size: 12.5px;
+  font-style: normal;
+  /* --placeholder is 3.6:1 against the tinted prompt box it sits in. */
+  color: var(--gray-700);
+}
+
+.section-dark .ph-prompt {
+  border-color: rgba(148, 163, 184, 0.24);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--gray-400);
+}
+
+.section-dark .ph-text {
+  background: rgba(10, 16, 32, 0.6);
+  border-color: var(--line-dark);
+  color: var(--slate-200);
+}
+
+.section-dark .ph-prompt code {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--gray-400);
+}
+
+/* Related links */
+.related-card {
+  display: flex;
+  flex-direction: column;
+  /* Not space-between: these cards are a heading plus a description with nothing
+     pinned to the bottom, so with equal heights a one-line description would be
+     pushed away from its own heading. Stack from the top and let the slack fall
+     after the content. */
+  justify-content: flex-start;
+  gap: 12px;
+  min-height: 100%;
+  padding: 22px 22px 20px;
+  border-radius: 22px;
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.74), rgba(15, 23, 42, 0.68));
+  box-shadow: 0 18px 42px rgba(15, 23, 42, 0.14);
+  transition: transform 0.35s var(--ease), border-color 0.35s var(--ease), box-shadow 0.35s var(--ease);
+}
+
+.related-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(129, 140, 248, 0.42);
+  box-shadow: 0 24px 44px rgba(15, 23, 42, 0.2);
+}
+
+.related-card strong {
+  display: block;
+  font-size: 1.08rem;
+  line-height: 1.35;
+  color: var(--white);
+}
+
+.related-card span {
+  color: var(--gray-400);
+  font-size: 14.5px;
+  line-height: 1.7;
+}
+
+
+.section-dark .related-card {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: var(--line-dark);
+}
+
+.section-dark .related-card strong {
+  color: var(--white);
+}
+
+.section-dark .related-card span {
+  color: var(--gray-400);
+}
+
+/* Placeholder block for content awaiting real data */
+.todo-block {
+  border: 1px dashed var(--indigo-soft);
+  background: rgba(79, 70, 229, 0.05);
+  border-radius: var(--r-md);
+  padding: 24px 26px;
+  color: var(--slate-500);
+}
+
+.todo-block p {
+  margin: 0;
+  line-height: 1.7;
+}
+
+/* Contact details list */
+/* A row you click: icon, label, value and a corner arrow. Used for the contact
+   page's email and WhatsApp, and for the service jump list in the hub hero. */
+.action-card {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  min-height: 100%;
+  padding: 22px 24px;
+  border-radius: var(--r-lg);
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.74), rgba(15, 23, 42, 0.68));
+  box-shadow: 0 18px 42px rgba(15, 23, 42, 0.14);
+  transition: transform 0.35s var(--ease), border-color 0.35s var(--ease), box-shadow 0.35s var(--ease);
+}
+
+.action-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(129, 140, 248, 0.42);
+  box-shadow: 0 24px 44px rgba(15, 23, 42, 0.2);
+}
+
+/* The shared icon tile is stacked above text elsewhere; here it sits beside it. */
+.action-card .feature-icon {
+  flex: none;
+  width: 46px;
+  height: 46px;
+  margin-bottom: 0;
+  font-size: 20px;
+}
+
+.action-card-copy {
+  display: grid;
+  gap: 4px;
+}
+
+.action-card-label {
+  font-size: 11.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--indigo-soft);
+}
+
+.action-card-value {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--white);
+}
+
+.action-card-note {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--gray-400);
+}
+
+.action-card-go {
+  margin-left: auto;
+  align-self: flex-start;
+  font-size: 20px;
+  color: var(--indigo-soft);
+}
+
+/* QR thumbnail standing in for the corner arrow on the WhatsApp action card. */
+.action-card-qr {
+  flex: none;
+  margin-left: auto;
+  width: 64px;
+  height: 64px;
+  border-radius: 5px;
+  background: var(--white);
+  padding: 4px;
+  transform: scale(1.5);
+}
+
+.contact-details {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin: clamp(20px, 3vw, 28px) 0 0;
+  text-align: left;
+}
+
+@media (min-width: 576px) {
+  .contact-details {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 992px) {
+  .contact-details {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.contact-card {
+  padding: 22px 24px;
+  border-radius: var(--r-md);
+  border: 1px solid var(--line-dark);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.contact-card dt {
+  font-family: var(--mono);
+  font-size: 11.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--indigo-soft);
+  margin-bottom: 8px;
+}
+
+.contact-card dd {
+  margin: 0;
+  color: var(--light);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.contact-card dd a {
+  color: var(--light);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.contact-card dd a:hover {
+  color: var(--blue-300);
+}
+
+/* Leading icon on a link — the glyph sat flush against the label. */
+.contact-card dd a i {
+  margin-right: 7px;
+  vertical-align: -1px;
+}
+
+/* 404 */
+/* Vertically centred in the viewport, but the content itself is left-aligned
+   and asymmetric: centring the whole column made the numeral the headline. */
+.notfound {
+  display: grid;
+  align-content: center;
+  min-height: 78vh;
+}
+
+/* The numeral carries no information, so it sits back: gradient fill inside the
+   request card, with the heading beside it doing the talking. */
+.notfound .code {
+  display: block;
+  margin: 0 0 6px;
+  font-family: var(--mono);
+  font-size: clamp(56px, 9vw, 104px);
+  line-height: 1;
+  background: var(--grad-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* The failed request, printed like a log line. */
+.err-card {
+  padding: clamp(22px, 3vw, 30px);
+  border-radius: var(--r-lg);
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.74), rgba(15, 23, 42, 0.68));
+  box-shadow: 0 18px 42px rgba(15, 23, 42, 0.18);
+}
+
+.err-line {
+  display: flex;
+  gap: 14px;
+  margin: 0;
+  padding: 13px 0;
+  border-top: 1px solid var(--line-dark);
+  font-family: var(--mono);
+  font-size: 13px;
+}
+
+.err-line:last-child {
+  padding-bottom: 0;
+}
+
+.err-key {
+  flex: none;
+  width: 58px;
+  color: var(--indigo-soft);
+}
+
+.err-val {
+  color: var(--gray-400);
+  overflow-wrap: anywhere;
+}
+
+/* ---------- 16. Blog: cards, article prose, table of contents ---------- */
+.post-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--white);
+  border: 1px solid var(--line-light);
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
+}
+
+.post-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lift);
+}
+
+.post-card img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.post-card-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 12px;
+  padding: clamp(22px, 3vw, 28px);
+}
+
+.post-card h3 {
+  margin: 0;
+  font-size: var(--h3);
+  line-height: 1.3;
+}
+
+.post-card h3 a {
+  color: inherit;
+}
+
+.post-card h3 a:hover {
+  color: var(--indigo);
+}
+
+.post-card.is-pending {
+  opacity: 0.72;
+}
+
+.post-card.is-pending:hover {
+  transform: none;
+  box-shadow: var(--shadow-card);
+}
+
+.post-card.is-pending img {
+  filter: grayscale(0.6);
+}
+
+.post-cat-muted {
+  background: var(--surface-100);
+  color: var(--placeholder);
+}
+
+.post-card p {
+  margin: 0;
+  color: var(--gray-700);
+  line-height: 1.65;
+}
+
+.post-card .text-link {
+  margin-top: auto;
+  align-self: flex-start;
+  padding-top: 6px;
+}
+
+.post-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  color: var(--placeholder);
+}
+
+.post-meta>span+span::before {
+  content: "\00b7";
+  margin-right: 10px;
+}
+
+.post-cat {
+  padding: 5px 12px;
+  border-radius: var(--pill);
+  background: rgba(79, 70, 229, 0.1);
+  color: var(--indigo);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.section-dark .post-meta {
+  color: var(--gray-on-dark);
+}
+
+.section-dark .post-cat {
+  background: rgba(129, 140, 248, 0.18);
+  color: var(--indigo-100);
+}
+
+.page-intro .post-meta {
+  margin-bottom: 18px;
+}
+
+/* Blog hero: the newest article as a panel beside the intro. Same dark card
+   language as .related-card, with room for the post image. */
+.post-feature {
+  display: block;
+  padding: 18px 18px 22px;
+  border-radius: var(--r-lg);
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.74), rgba(15, 23, 42, 0.68));
+  box-shadow: 0 18px 42px rgba(15, 23, 42, 0.18);
+  transition: transform 0.35s var(--ease), border-color 0.35s var(--ease), box-shadow 0.35s var(--ease);
+}
+
+.post-feature:hover {
+  transform: translateY(-4px);
+  border-color: rgba(129, 140, 248, 0.42);
+  box-shadow: 0 24px 48px rgba(15, 23, 42, 0.24);
+}
+
+.post-feature img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: var(--r-md);
+  /* .post-meta below carries margin: 0, so the gap is owned here. */
+  margin-bottom: 18px;
+}
+
+.post-feature h2 {
+  margin: 0 0 10px;
+  font-size: clamp(19px, 2vw, 25px);
+  line-height: 1.3;
+  color: var(--white);
+}
+
+.post-feature p:not(.post-meta) {
+  margin: 0 0 16px;
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: var(--gray-400);
+}
+
+/* The whole card is the link, so the cue is styled text rather than an anchor. */
+.post-feature .text-link {
+  display: inline-block;
+  color: var(--indigo-soft);
+  border-bottom-color: rgba(129, 140, 248, 0.4);
+}
+
+.post-feature:hover .text-link {
+  color: var(--white);
+}
+
+/* Table of contents */
+.toc {
+  margin: 0;
+  padding: 26px 30px;
+  border: 1px solid var(--line-light);
+  border-radius: var(--r-md);
+  background: var(--surface-200);
+}
+
+/* Contents rail beside the article. It tracks the prose on desktop and caps its
+   own height so a long list cannot outrun the viewport; below lg the column
+   stacks above the article, which is where a contents list belongs anyway. */
+@media (min-width: 992px) {
+  .post-aside {
+    position: sticky;
+    top: calc(var(--header-h) + 28px);
+  }
+
+  .post-aside .toc {
+    max-height: calc(100vh - var(--header-h) - 72px);
+    overflow-y: auto;
+  }
+}
+
+.toc-head {
+  margin: 0 0 14px;
+  font-size: 11.5px;
+  letter-spacing: 0.14em;
+  color: var(--indigo);
+}
+
+.toc ol {
+  margin: 0;
+  padding-left: 22px;
+  list-style: decimal;
+}
+
+.toc li+li {
+  margin-top: 9px;
+}
+
+.toc li::marker {
+  color: var(--indigo);
+  font-family: var(--mono);
+  font-size: 12px;
+}
+
+.toc a {
+  color: var(--gray-700);
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.toc a:hover {
+  color: var(--indigo);
+  text-decoration: underline;
+}
+
+/* Article prose */
+.prose {
+  font-size: 17px;
+  line-height: 1.78;
+  color: var(--gray-700);
+}
+
+.prose>*:first-child {
+  margin-top: 0;
+}
+
+.prose p {
+  margin: 0 0 24px;
+}
+
+.prose h2 {
+  margin: 52px 0 18px;
+  font-size: clamp(25px, 2.6vw, 34px);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--dark);
+  scroll-margin-top: calc(var(--header-h) + 24px);
+}
+
+.prose h3 {
+  margin: 36px 0 14px;
+  font-size: var(--h3);
+  line-height: 1.3;
+  color: var(--dark);
+}
+
+.prose ul,
+.prose ol {
+  margin: 0 0 26px;
+  padding-left: 26px;
+}
+
+.prose ul {
+  list-style: disc;
+}
+
+.prose ol {
+  list-style: decimal;
+}
+
+.prose li+li {
+  margin-top: 12px;
+}
+
+.prose li::marker {
+  color: var(--indigo);
+}
+
+.prose li {
+  line-height: 1.72;
+}
+
+.prose li>ul,
+.prose li>ol {
+  margin: 12px 0 0;
+}
+
+.prose ol>li::marker {
+  font-weight: 700;
+}
+
+.prose strong {
+  color: var(--dark);
+  font-weight: 700;
+}
+
+.prose a {
+  color: var(--indigo);
+  border-bottom: 1px solid rgba(79, 70, 229, 0.3);
+}
+
+.prose a:hover {
+  border-bottom-color: var(--indigo);
+}
+
+.prose code {
+  padding: 3px 7px;
+  border-radius: 6px;
+  background: var(--surface-100);
+  border: 1px solid var(--line-light);
+  font-family: var(--mono);
+  font-size: 0.86em;
+  color: var(--slate-500);
+  overflow-wrap: anywhere;
+}
+
+.prose blockquote {
+  margin: 30px 0;
+  padding: 4px 0 4px 24px;
+  border-left: 3px solid var(--indigo);
+  color: var(--slate-500);
+  font-size: 18px;
+}
+
+/* Tables scroll inside their own container rather than the page */
+.table-wrap {
+  margin: 0 0 28px;
+  overflow-x: auto;
+  border: 1px solid var(--line-light);
+  border-radius: var(--r-md);
+  background: var(--white);
+}
+
+.prose table {
+  width: 100%;
+  min-width: 520px;
+  border-collapse: collapse;
+  font-size: 15px;
+}
+
+.prose th,
+.prose td {
+  padding: 13px 18px;
+  text-align: left;
+  border-bottom: 1px solid var(--line-light);
+}
+
+.prose thead th {
+  background: var(--surface-200);
+  font-family: var(--mono);
+  font-size: 11.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--indigo);
+  white-space: nowrap;
+}
+
+.prose tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.prose tbody td:first-child {
+  font-weight: 600;
+  color: var(--dark);
+}
+
+/* End-of-article service CTA */
+.post-cta {
+  padding: clamp(28px, 4vw, 40px);
+  border-radius: var(--r-lg);
+  border: 1px solid var(--line-light);
+  background: var(--surface-200);
+}
+
+.post-cta-head {
+  margin: 0 0 10px;
+  font-size: 11.5px;
+  letter-spacing: 0.14em;
+  color: var(--indigo);
+}
+
+.post-cta h2 {
+  margin: 0 0 12px;
+  font-size: clamp(22px, 2.2vw, 28px);
+}
+
+.post-cta p {
+  margin: 0 0 22px;
+  color: var(--gray-700);
+  line-height: 1.7;
+}
+
+/* Replaces the inline style="margin-top:36px" on bottom-of-section buttons. */
+.section-cta {
+  margin-top: clamp(30px, 3.5vw, 40px);
+}
+
+/* Small mono label used as a sub-heading inside a narrow block. Replaces the
+   repeated inline styles on "TECHNOLOGY I USE" and "DIRECT DETAILS". */
+.mini-head {
+  margin-top: clamp(36px, 4vw, 48px);
+  /* Owns the gap to whatever follows it. This used to be a utility on the block
+     below, but _build/ does not emit utilities, so a rebuild left the label
+     sitting directly on top of the chips. */
+  margin-bottom: 16px;
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: var(--indigo);
+}
+
+.section-dark .mini-head {
+  color: var(--indigo-soft);
+}
+
+/* First case-study block sits below the screenshot figure. */
+.shot+.case-block {
+  margin-top: clamp(40px, 5vw, 56px);
+}
+
+/* A section that continues the one above it rather than starting a new band. */
+/* ---------- Responsive overrides (was mobile.css) ---------- */
+/* ---------- Mobile / responsive rules ---------- */
+@media (max-width: 991.98px) {
+  .nav-desktop {
+    display: none;
+  }
+
+  .burger {
+    display: flex;
+  }
+
+  /* main.js still toggles is-hidden/is-up on scroll direction — this just
+     cancels the hide transform on mobile so the header only ever does the
+     "sticky" is-scrolled background treatment, never slides off-screen. */
+  .site-header.is-hidden {
+    transform: translateY(0);
+  }
+
+  .hero-visual {
+    order: 2;
+    min-height: clamp(340px, 62vw, 520px);
+  }
+
+  .process-list li {
+    padding-left: 58px;
+  }
+
+  .process-list li::before {
+    width: 40px;
+    height: 40px;
+  }
+
+  .process-list li:not(:last-child)::after {
+    left: 19px;
+    top: 52px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  :root {
+    --section-y: clamp(56px, 12vw, 88px);
+  }
+
+  .header-inner {
+    padding-block: 18px;
+  }
+
+  .brand img {
+    width: 170px;
+  }
+
+  .chip-1 {
+    top: 6%;
+  }
+
+  .chip-2 {
+    top: 40%;
+  }
+
+  .chip-3 {
+    bottom: 10%;
+    left: 0;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .container {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .stat-card {
+    padding: 24px 22px;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .btn-sm,
+  .nav-cta,
+  .to-top-inline,
+  .skip-link {
+    width: auto;
+  }
+
+  .project .btn-row .btn {
+    flex: 1 1 auto;
+  }
+
+  .chip {
+    font-size: 11.5px;
+    padding: 9px 12px;
+  }
+
+  .marquee-row {
+    gap: 34px;
+    padding-right: 34px;
+  }
+
+  .wa-float {
+    right: 14px;
+    bottom: 14px;
+    width: 52px;
+    height: 52px;
+  }
+
+  .contact-form {
+    padding: 18px;
+  }
+
+  .form-foot {
+    align-items: stretch;
+  }
+
+  .toc {
+    padding: 22px 20px;
+  }
+
+  .prose {
+    font-size: 16.5px;
+  }
+}
+
+@media (max-width: 400px) {
+  .skill {
+    padding: 16px;
+    font-size: 15px;
+  }
+
+  .contact-form {
+    padding: 18px;
+  }
+}
+
+/* The sliding stack needs both a wide viewport and a reader who wants motion.
+   Without either, the cards sit in plain flow with nothing parked on top of
+   anything else. */
+@media (max-width: 991.98px), (prefers-reduced-motion: reduce) {
+  .job {
+    position: static;
+  }
+
+  .timeline {
+    gap: 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+
+}
+
+/* The reset zeroes p margins, and .section-head .body-lg only covers paragraphs
+   inside a heading block. Consecutive body-lg paragraphs need their own rhythm. */
+.body-lg+.body-lg {
+  margin-top: 18px;
+}
+
+/* .mono is the generator's name for what Bootstrap calls .font-monospace. The
+   hand-edited pages use the Bootstrap class; _build/ still emits `mono`, so both
+   have to resolve to the same face or a rebuild silently drops the mono font on
+   every eyebrow, footer heading and copyright line. Delete once _build/ emits
+   `font-monospace`. */
+.mono {
+  font-family: var(--mono);
+}
+
+/* ---------- .container.narrow ----------
+   The row/col replacement for this lives in the hand-edited pages, but the
+   generators in _build/ still emit `container `, and a rebuild puts it
+   back on all 20 generated pages. Without this rule those pages render prose at
+   the full 1300px shell (~150 characters a line). Keep it until _build/ emits
+   `.row.gx-0 > .col-12.col-lg-8` instead, then delete it. */
+.container.narrow:not(.text-center) {
+  max-width: var(--shell);
+}
+
+.container.narrow:not(.text-center) > * {
+  max-width: 760px;
+}
+
+.container.narrow.text-center {
+  max-width: 760px;
+}
+
+/* ---------- Spacing utilities (px) ----------
+   Bootstrap covers 16/24/48px as mt-3 / mt-4 / mt-5 and the markup uses those
+   directly. Its default scale jumps 24 -> 48 with no class between, so only
+   the steps it has no class for live here. */
+.mt-32{margin-top:32px!important}
+.mt-40{margin-top:40px!important}
+.mt-56{margin-top:56px!important}
+.mb-32{margin-bottom:32px!important}
+
+/* Inner-page background. Lost when the stylesheets were reorganised; without it
+   every generated page showed the dark body colour behind its sections. */
+.page-shell {
+  background: var(--light);
+  color: var(--dark);
+}
+
+/* Remix Icon glyphs inside buttons and inline links. The font sits slightly
+   above the text baseline, so nudge it down and stop it inheriting the
+   button's letter-spacing. */
+.btn>i[class^="ri-"],
+.btn>i[class*=" ri-"],
+.text-link>i[class^="ri-"],
+.to-top-inline>i[class^="ri-"] {
+  font-size: 1.15em;
+  line-height: 1;
+  letter-spacing: normal;
+  transform: translateY(1px);
+}
+
+/* Nudge the arrow on hover, the way a text arrow never could. */
+.btn>i.ri-arrow-right-line {
+  transition: transform 0.3s var(--ease);
+}
+
+.btn:hover>i.ri-arrow-right-line {
+  transform: translate(3px, 1px);
+}
+
+/* Counter card icon. Tinted rather than the full gradient used by
+   .feature-icon, so it supports the number instead of competing with it. */
+.stat-icon {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  margin-bottom: 18px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(79, 70, 229, 0.09);
+  color: var(--indigo);
+  font-size: 20px;
+  line-height: 1;
+  transition: color 0.3s var(--ease), transform 0.3s var(--ease);
+}
+
+/* A background-colour cannot be interpolated into a linear-gradient, so
+   transitioning `background` here snapped instantly however long the duration
+   was. Fading a gradient layer's opacity animates properly. */
+.stat-icon::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--grad);
+  opacity: 0;
+  transition: opacity 0.3s var(--ease);
+}
+
+.stat-icon>i {
+  position: relative;
+  /* keep the glyph above the gradient layer */
+}
+
+.stat-card:hover .stat-icon {
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.stat-card:hover .stat-icon::before {
+  opacity: 1;
+}
+
+.section-dark .stat-icon {
+  background: rgba(129, 140, 248, 0.16);
+  color: var(--indigo-100);
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .stat-icon,
+  .stat-icon::before {
+    transition: none;
+  }
+
+  .stat-card:hover .stat-icon {
+    transform: none;
+  }
+}
+
+/* Icon glyphs inside the square chips used by skills, features and stats. */
+.skill-icon>i[class^="ri-"],
+.feature-icon>i[class^="ri-"] {
+  font-size: 20px;
+  line-height: 1;
+}
+
+/* Contexts where an inline SVG was replaced by an icon glyph. The SVGs carried
+   explicit width/height; the font needs a font-size instead. */
+.wa-float>i[class^="ri-"] {
+  font-size: 26px;
+  line-height: 1;
+}
+
+/* Footer and contact links now lead with a glyph. */
+.footer-cols a>i[class^="ri-"] {
+  margin-right: 9px;
+  font-size: 15px;
+  vertical-align: -1px;
+  color: var(--slate-500);
+  transition: color 0.25s;
+}
+
+.footer-cols a:hover>i[class^="ri-"] {
+  color: var(--indigo-soft);
+}
+
+
+
+/* ---------- 19. Testimonial slider ----------
+   Each card is an independent slide item. Scroll-snap does the sliding, so there
+   is no carousel library and no grid system involved: three items are visible on
+   desktop, two on tablet, one on phone, and the track steps one item at a time.
+   Touch swipe and trackpad scroll come free. */
+.t-slider {
+  position: relative;
+}
+
+.t-track {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  /* room for the card shadow, and hide the native scrollbar */
+  padding: 6px 6px 18px;
+  margin: -6px -6px -18px;
+  scrollbar-width: none;
+}
+
+.t-track::-webkit-scrollbar {
+  display: none;
+}
+
+.t-track {
+  cursor: grab;
+}
+
+.t-track.is-dragging {
+  cursor: grabbing;
+  user-select: none;
+}
+
+/* While dragging, stop the iframe swallowing pointer events mid-gesture. */
+.t-track.is-dragging iframe {
+  pointer-events: none;
+}
+
+.t-track:focus-visible {
+  outline: 2px solid var(--indigo);
+  outline-offset: 4px;
+  border-radius: var(--r-md);
+}
+
+/* Cards per view: 1 below 768 (so 480 and under included), 2 from 768, 3 from 992.
+   The base rule has no lower bound, so no 480 breakpoint is needed for the 1-card
+   case — it is already the default. */
+.t-item {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  min-width: 0;
+}
+
+@media (min-width: 768px) {
+  .t-item {
+    flex-basis: calc((100% - 24px) / 2);
+  }
+}
+
+@media (min-width: 992px) {
+  .t-item {
+    flex-basis: calc((100% - 48px) / 3);
+  }
+}
+
+.t-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: clamp(24px, 3vw, 30px);
+  border-radius: var(--r-lg);
+  background: var(--white);
+  border: 1px solid var(--line-light);
+  box-shadow: var(--shadow-card);
+}
+
+/* A quote standing on its own rather than in the slider or an equal-height grid.
+   .t-card is height:100% so cards in a row match; alone in a stretched column
+   that just makes one very tall card. */
+.t-card-inline {
+  height: auto;
+}
+
+.t-stars {
+  margin-bottom: 14px;
+  color: var(--star);
+  font-size: 15px;
+  line-height: 1;
+}
+
+.t-quote {
+  margin: 0 0 22px;
+  color: var(--gray-700);
+  line-height: 1.7;
+}
+
+.t-foot {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: auto;
+  padding-top: 18px;
+  border-top: 1px solid var(--line-light);
+}
+
+.t-foot cite {
+  font-style: normal;
+  min-width: 0;
+}
+
+.t-name {
+  display: block;
+  font-weight: 700;
+  color: var(--dark);
+}
+
+.t-role {
+  display: block;
+  margin-top: 3px;
+  font-size: 11.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--indigo);
+}
+
+/* Video slide — a poster with a play button, opened in a Lity lightbox.
+   Same footprint as a card, no card chrome. */
+.t-video {
+  position: relative;
+  display: block;
+  height: 100%;
+  min-height: 220px;
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  background: #000;
+}
+
+.t-video img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s var(--ease), opacity 0.4s;
+}
+
+.t-video:hover img {
+  transform: scale(1.05);
+  opacity: 0.82;
+}
+
+.t-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  display: grid;
+  place-items: center;
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.94);
+  color: var(--indigo);
+  font-size: 30px;
+  line-height: 1;
+  box-shadow: 0 10px 30px -8px rgba(15, 23, 42, 0.55);
+}
+
+/* Three filled layers expanding out of the button, evenly offset across the cycle
+   so one is always mid-flight. Filled at low opacity rather than outlined, and the
+   fade in at the start stops each layer appearing abruptly. */
+.t-wave {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  animation: playWave 2.7s cubic-bezier(0.33, 0, 0.2, 1) infinite;
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+
+.t-wave:nth-child(2) {
+  animation-delay: 0.9s;
+}
+
+.t-wave:nth-child(3) {
+  animation-delay: 1.8s;
+}
+
+/* Keep the glyph above the expanding layers. The play triangle's own bounding box
+   is wider than its visible mass, so it reads left of centre in a circle — nudge it
+   back to the optical centre. */
+.t-play>i {
+  position: relative;
+  z-index: 1;
+  margin-left: 5px;
+}
+
+@keyframes playWave {
+  0% {
+    transform: scale(1);
+    opacity: 0;
+  }
+
+  18% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(2.6);
+    opacity: 0;
+  }
+}
+
+.t-video:focus-visible {
+  outline: 3px solid var(--indigo);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .t-video img {
+    transition: none;
+  }
+
+  .t-video:hover img {
+    transform: none;
+  }
+
+  .t-wave {
+    animation: none;
+    opacity: 0;
+  }
+}
+
+/* Controls */
+.t-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin-top: clamp(28px, 3.5vw, 40px);
+}
+
+.t-btn {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  flex: none;
+  padding: 0;
+  border-radius: 50%;
+  border: 1px solid var(--slate-200);
+  background: var(--white);
+  color: var(--slate-500);
+  font-size: 20px;
+  cursor: pointer;
+  transition: color 0.25s, border-color 0.25s, background 0.25s, transform 0.25s var(--ease);
+}
+
+.t-btn:hover:not(:disabled) {
+  color: var(--white);
+  background: var(--indigo);
+  border-color: var(--indigo);
+  transform: translateY(-2px);
+}
+
+.t-btn:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.t-dots {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.t-dots button {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: 0;
+  border-radius: var(--pill);
+  background: var(--slate-300);
+  cursor: pointer;
+  transition: width 0.3s var(--ease), background 0.3s;
+}
+
+.t-dots button[aria-current="true"] {
+  width: 26px;
+  background: var(--indigo);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .t-track {
+    scroll-behavior: auto;
+  }
+}
+
+/* ---------- 20. Video popup ----------
+   A native <dialog>: focus trapping, Escape and the top layer are the browser's
+   job, GSAP only animates it. Lity and its jQuery dependency are gone. */
+/* TODO / UNUSED (audited 2026-08-27): no page opens #videoPopup -- there is no
+   [data-video] trigger anywhere. Kept deliberately; paired with the block in
+   assets/js/main.js, the dialog markup in index.html and the i.ytimg.com
+   preconnect. If this goes, all four go together. */
+.vp {
+  width: min(1100px, 92vw);
+  max-width: none;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  overflow: visible;
+}
+
+.vp::backdrop {
+  background: rgba(6, 10, 22, 0.86);
+  backdrop-filter: blur(4px);
+}
+
+.vp-panel {
+  position: relative;
+}
+
+.vp-frame {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  background: #000;
+  box-shadow: 0 40px 90px -30px rgba(0, 0, 0, 0.75);
+}
+
+.vp-frame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.vp-close {
+  position: absolute;
+  top: -18px;
+  right: -18px;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: var(--white);
+  color: var(--dark);
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 8px 22px -6px rgba(0, 0, 0, 0.5);
+  transition: background 0.25s, color 0.25s, transform 0.25s var(--ease);
+}
+
+.vp-close:hover {
+  background: var(--indigo);
+  color: #fff;
+  transform: rotate(90deg);
+}
+
+@media (max-width: 575.98px) {
+  .vp-close {
+    top: -14px;
+    right: -6px;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* ---------- 21. Animation ----------
+   `js-anim` is set on <html> inline before paint and pre-hides only what the
+   hero animates on load — everything else is below the fold, so GSAP sets its
+   start state before it is ever visible and no CSS is needed. anim.js removes
+   this class if GSAP is missing or motion is reduced, so nothing can be left
+   stranded invisible. */
+/* Deferred scripts run after the HTML is parsed, so there is always a window
+   before GSAP exists. Hiding the frame covers it — opacity, deliberately, since
+   a CSS transform here would stack with the yPercent GSAP sets on the image.
+
+   These are the same attributes anim.js animates, which is the point: when this
+   list was written in class names it drifted out of step with the script and
+   left anything the script did not name hidden for good.
+
+   The image layer is the one exclusion, and it must stay excluded. It is hidden
+   by the frame that clips it and is moved with yPercent alone — nothing in
+   anim.js ever sets its opacity, so hiding it here leaves it invisible for good.
+   It is also the likely LCP element, and an element at zero opacity does not
+   qualify while a clipped one still paints. */
+.js-anim [data-anim-hero]>*,
+.js-anim [data-anim-layer]:not([data-anim-layer="image"]) {
+  opacity: 0;
+}
+
+/* SplitText's mask wrapper. The clip is what makes lines rise out of nothing. */
+.anim-line {
+  will-change: transform;
+}
+
+/* ---------- 22. Website Health Checker ----------
+   The tool reuses .contact-form for its input, .btn for its button, and
+   .stat-card + .prose table for each result panel — this section only adds
+   what nothing else on the site already covers: status badges, the loading
+   spin, and a few row-level helpers for the results themselves. */
+
+.checker-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: var(--pill);
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.checker-badge-good {
+  background: rgba(52, 211, 153, 0.14);
+  color: var(--green-600);
+}
+
+.checker-badge-warn {
+  background: rgba(245, 158, 11, 0.16);
+  color: #b45309;
+}
+
+.checker-badge-not_found {
+  background: var(--surface-100);
+  color: var(--placeholder);
+}
+
+.checker-badge-unknown {
+  background: rgba(248, 113, 113, 0.14);
+  color: var(--danger-strong);
+}
+
+.checker-section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.checker-section-head h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+/* Each check is a label/value pair (a <dl>), not a table row — this is what
+   keeps long values (a full CSP header, a long meta description) from
+   forcing horizontal scroll on mobile the way a literal <table> would. */
+.checker-rows {
+  margin: 0;
+}
+
+.checker-row {
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line-light);
+}
+
+.checker-row:last-child {
+  border-bottom: none;
+}
+
+.checker-row dt {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 0 0 6px;
+  font-family: var(--mono);
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--placeholder);
+}
+
+.checker-row dd {
+  margin: 0;
+  color: var(--gray-700);
+  font-size: 15px;
+  line-height: 1.55;
+  word-break: break-word;
+}
+
+.checker-row dd code {
+  font-size: 13px;
+  background: var(--surface-200);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.checker-row-note {
+  display: block;
+  font-size: 12.5px;
+  color: var(--placeholder);
+}
+
+.checker-links-card {
+  padding: 30px 26px;
+  border-radius: var(--r-lg);
+  background: var(--white);
+  border: 1px solid var(--line-light);
+  box-shadow: var(--shadow-card);
+}
+
+.checker-links-card ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.checker-links-card li + li {
+  margin-top: 12px;
+}
+
+.checker-links-card a {
+  display: inline-flex;
+  align-items: center;
+  font-weight: 600;
+  color: var(--dark);
+}
+
+.checker-links-card a:hover {
+  color: var(--indigo);
+}
+
+/* Same lead-with-a-glyph treatment as .footer-cols a > i — a small arrow
+   marks these as "go to" links rather than plain bullet text. */
+.checker-links-card a > i[class^="ri-"] {
+  margin-right: 8px;
+  font-size: 14px;
+  color: var(--indigo);
+  transition: transform 0.25s;
+}
+
+.checker-links-card a:hover > i[class^="ri-"] {
+  transform: translateX(2px);
+}
+
+/* Each detected signal reads as a small checklist rather than a plain
+   bulleted list — the icon reinforces "this was found," which a bare
+   disc bullet doesn't. */
+.checker-signals {
+  list-style: none;
+  margin: 10px 0 0;
+  padding: 0;
+  color: var(--gray-700);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.checker-signals li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.checker-signals li + li {
+  margin-top: 6px;
+}
+
+.checker-signals li > i[class^="ri-"] {
+  flex-shrink: 0;
+  margin-top: 3px;
+  font-size: 14px;
+  color: var(--green-600);
+}
+
+/* Malware checker signals carry their own severity rather than always being
+   a plain "found" checkmark — strong reuses the same red as
+   .checker-panel-danger, weak the same amber as .checker-badge-warn. */
+.checker-signals li.is-strong > i[class^="ri-"] {
+  color: var(--danger-strong);
+}
+
+.checker-signals li.is-weak > i[class^="ri-"] {
+  color: #b45309;
+}
+
+/* Core Web Vitals checker tags each signal with the metric it affects
+   (LCP/CLS/INP) — a small inline label ahead of the strong/weak text,
+   distinct from severity color so the two dimensions don't compete. */
+.checker-metric-tag {
+  display: inline-block;
+  padding: 1px 6px;
+  margin-right: 2px;
+  border-radius: 4px;
+  background: var(--surface-alt);
+  border: 1px solid var(--line-light);
+  color: var(--gray-strong);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  vertical-align: 1px;
+}
+
+.checker-loading-icon {
+  display: inline-block;
+  animation: checker-spin 0.9s linear infinite;
+}
+
+@keyframes checker-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* The site-wide prefers-reduced-motion rule (`* { animation: none !important }`)
+   is right for decorative motion, but this spinner is the only signal that a
+   check is actually running — losing it under reduced motion isn't a
+   preference being respected, it's the only status indicator disappearing.
+   Kept slower here than the default spin as the compromise: still functional,
+   less motion than the full-speed version. */
+@media (prefers-reduced-motion: reduce) {
+  .checker-loading-icon {
+    animation: checker-spin 1.6s linear infinite !important;
+  }
+}
+
+.checker-results {
+  display: none;
+}
+
+.checker-results.is-visible {
+  display: block;
+}
+
+/* The results grid itself is plain Bootstrap (row row-cols-1 row-cols-lg-2
+   g-4 on #checkerResultsGrid, .col wrapping each panel() in the JS) — no
+   hand-written column CSS, matching how every other grid on this site works. */
+
+/* .stat-card's hover-lift is meant for the clickable link-cards it was built
+   for (homepage stats, etc.) — these panels are static content, so the same
+   lift-on-hover would imply they're clickable when they're not. */
+.checker-panel:hover {
+  transform: none;
+  box-shadow: var(--shadow-card);
+}
+
+/* A colored left edge gives an at-a-glance read on a panel before anyone
+   reads a single row inside it — worst status among that panel's own checks. */
+.checker-panel {
+  border-left: 4px solid transparent;
+}
+
+.checker-panel-good {
+  border-left-color: var(--green-soft);
+}
+
+.checker-panel-warn {
+  border-left-color: var(--star);
+}
+
+.checker-panel-unknown,
+.checker-panel-danger {
+  border-left-color: var(--danger-strong);
+}
+
+.checker-summary {
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.checker-summary-good {
+  color: var(--green-600);
+}
+
+.checker-summary-warn {
+  color: #b45309;
+}
+
+.checker-badge i {
+  font-size: 12px;
+  line-height: 1;
+}
+
+.checker-verdict {
+  font-weight: 700;
+  color: var(--dark);
+}
+
+/* .contact-form is a translucent glass panel (background + backdrop-filter
+   blur) built to sit on the dark hero it normally appears in — on this
+   page's white section that reads as a near-invisible, pointlessly blurry
+   box. Restyled here as a plain card matching .stat-card, the same
+   component the result panels below it use, so form and results read as
+   one page. .contact-form's own margin-top (clamp 44-68px) is also hero
+   spacing that doesn't apply here — removed via the mt-0 utility on the
+   form element itself rather than overridden here, since it's an exact,
+   fixed-value match for a Bootstrap spacing step. */
+.checker-form {
+  padding: clamp(24px, 3vw, 32px);
+  border-radius: var(--r-lg);
+  background: var(--white);
+  border: 1px solid var(--line-light);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  box-shadow: var(--shadow-card);
+}
+
+/* .contact-form's default input styling (translucent dark glass, light text)
+   is built for the dark hero it normally sits in. This form lives in a
+   section-white instead, so the field itself needs to stay a plain white
+   input, not the dark one meant for a dark background. */
+/* Bigger than .contact-form's default field — this is the single input the
+   whole tool runs on, not one of several fields in a longer form, so it
+   should read as the page's main action, not a small text box. */
+.checker-form input {
+  background: var(--white);
+  border-color: var(--line-light);
+  color: var(--dark);
+  padding: 20px 22px;
+  border-radius: var(--r-md);
+  font-size: 18px;
+}
+
+.checker-form .field-label {
+  color: var(--placeholder);
+}
+
+/* Status/error banner inside each tool's form ("Checking…" while a scan
+   runs, a validation or fetch error otherwise) — was Bootstrap's own
+   .alert/.alert-info/.alert-danger with zero site-specific styling, which
+   read as a generic component next to everything else here. Same tinted-
+   card language as .checker-badge, scoped to its own class since .alert
+   isn't used anywhere else on the site. */
+.checker-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 14px 18px;
+  border-radius: var(--r-sm);
+  border: 1px solid;
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: var(--gray-700);
+}
+
+.checker-note i {
+  flex-shrink: 0;
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+/* The message can carry a raw, unbroken submitted URL (see theme-detector.js
+   and divi5-migration-checker.js's "Checking …" note) — same long-string
+   guard used on .err-val, .ph-prompt and .footer-cols a. */
+.checker-note span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.checker-note-info {
+  background: rgba(79, 70, 229, 0.06);
+  border-color: rgba(79, 70, 229, 0.2);
+}
+
+.checker-note-info i {
+  color: var(--indigo);
+}
+
+.checker-note-error {
+  background: rgba(248, 113, 113, 0.1);
+  border-color: rgba(248, 113, 113, 0.32);
+}
+
+.checker-note-error i {
+  color: var(--danger-strong);
+}
+
+/* Shareable-result row (Theme & Page Builder Detector) — a read-only URL
+   the visitor can copy to re-run the same scan. Sits below the results
+   grid, so it reuses the row/token vocabulary above rather than styling
+   another input from scratch. */
+.checker-share {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 28px;
+  padding: 16px 20px;
+  border-radius: var(--r-md);
+  background: var(--surface-100);
+  border: 1px solid var(--line-light);
+}
+
+.checker-share label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1 1 260px;
+  min-width: 0;
+}
+
+.checker-share .field-label {
+  flex-shrink: 0;
+}
+
+.checker-share input {
+  flex: 1;
+  min-width: 0;
+  border: 1px solid var(--line-light);
+  background: var(--white);
+  color: var(--gray-700);
+  border-radius: var(--r-sm);
+  padding: 8px 12px;
+  font-family: var(--mono);
+  font-size: 13px;
+}
+
+/* ---------- 23. Cost Calculator ----------
+   Same card/badge/token vocabulary as the Website Health Checker section
+   above, extended with a step wizard: pill-style radio options (a visually
+   hidden native <input type="radio"> under a styled <label>, so it stays a
+   real, keyboard- and screen-reader-accessible radio group with zero ARIA
+   hand-rolling) plus a result card for the final estimate. */
+
+.calc-progress {
+  font-family: var(--mono);
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--placeholder);
+  margin-bottom: 10px;
+}
+
+.calc-progress-track {
+  height: 4px;
+  border-radius: var(--pill);
+  background: var(--surface-100);
+  overflow: hidden;
+  margin-bottom: 28px;
+}
+
+.calc-progress-fill {
+  height: 100%;
+  border-radius: var(--pill);
+  background: var(--indigo);
+  transition: width 0.25s ease;
+}
+
+.calc-step-head {
+  margin-bottom: 20px;
+}
+
+.calc-step-head h2 {
+  font-size: 22px;
+  margin: 0 0 6px;
+}
+
+.calc-step-note {
+  color: var(--placeholder);
+  font-size: 14.5px;
+  margin: 0;
+}
+
+.calc-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0 0 8px;
+}
+
+.calc-option {
+  position: relative;
+}
+
+/* Wrapped pills are fine down to phone width, but at that width a row of
+   short pills (e.g. the 1–5/6–10/11–20/20+ page-count options) starts
+   producing awkward half-width tap targets. Full-width, stacked options
+   below 575.98px keep every tap target the same comfortable size. */
+@media (max-width: 575.98px) {
+  .calc-options {
+    flex-direction: column;
+  }
+
+  .calc-option label {
+    text-align: center;
+  }
+}
+
+/* Visually hidden, not display:none — keeps it focusable and announced by
+   screen readers, matching how the rest of the site avoids display:none on
+   anything a keyboard/AT user still needs to reach. */
+.calc-option input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+.calc-option label {
+  display: block;
+  padding: 12px 18px;
+  border-radius: var(--pill);
+  border: 1px solid var(--line-light);
+  background: var(--white);
+  color: var(--gray-700);
+  font-size: 14.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease, color 0.15s ease;
+}
+
+.calc-option label:hover {
+  border-color: var(--indigo);
+}
+
+.calc-option input:checked + label {
+  background: var(--dark);
+  border-color: var(--dark);
+  color: var(--white);
+}
+
+.calc-option input:focus-visible + label {
+  outline: 2px solid var(--indigo);
+  outline-offset: 2px;
+}
+
+.calc-option-note {
+  display: block;
+  margin-top: 10px;
+  padding: 10px 14px;
+  border-radius: var(--r-md);
+  background: var(--surface-200);
+  color: var(--placeholder);
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+/* A hairline plus its own top padding, rather than margin alone, so the
+   divider itself sits mid-way in the gap instead of hugging the options
+   above it — reads as "end of this question" before "here's what's next",
+   not just extra whitespace. */
+.calc-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line-light);
+}
+
+/* Step 1 has no Back button, so there's only one child here — with a single
+   flex item, space-between has nothing to space and falls back to
+   flex-start (left). This keeps Next in the same bottom-right position
+   every other step already puts it in, without a phantom empty sibling
+   just to make space-between behave. */
+.calc-nav-end {
+  justify-content: flex-end;
+}
+
+/* Equal-width, stacked Back/Next instead of a cramped side-by-side row
+   once there isn't room for two comfortably-sized buttons. column-reverse
+   keeps Next — the primary, forward action — as the top/first button a
+   thumb reaches, with Back (source order: first) rendered below it. */
+@media (max-width: 575.98px) {
+  .calc-nav {
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+
+  .calc-nav .btn {
+    width: 100%;
+  }
+}
+
+/* Runs automatically whenever a step's [hidden] attribute is removed (an
+   element going from display:none to displayed re-triggers any animation
+   that matches it) — no JS timing/reflow trickery needed. Purely decorative,
+   so it simply doesn't exist under reduced motion rather than needing the
+   loading-spinner's slow-instead-of-off treatment above. */
+@keyframes calc-step-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .calc-step:not([hidden]) {
+    animation: calc-step-in 0.35s ease;
+  }
+}
+
+.calc-result-card {
+  padding: clamp(24px, 3vw, 34px);
+  border-radius: var(--r-lg);
+  background: var(--white);
+  border: 1px solid var(--line-light);
+  box-shadow: var(--shadow-card);
+}
+
+.calc-result-label {
+  font-family: var(--mono);
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--placeholder);
+  margin-bottom: 8px;
+}
+
+.calc-result-price {
+  font-size: clamp(32px, 5vw, 44px);
+  font-weight: 800;
+  color: var(--dark);
+  margin: 0 0 6px;
+}
+
+/* Smaller variant: the single-service "fix" result heading and the two
+   side-by-side platform figures in the "not sure which platform" result
+   both need the same treatment as .calc-result-price at a size that leaves
+   room for two of them, or for it to sit as an <h2> rather than the page's
+   single headline figure. */
+.calc-result-price-sm {
+  font-size: clamp(24px, 3.4vw, 32px);
+}
+
+.calc-result-split-label {
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--placeholder);
+  margin-bottom: 4px;
+}
+
+.calc-result-caveat {
+  color: var(--placeholder);
+  font-size: 14px;
+  margin-bottom: 24px;
+}
+
+.calc-result-breakdown {
+  margin: 0 0 28px;
+}
+
+.calc-result-breakdown .checker-row dt {
+  text-transform: none;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 14.5px;
+  color: var(--gray-700);
+  letter-spacing: 0;
+}
+
+.calc-result-breakdown .checker-row dd {
+  font-size: 14px;
+  color: var(--placeholder);
+}
+
+.calc-restart-row {
+  margin-top: 22px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line-light);
+}
+
+.calc-result-footnote {
+  font-size: 13.5px;
+}
+
+/* ---------- 24. Redirect Map Generator ----------
+   Reuses .checker-form/.checker-note/.checker-badge/.btn wholesale, same as
+   Tools 4-6 — the two things nothing else on the site needed yet are a
+   textarea variant of .checker-form's input styling (two URL-list fields
+   instead of one URL field) and a compact scrollable table for a match list
+   that can run into the hundreds of rows, where the existing <dl>-based
+   .checker-rows pattern (built for a handful of labelled checks) would run
+   far too long. */
+
+.checker-form textarea {
+  background: var(--white);
+  border-color: var(--line-light);
+  color: var(--dark);
+  padding: 16px 18px;
+  border-radius: var(--r-md);
+  font-family: var(--mono);
+  font-size: 14px;
+  line-height: 1.6;
+  min-height: 160px;
+  resize: vertical;
+}
+
+.redirect-table-wrap {
+  margin: 0 0 20px;
+  max-height: 480px;
+  overflow: auto;
+  border: 1px solid var(--line-light);
+  border-radius: var(--r-md);
+  background: var(--white);
+}
+
+.redirect-table {
+  width: 100%;
+  min-width: 560px;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.redirect-table th,
+.redirect-table td {
+  padding: 11px 16px;
+  text-align: left;
+  border-bottom: 1px solid var(--line-light);
+  vertical-align: top;
+}
+
+.redirect-table code {
+  font-family: var(--mono);
+  font-size: 0.92em;
+  color: var(--gray-700);
+  overflow-wrap: anywhere;
+}
+
+.redirect-table thead th {
+  position: sticky;
+  top: 0;
+  background: var(--surface-200);
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--indigo);
+  white-space: nowrap;
+}
+
+.redirect-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.redirect-table-empty {
+  padding: 24px;
+  text-align: center;
+  color: var(--placeholder);
+  font-size: 14px;
+}
+
+/* ---------- 25. Plugin Conflict Diagnostic ----------
+   Reuses the Cost Calculator's .calc-step/.calc-options/.calc-option/
+   .calc-nav vocabulary wholesale — see assets/js/plugin-conflict-diagnostic.js.
+   One exception: #pcdBreadcrumb borrows .calc-progress for its font/color/
+   spacing, but .calc-progress's text-transform: uppercase was built for a
+   short fixed label ("STEP 1 OF 8"), not the full answer-sentence trail
+   this tool renders there. Scoped to the one element that needs it, rather
+   than touching the shared .calc-progress rule other tools still rely on. */
+
+#pcdBreadcrumb {
+  text-transform: none;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  line-height: 1.5;
+}

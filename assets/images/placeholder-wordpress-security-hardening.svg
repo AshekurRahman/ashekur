@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" role="img" aria-hidden="true">
+  <title>Abstract dark tech visual representing a fortified shield with a lock</title>
+  <defs>
+    <radialGradient id="bgFadehrd" cx="50%" cy="36%" r="78%">
+      <stop offset="0%" stop-color="#141f38"/>
+      <stop offset="100%" stop-color="#0a1020"/>
+    </radialGradient>
+    <pattern id="gridhrd" width="64" height="64" patternUnits="userSpaceOnUse">
+      <path d="M 64 0 L 0 0 0 64" fill="none" stroke="rgba(148,163,184,0.10)" stroke-width="1"/>
+    </pattern>
+    <radialGradient id="gridMaskhrd" cx="50%" cy="32%" r="70%">
+      <stop offset="0%" stop-color="#fff" stop-opacity="0.9"/>
+      <stop offset="65%" stop-color="#fff" stop-opacity="0.32"/>
+      <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+    </radialGradient>
+    <mask id="gridMaskElhrd">
+      <rect width="1280" height="720" fill="url(#gridMaskhrd)"/>
+    </mask>
+    <radialGradient id="gA_hrd" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#4f46e5" stop-opacity="0.46"/>
+      <stop offset="66%" stop-color="#4f46e5" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="gB_hrd" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#6ee7b7" stop-opacity="0.4"/>
+      <stop offset="66%" stop-color="#6ee7b7" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bgFadehrd)"/>
+  <rect width="1280" height="720" fill="url(#gridhrd)" mask="url(#gridMaskElhrd)"/>
+  <circle cx="380" cy="230" r="320" fill="url(#gA_hrd)"/><circle cx="980" cy="500" r="320" fill="url(#gB_hrd)"/>
+  <path d="M 860 250 L 940 280 L 940 380 Q 940 440 860 480 Q 780 440 780 380 L 780 280 Z"
+        fill="#0a1020" fill-opacity="0.5" stroke="#6ee7b7" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="835" y="350" width="50" height="40" rx="6" fill="none" stroke="#6ee7b7" stroke-width="4"/>
+  <path d="M 845 350 L 845 335 A 15 15 0 0 1 875 335 L 875 350" fill="none" stroke="#6ee7b7" stroke-width="4"/>
+</svg>

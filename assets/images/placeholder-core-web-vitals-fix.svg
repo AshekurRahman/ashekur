@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" role="img" aria-hidden="true">
+  <title>Abstract dark tech visual representing three Core Web Vitals gauges being brought into a good score</title>
+  <defs>
+    <radialGradient id="bgFadecwv" cx="50%" cy="36%" r="78%">
+      <stop offset="0%" stop-color="#141f38"/>
+      <stop offset="100%" stop-color="#0a1020"/>
+    </radialGradient>
+    <pattern id="gridcwv" width="64" height="64" patternUnits="userSpaceOnUse">
+      <path d="M 64 0 L 0 0 0 64" fill="none" stroke="rgba(148,163,184,0.10)" stroke-width="1"/>
+    </pattern>
+    <radialGradient id="gridMaskcwv" cx="50%" cy="32%" r="70%">
+      <stop offset="0%" stop-color="#fff" stop-opacity="0.9"/>
+      <stop offset="65%" stop-color="#fff" stop-opacity="0.32"/>
+      <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+    </radialGradient>
+    <mask id="gridMaskElcwv">
+      <rect width="1280" height="720" fill="url(#gridMaskcwv)"/>
+    </mask>
+    <radialGradient id="gIndigo_cwv" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#4f46e5" stop-opacity="0.46"/>
+      <stop offset="66%" stop-color="#4f46e5" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="gGreen_cwv" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#6ee7b7" stop-opacity="0.42"/>
+      <stop offset="66%" stop-color="#6ee7b7" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bgFadecwv)"/>
+  <rect width="1280" height="720" fill="url(#gridcwv)" mask="url(#gridMaskElcwv)"/>
+  <circle cx="380" cy="230" r="340" fill="url(#gIndigo_cwv)"/><circle cx="960" cy="500" r="320" fill="url(#gGreen_cwv)"/>
+
+  <!-- three gauges: LCP, INP, CLS -->
+  <g stroke-linecap="round" fill="none">
+    <circle cx="720" cy="380" r="64" stroke="rgba(148,163,184,0.25)" stroke-width="10"/>
+    <path d="M 720 316 A 64 64 0 1 1 664 412" stroke="#6ee7b7" stroke-width="10"/>
+    <text x="720" y="388" text-anchor="middle" font-family="monospace" font-size="20" fill="#6ee7b7" stroke="none">LCP</text>
+
+    <circle cx="880" cy="320" r="64" stroke="rgba(148,163,184,0.25)" stroke-width="10"/>
+    <path d="M 880 256 A 64 64 0 1 1 828 296" stroke="#6ee7b7" stroke-width="10"/>
+    <text x="880" y="328" text-anchor="middle" font-family="monospace" font-size="20" fill="#6ee7b7" stroke="none">INP</text>
+
+    <circle cx="1000" cy="440" r="64" stroke="rgba(148,163,184,0.25)" stroke-width="10"/>
+    <path d="M 1000 376 A 64 64 0 0 1 1044 484" stroke="#fca5a5" stroke-width="10"/>
+    <text x="1000" y="448" text-anchor="middle" font-family="monospace" font-size="20" fill="#fca5a5" stroke="none">CLS</text>
+  </g>
+</svg>

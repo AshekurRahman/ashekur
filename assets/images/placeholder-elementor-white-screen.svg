@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" role="img" aria-hidden="true">
+  <title>Abstract dark tech visual representing the Elementor editor rendering a blank white panel</title>
+  <defs>
+    <radialGradient id="bgFadeews" cx="50%" cy="36%" r="78%">
+      <stop offset="0%" stop-color="#141f38"/>
+      <stop offset="100%" stop-color="#0a1020"/>
+    </radialGradient>
+    <pattern id="gridews" width="64" height="64" patternUnits="userSpaceOnUse">
+      <path d="M 64 0 L 0 0 0 64" fill="none" stroke="rgba(148,163,184,0.10)" stroke-width="1"/>
+    </pattern>
+    <radialGradient id="gridMaskews" cx="50%" cy="32%" r="70%">
+      <stop offset="0%" stop-color="#fff" stop-opacity="0.9"/>
+      <stop offset="65%" stop-color="#fff" stop-opacity="0.32"/>
+      <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+    </radialGradient>
+    <mask id="gridMaskElews">
+      <rect width="1280" height="720" fill="url(#gridMaskews)"/>
+    </mask>
+    <radialGradient id="gA_ews" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#4f46e5" stop-opacity="0.46"/>
+      <stop offset="66%" stop-color="#4f46e5" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="gB_ews" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fca5a5" stop-opacity="0.4"/>
+      <stop offset="66%" stop-color="#fca5a5" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bgFadeews)"/>
+  <rect width="1280" height="720" fill="url(#gridews)" mask="url(#gridMaskElews)"/>
+  <circle cx="380" cy="230" r="320" fill="url(#gA_ews)"/><circle cx="980" cy="500" r="320" fill="url(#gB_ews)"/>
+  <rect x="720" y="260" width="230" height="180" rx="10" fill="#f8fafc" opacity="0.92"/>
+  <rect x="720" y="260" width="230" height="30" rx="8" fill="#141f38"/>
+  <circle cx="740" cy="275" r="5" fill="#fca5a5"/>
+  <path d="M 900 405 L 918 423 L 946 380" fill="none" stroke="#fca5a5" stroke-width="0" opacity="0"/>
+  <path d="M 800 320 L 820 340 L 860 300" fill="none" stroke="#fca5a5" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" opacity="0.85"/>
+</svg>

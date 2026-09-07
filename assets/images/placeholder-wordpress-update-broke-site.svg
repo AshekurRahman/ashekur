@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" role="img" aria-hidden="true">
+  <title>Abstract dark tech visual representing a WordPress update breaking a site</title>
+  <defs>
+    <radialGradient id="bgFadeupd" cx="50%" cy="36%" r="78%">
+      <stop offset="0%" stop-color="#141f38"/>
+      <stop offset="100%" stop-color="#0a1020"/>
+    </radialGradient>
+    <pattern id="gridupd" width="64" height="64" patternUnits="userSpaceOnUse">
+      <path d="M 64 0 L 0 0 0 64" fill="none" stroke="rgba(148,163,184,0.10)" stroke-width="1"/>
+    </pattern>
+    <radialGradient id="gridMaskupd" cx="50%" cy="32%" r="70%">
+      <stop offset="0%" stop-color="#fff" stop-opacity="0.9"/>
+      <stop offset="65%" stop-color="#fff" stop-opacity="0.32"/>
+      <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+    </radialGradient>
+    <mask id="gridMaskElupd">
+      <rect width="1280" height="720" fill="url(#gridMaskupd)"/>
+    </mask>
+    <radialGradient id="gIndigo_upd" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#4f46e5" stop-opacity="0.46"/>
+      <stop offset="66%" stop-color="#4f46e5" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="gDanger_upd" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fca5a5" stop-opacity="0.4"/>
+      <stop offset="66%" stop-color="#fca5a5" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="gGreen_upd" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#6ee7b7" stop-opacity="0.4"/>
+      <stop offset="66%" stop-color="#6ee7b7" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bgFadeupd)"/>
+  <rect width="1280" height="720" fill="url(#gridupd)" mask="url(#gridMaskElupd)"/>
+  <circle cx="360" cy="220" r="340" fill="url(#gIndigo_upd)"/><circle cx="940" cy="260" r="220" fill="url(#gDanger_upd)"/><circle cx="980" cy="560" r="320" fill="url(#gGreen_upd)"/>
+
+  <!-- update/sync arrows breaking apart into a warning triangle -->
+  <path d="M 780 330 A 90 90 0 1 1 770 420" fill="none" stroke="#a5b4fc" stroke-width="6" stroke-linecap="round" opacity="0.9"/>
+  <path d="M 762 302 L 780 330 L 748 340 Z" fill="#a5b4fc" opacity="0.9"/>
+  <path d="M 900 240 L 940 320 L 860 320 Z" fill="none" stroke="#fca5a5" stroke-width="5" stroke-linejoin="round" opacity="0.95"/>
+  <line x1="900" y1="266" x2="900" y2="296" stroke="#fca5a5" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="900" cy="308" r="3.5" fill="#fca5a5"/>
+  <path d="M 830 470 L 850 490 L 890 442" fill="none" stroke="#6ee7b7" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity="0.95"/>
+</svg>

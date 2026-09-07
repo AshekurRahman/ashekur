@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Free Divi 5 Migration Readiness Checker</title>
+<meta name="description" content="Paste any Divi site's URL to find out if it's confirmed on Divi 5, still on Divi 4, or somewhere in between &mdash; free, instant, no signup." />
+<meta name="keywords" content="divi 4 to divi 5 migration, should i upgrade to divi 5, divi 5 migration checker, is my site on divi 5, divi 5 readiness check" />
+<meta name="author" content="Ashekur Rahman" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<meta name="theme-color" content="#0F172A" />
+<link rel="canonical" href="https://ashekur.com/tools/divi-5-migration-checker/" />
+<link rel="icon" href="../../assets/images/mark.png" type="image/png" />
+<link rel="apple-touch-icon" href="../../assets/images/mark.png" />
+<link rel="manifest" href="../../site.webmanifest" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Ashekur Rahman" />
+<meta property="og:url" content="https://ashekur.com/tools/divi-5-migration-checker/" />
+<meta property="og:title" content="Free Divi 5 Migration Readiness Checker" />
+<meta property="og:description" content="Paste any Divi site's URL to find out if it's confirmed on Divi 5, still on Divi 4, or somewhere in between &mdash; free, instant, no signup." />
+<meta property="og:image" content="https://ashekur.com/assets/images/og-default.jpg" />
+<meta property="og:locale" content="en_US" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Free Divi 5 Migration Readiness Checker" />
+<meta name="twitter:description" content="Paste any Divi site's URL to find out if it's confirmed on Divi 5, still on Divi 4, or somewhere in between &mdash; free, instant, no signup." />
+<meta name="twitter:image" content="https://ashekur.com/assets/images/og-default.jpg" />
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://www.googletagmanager.com" />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+<link rel="stylesheet" href="../../assets/fonts/remixicon.css" />
+<link rel="stylesheet" href="../../assets/css/template.css" />
+<script>var d=document.documentElement;d.classList.remove('no-js');d.classList.add('js-anim');</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://ashekur.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Tools", "item": "https://ashekur.com/tools/" },
+        { "@type": "ListItem", "position": 3, "name": "Divi 5 Migration Checker", "item": "https://ashekur.com/tools/divi-5-migration-checker/" }
+      ]
+    },
+    {
+      "@type": "WebApplication",
+      "@id": "https://ashekur.com/tools/divi-5-migration-checker/#app",
+      "name": "Divi 5 Migration Readiness Checker",
+      "description": "A free tool that checks whether a Divi site is confirmed on Divi 5, still on Divi 4, or can't be told apart from its public homepage, and estimates its layout complexity.",
+      "url": "https://ashekur.com/tools/divi-5-migration-checker/",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any (web-based)",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "author": { "@type": "Person", "@id": "https://ashekur.com/#person", "name": "Ashekur Rahman", "url": "https://ashekur.com/" }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is this Divi 5 checker actually free?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. There's no signup, no email gate and no limit on how many sites you can check. Paste a URL and get a result in a few seconds." }
+        },
+        {
+          "@type": "Question",
+          "name": "How does it tell Divi 4 and Divi 5 apart?",
+          "acceptedAnswer": { "@type": "Answer", "text": "It checks for module types that only exist in Divi 5 (Timeline, Charts, Table of Contents and others that never existed in Divi 4), and it reads the theme or plugin's own version number from the ?ver= query string WordPress adds to its assets by default. Either signal alone is enough to confirm a version." }
+        },
+        {
+          "@type": "Question",
+          "name": "Why does it sometimes say the version is unknown?",
+          "acceptedAnswer": { "@type": "Answer", "text": "A caching or optimization plugin commonly strips ?ver= query strings from asset URLs, and a homepage doesn't always happen to use a Divi-5-only module. When neither signal survives, this tool says so honestly instead of guessing either way." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can it tell if a Divi 5 site is only half-migrated?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Not from the outside. Divi 5's backward-compatibility mode &mdash; where older content still runs on Divi 4's rendering engine inside a Divi 5 install &mdash; is only visible from the WordPress admin bar, which a logged-out check can never see. This tool reports what's confirmed, and doesn't claim that distinction." }
+        },
+        {
+          "@type": "Question",
+          "name": "What does the module count actually measure?",
+          "acceptedAnswer": { "@type": "Answer", "text": "It's a lower-bound count of et_pb_module wrapper elements found on the homepage &mdash; Divi's own generic per-module class. It's a rough proxy for how much is built on that one page, not a full site audit." }
+        },
+        {
+          "@type": "Question",
+          "name": "It says I should upgrade &mdash; what should I do with that?",
+          "acceptedAnswer": { "@type": "Answer", "text": "The result links straight to Divi customization, where a Divi 4 to Divi 5 migration is planned properly rather than left half-done." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SGTGDFXH6K"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-SGTGDFXH6K');
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header" id="siteHeader">
+  <div class="container header-inner">
+    <a class="brand" href="../../" aria-label="Ashekur Rahman &mdash; home">
+      <picture>
+        <source srcset="../../assets/images/ashekur-logo-light.webp" type="image/webp" />
+        <img src="../../assets/images/ashekur-logo-light.png" alt="Ashekur Rahman" width="480" height="125" fetchpriority="high" decoding="async" />
+      </picture>
+    </a>
+    <nav class="nav-desktop" aria-label="Main">
+      <a href="../../" class="nav-link">Home</a>
+      <a href="../../tools/" class="nav-link">Tools</a>
+      <div class="nav-item" data-dropdown>
+        <div class="nav-row">
+          <a href="../../services/" class="nav-link">Services</a>
+          <button class="nav-caret" type="button" aria-label="Services submenu" aria-expanded="false" aria-controls="navDrop-services" data-dropdown-toggle><i class="ri-arrow-down-s-line" aria-hidden="true"></i></button>
+        </div>
+        <div class="nav-panel" id="navDrop-services">
+          <a class="nav-panel-all" href="../../services/">All services</a>
+          <div class="nav-panel-cols">
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">WordPress</p>
+              <a href="../../services/wordpress-development/">WordPress Development</a>
+              <a href="../../services/wordpress-customization/">WordPress Customization</a>
+              <a href="../../services/wordpress-bug-fix/">WordPress Bug Fix</a>
+              <a href="../../services/wordpress-maintenance/">WordPress Maintenance<em>New</em></a>
+            </div>
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">Page Builders</p>
+              <a href="../../services/elementor-fix/">Elementor Bug Fix</a>
+              <a href="../../services/elementor-customization/">Elementor Customization</a>
+              <a href="../../services/elementor-custom-widgets/">Elementor Custom Widgets</a>
+              <a href="../../services/divi-customization/">Divi Customization</a>
+              <a href="../../services/divi-5-migration/">Divi 5 Migration<em>New</em></a>
+            </div>
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">WooCommerce</p>
+              <a href="../../services/woocommerce-development/">WooCommerce Development</a>
+              <a href="../../services/woocommerce-fix/">WooCommerce Fixes</a>
+            </div>
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">Performance &amp; Security</p>
+              <a href="../../services/wordpress-speed-optimization/">WordPress Speed Optimization</a>
+              <a href="../../services/core-web-vitals-fix/">Core Web Vitals Fix<em>New</em></a>
+              <a href="../../services/wordpress-malware-removal/">WordPress Malware Removal</a>
+              <a href="../../services/google-blacklist-removal/">Google Blacklist Removal<em>New</em></a>
+              <a href="../../services/caching-cdn-setup/">Caching &amp; CDN Setup<em>New</em></a>
+              <a href="../../services/wordpress-security-hardening/">WordPress Security Hardening<em>New</em></a>
+            </div>
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">Migration</p>
+              <a href="../../services/wordpress-migration/">WordPress Migration</a>
+              <a href="../../services/domain-migration-redirects/">Domain Migration &amp; 301 Redirects<em>New</em></a>
+              <a href="../../services/wordpress-migration/#hosting">Host Migration</a>
+            </div>
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">SEO</p>
+              <a href="../../services/seo/">SEO</a>
+              <a href="../../services/technical-seo-audit/">Technical SEO Audit<em>New</em></a>
+            </div>
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">Other</p>
+              <a href="../../services/webflow-development/">Webflow Development</a>
+              <a href="../../services/frontend-development/">Frontend Development</a>
+              <a href="../../services/website-redesign/">Website Redesign<em>New</em></a>
+              <a href="../../services/white-label-wordpress-development/">White Label Development<em>New</em></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="../../pricing/" class="nav-link">Pricing</a>
+      <a href="../../portfolio/" class="nav-link">Portfolio</a>
+      <a href="../../blog/" class="nav-link">Blog</a>
+      <a href="../../contact/" class="btn btn-primary btn-sm nav-cta">Start a project</a>
+    </nav>
+    <button class="burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="nav-mobile" id="mobileNav" aria-label="Mobile" hidden>
+    <a href="../../">Home</a>
+    <a href="../../tools/">Tools</a>
+    <div class="nav-item" data-dropdown>
+      <div class="nav-row">
+        <a href="../../services/">Services</a>
+        <button class="nav-caret" type="button" aria-label="Services submenu" aria-expanded="false" aria-controls="navDropM-services" data-dropdown-toggle><i class="ri-arrow-down-s-line" aria-hidden="true"></i></button>
+      </div>
+      <div class="nav-panel" id="navDropM-services">
+        <a href="../../services/">All services</a>
+        <a href="../../services/wordpress-development/">WordPress Development</a>
+        <a href="../../services/wordpress-customization/">WordPress Customization</a>
+        <a href="../../services/wordpress-bug-fix/">WordPress Bug Fix</a>
+        <a href="../../services/wordpress-maintenance/">WordPress Maintenance</a>
+        <a href="../../services/elementor-fix/">Elementor Bug Fix</a>
+        <a href="../../services/elementor-customization/">Elementor Customization</a>
+        <a href="../../services/divi-customization/">Divi Customization</a>
+        <a href="../../services/divi-5-migration/">Divi 5 Migration</a>
+        <a href="../../services/elementor-custom-widgets/">Elementor Custom Widgets</a>
+        <a href="../../services/wordpress-speed-optimization/">WordPress Speed Optimization</a>
+        <a href="../../services/core-web-vitals-fix/">Core Web Vitals Fix</a>
+        <a href="../../services/woocommerce-fix/">WooCommerce Fixes</a>
+        <a href="../../services/woocommerce-development/">WooCommerce Development</a>
+        <a href="../../services/wordpress-migration/">WordPress Migration</a>
+        <a href="../../services/domain-migration-redirects/">Domain Migration &amp; 301 Redirects</a>
+        <a href="../../services/seo/">WordPress SEO</a>
+        <a href="../../services/wordpress-malware-removal/">WordPress Malware Removal</a>
+        <a href="../../services/google-blacklist-removal/">Google Blacklist Removal</a>
+        <a href="../../services/wordpress-security-hardening/">WordPress Security Hardening</a>
+        <a href="../../services/webflow-development/">Webflow Development</a>
+        <a href="../../services/frontend-development/">Frontend Development</a>
+        <a href="../../services/website-redesign/">Website Redesign</a>
+        <a href="../../services/white-label-wordpress-development/">White Label Development</a>
+      </div>
+    </div>
+    <a href="../../pricing/">Pricing</a>
+    <a href="../../portfolio/">Portfolio</a>
+    <a href="../../blog/">Blog</a>
+    <a href="../../contact/" class="btn btn-primary">Start a project</a>
+  </nav>
+</header>
+
+<div id="smooth-wrapper">
+<div id="smooth-content">
+<main id="main" class="page-shell">
+
+  <section class="section section-dark page-intro page-hero">
+    <div class="hero-grid-bg" aria-hidden="true"></div>
+    <div class="glow glow-a" aria-hidden="true"></div>
+    <div class="glow glow-b" aria-hidden="true"></div>
+    <div class="container">
+      <div class="row hero-split">
+        <div data-anim-hero class="col-12 col-lg-9">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <ol>
+              <li><a href="../../">Home</a></li>
+              <li><a href="../">Tools</a></li>
+              <li><span aria-current="page">Divi 5 Migration Checker</span></li>
+            </ol>
+          </nav>
+          <p class="badge badge-live"><span class="dot" aria-hidden="true"></span>Free &middot; No signup required</p>
+          <h1 data-anim="lines">Is your Divi site ready to move to Divi 5?</h1>
+          <p class="body-lg">Paste any Divi site's URL and find out if it's confirmed on Divi 5, confirmed still on Divi 4, or can't be told apart from the outside &mdash; plus a rough read on how much is built on the homepage. Free, instant, no signup.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-white">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-12 col-lg-9">
+          <form class="contact-form checker-form mt-0" id="detectorForm" novalidate data-endpoint="../../assets/php/divi5-migration-checker.php">
+            <label>
+              <span class="mono field-label">WEBSITE URL</span>
+              <input type="text" id="detectorUrl" name="url" required inputmode="url" autocomplete="url" placeholder="yourwebsite.com" />
+            </label>
+            <div class="btn-row mt-0">
+              <button class="btn btn-primary" type="submit">Check My Site <i class="ri-arrow-right-line" aria-hidden="true"></i></button>
+            </div>
+            <div class="checker-note mt-3 d-none" id="detectorNote" role="status" aria-live="polite"></div>
+          </form>
+
+          <div class="checker-results mt-5" id="detectorResults" aria-live="polite">
+            <h2 id="detectorResultsHeading" class="mb-4" tabindex="-1">Results</h2>
+            <div class="row row-cols-1 row-cols-lg-2 g-4" id="detectorResultsGrid"></div>
+            <div id="detectorCta" class="mt-4"></div>
+            <div class="checker-share" id="detectorShare" hidden>
+              <label>
+                <span class="mono field-label">SHARE THIS RESULT</span>
+                <input type="text" id="detectorShareLink" readonly aria-label="Shareable link to this result" />
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-dark section-contact">
+    <div class="hero-grid-bg contact-grid-bg" aria-hidden="true"></div>
+    <div class="glow glow-d" aria-hidden="true"></div>
+    <div class="container">
+      <div class="contact-cta-shell">
+        <div class="contact-cta-card">
+          <div class="contact-cta-copy">
+            <p class="eyebrow eyebrow-center"><span class="eyebrow-mark eyebrow-mark-light" aria-hidden="true"></span><span class="mono">FOUND YOUR ANSWER?</span></p>
+            <h2 data-anim="lines">Whichever version it is, I can help.</h2>
+            <p class="body-lg">A clean Divi 4 &rarr; 5 migration, or a customization pass on the version you're already on &mdash; planned properly, not left half-done.</p>
+          </div>
+          <div class="contact-cta-actions">
+            <a class="btn btn-primary" href="../../services/divi-5-migration/">Divi 5 Migration <i class="ri-arrow-right-line" aria-hidden="true"></i></a>
+            <a class="btn btn-ghost" href="../../contact/">Contact Me</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-light">
+    <div class="container">
+      <div class="row gx-5">
+        <div class="col-12 col-lg-8">
+          <div class="prose">
+
+<h2>What this tool checks</h2>
+<p>Paste in a URL and this tool fetches the site's public homepage &mdash; the same page a browser or search engine already loads &mdash; and looks for three independent signals. First, module types that only exist in Divi 5 (Timeline, Breadcrumbs, SVG, Table of Contents, Instagram Feed, Tooltip, Post Filter, Charts, Gravity Forms, Imagely Gallery, Payment Button) and never existed in Divi 4 &mdash; finding one is unambiguous proof of Divi 5. Second, the theme or plugin's own version number, read from the <code>?ver=</code> query string WordPress adds to its own assets by default. Third, a rough count of <code>et_pb_module</code> wrapper elements on the page, as a lower-bound proxy for how much is actually built there.</p>
+
+<h2>Why it sometimes can't tell</h2>
+<p>Neither of the two version signals survives everywhere. A caching or optimization plugin commonly strips <code>?ver=</code> query strings from asset URLs before they reach the browser, and a homepage doesn't always happen to include a Divi-5-only module &mdash; those are more common on inner pages built with specific modules. When neither signal is present, this tool reports the version as unknown rather than guessing which one it is. There's also no way to detect Divi 5's backward-compatibility mode from the outside &mdash; the badge for that only shows inside the logged-in WordPress admin bar &mdash; so this tool never claims to see it.</p>
+
+<h2>Why this matters if it's your own site</h2>
+<p>Divi 5 rewrote the Visual Builder in React specifically to fix the editor-speed complaints that dogged Divi 4, and paired it with a Design System &mdash; Elegant Themes' answer to Elementor's Global Kit. A site still running old Divi 4 layouts needs a deliberate move into Divi 5's builder and Design System to actually get that benefit, and the pattern seen most often on real Divi sites is a half-migrated state: some templates rebuilt in Divi 5, others still on Divi 4 shortcodes. See <a href="../../blog/elementor-vs-divi/">Elementor vs Divi</a> for a fuller breakdown of what actually changed between the two versions.</p>
+
+<h2>What to do with the result</h2>
+<p>Confirmed on Divi 4? A planned migration into Divi 5 is worth doing properly &mdash; that's exactly what <a href="../../services/divi-5-migration/">Divi 5 Migration</a> covers. Confirmed on Divi 5 already? It's still worth checking that the migration itself finished cleanly &mdash; presets carried over, nothing left half-rebuilt &mdash; the same page covers that too. Anything else that needs to change on the site, that's <a href="../../services/divi-customization/">Divi Customization</a>.</p>
+
+          </div>
+        </div>
+        <div class="col-12 col-lg-4">
+          <aside class="post-aside">
+            <div class="checker-links-card">
+              <p class="mono post-cta-head">RELATED SERVICES</p>
+              <ul class="mt-3">
+                <li><a href="../../services/divi-5-migration/"><i class="ri-arrow-right-s-line" aria-hidden="true"></i>Divi 5 Migration</a></li>
+                <li><a href="../../services/divi-customization/"><i class="ri-arrow-right-s-line" aria-hidden="true"></i>Divi Customization</a></li>
+                <li><a href="../../services/wordpress-migration/"><i class="ri-arrow-right-s-line" aria-hidden="true"></i>WordPress Migration</a></li>
+                <li><a href="../../blog/elementor-vs-divi/"><i class="ri-arrow-right-s-line" aria-hidden="true"></i>Elementor vs Divi</a></li>
+                <li><a href="../what-theme-is-this/"><i class="ri-arrow-right-s-line" aria-hidden="true"></i>What Theme Is This?</a></li>
+                <li><a href="../wordpress-website-health-checker/"><i class="ri-arrow-right-s-line" aria-hidden="true"></i>Website Health Checker</a></li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-tint">
+    <div class="container">
+      <div class="row gx-5 gy-4">
+        <div class="col-12 col-lg-4">
+          <div class="section-head sticky-head mb-4 mb-lg-0">
+            <p data-anim="fade" class="eyebrow"><span class="eyebrow-mark" aria-hidden="true"></span><span class="mono">FAQ</span></p>
+            <h2 data-anim="lines">Questions about this checker</h2>
+          </div>
+        </div>
+        <div class="col-12 col-lg-8">
+          <div data-anim="stagger" class="faq-list">
+            <details data-anim="item" class="faq-item">
+              <summary>Is this Divi 5 checker actually free?</summary>
+              <p class="faq-body">Yes. There's no signup, no email gate and no limit on how many sites you can check. Paste a URL and get a result in a few seconds.</p>
+            </details>
+            <details data-anim="item" class="faq-item">
+              <summary>How does it tell Divi 4 and Divi 5 apart?</summary>
+              <p class="faq-body">It checks for module types that only exist in Divi 5 (Timeline, Charts, Table of Contents and others that never existed in Divi 4), and it reads the theme or plugin's own version number from the <code>?ver=</code> query string WordPress adds to its assets by default. Either signal alone is enough to confirm a version.</p>
+            </details>
+            <details data-anim="item" class="faq-item">
+              <summary>Why does it sometimes say the version is unknown?</summary>
+              <p class="faq-body">A caching or optimization plugin commonly strips <code>?ver=</code> query strings from asset URLs, and a homepage doesn't always happen to use a Divi-5-only module. When neither signal survives, this tool says so honestly instead of guessing either way.</p>
+            </details>
+            <details data-anim="item" class="faq-item">
+              <summary>Can it tell if a Divi 5 site is only half-migrated?</summary>
+              <p class="faq-body">Not from the outside. Divi 5's backward-compatibility mode &mdash; where older content still runs on Divi 4's rendering engine inside a Divi 5 install &mdash; is only visible from the WordPress admin bar, which a logged-out check can never see. This tool reports what's confirmed, and doesn't claim that distinction.</p>
+            </details>
+            <details data-anim="item" class="faq-item">
+              <summary>What does the module count actually measure?</summary>
+              <p class="faq-body">It's a lower-bound count of <code>et_pb_module</code> wrapper elements found on the homepage &mdash; Divi's own generic per-module class. It's a rough proxy for how much is built on that one page, not a full site audit.</p>
+            </details>
+            <details data-anim="item" class="faq-item">
+              <summary>It says I should upgrade &mdash; what should I do with that?</summary>
+              <p class="faq-body">The result links straight to Divi customization, where a Divi 4 to Divi 5 migration is planned properly rather than left half-done.</p>
+            </details>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-white">
+    <div class="container">
+      <div class="row gx-0">
+        <div class="section-head col-12 col-lg-6">
+          <p data-anim="fade" class="eyebrow"><span class="eyebrow-mark" aria-hidden="true"></span><span class="mono">KEEP GOING</span></p>
+          <h2 data-anim="lines">More free tools</h2>
+          <p data-anim="fade" class="body-lg">No signup, no gated results &mdash; just the tool.</p>
+        </div>
+      </div>
+      <div data-anim="stagger" class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4 related-grid">
+        <div class="col">
+          <a data-anim="item" class="related-card h-100" href="../what-theme-is-this/">
+            <strong>What Theme Is This?</strong>
+            <span>Find out what theme, page builder and plugins any site is running.</span>
+          </a>
+        </div>
+        <div class="col">
+          <a data-anim="item" class="related-card h-100" href="../elementor-speed-checker/">
+            <strong>Elementor Speed &amp; Bloat Checker</strong>
+            <span>A cause-first check for Elementor add-on bloat and slow hosting.</span>
+          </a>
+        </div>
+        <div class="col">
+          <a data-anim="item" class="related-card h-100" href="../">
+            <strong>All Free Tools</strong>
+            <span>The full, growing list of free diagnostic tools.</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-dark section-contact">
+    <div class="hero-grid-bg contact-grid-bg" aria-hidden="true"></div>
+    <div class="glow glow-d" aria-hidden="true"></div>
+    <div class="container">
+      <div class="contact-cta-shell">
+        <div data-anim="fade" class="contact-cta-card">
+          <div class="contact-cta-copy">
+            <p class="badge badge-live mx-auto"><span class="dot" aria-hidden="true"></span>Available for new projects</p>
+            <p class="eyebrow eyebrow-center"><span class="eyebrow-mark eyebrow-mark-light" aria-hidden="true"></span><span class="mono">NEXT STEP</span></p>
+            <h2 data-anim="lines">Send me what this turned up, and let&rsquo;s talk.</h2>
+            <p class="body-lg">Based in Bangladesh, working with clients worldwide. Every serious enquiry gets a reply within one working day.</p>
+          </div>
+          <ul class="tech-chips justify-content-center">
+            <li>Reply within one working day</li>
+            <li>Fixed quote before work starts</li>
+            <li>UK, EU and US hours covered</li>
+          </ul>
+          <div class="contact-cta-actions">
+            <a class="btn btn-primary" href="../../contact/">Start a project <i class="ri-arrow-right-line" aria-hidden="true"></i></a>
+            <a class="btn btn-ghost" href="mailto:hello@ashekur.com">hello@ashekur.com</a>
+            <a class="btn btn-ghost" href="https://wa.me/8801812764112" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-top">
+    <div class="row gx-4 gy-5 align-items-start">
+      <div class="footer-brand col-12 col-lg-5">
+        <div class="brand brand-lg">
+          <picture>
+            <source srcset="../../assets/images/ashekur-logo-light.webp" type="image/webp" />
+            <img src="../../assets/images/ashekur-logo-light.png" alt="ashekur.com" width="480" height="125" loading="lazy" decoding="async" />
+          </picture>
+        </div>
+        <p class="footer-blurb">Frontend development and WordPress engineering for teams that care how it feels, not just how it looks. Based in Bangladesh &mdash; serving clients worldwide.</p>
+      </div>
+      <div class="col-12 col-lg-7">
+        <div class="footer-cols row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4">
+          <nav class="col" aria-label="Services">
+            <p class="mono footer-head">SERVICES</p>
+            <a href="../../services/wordpress-development/">WordPress Development</a>
+            <a href="../../services/wordpress-customization/">WordPress Customization</a>
+            <a href="../../services/elementor-customization/">Elementor Customization</a>
+            <a href="../../services/woocommerce-development/">WooCommerce Development</a>
+            <a href="../../services/wordpress-speed-optimization/">WordPress Speed Optimization</a>
+            <a href="../../services/wordpress-bug-fix/">WordPress Bug Fix</a>
+            <a href="../../services/elementor-fix/">Elementor Bug Fix</a>
+            <a href="../../services/wordpress-migration/">WordPress Migration</a>
+            <a href="../../services/seo/">WordPress SEO</a>
+          </nav>
+          <nav class="col" aria-label="Site">
+            <p class="mono footer-head">SITEMAP</p>
+            <a href="../../">Home</a>
+            <a href="../../tools/">Tools</a>
+            <a href="../../portfolio/">Portfolio</a>
+            <a href="../../blog/">Blog</a>
+            <a href="../../wordpress-fixes/">WordPress Fixes</a>
+            <a href="../">Tools</a>
+            <a href="../../contact/">Contact</a>
+            <a href="../../privacy/">Privacy Policy</a>
+          </nav>
+          <div class="col">
+            <p class="mono footer-head">ELSEWHERE</p>
+            <a href="mailto:hello@ashekur.com"><i class="ri-mail-line" aria-hidden="true"></i>hello@ashekur.com</a>
+            <a href="https://wa.me/8801812764112" target="_blank" rel="noopener noreferrer"><i class="ri-whatsapp-line" aria-hidden="true"></i>WhatsApp</a>
+            <a href="https://www.linkedin.com/in/ashekur-rahman-1ab205122/" target="_blank" rel="noopener noreferrer"><i class="ri-linkedin-fill" aria-hidden="true"></i>LinkedIn</a>
+            <a href="https://github.com/AshekurRahman" target="_blank" rel="noopener noreferrer"><i class="ri-github-fill" aria-hidden="true"></i>GitHub</a>
+            <a href="https://www.upwork.com/freelancers/~010aabe60ec2ae6679" target="_blank" rel="noopener noreferrer"><i class="ri-upwork-fill" aria-hidden="true"></i>Upwork</a>
+            <a href="https://www.facebook.com/ashekur.rahman.hridoy" target="_blank" rel="noopener noreferrer"><i class="ri-facebook-circle-fill" aria-hidden="true"></i>Facebook</a>
+            <a href="https://www.instagram.com/ashekurhridoy/" target="_blank" rel="noopener noreferrer"><i class="ri-instagram-line" aria-hidden="true"></i>Instagram</a>
+            <a href="https://www.youtube.com/@ashekurrahman1431" target="_blank" rel="noopener noreferrer"><i class="ri-youtube-fill" aria-hidden="true"></i>YouTube</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <p class="mono copyright">&copy; 2026 Ashekur Rahman. All rights reserved.</p>
+    <a class="to-top-inline" href="#main"><i class="ri-arrow-up-line" aria-hidden="true"></i> Back to top</a>
+  </div>
+</footer>
+</div>
+</div>
+
+
+<a class="wa-float" href="https://wa.me/8801812764112" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp"><i class="ri-whatsapp-fill" aria-hidden="true"></i></a>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" integrity="sha384-HOvlOYPIs/zjoIkWUGXkVmXsjr8GuZLV+Q+rcPwmJOVZVpvTSXQChiN4t9Euv9Vc" crossorigin="anonymous" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js" integrity="sha384-P8VzCVnT9NBUkMrpcIZrJbA7EBjJvh/fJS6PmP+4nLIM284DtsImIv8D0fFjIkeh" crossorigin="anonymous" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js" integrity="sha384-xb96EMJeax+NLXMC88ZBa1xAeAW+kn+horHh/zFlbMLG2UPWhMJJSlv7fi57hS+Q" crossorigin="anonymous" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollSmoother.min.js" integrity="sha384-dd8lT3AimXbI347qlZzlijPa4qnSlgGxuTqK2HlcfvF5+aOIeddPdMFmFpypQPZN" crossorigin="anonymous" defer></script>
+<script src="../../assets/js/anim.js" defer></script>
+<script src="../../assets/js/main.js" defer></script>
+<script src="../../assets/js/divi5-migration-checker.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" role="img" aria-hidden="true">
+  <title>Abstract dark tech visual representing the Elementor editor stuck loading</title>
+  <defs>
+    <radialGradient id="bgFadeel" cx="50%" cy="36%" r="78%">
+      <stop offset="0%" stop-color="#141f38"/>
+      <stop offset="100%" stop-color="#0a1020"/>
+    </radialGradient>
+    <pattern id="gridel" width="64" height="64" patternUnits="userSpaceOnUse">
+      <path d="M 64 0 L 0 0 0 64" fill="none" stroke="rgba(148,163,184,0.10)" stroke-width="1"/>
+    </pattern>
+    <radialGradient id="gridMaskel" cx="50%" cy="32%" r="70%">
+      <stop offset="0%" stop-color="#fff" stop-opacity="0.9"/>
+      <stop offset="65%" stop-color="#fff" stop-opacity="0.32"/>
+      <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+    </radialGradient>
+    <mask id="gridMaskElel">
+      <rect width="1280" height="720" fill="url(#gridMaskel)"/>
+    </mask>
+    <radialGradient id="gPink_el" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#7c3aed" stop-opacity="0.45"/>
+      <stop offset="66%" stop-color="#7c3aed" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="gIndigo_el" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#4f46e5" stop-opacity="0.4"/>
+      <stop offset="66%" stop-color="#4f46e5" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="gDanger_el" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fca5a5" stop-opacity="0.5"/>
+      <stop offset="66%" stop-color="#fca5a5" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bgFadeel)"/>
+  <rect width="1280" height="720" fill="url(#gridel)" mask="url(#gridMaskElel)"/>
+  <circle cx="360" cy="220" r="340" fill="url(#gPink_el)"/><circle cx="980" cy="560" r="360" fill="url(#gIndigo_el)"/><circle cx="860" cy="380" r="140" fill="url(#gDanger_el)"/>
+
+  <!-- editor chrome: a browser frame with an empty widgets panel and a blank canvas -->
+  <rect x="430" y="210" width="500" height="300" rx="10" fill="#141b2b" stroke="#818cf8" stroke-width="1.5" opacity="0.9"/>
+  <rect x="430" y="210" width="500" height="34" rx="10" fill="#1d2142"/>
+  <circle cx="452" cy="227" r="4" fill="#fca5a5"/>
+  <circle cx="468" cy="227" r="4" fill="#475569"/>
+  <circle cx="484" cy="227" r="4" fill="#475569"/>
+  <rect x="430" y="244" width="140" height="266" fill="#1d2142" opacity="0.7"/>
+  <g stroke="#475569" stroke-width="6" stroke-linecap="round" opacity="0.6">
+    <line x1="452" y1="270" x2="548" y2="270"/>
+    <line x1="452" y1="296" x2="548" y2="296"/>
+    <line x1="452" y1="322" x2="548" y2="322"/>
+    <line x1="452" y1="348" x2="548" y2="348"/>
+  </g>
+
+  <!-- stuck spinner over the blank canvas -->
+  <g transform="translate(750,377)">
+    <circle r="42" fill="none" stroke="rgba(148,163,184,0.25)" stroke-width="6"/>
+    <path d="M 0 -42 A 42 42 0 0 1 36 -21" fill="none" stroke="#a5b4fc" stroke-width="6" stroke-linecap="round"/>
+    <path d="M -8 -6 L 6 -6 L 6 -18 L 16 -18 L 16 10 L 26 10" fill="none" stroke="#fca5a5" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" opacity="0.9"/>
+  </g>
+  <text x="750" y="452" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" fill="#8aa0b9" letter-spacing="1">LOADING&#8230;</text>
+</svg>

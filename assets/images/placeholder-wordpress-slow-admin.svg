@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" role="img" aria-hidden="true">
+  <title>Abstract dark tech visual representing a slow-loading WordPress admin dashboard</title>
+  <defs>
+    <radialGradient id="bgFade_slow" cx="50%" cy="36%" r="78%">
+      <stop offset="0%" stop-color="#141f38"/>
+      <stop offset="100%" stop-color="#0a1020"/>
+    </radialGradient>
+    <pattern id="grid_slow" width="64" height="64" patternUnits="userSpaceOnUse">
+      <path d="M 64 0 L 0 0 0 64" fill="none" stroke="rgba(148,163,184,0.10)" stroke-width="1"/>
+    </pattern>
+    <radialGradient id="gridMask_slow" cx="50%" cy="32%" r="70%">
+      <stop offset="0%" stop-color="#fff" stop-opacity="0.9"/>
+      <stop offset="65%" stop-color="#fff" stop-opacity="0.32"/>
+      <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+    </radialGradient>
+    <mask id="gridMaskEl_slow">
+      <rect width="1280" height="720" fill="url(#gridMask_slow)"/>
+    </mask>
+    <radialGradient id="gPink_slow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#7c3aed" stop-opacity="0.45"/>
+      <stop offset="66%" stop-color="#7c3aed" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="gIndigo_slow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#4f46e5" stop-opacity="0.4"/>
+      <stop offset="66%" stop-color="#4f46e5" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="gDanger_slow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fca5a5" stop-opacity="0.5"/>
+      <stop offset="66%" stop-color="#fca5a5" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bgFade_slow)"/>
+  <rect width="1280" height="720" fill="url(#grid_slow)" mask="url(#gridMaskEl_slow)"/>
+  <circle cx="360" cy="220" r="340" fill="url(#gPink_slow)"/><circle cx="980" cy="560" r="360" fill="url(#gIndigo_slow)"/><circle cx="860" cy="380" r="140" fill="url(#gDanger_slow)"/>
+
+  <!-- admin dashboard window -->
+  <rect x="410" y="200" width="480" height="320" rx="10" fill="#141b2b" stroke="#818cf8" stroke-width="1.5" opacity="0.9"/>
+  <rect x="410" y="200" width="480" height="34" rx="10" fill="#1d2142"/>
+  <circle cx="432" cy="217" r="4" fill="#fca5a5"/>
+  <circle cx="448" cy="217" r="4" fill="#475569"/>
+  <circle cx="464" cy="217" r="4" fill="#475569"/>
+  <rect x="410" y="234" width="120" height="286" fill="#1d2142" opacity="0.7"/>
+  <g stroke="#475569" stroke-width="6" stroke-linecap="round" opacity="0.55">
+    <line x1="428" y1="258" x2="510" y2="258"/>
+    <line x1="428" y1="282" x2="510" y2="282"/>
+    <line x1="428" y1="306" x2="510" y2="306"/>
+    <line x1="428" y1="330" x2="510" y2="330"/>
+    <line x1="428" y1="354" x2="510" y2="354"/>
+  </g>
+  <!-- ghosted list rows, mid-render -->
+  <g stroke="#334155" stroke-width="10" stroke-linecap="round" opacity="0.45">
+    <line x1="552" y1="270" x2="820" y2="270"/>
+    <line x1="552" y1="300" x2="760" y2="300"/>
+    <line x1="552" y1="330" x2="800" y2="330"/>
+    <line x1="552" y1="360" x2="700" y2="360"/>
+  </g>
+
+  <!-- slow spinner -->
+  <g transform="translate(700,447)">
+    <circle r="30" fill="none" stroke="rgba(148,163,184,0.25)" stroke-width="5"/>
+    <path d="M 0 -30 A 30 30 0 0 1 26 -15" fill="none" stroke="#a5b4fc" stroke-width="5" stroke-linecap="round"/>
+  </g>
+
+  <!-- hourglass icon, offset -->
+  <g transform="translate(1000,300)" stroke="#fca5a5" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.9">
+    <path d="M -22 -30 L 22 -30 L 22 -22 L 4 0 L 22 22 L 22 30 L -22 30 L -22 22 L -4 0 L -22 -22 Z"/>
+    <line x1="-22" y1="-30" x2="22" y2="-30"/>
+    <line x1="-22" y1="30" x2="22" y2="30"/>
+    <path d="M -10 18 L 10 18 L 0 4 Z" fill="#fca5a5" stroke="none" opacity="0.6"/>
+  </g>
+
+  <text x="700" y="500" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" fill="#8aa0b9" letter-spacing="1">LOADING&#8230;</text>
+</svg>

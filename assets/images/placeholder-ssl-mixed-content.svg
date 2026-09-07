@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" role="img" aria-hidden="true">
+  <title>Abstract dark tech visual representing a broken padlock beside a mixed-content warning</title>
+  <defs>
+    <radialGradient id="bgFadessl" cx="50%" cy="36%" r="78%">
+      <stop offset="0%" stop-color="#141f38"/>
+      <stop offset="100%" stop-color="#0a1020"/>
+    </radialGradient>
+    <pattern id="gridssl" width="64" height="64" patternUnits="userSpaceOnUse">
+      <path d="M 64 0 L 0 0 0 64" fill="none" stroke="rgba(148,163,184,0.10)" stroke-width="1"/>
+    </pattern>
+    <radialGradient id="gridMaskssl" cx="50%" cy="32%" r="70%">
+      <stop offset="0%" stop-color="#fff" stop-opacity="0.9"/>
+      <stop offset="65%" stop-color="#fff" stop-opacity="0.32"/>
+      <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+    </radialGradient>
+    <mask id="gridMaskElssl">
+      <rect width="1280" height="720" fill="url(#gridMaskssl)"/>
+    </mask>
+    <radialGradient id="gA_ssl" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#4f46e5" stop-opacity="0.46"/>
+      <stop offset="66%" stop-color="#4f46e5" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="gB_ssl" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fca5a5" stop-opacity="0.4"/>
+      <stop offset="66%" stop-color="#fca5a5" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bgFadessl)"/>
+  <rect width="1280" height="720" fill="url(#gridssl)" mask="url(#gridMaskElssl)"/>
+  <circle cx="380" cy="230" r="320" fill="url(#gA_ssl)"/><circle cx="980" cy="500" r="320" fill="url(#gB_ssl)"/>
+  <rect x="770" y="360" width="110" height="90" rx="10" fill="none" stroke="#6ee7b7" stroke-width="4"/>
+  <path d="M 790 360 L 790 330 A 35 35 0 0 1 855 325" fill="none" stroke="#fca5a5" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="825" cy="405" r="7" fill="#fca5a5"/>
+  <path d="M 900 330 L 930 385 L 870 385 Z" fill="none" stroke="#fca5a5" stroke-width="4" stroke-linejoin="round"/>
+  <line x1="900" y1="350" x2="900" y2="368" stroke="#fca5a5" stroke-width="4"/>
+  <circle cx="900" cy="376" r="2.5" fill="#fca5a5"/>
+</svg>

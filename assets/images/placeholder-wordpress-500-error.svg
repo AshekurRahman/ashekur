@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" role="img" aria-hidden="true">
+  <title>Abstract dark tech visual representing a raw WordPress 500 internal server error</title>
+  <defs>
+    <radialGradient id="bgFade_500e" cx="50%" cy="36%" r="78%">
+      <stop offset="0%" stop-color="#141f38"/>
+      <stop offset="100%" stop-color="#0a1020"/>
+    </radialGradient>
+    <pattern id="grid_500e" width="64" height="64" patternUnits="userSpaceOnUse">
+      <path d="M 64 0 L 0 0 0 64" fill="none" stroke="rgba(148,163,184,0.10)" stroke-width="1"/>
+    </pattern>
+    <radialGradient id="gridMask_500e" cx="50%" cy="32%" r="70%">
+      <stop offset="0%" stop-color="#fff" stop-opacity="0.9"/>
+      <stop offset="65%" stop-color="#fff" stop-opacity="0.32"/>
+      <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+    </radialGradient>
+    <mask id="gridMaskEl_500e">
+      <rect width="1280" height="720" fill="url(#gridMask_500e)"/>
+    </mask>
+    <radialGradient id="gPink_500e" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#7c3aed" stop-opacity="0.45"/>
+      <stop offset="66%" stop-color="#7c3aed" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="gIndigo_500e" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#4f46e5" stop-opacity="0.4"/>
+      <stop offset="66%" stop-color="#4f46e5" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="gDanger_500e" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fca5a5" stop-opacity="0.55"/>
+      <stop offset="66%" stop-color="#fca5a5" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bgFade_500e)"/>
+  <rect width="1280" height="720" fill="url(#grid_500e)" mask="url(#gridMaskEl_500e)"/>
+  <circle cx="360" cy="220" r="340" fill="url(#gPink_500e)"/><circle cx="980" cy="560" r="360" fill="url(#gIndigo_500e)"/><circle cx="810" cy="360" r="160" fill="url(#gDanger_500e)"/>
+
+  <!-- server rack silhouette on the left -->
+  <g opacity="0.85">
+    <rect x="360" y="240" width="150" height="240" rx="8" fill="#141b2b" stroke="#475569" stroke-width="1.5"/>
+    <rect x="378" y="262" width="114" height="26" rx="3" fill="#1d2142"/>
+    <circle cx="392" cy="275" r="4" fill="#4ade80"/>
+    <rect x="378" y="300" width="114" height="26" rx="3" fill="#1d2142"/>
+    <circle cx="392" cy="313" r="4" fill="#fca5a5"/>
+    <rect x="378" y="338" width="114" height="26" rx="3" fill="#1d2142"/>
+    <circle cx="392" cy="351" r="4" fill="#475569"/>
+    <rect x="378" y="376" width="114" height="26" rx="3" fill="#1d2142"/>
+    <circle cx="392" cy="389" r="4" fill="#475569"/>
+    <rect x="378" y="414" width="114" height="26" rx="3" fill="#1d2142"/>
+    <circle cx="392" cy="427" r="4" fill="#475569"/>
+  </g>
+
+  <!-- cracked browser frame with 500 -->
+  <g>
+    <rect x="560" y="220" width="400" height="270" rx="10" fill="#141b2b" stroke="#fca5a5" stroke-width="1.5" opacity="0.95"/>
+    <rect x="560" y="220" width="400" height="34" rx="10" fill="#1d2142"/>
+    <circle cx="582" cy="237" r="4" fill="#fca5a5"/>
+    <circle cx="598" cy="237" r="4" fill="#475569"/>
+    <circle cx="614" cy="237" r="4" fill="#475569"/>
+    <text x="760" y="400" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-weight="600" font-size="88" fill="#fca5a5" opacity="0.92">500</text>
+    <path d="M 700 268 L 730 330 L 690 360 L 740 430" fill="none" stroke="#fca5a5" stroke-width="2" stroke-linecap="round" opacity="0.55"/>
+    <path d="M 860 268 L 830 320 L 870 350 L 820 430" fill="none" stroke="#fca5a5" stroke-width="2" stroke-linecap="round" opacity="0.55"/>
+  </g>
+  <text x="760" y="528" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" fill="#8aa0b9" letter-spacing="1">INTERNAL SERVER ERROR</text>
+</svg>

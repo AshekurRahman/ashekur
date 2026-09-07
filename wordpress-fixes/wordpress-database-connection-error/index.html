@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Error Establishing a Database Connection — Causes & How to Fix It | Ashekur Rahman</title>
+<meta name="description" content="Seeing &quot;Error establishing a database connection&quot; on your WordPress site? Here's what actually breaks the connection to MySQL and how to fix it safely." />
+<meta name="keywords" content="error establishing a database connection, wordpress database connection error, fix database connection error wordpress, wordpress database error, mysql connection error wordpress, wordpress site cannot connect to database" />
+<meta name="author" content="Ashekur Rahman" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<meta name="theme-color" content="#0F172A" />
+<link rel="canonical" href="https://ashekur.com/wordpress-fixes/wordpress-database-connection-error/" />
+<link rel="icon" href="../../assets/images/mark.png" type="image/png" />
+<link rel="apple-touch-icon" href="../../assets/images/mark.png" />
+<link rel="manifest" href="../../site.webmanifest" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-09-06" />
+<meta property="article:author" content="Ashekur Rahman" />
+<meta property="article:section" content="WordPress Fixes" />
+<meta property="og:site_name" content="Ashekur Rahman" />
+<meta property="og:url" content="https://ashekur.com/wordpress-fixes/wordpress-database-connection-error/" />
+<meta property="og:title" content="Error Establishing a Database Connection — Causes & How to Fix It | Ashekur Rahman" />
+<meta property="og:description" content="Seeing &quot;Error establishing a database connection&quot; on your WordPress site? Here's what actually breaks the connection to MySQL and how to fix it safely." />
+<meta property="og:image" content="https://ashekur.com/assets/images/og-default.jpg" />
+<meta property="og:locale" content="en_US" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Error Establishing a Database Connection — Causes & How to Fix It | Ashekur Rahman" />
+<meta name="twitter:description" content="Seeing &quot;Error establishing a database connection&quot; on your WordPress site? Here's what actually breaks the connection to MySQL and how to fix it." />
+<meta name="twitter:image" content="https://ashekur.com/assets/images/og-default.jpg" />
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://www.googletagmanager.com" />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+<link rel="stylesheet" href="../../assets/fonts/remixicon.css" />
+<link rel="stylesheet" href="../../assets/css/template.css" />
+<script>var d=document.documentElement;d.classList.remove('no-js');d.classList.add('js-anim');</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://ashekur.com/" },
+        { "@type": "ListItem", "position": 2, "name": "WordPress Fixes", "item": "https://ashekur.com/wordpress-fixes/" },
+        { "@type": "ListItem", "position": 3, "name": "Database Connection Error", "item": "https://ashekur.com/wordpress-fixes/wordpress-database-connection-error/" }
+      ]
+    },
+    {
+      "@type": "TechArticle",
+      "@id": "https://ashekur.com/wordpress-fixes/wordpress-database-connection-error/#article",
+      "headline": "Error Establishing a Database Connection",
+      "description": "Seeing \"Error establishing a database connection\" on your WordPress site? Here's what actually breaks the connection to MySQL and how to fix it safely.",
+      "url": "https://ashekur.com/wordpress-fixes/wordpress-database-connection-error/",
+      "mainEntityOfPage": { "@type": "WebPage", "@id": "https://ashekur.com/wordpress-fixes/wordpress-database-connection-error/" },
+      "image": "https://ashekur.com/assets/images/og-default.jpg",
+      "datePublished": "2026-09-06",
+      "dateModified": "2026-09-06",
+      "author": {
+        "@type": "Person", "@id": "https://ashekur.com/#person", "name": "Ashekur Rahman", "url": "https://ashekur.com/",
+        "jobTitle": "Frontend Developer & WordPress Expert", "email": "hello@ashekur.com", "telephone": "+8801812764112",
+        "address": { "@type": "PostalAddress", "addressCountry": "BD" }
+      },
+      "publisher": {
+        "@type": "Person", "@id": "https://ashekur.com/#person", "name": "Ashekur Rahman", "url": "https://ashekur.com/",
+        "jobTitle": "Frontend Developer & WordPress Expert", "email": "hello@ashekur.com", "telephone": "+8801812764112",
+        "address": { "@type": "PostalAddress", "addressCountry": "BD" }
+      },
+      "articleSection": "WordPress Fixes",
+      "proficiencyLevel": "Beginner",
+      "dependencies": "WordPress, MySQL/MariaDB, hosting environment",
+      "wordCount": 2850,
+      "inLanguage": "en",
+      "isAccessibleForFree": true
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is this the same as the WordPress white screen of death?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No, and they point in different directions. A white screen is usually a PHP fatal error inside a plugin or theme with error output turned off — WordPress and PHP both loaded, something in the code crashed silently. A database connection error happens earlier: WordPress couldn't reach MySQL at all, so it never got as far as running plugin or theme code, and it shows an actual (if brief) message rather than nothing." }
+        },
+        {
+          "@type": "Question",
+          "name": "Will I lose my content if the database can't connect?",
+          "acceptedAnswer": { "@type": "Answer", "text": "In almost every case, no. Your posts, pages, products and settings are still sitting in the database exactly as they were — what's failing is the connection to reach them, not the data itself. Losing content to this specific error is rare and would point to a separate, much less common disk or storage failure underneath it." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can a caching plugin cause this?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Rarely as the direct cause, but an object-caching setup (Redis or Memcached) that holds persistent database connections open can make a connection-limit problem worse under load. Temporarily disabling object caching is a reasonable diagnostic step if the error is intermittent rather than constant." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does this mean my site has been hacked?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Usually not. Most cases trace back to wrong credentials in wp-config.php, a host-side database outage, or too many simultaneous connections — not malicious activity. It's worth a closer look if this appeared alongside other signs of compromise, but on its own it isn't evidence of a hack." }
+        },
+        {
+          "@type": "Question",
+          "name": "Why does wp-admin show the same error as the public site?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Because wp-admin needs the database just as much as the front end does — every screen in the dashboard, including the login form itself, runs a database query before it can render anything. Nothing in WordPress functions without that connection." }
+        },
+        {
+          "@type": "Question",
+          "name": "I changed my database password and now this appeared — why?",
+          "acceptedAnswer": { "@type": "Answer", "text": "wp-config.php still has the old password stored in it. Changing a database user's password in cPanel or phpMyAdmin doesn't update WordPress automatically — the two are separate systems, and wp-config.php needs to be edited to match whatever the new password actually is." }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I know if it's my hosting provider's problem or something in my WordPress files?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Try connecting to the database directly with the same credentials from wp-config.php, using phpMyAdmin or a command-line MySQL client. If that connection also fails, the problem is server-side and it's your host's to fix. If it succeeds there but WordPress still can't connect, the mismatch is in wp-config.php or a WordPress-level cause." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SGTGDFXH6K"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-SGTGDFXH6K');
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header" id="siteHeader">
+  <div class="container header-inner">
+    <a class="brand" href="../../" aria-label="Ashekur Rahman &mdash; home">
+      <picture>
+        <source srcset="../../assets/images/ashekur-logo-light.webp" type="image/webp" />
+        <img src="../../assets/images/ashekur-logo-light.png" alt="Ashekur Rahman" width="480" height="125" fetchpriority="high" decoding="async" />
+      </picture>
+    </a>
+    <nav class="nav-desktop" aria-label="Main">
+      <a href="../../" class="nav-link">Home</a>
+      <a href="../../tools/" class="nav-link">Tools</a>
+      <div class="nav-item" data-dropdown>
+        <div class="nav-row">
+          <a href="../../services/" class="nav-link">Services</a>
+          <button class="nav-caret" type="button" aria-label="Services submenu" aria-expanded="false" aria-controls="navDrop-services" data-dropdown-toggle><i class="ri-arrow-down-s-line" aria-hidden="true"></i></button>
+        </div>
+        <div class="nav-panel" id="navDrop-services">
+          <a class="nav-panel-all" href="../../services/">All services</a>
+          <div class="nav-panel-cols">
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">WordPress</p>
+              <a href="../../services/wordpress-development/">WordPress Development</a>
+              <a href="../../services/wordpress-customization/">WordPress Customization</a>
+              <a href="../../services/wordpress-bug-fix/">WordPress Bug Fix</a>
+              <a href="../../services/wordpress-maintenance/">WordPress Maintenance<em>New</em></a>
+            </div>
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">Page Builders</p>
+              <a href="../../services/elementor-fix/">Elementor Bug Fix</a>
+              <a href="../../services/elementor-customization/">Elementor Customization</a>
+              <a href="../../services/elementor-custom-widgets/">Elementor Custom Widgets</a>
+              <a href="../../services/divi-customization/">Divi Customization</a>
+              <a href="../../services/divi-5-migration/">Divi 5 Migration<em>New</em></a>
+            </div>
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">WooCommerce</p>
+              <a href="../../services/woocommerce-development/">WooCommerce Development</a>
+              <a href="../../services/woocommerce-fix/">WooCommerce Fixes</a>
+            </div>
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">Performance &amp; Security</p>
+              <a href="../../services/wordpress-speed-optimization/">WordPress Speed Optimization</a>
+              <a href="../../services/core-web-vitals-fix/">Core Web Vitals Fix<em>New</em></a>
+              <a href="../../services/wordpress-malware-removal/">WordPress Malware Removal</a>
+              <a href="../../services/google-blacklist-removal/">Google Blacklist Removal<em>New</em></a>
+              <a href="../../services/caching-cdn-setup/">Caching &amp; CDN Setup<em>New</em></a>
+              <a href="../../services/wordpress-security-hardening/">WordPress Security Hardening<em>New</em></a>
+            </div>
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">Migration</p>
+              <a href="../../services/wordpress-migration/">WordPress Migration</a>
+              <a href="../../services/domain-migration-redirects/">Domain Migration &amp; 301 Redirects<em>New</em></a>
+              <a href="../../services/wordpress-migration/#hosting">Host Migration</a>
+            </div>
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">SEO</p>
+              <a href="../../services/seo/">SEO</a>
+              <a href="../../services/technical-seo-audit/">Technical SEO Audit<em>New</em></a>
+            </div>
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">Other</p>
+              <a href="../../services/webflow-development/">Webflow Development</a>
+              <a href="../../services/frontend-development/">Frontend Development</a>
+              <a href="../../services/website-redesign/">Website Redesign<em>New</em></a>
+              <a href="../../services/white-label-wordpress-development/">White Label Development<em>New</em></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="../../pricing/" class="nav-link">Pricing</a>
+      <a href="../../portfolio/" class="nav-link">Portfolio</a>
+      <a href="../../blog/" class="nav-link">Blog</a>
+      <a href="../../contact/" class="btn btn-primary btn-sm nav-cta">Start a project</a>
+    </nav>
+    <button class="burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="nav-mobile" id="mobileNav" aria-label="Mobile" hidden>
+    <a href="../../">Home</a>
+    <a href="../../tools/">Tools</a>
+    <div class="nav-item" data-dropdown>
+      <div class="nav-row">
+        <a href="../../services/">Services</a>
+        <button class="nav-caret" type="button" aria-label="Services submenu" aria-expanded="false" aria-controls="navDropM-services" data-dropdown-toggle><i class="ri-arrow-down-s-line" aria-hidden="true"></i></button>
+      </div>
+      <div class="nav-panel" id="navDropM-services">
+        <a href="../../services/">All services</a>
+        <a href="../../services/wordpress-development/">WordPress Development</a>
+        <a href="../../services/wordpress-customization/">WordPress Customization</a>
+        <a href="../../services/wordpress-bug-fix/">WordPress Bug Fix</a>
+        <a href="../../services/wordpress-maintenance/">WordPress Maintenance</a>
+        <a href="../../services/elementor-fix/">Elementor Bug Fix</a>
+        <a href="../../services/elementor-customization/">Elementor Customization</a>
+        <a href="../../services/divi-customization/">Divi Customization</a>
+        <a href="../../services/divi-5-migration/">Divi 5 Migration</a>
+        <a href="../../services/elementor-custom-widgets/">Elementor Custom Widgets</a>
+        <a href="../../services/wordpress-speed-optimization/">WordPress Speed Optimization</a>
+        <a href="../../services/core-web-vitals-fix/">Core Web Vitals Fix</a>
+        <a href="../../services/woocommerce-fix/">WooCommerce Fixes</a>
+        <a href="../../services/woocommerce-development/">WooCommerce Development</a>
+        <a href="../../services/wordpress-migration/">WordPress Migration</a>
+        <a href="../../services/domain-migration-redirects/">Domain Migration &amp; 301 Redirects</a>
+        <a href="../../services/seo/">WordPress SEO</a>
+        <a href="../../services/wordpress-malware-removal/">WordPress Malware Removal</a>
+        <a href="../../services/google-blacklist-removal/">Google Blacklist Removal</a>
+        <a href="../../services/wordpress-security-hardening/">WordPress Security Hardening</a>
+        <a href="../../services/webflow-development/">Webflow Development</a>
+        <a href="../../services/frontend-development/">Frontend Development</a>
+        <a href="../../services/website-redesign/">Website Redesign</a>
+        <a href="../../services/white-label-wordpress-development/">White Label Development</a>
+      </div>
+    </div>
+    <a href="../../pricing/">Pricing</a>
+    <a href="../../portfolio/">Portfolio</a>
+    <a href="../../blog/">Blog</a>
+    <a href="../../contact/" class="btn btn-primary">Start a project</a>
+  </nav>
+</header>
+
+<div id="smooth-wrapper">
+<div id="smooth-content">
+<main id="main" class="page-shell">
+
+  <article>
+  <section class="section section-dark page-intro page-hero">
+    <div class="hero-grid-bg" aria-hidden="true"></div>
+    <div class="glow glow-a" aria-hidden="true"></div>
+    <div class="glow glow-b" aria-hidden="true"></div>
+    <div class="container">
+      <div class="row hero-split">
+        <div data-anim-hero class="col-12 col-lg-9">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <ol>
+              <li><a href="../../">Home</a></li>
+              <li><a href="../../wordpress-fixes/">WordPress Fixes</a></li>
+              <li><span aria-current="page">Database Connection Error</span></li>
+            </ol>
+          </nav>
+          <p class="post-meta mono"><span class="post-cat">Site down</span><span>11 min read</span><span>2026-09-06</span><span>Ashekur Rahman</span></p>
+          <h1 data-anim="lines">WordPress Showing &ldquo;Error Establishing a Database Connection&rdquo;? Here's What's Actually Wrong.</h1>
+          <p class="body-lg">A plain page with a single line of text and nothing else &mdash; no header, no styling, sometimes wp-admin down along with it &mdash; means WordPress could not reach MySQL at all. That's a different, earlier failure than a plugin conflict or a page-builder glitch, and it usually traces to one of a short list of causes once you know where to look.</p>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="../../contact/">Send me your site <i class="ri-arrow-right-line" aria-hidden="true"></i></a>
+            <a class="btn btn-ghost" href="../../services/wordpress-bug-fix/">See the bug fix service</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-white">
+    <div class="container">
+      <figure data-anim="reveal" class="shot mb-5">
+        <picture>
+          <source srcset="../../assets/images/wordpress-database-connection-error.webp" type="image/webp" />
+          <img src="../../assets/images/wordpress-database-connection-error.jpeg" alt="Database cylinder icon with a broken connection line reaching toward a browser window showing a database connection error" width="1280" height="720" loading="lazy" decoding="async" />
+        </picture>
+        <figcaption>A bare "Error establishing a database connection" message means WordPress never reached MySQL.</figcaption>
+      </figure>
+
+      <div class="row gx-5 gy-4">
+        <aside class="col-12 col-lg-4 order-lg-2">
+          <div class="post-aside">
+            <nav class="toc" aria-label="On this page">
+              <p class="toc-head mono">ON THIS PAGE</p>
+              <ol>
+                <li><a href="#what-is-the-problem">What is the problem?</a></li>
+                <li><a href="#common-symptoms">Common symptoms</a></li>
+                <li><a href="#why-does-this-happen">Why does this happen?</a></li>
+                <li><a href="#common-technical-causes">Common technical causes</a></li>
+                <li><a href="#how-to-diagnose-it">How to diagnose it</a></li>
+                <li><a href="#how-to-fix-it-step-by-step">How to fix it, step by step</a></li>
+                <li><a href="#when-this-needs-professional-help">When this needs professional help</a></li>
+                <li><a href="#how-i-can-help">How I can help</a></li>
+              </ol>
+            </nav>
+          </div>
+        </aside>
+        <div class="col-12 col-lg-8 order-lg-1">
+          <div class="prose">
+
+<h2 id="what-is-the-problem">What is the problem?</h2>
+<p>&ldquo;Error establishing a database connection&rdquo; is WordPress's own message for one specific failure: it could not open a connection to the MySQL or MariaDB database that holds every post, page, product, setting and user account on your site. WordPress generates this itself, in its core database-handling code, the moment a connection attempt fails &mdash; it isn't a plugin error, a theme error, or a hosting error page. It just means the very first thing WordPress needs to do on every single request never succeeded.</p>
+<blockquote>Quick answer: this almost always comes down to one of four things &mdash; wrong database credentials in wp-config.php, the database server itself being unreachable, too many simultaneous connections hitting your hosting plan's limit, or a database that got moved or renamed without wp-config.php being updated to match.</blockquote>
+<p>Because the connection fails before WordPress can query for anything, this affects the entire site at once &mdash; the public pages, wp-admin, wp-login.php and the REST API all show the same failure. That total-outage feel is what makes it look worse than it usually is: your content is still sitting in the database exactly as it was, untouched. What's broken is the connection to reach it, not the data itself.</p>
+
+<h2 id="common-symptoms">Common symptoms</h2>
+<ul>
+  <li>A completely plain page with the single line &ldquo;Error establishing a database connection&rdquo; and nothing else &mdash; no WordPress styling, no header or footer</li>
+  <li>wp-admin and wp-login.php show the identical message, not just the public site</li>
+  <li>It can be constant (every request fails the same way) or intermittent (works, then fails, then works again) &mdash; and which of those two you're seeing is the most useful early clue</li>
+  <li>REST API endpoints (<code>/wp-json/</code>) also fail, since they need the database too</li>
+  <li>It appeared right after a migration, a host change, a database password reset, or a restore from backup</li>
+  <li>Your hosting status page shows everything as operational, because the web server itself is fine &mdash; it's specifically the path from PHP to the database that's broken</li>
+</ul>
+
+<h2 id="why-does-this-happen">Why does this happen?</h2>
+<p>Every WordPress request runs through <code>wp-config.php</code> first, which defines four constants &mdash; <code>DB_NAME</code>, <code>DB_USER</code>, <code>DB_PASSWORD</code> and <code>DB_HOST</code> &mdash; and hands them to WordPress's database class to open a connection before anything else happens. If any one of those four values is wrong, or if the database server named in <code>DB_HOST</code> can't actually be reached right now, that connection attempt fails and WordPress has no content to serve, because it never got as far as asking for any.</p>
+<p>This is also why the error can be intermittent rather than constant. A connection-limit problem isn't a fixed wall &mdash; most hosting plans cap the number of simultaneous database connections a site can hold open, and that ceiling only gets hit under certain conditions: a traffic spike, a runaway plugin holding connections open too long, or several visitors landing on a heavy page at once. The error clears once the load passes, but the underlying ceiling is still there waiting to be hit again.</p>
+
+<h2 id="common-technical-causes">Common technical causes</h2>
+<ul>
+  <li><strong>Wrong database credentials in wp-config.php</strong> &mdash; the single most common cause, especially right after a migration, a host change, or a restore where the new database has a different name, username or password than the old one</li>
+  <li><strong>The database user's password was changed</strong> in cPanel or phpMyAdmin without updating wp-config.php to match &mdash; the two systems don't sync automatically</li>
+  <li><strong>The database server is down or unreachable</strong> &mdash; a host-side outage, scheduled maintenance, or the account being resource-suspended</li>
+  <li><strong>Too many simultaneous connections</strong>, exceeding what your hosting plan allows &mdash; often from a traffic spike, a plugin leaking connections, or several heavy cron jobs running at once</li>
+  <li><strong>An incorrect DB_HOST value</strong> &mdash; some hosts require a specific hostname, socket path or non-default port rather than the generic <code>localhost</code>, especially after moving to a different server</li>
+  <li><strong>A corrupted wp-config.php file itself</strong>, from a bad manual edit &mdash; a stray quote or missing semicolon can break the constants before the connection is even attempted</li>
+  <li><strong>The database server's disk is full</strong>, which can stop MySQL from accepting new connections even though the server process is technically still running</li>
+  <li><strong>A migrated database imported under a different name or user</strong> than what wp-config.php still points to, common when a backup is restored into a fresh hosting account</li>
+</ul>
+
+<h2 id="how-to-diagnose-it">How to diagnose it</h2>
+<ol>
+  <li><strong>Open wp-config.php via FTP or File Manager</strong> and note the current <code>DB_NAME</code>, <code>DB_USER</code>, <code>DB_PASSWORD</code> and <code>DB_HOST</code> values.</li>
+  <li><strong>Compare them against your actual database</strong> in your hosting panel's MySQL Databases (or equivalent) page &mdash; the database name and username there need to match wp-config.php exactly.</li>
+  <li><strong>Try connecting directly with the same credentials</strong> through phpMyAdmin or a command-line MySQL client. If that connection also fails, the problem is server-side, not something in your WordPress files.</li>
+  <li><strong>Check whether the failure is constant or intermittent.</strong> Constant almost always means credentials or DB_HOST are wrong; intermittent points toward a connection limit or a server-side resource issue instead.</li>
+  <li><strong>Check your host's status page and current database connection count</strong> against your plan's stated limit, if your hosting panel shows one.</li>
+  <li><strong>If you migrated recently</strong>, confirm DB_HOST actually points at the new server, not a leftover value from the old one.</li>
+</ol>
+
+<h2 id="how-to-fix-it-step-by-step">How to fix it, step by step</h2>
+<ol>
+  <li><strong>Correct the credentials in wp-config.php</strong> if they don't match your actual database &mdash; update <code>DB_NAME</code>, <code>DB_USER</code>, <code>DB_PASSWORD</code> and <code>DB_HOST</code> to the real, current values.</li>
+  <li><strong>If you reset the database password anywhere</strong> &mdash; cPanel, phpMyAdmin, your host's dashboard &mdash; update wp-config.php to the new password immediately; the mismatch is the entire cause in this case.</li>
+  <li><strong>If the database server is down</strong>, this is on your host to resolve &mdash; open a support ticket with them; there's nothing to fix on the WordPress side while their database service itself is unreachable.</li>
+  <li><strong>If it's a connection-limit issue</strong>, identify what's consuming connections (a runaway cron job, a plugin that isn't closing connections, genuine traffic growth) and either fix that directly or ask your host to raise the limit if the traffic is legitimate.</li>
+  <li><strong>If a migration left mismatched credentials</strong>, update wp-config.php to the database name, user and password the new host actually assigned &mdash; these are frequently auto-generated and different from the originals.</li>
+  <li><strong>Restore wp-config.php from backup</strong> if a manual edit corrupted the file itself, rather than trying to hand-fix broken syntax under pressure.</li>
+  <li><strong>Re-test the site once changed</strong>, checking both the public pages and wp-admin, since a fix that only addresses the front end isn't actually complete.</li>
+</ol>
+
+<h2 id="when-this-needs-professional-help">When this needs professional help</h2>
+<p>A wrong password in wp-config.php is a two-minute fix once you know that's the cause. It's worth bringing in a developer when:</p>
+<ul>
+  <li>You've confirmed the credentials are correct and the direct database connection test still fails, meaning it's a server-side issue you can't resolve yourself</li>
+  <li>The error is intermittent and tied to a connection limit, which needs the actual root cause identified rather than repeated support tickets asking your host to "just fix it"</li>
+  <li>You're not comfortable editing wp-config.php over FTP, or unsure which values are actually correct after a migration</li>
+  <li>The database itself may need a table repair, which carries real risk of data loss if done incorrectly</li>
+</ul>
+
+<h2 id="how-i-can-help">How I can help</h2>
+<p>A database connection error looks like the whole site has vanished, which is exactly why it's stressful &mdash; but in the overwhelming majority of cases the content is completely intact and the fix is narrow: correct credentials, a resolved connection limit, or a host-side issue chased down properly. Over eleven years of freelance WordPress work I've traced this back to its actual cause more times than I can count, and I fix the specific thing that's wrong rather than reaching for a full restore when one wp-config.php value or one connection ceiling is the real story.</p>
+          </div>
+
+          <aside class="post-cta">
+            <p class="mono post-cta-head">RELATED SERVICE</p>
+            <h2>WordPress Bug Fix</h2>
+            <p>If you'd rather have this diagnosed and fixed than dig through wp-config.php and hosting settings yourself, that page covers exactly what's included, how fast it usually runs, and what it costs to find out.</p>
+            <div data-anim="fade" class="btn-row">
+              <a class="btn btn-primary" href="../../services/wordpress-bug-fix/">WordPress Bug Fix <i class="ri-arrow-right-line" aria-hidden="true"></i></a>
+              <a class="btn btn-ghost" href="../../contact/">Ask a question</a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </section>
+  </article>
+
+  <section class="section section-light">
+    <div class="container">
+      <div class="row gx-0">
+        <div class="section-head col-12 col-lg-6">
+          <p data-anim="fade" class="eyebrow"><span class="eyebrow-mark" aria-hidden="true"></span><span class="mono">RELATED PROBLEMS</span></p>
+          <h2 data-anim="lines">If this isn't quite your issue</h2>
+          <p data-anim="fade" class="body-lg">A database connection error is often confused with these, or shows up right alongside them.</p>
+        </div>
+      </div>
+      <div data-anim="stagger" class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4 related-grid">
+        <div class="col">
+          <a data-anim="item" class="related-card h-100" href="../wordpress-500-error/">
+            <strong>WordPress 500 Internal Server Error</strong>
+            <span>If the message is a raw server error with no WordPress branding at all, rather than an actual WordPress-generated line of text, this is the more likely cause.</span>
+          </a>
+        </div>
+        <div class="col">
+          <a data-anim="item" class="related-card h-100" href="../wordpress-site-not-loading/">
+            <strong>WordPress Site Not Loading At All</strong>
+            <span>If nothing loads at all &mdash; not even an error message &mdash; the failure may be happening even earlier, at DNS or hosting level.</span>
+          </a>
+        </div>
+        <div class="col">
+          <a data-anim="item" class="related-card h-100" href="../../services/wordpress-migration/">
+            <strong>WordPress Migration</strong>
+            <span>Database credential mismatches are especially common right after a host or domain move. This is how I handle that move so they don't happen.</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-white">
+    <div class="container">
+      <div class="row gx-0">
+        <div class="section-head col-12 col-lg-6">
+          <p data-anim="fade" class="eyebrow"><span class="eyebrow-mark" aria-hidden="true"></span><span class="mono">RELEVANT WORK</span></p>
+          <h2 data-anim="lines">Builds where the database layer had to hold up cleanly</h2>
+          <p data-anim="fade" class="body-lg">Two projects where migrating or rebuilding a site meant getting the database connection right the first time, not after a live outage.</p>
+        </div>
+      </div>
+      <div data-anim="stagger" class="row row-cols-1 row-cols-md-2 g-4 case-grid">
+        <div class="col">
+          <article data-anim="item" class="case-card h-100">
+            <a href="../../portfolio/freizeitcenter-dietz/" tabindex="-1" aria-hidden="true">
+              <picture>
+                <source srcset="../../assets/images/project-dietz.webp" type="image/webp" />
+                <img src="../../assets/images/project-dietz.jpeg" alt="Freizeitcenter Dietz motorhome showroom homepage" width="1200" height="624" loading="lazy" decoding="async" />
+              </picture>
+            </a>
+            <div class="case-card-body">
+              <h3><a href="../../portfolio/freizeitcenter-dietz/">Freizeitcenter Dietz</a></h3>
+              <p>A finished design rebuilt as a responsive WordPress site on Divi 5, with hosting and database setup handled cleanly from the first deploy.</p>
+              <ul class="tech-chips"><li>WordPress</li><li>Divi 5</li><li>Responsive build</li></ul>
+              <div class="btn-row">
+                <a class="btn btn-primary btn-sm" href="../../portfolio/freizeitcenter-dietz/">Read the case study</a>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="col">
+          <article data-anim="item" class="case-card h-100">
+            <a href="../../portfolio/canvascroft/" tabindex="-1" aria-hidden="true">
+              <picture>
+                <source srcset="../../assets/images/project-canvascroft.webp" type="image/webp" />
+                <img src="../../assets/images/project-canvascroft.jpeg" alt="Canvascroft branding and design studio homepage" width="1200" height="613" loading="lazy" decoding="async" />
+              </picture>
+            </a>
+            <div class="case-card-body">
+              <h3><a href="../../portfolio/canvascroft/">Canvascroft</a></h3>
+              <p>A WordPress and WooCommerce subscription store built from a requirements list, with the database and hosting environment scoped before a line of code was written.</p>
+              <ul class="tech-chips"><li>WordPress</li><li>Elementor</li><li>WooCommerce</li></ul>
+              <div class="btn-row">
+                <a class="btn btn-primary btn-sm" href="../../portfolio/canvascroft/">Read the case study</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-tint">
+    <div class="container">
+      <div class="row gx-5 gy-4">
+        <div class="col-12 col-lg-4">
+          <div class="section-head sticky-head mb-4 mb-lg-0">
+            <p data-anim="fade" class="eyebrow"><span class="eyebrow-mark" aria-hidden="true"></span><span class="mono">FAQ</span></p>
+            <h2 data-anim="lines">Questions about a database connection error</h2>
+            <p data-anim="fade" class="body-lg">What people ask before sending over the site.</p>
+          </div>
+        </div>
+        <div class="col-12 col-lg-8">
+          <div data-anim="stagger" class="faq-list">
+            <details data-anim="item" class="faq-item">
+              <summary>Is this the same as the WordPress white screen of death?</summary>
+              <p class="faq-body">No, and they point in different directions. A white screen is usually a PHP fatal error inside a plugin or theme with error output turned off &mdash; WordPress and PHP both loaded, something in the code crashed silently. A database connection error happens earlier: WordPress couldn't reach MySQL at all, so it never got as far as running plugin or theme code, and it shows an actual (if brief) message rather than nothing.</p>
+            </details>
+            <details data-anim="item" class="faq-item">
+              <summary>Will I lose my content if the database can't connect?</summary>
+              <p class="faq-body">In almost every case, no. Your posts, pages, products and settings are still sitting in the database exactly as they were &mdash; what's failing is the connection to reach them, not the data itself. Losing content to this specific error is rare and would point to a separate, much less common disk or storage failure underneath it.</p>
+            </details>
+            <details data-anim="item" class="faq-item">
+              <summary>Can a caching plugin cause this?</summary>
+              <p class="faq-body">Rarely as the direct cause, but an object-caching setup (Redis or Memcached) that holds persistent database connections open can make a connection-limit problem worse under load. Temporarily disabling object caching is a reasonable diagnostic step if the error is intermittent rather than constant.</p>
+            </details>
+            <details data-anim="item" class="faq-item">
+              <summary>Does this mean my site has been hacked?</summary>
+              <p class="faq-body">Usually not. Most cases trace back to wrong credentials in wp-config.php, a host-side database outage, or too many simultaneous connections &mdash; not malicious activity. It's worth a closer look if this appeared alongside other signs of compromise, but on its own it isn't evidence of a hack.</p>
+            </details>
+            <details data-anim="item" class="faq-item">
+              <summary>Why does wp-admin show the same error as the public site?</summary>
+              <p class="faq-body">Because wp-admin needs the database just as much as the front end does &mdash; every screen in the dashboard, including the login form itself, runs a database query before it can render anything. Nothing in WordPress functions without that connection.</p>
+            </details>
+            <details data-anim="item" class="faq-item">
+              <summary>I changed my database password and now this appeared &mdash; why?</summary>
+              <p class="faq-body">wp-config.php still has the old password stored in it. Changing a database user's password in cPanel or phpMyAdmin doesn't update WordPress automatically &mdash; the two are separate systems, and wp-config.php needs to be edited to match whatever the new password actually is.</p>
+            </details>
+            <details data-anim="item" class="faq-item">
+              <summary>How do I know if it's my hosting provider's problem or something in my WordPress files?</summary>
+              <p class="faq-body">Try connecting to the database directly with the same credentials from wp-config.php, using phpMyAdmin or a command-line MySQL client. If that connection also fails, the problem is server-side and it's your host's to fix. If it succeeds there but WordPress still can't connect, the mismatch is in wp-config.php or a WordPress-level cause.</p>
+            </details>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-dark section-contact">
+    <div class="hero-grid-bg contact-grid-bg" aria-hidden="true"></div>
+    <div class="glow glow-d" aria-hidden="true"></div>
+    <div class="container">
+      <div class="contact-cta-shell">
+        <div data-anim="fade" class="contact-cta-card">
+          <div class="contact-cta-copy">
+            <p class="badge badge-live mx-auto"><span class="dot" aria-hidden="true"></span>Available for new projects</p>
+            <p class="eyebrow eyebrow-center"><span class="eyebrow-mark eyebrow-mark-light" aria-hidden="true"></span><span class="mono">NEXT STEP</span></p>
+            <h2 data-anim="lines">Need help fixing this WordPress issue?</h2>
+            <p class="body-lg">Send me your website and I'll help identify the problem &mdash; no charge just to take a look. Based in Bangladesh, working with clients worldwide, with a reply within one working day.</p>
+          </div>
+          <ul class="tech-chips justify-content-center">
+            <li>Reply within one working day</li>
+            <li>Fixed quote before work starts</li>
+            <li>UK, EU and US hours covered</li>
+          </ul>
+          <div class="contact-cta-actions">
+            <a class="btn btn-primary" href="../../contact/">Start a project <i class="ri-arrow-right-line" aria-hidden="true"></i></a>
+            <a class="btn btn-ghost" href="mailto:hello@ashekur.com">hello@ashekur.com</a>
+            <a class="btn btn-ghost" href="https://wa.me/8801812764112" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-top">
+    <div class="row gx-4 gy-5 align-items-start">
+      <div class="footer-brand col-12 col-lg-5">
+        <div class="brand brand-lg">
+          <picture>
+            <source srcset="../../assets/images/ashekur-logo-light.webp" type="image/webp" />
+            <img src="../../assets/images/ashekur-logo-light.png" alt="ashekur.com" width="480" height="125" loading="lazy" decoding="async" />
+          </picture>
+        </div>
+        <p class="footer-blurb">Frontend development and WordPress engineering for teams that care how it feels, not just how it looks. Based in Bangladesh &mdash; serving clients worldwide.</p>
+      </div>
+      <div class="col-12 col-lg-7">
+        <div class="footer-cols row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4">
+          <nav class="col" aria-label="Services">
+            <p class="mono footer-head">SERVICES</p>
+            <a href="../../services/wordpress-development/">WordPress Development</a>
+            <a href="../../services/wordpress-customization/">WordPress Customization</a>
+            <a href="../../services/elementor-customization/">Elementor Customization</a>
+            <a href="../../services/woocommerce-development/">WooCommerce Development</a>
+            <a href="../../services/wordpress-speed-optimization/">WordPress Speed Optimization</a>
+            <a href="../../services/wordpress-bug-fix/">WordPress Bug Fix</a>
+            <a href="../../services/elementor-fix/">Elementor Bug Fix</a>
+            <a href="../../services/wordpress-migration/">WordPress Migration</a>
+            <a href="../../services/seo/">WordPress SEO</a>
+          </nav>
+          <nav class="col" aria-label="Site">
+            <p class="mono footer-head">SITEMAP</p>
+            <a href="../../">Home</a>
+            <a href="../../tools/">Tools</a>
+            <a href="../../portfolio/">Portfolio</a>
+            <a href="../../blog/">Blog</a>
+            <a href="../../wordpress-fixes/">WordPress Fixes</a>
+            <a href="../../#experience">Experience</a>
+            <a href="../../contact/">Contact</a>
+            <a href="../../privacy/">Privacy Policy</a>
+          </nav>
+          <div class="col">
+            <p class="mono footer-head">ELSEWHERE</p>
+            <a href="mailto:hello@ashekur.com"><i class="ri-mail-line" aria-hidden="true"></i>hello@ashekur.com</a>
+            <a href="https://wa.me/8801812764112" target="_blank" rel="noopener noreferrer"><i class="ri-whatsapp-line" aria-hidden="true"></i>WhatsApp</a>
+            <a href="https://www.linkedin.com/in/ashekur-rahman-1ab205122/" target="_blank" rel="noopener noreferrer"><i class="ri-linkedin-fill" aria-hidden="true"></i>LinkedIn</a>
+            <a href="https://github.com/AshekurRahman" target="_blank" rel="noopener noreferrer"><i class="ri-github-fill" aria-hidden="true"></i>GitHub</a>
+            <a href="https://www.upwork.com/freelancers/~010aabe60ec2ae6679" target="_blank" rel="noopener noreferrer"><i class="ri-upwork-fill" aria-hidden="true"></i>Upwork</a>
+            <a href="https://www.facebook.com/ashekur.rahman.hridoy" target="_blank" rel="noopener noreferrer"><i class="ri-facebook-circle-fill" aria-hidden="true"></i>Facebook</a>
+            <a href="https://www.instagram.com/ashekurhridoy/" target="_blank" rel="noopener noreferrer"><i class="ri-instagram-line" aria-hidden="true"></i>Instagram</a>
+            <a href="https://www.youtube.com/@ashekurrahman1431" target="_blank" rel="noopener noreferrer"><i class="ri-youtube-fill" aria-hidden="true"></i>YouTube</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <p class="mono copyright">&copy; 2026 Ashekur Rahman. All rights reserved.</p>
+    <a class="to-top-inline" href="#main"><i class="ri-arrow-up-line" aria-hidden="true"></i> Back to top</a>
+  </div>
+</footer>
+</div>
+</div>
+
+
+<a class="wa-float" href="https://wa.me/8801812764112" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp"><i class="ri-whatsapp-fill" aria-hidden="true"></i></a>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" integrity="sha384-HOvlOYPIs/zjoIkWUGXkVmXsjr8GuZLV+Q+rcPwmJOVZVpvTSXQChiN4t9Euv9Vc" crossorigin="anonymous" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js" integrity="sha384-P8VzCVnT9NBUkMrpcIZrJbA7EBjJvh/fJS6PmP+4nLIM284DtsImIv8D0fFjIkeh" crossorigin="anonymous" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js" integrity="sha384-xb96EMJeax+NLXMC88ZBa1xAeAW+kn+horHh/zFlbMLG2UPWhMJJSlv7fi57hS+Q" crossorigin="anonymous" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollSmoother.min.js" integrity="sha384-dd8lT3AimXbI347qlZzlijPa4qnSlgGxuTqK2HlcfvF5+aOIeddPdMFmFpypQPZN" crossorigin="anonymous" defer></script>
+<script src="../../assets/js/anim.js" defer></script>
+<script src="../../assets/js/main.js" defer></script>
+</body>
+</html>

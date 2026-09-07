@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" role="img" aria-hidden="true">
+  <title>Abstract dark tech visual representing a shopping cart icon stuck on a frozen spinner</title>
+  <defs>
+    <radialGradient id="bgFadecnu" cx="50%" cy="36%" r="78%">
+      <stop offset="0%" stop-color="#141f38"/>
+      <stop offset="100%" stop-color="#0a1020"/>
+    </radialGradient>
+    <pattern id="gridcnu" width="64" height="64" patternUnits="userSpaceOnUse">
+      <path d="M 64 0 L 0 0 0 64" fill="none" stroke="rgba(148,163,184,0.10)" stroke-width="1"/>
+    </pattern>
+    <radialGradient id="gridMaskcnu" cx="50%" cy="32%" r="70%">
+      <stop offset="0%" stop-color="#fff" stop-opacity="0.9"/>
+      <stop offset="65%" stop-color="#fff" stop-opacity="0.32"/>
+      <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+    </radialGradient>
+    <mask id="gridMaskElcnu">
+      <rect width="1280" height="720" fill="url(#gridMaskcnu)"/>
+    </mask>
+    <radialGradient id="gA_cnu" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#4f46e5" stop-opacity="0.46"/>
+      <stop offset="66%" stop-color="#4f46e5" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="gB_cnu" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fca5a5" stop-opacity="0.4"/>
+      <stop offset="66%" stop-color="#fca5a5" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bgFadecnu)"/>
+  <rect width="1280" height="720" fill="url(#gridcnu)" mask="url(#gridMaskElcnu)"/>
+  <circle cx="380" cy="230" r="320" fill="url(#gA_cnu)"/><circle cx="980" cy="500" r="320" fill="url(#gB_cnu)"/>
+  <path d="M 730 320 L 760 320 L 780 400 L 900 400 L 918 340 L 750 340" fill="none" stroke="#a5b4fc" stroke-width="4" stroke-linejoin="round"/>
+  <circle cx="800" cy="425" r="10" fill="none" stroke="#a5b4fc" stroke-width="4"/>
+  <circle cx="880" cy="425" r="10" fill="none" stroke="#a5b4fc" stroke-width="4"/>
+  <path d="M 940 360 A 30 30 0 1 1 930 340" stroke="#fca5a5" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <path d="M 924 332 L 930 340 L 940 334" fill="none" stroke="#fca5a5" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

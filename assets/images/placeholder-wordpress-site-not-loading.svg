@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" role="img" aria-hidden="true">
+  <title>Abstract dark tech visual representing a website unreachable before it can load</title>
+  <defs>
+    <radialGradient id="bgFade_notload" cx="50%" cy="36%" r="78%">
+      <stop offset="0%" stop-color="#141f38"/>
+      <stop offset="100%" stop-color="#0a1020"/>
+    </radialGradient>
+    <pattern id="grid_notload" width="64" height="64" patternUnits="userSpaceOnUse">
+      <path d="M 64 0 L 0 0 0 64" fill="none" stroke="rgba(148,163,184,0.10)" stroke-width="1"/>
+    </pattern>
+    <radialGradient id="gridMask_notload" cx="50%" cy="32%" r="70%">
+      <stop offset="0%" stop-color="#fff" stop-opacity="0.9"/>
+      <stop offset="65%" stop-color="#fff" stop-opacity="0.32"/>
+      <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+    </radialGradient>
+    <mask id="gridMaskEl_notload">
+      <rect width="1280" height="720" fill="url(#gridMask_notload)"/>
+    </mask>
+    <radialGradient id="gPink_notload" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#7c3aed" stop-opacity="0.45"/>
+      <stop offset="66%" stop-color="#7c3aed" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="gIndigo_notload" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#4f46e5" stop-opacity="0.4"/>
+      <stop offset="66%" stop-color="#4f46e5" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="gDanger_notload" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fca5a5" stop-opacity="0.5"/>
+      <stop offset="66%" stop-color="#fca5a5" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bgFade_notload)"/>
+  <rect width="1280" height="720" fill="url(#grid_notload)" mask="url(#gridMaskEl_notload)"/>
+  <circle cx="360" cy="220" r="340" fill="url(#gPink_notload)"/><circle cx="980" cy="560" r="360" fill="url(#gIndigo_notload)"/><circle cx="860" cy="380" r="140" fill="url(#gDanger_notload)"/>
+
+  <!-- browser window on the left -->
+  <rect x="330" y="230" width="280" height="200" rx="10" fill="#141b2b" stroke="#818cf8" stroke-width="1.5" opacity="0.9"/>
+  <rect x="330" y="230" width="280" height="30" rx="10" fill="#1d2142"/>
+  <circle cx="350" cy="245" r="4" fill="#fca5a5"/>
+  <circle cx="365" cy="245" r="4" fill="#475569"/>
+  <circle cx="380" cy="245" r="4" fill="#475569"/>
+  <rect x="330" y="260" width="280" height="170" fill="#1d2142" opacity="0.55"/>
+  <text x="470" y="320" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" fill="#fca5a5" letter-spacing="0.5">CAN&#8217;T REACH</text>
+  <text x="470" y="340" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" fill="#fca5a5" letter-spacing="0.5">THIS SITE</text>
+
+  <!-- broken/dashed connection line -->
+  <path d="M 610 330 L 700 330" fill="none" stroke="#94a3b8" stroke-width="3" stroke-dasharray="10 10" opacity="0.75"/>
+  <g transform="translate(655,330)">
+    <line x1="-14" y1="-14" x2="14" y2="14" stroke="#fca5a5" stroke-width="4" stroke-linecap="round"/>
+    <line x1="14" y1="-14" x2="-14" y2="14" stroke="#fca5a5" stroke-width="4" stroke-linecap="round"/>
+  </g>
+  <path d="M 700 330 L 790 330" fill="none" stroke="#94a3b8" stroke-width="3" stroke-dasharray="10 10" opacity="0.4"/>
+
+  <!-- globe / server target on the right -->
+  <g transform="translate(870,330)">
+    <circle r="58" fill="none" stroke="#a5b4fc" stroke-width="3" opacity="0.85"/>
+    <ellipse cx="0" cy="0" rx="24" ry="58" fill="none" stroke="#a5b4fc" stroke-width="2" opacity="0.6"/>
+    <line x1="-58" y1="0" x2="58" y2="0" stroke="#a5b4fc" stroke-width="2" opacity="0.6"/>
+    <line x1="-50" y1="-28" x2="50" y2="-28" stroke="#a5b4fc" stroke-width="1.5" opacity="0.4"/>
+    <line x1="-50" y1="28" x2="50" y2="28" stroke="#a5b4fc" stroke-width="1.5" opacity="0.4"/>
+  </g>
+
+  <!-- timeout clock -->
+  <g transform="translate(870,455)">
+    <circle r="26" fill="#1d2142" stroke="#fca5a5" stroke-width="2.5"/>
+    <line x1="0" y1="0" x2="0" y2="-15" stroke="#fca5a5" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="0" y1="0" x2="11" y2="6" stroke="#fca5a5" stroke-width="2.5" stroke-linecap="round"/>
+  </g>
+  <text x="750" y="500" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" fill="#8aa0b9" letter-spacing="1">TIMED OUT&#8230;</text>
+</svg>

@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Can't Log Into WordPress Admin? Fixing Login Loops & Lockouts | Ashekur Rahman</title>
+<meta name="description" content="Correct password but WordPress keeps redirecting to the login screen? What causes login loops, cookie errors and lockouts, and how to get back in safely." />
+<meta name="keywords" content="WordPress login not working, WordPress login loop, can't log into wp-admin, WordPress login redirect, locked out of WordPress admin, WordPress password reset not working" />
+<meta name="author" content="Ashekur Rahman" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<meta name="theme-color" content="#0F172A" />
+<link rel="canonical" href="https://ashekur.com/wordpress-fixes/wordpress-login-not-working/" />
+<link rel="icon" href="../../assets/images/mark.png" type="image/png" />
+<link rel="apple-touch-icon" href="../../assets/images/mark.png" />
+<link rel="manifest" href="../../site.webmanifest" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-09-02" />
+<meta property="article:author" content="Ashekur Rahman" />
+<meta property="article:section" content="WordPress Fixes" />
+<meta property="og:site_name" content="Ashekur Rahman" />
+<meta property="og:url" content="https://ashekur.com/wordpress-fixes/wordpress-login-not-working/" />
+<meta property="og:title" content="Can't Log Into WordPress Admin? Fixing Login Loops & Lockouts | Ashekur Rahman" />
+<meta property="og:description" content="Correct password but WordPress just redirects back to the login screen? Here's what causes login loops, cookie errors and lockouts, and how to get back in safely." />
+<meta property="og:image" content="https://ashekur.com/assets/images/og-default.jpg" />
+<meta property="og:locale" content="en_US" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Can't Log Into WordPress Admin? Fixing Login Loops & Lockouts | Ashekur Rahman" />
+<meta name="twitter:description" content="Correct password but WordPress just redirects back to the login screen? Here's what causes login loops, cookie errors and lockouts, and how to get back in." />
+<meta name="twitter:image" content="https://ashekur.com/assets/images/og-default.jpg" />
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://www.googletagmanager.com" />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+<link rel="stylesheet" href="../../assets/fonts/remixicon.css" />
+<link rel="stylesheet" href="../../assets/css/template.css" />
+<script>var d=document.documentElement;d.classList.remove('no-js');d.classList.add('js-anim');</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://ashekur.com/" },
+        { "@type": "ListItem", "position": 2, "name": "WordPress Fixes", "item": "https://ashekur.com/wordpress-fixes/" },
+        { "@type": "ListItem", "position": 3, "name": "WordPress Login Not Working", "item": "https://ashekur.com/wordpress-fixes/wordpress-login-not-working/" }
+      ]
+    },
+    {
+      "@type": "TechArticle",
+      "@id": "https://ashekur.com/wordpress-fixes/wordpress-login-not-working/#article",
+      "headline": "Can't Log Into WordPress Admin? Fixing Login Loops, Redirects and Lockouts",
+      "description": "Correct password but WordPress just redirects back to the login screen? Here's what causes login loops, cookie errors and lockouts, and how to get back in safely.",
+      "url": "https://ashekur.com/wordpress-fixes/wordpress-login-not-working/",
+      "mainEntityOfPage": { "@type": "WebPage", "@id": "https://ashekur.com/wordpress-fixes/wordpress-login-not-working/" },
+      "image": "https://ashekur.com/assets/images/og-default.jpg",
+      "datePublished": "2026-09-02",
+      "dateModified": "2026-09-02",
+      "author": {
+        "@type": "Person", "@id": "https://ashekur.com/#person", "name": "Ashekur Rahman", "url": "https://ashekur.com/",
+        "jobTitle": "Frontend Developer & WordPress Expert", "email": "hello@ashekur.com", "telephone": "+8801812764112",
+        "address": { "@type": "PostalAddress", "addressCountry": "BD" }
+      },
+      "publisher": {
+        "@type": "Person", "@id": "https://ashekur.com/#person", "name": "Ashekur Rahman", "url": "https://ashekur.com/",
+        "jobTitle": "Frontend Developer & WordPress Expert", "email": "hello@ashekur.com", "telephone": "+8801812764112",
+        "address": { "@type": "PostalAddress", "addressCountry": "BD" }
+      },
+      "articleSection": "WordPress Fixes",
+      "proficiencyLevel": "Beginner",
+      "dependencies": "WordPress, hosting/FTP or database access",
+      "wordCount": 3150,
+      "inLanguage": "en",
+      "isAccessibleForFree": true
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is a login loop the same as being locked out?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No, and the difference matters for how you fix it. A login loop means WordPress accepts nothing at all — it just returns you to the login screen with no message, usually a URL or cookie mismatch. A lockout is explicit: a security plugin tells you directly that you've been blocked, often naming a wait time. One is a configuration problem, the other is a deliberate block you need to clear." }
+        },
+        {
+          "@type": "Question",
+          "name": "Will editing wp-config.php directly break anything else?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Not if you change only the WP_HOME and WP_SITEURL lines and leave everything else untouched. It's a plain text file read on every page load, so a correct edit takes effect immediately with no rebuild step. The main risk is a stray character breaking the file's PHP syntax, so edit carefully and keep a copy of the original line before you change it." }
+        },
+        {
+          "@type": "Question",
+          "name": "Why isn't my password reset email arriving?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Most shared hosting sends WordPress's password reset emails through PHP's built-in mail function, which many mail providers now silently reject or spam-filter because it doesn't authenticate properly. WordPress itself has no idea the email failed — it just shows \"check your email\" regardless of whether anything actually left the server. Connecting a real SMTP provider fixes this permanently, not just for this one reset." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I get locked out just from my own typos?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes, and it happens constantly. Security and \"limit login attempts\" plugins count every failed attempt against the same threshold whether it's an attacker or the site owner mistyping a new password on a different keyboard layout. Five wrong tries is a common default, which is easy to hit by accident within a couple of minutes." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is my site hacked if I suddenly can't log in?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Usually not — a URL mismatch, a stuck lockout or a mail failure explains the large majority of cases. It's worth checking more carefully if the lockout appeared alongside other signs: an admin account you don't recognise, unfamiliar plugins, or a warning from your host or browser about flagged content. If any of those are present, treat access recovery and a security review as one job, not two." }
+        },
+        {
+          "@type": "Question",
+          "name": "What's the fastest way back in if I have FTP access but no working email?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Skip the password reset flow entirely. If the cause is a URL mismatch, fix WP_HOME and WP_SITEURL in wp-config.php over FTP and try logging in again directly — that alone resolves it without needing any email. If the password itself is the issue, a direct database edit via phpMyAdmin is faster than waiting on mail that isn't going to arrive until it's fixed anyway." }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need to keep the security plugin that locked me out?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Generally yes — it's doing its job, and removing it entirely trades one problem for a worse one. Once you're back in, adjust its thresholds (attempts allowed, lockout duration, and whether your own IP is whitelisted) rather than uninstalling it, so genuine brute-force attempts are still stopped without catching you again." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SGTGDFXH6K"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-SGTGDFXH6K');
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header" id="siteHeader">
+  <div class="container header-inner">
+    <a class="brand" href="../../" aria-label="Ashekur Rahman &mdash; home">
+      <picture>
+        <source srcset="../../assets/images/ashekur-logo-light.webp" type="image/webp" />
+        <img src="../../assets/images/ashekur-logo-light.png" alt="Ashekur Rahman" width="480" height="125" fetchpriority="high" decoding="async" />
+      </picture>
+    </a>
+    <nav class="nav-desktop" aria-label="Main">
+      <a href="../../" class="nav-link">Home</a>
+      <a href="../../tools/" class="nav-link">Tools</a>
+      <div class="nav-item" data-dropdown>
+        <div class="nav-row">
+          <a href="../../services/" class="nav-link">Services</a>
+          <button class="nav-caret" type="button" aria-label="Services submenu" aria-expanded="false" aria-controls="navDrop-services" data-dropdown-toggle><i class="ri-arrow-down-s-line" aria-hidden="true"></i></button>
+        </div>
+        <div class="nav-panel" id="navDrop-services">
+          <a class="nav-panel-all" href="../../services/">All services</a>
+          <div class="nav-panel-cols">
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">WordPress</p>
+              <a href="../../services/wordpress-development/">WordPress Development</a>
+              <a href="../../services/wordpress-customization/">WordPress Customization</a>
+              <a href="../../services/wordpress-bug-fix/">WordPress Bug Fix</a>
+              <a href="../../services/wordpress-maintenance/">WordPress Maintenance<em>New</em></a>
+            </div>
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">Page Builders</p>
+              <a href="../../services/elementor-fix/">Elementor Bug Fix</a>
+              <a href="../../services/elementor-customization/">Elementor Customization</a>
+              <a href="../../services/elementor-custom-widgets/">Elementor Custom Widgets</a>
+              <a href="../../services/divi-customization/">Divi Customization</a>
+              <a href="../../services/divi-5-migration/">Divi 5 Migration<em>New</em></a>
+            </div>
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">WooCommerce</p>
+              <a href="../../services/woocommerce-development/">WooCommerce Development</a>
+              <a href="../../services/woocommerce-fix/">WooCommerce Fixes</a>
+            </div>
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">Performance &amp; Security</p>
+              <a href="../../services/wordpress-speed-optimization/">WordPress Speed Optimization</a>
+              <a href="../../services/core-web-vitals-fix/">Core Web Vitals Fix<em>New</em></a>
+              <a href="../../services/wordpress-malware-removal/">WordPress Malware Removal</a>
+              <a href="../../services/google-blacklist-removal/">Google Blacklist Removal<em>New</em></a>
+              <a href="../../services/caching-cdn-setup/">Caching &amp; CDN Setup<em>New</em></a>
+              <a href="../../services/wordpress-security-hardening/">WordPress Security Hardening<em>New</em></a>
+            </div>
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">Migration</p>
+              <a href="../../services/wordpress-migration/">WordPress Migration</a>
+              <a href="../../services/domain-migration-redirects/">Domain Migration &amp; 301 Redirects<em>New</em></a>
+              <a href="../../services/wordpress-migration/#hosting">Host Migration</a>
+            </div>
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">SEO</p>
+              <a href="../../services/seo/">SEO</a>
+              <a href="../../services/technical-seo-audit/">Technical SEO Audit<em>New</em></a>
+            </div>
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">Other</p>
+              <a href="../../services/webflow-development/">Webflow Development</a>
+              <a href="../../services/frontend-development/">Frontend Development</a>
+              <a href="../../services/website-redesign/">Website Redesign<em>New</em></a>
+              <a href="../../services/white-label-wordpress-development/">White Label Development<em>New</em></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="../../pricing/" class="nav-link">Pricing</a>
+      <a href="../../portfolio/" class="nav-link">Portfolio</a>
+      <a href="../../blog/" class="nav-link">Blog</a>
+      <a href="../../contact/" class="btn btn-primary btn-sm nav-cta">Start a project</a>
+    </nav>
+    <button class="burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="nav-mobile" id="mobileNav" aria-label="Mobile" hidden>
+    <a href="../../">Home</a>
+    <a href="../../tools/">Tools</a>
+    <div class="nav-item" data-dropdown>
+      <div class="nav-row">
+        <a href="../../services/">Services</a>
+        <button class="nav-caret" type="button" aria-label="Services submenu" aria-expanded="false" aria-controls="navDropM-services" data-dropdown-toggle><i class="ri-arrow-down-s-line" aria-hidden="true"></i></button>
+      </div>
+      <div class="nav-panel" id="navDropM-services">
+        <a href="../../services/">All services</a>
+        <a href="../../services/wordpress-development/">WordPress Development</a>
+        <a href="../../services/wordpress-customization/">WordPress Customization</a>
+        <a href="../../services/wordpress-bug-fix/">WordPress Bug Fix</a>
+        <a href="../../services/wordpress-maintenance/">WordPress Maintenance</a>
+        <a href="../../services/elementor-fix/">Elementor Bug Fix</a>
+        <a href="../../services/elementor-customization/">Elementor Customization</a>
+        <a href="../../services/divi-customization/">Divi Customization</a>
+        <a href="../../services/divi-5-migration/">Divi 5 Migration</a>
+        <a href="../../services/elementor-custom-widgets/">Elementor Custom Widgets</a>
+        <a href="../../services/wordpress-speed-optimization/">WordPress Speed Optimization</a>
+        <a href="../../services/core-web-vitals-fix/">Core Web Vitals Fix</a>
+        <a href="../../services/woocommerce-fix/">WooCommerce Fixes</a>
+        <a href="../../services/woocommerce-development/">WooCommerce Development</a>
+        <a href="../../services/wordpress-migration/">WordPress Migration</a>
+        <a href="../../services/domain-migration-redirects/">Domain Migration &amp; 301 Redirects</a>
+        <a href="../../services/seo/">WordPress SEO</a>
+        <a href="../../services/wordpress-malware-removal/">WordPress Malware Removal</a>
+        <a href="../../services/google-blacklist-removal/">Google Blacklist Removal</a>
+        <a href="../../services/wordpress-security-hardening/">WordPress Security Hardening</a>
+        <a href="../../services/webflow-development/">Webflow Development</a>
+        <a href="../../services/frontend-development/">Frontend Development</a>
+        <a href="../../services/website-redesign/">Website Redesign</a>
+        <a href="../../services/white-label-wordpress-development/">White Label Development</a>
+      </div>
+    </div>
+    <a href="../../pricing/">Pricing</a>
+    <a href="../../portfolio/">Portfolio</a>
+    <a href="../../blog/">Blog</a>
+    <a href="../../contact/" class="btn btn-primary">Start a project</a>
+  </nav>
+</header>
+
+<div id="smooth-wrapper">
+<div id="smooth-content">
+<main id="main" class="page-shell">
+
+  <article>
+  <section class="section section-dark page-intro page-hero">
+    <div class="hero-grid-bg" aria-hidden="true"></div>
+    <div class="glow glow-a" aria-hidden="true"></div>
+    <div class="glow glow-b" aria-hidden="true"></div>
+    <div class="container">
+      <div class="row hero-split">
+        <div data-anim-hero class="col-12 col-lg-9">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <ol>
+              <li><a href="../../">Home</a></li>
+              <li><a href="../../wordpress-fixes/">WordPress Fixes</a></li>
+              <li><span aria-current="page">WordPress Login Not Working</span></li>
+            </ol>
+          </nav>
+          <p class="post-meta mono"><span class="post-cat">Access</span><span>12 min read</span><span>2026-09-02</span><span>Ashekur Rahman</span></p>
+          <h1 data-anim="lines">Can't Log Into WordPress Admin? Fixing Login Loops, Redirects and Lockouts</h1>
+          <p class="body-lg">You type the right password, hit Log In, and land straight back on the login screen &mdash; no error, no explanation, just the same form again. Or you're told outright you've been locked out. Neither means your site is broken. It means something specific in how WordPress checks and remembers who you are has come loose.</p>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="../../contact/">Send me your site <i class="ri-arrow-right-line" aria-hidden="true"></i></a>
+            <a class="btn btn-ghost" href="../../services/wordpress-bug-fix/">See the bug fix service</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-white">
+    <div class="container">
+      <figure data-anim="reveal" class="shot mb-5">
+        <picture>
+          <source srcset="../../assets/images/wordpress-login-not-working.webp" type="image/webp" />
+          <img src="../../assets/images/wordpress-login-not-working.jpeg" alt="WordPress login form with a padlock icon and a looping arrow representing a login redirect loop" width="1280" height="720" loading="lazy" decoding="async" />
+        </picture>
+        <!-- Image prompt: Realistic close-up photo of a laptop screen showing the WordPress wp-login.php screen with the cursor on the Log In button, a faint circular "reload" motion blur overlaid to suggest a redirect loop, soft office lighting, shallow depth of field, photorealistic professional tech-editorial style, no visible faces or readable personal data, 1280x720, 16:9. -->
+        <figcaption>A login loop rarely means your password is wrong. It usually means WordPress and your browser disagree about who's asking.</figcaption>
+      </figure>
+
+      <div class="row gx-5 gy-4">
+        <aside class="col-12 col-lg-4 order-lg-2">
+          <div class="post-aside">
+            <nav class="toc" aria-label="On this page">
+              <p class="toc-head mono">ON THIS PAGE</p>
+              <ol>
+                <li><a href="#what-is-the-problem">What is the problem?</a></li>
+                <li><a href="#common-symptoms">Common symptoms</a></li>
+                <li><a href="#why-does-this-happen">Why does this happen?</a></li>
+                <li><a href="#common-technical-causes">Common technical causes</a></li>
+                <li><a href="#how-to-diagnose-it">How to diagnose it</a></li>
+                <li><a href="#how-to-fix-it-step-by-step">How to fix it, step by step</a></li>
+                <li><a href="#when-this-needs-professional-help">When this needs professional help</a></li>
+                <li><a href="#how-i-can-help">How I can help</a></li>
+              </ol>
+            </nav>
+          </div>
+        </aside>
+        <div class="col-12 col-lg-8 order-lg-1">
+          <div class="prose">
+
+<h2 id="what-is-the-problem">What is the problem?</h2>
+<p>&ldquo;Login not working&rdquo; on WordPress splits into two genuinely different problems that get lumped together because they feel the same in the moment. The first is a <strong>login loop</strong>: you submit the form, the page reloads, and you're back at the login screen with no error at all &mdash; as if you'd never submitted anything. The second is an explicit <strong>lockout</strong>: WordPress or a security plugin tells you directly that you've been blocked, usually with a message about too many failed attempts and a wait time attached.</p>
+<blockquote>Quick answer: a silent loop is almost always a URL, cookie or session mismatch &mdash; WordPress and your browser disagreeing about which domain the login cookie belongs to. An explicit lockout is a deliberate block from a security plugin, and needs clearing rather than diagnosing. They're fixed differently, so knowing which one you have saves real time.</blockquote>
+<p>Both are separate from a site being down. The homepage, your posts, your checkout &mdash; all of that can be working perfectly for every visitor while the one specific process of authenticating as an admin fails. That's what makes this frustrating to search for: most general WordPress troubleshooting advice assumes the whole site is broken, when here it's one gate that's stuck.</p>
+
+<h2 id="common-symptoms">Common symptoms</h2>
+<ul>
+  <li>You enter the correct username and password, click Log In, and land back on the exact same login screen with no error message shown</li>
+  <li>A browser warning appears saying &ldquo;Cookies are blocked or not supported by your browser&rdquo;</li>
+  <li>After submitting, you're redirected to an unexpected domain, a strange URL, or an old address the site used to live at</li>
+  <li>A password reset email never arrives, even after requesting it two or three times and checking spam</li>
+  <li>Clicking a password reset link that did arrive shows &ldquo;Error: The link you followed has expired&rdquo;</li>
+  <li>You're told outright that you've been locked out after too many failed attempts, with a specific wait time before trying again</li>
+  <li>A blank or white page appears the instant you submit the login form, distinct from the site being generally blank &mdash; everything else on the site loads fine</li>
+</ul>
+
+<h2 id="why-does-this-happen">Why does this happen?</h2>
+<p>Logging into WordPress isn't just a password check. Once your credentials are accepted, WordPress sets an authentication cookie in your browser tied to a specific domain, and every subsequent admin page checks that cookie against two stored values &mdash; the WordPress Address and the Site Address &mdash; to decide whether you're really logged in. If those two values don't exactly match the domain you're actually visiting, the cookie gets written but never successfully read back, and you're bounced to the login screen again. It looks like the password failed. It didn't &mdash; the session simply never stuck.</p>
+<p>A lockout works on entirely different logic. Security plugins count failed login attempts against a threshold and block further tries once it's crossed, the same way a bank card locks after repeated wrong PINs. That threshold doesn't know or care whether the failed attempts came from an attacker running a script or from you, five minutes ago, mistyping a newly changed password twice in a row.</p>
+
+<h2 id="common-technical-causes">Common technical causes</h2>
+<ul>
+  <li><strong>WP_HOME and WP_SITEURL mismatched</strong> with the domain actually being used to access the site &mdash; common after a migration, a domain change, or moving from http to https without updating both</li>
+  <li><strong>A cookie-domain mismatch between www and non-www</strong> versions of the domain, so the login cookie is set on one variant and checked against the other</li>
+  <li><strong>Corrupted or expired authentication cookies</strong> left over from before a security change, a password reset, or a plugin update that altered how sessions are handled</li>
+  <li><strong>A security or &ldquo;limit login attempts&rdquo; plugin triggering a lockout</strong> &mdash; frequently from the site owner's own mistyped attempts, not an actual attack</li>
+  <li><strong>Outgoing mail not properly configured</strong>, so WordPress's password reset emails silently fail to send even though the site reports &ldquo;check your email&rdquo; regardless</li>
+  <li><strong>A caching plugin caching the login page itself</strong>, serving a stale form or an invalid session token to every visitor who loads it</li>
+  <li><strong>Leftover lockout state in the database</strong> from a security plugin, sometimes persisting even after that plugin has since been deactivated</li>
+  <li><strong>A corrupted user role or capability entry</strong> preventing one specific account from completing login even with the correct password, while other accounts work fine</li>
+</ul>
+
+<h2 id="how-to-diagnose-it">How to diagnose it</h2>
+<ol>
+  <li><strong>Compare the WordPress Address and Site Address to the URL in your browser bar.</strong> If you can reach another working admin account, check Settings &rarr; General. If not, this is visible directly in <code>wp-config.php</code>, or in the <code>wp_options</code> table (the <code>siteurl</code> and <code>home</code> rows) via phpMyAdmin.</li>
+  <li><strong>Try a private/incognito window with cookies fully cleared.</strong> This rules out a stale local cookie in under a minute and is the fastest test on this list &mdash; if login works here, the problem is a cookie stuck in your regular browser, not the site.</li>
+  <li><strong>Test whether outgoing mail works at all,</strong> using a dedicated SMTP-test or mail-logging plugin, rather than assuming a reset email is &ldquo;just in spam.&rdquo; Many hosts silently drop WordPress's default mail function.</li>
+  <li><strong>Check for a security plugin's lockout log.</strong> Most log the blocked IP and the reason, which tells you immediately whether this is a genuine block versus a URL or cookie issue.</li>
+  <li><strong>Purge every cache layer and retest</strong> if you suspect the login page itself is being served from cache &mdash; a caching plugin, a CDN, and the browser cache can each independently cause this.</li>
+  <li><strong>If you have database access, check the <code>wp_options</code> table</strong> for a lockout-related row left by a security plugin, even one that's since been deactivated &mdash; deactivating a plugin doesn't always clear its stored state.</li>
+</ol>
+
+<h2 id="how-to-fix-it-step-by-step">How to fix it, step by step</h2>
+<ol>
+  <li><strong>Correct WP_HOME and WP_SITEURL directly in wp-config.php</strong> if they don't match your real domain. This is the single most useful step here, because it works even while you're completely locked out &mdash; it doesn't require logging in at all, only FTP or File Manager access.</li>
+  <li><strong>Clear cookies for the domain entirely</strong> and retry in a fresh private window, to eliminate a stale local session as the cause before changing anything server-side.</li>
+  <li><strong>If a security plugin is the cause, clear the lock directly.</strong> Delete its relevant row from the <code>wp_options</code> table via phpMyAdmin, or rename its plugin folder over FTP to force-deactivate it and release the block immediately.</li>
+  <li><strong>Exclude wp-login.php from every caching layer</strong> so it's never served stale to any visitor, including you.</li>
+  <li><strong>Set up real outgoing mail via an SMTP plugin</strong> connected to an actual mail provider, so password reset emails reliably arrive going forward &mdash; this is one of the most common root causes here and among the easiest to permanently close.</li>
+  <li><strong>As a last resort with database access, reset the password directly via phpMyAdmin</strong> by updating the account's password field with a properly hashed value (a dedicated password-hash generator, not typing plain text), rather than waiting on an email that isn't going to arrive until mail is fixed anyway.</li>
+  <li><strong>Remove or correct any .htaccess rule restricting access to wp-login.php by IP,</strong> if one was added previously for security and is now blocking the legitimate owner, for instance after a change of location or ISP.</li>
+  <li><strong>If the problem is isolated to one specific account,</strong> check that user's role and capabilities via a second working admin account, or directly in the database if no second account exists.</li>
+  <li><strong>Once back in, adjust the security plugin's lockout thresholds</strong> &mdash; attempts allowed, lockout duration, and whitelisting your own IP &mdash; so a handful of genuine typos doesn't lock you out again next week.</li>
+</ol>
+
+<h2 id="when-this-needs-professional-help">When this needs professional help</h2>
+<p>A cleared cookie or a corrected setting resolves plenty of these cases without needing a developer. It's worth bringing one in when:</p>
+<ul>
+  <li>Fixing WP_HOME/WP_SITEURL or resetting a password means editing the database directly, and phpMyAdmin isn't something you're comfortable working in</li>
+  <li>The lockout plugin's stored state is unclear, and deleting the wrong database row risks other settings you'd rather not lose</li>
+  <li>There's no FTP or hosting-panel access set up at all, so even the wp-config.php fix isn't reachable without first sorting out access with your host</li>
+  <li>The login issue appeared alongside signs of a compromised site &mdash; an admin account you don't recognise, unfamiliar plugins &mdash; which changes the priority to a security review before anything else</li>
+  <li>You've cleared the obvious causes and are still bounced back to login with no explanation, which usually means two smaller issues are stacked together</li>
+</ul>
+
+<h2 id="how-i-can-help">How I can help</h2>
+<p>Getting locked out of your own site carries a particular kind of urgency, because nothing else feels safe to fix until access is back. Over eleven years of freelance WordPress work I've dealt with login loops caused by every one of the causes above, and I treat it as two jobs done in order: get you back in first, safely, usually through a careful wp-config.php or database fix rather than anything drastic, then find and close the actual root cause &mdash; a mail setup that was never configured properly, a stuck lockout, a leftover URL from an old migration &mdash; so it doesn't happen again next month.</p>
+          </div>
+
+          <aside class="post-cta">
+            <p class="mono post-cta-head">RELATED SERVICE</p>
+            <h2>WordPress Bug Fix</h2>
+            <p>If you'd rather have this fixed directly than work through it yourself, that page covers exactly what's included, how fast it usually runs, and what it costs to find out.</p>
+            <div data-anim="fade" class="btn-row">
+              <a class="btn btn-primary" href="../../services/wordpress-bug-fix/">WordPress Bug Fix <i class="ri-arrow-right-line" aria-hidden="true"></i></a>
+              <a class="btn btn-ghost" href="../../contact/">Ask a question</a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </section>
+  </article>
+
+  <section class="section section-light">
+    <div class="container">
+      <div class="row gx-0">
+        <div class="section-head col-12 col-lg-6">
+          <p data-anim="fade" class="eyebrow"><span class="eyebrow-mark" aria-hidden="true"></span><span class="mono">RELATED PROBLEMS</span></p>
+          <h2 data-anim="lines">If this isn't quite your issue</h2>
+          <p data-anim="fade" class="body-lg">Access and performance problems inside wp-admin often get reported by the same frustrated site owner in the same week.</p>
+        </div>
+      </div>
+      <div data-anim="stagger" class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4 related-grid">
+        <div class="col">
+          <a data-anim="item" class="related-card h-100" href="../wordpress-slow-admin/">
+            <strong>WordPress Admin Dashboard Slow</strong>
+            <span>If you can get in but everything crawls once you're there, that's a separate cause worth checking.</span>
+          </a>
+        </div>
+        <div class="col">
+          <a data-anim="item" class="related-card h-100" href="../../services/wordpress-development/">
+            <strong>WordPress Development</strong>
+            <span>If the site needs a more resilient user/role setup going forward, not just a one-off unlock.</span>
+          </a>
+        </div>
+        <div class="col">
+          <a data-anim="item" class="related-card h-100" href="../../services/wordpress-malware-removal/">
+            <strong>WordPress Malware Removal</strong>
+            <span>If a lockout appeared alongside unfamiliar admin users or plugins, start here instead.</span>
+          </a>
+        </div>
+        <div class="col">
+          <a data-anim="item" class="related-card h-100" href="../wordpress-admin-not-loading/">
+            <strong>wp-admin Won&rsquo;t Load</strong>
+            <span>If the admin area fails before you even reach the login form, that's a different, deeper failure.</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-white">
+    <div class="container">
+      <div class="row gx-0">
+        <div class="section-head col-12 col-lg-6">
+          <p data-anim="fade" class="eyebrow"><span class="eyebrow-mark" aria-hidden="true"></span><span class="mono">RELEVANT WORK</span></p>
+          <h2 data-anim="lines">Sites where access and admin roles actually matter</h2>
+          <p data-anim="fade" class="body-lg">Two builds with multiple staff logging in day to day, where a stuck login isn't a hypothetical, it's a real interruption.</p>
+        </div>
+      </div>
+      <div data-anim="stagger" class="row row-cols-1 row-cols-md-2 g-4 case-grid">
+        <div class="col">
+          <article data-anim="item" class="case-card h-100">
+            <a href="../../portfolio/kinder-city/" tabindex="-1" aria-hidden="true">
+              <picture>
+                <source srcset="../../assets/images/project-kindercity.webp" type="image/webp" />
+                <img src="../../assets/images/project-kindercity.jpeg" alt="Kinder City nursery and pre-school group website built with Elementor" width="1200" height="624" loading="lazy" decoding="async" />
+              </picture>
+            </a>
+            <div class="case-card-body">
+              <h3><a href="../../portfolio/kinder-city/">Kinder City</a></h3>
+              <p>Nursery and pre-school group with multiple settings and staff accounts publishing admissions and recruitment content daily &mdash; reliable admin access isn't optional.</p>
+              <ul class="tech-chips"><li>WordPress</li><li>Elementor</li><li>Responsive templates</li></ul>
+              <div class="btn-row">
+                <a class="btn btn-primary btn-sm" href="../../portfolio/kinder-city/">Read the case study</a>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="col">
+          <article data-anim="item" class="case-card h-100">
+            <a href="../../portfolio/dgsors-advertising/" tabindex="-1" aria-hidden="true">
+              <picture>
+                <source srcset="../../assets/images/project-dgsors.webp" type="image/webp" />
+                <img src="../../assets/images/project-dgsors.jpeg" alt="DGsors Advertising agency website on a custom WordPress theme" width="1200" height="615" loading="lazy" decoding="async" />
+              </picture>
+            </a>
+            <div class="case-card-body">
+              <h3><a href="../../portfolio/dgsors-advertising/">DGsors Advertising</a></h3>
+              <p>An agency site on a custom theme with several editors working behind the scenes, where a URL mismatch after any domain change would lock everyone out at once.</p>
+              <ul class="tech-chips"><li>WordPress</li><li>Custom theme</li><li>Elementor Pro</li></ul>
+              <div class="btn-row">
+                <a class="btn btn-primary btn-sm" href="../../portfolio/dgsors-advertising/">Read the case study</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-tint">
+    <div class="container">
+      <div class="row gx-5 gy-4">
+        <div class="col-12 col-lg-4">
+          <div class="section-head sticky-head mb-4 mb-lg-0">
+            <p data-anim="fade" class="eyebrow"><span class="eyebrow-mark" aria-hidden="true"></span><span class="mono">FAQ</span></p>
+            <h2 data-anim="lines">Questions about being locked out of WordPress</h2>
+            <p data-anim="fade" class="body-lg">What people ask before sending over the site.</p>
+          </div>
+        </div>
+        <div class="col-12 col-lg-8">
+          <div data-anim="stagger" class="faq-list">
+            <details data-anim="item" class="faq-item">
+              <summary>Is a login loop the same as being locked out?</summary>
+              <p class="faq-body">No, and the difference matters for how you fix it. A login loop means WordPress accepts nothing at all &mdash; it just returns you to the login screen with no message, usually a URL or cookie mismatch. A lockout is explicit: a security plugin tells you directly that you've been blocked, often naming a wait time. One is a configuration problem, the other is a deliberate block you need to clear.</p>
+            </details>
+            <details data-anim="item" class="faq-item">
+              <summary>Will editing wp-config.php directly break anything else?</summary>
+              <p class="faq-body">Not if you change only the WP_HOME and WP_SITEURL lines and leave everything else untouched. It's a plain text file read on every page load, so a correct edit takes effect immediately with no rebuild step. The main risk is a stray character breaking the file's PHP syntax, so edit carefully and keep a copy of the original line before you change it.</p>
+            </details>
+            <details data-anim="item" class="faq-item">
+              <summary>Why isn't my password reset email arriving?</summary>
+              <p class="faq-body">Most shared hosting sends WordPress's password reset emails through PHP's built-in mail function, which many mail providers now silently reject or spam-filter because it doesn't authenticate properly. WordPress itself has no idea the email failed &mdash; it just shows &ldquo;check your email&rdquo; regardless of whether anything actually left the server. Connecting a real SMTP provider fixes this permanently, not just for this one reset.</p>
+            </details>
+            <details data-anim="item" class="faq-item">
+              <summary>Can I get locked out just from my own typos?</summary>
+              <p class="faq-body">Yes, and it happens constantly. Security and &ldquo;limit login attempts&rdquo; plugins count every failed attempt against the same threshold whether it's an attacker or the site owner mistyping a new password on a different keyboard layout. Five wrong tries is a common default, which is easy to hit by accident within a couple of minutes.</p>
+            </details>
+            <details data-anim="item" class="faq-item">
+              <summary>Is my site hacked if I suddenly can't log in?</summary>
+              <p class="faq-body">Usually not &mdash; a URL mismatch, a stuck lockout or a mail failure explains the large majority of cases. It's worth checking more carefully if the lockout appeared alongside other signs: an admin account you don't recognise, unfamiliar plugins, or a warning from your host or browser about flagged content. If any of those are present, treat access recovery and a security review as one job, not two.</p>
+            </details>
+            <details data-anim="item" class="faq-item">
+              <summary>What's the fastest way back in if I have FTP access but no working email?</summary>
+              <p class="faq-body">Skip the password reset flow entirely. If the cause is a URL mismatch, fix WP_HOME and WP_SITEURL in wp-config.php over FTP and try logging in again directly &mdash; that alone resolves it without needing any email. If the password itself is the issue, a direct database edit via phpMyAdmin is faster than waiting on mail that isn't going to arrive until it's fixed anyway.</p>
+            </details>
+            <details data-anim="item" class="faq-item">
+              <summary>Do I need to keep the security plugin that locked me out?</summary>
+              <p class="faq-body">Generally yes &mdash; it's doing its job, and removing it entirely trades one problem for a worse one. Once you're back in, adjust its thresholds (attempts allowed, lockout duration, and whether your own IP is whitelisted) rather than uninstalling it, so genuine brute-force attempts are still stopped without catching you again.</p>
+            </details>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-dark section-contact">
+    <div class="hero-grid-bg contact-grid-bg" aria-hidden="true"></div>
+    <div class="glow glow-d" aria-hidden="true"></div>
+    <div class="container">
+      <div class="contact-cta-shell">
+        <div data-anim="fade" class="contact-cta-card">
+          <div class="contact-cta-copy">
+            <p class="badge badge-live mx-auto"><span class="dot" aria-hidden="true"></span>Available for new projects</p>
+            <p class="eyebrow eyebrow-center"><span class="eyebrow-mark eyebrow-mark-light" aria-hidden="true"></span><span class="mono">NEXT STEP</span></p>
+            <h2 data-anim="lines">Need help fixing this WordPress issue?</h2>
+            <p class="body-lg">Send me your website and I'll help identify the problem &mdash; no charge just to take a look. Based in Bangladesh, working with clients worldwide, with a reply within one working day.</p>
+          </div>
+          <ul class="tech-chips justify-content-center">
+            <li>Reply within one working day</li>
+            <li>Fixed quote before work starts</li>
+            <li>UK, EU and US hours covered</li>
+          </ul>
+          <div class="contact-cta-actions">
+            <a class="btn btn-primary" href="../../contact/">Start a project <i class="ri-arrow-right-line" aria-hidden="true"></i></a>
+            <a class="btn btn-ghost" href="mailto:hello@ashekur.com">hello@ashekur.com</a>
+            <a class="btn btn-ghost" href="https://wa.me/8801812764112" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-top">
+    <div class="row gx-4 gy-5 align-items-start">
+      <div class="footer-brand col-12 col-lg-5">
+        <div class="brand brand-lg">
+          <picture>
+            <source srcset="../../assets/images/ashekur-logo-light.webp" type="image/webp" />
+            <img src="../../assets/images/ashekur-logo-light.png" alt="ashekur.com" width="480" height="125" loading="lazy" decoding="async" />
+          </picture>
+        </div>
+        <p class="footer-blurb">Frontend development and WordPress engineering for teams that care how it feels, not just how it looks. Based in Bangladesh &mdash; serving clients worldwide.</p>
+      </div>
+      <div class="col-12 col-lg-7">
+        <div class="footer-cols row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4">
+          <nav class="col" aria-label="Services">
+            <p class="mono footer-head">SERVICES</p>
+            <a href="../../services/wordpress-development/">WordPress Development</a>
+            <a href="../../services/wordpress-customization/">WordPress Customization</a>
+            <a href="../../services/elementor-customization/">Elementor Customization</a>
+            <a href="../../services/woocommerce-development/">WooCommerce Development</a>
+            <a href="../../services/wordpress-speed-optimization/">WordPress Speed Optimization</a>
+            <a href="../../services/wordpress-bug-fix/">WordPress Bug Fix</a>
+            <a href="../../services/elementor-fix/">Elementor Bug Fix</a>
+            <a href="../../services/wordpress-migration/">WordPress Migration</a>
+            <a href="../../services/seo/">WordPress SEO</a>
+          </nav>
+          <nav class="col" aria-label="Site">
+            <p class="mono footer-head">SITEMAP</p>
+            <a href="../../">Home</a>
+            <a href="../../tools/">Tools</a>
+            <a href="../../portfolio/">Portfolio</a>
+            <a href="../../blog/">Blog</a>
+            <a href="../../wordpress-fixes/">WordPress Fixes</a>
+            <a href="../../#experience">Experience</a>
+            <a href="../../contact/">Contact</a>
+            <a href="../../privacy/">Privacy Policy</a>
+          </nav>
+          <div class="col">
+            <p class="mono footer-head">ELSEWHERE</p>
+            <a href="mailto:hello@ashekur.com"><i class="ri-mail-line" aria-hidden="true"></i>hello@ashekur.com</a>
+            <a href="https://wa.me/8801812764112" target="_blank" rel="noopener noreferrer"><i class="ri-whatsapp-line" aria-hidden="true"></i>WhatsApp</a>
+            <a href="https://www.linkedin.com/in/ashekur-rahman-1ab205122/" target="_blank" rel="noopener noreferrer"><i class="ri-linkedin-fill" aria-hidden="true"></i>LinkedIn</a>
+            <a href="https://github.com/AshekurRahman" target="_blank" rel="noopener noreferrer"><i class="ri-github-fill" aria-hidden="true"></i>GitHub</a>
+            <a href="https://www.upwork.com/freelancers/~010aabe60ec2ae6679" target="_blank" rel="noopener noreferrer"><i class="ri-upwork-fill" aria-hidden="true"></i>Upwork</a>
+            <a href="https://www.facebook.com/ashekur.rahman.hridoy" target="_blank" rel="noopener noreferrer"><i class="ri-facebook-circle-fill" aria-hidden="true"></i>Facebook</a>
+            <a href="https://www.instagram.com/ashekurhridoy/" target="_blank" rel="noopener noreferrer"><i class="ri-instagram-line" aria-hidden="true"></i>Instagram</a>
+            <a href="https://www.youtube.com/@ashekurrahman1431" target="_blank" rel="noopener noreferrer"><i class="ri-youtube-fill" aria-hidden="true"></i>YouTube</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <p class="mono copyright">&copy; 2026 Ashekur Rahman. All rights reserved.</p>
+    <a class="to-top-inline" href="#main"><i class="ri-arrow-up-line" aria-hidden="true"></i> Back to top</a>
+  </div>
+</footer>
+</div>
+</div>
+
+
+<a class="wa-float" href="https://wa.me/8801812764112" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp"><i class="ri-whatsapp-fill" aria-hidden="true"></i></a>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" integrity="sha384-HOvlOYPIs/zjoIkWUGXkVmXsjr8GuZLV+Q+rcPwmJOVZVpvTSXQChiN4t9Euv9Vc" crossorigin="anonymous" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js" integrity="sha384-P8VzCVnT9NBUkMrpcIZrJbA7EBjJvh/fJS6PmP+4nLIM284DtsImIv8D0fFjIkeh" crossorigin="anonymous" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js" integrity="sha384-xb96EMJeax+NLXMC88ZBa1xAeAW+kn+horHh/zFlbMLG2UPWhMJJSlv7fi57hS+Q" crossorigin="anonymous" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollSmoother.min.js" integrity="sha384-dd8lT3AimXbI347qlZzlijPa4qnSlgGxuTqK2HlcfvF5+aOIeddPdMFmFpypQPZN" crossorigin="anonymous" defer></script>
+<script src="../../assets/js/anim.js" defer></script>
+<script src="../../assets/js/main.js" defer></script>
+</body>
+</html>

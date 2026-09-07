@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>WordPress Site Not Loading At All? Start Here Before You Panic | Ashekur Rahman</title>
+<meta name="description" content="Site won't load for anyone — not an error page, just nothing? Here's how to tell a DNS, hosting, or SSL problem apart from a WordPress problem, and fix it." />
+<meta name="keywords" content="WordPress site not loading, WordPress site down, WordPress won't load, WordPress DNS error, WordPress SSL error site down, WordPress too many redirects" />
+<meta name="author" content="Ashekur Rahman" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<meta name="theme-color" content="#0F172A" />
+<link rel="canonical" href="https://ashekur.com/wordpress-fixes/wordpress-site-not-loading/" />
+<link rel="icon" href="../../assets/images/mark.png" type="image/png" />
+<link rel="apple-touch-icon" href="../../assets/images/mark.png" />
+<link rel="manifest" href="../../site.webmanifest" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-09-02" />
+<meta property="article:author" content="Ashekur Rahman" />
+<meta property="article:section" content="WordPress Fixes" />
+<meta property="og:site_name" content="Ashekur Rahman" />
+<meta property="og:url" content="https://ashekur.com/wordpress-fixes/wordpress-site-not-loading/" />
+<meta property="og:title" content="WordPress Site Not Loading At All? Start Here Before You Panic | Ashekur Rahman" />
+<meta property="og:description" content="Site won't load for anyone — not an error page, just nothing? Here's how to tell a DNS, hosting, or SSL problem apart from a WordPress problem, and fix it." />
+<meta property="og:image" content="https://ashekur.com/assets/images/og-default.jpg" />
+<meta property="og:locale" content="en_US" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="WordPress Site Not Loading At All? Start Here Before You Panic | Ashekur Rahman" />
+<meta name="twitter:description" content="Site won't load for anyone — not an error page, just nothing? Here's how to tell a DNS, hosting, or SSL problem apart from a WordPress problem." />
+<meta name="twitter:image" content="https://ashekur.com/assets/images/og-default.jpg" />
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://www.googletagmanager.com" />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+<link rel="stylesheet" href="../../assets/fonts/remixicon.css" />
+<link rel="stylesheet" href="../../assets/css/template.css" />
+<script>var d=document.documentElement;d.classList.remove('no-js');d.classList.add('js-anim');</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://ashekur.com/" },
+        { "@type": "ListItem", "position": 2, "name": "WordPress Fixes", "item": "https://ashekur.com/wordpress-fixes/" },
+        { "@type": "ListItem", "position": 3, "name": "WordPress Site Not Loading", "item": "https://ashekur.com/wordpress-fixes/wordpress-site-not-loading/" }
+      ]
+    },
+    {
+      "@type": "TechArticle",
+      "@id": "https://ashekur.com/wordpress-fixes/wordpress-site-not-loading/#article",
+      "headline": "WordPress Site Not Loading At All",
+      "description": "Site won't load for anyone — not an error page, just nothing? Here's how to tell a DNS, hosting, or SSL problem apart from a WordPress problem, and fix it.",
+      "url": "https://ashekur.com/wordpress-fixes/wordpress-site-not-loading/",
+      "mainEntityOfPage": { "@type": "WebPage", "@id": "https://ashekur.com/wordpress-fixes/wordpress-site-not-loading/" },
+      "image": "https://ashekur.com/assets/images/og-default.jpg",
+      "datePublished": "2026-09-02",
+      "dateModified": "2026-09-02",
+      "author": {
+        "@type": "Person", "@id": "https://ashekur.com/#person", "name": "Ashekur Rahman", "url": "https://ashekur.com/",
+        "jobTitle": "Frontend Developer & WordPress Expert", "email": "hello@ashekur.com", "telephone": "+8801812764112",
+        "address": { "@type": "PostalAddress", "addressCountry": "BD" }
+      },
+      "publisher": {
+        "@type": "Person", "@id": "https://ashekur.com/#person", "name": "Ashekur Rahman", "url": "https://ashekur.com/",
+        "jobTitle": "Frontend Developer & WordPress Expert", "email": "hello@ashekur.com", "telephone": "+8801812764112",
+        "address": { "@type": "PostalAddress", "addressCountry": "BD" }
+      },
+      "articleSection": "WordPress Fixes",
+      "proficiencyLevel": "Beginner",
+      "dependencies": "Domain/DNS, hosting account, SSL certificate",
+      "wordCount": 3000,
+      "inLanguage": "en",
+      "isAccessibleForFree": true
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I know if this is a WordPress problem or a hosting/DNS problem?",
+          "acceptedAnswer": { "@type": "Answer", "text": "If your browser shows anything WordPress generated — a white page, \"There has been a critical error,\" or a styled 500 message from your host — WordPress at least got a chance to run, so start with the matching guide for that. If your browser shows a connection error, an SSL warning, or a redirect loop before any page content appears, WordPress never got involved. That's what this guide covers." }
+        },
+        {
+          "@type": "Question",
+          "name": "Why does the site work for me but not for a friend?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Almost always DNS propagation or local caching. When DNS records change, different networks and ISPs pick up the new information at different times, so it's completely normal for the site to be reachable in one location or on one connection before another for a period of hours." }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does DNS propagation actually take?",
+          "acceptedAnswer": { "@type": "Answer", "text": "The textbook worst case is 24-48 hours, but in practice most resolvers pick up a DNS change within 15 minutes to a few hours. If it's been more than two days and an external DNS checker still shows old records everywhere, something is actually misconfigured rather than just slow to propagate." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is my site hacked if my host suspended it?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Not necessarily. Hosts suspend accounts for unpaid invoices, exceeding resource limits, and terms-of-service violations just as often as for malware. Check the suspension notice or contact support directly — it will usually say the exact reason rather than leaving you to guess." }
+        },
+        {
+          "@type": "Question",
+          "name": "What's the difference between a DNS problem and an SSL problem?",
+          "acceptedAnswer": { "@type": "Answer", "text": "DNS is what tells a browser which server to connect to at all — get that wrong and the browser can't find the site. SSL is what happens after the browser has found the right server, verifying the connection is genuinely secure. A DNS problem usually shows as \"can't be reached\"; an SSL problem usually shows as a security warning after the browser has already connected." }
+        },
+        {
+          "@type": "Question",
+          "name": "Why do I see 'too many redirects' specifically?",
+          "acceptedAnswer": { "@type": "Answer", "text": "This happens when more than one layer is trying to force HTTPS at the same time and they disagree about the result — most often a CDN like Cloudflare set to \"Flexible\" SSL while the origin server also forces HTTPS, so each side keeps redirecting the other's response back and forth." }
+        },
+        {
+          "@type": "Question",
+          "name": "Should I panic if my site just went down with no warning?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No — most causes here are reversible within minutes to a few hours once identified: a suspension gets lifted after a payment or a quick fix, an SSL certificate gets reissued with one click, a wrong DNS record gets corrected. The diagnosis steps above will usually tell you which one you're dealing with in under ten minutes." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SGTGDFXH6K"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-SGTGDFXH6K');
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header" id="siteHeader">
+  <div class="container header-inner">
+    <a class="brand" href="../../" aria-label="Ashekur Rahman &mdash; home">
+      <picture>
+        <source srcset="../../assets/images/ashekur-logo-light.webp" type="image/webp" />
+        <img src="../../assets/images/ashekur-logo-light.png" alt="Ashekur Rahman" width="480" height="125" fetchpriority="high" decoding="async" />
+      </picture>
+    </a>
+    <nav class="nav-desktop" aria-label="Main">
+      <a href="../../" class="nav-link">Home</a>
+      <a href="../../tools/" class="nav-link">Tools</a>
+      <div class="nav-item" data-dropdown>
+        <div class="nav-row">
+          <a href="../../services/" class="nav-link">Services</a>
+          <button class="nav-caret" type="button" aria-label="Services submenu" aria-expanded="false" aria-controls="navDrop-services" data-dropdown-toggle><i class="ri-arrow-down-s-line" aria-hidden="true"></i></button>
+        </div>
+        <div class="nav-panel" id="navDrop-services">
+          <a class="nav-panel-all" href="../../services/">All services</a>
+          <div class="nav-panel-cols">
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">WordPress</p>
+              <a href="../../services/wordpress-development/">WordPress Development</a>
+              <a href="../../services/wordpress-customization/">WordPress Customization</a>
+              <a href="../../services/wordpress-bug-fix/">WordPress Bug Fix</a>
+              <a href="../../services/wordpress-maintenance/">WordPress Maintenance<em>New</em></a>
+            </div>
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">Page Builders</p>
+              <a href="../../services/elementor-fix/">Elementor Bug Fix</a>
+              <a href="../../services/elementor-customization/">Elementor Customization</a>
+              <a href="../../services/elementor-custom-widgets/">Elementor Custom Widgets</a>
+              <a href="../../services/divi-customization/">Divi Customization</a>
+              <a href="../../services/divi-5-migration/">Divi 5 Migration<em>New</em></a>
+            </div>
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">WooCommerce</p>
+              <a href="../../services/woocommerce-development/">WooCommerce Development</a>
+              <a href="../../services/woocommerce-fix/">WooCommerce Fixes</a>
+            </div>
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">Performance &amp; Security</p>
+              <a href="../../services/wordpress-speed-optimization/">WordPress Speed Optimization</a>
+              <a href="../../services/core-web-vitals-fix/">Core Web Vitals Fix<em>New</em></a>
+              <a href="../../services/wordpress-malware-removal/">WordPress Malware Removal</a>
+              <a href="../../services/google-blacklist-removal/">Google Blacklist Removal<em>New</em></a>
+              <a href="../../services/caching-cdn-setup/">Caching &amp; CDN Setup<em>New</em></a>
+              <a href="../../services/wordpress-security-hardening/">WordPress Security Hardening<em>New</em></a>
+            </div>
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">Migration</p>
+              <a href="../../services/wordpress-migration/">WordPress Migration</a>
+              <a href="../../services/domain-migration-redirects/">Domain Migration &amp; 301 Redirects<em>New</em></a>
+              <a href="../../services/wordpress-migration/#hosting">Host Migration</a>
+            </div>
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">SEO</p>
+              <a href="../../services/seo/">SEO</a>
+              <a href="../../services/technical-seo-audit/">Technical SEO Audit<em>New</em></a>
+            </div>
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">Other</p>
+              <a href="../../services/webflow-development/">Webflow Development</a>
+              <a href="../../services/frontend-development/">Frontend Development</a>
+              <a href="../../services/website-redesign/">Website Redesign<em>New</em></a>
+              <a href="../../services/white-label-wordpress-development/">White Label Development<em>New</em></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="../../pricing/" class="nav-link">Pricing</a>
+      <a href="../../portfolio/" class="nav-link">Portfolio</a>
+      <a href="../../blog/" class="nav-link">Blog</a>
+      <a href="../../contact/" class="btn btn-primary btn-sm nav-cta">Start a project</a>
+    </nav>
+    <button class="burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="nav-mobile" id="mobileNav" aria-label="Mobile" hidden>
+    <a href="../../">Home</a>
+    <a href="../../tools/">Tools</a>
+    <div class="nav-item" data-dropdown>
+      <div class="nav-row">
+        <a href="../../services/">Services</a>
+        <button class="nav-caret" type="button" aria-label="Services submenu" aria-expanded="false" aria-controls="navDropM-services" data-dropdown-toggle><i class="ri-arrow-down-s-line" aria-hidden="true"></i></button>
+      </div>
+      <div class="nav-panel" id="navDropM-services">
+        <a href="../../services/">All services</a>
+        <a href="../../services/wordpress-development/">WordPress Development</a>
+        <a href="../../services/wordpress-customization/">WordPress Customization</a>
+        <a href="../../services/wordpress-bug-fix/">WordPress Bug Fix</a>
+        <a href="../../services/wordpress-maintenance/">WordPress Maintenance</a>
+        <a href="../../services/elementor-fix/">Elementor Bug Fix</a>
+        <a href="../../services/elementor-customization/">Elementor Customization</a>
+        <a href="../../services/divi-customization/">Divi Customization</a>
+        <a href="../../services/divi-5-migration/">Divi 5 Migration</a>
+        <a href="../../services/elementor-custom-widgets/">Elementor Custom Widgets</a>
+        <a href="../../services/wordpress-speed-optimization/">WordPress Speed Optimization</a>
+        <a href="../../services/core-web-vitals-fix/">Core Web Vitals Fix</a>
+        <a href="../../services/woocommerce-fix/">WooCommerce Fixes</a>
+        <a href="../../services/woocommerce-development/">WooCommerce Development</a>
+        <a href="../../services/wordpress-migration/">WordPress Migration</a>
+        <a href="../../services/domain-migration-redirects/">Domain Migration &amp; 301 Redirects</a>
+        <a href="../../services/seo/">WordPress SEO</a>
+        <a href="../../services/wordpress-malware-removal/">WordPress Malware Removal</a>
+        <a href="../../services/google-blacklist-removal/">Google Blacklist Removal</a>
+        <a href="../../services/wordpress-security-hardening/">WordPress Security Hardening</a>
+        <a href="../../services/webflow-development/">Webflow Development</a>
+        <a href="../../services/frontend-development/">Frontend Development</a>
+        <a href="../../services/website-redesign/">Website Redesign</a>
+        <a href="../../services/white-label-wordpress-development/">White Label Development</a>
+      </div>
+    </div>
+    <a href="../../pricing/">Pricing</a>
+    <a href="../../portfolio/">Portfolio</a>
+    <a href="../../blog/">Blog</a>
+    <a href="../../contact/" class="btn btn-primary">Start a project</a>
+  </nav>
+</header>
+
+<div id="smooth-wrapper">
+<div id="smooth-content">
+<main id="main" class="page-shell">
+
+  <article>
+  <section class="section section-dark page-intro page-hero">
+    <div class="hero-grid-bg" aria-hidden="true"></div>
+    <div class="glow glow-a" aria-hidden="true"></div>
+    <div class="glow glow-b" aria-hidden="true"></div>
+    <div class="container">
+      <div class="row hero-split">
+        <div data-anim-hero class="col-12 col-lg-9">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <ol>
+              <li><a href="../../">Home</a></li>
+              <li><a href="../../wordpress-fixes/">WordPress Fixes</a></li>
+              <li><span aria-current="page">WordPress Site Not Loading</span></li>
+            </ol>
+          </nav>
+          <p class="post-meta mono"><span class="post-cat">Site down</span><span>10 min read</span><span>2026-09-02</span><span>Ashekur Rahman</span></p>
+          <h1 data-anim="lines">WordPress Site Not Loading At All? Start Here Before You Panic.</h1>
+          <p class="body-lg">No error page, no white screen, nothing WordPress-shaped at all &mdash; just a browser telling you it can't reach the site, an SSL warning, or a redirect loop that never ends. Before you touch a single plugin, it's worth thirty seconds to work out whether WordPress is even the problem.</p>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="../../contact/">Send me your site <i class="ri-arrow-right-line" aria-hidden="true"></i></a>
+            <a class="btn btn-ghost" href="../../services/wordpress-bug-fix/">See the bug fix service</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-white">
+    <div class="container">
+      <figure data-anim="reveal" class="shot mb-5">
+        <picture>
+          <source srcset="../../assets/images/wordpress-site-not-loading.webp" type="image/webp" />
+          <img src="../../assets/images/wordpress-site-not-loading.jpeg" alt="Browser window unable to connect, shown with a broken connection line reaching toward a globe icon and a timeout clock" width="1280" height="720" loading="lazy" decoding="async" />
+        </picture>
+        <!-- Image prompt: Photorealistic close-up of a laptop screen showing a browser tab with "This site can't be reached" and a greyed-out padlock icon, a second blurred monitor in the background showing a DNS lookup terminal command. Soft office lighting, shallow depth of field, professional tech-editorial style, no visible faces, no readable personal data. 1280x720, 16:9. -->
+        <figcaption>If the browser itself refuses the connection, WordPress hasn't even had a chance to run yet.</figcaption>
+      </figure>
+
+      <div class="row gx-5 gy-4">
+        <aside class="col-12 col-lg-4 order-lg-2">
+          <div class="post-aside">
+            <nav class="toc" aria-label="On this page">
+              <p class="toc-head mono">ON THIS PAGE</p>
+              <ol>
+                <li><a href="#what-is-the-problem">What is the problem?</a></li>
+                <li><a href="#common-symptoms">Common symptoms</a></li>
+                <li><a href="#why-does-this-happen">Why does this happen?</a></li>
+                <li><a href="#common-technical-causes">Common technical causes</a></li>
+                <li><a href="#how-to-diagnose-it">How to diagnose it</a></li>
+                <li><a href="#how-to-fix-it-step-by-step">How to fix it, step by step</a></li>
+                <li><a href="#when-this-needs-professional-help">When this needs professional help</a></li>
+                <li><a href="#how-i-can-help">How I can help</a></li>
+              </ol>
+            </nav>
+          </div>
+        </aside>
+        <div class="col-12 col-lg-8 order-lg-1">
+          <div class="prose">
+
+<h2 id="what-is-the-problem">What is the problem?</h2>
+<p>Most of the guides in this library start from something WordPress showed you &mdash; a blank page, a fatal error message, a 500 from your server. This one is different. If your site "isn't loading," the first thing worth confirming is whether WordPress ever got the chance to run at all. A browser saying it <strong>can't reach the site</strong>, warning that the connection <strong>isn't private</strong>, or looping forever between <code>http://</code> and <code>https://</code> is telling you something failed before your server even had the opportunity to hand a request to WordPress.</p>
+<blockquote>Quick answer: if you see anything WordPress-shaped &mdash; a white page, a styled error, your theme's header even partially rendering &mdash; the problem is on the <a href="../wordpress-500-error/">500 error</a> or <a href="../wordpress-white-screen/">white screen</a> side. If you see a raw browser error before any page content appears at all, it's DNS, SSL, hosting, or a redirect loop &mdash; and that's what this guide is for.</blockquote>
+<p>That distinction matters because the fixes are completely different. A plugin conflict will never cause a DNS error. A theme bug will never expire an SSL certificate. Troubleshooting a connection-level failure as if it were a WordPress bug just burns time you don't have while the site stays down.</p>
+
+<h2 id="common-symptoms">Common symptoms</h2>
+<ul>
+  <li>The browser shows &ldquo;This site can't be reached&rdquo; or <code>DNS_PROBE_FINISHED_NXDOMAIN</code> instead of any page content</li>
+  <li>A full-page &ldquo;Your connection is not private&rdquo; warning blocks access before the site loads</li>
+  <li>The address bar cycles and eventually shows <code>ERR_TOO_MANY_REDIRECTS</code>, or the tab spins forever switching between <code>http</code> and <code>https</code></li>
+  <li>The site loads normally for you but a colleague, client or visitor in another location reports it's down</li>
+  <li>It works on mobile data but not on your home or office wifi, or the other way round</li>
+  <li>The page hangs for a long time with no content, then simply times out with no error text at all</li>
+  <li>Visiting the server's raw IP address shows the site fine, but the actual domain doesn't</li>
+</ul>
+
+<h2 id="why-does-this-happen">Why does this happen?</h2>
+<p>WordPress is an application that runs on a server, but reaching that server at all depends on several things happening correctly first: your domain's DNS records have to point at the right server, an SSL certificate has to be valid so the browser trusts the connection, and the hosting account itself has to be active and responding. None of that is WordPress's job &mdash; it's the infrastructure WordPress sits on top of. When any one of those layers breaks, the browser stops before it ever requests a page from WordPress, which is why you don't see a WordPress error at all. You see a browser-level message instead, because the browser is the one refusing to proceed.</p>
+<p>These failures also tend to arrive suddenly and without warning, right after something changed &mdash; a domain renewal missed, a host migration, a CDN setting flipped, a certificate that quietly expired in the background. That abruptness is itself a clue: a WordPress bug from a plugin update usually shows a WordPress-generated error; an infrastructure failure just cuts the connection.</p>
+
+<h2 id="common-technical-causes">Common technical causes</h2>
+<ul>
+  <li><strong>DNS records misconfigured or not yet propagated</strong> &mdash; a wrong A record, or nameservers still pointing at an old host after a migration</li>
+  <li><strong>The domain itself has expired</strong> or is sitting in a registrar's redemption or grace period</li>
+  <li><strong>An SSL certificate expired or failed to auto-renew</strong>, so the browser blocks the connection outright rather than showing any WordPress content</li>
+  <li><strong>The hosting account is suspended</strong> &mdash; for an unpaid invoice, exceeding resource limits, or a terms-of-service or malware flag &mdash; which stops the server responding at all</li>
+  <li><strong>A redirect loop from forcing HTTPS at two layers at once</strong> &mdash; the server and a WordPress plugin both trying to redirect, disagreeing with each other</li>
+  <li><strong>A CDN or firewall's SSL mode set incorrectly</strong> relative to the origin server &mdash; Cloudflare's &ldquo;Flexible&rdquo; mode combined with an origin server that also forces HTTPS is the single most common cause of this exact loop</li>
+  <li><strong>Local DNS caching on a visitor's device or ISP</strong> still resolving to an old server IP after a migration, so different people see different things for up to a day or two</li>
+</ul>
+
+<h2 id="how-to-diagnose-it">How to diagnose it</h2>
+<ol>
+  <li><strong>Run the domain through an external DNS checker.</strong> This shows what A record the domain currently resolves to worldwide, not just from your own location, and whether it matches your actual hosting server.</li>
+  <li><strong>Try a different network entirely.</strong> Switch from wifi to mobile data (or vice versa) and reload. If it works on one network and not the other, this is a local or ISP-level DNS caching issue, not a real outage.</li>
+  <li><strong>Check the SSL certificate directly.</strong> Click the padlock or connection info icon in the address bar (where the site loads at all) to see the certificate's validity dates and the domain it's actually issued for.</li>
+  <li><strong>Log into the hosting control panel.</strong> A suspended account almost always shows a clear notice on login, stating the reason.</li>
+  <li><strong>Check the domain's expiry date at the registrar.</strong> This is the most overlooked cause on this list, and the easiest to miss until it's already down.</li>
+  <li><strong>Check any CDN or firewall in front of the site</strong> (Cloudflare is the most common) for its current SSL/TLS mode and whether an aggressive security setting is active.</li>
+  <li><strong>Load the server's raw IP address directly.</strong> If the site displays correctly by IP but not by domain, the server itself is fine and the problem is entirely DNS.</li>
+</ol>
+
+<h2 id="how-to-fix-it-step-by-step">How to fix it, step by step</h2>
+<ol>
+  <li><strong>Correct any wrong DNS records</strong> at the domain registrar or DNS provider &mdash; the A record, and any nameserver settings if you've changed hosts &mdash; then allow time for propagation. It's usually much faster than the worst-case 24&ndash;48 hours, but genuinely takes some time.</li>
+  <li><strong>Renew an expired domain immediately</strong> through the registrar. Domains in an early grace period can usually be restored without extra cost, but that window closes.</li>
+  <li><strong>Reissue the SSL certificate</strong> if it's expired or broken. Most hosts can auto-issue a free Let's Encrypt certificate with one click from the control panel &mdash; manually trigger that if it didn't renew on its own.</li>
+  <li><strong>Resolve a hosting suspension directly with the host.</strong> Pay an outstanding invoice, or if it's a resource or malware flag, address the underlying cause first &mdash; the host will usually explain exactly what's needed to reinstate the account.</li>
+  <li><strong>Fix a redirect loop by forcing HTTPS at only one layer.</strong> If you're using Cloudflare and the origin server also forces HTTPS, set Cloudflare's SSL/TLS mode to &ldquo;Full&rdquo; or &ldquo;Full (strict)&rdquo; rather than &ldquo;Flexible&rdquo; &mdash; that mismatch is the most common cause of this exact loop.</li>
+  <li><strong>Turn off an aggressive CDN security mode</strong> (like Cloudflare's &ldquo;Under Attack&rdquo; mode) once you've confirmed there's no actual attack in progress and it's simply blocking legitimate visitors.</li>
+  <li><strong>Clear your own local DNS cache</strong> before concluding a fix hasn't worked &mdash; what looks like a failed fix is often just your own machine still holding the old answer.</li>
+  <li><strong>Confirm the raw server IP still serves the correct site</strong> to isolate whether you're dealing with a DNS/domain-level issue or a genuine server problem.</li>
+  <li><strong>Monitor from a few different networks over the next day</strong> once you believe it's fixed, since a change that looks resolved to you may not have reached every visitor yet.</li>
+</ol>
+
+<h2 id="when-this-needs-professional-help">When this needs professional help</h2>
+<p>Several of these fixes are realistic for a site owner to make directly through a registrar or hosting panel. It's worth bringing in a developer when:</p>
+<ul>
+  <li>DNS or domain registrar access isn't available to you directly &mdash; an agency or a previous developer still controls it</li>
+  <li>The hosting account is suspended for a technical reason like malware, and needs a proper cleanup before it can be reinstated safely</li>
+  <li>A redirect loop involves more than one layer &mdash; a CDN, the server, and a WordPress plugin &mdash; and they need to be coordinated together rather than toggled one at a time</li>
+  <li>You've worked through the diagnosis steps above and the cause still isn't clear, while the site stays down and costs real time or business</li>
+</ul>
+
+<h2 id="how-i-can-help">How I can help</h2>
+<p>This one usually comes down to speed: telling apart a DNS, SSL, hosting or WordPress-level cause quickly, because each needs a completely different fix and people often lose hours troubleshooting the wrong layer entirely &mdash; deactivating plugins on a site that was never going to load a plugin in the first place. Over eleven years of freelance WordPress work I've dealt with this across DNS providers, CDNs and hosts of every size, and I can usually tell you which layer is actually broken within minutes of looking, then coordinate the fix across whichever combination of host, CDN and WordPress is involved.</p>
+          </div>
+
+          <aside class="post-cta">
+            <p class="mono post-cta-head">RELATED SERVICE</p>
+            <h2>WordPress Bug Fix</h2>
+            <p>If you'd rather have this diagnosed and fixed than work through it yourself, that page covers exactly what's included, how fast it usually runs, and what it costs to find out.</p>
+            <div data-anim="fade" class="btn-row">
+              <a class="btn btn-primary" href="../../services/wordpress-bug-fix/">WordPress Bug Fix <i class="ri-arrow-right-line" aria-hidden="true"></i></a>
+              <a class="btn btn-ghost" href="../../contact/">Ask a question</a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </section>
+  </article>
+
+  <section class="section section-light">
+    <div class="container">
+      <div class="row gx-0">
+        <div class="section-head col-12 col-lg-6">
+          <p data-anim="fade" class="eyebrow"><span class="eyebrow-mark" aria-hidden="true"></span><span class="mono">RELATED PROBLEMS</span></p>
+          <h2 data-anim="lines">If this isn't quite your issue</h2>
+          <p data-anim="fade" class="body-lg">If WordPress managed to show you anything at all, one of these is a closer match.</p>
+        </div>
+      </div>
+      <div data-anim="stagger" class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4 related-grid">
+        <div class="col">
+          <a data-anim="item" class="related-card h-100" href="../wordpress-500-error/">
+            <strong>WordPress 500 Internal Server Error</strong>
+            <span>That guide assumes the server responded with something. This one covers not being able to reach it at all.</span>
+          </a>
+        </div>
+        <div class="col">
+          <a data-anim="item" class="related-card h-100" href="../../services/wordpress-migration/">
+            <strong>WordPress Migration</strong>
+            <span>If this started right after moving hosts or domains, a clean migration prevents exactly this kind of DNS mismatch.</span>
+          </a>
+        </div>
+        <div class="col">
+          <a data-anim="item" class="related-card h-100" href="../../services/wordpress-malware-removal/">
+            <strong>WordPress Malware Removal</strong>
+            <span>If your host suspended the account over a security flag, this is the fix before the account can be reinstated.</span>
+          </a>
+        </div>
+        <div class="col">
+          <a data-anim="item" class="related-card h-100" href="../ssl-mixed-content/">
+            <strong>&ldquo;Not Secure&rdquo; Warning or Mixed Content</strong>
+            <span>If the page actually loads but shows a broken padlock instead of being blocked outright, that's a narrower, different cause.</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-white">
+    <div class="container">
+      <div class="row gx-0">
+        <div class="section-head col-12 col-lg-6">
+          <p data-anim="fade" class="eyebrow"><span class="eyebrow-mark" aria-hidden="true"></span><span class="mono">RELEVANT WORK</span></p>
+          <h2 data-anim="lines">Sites moved and kept online without downtime</h2>
+          <p data-anim="fade" class="body-lg">Two builds where getting the domain, hosting and SSL layers right was as much the job as the WordPress build itself.</p>
+        </div>
+      </div>
+      <div data-anim="stagger" class="row row-cols-1 row-cols-md-2 g-4 case-grid">
+        <div class="col">
+          <article data-anim="item" class="case-card h-100">
+            <a href="../../portfolio/freizeitcenter-dietz/" tabindex="-1" aria-hidden="true">
+              <picture>
+                <source srcset="../../assets/images/project-dietz.webp" type="image/webp" />
+                <img src="../../assets/images/project-dietz.jpeg" alt="Freizeitcenter Dietz motorhome dealership website, built in WordPress with Divi 5" width="1200" height="624" loading="lazy" decoding="async" />
+              </picture>
+            </a>
+            <div class="case-card-body">
+              <h3><a href="../../portfolio/freizeitcenter-dietz/">Freizeitcenter Dietz</a></h3>
+              <p>A ground-up rebuild that went live on a new domain and hosting setup together, where DNS cutover and SSL had to land cleanly on day one.</p>
+              <ul class="tech-chips"><li>WordPress</li><li>Divi 5</li><li>Responsive</li></ul>
+              <div class="btn-row">
+                <a class="btn btn-primary btn-sm" href="../../portfolio/freizeitcenter-dietz/">Read the case study</a>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="col">
+          <article data-anim="item" class="case-card h-100">
+            <a href="../../portfolio/canvascroft/" tabindex="-1" aria-hidden="true">
+              <picture>
+                <source srcset="../../assets/images/project-canvascroft.webp" type="image/webp" />
+                <img src="../../assets/images/project-canvascroft.jpeg" alt="Canvascroft branding and design studio website built in WordPress with Elementor" width="1200" height="613" loading="lazy" decoding="async" />
+              </picture>
+            </a>
+            <div class="case-card-body">
+              <h3><a href="../../portfolio/canvascroft/">Canvascroft</a></h3>
+              <p>Running a live booking and subscription service means downtime has a direct cost &mdash; hosting and SSL were set up to stay boring on purpose.</p>
+              <ul class="tech-chips"><li>WordPress</li><li>Elementor</li><li>WooCommerce</li></ul>
+              <div class="btn-row">
+                <a class="btn btn-primary btn-sm" href="../../portfolio/canvascroft/">Read the case study</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-tint">
+    <div class="container">
+      <div class="row gx-5 gy-4">
+        <div class="col-12 col-lg-4">
+          <div class="section-head sticky-head mb-4 mb-lg-0">
+            <p data-anim="fade" class="eyebrow"><span class="eyebrow-mark" aria-hidden="true"></span><span class="mono">FAQ</span></p>
+            <h2 data-anim="lines">Questions about a site that won't load</h2>
+            <p data-anim="fade" class="body-lg">What people ask before sending over the site.</p>
+          </div>
+        </div>
+        <div class="col-12 col-lg-8">
+          <div data-anim="stagger" class="faq-list">
+            <details data-anim="item" class="faq-item">
+              <summary>How do I know if this is a WordPress problem or a hosting/DNS problem?</summary>
+              <p class="faq-body">If your browser shows anything WordPress generated &mdash; a white page, &ldquo;There has been a critical error,&rdquo; or a styled 500 message from your host &mdash; WordPress at least got a chance to run, so start with the matching guide for that. If your browser shows a connection error, an SSL warning, or a redirect loop before any page content appears, WordPress never got involved. That's what this guide covers.</p>
+            </details>
+            <details data-anim="item" class="faq-item">
+              <summary>Why does the site work for me but not for a friend?</summary>
+              <p class="faq-body">Almost always DNS propagation or local caching. When DNS records change, different networks and ISPs pick up the new information at different times, so it's completely normal for the site to be reachable in one location or on one connection before another for a period of hours.</p>
+            </details>
+            <details data-anim="item" class="faq-item">
+              <summary>How long does DNS propagation actually take?</summary>
+              <p class="faq-body">The textbook worst case is 24&ndash;48 hours, but in practice most resolvers pick up a DNS change within 15 minutes to a few hours. If it's been more than two days and an external DNS checker still shows old records everywhere, something is actually misconfigured rather than just slow to propagate.</p>
+            </details>
+            <details data-anim="item" class="faq-item">
+              <summary>Is my site hacked if my host suspended it?</summary>
+              <p class="faq-body">Not necessarily. Hosts suspend accounts for unpaid invoices, exceeding resource limits, and terms-of-service violations just as often as for malware. Check the suspension notice or contact support directly &mdash; it will usually say the exact reason rather than leaving you to guess.</p>
+            </details>
+            <details data-anim="item" class="faq-item">
+              <summary>What's the difference between a DNS problem and an SSL problem?</summary>
+              <p class="faq-body">DNS is what tells a browser which server to connect to at all &mdash; get that wrong and the browser can't find the site. SSL is what happens after the browser has found the right server, verifying the connection is genuinely secure. A DNS problem usually shows as &ldquo;can't be reached&rdquo;; an SSL problem usually shows as a security warning after the browser has already connected.</p>
+            </details>
+            <details data-anim="item" class="faq-item">
+              <summary>Why do I see 'too many redirects' specifically?</summary>
+              <p class="faq-body">This happens when more than one layer is trying to force HTTPS at the same time and they disagree about the result &mdash; most often a CDN like Cloudflare set to &ldquo;Flexible&rdquo; SSL while the origin server also forces HTTPS, so each side keeps redirecting the other's response back and forth.</p>
+            </details>
+            <details data-anim="item" class="faq-item">
+              <summary>Should I panic if my site just went down with no warning?</summary>
+              <p class="faq-body">No &mdash; most causes here are reversible within minutes to a few hours once identified: a suspension gets lifted after a payment or a quick fix, an SSL certificate gets reissued with one click, a wrong DNS record gets corrected. The diagnosis steps above will usually tell you which one you're dealing with in under ten minutes.</p>
+            </details>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-dark section-contact">
+    <div class="hero-grid-bg contact-grid-bg" aria-hidden="true"></div>
+    <div class="glow glow-d" aria-hidden="true"></div>
+    <div class="container">
+      <div class="contact-cta-shell">
+        <div data-anim="fade" class="contact-cta-card">
+          <div class="contact-cta-copy">
+            <p class="badge badge-live mx-auto"><span class="dot" aria-hidden="true"></span>Available for new projects</p>
+            <p class="eyebrow eyebrow-center"><span class="eyebrow-mark eyebrow-mark-light" aria-hidden="true"></span><span class="mono">NEXT STEP</span></p>
+            <h2 data-anim="lines">Need help fixing this WordPress issue?</h2>
+            <p class="body-lg">Send me your website and I'll help identify the problem &mdash; no charge just to take a look. Based in Bangladesh, working with clients worldwide, with a reply within one working day.</p>
+          </div>
+          <ul class="tech-chips justify-content-center">
+            <li>Reply within one working day</li>
+            <li>Fixed quote before work starts</li>
+            <li>UK, EU and US hours covered</li>
+          </ul>
+          <div class="contact-cta-actions">
+            <a class="btn btn-primary" href="../../contact/">Start a project <i class="ri-arrow-right-line" aria-hidden="true"></i></a>
+            <a class="btn btn-ghost" href="mailto:hello@ashekur.com">hello@ashekur.com</a>
+            <a class="btn btn-ghost" href="https://wa.me/8801812764112" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-top">
+    <div class="row gx-4 gy-5 align-items-start">
+      <div class="footer-brand col-12 col-lg-5">
+        <div class="brand brand-lg">
+          <picture>
+            <source srcset="../../assets/images/ashekur-logo-light.webp" type="image/webp" />
+            <img src="../../assets/images/ashekur-logo-light.png" alt="ashekur.com" width="480" height="125" loading="lazy" decoding="async" />
+          </picture>
+        </div>
+        <p class="footer-blurb">Frontend development and WordPress engineering for teams that care how it feels, not just how it looks. Based in Bangladesh &mdash; serving clients worldwide.</p>
+      </div>
+      <div class="col-12 col-lg-7">
+        <div class="footer-cols row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4">
+          <nav class="col" aria-label="Services">
+            <p class="mono footer-head">SERVICES</p>
+            <a href="../../services/wordpress-development/">WordPress Development</a>
+            <a href="../../services/wordpress-customization/">WordPress Customization</a>
+            <a href="../../services/elementor-customization/">Elementor Customization</a>
+            <a href="../../services/woocommerce-development/">WooCommerce Development</a>
+            <a href="../../services/wordpress-speed-optimization/">WordPress Speed Optimization</a>
+            <a href="../../services/wordpress-bug-fix/">WordPress Bug Fix</a>
+            <a href="../../services/elementor-fix/">Elementor Bug Fix</a>
+            <a href="../../services/wordpress-migration/">WordPress Migration</a>
+            <a href="../../services/seo/">WordPress SEO</a>
+          </nav>
+          <nav class="col" aria-label="Site">
+            <p class="mono footer-head">SITEMAP</p>
+            <a href="../../">Home</a>
+            <a href="../../tools/">Tools</a>
+            <a href="../../portfolio/">Portfolio</a>
+            <a href="../../blog/">Blog</a>
+            <a href="../../wordpress-fixes/">WordPress Fixes</a>
+            <a href="../../#experience">Experience</a>
+            <a href="../../contact/">Contact</a>
+            <a href="../../privacy/">Privacy Policy</a>
+          </nav>
+          <div class="col">
+            <p class="mono footer-head">ELSEWHERE</p>
+            <a href="mailto:hello@ashekur.com"><i class="ri-mail-line" aria-hidden="true"></i>hello@ashekur.com</a>
+            <a href="https://wa.me/8801812764112" target="_blank" rel="noopener noreferrer"><i class="ri-whatsapp-line" aria-hidden="true"></i>WhatsApp</a>
+            <a href="https://www.linkedin.com/in/ashekur-rahman-1ab205122/" target="_blank" rel="noopener noreferrer"><i class="ri-linkedin-fill" aria-hidden="true"></i>LinkedIn</a>
+            <a href="https://github.com/AshekurRahman" target="_blank" rel="noopener noreferrer"><i class="ri-github-fill" aria-hidden="true"></i>GitHub</a>
+            <a href="https://www.upwork.com/freelancers/~010aabe60ec2ae6679" target="_blank" rel="noopener noreferrer"><i class="ri-upwork-fill" aria-hidden="true"></i>Upwork</a>
+            <a href="https://www.facebook.com/ashekur.rahman.hridoy" target="_blank" rel="noopener noreferrer"><i class="ri-facebook-circle-fill" aria-hidden="true"></i>Facebook</a>
+            <a href="https://www.instagram.com/ashekurhridoy/" target="_blank" rel="noopener noreferrer"><i class="ri-instagram-line" aria-hidden="true"></i>Instagram</a>
+            <a href="https://www.youtube.com/@ashekurrahman1431" target="_blank" rel="noopener noreferrer"><i class="ri-youtube-fill" aria-hidden="true"></i>YouTube</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <p class="mono copyright">&copy; 2026 Ashekur Rahman. All rights reserved.</p>
+    <a class="to-top-inline" href="#main"><i class="ri-arrow-up-line" aria-hidden="true"></i> Back to top</a>
+  </div>
+</footer>
+</div>
+</div>
+
+
+<a class="wa-float" href="https://wa.me/8801812764112" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp"><i class="ri-whatsapp-fill" aria-hidden="true"></i></a>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" integrity="sha384-HOvlOYPIs/zjoIkWUGXkVmXsjr8GuZLV+Q+rcPwmJOVZVpvTSXQChiN4t9Euv9Vc" crossorigin="anonymous" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js" integrity="sha384-P8VzCVnT9NBUkMrpcIZrJbA7EBjJvh/fJS6PmP+4nLIM284DtsImIv8D0fFjIkeh" crossorigin="anonymous" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js" integrity="sha384-xb96EMJeax+NLXMC88ZBa1xAeAW+kn+horHh/zFlbMLG2UPWhMJJSlv7fi57hS+Q" crossorigin="anonymous" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollSmoother.min.js" integrity="sha384-dd8lT3AimXbI347qlZzlijPa4qnSlgGxuTqK2HlcfvF5+aOIeddPdMFmFpypQPZN" crossorigin="anonymous" defer></script>
+<script src="../../assets/js/anim.js" defer></script>
+<script src="../../assets/js/main.js" defer></script>
+</body>
+</html>

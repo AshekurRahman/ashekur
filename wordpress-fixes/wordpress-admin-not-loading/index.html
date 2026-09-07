@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>wp-admin Won't Load (Blank, Timing Out or Erroring) | Ashekur Rahman</title>
+<meta name="description" content="The public site loads fine, but wp-admin itself is blank, timing out, or erroring before you even reach the login screen? Here's why, and how to get back in." />
+<meta name="keywords" content="wp-admin not loading, wp-admin blank page, wp-admin timeout, WordPress dashboard won't load, WordPress admin down but site up" />
+<meta name="author" content="Ashekur Rahman" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<meta name="theme-color" content="#0F172A" />
+<link rel="canonical" href="https://ashekur.com/wordpress-fixes/wordpress-admin-not-loading/" />
+<link rel="icon" href="../../assets/images/mark.png" type="image/png" />
+<link rel="apple-touch-icon" href="../../assets/images/mark.png" />
+<link rel="manifest" href="../../site.webmanifest" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-09-05" />
+<meta property="article:author" content="Ashekur Rahman" />
+<meta property="article:section" content="WordPress Fixes" />
+<meta property="og:site_name" content="Ashekur Rahman" />
+<meta property="og:url" content="https://ashekur.com/wordpress-fixes/wordpress-admin-not-loading/" />
+<meta property="og:title" content="wp-admin Won't Load (Blank, Timing Out or Erroring) | Ashekur Rahman" />
+<meta property="og:description" content="The public site loads fine, but wp-admin itself is blank, timing out, or erroring before you even reach the login screen? Here's why, and how to get back in." />
+<meta property="og:image" content="https://ashekur.com/assets/images/og-default.jpg" />
+<meta property="og:locale" content="en_US" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="wp-admin Won't Load (Blank, Timing Out or Erroring) | Ashekur Rahman" />
+<meta name="twitter:description" content="The public site loads fine, but wp-admin itself is blank, timing out, or erroring before you even reach the login screen." />
+<meta name="twitter:image" content="https://ashekur.com/assets/images/og-default.jpg" />
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://www.googletagmanager.com" />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+<link rel="stylesheet" href="../../assets/fonts/remixicon.css" />
+<link rel="stylesheet" href="../../assets/css/template.css" />
+<script>var d=document.documentElement;d.classList.remove('no-js');d.classList.add('js-anim');</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://ashekur.com/" },
+        { "@type": "ListItem", "position": 2, "name": "WordPress Fixes", "item": "https://ashekur.com/wordpress-fixes/" },
+        { "@type": "ListItem", "position": 3, "name": "wp-admin Not Loading", "item": "https://ashekur.com/wordpress-fixes/wordpress-admin-not-loading/" }
+      ]
+    },
+    {
+      "@type": "TechArticle",
+      "@id": "https://ashekur.com/wordpress-fixes/wordpress-admin-not-loading/#article",
+      "headline": "wp-admin Won't Load (Blank, Timing Out or Erroring)",
+      "description": "The public site loads fine, but wp-admin itself is blank, timing out, or erroring before you even reach the login screen. Here's why, and how to get back in.",
+      "url": "https://ashekur.com/wordpress-fixes/wordpress-admin-not-loading/",
+      "mainEntityOfPage": { "@type": "WebPage", "@id": "https://ashekur.com/wordpress-fixes/wordpress-admin-not-loading/" },
+      "image": "https://ashekur.com/assets/images/og-default.jpg",
+      "datePublished": "2026-09-05",
+      "dateModified": "2026-09-05",
+      "author": {
+        "@type": "Person", "@id": "https://ashekur.com/#person", "name": "Ashekur Rahman", "url": "https://ashekur.com/",
+        "jobTitle": "Frontend Developer & WordPress Expert", "email": "hello@ashekur.com", "telephone": "+8801812764112",
+        "address": { "@type": "PostalAddress", "addressCountry": "BD" }
+      },
+      "publisher": {
+        "@type": "Person", "@id": "https://ashekur.com/#person", "name": "Ashekur Rahman", "url": "https://ashekur.com/",
+        "jobTitle": "Frontend Developer & WordPress Expert", "email": "hello@ashekur.com", "telephone": "+8801812764112",
+        "address": { "@type": "PostalAddress", "addressCountry": "BD" }
+      },
+      "articleSection": "WordPress Fixes",
+      "proficiencyLevel": "Beginner",
+      "dependencies": "WordPress, hosting environment",
+      "wordCount": 2400,
+      "inLanguage": "en",
+      "isAccessibleForFree": true
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is this the same as not being able to log in?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. A login problem means you reach wp-login.php, enter credentials, and something goes wrong after that (wrong password, a redirect loop, a cookie error). This problem happens before login is even reached — the admin area itself fails to load, times out, or errors, regardless of whether your credentials are correct." }
+        },
+        {
+          "@type": "Question",
+          "name": "Why would only wp-admin be affected and not the public site?",
+          "acceptedAnswer": { "@type": "Answer", "text": "wp-admin loads a large amount of additional code the public site never touches — every active plugin's full admin-side functionality, dashboard widgets, and admin-only scripts. A conflict or resource limit specific to that extra load can break wp-admin while the public site, which runs a much lighter code path, keeps working normally." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I fix this without accessing wp-admin at all?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes, and in most cases you have to. FTP or your host's File Manager lets you rename the plugins folder, edit wp-config.php, and check error logs entirely outside of wp-admin, which is exactly the access path this guide uses throughout." }
+        },
+        {
+          "@type": "Question",
+          "name": "Will renaming the plugins folder delete my settings?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. Renaming the folder just deactivates every plugin without touching their saved settings, which live in the database. Renaming the folder back to its original name (exactly \"plugins\") restores every plugin to its previous active state with settings intact." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is this a sign my site has been hacked?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Usually not on its own — a plugin conflict, a resource limit, or a corrupted file are all far more common causes. It's worth ruling out compromise if this appeared alongside other signs like unfamiliar admin users or unexpected file changes, but a single instance of wp-admin failing to load is not itself evidence of a hack." }
+        },
+        {
+          "@type": "Question",
+          "name": "How urgent is this to fix?",
+          "acceptedAnswer": { "@type": "Answer", "text": "If the public site is still up, there's no immediate visitor-facing emergency, but you can't publish content, respond to orders, or apply a security update while locked out — so it's worth fixing promptly rather than leaving it, especially on an active store or membership site." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SGTGDFXH6K"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-SGTGDFXH6K');
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header" id="siteHeader">
+  <div class="container header-inner">
+    <a class="brand" href="../../" aria-label="Ashekur Rahman &mdash; home">
+      <picture>
+        <source srcset="../../assets/images/ashekur-logo-light.webp" type="image/webp" />
+        <img src="../../assets/images/ashekur-logo-light.png" alt="Ashekur Rahman" width="480" height="125" fetchpriority="high" decoding="async" />
+      </picture>
+    </a>
+    <nav class="nav-desktop" aria-label="Main">
+      <a href="../../" class="nav-link">Home</a>
+      <a href="../../tools/" class="nav-link">Tools</a>
+      <div class="nav-item" data-dropdown>
+        <div class="nav-row">
+          <a href="../../services/" class="nav-link">Services</a>
+          <button class="nav-caret" type="button" aria-label="Services submenu" aria-expanded="false" aria-controls="navDrop-services" data-dropdown-toggle><i class="ri-arrow-down-s-line" aria-hidden="true"></i></button>
+        </div>
+        <div class="nav-panel" id="navDrop-services">
+          <a class="nav-panel-all" href="../../services/">All services</a>
+          <div class="nav-panel-cols">
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">WordPress</p>
+              <a href="../../services/wordpress-development/">WordPress Development</a>
+              <a href="../../services/wordpress-customization/">WordPress Customization</a>
+              <a href="../../services/wordpress-bug-fix/">WordPress Bug Fix</a>
+              <a href="../../services/wordpress-maintenance/">WordPress Maintenance<em>New</em></a>
+            </div>
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">Page Builders</p>
+              <a href="../../services/elementor-fix/">Elementor Bug Fix</a>
+              <a href="../../services/elementor-customization/">Elementor Customization</a>
+              <a href="../../services/elementor-custom-widgets/">Elementor Custom Widgets</a>
+              <a href="../../services/divi-customization/">Divi Customization</a>
+              <a href="../../services/divi-5-migration/">Divi 5 Migration<em>New</em></a>
+            </div>
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">WooCommerce</p>
+              <a href="../../services/woocommerce-development/">WooCommerce Development</a>
+              <a href="../../services/woocommerce-fix/">WooCommerce Fixes</a>
+            </div>
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">Performance &amp; Security</p>
+              <a href="../../services/wordpress-speed-optimization/">WordPress Speed Optimization</a>
+              <a href="../../services/core-web-vitals-fix/">Core Web Vitals Fix<em>New</em></a>
+              <a href="../../services/wordpress-malware-removal/">WordPress Malware Removal</a>
+              <a href="../../services/google-blacklist-removal/">Google Blacklist Removal<em>New</em></a>
+              <a href="../../services/caching-cdn-setup/">Caching &amp; CDN Setup<em>New</em></a>
+              <a href="../../services/wordpress-security-hardening/">WordPress Security Hardening<em>New</em></a>
+            </div>
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">Migration</p>
+              <a href="../../services/wordpress-migration/">WordPress Migration</a>
+              <a href="../../services/domain-migration-redirects/">Domain Migration &amp; 301 Redirects<em>New</em></a>
+              <a href="../../services/wordpress-migration/#hosting">Host Migration</a>
+            </div>
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">SEO</p>
+              <a href="../../services/seo/">SEO</a>
+              <a href="../../services/technical-seo-audit/">Technical SEO Audit<em>New</em></a>
+            </div>
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">Other</p>
+              <a href="../../services/webflow-development/">Webflow Development</a>
+              <a href="../../services/frontend-development/">Frontend Development</a>
+              <a href="../../services/website-redesign/">Website Redesign<em>New</em></a>
+              <a href="../../services/white-label-wordpress-development/">White Label Development<em>New</em></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="../../pricing/" class="nav-link">Pricing</a>
+      <a href="../../portfolio/" class="nav-link">Portfolio</a>
+      <a href="../../blog/" class="nav-link">Blog</a>
+      <a href="../../contact/" class="btn btn-primary btn-sm nav-cta">Start a project</a>
+    </nav>
+    <button class="burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="nav-mobile" id="mobileNav" aria-label="Mobile" hidden>
+    <a href="../../">Home</a>
+    <a href="../../tools/">Tools</a>
+    <div class="nav-item" data-dropdown>
+      <div class="nav-row">
+        <a href="../../services/">Services</a>
+        <button class="nav-caret" type="button" aria-label="Services submenu" aria-expanded="false" aria-controls="navDropM-services" data-dropdown-toggle><i class="ri-arrow-down-s-line" aria-hidden="true"></i></button>
+      </div>
+      <div class="nav-panel" id="navDropM-services">
+        <a href="../../services/">All services</a>
+        <a href="../../services/wordpress-development/">WordPress Development</a>
+        <a href="../../services/wordpress-customization/">WordPress Customization</a>
+        <a href="../../services/wordpress-bug-fix/">WordPress Bug Fix</a>
+        <a href="../../services/wordpress-maintenance/">WordPress Maintenance</a>
+        <a href="../../services/elementor-fix/">Elementor Bug Fix</a>
+        <a href="../../services/elementor-customization/">Elementor Customization</a>
+        <a href="../../services/divi-customization/">Divi Customization</a>
+        <a href="../../services/divi-5-migration/">Divi 5 Migration</a>
+        <a href="../../services/elementor-custom-widgets/">Elementor Custom Widgets</a>
+        <a href="../../services/wordpress-speed-optimization/">WordPress Speed Optimization</a>
+        <a href="../../services/core-web-vitals-fix/">Core Web Vitals Fix</a>
+        <a href="../../services/woocommerce-fix/">WooCommerce Fixes</a>
+        <a href="../../services/woocommerce-development/">WooCommerce Development</a>
+        <a href="../../services/wordpress-migration/">WordPress Migration</a>
+        <a href="../../services/domain-migration-redirects/">Domain Migration &amp; 301 Redirects</a>
+        <a href="../../services/seo/">WordPress SEO</a>
+        <a href="../../services/wordpress-malware-removal/">WordPress Malware Removal</a>
+        <a href="../../services/google-blacklist-removal/">Google Blacklist Removal</a>
+        <a href="../../services/wordpress-security-hardening/">WordPress Security Hardening</a>
+        <a href="../../services/webflow-development/">Webflow Development</a>
+        <a href="../../services/frontend-development/">Frontend Development</a>
+        <a href="../../services/website-redesign/">Website Redesign</a>
+        <a href="../../services/white-label-wordpress-development/">White Label Development</a>
+      </div>
+    </div>
+    <a href="../../pricing/">Pricing</a>
+    <a href="../../portfolio/">Portfolio</a>
+    <a href="../../blog/">Blog</a>
+    <a href="../../contact/" class="btn btn-primary">Start a project</a>
+  </nav>
+</header>
+
+<div id="smooth-wrapper">
+<div id="smooth-content">
+<main id="main" class="page-shell">
+
+  <article>
+  <section class="section section-dark page-intro page-hero">
+    <div class="hero-grid-bg" aria-hidden="true"></div>
+    <div class="glow glow-a" aria-hidden="true"></div>
+    <div class="glow glow-b" aria-hidden="true"></div>
+    <div class="container">
+      <div class="row hero-split">
+        <div data-anim-hero class="col-12 col-lg-9">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <ol>
+              <li><a href="../../">Home</a></li>
+              <li><a href="../../wordpress-fixes/">WordPress Fixes</a></li>
+              <li><span aria-current="page">wp-admin Not Loading</span></li>
+            </ol>
+          </nav>
+          <p class="post-meta mono"><span class="post-cat">Access</span><span>12 min read</span><span>2026-09-05</span><span>Ashekur Rahman</span></p>
+          <h1 data-anim="lines">wp-admin Won't Load at All? Here's Where to Start.</h1>
+          <p class="body-lg">The public site loads fine, but going to <code>/wp-admin/</code> gives you a blank page, a timeout, or an error &mdash; before you even reach a login form to enter credentials. That's the key detail: this isn't a login problem, it's the admin area itself failing to build, and the fix path runs entirely through FTP or your host's file manager, not the dashboard you can't reach.</p>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="../../contact/">Send me your site <i class="ri-arrow-right-line" aria-hidden="true"></i></a>
+            <a class="btn btn-ghost" href="../../services/wordpress-bug-fix/">See the bug fix service</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-white">
+    <div class="container">
+      <figure data-anim="reveal" class="shot mb-5">
+        <picture>
+          <source srcset="../../assets/images/wordpress-admin-not-loading.webp" type="image/webp" />
+          <img src="../../assets/images/wordpress-admin-not-loading.jpeg" alt="Completely blank wp-admin dashboard panel where the WordPress admin interface should be" width="1280" height="720" loading="lazy" decoding="async" />
+        </picture>
+        <!-- Image prompt: Realistic close-up photo of a laptop screen showing a browser tab labeled "wp-admin" loading indefinitely with a blank white dashboard area beneath it, an FTP client window open in the background showing a file structure. Dim office lighting, shallow depth of field. Photorealistic, professional tech-editorial style, no visible faces, no readable personal data. 1280x720, 16:9. -->
+        <figcaption>The public site staying up while wp-admin fails is the clearest sign the problem is scoped to the admin area's extra load.</figcaption>
+      </figure>
+
+      <div class="row gx-5 gy-4">
+        <aside class="col-12 col-lg-4 order-lg-2">
+          <div class="post-aside">
+            <nav class="toc" aria-label="On this page">
+              <p class="toc-head mono">ON THIS PAGE</p>
+              <ol>
+                <li><a href="#what-is-the-problem">What is the problem?</a></li>
+                <li><a href="#common-symptoms">Common symptoms</a></li>
+                <li><a href="#why-does-this-happen">Why does this happen?</a></li>
+                <li><a href="#common-technical-causes">Common technical causes</a></li>
+                <li><a href="#how-to-diagnose-it">How to diagnose it</a></li>
+                <li><a href="#how-to-fix-it-step-by-step">How to fix it, step by step</a></li>
+                <li><a href="#when-this-needs-professional-help">When this needs professional help</a></li>
+                <li><a href="#how-i-can-help">How I can help</a></li>
+              </ol>
+            </nav>
+          </div>
+        </aside>
+        <div class="col-12 col-lg-8 order-lg-1">
+          <div class="prose">
+
+<h2 id="what-is-the-problem">What is the problem?</h2>
+<p>This is specifically about wp-admin failing to build at all &mdash; a blank page, an endless loading spinner, a timeout, or a raw error &mdash; happening before you'd ever get the chance to enter a username and password. That's different from a <a href="../wordpress-login-not-working/">login credentials or redirect problem</a>, where you reach the login form fine and something goes wrong after submitting it, and different again from wp-admin loading but crawling, covered under <a href="../wordpress-slow-admin/">wp-admin running slow</a>.</p>
+<blockquote>Quick answer: the public site staying up while wp-admin fails almost always means a plugin, PHP resource limit, or corrupted admin-area file is the cause &mdash; not your hosting, DNS, or the front end of the site itself, all of which are clearly still working.</blockquote>
+<p>Because wp-admin loads considerably more code than the public site &mdash; every active plugin's admin-side functionality, dashboard widgets, and admin-only hooks &mdash; it's genuinely common for it to be the one thing that breaks while the front end keeps serving visitors normally.</p>
+
+<h2 id="common-symptoms">Common symptoms</h2>
+<ul>
+  <li>Visiting <code>/wp-admin/</code> shows a completely blank white page, with no error text visible</li>
+  <li>The page spins or loads indefinitely and eventually times out without ever rendering the dashboard</li>
+  <li>A raw PHP error or a 500-style error appears specifically at <code>/wp-admin/</code>, while the homepage and other public pages load normally</li>
+  <li>wp-login.php itself works and accepts the correct password, but the dashboard that should appear afterward fails to load</li>
+  <li>It started right after installing or updating a plugin, changing PHP version, or a bulk plugin/theme update</li>
+  <li>Some admin screens work while others (often ones tied to a specific plugin, like WooCommerce's order screen) fail specifically</li>
+</ul>
+
+<h2 id="why-does-this-happen">Why does this happen?</h2>
+<p>Every wp-admin screen runs a much heavier code path than a public page: it loads WordPress core's admin functions, every active plugin's admin hooks and dashboard widgets, and often makes more database queries per page than the front end does. A plugin conflict, a PHP fatal error specific to an admin-only function, or a resource limit that the lighter front-end pages never approach can all break specifically in wp-admin while leaving the rest of the site untouched.</p>
+<p>Because you can't necessarily reach the dashboard to disable a plugin through the normal interface, this is one of the few WordPress problems where working entirely through FTP or your host's File Manager isn't optional &mdash; it's the only practical way in.</p>
+
+<h2 id="common-technical-causes">Common technical causes</h2>
+<ul>
+  <li><strong>A plugin fatal error occurring only in the admin context</strong>, common right after a plugin update introduces a bug in an admin-only function that the public-facing code never touches</li>
+  <li><strong>PHP memory or execution-time limit exhausted by the admin area's heavier load</strong>, even when the same limit is comfortable for the front end</li>
+  <li><strong>A corrupted core, plugin or theme file</strong> specific to an admin-area script, left behind by an interrupted update</li>
+  <li><strong>A security plugin or server firewall blocking or rate-limiting requests to <code>/wp-admin/</code></strong> specifically, sometimes after a false-positive detection</li>
+  <li><strong>Too many active plugins competing for resources</strong> on shared hosting, where the admin area's combined weight is what finally tips over a shared ceiling</li>
+  <li><strong>A database table corruption or a missing table</strong> that a specific admin screen depends on to render, while public-facing queries avoid that table entirely</li>
+</ul>
+
+<h2 id="how-to-diagnose-it">How to diagnose it</h2>
+<ol>
+  <li><strong>Confirm the public site is genuinely fine</strong> &mdash; load the homepage and a few other pages to rule out a wider server-level issue before assuming this is admin-specific.</li>
+  <li><strong>Read the raw server error log</strong> via your host's control panel or, with SSH, <code>tail -f error_log</code>, then reload <code>/wp-admin/</code> to capture the exact error live.</li>
+  <li><strong>Enable WP_DEBUG temporarily</strong> by adding <code>define('WP_DEBUG', true); define('WP_DEBUG_LOG', true);</code> to <code>wp-config.php</code> via FTP, then check <code>wp-content/debug.log</code> after reproducing the issue.</li>
+  <li><strong>Try wp-admin in a private/incognito window</strong> to rule out a browser extension or a stale admin-area cache.</li>
+  <li><strong>Rename the plugins folder via FTP</strong> (<code>wp-content/plugins</code> to something like <code>plugins-disabled</code>) and try wp-admin again. If it loads, the cause is a plugin; rename it back and isolate plugins one at a time.</li>
+</ol>
+
+<h2 id="how-to-fix-it-step-by-step">How to fix it, step by step</h2>
+<ol>
+  <li><strong>Pull the exact error from the raw log or debug.log first</strong> &mdash; this tells you directly whether it's a plugin, a memory limit, or a missing file, rather than guessing.</li>
+  <li><strong>If a plugin was isolated as the cause,</strong> update it if a fix is available, or leave it deactivated (renamed back individually via FTP) until it can be replaced or fixed.</li>
+  <li><strong>Raise the PHP memory limit</strong> via <code>wp-config.php</code> (<code>define('WP_MEMORY_LIMIT', '256M');</code>) or your host's PHP settings if a resource ceiling was the confirmed cause.</li>
+  <li><strong>Restore a corrupted core, plugin or theme file from a clean copy or backup</strong> if the log points to a specific file left broken by an interrupted update.</li>
+  <li><strong>Whitelist <code>/wp-admin/</code> access in your security plugin or firewall</strong> if that was found to be blocking requests, rather than disabling protection entirely.</li>
+  <li><strong>If a database table issue was found,</strong> use phpMyAdmin's repair function on the affected table, taking a backup first.</li>
+  <li><strong>Reproduce the original steps once fixed</strong> and check the log again to confirm it's genuinely clear, not just visually resolved by a cache.</li>
+</ol>
+
+<h2 id="when-this-needs-professional-help">When this needs professional help</h2>
+<p>Reading the error log and renaming the plugins folder to isolate a plugin conflict are both realistic to try yourself. It's worth bringing in a developer when:</p>
+<ul>
+  <li>You don't have FTP or File Manager access set up, or aren't comfortable editing <code>wp-config.php</code> directly</li>
+  <li>The error log points to a database issue that needs careful handling rather than a blind repair attempt</li>
+  <li>The site needs to be back up quickly and you can't afford the time to isolate the cause through trial and error</li>
+  <li>You've worked through the checklist above and wp-admin is still inaccessible</li>
+</ul>
+
+<h2 id="how-i-can-help">How I can help</h2>
+<p>Being locked out of wp-admin while the public site stays up is disorienting precisely because the normal troubleshooting tools live inside the thing that's broken. I work entirely through FTP and the server's own logs to find the exact cause &mdash; a plugin, a resource limit, a corrupted file &mdash; and restore access with the smallest possible change, so nothing else on the site gets disturbed in the process.</p>
+          </div>
+
+          <aside class="post-cta">
+            <p class="mono post-cta-head">RELATED SERVICE</p>
+            <h2>WordPress Bug Fix</h2>
+            <p>If you'd rather have this diagnosed and fixed than dig through FTP and server logs yourself, that page covers what's included and what it costs to find out.</p>
+            <div data-anim="fade" class="btn-row">
+              <a class="btn btn-primary" href="../../services/wordpress-bug-fix/">WordPress Bug Fix <i class="ri-arrow-right-line" aria-hidden="true"></i></a>
+              <a class="btn btn-ghost" href="../../contact/">Ask a question</a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </section>
+  </article>
+
+  <section class="section section-light">
+    <div class="container">
+      <div class="row gx-0">
+        <div class="section-head col-12 col-lg-6">
+          <p data-anim="fade" class="eyebrow"><span class="eyebrow-mark" aria-hidden="true"></span><span class="mono">RELATED PROBLEMS</span></p>
+          <h2 data-anim="lines">If this isn't quite your issue</h2>
+          <p data-anim="fade" class="body-lg">A blank wp-admin is often confused with these, or leads into them.</p>
+        </div>
+      </div>
+      <div data-anim="stagger" class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4 related-grid">
+        <div class="col">
+          <a data-anim="item" class="related-card h-100" href="../wordpress-login-not-working/">
+            <strong>Can't Log Into WordPress Admin</strong>
+            <span>If you reach the login form fine but something fails after entering your password, this is the closer match.</span>
+          </a>
+        </div>
+        <div class="col">
+          <a data-anim="item" class="related-card h-100" href="../wordpress-slow-admin/">
+            <strong>WordPress Admin Dashboard Slow</strong>
+            <span>If wp-admin loads eventually but crawls, that's a related but distinct performance problem.</span>
+          </a>
+        </div>
+        <div class="col">
+          <a data-anim="item" class="related-card h-100" href="../../tools/plugin-conflict-diagnostic/">
+            <strong>Plugin Conflict Diagnostic</strong>
+            <span>Free tool: an interactive checklist to isolate which plugin is responsible, ending in a specific next step.</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-tint">
+    <div class="container">
+      <div class="row gx-5 gy-4">
+        <div class="col-12 col-lg-4">
+          <div class="section-head sticky-head mb-4 mb-lg-0">
+            <p data-anim="fade" class="eyebrow"><span class="eyebrow-mark" aria-hidden="true"></span><span class="mono">FAQ</span></p>
+            <h2 data-anim="lines">Questions about wp-admin not loading</h2>
+            <p data-anim="fade" class="body-lg">What people ask before sending over the site.</p>
+          </div>
+        </div>
+        <div class="col-12 col-lg-8">
+          <div data-anim="stagger" class="faq-list">
+            <details data-anim="item" class="faq-item">
+              <summary>Is this the same as not being able to log in?</summary>
+              <p class="faq-body">No. A login problem means you reach wp-login.php, enter credentials, and something goes wrong after that (wrong password, a redirect loop, a cookie error). This problem happens before login is even reached &mdash; the admin area itself fails to load, times out, or errors, regardless of whether your credentials are correct.</p>
+            </details>
+            <details data-anim="item" class="faq-item">
+              <summary>Why would only wp-admin be affected and not the public site?</summary>
+              <p class="faq-body">wp-admin loads a large amount of additional code the public site never touches &mdash; every active plugin's full admin-side functionality, dashboard widgets, and admin-only scripts. A conflict or resource limit specific to that extra load can break wp-admin while the public site, which runs a much lighter code path, keeps working normally.</p>
+            </details>
+            <details data-anim="item" class="faq-item">
+              <summary>Can I fix this without accessing wp-admin at all?</summary>
+              <p class="faq-body">Yes, and in most cases you have to. FTP or your host's File Manager lets you rename the plugins folder, edit wp-config.php, and check error logs entirely outside of wp-admin, which is exactly the access path this guide uses throughout.</p>
+            </details>
+            <details data-anim="item" class="faq-item">
+              <summary>Will renaming the plugins folder delete my settings?</summary>
+              <p class="faq-body">No. Renaming the folder just deactivates every plugin without touching their saved settings, which live in the database. Renaming the folder back to its original name (exactly &ldquo;plugins&rdquo;) restores every plugin to its previous active state with settings intact.</p>
+            </details>
+            <details data-anim="item" class="faq-item">
+              <summary>Is this a sign my site has been hacked?</summary>
+              <p class="faq-body">Usually not on its own &mdash; a plugin conflict, a resource limit, or a corrupted file are all far more common causes. It's worth ruling out compromise if this appeared alongside other signs like unfamiliar admin users or unexpected file changes, but a single instance of wp-admin failing to load is not itself evidence of a hack.</p>
+            </details>
+            <details data-anim="item" class="faq-item">
+              <summary>How urgent is this to fix?</summary>
+              <p class="faq-body">If the public site is still up, there's no immediate visitor-facing emergency, but you can't publish content, respond to orders, or apply a security update while locked out &mdash; so it's worth fixing promptly rather than leaving it, especially on an active store or membership site.</p>
+            </details>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-dark section-contact">
+    <div class="hero-grid-bg contact-grid-bg" aria-hidden="true"></div>
+    <div class="glow glow-d" aria-hidden="true"></div>
+    <div class="container">
+      <div class="contact-cta-shell">
+        <div data-anim="fade" class="contact-cta-card">
+          <div class="contact-cta-copy">
+            <p class="badge badge-live mx-auto"><span class="dot" aria-hidden="true"></span>Available for new projects</p>
+            <p class="eyebrow eyebrow-center"><span class="eyebrow-mark eyebrow-mark-light" aria-hidden="true"></span><span class="mono">NEXT STEP</span></p>
+            <h2 data-anim="lines">Need help fixing this WordPress issue?</h2>
+            <p class="body-lg">Send me your website and I'll help identify the problem &mdash; no charge just to take a look. Based in Bangladesh, working with clients worldwide, with a reply within one working day.</p>
+          </div>
+          <ul class="tech-chips justify-content-center">
+            <li>Reply within one working day</li>
+            <li>Fixed quote before work starts</li>
+            <li>UK, EU and US hours covered</li>
+          </ul>
+          <div class="contact-cta-actions">
+            <a class="btn btn-primary" href="../../contact/">Start a project <i class="ri-arrow-right-line" aria-hidden="true"></i></a>
+            <a class="btn btn-ghost" href="mailto:hello@ashekur.com">hello@ashekur.com</a>
+            <a class="btn btn-ghost" href="https://wa.me/8801812764112" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-top">
+    <div class="row gx-4 gy-5 align-items-start">
+      <div class="footer-brand col-12 col-lg-5">
+        <div class="brand brand-lg">
+          <picture>
+            <source srcset="../../assets/images/ashekur-logo-light.webp" type="image/webp" />
+            <img src="../../assets/images/ashekur-logo-light.png" alt="ashekur.com" width="480" height="125" loading="lazy" decoding="async" />
+          </picture>
+        </div>
+        <p class="footer-blurb">Frontend development and WordPress engineering for teams that care how it feels, not just how it looks. Based in Bangladesh &mdash; serving clients worldwide.</p>
+      </div>
+      <div class="col-12 col-lg-7">
+        <div class="footer-cols row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4">
+          <nav class="col" aria-label="Services">
+            <p class="mono footer-head">SERVICES</p>
+            <a href="../../services/wordpress-development/">WordPress Development</a>
+            <a href="../../services/wordpress-customization/">WordPress Customization</a>
+            <a href="../../services/elementor-customization/">Elementor Customization</a>
+            <a href="../../services/woocommerce-development/">WooCommerce Development</a>
+            <a href="../../services/wordpress-speed-optimization/">WordPress Speed Optimization</a>
+            <a href="../../services/wordpress-bug-fix/">WordPress Bug Fix</a>
+            <a href="../../services/elementor-fix/">Elementor Bug Fix</a>
+            <a href="../../services/wordpress-migration/">WordPress Migration</a>
+            <a href="../../services/seo/">WordPress SEO</a>
+          </nav>
+          <nav class="col" aria-label="Site">
+            <p class="mono footer-head">SITEMAP</p>
+            <a href="../../">Home</a>
+            <a href="../../tools/">Tools</a>
+            <a href="../../portfolio/">Portfolio</a>
+            <a href="../../blog/">Blog</a>
+            <a href="../../wordpress-fixes/">WordPress Fixes</a>
+            <a href="../../#experience">Experience</a>
+            <a href="../../contact/">Contact</a>
+            <a href="../../privacy/">Privacy Policy</a>
+          </nav>
+          <div class="col">
+            <p class="mono footer-head">ELSEWHERE</p>
+            <a href="mailto:hello@ashekur.com"><i class="ri-mail-line" aria-hidden="true"></i>hello@ashekur.com</a>
+            <a href="https://wa.me/8801812764112" target="_blank" rel="noopener noreferrer"><i class="ri-whatsapp-line" aria-hidden="true"></i>WhatsApp</a>
+            <a href="https://www.linkedin.com/in/ashekur-rahman-1ab205122/" target="_blank" rel="noopener noreferrer"><i class="ri-linkedin-fill" aria-hidden="true"></i>LinkedIn</a>
+            <a href="https://github.com/AshekurRahman" target="_blank" rel="noopener noreferrer"><i class="ri-github-fill" aria-hidden="true"></i>GitHub</a>
+            <a href="https://www.upwork.com/freelancers/~010aabe60ec2ae6679" target="_blank" rel="noopener noreferrer"><i class="ri-upwork-fill" aria-hidden="true"></i>Upwork</a>
+            <a href="https://www.facebook.com/ashekur.rahman.hridoy" target="_blank" rel="noopener noreferrer"><i class="ri-facebook-circle-fill" aria-hidden="true"></i>Facebook</a>
+            <a href="https://www.instagram.com/ashekurhridoy/" target="_blank" rel="noopener noreferrer"><i class="ri-instagram-line" aria-hidden="true"></i>Instagram</a>
+            <a href="https://www.youtube.com/@ashekurrahman1431" target="_blank" rel="noopener noreferrer"><i class="ri-youtube-fill" aria-hidden="true"></i>YouTube</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <p class="mono copyright">&copy; 2026 Ashekur Rahman. All rights reserved.</p>
+    <a class="to-top-inline" href="#main"><i class="ri-arrow-up-line" aria-hidden="true"></i> Back to top</a>
+  </div>
+</footer>
+</div>
+</div>
+
+
+<a class="wa-float" href="https://wa.me/8801812764112" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp"><i class="ri-whatsapp-fill" aria-hidden="true"></i></a>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" integrity="sha384-HOvlOYPIs/zjoIkWUGXkVmXsjr8GuZLV+Q+rcPwmJOVZVpvTSXQChiN4t9Euv9Vc" crossorigin="anonymous" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js" integrity="sha384-P8VzCVnT9NBUkMrpcIZrJbA7EBjJvh/fJS6PmP+4nLIM284DtsImIv8D0fFjIkeh" crossorigin="anonymous" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js" integrity="sha384-xb96EMJeax+NLXMC88ZBa1xAeAW+kn+horHh/zFlbMLG2UPWhMJJSlv7fi57hS+Q" crossorigin="anonymous" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollSmoother.min.js" integrity="sha384-dd8lT3AimXbI347qlZzlijPa4qnSlgGxuTqK2HlcfvF5+aOIeddPdMFmFpypQPZN" crossorigin="anonymous" defer></script>
+<script src="../../assets/js/anim.js" defer></script>
+<script src="../../assets/js/main.js" defer></script>
+</body>
+</html>

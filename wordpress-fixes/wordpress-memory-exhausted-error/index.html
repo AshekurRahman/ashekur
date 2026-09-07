@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>WordPress "Allowed Memory Size Exhausted" — Causes & How to Fix It | Ashekur Rahman</title>
+<meta name="description" content="Seeing &quot;Fatal error: Allowed memory size exhausted&quot; on WordPress? Here's what actually causes it and how to raise or fix the real limit safely." />
+<meta name="keywords" content="allowed memory size exhausted wordpress, wordpress memory limit error, fatal error allowed memory size, increase wordpress memory limit, wordpress out of memory error, php memory exhausted wordpress" />
+<meta name="author" content="Ashekur Rahman" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<meta name="theme-color" content="#0F172A" />
+<link rel="canonical" href="https://ashekur.com/wordpress-fixes/wordpress-memory-exhausted-error/" />
+<link rel="icon" href="../../assets/images/mark.png" type="image/png" />
+<link rel="apple-touch-icon" href="../../assets/images/mark.png" />
+<link rel="manifest" href="../../site.webmanifest" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-09-06" />
+<meta property="article:author" content="Ashekur Rahman" />
+<meta property="article:section" content="WordPress Fixes" />
+<meta property="og:site_name" content="Ashekur Rahman" />
+<meta property="og:url" content="https://ashekur.com/wordpress-fixes/wordpress-memory-exhausted-error/" />
+<meta property="og:title" content="WordPress &quot;Allowed Memory Size Exhausted&quot; — Causes & How to Fix It | Ashekur Rahman" />
+<meta property="og:description" content="Seeing &quot;Fatal error: Allowed memory size exhausted&quot; on WordPress? Here's what actually causes it and how to raise or fix the real limit safely." />
+<meta property="og:image" content="https://ashekur.com/assets/images/og-default.jpg" />
+<meta property="og:locale" content="en_US" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="WordPress &quot;Allowed Memory Size Exhausted&quot; — Causes & How to Fix It | Ashekur Rahman" />
+<meta name="twitter:description" content="Seeing &quot;Fatal error: Allowed memory size exhausted&quot; on WordPress? Here's what actually causes it and how to fix it." />
+<meta name="twitter:image" content="https://ashekur.com/assets/images/og-default.jpg" />
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://www.googletagmanager.com" />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+<link rel="stylesheet" href="../../assets/fonts/remixicon.css" />
+<link rel="stylesheet" href="../../assets/css/template.css" />
+<script>var d=document.documentElement;d.classList.remove('no-js');d.classList.add('js-anim');</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://ashekur.com/" },
+        { "@type": "ListItem", "position": 2, "name": "WordPress Fixes", "item": "https://ashekur.com/wordpress-fixes/" },
+        { "@type": "ListItem", "position": 3, "name": "Allowed Memory Size Exhausted", "item": "https://ashekur.com/wordpress-fixes/wordpress-memory-exhausted-error/" }
+      ]
+    },
+    {
+      "@type": "TechArticle",
+      "@id": "https://ashekur.com/wordpress-fixes/wordpress-memory-exhausted-error/#article",
+      "headline": "WordPress \"Allowed Memory Size Exhausted\"",
+      "description": "Seeing \"Fatal error: Allowed memory size exhausted\" on WordPress? Here's what actually causes it and how to raise or fix the real limit safely.",
+      "url": "https://ashekur.com/wordpress-fixes/wordpress-memory-exhausted-error/",
+      "mainEntityOfPage": { "@type": "WebPage", "@id": "https://ashekur.com/wordpress-fixes/wordpress-memory-exhausted-error/" },
+      "image": "https://ashekur.com/assets/images/og-default.jpg",
+      "datePublished": "2026-09-06",
+      "dateModified": "2026-09-06",
+      "author": {
+        "@type": "Person", "@id": "https://ashekur.com/#person", "name": "Ashekur Rahman", "url": "https://ashekur.com/",
+        "jobTitle": "Frontend Developer & WordPress Expert", "email": "hello@ashekur.com", "telephone": "+8801812764112",
+        "address": { "@type": "PostalAddress", "addressCountry": "BD" }
+      },
+      "publisher": {
+        "@type": "Person", "@id": "https://ashekur.com/#person", "name": "Ashekur Rahman", "url": "https://ashekur.com/",
+        "jobTitle": "Frontend Developer & WordPress Expert", "email": "hello@ashekur.com", "telephone": "+8801812764112",
+        "address": { "@type": "PostalAddress", "addressCountry": "BD" }
+      },
+      "articleSection": "WordPress Fixes",
+      "proficiencyLevel": "Beginner",
+      "dependencies": "WordPress, PHP, hosting environment",
+      "wordCount": 2900,
+      "inLanguage": "en",
+      "isAccessibleForFree": true
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Will raising the memory limit just fix it, or could it come back?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Raising it removes the immediate symptom, but it doesn't fix a genuinely wasteful plugin or an unpaginated query. If the underlying cause keeps growing along with your site — more products, more content, more traffic — the same ceiling gets hit again at a higher number." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there a maximum I can set WP_MEMORY_LIMIT to?",
+          "acceptedAnswer": { "@type": "Answer", "text": "WordPress will accept whatever value you set, but it can never exceed what the server's own php.ini memory_limit allows. Setting WP_MEMORY_LIMIT higher than that has no effect, since the host-level ceiling is the real cap regardless of what wp-config.php requests." }
+        },
+        {
+          "@type": "Question",
+          "name": "Why does the error mention a byte count smaller than my actual memory limit?",
+          "acceptedAnswer": { "@type": "Answer", "text": "That number is how much the failing operation tried to allocate at the exact moment the ceiling was already reached, not the total memory in use. The script had already consumed the rest of the limit before that final, smaller allocation attempt was the one that failed." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can too many plugins cause this on their own?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Indirectly, yes. Each active plugin adds some baseline memory overhead, so a large stack of plugins pushes an otherwise-fine site closer to its ceiling, making one additional memory-heavy action — an import, a large page render — the one that finally tips it over." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does WordPress Site Health show my actual memory limit?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes — Tools → Site Health → Info → Server shows the PHP memory limit currently in effect. That's the real, host-enforced number, regardless of what WP_MEMORY_LIMIT in wp-config.php is asking for." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is this the same as a 500 error?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. A memory-exhausted fatal is WordPress and PHP reporting a specific, named reason for the failure. A raw 500 error is the web server refusing the request before PHP even gets that specific. They can look similar to a visitor, but they come from different layers and need different fixes." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can a caching plugin fix this?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Not directly. Caching reduces how often the memory-heavy code actually runs, which can mask the symptom on already-cached pages, but the same operation still exhausts memory the moment it genuinely executes — an import, a cache-miss render, or a cron job." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SGTGDFXH6K"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-SGTGDFXH6K');
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header" id="siteHeader">
+  <div class="container header-inner">
+    <a class="brand" href="../../" aria-label="Ashekur Rahman &mdash; home">
+      <picture>
+        <source srcset="../../assets/images/ashekur-logo-light.webp" type="image/webp" />
+        <img src="../../assets/images/ashekur-logo-light.png" alt="Ashekur Rahman" width="480" height="125" fetchpriority="high" decoding="async" />
+      </picture>
+    </a>
+    <nav class="nav-desktop" aria-label="Main">
+      <a href="../../" class="nav-link">Home</a>
+      <a href="../../tools/" class="nav-link">Tools</a>
+      <div class="nav-item" data-dropdown>
+        <div class="nav-row">
+          <a href="../../services/" class="nav-link">Services</a>
+          <button class="nav-caret" type="button" aria-label="Services submenu" aria-expanded="false" aria-controls="navDrop-services" data-dropdown-toggle><i class="ri-arrow-down-s-line" aria-hidden="true"></i></button>
+        </div>
+        <div class="nav-panel" id="navDrop-services">
+          <a class="nav-panel-all" href="../../services/">All services</a>
+          <div class="nav-panel-cols">
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">WordPress</p>
+              <a href="../../services/wordpress-development/">WordPress Development</a>
+              <a href="../../services/wordpress-customization/">WordPress Customization</a>
+              <a href="../../services/wordpress-bug-fix/">WordPress Bug Fix</a>
+              <a href="../../services/wordpress-maintenance/">WordPress Maintenance<em>New</em></a>
+            </div>
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">Page Builders</p>
+              <a href="../../services/elementor-fix/">Elementor Bug Fix</a>
+              <a href="../../services/elementor-customization/">Elementor Customization</a>
+              <a href="../../services/elementor-custom-widgets/">Elementor Custom Widgets</a>
+              <a href="../../services/divi-customization/">Divi Customization</a>
+              <a href="../../services/divi-5-migration/">Divi 5 Migration<em>New</em></a>
+            </div>
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">WooCommerce</p>
+              <a href="../../services/woocommerce-development/">WooCommerce Development</a>
+              <a href="../../services/woocommerce-fix/">WooCommerce Fixes</a>
+            </div>
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">Performance &amp; Security</p>
+              <a href="../../services/wordpress-speed-optimization/">WordPress Speed Optimization</a>
+              <a href="../../services/core-web-vitals-fix/">Core Web Vitals Fix<em>New</em></a>
+              <a href="../../services/wordpress-malware-removal/">WordPress Malware Removal</a>
+              <a href="../../services/google-blacklist-removal/">Google Blacklist Removal<em>New</em></a>
+              <a href="../../services/caching-cdn-setup/">Caching &amp; CDN Setup<em>New</em></a>
+              <a href="../../services/wordpress-security-hardening/">WordPress Security Hardening<em>New</em></a>
+            </div>
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">Migration</p>
+              <a href="../../services/wordpress-migration/">WordPress Migration</a>
+              <a href="../../services/domain-migration-redirects/">Domain Migration &amp; 301 Redirects<em>New</em></a>
+              <a href="../../services/wordpress-migration/#hosting">Host Migration</a>
+            </div>
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">SEO</p>
+              <a href="../../services/seo/">SEO</a>
+              <a href="../../services/technical-seo-audit/">Technical SEO Audit<em>New</em></a>
+            </div>
+            <div class="nav-panel-col">
+              <p class="nav-panel-col-head">Other</p>
+              <a href="../../services/webflow-development/">Webflow Development</a>
+              <a href="../../services/frontend-development/">Frontend Development</a>
+              <a href="../../services/website-redesign/">Website Redesign<em>New</em></a>
+              <a href="../../services/white-label-wordpress-development/">White Label Development<em>New</em></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="../../pricing/" class="nav-link">Pricing</a>
+      <a href="../../portfolio/" class="nav-link">Portfolio</a>
+      <a href="../../blog/" class="nav-link">Blog</a>
+      <a href="../../contact/" class="btn btn-primary btn-sm nav-cta">Start a project</a>
+    </nav>
+    <button class="burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="nav-mobile" id="mobileNav" aria-label="Mobile" hidden>
+    <a href="../../">Home</a>
+    <a href="../../tools/">Tools</a>
+    <div class="nav-item" data-dropdown>
+      <div class="nav-row">
+        <a href="../../services/">Services</a>
+        <button class="nav-caret" type="button" aria-label="Services submenu" aria-expanded="false" aria-controls="navDropM-services" data-dropdown-toggle><i class="ri-arrow-down-s-line" aria-hidden="true"></i></button>
+      </div>
+      <div class="nav-panel" id="navDropM-services">
+        <a href="../../services/">All services</a>
+        <a href="../../services/wordpress-development/">WordPress Development</a>
+        <a href="../../services/wordpress-customization/">WordPress Customization</a>
+        <a href="../../services/wordpress-bug-fix/">WordPress Bug Fix</a>
+        <a href="../../services/wordpress-maintenance/">WordPress Maintenance</a>
+        <a href="../../services/elementor-fix/">Elementor Bug Fix</a>
+        <a href="../../services/elementor-customization/">Elementor Customization</a>
+        <a href="../../services/divi-customization/">Divi Customization</a>
+        <a href="../../services/divi-5-migration/">Divi 5 Migration</a>
+        <a href="../../services/elementor-custom-widgets/">Elementor Custom Widgets</a>
+        <a href="../../services/wordpress-speed-optimization/">WordPress Speed Optimization</a>
+        <a href="../../services/core-web-vitals-fix/">Core Web Vitals Fix</a>
+        <a href="../../services/woocommerce-fix/">WooCommerce Fixes</a>
+        <a href="../../services/woocommerce-development/">WooCommerce Development</a>
+        <a href="../../services/wordpress-migration/">WordPress Migration</a>
+        <a href="../../services/domain-migration-redirects/">Domain Migration &amp; 301 Redirects</a>
+        <a href="../../services/seo/">WordPress SEO</a>
+        <a href="../../services/wordpress-malware-removal/">WordPress Malware Removal</a>
+        <a href="../../services/google-blacklist-removal/">Google Blacklist Removal</a>
+        <a href="../../services/wordpress-security-hardening/">WordPress Security Hardening</a>
+        <a href="../../services/webflow-development/">Webflow Development</a>
+        <a href="../../services/frontend-development/">Frontend Development</a>
+        <a href="../../services/website-redesign/">Website Redesign</a>
+        <a href="../../services/white-label-wordpress-development/">White Label Development</a>
+      </div>
+    </div>
+    <a href="../../pricing/">Pricing</a>
+    <a href="../../portfolio/">Portfolio</a>
+    <a href="../../blog/">Blog</a>
+    <a href="../../contact/" class="btn btn-primary">Start a project</a>
+  </nav>
+</header>
+
+<div id="smooth-wrapper">
+<div id="smooth-content">
+<main id="main" class="page-shell">
+
+  <article>
+  <section class="section section-dark page-intro page-hero">
+    <div class="hero-grid-bg" aria-hidden="true"></div>
+    <div class="glow glow-a" aria-hidden="true"></div>
+    <div class="glow glow-b" aria-hidden="true"></div>
+    <div class="container">
+      <div class="row hero-split">
+        <div data-anim-hero class="col-12 col-lg-9">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <ol>
+              <li><a href="../../">Home</a></li>
+              <li><a href="../../wordpress-fixes/">WordPress Fixes</a></li>
+              <li><span aria-current="page">Allowed Memory Size Exhausted</span></li>
+            </ol>
+          </nav>
+          <p class="post-meta mono"><span class="post-cat">Site down</span><span>11 min read</span><span>2026-09-06</span><span>Ashekur Rahman</span></p>
+          <h1 data-anim="lines">WordPress Showing &ldquo;Allowed Memory Size Exhausted&rdquo;? Here's What's Actually Wrong.</h1>
+          <p class="body-lg">A fatal error naming an exact byte count, usually triggered by one specific action &mdash; an import, a bulk upload, a particular admin screen &mdash; means PHP hit its memory ceiling and stopped the script instantly, wherever it happened to be. That's a hard limit, not a bug in your site, and it traces back to one of a short list of causes.</p>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="../../contact/">Send me your site <i class="ri-arrow-right-line" aria-hidden="true"></i></a>
+            <a class="btn btn-ghost" href="../../services/wordpress-bug-fix/">See the bug fix service</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-white">
+    <div class="container">
+      <figure data-anim="reveal" class="shot mb-5">
+        <picture>
+          <source srcset="../../assets/images/wordpress-memory-exhausted.webp" type="image/webp" />
+          <img src="../../assets/images/wordpress-memory-exhausted.jpeg" alt="A memory usage gauge maxed out beside a browser window showing a PHP allowed memory size exhausted fatal error" width="1280" height="720" loading="lazy" decoding="async" />
+        </picture>
+        <figcaption>A gauge that's already full and one more request asking for more &mdash; that's the entire mechanism behind this error.</figcaption>
+      </figure>
+
+      <div class="row gx-5 gy-4">
+        <aside class="col-12 col-lg-4 order-lg-2">
+          <div class="post-aside">
+            <nav class="toc" aria-label="On this page">
+              <p class="toc-head mono">ON THIS PAGE</p>
+              <ol>
+                <li><a href="#what-is-the-problem">What is the problem?</a></li>
+                <li><a href="#common-symptoms">Common symptoms</a></li>
+                <li><a href="#why-does-this-happen">Why does this happen?</a></li>
+                <li><a href="#common-technical-causes">Common technical causes</a></li>
+                <li><a href="#how-to-diagnose-it">How to diagnose it</a></li>
+                <li><a href="#how-to-fix-it-step-by-step">How to fix it, step by step</a></li>
+                <li><a href="#when-this-needs-professional-help">When this needs professional help</a></li>
+                <li><a href="#how-i-can-help">How I can help</a></li>
+              </ol>
+            </nav>
+          </div>
+        </aside>
+        <div class="col-12 col-lg-8 order-lg-1">
+          <div class="prose">
+
+<h2 id="what-is-the-problem">What is the problem?</h2>
+<p>&ldquo;Fatal error: Allowed memory size of X bytes exhausted (tried to allocate Y bytes)&rdquo; is PHP itself stopping a script the instant it crosses a memory ceiling &mdash; the <code>memory_limit</code> setting, applied per request. This isn't a WordPress bug or a corrupted file; it's PHP doing exactly what it's configured to do, which is refuse to let one script consume unlimited server RAM. WordPress asks for a reasonable amount of memory via its own <code>WP_MEMORY_LIMIT</code> and <code>WP_MAX_MEMORY_LIMIT</code> constants, but the host's own <code>php.ini</code> ceiling always wins if it's set lower than what WordPress requests.</p>
+<blockquote>Quick answer: this almost always comes down to one of three things &mdash; a plugin or theme doing something memory-heavy (an import, image processing, an unpaginated query), a hosting plan with a memory_limit set too low for a modern WordPress site, or a long-running task like a cron job that never releases the memory it's using.</blockquote>
+<p>Because this is a hard ceiling rather than a gradual slowdown, the failure is abrupt and total: whatever page or process was running stops instantly, right at the line of code that happened to be running when the limit was crossed. That's why the file and line number named in the error message aren't necessarily the actual cause &mdash; they're just wherever the ceiling was reached, often deep inside WordPress core or a library the real culprit called into.</p>
+
+<h2 id="common-symptoms">Common symptoms</h2>
+<ul>
+  <li>The exact error text, naming a specific byte count &mdash; e.g. &ldquo;Allowed memory size of 268435456 bytes exhausted (tried to allocate 20480 bytes)&rdquo;</li>
+  <li>It happens consistently doing one specific thing &mdash; always during an import, always on one plugin's admin screen, always when opening one particular large page</li>
+  <li>Can also appear as a blank white page instead of the error text, if <code>display_errors</code> is switched off on your host &mdash; the fatal still happened, it's just not being shown</li>
+  <li>Started, or got noticeably more frequent, right after installing a new plugin, updating a theme, or a genuine jump in content or traffic</li>
+  <li>wp-admin actions &mdash; Import, bulk edit, a page builder rendering a heavy layout &mdash; trigger it more than ordinary front-end browsing does</li>
+  <li>Uploading or processing a very large image is a common single trigger, since WordPress generates multiple resized copies of every upload</li>
+</ul>
+
+<h2 id="why-does-this-happen">Why does this happen?</h2>
+<p>PHP's <code>memory_limit</code> exists to stop one runaway script from consuming all the RAM on a server and taking every other site on that machine down with it &mdash; a real concern on shared hosting, where dozens of sites run on the same box. WordPress sets its own preferred defaults (40MB for the front end, 256MB for wp-admin, via <code>WP_MEMORY_LIMIT</code> and <code>WP_MAX_MEMORY_LIMIT</code>) if nothing else defines them first, but it can only ever ask &mdash; it can raise the limit up to whatever the server's own <code>php.ini</code> allows, never past it.</p>
+<p>This is also why the same site can run fine for months and then suddenly hit this error: nothing has to be newly &ldquo;broken&rdquo; for it to appear. A product catalog that grows, a report that processes more rows each month, or a page builder rendering an increasingly complex layout can all quietly push memory use upward until one ordinary request finally crosses a ceiling that was always there.</p>
+
+<h2 id="common-technical-causes">Common technical causes</h2>
+<ul>
+  <li><strong>A plugin or theme loading a large dataset into memory at once</strong> &mdash; an export, import or report tool processing thousands of rows without chunking</li>
+  <li><strong>Image processing at full, uncompressed resolution</strong> &mdash; a large source image triggers WordPress's automatic generation of every registered thumbnail size in one request</li>
+  <li><strong>A poorly written custom query pulling an entire table</strong> instead of paginating results with a LIMIT clause</li>
+  <li><strong>A hosting plan with an unusually low memory_limit</strong> &mdash; some budget shared hosts cap it at 64MB or 128MB, well below what a modern page-builder or WooCommerce site typically needs</li>
+  <li><strong>WP_MEMORY_LIMIT being requested but not actually granted</strong>, because the host's own php.ini sets a lower ceiling that WordPress has no ability to override from wp-config.php</li>
+  <li><strong>A long-running WP-CLI command or cron job</strong> that keeps accumulating objects in memory across a large batch instead of releasing them as it goes</li>
+  <li><strong>An object cache (Redis or Memcached) misconfigured to cache oversized objects</strong>, inflating per-request memory use beyond what the underlying page actually needs</li>
+</ul>
+
+<h2 id="how-to-diagnose-it">How to diagnose it</h2>
+<ol>
+  <li><strong>Note exactly what action triggers it</strong>, and whether it's consistent &mdash; a specific plugin screen, a specific import, or general browsing across the whole site.</li>
+  <li><strong>Check your current memory_limit</strong> via Tools &rarr; Site Health &rarr; Info &rarr; Server in wp-admin, which shows the actual, host-enforced value in effect right now.</li>
+  <li><strong>Compare that against WP_MEMORY_LIMIT and WP_MAX_MEMORY_LIMIT</strong> set in wp-config.php, to see whether WordPress is even asking for more than the host allows.</li>
+  <li><strong>Isolate plugins</strong> by renaming <code>wp-content/plugins</code> via FTP to deactivate everything at once, confirming the action succeeds, then renaming plugin folders back one at a time to find the specific one responsible.</li>
+  <li><strong>Check the error log's file and line reference</strong> &mdash; it won't always be the root cause, but it confirms which code path was actually executing when the ceiling was crossed.</li>
+  <li><strong>Test with a default theme</strong> (Twenty Twenty-Five or similar) temporarily, to rule out theme-side memory use if a plugin isn't the obvious trigger.</li>
+</ol>
+
+<h2 id="how-to-fix-it-step-by-step">How to fix it, step by step</h2>
+<ol>
+  <li><strong>Raise WP_MEMORY_LIMIT and WP_MAX_MEMORY_LIMIT in wp-config.php</strong>, near the top before the &ldquo;That's all, stop editing!&rdquo; line &mdash; for example <code>define('WP_MEMORY_LIMIT', '256M');</code> and <code>define('WP_MAX_MEMORY_LIMIT', '512M');</code>.</li>
+  <li><strong>If the host's php.ini ceiling is lower than that</strong>, wp-config.php alone won't help &mdash; raise <code>memory_limit</code> via your hosting panel's PHP settings, a <code>.user.ini</code> file, or by asking your host directly if you don't have file-level access.</li>
+  <li><strong>If a specific plugin's import or export action is the trigger</strong>, look for a batch size or chunk size setting &mdash; lowering it means each request processes less data and needs less memory per run.</li>
+  <li><strong>Optimize an oversized image before uploading it</strong>, rather than relying on WordPress's automatic resizing to compensate for a source file that's far larger than it needs to be.</li>
+  <li><strong>If a custom query is the cause</strong>, add pagination or a LIMIT clause instead of pulling an entire table into memory at once.</li>
+  <li><strong>Break a long-running WP-CLI or cron task into smaller batches</strong> instead of one continuous run that keeps accumulating memory.</li>
+  <li><strong>Re-test the exact action that originally failed</strong>, watching the error log to confirm the fatal genuinely doesn't recur, not just that the page happens to load once.</li>
+  <li><strong>Treat a raised limit as headroom, not a permanent fix</strong>, if the real cause is a wasteful plugin or query &mdash; the underlying inefficiency will resurface as the site grows unless it's actually addressed.</li>
+</ol>
+
+<h2 id="when-this-needs-professional-help">When this needs professional help</h2>
+<p>Raising WP_MEMORY_LIMIT is a two-minute edit once you know that's the right lever. It's worth bringing in a developer when:</p>
+<ul>
+  <li>You've already raised WP_MEMORY_LIMIT and the error persists, meaning the host's own php.ini ceiling is the real block and you can't change it yourself</li>
+  <li>The trigger is a core WordPress action rather than one specific plugin, pointing to a genuine hosting-resource mismatch for the site's actual size</li>
+  <li>You don't want to just raise the limit and hope &mdash; you want the actual memory-hungry code path identified and fixed</li>
+  <li>It's happening during something time-sensitive, like an import with a deadline or a migration, where repeated trial and error isn't a realistic option</li>
+</ul>
+
+<h2 id="how-i-can-help">How I can help</h2>
+<p>A memory-exhausted fatal is one of the more mechanical WordPress errors to diagnose properly, but that only helps if someone actually traces which code path is consuming the memory rather than treating a higher limit as the fix. Over eleven years of freelance WordPress work I've isolated this down to the specific plugin, query or import setting causing it more times than I can count &mdash; and raised limits where that genuinely is the right call, rather than leaving a site permanently running at a number well past what it should need.</p>
+          </div>
+
+          <aside class="post-cta">
+            <p class="mono post-cta-head">RELATED SERVICE</p>
+            <h2>WordPress Bug Fix</h2>
+            <p>If you'd rather have the actual cause identified than raise limits and hope, that page covers exactly what's included, how fast it usually runs, and what it costs to find out.</p>
+            <div data-anim="fade" class="btn-row">
+              <a class="btn btn-primary" href="../../services/wordpress-bug-fix/">WordPress Bug Fix <i class="ri-arrow-right-line" aria-hidden="true"></i></a>
+              <a class="btn btn-ghost" href="../../contact/">Ask a question</a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </section>
+  </article>
+
+  <section class="section section-light">
+    <div class="container">
+      <div class="row gx-0">
+        <div class="section-head col-12 col-lg-6">
+          <p data-anim="fade" class="eyebrow"><span class="eyebrow-mark" aria-hidden="true"></span><span class="mono">RELATED PROBLEMS</span></p>
+          <h2 data-anim="lines">If this isn't quite your issue</h2>
+          <p data-anim="fade" class="body-lg">A memory-exhausted fatal is often confused with these, or shows up right alongside them.</p>
+        </div>
+      </div>
+      <div data-anim="stagger" class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4 related-grid">
+        <div class="col">
+          <a data-anim="item" class="related-card h-100" href="../wordpress-white-screen/">
+            <strong>WordPress White Screen of Death</strong>
+            <span>If display_errors is switched off, this same fatal can show as a totally blank page instead of the error text &mdash; here's how to reveal it.</span>
+          </a>
+        </div>
+        <div class="col">
+          <a data-anim="item" class="related-card h-100" href="../wordpress-critical-error/">
+            <strong>WordPress Critical Error Message</strong>
+            <span>On some setups, WordPress's own fatal-error handler catches this and shows its styled critical-error screen instead of the raw PHP message.</span>
+          </a>
+        </div>
+        <div class="col">
+          <a data-anim="item" class="related-card h-100" href="../../services/wordpress-speed-optimization/">
+            <strong>WordPress Speed Optimization</strong>
+            <span>Memory bloat and general slowness usually share the same root cause &mdash; plugin overhead and unoptimized queries. This is how I fix that properly.</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-white">
+    <div class="container">
+      <div class="row gx-0">
+        <div class="section-head col-12 col-lg-6">
+          <p data-anim="fade" class="eyebrow"><span class="eyebrow-mark" aria-hidden="true"></span><span class="mono">RELEVANT WORK</span></p>
+          <h2 data-anim="lines">Sites I've kept stable under real hosting constraints</h2>
+          <p data-anim="fade" class="body-lg">Two builds where server-level resource limits were as much a part of the job as the front end itself.</p>
+        </div>
+      </div>
+      <div data-anim="stagger" class="row row-cols-1 row-cols-md-2 g-4 case-grid">
+        <div class="col">
+          <article data-anim="item" class="case-card h-100">
+            <a href="../../portfolio/dgsors-advertising/" tabindex="-1" aria-hidden="true">
+              <picture>
+                <source srcset="../../assets/images/project-dgsors.webp" type="image/webp" />
+                <img src="../../assets/images/project-dgsors.jpeg" alt="DGsors Advertising agency website on a custom WordPress theme" width="1200" height="615" loading="lazy" decoding="async" />
+              </picture>
+            </a>
+            <div class="case-card-body">
+              <h3><a href="../../portfolio/dgsors-advertising/">DGsors Advertising</a></h3>
+              <p>A custom WordPress theme with Elementor Pro layered on top, where getting resource limits and file structure right mattered as much as the design.</p>
+              <ul class="tech-chips"><li>WordPress</li><li>Custom theme</li><li>Elementor Pro</li></ul>
+              <div class="btn-row">
+                <a class="btn btn-primary btn-sm" href="../../portfolio/dgsors-advertising/">Read the case study</a>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="col">
+          <article data-anim="item" class="case-card h-100">
+            <a href="../../portfolio/kinder-city/" tabindex="-1" aria-hidden="true">
+              <picture>
+                <source srcset="../../assets/images/project-kindercity.webp" type="image/webp" />
+                <img src="../../assets/images/project-kindercity.jpeg" alt="Kinder City nursery and pre-school group website built with Elementor" width="1200" height="624" loading="lazy" decoding="async" />
+              </picture>
+            </a>
+            <div class="case-card-body">
+              <h3><a href="../../portfolio/kinder-city/">Kinder City</a></h3>
+              <p>Multiple nursery settings on one WordPress install, kept running reliably across admissions-season traffic without hitting server-level limits.</p>
+              <ul class="tech-chips"><li>WordPress</li><li>Elementor</li><li>Responsive templates</li></ul>
+              <div class="btn-row">
+                <a class="btn btn-primary btn-sm" href="../../portfolio/kinder-city/">Read the case study</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-tint">
+    <div class="container">
+      <div class="row gx-5 gy-4">
+        <div class="col-12 col-lg-4">
+          <div class="section-head sticky-head mb-4 mb-lg-0">
+            <p data-anim="fade" class="eyebrow"><span class="eyebrow-mark" aria-hidden="true"></span><span class="mono">FAQ</span></p>
+            <h2 data-anim="lines">Questions about a memory-exhausted error</h2>
+            <p data-anim="fade" class="body-lg">What people ask before sending over the site.</p>
+          </div>
+        </div>
+        <div class="col-12 col-lg-8">
+          <div data-anim="stagger" class="faq-list">
+            <details data-anim="item" class="faq-item">
+              <summary>Will raising the memory limit just fix it, or could it come back?</summary>
+              <p class="faq-body">Raising it removes the immediate symptom, but it doesn't fix a genuinely wasteful plugin or an unpaginated query. If the underlying cause keeps growing along with your site &mdash; more products, more content, more traffic &mdash; the same ceiling gets hit again at a higher number.</p>
+            </details>
+            <details data-anim="item" class="faq-item">
+              <summary>Is there a maximum I can set WP_MEMORY_LIMIT to?</summary>
+              <p class="faq-body">WordPress will accept whatever value you set, but it can never exceed what the server's own php.ini memory_limit allows. Setting WP_MEMORY_LIMIT higher than that has no effect, since the host-level ceiling is the real cap regardless of what wp-config.php requests.</p>
+            </details>
+            <details data-anim="item" class="faq-item">
+              <summary>Why does the error mention a byte count smaller than my actual memory limit?</summary>
+              <p class="faq-body">That number is how much the failing operation tried to allocate at the exact moment the ceiling was already reached, not the total memory in use. The script had already consumed the rest of the limit before that final, smaller allocation attempt was the one that failed.</p>
+            </details>
+            <details data-anim="item" class="faq-item">
+              <summary>Can too many plugins cause this on their own?</summary>
+              <p class="faq-body">Indirectly, yes. Each active plugin adds some baseline memory overhead, so a large stack of plugins pushes an otherwise-fine site closer to its ceiling, making one additional memory-heavy action &mdash; an import, a large page render &mdash; the one that finally tips it over.</p>
+            </details>
+            <details data-anim="item" class="faq-item">
+              <summary>Does WordPress Site Health show my actual memory limit?</summary>
+              <p class="faq-body">Yes &mdash; Tools &rarr; Site Health &rarr; Info &rarr; Server shows the PHP memory limit currently in effect. That's the real, host-enforced number, regardless of what WP_MEMORY_LIMIT in wp-config.php is asking for.</p>
+            </details>
+            <details data-anim="item" class="faq-item">
+              <summary>Is this the same as a 500 error?</summary>
+              <p class="faq-body">No. A memory-exhausted fatal is WordPress and PHP reporting a specific, named reason for the failure. A raw 500 error is the web server refusing the request before PHP even gets that specific. They can look similar to a visitor, but they come from different layers and need different fixes.</p>
+            </details>
+            <details data-anim="item" class="faq-item">
+              <summary>Can a caching plugin fix this?</summary>
+              <p class="faq-body">Not directly. Caching reduces how often the memory-heavy code actually runs, which can mask the symptom on already-cached pages, but the same operation still exhausts memory the moment it genuinely executes &mdash; an import, a cache-miss render, or a cron job.</p>
+            </details>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-dark section-contact">
+    <div class="hero-grid-bg contact-grid-bg" aria-hidden="true"></div>
+    <div class="glow glow-d" aria-hidden="true"></div>
+    <div class="container">
+      <div class="contact-cta-shell">
+        <div data-anim="fade" class="contact-cta-card">
+          <div class="contact-cta-copy">
+            <p class="badge badge-live mx-auto"><span class="dot" aria-hidden="true"></span>Available for new projects</p>
+            <p class="eyebrow eyebrow-center"><span class="eyebrow-mark eyebrow-mark-light" aria-hidden="true"></span><span class="mono">NEXT STEP</span></p>
+            <h2 data-anim="lines">Need help fixing this WordPress issue?</h2>
+            <p class="body-lg">Send me your website and I'll help identify the problem &mdash; no charge just to take a look. Based in Bangladesh, working with clients worldwide, with a reply within one working day.</p>
+          </div>
+          <ul class="tech-chips justify-content-center">
+            <li>Reply within one working day</li>
+            <li>Fixed quote before work starts</li>
+            <li>UK, EU and US hours covered</li>
+          </ul>
+          <div class="contact-cta-actions">
+            <a class="btn btn-primary" href="../../contact/">Start a project <i class="ri-arrow-right-line" aria-hidden="true"></i></a>
+            <a class="btn btn-ghost" href="mailto:hello@ashekur.com">hello@ashekur.com</a>
+            <a class="btn btn-ghost" href="https://wa.me/8801812764112" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-top">
+    <div class="row gx-4 gy-5 align-items-start">
+      <div class="footer-brand col-12 col-lg-5">
+        <div class="brand brand-lg">
+          <picture>
+            <source srcset="../../assets/images/ashekur-logo-light.webp" type="image/webp" />
+            <img src="../../assets/images/ashekur-logo-light.png" alt="ashekur.com" width="480" height="125" loading="lazy" decoding="async" />
+          </picture>
+        </div>
+        <p class="footer-blurb">Frontend development and WordPress engineering for teams that care how it feels, not just how it looks. Based in Bangladesh &mdash; serving clients worldwide.</p>
+      </div>
+      <div class="col-12 col-lg-7">
+        <div class="footer-cols row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4">
+          <nav class="col" aria-label="Services">
+            <p class="mono footer-head">SERVICES</p>
+            <a href="../../services/wordpress-development/">WordPress Development</a>
+            <a href="../../services/wordpress-customization/">WordPress Customization</a>
+            <a href="../../services/elementor-customization/">Elementor Customization</a>
+            <a href="../../services/woocommerce-development/">WooCommerce Development</a>
+            <a href="../../services/wordpress-speed-optimization/">WordPress Speed Optimization</a>
+            <a href="../../services/wordpress-bug-fix/">WordPress Bug Fix</a>
+            <a href="../../services/elementor-fix/">Elementor Bug Fix</a>
+            <a href="../../services/wordpress-migration/">WordPress Migration</a>
+            <a href="../../services/seo/">WordPress SEO</a>
+          </nav>
+          <nav class="col" aria-label="Site">
+            <p class="mono footer-head">SITEMAP</p>
+            <a href="../../">Home</a>
+            <a href="../../tools/">Tools</a>
+            <a href="../../portfolio/">Portfolio</a>
+            <a href="../../blog/">Blog</a>
+            <a href="../../wordpress-fixes/">WordPress Fixes</a>
+            <a href="../../#experience">Experience</a>
+            <a href="../../contact/">Contact</a>
+            <a href="../../privacy/">Privacy Policy</a>
+          </nav>
+          <div class="col">
+            <p class="mono footer-head">ELSEWHERE</p>
+            <a href="mailto:hello@ashekur.com"><i class="ri-mail-line" aria-hidden="true"></i>hello@ashekur.com</a>
+            <a href="https://wa.me/8801812764112" target="_blank" rel="noopener noreferrer"><i class="ri-whatsapp-line" aria-hidden="true"></i>WhatsApp</a>
+            <a href="https://www.linkedin.com/in/ashekur-rahman-1ab205122/" target="_blank" rel="noopener noreferrer"><i class="ri-linkedin-fill" aria-hidden="true"></i>LinkedIn</a>
+            <a href="https://github.com/AshekurRahman" target="_blank" rel="noopener noreferrer"><i class="ri-github-fill" aria-hidden="true"></i>GitHub</a>
+            <a href="https://www.upwork.com/freelancers/~010aabe60ec2ae6679" target="_blank" rel="noopener noreferrer"><i class="ri-upwork-fill" aria-hidden="true"></i>Upwork</a>
+            <a href="https://www.facebook.com/ashekur.rahman.hridoy" target="_blank" rel="noopener noreferrer"><i class="ri-facebook-circle-fill" aria-hidden="true"></i>Facebook</a>
+            <a href="https://www.instagram.com/ashekurhridoy/" target="_blank" rel="noopener noreferrer"><i class="ri-instagram-line" aria-hidden="true"></i>Instagram</a>
+            <a href="https://www.youtube.com/@ashekurrahman1431" target="_blank" rel="noopener noreferrer"><i class="ri-youtube-fill" aria-hidden="true"></i>YouTube</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <p class="mono copyright">&copy; 2026 Ashekur Rahman. All rights reserved.</p>
+    <a class="to-top-inline" href="#main"><i class="ri-arrow-up-line" aria-hidden="true"></i> Back to top</a>
+  </div>
+</footer>
+</div>
+</div>
+
+
+<a class="wa-float" href="https://wa.me/8801812764112" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp"><i class="ri-whatsapp-fill" aria-hidden="true"></i></a>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" integrity="sha384-HOvlOYPIs/zjoIkWUGXkVmXsjr8GuZLV+Q+rcPwmJOVZVpvTSXQChiN4t9Euv9Vc" crossorigin="anonymous" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js" integrity="sha384-P8VzCVnT9NBUkMrpcIZrJbA7EBjJvh/fJS6PmP+4nLIM284DtsImIv8D0fFjIkeh" crossorigin="anonymous" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js" integrity="sha384-xb96EMJeax+NLXMC88ZBa1xAeAW+kn+horHh/zFlbMLG2UPWhMJJSlv7fi57hS+Q" crossorigin="anonymous" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollSmoother.min.js" integrity="sha384-dd8lT3AimXbI347qlZzlijPa4qnSlgGxuTqK2HlcfvF5+aOIeddPdMFmFpypQPZN" crossorigin="anonymous" defer></script>
+<script src="../../assets/js/anim.js" defer></script>
+<script src="../../assets/js/main.js" defer></script>
+</body>
+</html>

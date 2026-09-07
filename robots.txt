@@ -1,0 +1,9 @@
+# https://ashekur.com — robots.txt
+User-agent: *
+Allow: /
+
+# No crawlable value, and they waste crawl budget
+Disallow: /*?
+Disallow: /404.html
+
+Sitemap: https://ashekur.com/sitemap.xml
