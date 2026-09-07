@@ -936,8 +936,8 @@ function buildHub() {
     })
     .join('\n        ');
 
-  const latest = [...questions].sort((a, b) => (b.datePublished || '').localeCompare(a.datePublished || '')).slice(0, 12);
-  const latestCards = latest.map((q) => questionCard(prefix, q)).join('\n        ');
+  const allQuestions = [...questions].sort((a, b) => (b.datePublished || '').localeCompare(a.datePublished || ''));
+  const allQuestionCards = allQuestions.map((q) => questionCard(prefix, q)).join('\n        ');
 
   const bodyHtml = `  <section class="section section-dark page-intro page-hero">
     <div class="hero-grid-bg" aria-hidden="true"></div>
@@ -973,12 +973,12 @@ function buildHub() {
     <div class="container">
       <div class="row gx-0">
         <div class="section-head col-12 col-lg-6">
-          <p data-anim="fade" class="eyebrow"><span class="eyebrow-mark" aria-hidden="true"></span><span class="mono">LATEST</span></p>
-          <h2 data-anim="lines">Recently added questions</h2>
+          <p data-anim="fade" class="eyebrow"><span class="eyebrow-mark" aria-hidden="true"></span><span class="mono">ALL QUESTIONS</span></p>
+          <h2 data-anim="lines">Every question, newest first</h2>
         </div>
       </div>
       <div data-anim="stagger" class="row row-cols-1 row-cols-md-2 g-4 blog-grid">
-        ${latestCards}
+        ${allQuestionCards}
       </div>
     </div>
   </section>
