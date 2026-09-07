@@ -4,9 +4,9 @@
   "subcategory": "subscriptions",
   "question": "How Do Customers Update Their Payment Method on a WooCommerce Subscription?",
   "metaDescription": "How the built-in payment method change flow works from My Account, and what to check when the option is missing or a new method won't save.",
-  "readTime": "5 min read",
-  "datePublished": "2026-09-08",
-  "dateModified": "2026-09-08",
+  "readTime": "3 min read",
+  "datePublished": "2026-09-07",
+  "dateModified": "2026-09-07",
   "shortAnswer": "<p>From My Account &rarr; Subscriptions, a customer opens the subscription and selects \"Change payment method,\" which walks them through re-entering payment details for a gateway that supports automatic renewal. The change takes effect from the next renewal onward &mdash; it doesn't retry the current period's already-failed charge automatically unless combined with a manual retry.</p>",
   "image": {
     "alt": "Customer account screen with a payment method change form replacing an expired card icon",

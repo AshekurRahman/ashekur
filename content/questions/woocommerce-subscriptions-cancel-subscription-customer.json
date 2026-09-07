@@ -4,9 +4,9 @@
   "subcategory": "subscriptions",
   "question": "How Do Customers Cancel a WooCommerce Subscription?",
   "metaDescription": "How the default WooCommerce Subscriptions cancellation flow works from My Account, what happens to the current billing period, and how to customize it.",
-  "readTime": "5 min read",
-  "datePublished": "2026-09-08",
-  "dateModified": "2026-09-08",
+  "readTime": "3 min read",
+  "datePublished": "2026-09-07",
+  "dateModified": "2026-09-07",
   "shortAnswer": "<p>By default, a logged-in customer cancels from My Account &rarr; Subscriptions, opening the subscription and clicking \"Cancel.\" This stops future renewals immediately but does not refund the current billing period &mdash; the subscription stays active (with access, if that's how it's set up) until the end of the period already paid for, then moves to \"Cancelled\" rather than renewing again.</p>",
   "image": {
     "alt": "Customer account subscription list with one subscription row showing a cancel action and an end-of-period access indicator",

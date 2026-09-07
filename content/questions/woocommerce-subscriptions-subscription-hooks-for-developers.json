@@ -4,9 +4,9 @@
   "subcategory": "subscriptions",
   "question": "What Are the Most Useful WooCommerce Subscriptions Hooks for Developers?",
   "metaDescription": "The WooCommerce Subscriptions action and filter hooks used most often for custom development, with real usage examples for each.",
-  "readTime": "8 min read",
-  "datePublished": "2026-09-08",
-  "dateModified": "2026-09-08",
+  "readTime": "3 min read",
+  "datePublished": "2026-09-07",
+  "dateModified": "2026-09-07",
   "shortAnswer": "<p>For most custom development, the hooks that matter are <code>woocommerce_subscription_status_updated</code> (react to any status change), <code>woocommerce_scheduled_subscription_payment</code> (run logic right before a renewal is processed), and <code>woocommerce_subscription_payment_complete</code> (act after a renewal succeeds). Almost every custom subscription feature is built on top of one of these three.</p>",
   "image": {
     "alt": "Diagram of WordPress action hooks branching off a central WooCommerce subscription lifecycle timeline",

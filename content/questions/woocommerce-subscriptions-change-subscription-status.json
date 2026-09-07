@@ -4,9 +4,9 @@
   "subcategory": "subscriptions",
   "question": "How Do I Manually Change a WooCommerce Subscription's Status?",
   "metaDescription": "How to safely change a subscription's status from the WooCommerce admin, what each status actually means, and when a manual change can cause problems.",
-  "readTime": "5 min read",
-  "datePublished": "2026-09-08",
-  "dateModified": "2026-09-08",
+  "readTime": "3 min read",
+  "datePublished": "2026-09-07",
+  "dateModified": "2026-09-07",
   "shortAnswer": "<p>From WooCommerce &rarr; Subscriptions, open the subscription and use the \"Change status\" dropdown on the Edit screen, or bulk-edit multiple subscriptions from the list view. Each status change fires the same hooks a natural transition would (cancelling, for example, still triggers the cancellation actions other plugins might rely on) &mdash; it's a supported way to intervene, not a workaround, but it should still be used deliberately rather than as a quick fix for a problem worth actually diagnosing.</p>",
   "image": {
     "alt": "WooCommerce admin dropdown showing subscription status options with one being manually selected",

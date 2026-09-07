@@ -4,9 +4,9 @@
   "subcategory": "subscriptions",
   "question": "What's the Difference Between Manual and Automatic Renewal in WooCommerce Subscriptions?",
   "metaDescription": "Automatic renewal charges a stored payment method on schedule; manual renewal requires the customer to pay each cycle. Here's when each applies.",
-  "readTime": "5 min read",
-  "datePublished": "2026-09-08",
-  "dateModified": "2026-09-08",
+  "readTime": "3 min read",
+  "datePublished": "2026-09-07",
+  "dateModified": "2026-09-07",
   "shortAnswer": "<p>Automatic renewal charges a stored, tokenized payment method (via a gateway like Stripe or PayPal) on the subscription's due date without the customer taking any action. Manual renewal generates a renewal order and emails the customer a payment link they have to complete themselves. Which one applies depends entirely on the payment gateway used at checkout &mdash; not a setting you toggle for an individual subscription.</p>",
   "image": {
     "alt": "Side-by-side comparison of an automatic recurring payment icon and a manual payment-link email icon",

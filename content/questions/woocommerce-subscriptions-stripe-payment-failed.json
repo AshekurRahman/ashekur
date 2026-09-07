@@ -4,9 +4,9 @@
   "subcategory": "subscriptions",
   "question": "Why Did My Stripe Subscription Payment Fail in WooCommerce?",
   "metaDescription": "The most common reasons a Stripe-powered WooCommerce subscription payment fails, and how to read Stripe's own decline code to find the real cause.",
-  "readTime": "6 min read",
-  "datePublished": "2026-09-08",
-  "dateModified": "2026-09-08",
+  "readTime": "3 min read",
+  "datePublished": "2026-09-07",
+  "dateModified": "2026-09-07",
   "shortAnswer": "<p>A Stripe subscription renewal fails for one of two broad reasons: the card itself was declined by the issuing bank (Stripe returns a specific decline code for this), or something on the integration side is wrong &mdash; an expired API key, a webhook not reaching WooCommerce, or Strong Customer Authentication (SCA) requiring a step the automatic renewal can't complete on its own. Stripe's dashboard shows the exact decline code for every failed charge, which is the fastest way to tell these apart.</p>",
   "image": {
     "alt": "Stripe payment card icon with a decline warning next to a WooCommerce order flowing to a webhook endpoint",

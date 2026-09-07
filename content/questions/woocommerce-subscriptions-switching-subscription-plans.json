@@ -4,9 +4,9 @@
   "subcategory": "subscriptions",
   "question": "How Does Switching Between Subscription Plans Work in WooCommerce?",
   "metaDescription": "How WooCommerce Subscriptions' plan-switching feature prorates upgrades and downgrades, and what has to be configured for it to work at all.",
-  "readTime": "6 min read",
-  "datePublished": "2026-09-08",
-  "dateModified": "2026-09-08",
+  "readTime": "3 min read",
+  "datePublished": "2026-09-07",
+  "dateModified": "2026-09-07",
   "shortAnswer": "<p>Switching lets a customer move between variations of the same subscription product (a different billing interval, or a different tier) without cancelling and starting a new subscription. It has to be explicitly enabled on the product itself (Product data &rarr; Subscription &rarr; Allow Switching), and WooCommerce Subscriptions handles the proration &mdash; crediting unused time on the old plan against the cost of the new one &mdash; automatically based on the store's configured proration settings.</p>",
   "image": {
     "alt": "Two subscription tier cards with an arrow showing a customer moving from one plan to another with a prorated credit",
