@@ -2102,6 +2102,126 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://ashekur.com/questions/wordpress/accessibility-basics/</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ashekur.com/questions/wordpress/auto-updates-safe/</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ashekur.com/questions/wordpress/backup-strategy-what-to-include/</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ashekur.com/questions/wordpress/block-editor-vs-classic/</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ashekur.com/questions/wordpress/child-theme-why-need-one/</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ashekur.com/questions/wordpress/comment-spam-reduce/</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ashekur.com/questions/wordpress/custom-post-types-when-to-use/</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ashekur.com/questions/wordpress/gutenberg-custom-blocks/</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ashekur.com/questions/wordpress/media-library-organizing/</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ashekur.com/questions/wordpress/migrating-hosts-checklist/</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ashekur.com/questions/wordpress/mobile-responsiveness-broken/</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ashekur.com/questions/wordpress/multisite-vs-separate-installs/</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ashekur.com/questions/wordpress/plugin-vs-functions-php/</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ashekur.com/questions/wordpress/rest-api-what-is-it-for/</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ashekur.com/questions/wordpress/too-many-plugins-slow-site/</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ashekur.com/questions/wordpress/translating-a-site-i18n/</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ashekur.com/questions/wordpress/user-roles-capabilities-explained/</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ashekur.com/questions/wordpress/website-hacked-signs/</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ashekur.com/questions/wordpress/what-are-hooks-actions-filters/</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ashekur.com/questions/wordpress/wp-config-what-is-it/</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://ashekur.com/questions/woocommerce/subscriptions/</loc>
     <lastmod>2026-09-07</lastmod>
     <changefreq>monthly</changefreq>
@@ -2133,6 +2253,12 @@
   </url>
   <url>
     <loc>https://ashekur.com/questions/woocommerce/</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ashekur.com/questions/wordpress/</loc>
     <lastmod>2026-09-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
