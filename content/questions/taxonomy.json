@@ -1,0 +1,140 @@
+{
+  "categories": [
+    {
+      "slug": "woocommerce",
+      "name": "WooCommerce",
+      "shortName": "WooCommerce",
+      "description": "Store setup, checkout, orders, payments and the day-to-day problems that come up running a WooCommerce store.",
+      "cta": {
+        "heading": "Need this fixed on your store, not just explained?",
+        "body": "I provide custom WooCommerce development and troubleshooting &mdash; the underlying issue found and fixed, not just patched.",
+        "href": "services/woocommerce-development/",
+        "label": "WooCommerce Development"
+      },
+      "children": [
+        {
+          "slug": "subscriptions",
+          "name": "WooCommerce Subscriptions",
+          "shortName": "Subscriptions",
+          "description": "Recurring payments, renewals, cancellations, subscription status and the WooCommerce Subscriptions plugin's own quirks.",
+          "cta": {
+            "heading": "Need help fixing a WooCommerce Subscriptions issue?",
+            "body": "I provide custom WooCommerce development and troubleshooting &mdash; recurring payments, renewal logic and subscription bugs sorted properly, not patched over.",
+            "href": "services/woocommerce-development/",
+            "label": "WooCommerce Development"
+          }
+        },
+        {
+          "slug": "payments",
+          "name": "WooCommerce Payments",
+          "shortName": "Payments",
+          "description": "Payment gateways, failed transactions, Stripe and PayPal integration issues.",
+          "cta": {
+            "heading": "Payment gateway issue costing you real orders?",
+            "body": "I fix WooCommerce payment gateway problems &mdash; Stripe, PayPal and custom integrations &mdash; and can dig into why a specific transaction failed.",
+            "href": "services/woocommerce-fix/",
+            "label": "WooCommerce Fixes"
+          }
+        },
+        {
+          "slug": "checkout",
+          "name": "WooCommerce Checkout",
+          "shortName": "Checkout",
+          "description": "Checkout page errors, validation problems and abandoned-cart causes.",
+          "cta": {
+            "heading": "Checkout broken or losing orders?",
+            "body": "A checkout problem costs sales every hour it stays live. I diagnose and fix WooCommerce checkout issues properly, not just clear the cache and hope.",
+            "href": "services/woocommerce-fix/",
+            "label": "WooCommerce Fixes"
+          }
+        },
+        {
+          "slug": "products",
+          "name": "WooCommerce Products",
+          "shortName": "Products",
+          "description": "Product data, variations, pricing and catalog management.",
+          "cta": {
+            "heading": "Need product data or catalog work done properly?",
+            "body": "From variation setups to bulk catalog changes, I build and fix WooCommerce product structures that hold up as the store grows.",
+            "href": "services/woocommerce-development/",
+            "label": "WooCommerce Development"
+          }
+        },
+        {
+          "slug": "orders",
+          "name": "WooCommerce Orders",
+          "shortName": "Orders",
+          "description": "Order statuses, order emails and order-management problems.",
+          "cta": {
+            "heading": "Orders stuck, missing, or not behaving as expected?",
+            "body": "I troubleshoot WooCommerce order and status issues at the code level &mdash; hooks, meta and gateway callbacks included.",
+            "href": "services/woocommerce-fix/",
+            "label": "WooCommerce Fixes"
+          }
+        },
+        {
+          "slug": "shipping",
+          "name": "WooCommerce Shipping",
+          "shortName": "Shipping",
+          "description": "Shipping zones, rates and delivery-related configuration issues.",
+          "cta": {
+            "heading": "Shipping rates or zones not working as they should?",
+            "body": "I configure and fix WooCommerce shipping setups so the right rate shows for the right customer, every time.",
+            "href": "services/woocommerce-development/",
+            "label": "WooCommerce Development"
+          }
+        },
+        {
+          "slug": "performance",
+          "name": "WooCommerce Performance",
+          "shortName": "Performance",
+          "description": "Store speed, database bloat and scaling a growing WooCommerce catalog.",
+          "cta": {
+            "heading": "Store slowing down as it grows?",
+            "body": "I optimize WooCommerce performance at the database and query level &mdash; not just another caching plugin.",
+            "href": "services/wordpress-speed-optimization/",
+            "label": "WordPress Speed Optimization"
+          }
+        },
+        {
+          "slug": "troubleshooting",
+          "name": "WooCommerce Troubleshooting",
+          "shortName": "Troubleshooting",
+          "description": "General bugs, plugin conflicts and error messages that don't fit a narrower category.",
+          "cta": {
+            "heading": "Something's broken and you're not sure why?",
+            "body": "I troubleshoot WooCommerce bugs and plugin conflicts down to the actual cause, with a fix that sticks.",
+            "href": "services/woocommerce-fix/",
+            "label": "WooCommerce Fixes"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "wordpress",
+      "name": "WordPress",
+      "shortName": "WordPress",
+      "description": "Core WordPress questions that come up across builds, regardless of which plugin or theme is involved.",
+      "cta": {
+        "heading": "Need a WordPress problem fixed properly?",
+        "body": "I provide WordPress development, customization and bug-fix work for issues that need more than a plugin reinstall.",
+        "href": "services/wordpress-bug-fix/",
+        "label": "WordPress Bug Fix"
+      },
+      "children": []
+    },
+    {
+      "slug": "elementor",
+      "name": "Elementor",
+      "shortName": "Elementor",
+      "description": "Elementor page builder questions, from layout quirks to performance and Theme Builder setup.",
+      "cta": {
+        "heading": "Elementor doing something it shouldn't?",
+        "body": "I fix and customize Elementor builds &mdash; layout bugs, performance issues and Theme Builder setups included.",
+        "href": "services/elementor-fix/",
+        "label": "Elementor Bug Fix"
+      },
+      "children": []
+    }
+  ]
+}
