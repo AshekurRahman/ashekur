@@ -1,0 +1,94 @@
+/* Prism.js theme for Questions & Answers code blocks — only loaded on pages
+   that actually contain a <pre><code> block (see scripts/build-questions.mjs).
+   Matches the site's own dark-navy / indigo / JetBrains Mono design tokens
+   rather than a stock Prism theme, and is scoped so it can't leak into or
+   be overridden by Elementor/theme styles used elsewhere on ashekur.com. */
+
+.prose pre[class*="language-"] {
+  margin: 0 0 28px;
+  padding: 20px 22px;
+  border-radius: 12px;
+  background: #0f172a;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.prose pre[class*="language-"] code[class*="language-"] {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: #e2e8f0;
+  font-family: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 13.5px;
+  line-height: 1.65;
+  text-shadow: none;
+  white-space: pre;
+  overflow-wrap: normal;
+}
+
+/* Small screens scroll the block horizontally rather than wrapping and
+   losing indentation, which is what actually keeps code readable on mobile. */
+@media (max-width: 575.98px) {
+  .prose pre[class*="language-"] {
+    padding: 16px 18px;
+    font-size: 12.5px;
+  }
+}
+
+.prose .token.comment,
+.prose .token.prolog,
+.prose .token.doctype,
+.prose .token.cdata {
+  color: #64748b;
+}
+
+.prose .token.punctuation {
+  color: #94a3b8;
+}
+
+.prose .token.property,
+.prose .token.tag,
+.prose .token.constant,
+.prose .token.symbol,
+.prose .token.deleted {
+  color: #f87171;
+}
+
+.prose .token.boolean,
+.prose .token.number {
+  color: #fb923c;
+}
+
+.prose .token.selector,
+.prose .token.attr-name,
+.prose .token.string,
+.prose .token.char,
+.prose .token.builtin,
+.prose .token.inserted {
+  color: #34d399;
+}
+
+.prose .token.operator,
+.prose .token.entity,
+.prose .token.url,
+.prose .language-css .token.string,
+.prose .style .token.string {
+  color: #93c5fd;
+}
+
+.prose .token.atrule,
+.prose .token.attr-value,
+.prose .token.keyword {
+  color: #818cf8;
+}
+
+.prose .token.function,
+.prose .token.class-name {
+  color: #c4b5fd;
+}
+
+.prose .token.regex,
+.prose .token.important,
+.prose .token.variable {
+  color: #fbbf24;
+}

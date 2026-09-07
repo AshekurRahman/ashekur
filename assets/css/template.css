@@ -3495,6 +3495,24 @@ button {
   color: var(--white);
 }
 
+/* Short-answer callout on a Questions page — sits above the table of
+   contents in the same aside column, so the direct answer is visible
+   without scrolling into the full explanation below it. */
+.qa-short-answer {
+  margin: 0 0 20px;
+  padding: 22px 26px;
+  border-left: 3px solid var(--green-soft);
+  border-radius: var(--r-md);
+  background: var(--surface-200);
+}
+
+.qa-short-answer p {
+  margin: 0;
+  font-size: 15.5px;
+  line-height: 1.7;
+  color: var(--gray-700);
+}
+
 /* Table of contents */
 .toc {
   margin: 0;
