@@ -1,0 +1,17 @@
+{
+  "slug": "loyalty-points-compatibility",
+  "category": "woocommerce",
+  "subcategory": "subscriptions",
+  "question": "Do Loyalty or Rewards Points Plugins Work With WooCommerce Subscriptions?",
+  "metaDescription": "Most points plugins can award and redeem points on a subscription order, but earning points on every renewal specifically needs checking, not assuming.",
+  "readTime": "3 min read",
+  "datePublished": "2026-09-13",
+  "dateModified": "2026-09-13",
+  "shortAnswer": "<p>Generally yes for the basic case &mdash; a points/rewards plugin that hooks into order completion will typically award points on a subscription's initial order the same as any other. What needs specific confirmation is whether points are also awarded on every renewal order going forward, since that's a recurring event a plugin built primarily around one-time purchases might not handle by default.</p>",
+  "image": {
+    "alt": "A loyalty points balance increasing with each subscription renewal order",
+    "prompt": "Create a clean, professional technical illustration of a star/points icon accumulating alongside a repeating subscription cycle, with small plus-symbols marking each renewal. Dark navy background, indigo and gold accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"how-it-works\">How It Works</h2>\n<p>Points and rewards plugins typically hook into WooCommerce's order-completion events to calculate and award points based on order total. Since a renewal order fires through the same completion events as any other order, points generally do accrue on renewals too &mdash; but this depends on the specific plugin's own hook priorities and whether it distinguishes (or cares about distinguishing) a renewal from a fresh purchase.</p>\n\n<h2 id=\"common-causes\">What to Check Specifically</h2>\n<ul>\n<li><strong>Points awarded per renewal, not just the initial purchase</strong> &mdash; test this directly with a manually triggered renewal rather than assuming it works the same as the first order.</li>\n<li><strong>Points redemption applied as a discount on a subscription product</strong> interacting correctly with the recurring total, similar to the coupon-discount-type distinction covered separately &mdash; a one-time points redemption shouldn't necessarily reduce every future renewal.</li>\n<li><strong>Cancelled or refunded renewal orders</strong> correctly reversing any points that were awarded, if the plugin supports that logic at all.</li>\n<li><strong>Points balance display</strong> in My Account alongside the subscriptions section, checking neither integration's UI breaks the other.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">How to Verify It Properly</h2>\n<ol>\n<li><strong>Complete a test subscription purchase and confirm points award correctly</strong> on the initial order.</li>\n<li><strong>Manually trigger a renewal and confirm points award again</strong> &mdash; don't assume this without testing it specifically.</li>\n<li><strong>Test a points redemption on a subscription product</strong> and confirm the discount behaves as intended across the recurring total.</li>\n<li><strong>Check the specific plugin's documentation or support channel</strong> for explicit WooCommerce Subscriptions compatibility notes.</li>\n</ol>\n<p>See <a href=\"../../../../services/woocommerce-development/\">custom WooCommerce development</a> if points need to accrue or redeem differently on renewals than the plugin supports by default.</p>",
+  "hasCode": false
+}
