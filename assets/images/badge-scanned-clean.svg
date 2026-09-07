@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 54" width="260" height="54" role="img" aria-labelledby="badgeTitle">
+  <title id="badgeTitle">Scanned clean by the free WordPress Malware Checker</title>
+  <rect x="0.5" y="0.5" width="259" height="53" rx="10" fill="#0a1020" stroke="#1e293b" stroke-width="1" />
+  <circle cx="27" cy="27" r="14" fill="#34d399" fill-opacity="0.14" />
+  <path d="M27 15.5 L35 18.5 V26 C35 32 31.5 36.3 27 38.5 C22.5 36.3 19 32 19 26 V18.5 Z" fill="none" stroke="#34d399" stroke-width="1.8" stroke-linejoin="round" />
+  <path d="M22.7 26.6 L25.6 29.5 L31.3 23.2" fill="none" stroke="#34d399" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+  <text x="49" y="24" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#f8fafc">Scanned Clean</text>
+  <text x="49" y="39" font-family="Arial, Helvetica, sans-serif" font-size="10" fill="#94a3b8">WordPress Malware Checker</text>
+</svg>
