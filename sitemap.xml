@@ -614,6 +614,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://ashekur.com/questions/woocommerce/subscriptions/admin-renewal-failure-notifications/</loc>
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://ashekur.com/questions/woocommerce/subscriptions/analytics-tracking-recurring-revenue/</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
@@ -626,8 +632,26 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://ashekur.com/questions/woocommerce/subscriptions/b2b-purchase-order-invoice/</loc>
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://ashekur.com/questions/woocommerce/subscriptions/bookings-compatibility/</loc>
     <lastmod>2026-09-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ashekur.com/questions/woocommerce/subscriptions/caching-breaks-my-account/</loc>
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ashekur.com/questions/woocommerce/subscriptions/cancel-immediately-vs-period-end/</loc>
+    <lastmod>2026-09-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -644,6 +668,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://ashekur.com/questions/woocommerce/subscriptions/cart-checkout-blocks-compatibility/</loc>
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://ashekur.com/questions/woocommerce/subscriptions/change-subscription-status/</loc>
     <lastmod>2026-09-07</lastmod>
     <changefreq>monthly</changefreq>
@@ -656,8 +686,38 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://ashekur.com/questions/woocommerce/subscriptions/content-restriction-without-memberships/</loc>
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ashekur.com/questions/woocommerce/subscriptions/custom-fields-checkout/</loc>
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ashekur.com/questions/woocommerce/subscriptions/custom-order-status-renewals/</loc>
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://ashekur.com/questions/woocommerce/subscriptions/custom-user-role-on-signup/</loc>
     <lastmod>2026-09-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ashekur.com/questions/woocommerce/subscriptions/dunning-management/</loc>
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ashekur.com/questions/woocommerce/subscriptions/duplicate-renewal-orders/</loc>
+    <lastmod>2026-09-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -682,6 +742,12 @@
   <url>
     <loc>https://ashekur.com/questions/woocommerce/subscriptions/free-trial-not-working/</loc>
     <lastmod>2026-09-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ashekur.com/questions/woocommerce/subscriptions/gateway-native-recurring-vs-plugin/</loc>
+    <lastmod>2026-09-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -932,8 +998,20 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://ashekur.com/questions/woocommerce/subscriptions/upsell-cross-sell-checkout/</loc>
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://ashekur.com/questions/woocommerce/subscriptions/variable-subscription-products/</loc>
     <lastmod>2026-09-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ashekur.com/questions/woocommerce/subscriptions/vat-moss-eu-digital/</loc>
+    <lastmod>2026-09-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -946,6 +1024,18 @@
   <url>
     <loc>https://ashekur.com/questions/woocommerce/subscriptions/webhooks-support/</loc>
     <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ashekur.com/questions/woocommerce/subscriptions/woocommerce-pos-compatibility/</loc>
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ashekur.com/questions/woocommerce/subscriptions/wp-cli-management/</loc>
+    <lastmod>2026-09-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
