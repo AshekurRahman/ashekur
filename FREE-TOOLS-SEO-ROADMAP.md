@@ -6,9 +6,13 @@
 
 This file is intentionally kept out of the public site (`.htaccess` blocks `/FREE-TOOLS-SEO-ROADMAP.md` the same way it already blocks `/README.md` and `/SEO.md`). Treat it as a living document — update phase status and keyword notes as tools ship and data comes in.
 
-**Status as of 2026-09-05:** All 8 scanner/calculator tools (Tools 0-8) are shipped and wired into the `/tools/` hub, sitemap, and their named internal links. This remains a living roadmap with real work still open: the embeddable "scanned clean" badge for Tool 1 (Phase 2 item 10), still not started; the Google Safe Browsing API key for Tool 1's malware checker, still not configured (`GOOGLE_SAFE_BROWSING_API_KEY` unset, so that check still no-ops); the first backlink push using real usage data (Phase 3 item 13), not started; and the quarterly Search Console review (Phase 3 item 14), pending until a full quarter of data exists. The monthly SEO & content plan below is ongoing by design and has no end state.
+**Status as of 2026-09-05:** All 8 scanner/calculator tools (Tools 0-8) are shipped and wired into the `/tools/` hub, sitemap, and their named internal links. This remains a living roadmap with real work still open: the Google Safe Browsing API key for Tool 1's malware checker, still not configured (`GOOGLE_SAFE_BROWSING_API_KEY` unset, so that check still no-ops); the first backlink push using real usage data (Phase 3 item 13), not started; and the quarterly Search Console review (Phase 3 item 14), pending until a full quarter of data exists. The monthly SEO & content plan below is ongoing by design and has no end state.
 
 **Update 2026-09-07:** The Tool 6 supporting blog post, "Divi 4 vs Divi 5: What Actually Changes, and Whether You Should Migrate" (Phase 2 item 9), is now written and live at `blog/divi-4-vs-divi-5-migration/` — added to `blog/index.html` (grid card + JSON-LD), `sitemap.xml`, and cross-linked from `tools/divi-5-migration-checker/` (prose link + related-services sidebar), `services/divi-5-migration/` and `services/divi-customization/` ("Also worth reading" grids), and `blog/elementor-vs-divi/` (Divi section paragraph).
+
+**Update 2026-09-07 (2):** The embeddable "scanned clean" badge for Tool 1 (Phase 2 item 10) is now built and live. A static SVG badge (`assets/images/badge-scanned-clean.svg`) reveals a ready-to-paste embed snippet in a new "EMBED THIS BADGE" field whenever `tools/wordpress-malware-checker/` returns a `clean` verdict (`assets/js/malware-checker.js`, `assets/css/template.css`), linking back to the checker so visitors can verify the result themselves. Added a matching FAQ entry (visible + JSON-LD) and a mention in the "clean" result's CTA copy. Still genuinely open: promoting the badge once real usage data exists (Phase 3 item 13's backlink push is the natural vehicle for that) — the mechanism itself is done, adoption is not something code can produce.
+
+Three items remain blocked on something outside a code change and are still open: the Google Safe Browsing API key (needs a real Google Cloud credential from the site owner), the first backlink push (needs real usage data plus manual outreach), and the quarterly Search Console review (needs a full quarter of real data and Search Console access).
 
 ---
 
@@ -26,7 +30,7 @@ Two things already exist that everything below builds on:
 | # | Tool | Phase | Build effort | SEO difficulty | Lead potential | Primary service tie-in | Status |
 |---|---|---|---|---|---|---|---|
 | 0 | Extend the existing Health Checker with WP-specific checks | 1 (quick win) | Very low | N/A (existing page) | Medium | wordpress-development, seo | Done |
-| 1 | WordPress Malware & Blacklist Checker | 1 | Medium | Low-medium | **Very high** | wordpress-malware-removal | Done (Safe Browsing check no-ops until API key is set) |
+| 1 | WordPress Malware & Blacklist Checker | 1 | Medium | Low-medium | **Very high** | wordpress-malware-removal | Done, incl. scanned-clean badge (Safe Browsing check no-ops until API key is set) |
 | 2 | What Theme/Page Builder Is This Site Using? | 1 | Medium | Medium | High (volume + backlinks) | elementor-customization, divi-customization | Done |
 | 3 | WordPress Website Cost Calculator | 1 | **Low** | Medium | Very high (direct-to-quote) | wordpress-development, pricing | Done |
 | 4 | Elementor Speed & Bloat Checker | 2 | Medium-high | Low | High | elementor-fix, wordpress-speed-optimization | Done |
@@ -363,7 +367,7 @@ Goal: go deeper into the three named platforms (Elementor, WooCommerce, Divi) no
 7. WooCommerce Store Health Checker (Tool 5).
 8. Divi 5 Migration Readiness Checker (Tool 6) — can be pulled forward given how low-competition and comparatively simple it is, if capacity allows.
 9. New supporting blog post: "Divi 4 vs Divi 5: What Actually Changes." — Done 2026-09-07.
-10. Begin the embeddable "scanned clean" badge for Tool 1, if usage data supports it.
+10. Begin the embeddable "scanned clean" badge for Tool 1, if usage data supports it. — Done 2026-09-07.
 
 ### Phase 3 — Long-tail and warm-audience tools
 Goal: pick up the smaller, higher-effort, but genuinely useful tools once the core lineup is generating traffic and leads.

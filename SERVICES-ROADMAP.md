@@ -170,6 +170,8 @@ Recommend **A** here specifically — unlike the SEO audit case, a host-only mov
 4. **Host Migration** — DONE (2026-09-06, option A: anchor link).
 5. **Technical SEO Audit** — DONE (2026-09-06, option B: standalone page built, `services/seo/` copy narrowed alongside it).
 
-**All 5 items in this roadmap are now shipped or resolved, and committed and pushed** (`40102b2`, 2026-09-06). The only follow-up not yet done: the "Open question" flagged above (3 orphaned stub directories — `custom-plugin-development/`, `custom-post-type-development/`, `wordpress-update-management/` — fold into a future phase or delete) is still unresolved and was explicitly out of scope for this plan.
+**All 5 items in this roadmap are now shipped or resolved, and committed and pushed** (`40102b2`, 2026-09-06).
+
+**Update 2026-09-07:** The "Open question" flagged above is resolved by inspection — the 3 orphaned stub directories (`custom-plugin-development/`, `custom-post-type-development/`, `wordpress-update-management/`) no longer exist in the repo (confirmed via a fresh directory listing under `services/`). Nothing to fold into a future phase or delete; no action needed.
 
 Each shipped page needs the same wrap-up checklist as the last batch: swap `Soon` → `New` badge in both `#navDrop-services` and `#navDropM-services`, add to `services/index.html`, add to `sitemap.xml`, and add the internal links called out above — not just the page itself.
