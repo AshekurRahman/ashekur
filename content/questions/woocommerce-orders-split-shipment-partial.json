@@ -1,0 +1,17 @@
+{
+  "slug": "split-shipment-partial",
+  "category": "woocommerce",
+  "subcategory": "orders",
+  "question": "Can I Ship Part of an Order Now and the Rest Later?",
+  "metaDescription": "Not with a native \"partial shipment\" status — most stores handle this with clear order notes and a shipping plugin that supports multiple shipments.",
+  "readTime": "3 min read",
+  "datePublished": "2026-09-07",
+  "dateModified": "2026-09-07",
+  "shortAnswer": "<p>WooCommerce core doesn't have a dedicated \"partially shipped\" status or native multi-shipment tracking for a single order, so most stores handle this practically with clear order notes documenting what shipped when, combined with a shipment tracking plugin that supports adding multiple tracking numbers to one order for the separate shipments.</p>",
+  "image": {
+    "alt": "A single order being fulfilled through two separate shipments, tracked with multiple tracking numbers and clear order notes",
+    "prompt": "Create a clean, professional technical illustration of one order splitting into two separate shipment icons, each carrying its own tracking number. Dark navy background, indigo and teal accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"why-this-happens\">Why This Isn't Built In</h2>\n<p>WooCommerce's order and status model was designed around a single fulfillment event per order, which covers the vast majority of stores fine, but doesn't natively represent a scenario where one item ships today and another ships next week from the same order. Handling this well needs either a plugin built specifically for split shipments, or a consistent manual process using existing tools.</p>\n\n<h2 id=\"common-causes\">Practical Approaches</h2>\n<ul>\n<li><strong>A shipment tracking plugin supporting multiple tracking numbers per order</strong> is the most common practical solution &mdash; add each shipment's tracking number as it ships, with the customer receiving updates for each.</li>\n<li><strong>Clear order notes documenting each partial shipment</strong> keep an accurate internal record even without a dedicated status, useful for any customer service follow-up.</li>\n<li><strong>A dedicated split-order or back-order fulfillment plugin</strong> exists for stores where this happens frequently enough to justify more structured tooling, sometimes even splitting the order into separate child orders for cleaner tracking.</li>\n<li><strong>Customer communication matters more than the internal status mechanics</strong> &mdash; proactively explaining a split shipment (rather than leaving the customer to notice a partial delivery and wonder what happened) reduces support inquiries significantly.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">Setting This Up</h2>\n<ol>\n<li><strong>Choose a shipment tracking plugin</strong> that explicitly supports multiple tracking entries per order.</li>\n<li><strong>Establish a consistent order-note process</strong> for documenting partial shipments internally.</li>\n<li><strong>Proactively communicate the split</strong> to the customer rather than leaving them to notice on their own.</li>\n<li><strong>For frequent, high-volume split shipments,</strong> evaluate a dedicated plugin built specifically for this workflow.</li>\n</ol>\n<p>Need a proper split-shipment workflow built for your fulfillment process? See <a href=\"../../../../services/woocommerce-development/\">custom WooCommerce development</a>.</p>",
+  "hasCode": false
+}

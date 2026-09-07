@@ -1,0 +1,17 @@
+{
+  "slug": "refund-single-line-item",
+  "category": "woocommerce",
+  "subcategory": "orders",
+  "question": "How Do I Refund Just One Item From a Multi-Item Order?",
+  "metaDescription": "WooCommerce's built-in refund tool supports per-line-item amounts and quantities — no need to refund the full order total for a partial return.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-07",
+  "dateModified": "2026-09-07",
+  "shortAnswer": "<p>WooCommerce's built-in refund interface on an order screen supports specifying exactly which line items and quantities to refund, rather than only offering an all-or-nothing full refund &mdash; select the specific item and quantity, and the tool calculates the correct partial amount (including proportional tax) automatically before calling the gateway's refund API for just that portion.</p>",
+  "image": {
+    "alt": "A single item refunded from a multi-item order, with the refund tool calculating the correct partial amount including tax",
+    "prompt": "Create a clean, professional technical illustration of one item being selected for refund from a multi-item order list, with the total recalculating to reflect only that portion. Dark navy background, indigo and teal accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"how-it-works\">How to Refund a Single Item</h2>\n<p>On the order's admin screen, the Refund button opens an interface listing every line item with editable quantity and amount fields, letting you specify precisely what's being refunded rather than defaulting to the entire order total. Adjusting the quantity for a specific item automatically recalculates that item's refund amount, including its proportional share of tax, before the refund is submitted to the gateway.</p>\n\n<h2 id=\"common-causes\">Things Worth Getting Right</h2>\n<ul>\n<li><strong>Confirm the calculated tax portion looks correct</strong> before submitting, especially for orders with mixed tax rates across different items.</li>\n<li><strong>Decide whether to also restock the refunded item,</strong> which the refund interface offers as an option &mdash; appropriate if the item is being returned physically, not appropriate if it's simply a price adjustment or goodwill gesture with no physical return.</li>\n<li><strong>A partial refund doesn't automatically change the order's overall status</strong> the way a full refund does (which typically sets status to Refunded) &mdash; the order may remain in its current status with the partial refund simply recorded against it.</li>\n<li><strong>Add an order note explaining the reason</strong> for the partial refund, useful for future reference by anyone reviewing the order later.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">Processing a Partial Refund</h2>\n<ol>\n<li><strong>Open the specific order and click Refund.</strong></li>\n<li><strong>Adjust the quantity or amount</strong> for only the specific item(s) being refunded, leaving others at zero.</li>\n<li><strong>Decide on restocking</strong> based on whether the item is being physically returned.</li>\n<li><strong>Add a clear order note</strong> documenting the reason for the partial refund.</li>\n</ol>\n<p>Dealing with a complex refund scenario needing custom logic? See <a href=\"../../../../services/woocommerce-fix/\">WooCommerce fixes</a>.</p>",
+  "hasCode": false
+}

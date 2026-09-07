@@ -1,0 +1,17 @@
+{
+  "slug": "multiple-shipping-addresses",
+  "category": "woocommerce",
+  "subcategory": "orders",
+  "question": "Can One Order Ship to Multiple Different Addresses?",
+  "metaDescription": "Not natively — WooCommerce's data model ties one shipping address to the whole order, so splitting to multiple addresses needs a dedicated plugin.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-07",
+  "dateModified": "2026-09-07",
+  "shortAnswer": "<p>Not through core WooCommerce, whose order structure holds exactly one shipping address applied to the entire order &mdash; there's no native way to designate that item A goes to one address and item B goes to another within the same checkout. A dedicated \"multiple addresses\" or \"ship to multiple recipients\" plugin exists specifically for this common gift-giving or business-distribution use case, typically handling it by splitting the cart into separate shipments at checkout.</p>",
+  "image": {
+    "alt": "A single order's items being split to ship to multiple different addresses, requiring a dedicated plugin beyond core WooCommerce",
+    "prompt": "Create a clean, professional technical illustration of one cart splitting into separate shipments heading to different destination addresses. Dark navy background, indigo and teal accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"why-this-happens\">Why This Isn't Built In</h2>\n<p>WooCommerce's core checkout and order model assumes one shipping address per order, which covers the overwhelming majority of purchases and keeps the checkout, order, and fulfillment logic simple. Splitting a single cart across multiple destinations is a more complex requirement (different shipping costs per destination, potentially different items assigned to each) that needs purpose-built logic beyond what core provides.</p>\n\n<h2 id=\"common-causes\">How Dedicated Plugins Handle This</h2>\n<ul>\n<li><strong>Letting the customer assign specific cart items to specific shipping addresses</strong> during checkout, then calculating shipping cost per destination rather than as a single combined shipping charge.</li>\n<li><strong>Often creating separate order records or clearly separated shipment groupings</strong> internally, since a single order object still fundamentally expects one shipping address in WooCommerce's core data model.</li>\n<li><strong>Common use cases</strong> include gift-giving (sending different items to different recipients from one shopping session) and business distribution (a company ordering supplies for delivery to multiple branch locations).</li>\n<li><strong>Shipping cost calculation complexity</strong> increases meaningfully with multiple destinations, since each destination needs its own accurate rate calculation rather than one combined estimate.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">Setting This Up</h2>\n<ol>\n<li><strong>Choose a dedicated multiple-address shipping plugin</strong> matching the store's specific use case (gift-giving vs. business distribution have somewhat different needs).</li>\n<li><strong>Test the shipping cost calculation carefully</strong> across multiple destinations to confirm accuracy.</li>\n<li><strong>Confirm order/fulfillment reporting</strong> correctly reflects the split shipments for accurate tracking.</li>\n</ol>\n<p>Need a multi-destination shipping workflow built for your specific use case? See <a href=\"../../../../services/woocommerce-development/\">custom WooCommerce development</a>.</p>",
+  "hasCode": false
+}

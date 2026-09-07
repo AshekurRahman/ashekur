@@ -1,0 +1,17 @@
+{
+  "slug": "old-order-currency-mismatch",
+  "category": "woocommerce",
+  "subcategory": "orders",
+  "question": "Why Does an Old Order Show a Different Currency Than the Store Currently Uses?",
+  "metaDescription": "This is correct, expected behavior — WooCommerce stores the currency active at the time of purchase on the order itself, permanently.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-07",
+  "dateModified": "2026-09-07",
+  "shortAnswer": "<p>This is expected, correct behavior, not a bug &mdash; WooCommerce records the store's currency at the exact moment an order was placed and stores it permanently as part of that order's data. If the store's default currency was changed at some point afterward, orders placed before the change correctly continue showing the currency that was actually active (and actually charged) at that time, rather than being retroactively updated.</p>",
+  "image": {
+    "alt": "An older order correctly retaining the currency that was active at the time of purchase, unaffected by a later store-wide currency change",
+    "prompt": "Create a clean, professional technical illustration of a timeline showing a currency change point, with orders before it correctly keeping their original currency and orders after it using the new one. Dark navy background, indigo and teal accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"why-this-happens\">Why This Is Correct Behavior</h2>\n<p>Retroactively changing an old order's displayed currency to match a later store-wide change would misrepresent what the customer was actually charged and in what currency &mdash; a serious accounting problem, not a cosmetic one. WooCommerce deliberately locks in the currency at order creation specifically to preserve an accurate historical record, which is exactly the correct approach even though it can look surprising when reviewing older orders after a currency change.</p>\n\n<h2 id=\"common-causes\">When This Comes Up</h2>\n<ul>\n<li><strong>A store deliberately switching its base currency</strong> (expanding into a new primary market, for instance) at some point in its history, leaving all prior orders correctly recorded in the old currency.</li>\n<li><strong>A multi-currency plugin's configuration change,</strong> if the store's approach to currency display or conversion was altered, similarly leaving historical orders unaffected.</li>\n<li><strong>Reporting and analytics tools</strong> need to account for this correctly when aggregating revenue across a currency-change boundary, converting historical amounts to a common currency for accurate combined reporting rather than naively summing mismatched currencies together.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">What to Do About It</h2>\n<ol>\n<li><strong>Recognize this as correct, expected behavior,</strong> not something to \"fix\" on individual old orders.</li>\n<li><strong>For accurate combined reporting across a currency change,</strong> use a reporting approach that properly converts historical amounts to a common currency using the appropriate historical exchange rate, rather than treating all order totals as directly comparable.</li>\n<li><strong>Document the currency change date</strong> internally for reference when reviewing historical financial data.</li>\n</ol>\n<p>Need help with accurate cross-currency reporting? See <a href=\"../../../../services/woocommerce-fix/\">WooCommerce fixes</a>.</p>",
+  "hasCode": false
+}

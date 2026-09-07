@@ -1,0 +1,17 @@
+{
+  "slug": "account-history-limit",
+  "category": "woocommerce",
+  "subcategory": "orders",
+  "question": "Why Does My Account Only Show a Limited Number of Past Orders?",
+  "metaDescription": "My Account paginates order history by default rather than showing everything at once — older orders exist and are reachable via pagination, not lost.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-07",
+  "dateModified": "2026-09-07",
+  "shortAnswer": "<p>My Account's order history is paginated by default (typically showing a limited number per page, like 15), not because older orders are missing or deleted, but simply to keep the page manageable for customers with a long order history &mdash; older orders remain fully accessible by navigating to subsequent pages of the list.</p>",
+  "image": {
+    "alt": "My Account order history paginated to a manageable number per page, with older orders still accessible on subsequent pages",
+    "prompt": "Create a clean, professional technical illustration of an order history list showing a limited number of entries with pagination controls to reach older records. Dark navy background, indigo and teal accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"why-this-happens\">Why This Is Just Pagination</h2>\n<p>Showing every single order a long-time customer has ever placed on one page would make My Account slow to load and unwieldy to browse, so WooCommerce paginates the list by default, similar to how a blog or product catalog paginates rather than showing unlimited items on one page. The orders aren't hidden or lost &mdash; they're simply organized across multiple pages.</p>\n\n<h2 id=\"common-causes\">Things Worth Knowing</h2>\n<ul>\n<li><strong>The number of orders shown per page</strong> is filterable via the <code>woocommerce_my_account_my_orders_query</code> filter, if a store wants to adjust the default page size for its own reasons.</li>\n<li><strong>Pagination controls</strong> should appear at the bottom of the order list, letting the customer navigate to older orders &mdash; if these controls are missing or broken, that's a genuine display bug worth investigating separately from the expected pagination behavior itself.</li>\n<li><strong>A theme or page builder override</strong> of the My Account order history template could accidentally break pagination display while still correctly limiting the query, which would look like orders are simply missing rather than just on another page.</li>\n<li><strong>Guest orders never appear in My Account at all,</strong> regardless of pagination, since they aren't tied to any logged-in account &mdash; a separate consideration from pagination limits for a registered customer.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">If Pagination Controls Are Missing</h2>\n<ol>\n<li><strong>Confirm the customer actually has more orders</strong> than the default page size before assuming anything is broken.</li>\n<li><strong>Check that pagination controls display correctly</strong> at the bottom of the order history section.</li>\n<li><strong>If controls are missing,</strong> check for a theme override of the My Account order history template that might have dropped them.</li>\n</ol>\n<p>Need order history display customized for your account experience? See <a href=\"../../../../services/woocommerce-development/\">custom WooCommerce development</a>.</p>",
+  "hasCode": false
+}

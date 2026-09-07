@@ -1,0 +1,17 @@
+{
+  "slug": "refund-restock-automatic",
+  "category": "woocommerce",
+  "subcategory": "orders",
+  "question": "Does Refunding an Order Automatically Restock the Items?",
+  "metaDescription": "No — restocking is an explicit checkbox in the refund interface, unchecked by default, since not every refund means the item is physically returned.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-07",
+  "dateModified": "2026-09-07",
+  "shortAnswer": "<p>No, restocking is not automatic &mdash; WooCommerce's refund interface includes an explicit \"restock refunded items\" checkbox that needs to be deliberately selected. This is deliberate, since a refund doesn't always mean the physical item came back into inventory: a goodwill discount, a price adjustment, or a refund for a damaged item being disposed of rather than returned to sellable stock are all valid refund scenarios where restocking would be incorrect.</p>",
+  "image": {
+    "alt": "A refund processed without automatically restocking, since restocking requires an explicit separate confirmation the item was physically returned",
+    "prompt": "Create a clean, professional technical illustration of a refund action with a separate, explicit restock checkbox, distinct from the refund itself. Dark navy background, indigo and amber accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"why-this-happens\">Why Restocking Isn't Assumed</h2>\n<p>A refund and a physical return are related but genuinely separate events &mdash; a customer might receive a partial refund for a damaged item they're told to discard rather than return, or a store might issue a goodwill refund without expecting anything back at all. Automatically restocking on every refund would incorrectly add items back to sellable inventory in exactly these cases, which is why WooCommerce requires the explicit, separate confirmation.</p>\n\n<h2 id=\"common-causes\">When to Check the Restock Box</h2>\n<ul>\n<li><strong>A genuine product return</strong> where the physical item has been or will be received back in sellable condition &mdash; check the box.</li>\n<li><strong>A refund for a damaged, defective, or disposed-of item</strong> that won't return to inventory &mdash; leave it unchecked.</li>\n<li><strong>A partial price adjustment or goodwill refund</strong> with no physical item movement at all &mdash; leave it unchecked.</li>\n<li><strong>Timing matters too</strong> &mdash; some stores prefer to restock only once the physical item is actually confirmed received back, rather than at the moment the refund is issued, to avoid selling stock that hasn't actually arrived yet.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">Handling This Correctly</h2>\n<ol>\n<li><strong>Confirm the actual physical status of the item</strong> before processing the refund, deciding restock accordingly.</li>\n<li><strong>Consider timing the restock to actual physical receipt</strong> rather than the refund action itself, for stores with a formal returns process.</li>\n<li><strong>Train staff on when to check the restock box,</strong> since getting this wrong in either direction (restocking a disposed item, or failing to restock a genuine return) creates inventory accuracy problems.</li>\n</ol>\n<p>Need a more structured returns and restocking workflow? See <a href=\"../../../../services/woocommerce-development/\">custom WooCommerce development</a>.</p>",
+  "hasCode": false
+}
