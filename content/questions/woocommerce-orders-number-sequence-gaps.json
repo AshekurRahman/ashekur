@@ -1,0 +1,17 @@
+{
+  "slug": "number-sequence-gaps",
+  "category": "woocommerce",
+  "subcategory": "orders",
+  "question": "Why Are There Gaps in My WooCommerce Order Numbers?",
+  "metaDescription": "Order IDs increment for every attempt, including abandoned or failed checkouts that never became real orders — gaps are expected, not a bug.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-07",
+  "dateModified": "2026-09-07",
+  "shortAnswer": "<p>WooCommerce's default order number is simply the underlying database post ID, which increments for every order record created &mdash; including abandoned checkouts, failed payment attempts, and pending orders that were never completed. These \"invisible\" order attempts consume ID numbers without ever becoming a visible, successful order, which is why the sequence of order numbers a store actually sees often has gaps, and this is expected behavior, not a data loss bug.</p>",
+  "image": {
+    "alt": "Order ID numbers with gaps caused by abandoned or failed checkout attempts consuming numbers without becoming visible completed orders",
+    "prompt": "Create a clean, professional technical illustration of a sequence of order number tags with some numbers missing, each gap connected to an abandoned or failed attempt icon. Dark navy background, indigo and amber accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"why-this-happens\">Why This Happens</h2>\n<p>Every time a customer reaches the point of an order record being created &mdash; even if they abandon checkout before completing payment, or a payment attempt fails outright &mdash; WooCommerce creates that order in the database with the next available ID, in whatever status reflects what actually happened (Pending, Failed). These orders are often hidden from the default admin view or simply not noticed, but they still consumed a number in the sequence, which is why gaps appear in the numbers a store actually sees and processes.</p>\n\n<h2 id=\"common-causes\">Common Causes of Gaps</h2>\n<ul>\n<li><strong>Abandoned checkouts</strong> that created a pending order but were never completed, quietly consuming an ID.</li>\n<li><strong>Failed payment attempts,</strong> which create a real order record marked Failed even though no successful transaction occurred.</li>\n<li><strong>Test orders</strong> placed during setup or testing that were later deleted, leaving a gap where that ID used to be.</li>\n<li><strong>Orders genuinely deleted</strong> (rather than cancelled), which removes the visible record but doesn't renumber subsequent orders to close the gap.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">What to Do About It</h2>\n<ol>\n<li><strong>Recognize that this is expected, not a sign of data loss,</strong> especially for a store with any meaningful checkout abandonment rate.</li>\n<li><strong>If sequential, gap-free invoice numbers are required for accounting/legal reasons,</strong> a dedicated sequential invoice numbering plugin (separate from the underlying order ID) is the correct solution, rather than trying to force the order ID itself to be gap-free.</li>\n<li><strong>Review abandoned/failed order volume periodically</strong> if the gap rate seems unusually high, since it can be a useful signal about checkout friction worth investigating separately.</li>\n</ol>\n<p>Need proper sequential invoice numbering set up for accounting compliance? See <a href=\"../../../../services/woocommerce-development/\">custom WooCommerce development</a>.</p>",
+  "hasCode": false
+}

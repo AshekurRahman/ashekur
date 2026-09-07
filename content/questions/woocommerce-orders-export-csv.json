@@ -1,0 +1,17 @@
+{
+  "slug": "export-csv",
+  "category": "woocommerce",
+  "subcategory": "orders",
+  "question": "How Do I Export All My Orders to a CSV File?",
+  "metaDescription": "Built into WooCommerce core under the Orders screen's Export button — filter by date or status first to export exactly the set you need.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-07",
+  "dateModified": "2026-09-07",
+  "shortAnswer": "<p>This is a built-in WooCommerce feature, not something requiring a plugin &mdash; the Orders admin screen has an Export button that generates a CSV of orders matching whatever filters (date range, status) are currently applied to the list, covering the standard order fields most stores need for accounting, reporting, or migrating data elsewhere.</p>",
+  "image": {
+    "alt": "WooCommerce orders being exported to a CSV file, filtered by date range and status before generating the export",
+    "prompt": "Create a clean, professional technical illustration of a filtered orders list flowing into a downloadable CSV file icon. Dark navy background, indigo and teal accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"how-it-works\">How to Export Orders</h2>\n<p>The built-in export tool respects whatever filters are currently applied to the Orders list &mdash; a specific status, a date range, a search term &mdash; so narrowing the list first before clicking Export produces a file containing exactly the intended subset, rather than needing to export everything and filter afterward in a spreadsheet.</p>\n\n<h2 id=\"common-causes\">Things Worth Knowing</h2>\n<ul>\n<li><strong>The default export includes core order fields</strong> (order ID, date, status, customer details, totals, line items), which covers most accounting and reporting needs without additional configuration.</li>\n<li><strong>Custom fields or meta data</strong> added by other plugins may not be included in the default export automatically, requiring either a more advanced export plugin or custom development to include them.</li>\n<li><strong>Large exports</strong> (a very high order volume) may need to be done in date-range batches if the export process times out or produces an unwieldy single file.</li>\n<li><strong>Third-party export/reporting plugins</strong> offer more advanced filtering and custom field inclusion if the built-in tool doesn't cover a specific need.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">Exporting Orders</h2>\n<ol>\n<li><strong>Filter the Orders list</strong> to the specific date range or status needed before exporting.</li>\n<li><strong>Click the Export button</strong> to generate and download the CSV.</li>\n<li><strong>For custom fields not included by default,</strong> look into a dedicated export plugin or custom development.</li>\n</ol>\n<p>Need a custom export including specific fields or automated on a schedule? See <a href=\"../../../../services/woocommerce-development/\">custom WooCommerce development</a>.</p>",
+  "hasCode": false
+}

@@ -1,0 +1,17 @@
+{
+  "slug": "missing-from-admin-list",
+  "category": "woocommerce",
+  "subcategory": "orders",
+  "question": "Why Are Some Orders Missing From the Admin Orders List?",
+  "metaDescription": "The default view often filters by status or date range without it being obvious — check filters, trash, and HPOS sync state before assuming data loss.",
+  "readTime": "3 min read",
+  "datePublished": "2026-09-07",
+  "dateModified": "2026-09-07",
+  "shortAnswer": "<p>Before assuming genuine data loss, check whether the admin list is currently filtered by status, date range, or a search term that's excluding the orders in question &mdash; this is by far the most common reason orders appear \"missing\" when they're actually just filtered out of the current view. Beyond filters, the Trash (orders moved there but not permanently deleted) and, for stores using HPOS, a sync issue between old and new storage during a transition period are the next things to check.</p>",
+  "image": {
+    "alt": "Orders appearing missing from the admin list due to an active filter, rather than genuinely being lost",
+    "prompt": "Create a clean, professional technical illustration of an orders list with an active filter hiding some orders from view, distinct from those orders actually being deleted. Dark navy background, indigo and amber accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"why-this-happens\">Why This Usually Isn't Data Loss</h2>\n<p>The Orders admin screen defaults to showing all statuses, but it's easy to end up with an active status filter, date range, or leftover search term from a previous session without immediately noticing &mdash; and genuine orders sitting just outside that active filter will correctly not appear in the list, without anything actually being lost.</p>\n\n<h2 id=\"common-causes\">Common Causes</h2>\n<ul>\n<li><strong>An active status filter</strong> (viewing only Processing, for instance) hiding orders in other statuses like Completed or Cancelled from the current view.</li>\n<li><strong>A leftover search term or date range</strong> from a previous search, narrowing the list more than intended.</li>\n<li><strong>Orders in the Trash,</strong> which are excluded from the main list but still recoverable, distinct from being permanently deleted.</li>\n<li><strong>A sync issue during an HPOS migration,</strong> if the store recently switched order storage systems, where a specific order might not have fully synced between the old and new storage during the transition.</li>\n<li><strong>A plugin filtering the orders query</strong> for its own purposes (a multi-vendor plugin scoping orders to a specific vendor view, for instance) in a way that unintentionally hides orders from a general admin view.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">How to Diagnose and Fix It</h2>\n<ol>\n<li><strong>Clear all filters and search terms</strong> on the Orders list first, checking \"All\" statuses specifically.</li>\n<li><strong>Check the Trash</strong> for the specific missing order.</li>\n<li><strong>If using HPOS and recently migrated,</strong> check the sync status and consider running the built-in sync tool again.</li>\n<li><strong>Check for a plugin filtering the orders query</strong> if the above don't reveal the missing order, using standard plugin-conflict isolation.</li>\n</ol>\n<p>Genuinely missing order data and need this investigated properly? See <a href=\"../../../../services/woocommerce-fix/\">WooCommerce fixes</a>.</p>",
+  "hasCode": false
+}

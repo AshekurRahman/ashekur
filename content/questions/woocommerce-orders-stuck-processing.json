@@ -1,0 +1,17 @@
+{
+  "slug": "stuck-processing",
+  "category": "woocommerce",
+  "subcategory": "orders",
+  "question": "Why Is an Order Stuck in Processing Status and Never Completing?",
+  "metaDescription": "Completed status is usually a manual, fulfillment-triggered step, not automatic — check whether anything is actually supposed to set it before assuming a bug.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-07",
+  "dateModified": "2026-09-07",
+  "shortAnswer": "<p>For most stores, moving an order from Processing to Completed is a manual action (or one tied to a shipping plugin marking a shipment as sent), not something WooCommerce does automatically &mdash; an order simply staying in Processing until someone fulfills it and updates the status is expected behavior, not a bug, unless the store has specifically configured automatic completion for certain product types (like virtual/downloadable products, which do complete automatically).</p>",
+  "image": {
+    "alt": "An order remaining in Processing status until manually marked Completed after fulfillment, which is expected default behavior",
+    "prompt": "Create a clean, professional technical illustration of an order sitting in a processing stage, waiting for a manual fulfillment action to move it forward. Dark navy background, indigo and teal accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"why-this-happens\">Why This Is Usually Expected Behavior</h2>\n<p>WooCommerce deliberately doesn't assume an order is fulfilled just because payment was received &mdash; Processing specifically means \"paid, awaiting fulfillment,\" and moving to Completed signals that fulfillment actually happened, which for physical products requires a human (or an integrated shipping system) to confirm. The one common exception is orders containing only virtual or downloadable products, which WooCommerce does complete automatically since there's no physical fulfillment step needed.</p>\n\n<h2 id=\"common-causes\">When This Actually Indicates a Problem</h2>\n<ul>\n<li><strong>A shipping/fulfillment integration expected to auto-complete orders</strong> not actually doing so, due to a misconfiguration or a broken connection to the shipping carrier's tracking update.</li>\n<li><strong>Staff simply not marking orders complete</strong> as part of their regular fulfillment workflow, which is a process issue rather than a technical one.</li>\n<li><strong>A plugin that should be handling automatic completion</strong> (for specific order types or conditions) failing silently.</li>\n<li><strong>Confusion about expected behavior</strong> &mdash; verifying whether the specific order actually contains only virtual/downloadable items, which should auto-complete, versus physical items, which shouldn't.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">How to Address It</h2>\n<ol>\n<li><strong>Confirm whether Completed is actually supposed to be automatic</strong> for this specific order type before assuming something is broken.</li>\n<li><strong>If using a shipping integration expected to auto-complete orders,</strong> check its configuration and connection status.</li>\n<li><strong>If it's a manual process,</strong> consider whether a clearer internal fulfillment workflow would help staff mark orders complete more consistently.</li>\n</ol>\n<p>Need an automated fulfillment status workflow built? See <a href=\"../../../../services/woocommerce-development/\">custom WooCommerce development</a>.</p>",
+  "hasCode": false
+}

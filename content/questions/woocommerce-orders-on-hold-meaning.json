@@ -1,0 +1,17 @@
+{
+  "slug": "on-hold-meaning",
+  "category": "woocommerce",
+  "subcategory": "orders",
+  "question": "Why Is an Order On Hold, and What Does That Status Actually Mean?",
+  "metaDescription": "Most commonly an offline payment method awaiting manual confirmation, but a fraud-review plugin or a manual admin action can trigger it too.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-07",
+  "dateModified": "2026-09-07",
+  "shortAnswer": "<p>On Hold most commonly means the order is using an offline payment method (bank transfer, cheque) and is waiting for the store to manually confirm payment actually arrived before proceeding to fulfillment. It can also be triggered by a fraud-review or risk-management plugin flagging an order for manual review, or by a staff member manually placing an order on hold for any operational reason.</p>",
+  "image": {
+    "alt": "An order placed on hold awaiting manual payment confirmation or fraud review before proceeding to fulfillment",
+    "prompt": "Create a clean, professional technical illustration of an order icon paused at a hold checkpoint, awaiting a manual review or confirmation action. Dark navy background, indigo and amber accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"why-this-happens\">Why This Status Exists</h2>\n<p>Some payment methods don't provide instant confirmation the way a card gateway does &mdash; a bank transfer takes time to actually arrive and be verified, and On Hold exists specifically to hold that order in a clear \"waiting on something\" state rather than either prematurely marking it Processing (before payment is confirmed) or leaving it looking identical to a still-pending checkout attempt.</p>\n\n<h2 id=\"common-causes\">Common Triggers</h2>\n<ul>\n<li><strong>An offline payment method</strong> (bank transfer, cheque) where the store needs to manually verify payment arrived before proceeding &mdash; this is the standard, expected use of this status.</li>\n<li><strong>A fraud-detection or risk-review plugin</strong> flagging an order as needing manual review before it's allowed to proceed to normal processing.</li>\n<li><strong>A manual admin action,</strong> where staff deliberately place an order on hold for an operational reason (a stock question, a pricing verification) unrelated to payment method.</li>\n<li><strong>Some payment gateways</strong> using On Hold themselves for a specific pending-verification state in their own integration logic.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">What to Do With an On-Hold Order</h2>\n<ol>\n<li><strong>Verify whatever the order is actually waiting on</strong> &mdash; check for the expected bank transfer, review any fraud-flag details, or resolve the specific reason it was manually held.</li>\n<li><strong>Move it to Processing</strong> once payment is confirmed or the hold reason is resolved.</li>\n<li><strong>Cancel it if the wait resolves negatively</strong> (payment never arrives, fraud review fails).</li>\n<li><strong>Don't leave On Hold orders unattended indefinitely,</strong> since customers are typically waiting on a resolution from the store's side.</li>\n</ol>\n<p>Need a clearer process for handling On Hold orders consistently? See <a href=\"../../../../services/woocommerce-fix/\">WooCommerce fixes</a>.</p>",
+  "hasCode": false
+}

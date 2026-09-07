@@ -1,0 +1,17 @@
+{
+  "slug": "reorder-button-my-account",
+  "category": "woocommerce",
+  "subcategory": "orders",
+  "question": "How Does the Reorder Button in My Account Actually Work?",
+  "metaDescription": "It re-adds the same products and quantities from a past order to the current cart — it doesn't recreate the order, and prices reflect today's rates.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-07",
+  "dateModified": "2026-09-07",
+  "shortAnswer": "<p>The Order Again (reorder) button, available on past orders in My Account, adds the same products and quantities from that order into the customer's current cart, then sends them to checkout to complete a fresh purchase &mdash; it doesn't duplicate or resubmit the original order directly, and pricing reflects whatever the products currently cost, not the original order's historical prices.</p>",
+  "image": {
+    "alt": "A past order's items being added to a fresh cart through the reorder button, using current pricing rather than the original order's prices",
+    "prompt": "Create a clean, professional technical illustration of a past order's items flowing into a new cart, with a price tag updating to reflect current pricing. Dark navy background, indigo and teal accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"how-it-works\">How Reorder Actually Works</h2>\n<p>Clicking \"Order Again\" reads the line items and quantities from the historical order and adds matching products to the customer's current, active cart, exactly as if they had manually added each one again &mdash; it's a convenience shortcut for repeat purchases, not a literal resubmission of the original transaction, which is why several things about the new order can differ from the original.</p>\n\n<h2 id=\"common-causes\">Things That Can Differ From the Original Order</h2>\n<ul>\n<li><strong>Pricing reflects current prices,</strong> not what was originally paid &mdash; if a product's price changed since the original order, the reorder will use today's price.</li>\n<li><strong>Discontinued or out-of-stock products</strong> from the original order may not be addable at all, or may need to be skipped, since the button can only add products that currently exist and are purchasable.</li>\n<li><strong>Any coupon applied to the original order</strong> doesn't automatically reapply, since coupons aren't part of the product line items themselves and often have their own validity rules that may no longer apply.</li>\n<li><strong>Shipping and payment method</strong> are chosen fresh at the new checkout, not inherited from the original order.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">Things Worth Confirming for a Specific Store</h2>\n<ol>\n<li><strong>Test the reorder flow with a product that's changed price or gone out of stock</strong> since the original order, to understand exactly how it behaves for the store's specific catalog.</li>\n<li><strong>Confirm this feature is actually enabled</strong> (it's a standard My Account feature, but some theme/customization work can hide it) if customers report not seeing the option.</li>\n<li><strong>Communicate clearly if pricing differs</strong> from what a repeat customer might expect, to avoid confusion at checkout.</li>\n</ol>\n<p>Need the reorder experience customized for your store? See <a href=\"../../../../services/woocommerce-development/\">custom WooCommerce development</a>.</p>",
+  "hasCode": false
+}

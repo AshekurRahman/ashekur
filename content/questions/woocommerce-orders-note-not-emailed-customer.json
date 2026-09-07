@@ -1,0 +1,17 @@
+{
+  "slug": "note-not-emailed-customer",
+  "category": "woocommerce",
+  "subcategory": "orders",
+  "question": "Why Didn't My Order Note Get Sent to the Customer?",
+  "metaDescription": "Check the dropdown selection first — it's easy to accidentally leave a note as Private when Note to Customer was intended, sending nothing at all.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-07",
+  "dateModified": "2026-09-07",
+  "shortAnswer": "<p>The most common reason is simply that the note was added as a Private note rather than a Note to Customer &mdash; the dropdown defaults to Private, and it's an easy step to miss when adding a note quickly. Beyond that, the same general email-delivery issues affecting any WooCommerce email (an SMTP misconfiguration, a spam filter) can also affect customer notes specifically.</p>",
+  "image": {
+    "alt": "An order note added as Private by mistake, when Note to Customer was the intended selection, resulting in no email being sent",
+    "prompt": "Create a clean, professional technical illustration of a note dropdown selector showing two options, with the private option mistakenly selected instead of the customer-facing one. Dark navy background, red and indigo accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"why-this-happens\">Why This Happens</h2>\n<p>The order notes interface defaults its dropdown to \"Private note,\" and choosing \"Note to customer\" is a deliberate extra step &mdash; if that selection is missed, the note is saved successfully and appears in the order's timeline exactly as intended, but no email is actually triggered, since private notes never generate one by design.</p>\n\n<h2 id=\"common-causes\">Common Causes</h2>\n<ul>\n<li><strong>The note was added as Private,</strong> not Note to Customer &mdash; check the note's own display in the order timeline, which usually indicates which type it was saved as.</li>\n<li><strong>General email delivery issues</strong> (the same ones affecting any WooCommerce email &mdash; an unreliable default mail function, missing SMTP configuration) can prevent a genuinely customer-facing note from actually reaching the inbox even though it was sent correctly.</li>\n<li><strong>The customer's spam/junk folder,</strong> worth checking directly with them before assuming a sitewide delivery problem.</li>\n<li><strong>A specific email type disabled</strong> under WooCommerce &rarr; Settings &rarr; Emails, if customer note emails specifically have been turned off as a setting.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">How to Fix and Prevent This</h2>\n<ol>\n<li><strong>Confirm the note was actually added as Note to Customer,</strong> not Private, checking its display in the order timeline.</li>\n<li><strong>If the note type was correct,</strong> troubleshoot general email delivery the same way as any other missing WooCommerce email &mdash; checking SMTP configuration and the relevant email setting.</li>\n<li><strong>Resend the note manually</strong> if needed (or contact the customer directly) once the delivery issue is identified and resolved.</li>\n</ol>\n<p>Dealing with broader email delivery issues too? See <a href=\"../../../../services/woocommerce-fix/\">WooCommerce fixes</a>.</p>",
+  "hasCode": false
+}

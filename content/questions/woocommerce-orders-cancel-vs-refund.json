@@ -1,0 +1,17 @@
+{
+  "slug": "cancel-vs-refund",
+  "category": "woocommerce",
+  "subcategory": "orders",
+  "question": "What's the Difference Between Cancelling and Refunding an Order?",
+  "metaDescription": "Cancelling voids an order before or without payment being captured; refunding reverses money that has already been genuinely charged.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-07",
+  "dateModified": "2026-09-07",
+  "shortAnswer": "<p>Cancelling an order marks it as void without any expectation that money needs to move &mdash; appropriate when no payment was captured, or when the store simply wants to close out an order that won't be fulfilled. Refunding specifically reverses a payment that has already been genuinely charged, calling the gateway's refund API to actually return money to the customer. Cancelling an order that was already paid does not automatically refund it; those are two separate, deliberate actions.</p>",
+  "image": {
+    "alt": "An order being cancelled without any money movement, distinct from a refund which actively reverses a payment already charged",
+    "prompt": "Create a clean, professional technical illustration of two separate order actions: a cancel icon simply voiding an order, and a refund icon actively reversing a payment flow. Dark navy background, indigo and amber accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"how-it-works\">Why This Distinction Matters</h2>\n<p>Treating cancellation and refunding as interchangeable is a common mistake that can leave a customer charged for an order marked as cancelled, since cancelling alone doesn't call the gateway's refund API at all &mdash; it only changes the order's status in WooCommerce. If money genuinely needs to go back to the customer, a refund needs to be processed explicitly and separately from (or alongside) the cancellation.</p>\n\n<h2 id=\"common-causes\">When to Use Each</h2>\n<ul>\n<li><strong>Cancel</strong> when an order was never paid (still Pending or Failed), or when closing it out administratively without any money having moved &mdash; there's nothing to reverse.</li>\n<li><strong>Refund</strong> when payment was genuinely captured and needs to be returned, whether fully or partially, regardless of what the order's status ends up being afterward.</li>\n<li><strong>Both together</strong> is common for a paid order that's being voided entirely &mdash; refund the payment first, then update the status to Cancelled (or Refunded, which WooCommerce sets automatically after processing a full refund through its own tools) to reflect the final state accurately.</li>\n<li><strong>Checking the order's actual payment status</strong> before choosing an action avoids the mistake of cancelling a paid order and forgetting the refund step entirely.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">Doing This Correctly</h2>\n<ol>\n<li><strong>Check whether the order was actually paid</strong> before deciding which action(s) are needed.</li>\n<li><strong>Use WooCommerce's built-in refund action</strong> on the order if money needs to be returned, rather than just changing status.</li>\n<li><strong>Cancel the order separately</strong> if it also needs to be marked as voided/not-to-be-fulfilled.</li>\n</ol>\n<p>Need help auditing order/refund handling for accuracy? See <a href=\"../../../../services/woocommerce-fix/\">WooCommerce fixes</a>.</p>",
+  "hasCode": false
+}

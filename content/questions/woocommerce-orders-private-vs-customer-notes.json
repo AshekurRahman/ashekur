@@ -1,0 +1,17 @@
+{
+  "slug": "private-vs-customer-notes",
+  "category": "woocommerce",
+  "subcategory": "orders",
+  "question": "What's the Difference Between a Private Order Note and One Sent to the Customer?",
+  "metaDescription": "Private notes are for internal staff record-keeping only; customer notes are emailed directly to the customer as an order update.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-07",
+  "dateModified": "2026-09-07",
+  "shortAnswer": "<p>A private order note is purely for internal record-keeping, visible only in the WooCommerce admin and never shown to the customer &mdash; useful for logging staff communication, a delivery issue, or a manual adjustment. A note added as a \"note to customer\" instead gets emailed directly to them as an order update, which is why the two options need to be chosen deliberately rather than interchangeably.</p>",
+  "image": {
+    "alt": "A private order note staying internal to staff, distinct from a customer note that triggers an email directly to the buyer",
+    "prompt": "Create a clean, professional technical illustration of two note types on an order: one staying within an internal admin panel, the other flowing out as an email to a customer icon. Dark navy background, indigo and teal accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"how-it-works\">How the Two Note Types Work</h2>\n<p>Both note types appear in the same order notes timeline within WooCommerce admin, making them easy to add without much friction, but the dropdown selector when adding a note determines whether it stays private or gets emailed. Choosing \"Note to customer\" triggers an actual email send using the store's configured email settings, while \"Private note\" simply logs the entry without any customer-facing action.</p>\n\n<h2 id=\"common-causes\">Getting This Right Matters</h2>\n<ul>\n<li><strong>Accidentally sending an internal note to the customer</strong> (choosing the wrong dropdown option) can expose information never meant to be customer-facing &mdash; internal discussion about a fraud concern, a pricing error, or staff-only context.</li>\n<li><strong>Forgetting to notify a customer</strong> when a genuine update was intended, by leaving a note private when it should have been sent, leaving the customer uninformed about something they were expecting to hear about.</li>\n<li><strong>Customer notes are sent using the store's default email styling,</strong> so the message should be written with that context in mind, as a genuine customer-facing communication, not an internal shorthand note.</li>\n<li><strong>System-generated notes</strong> (automatic status change logs, plugin activity) are typically private by default, distinct from manually added notes.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">Using Notes Correctly</h2>\n<ol>\n<li><strong>Default to private</strong> for internal record-keeping, staff communication, or anything not meant for the customer.</li>\n<li><strong>Deliberately choose \"Note to customer\"</strong> only when an actual customer-facing update is intended, writing it in appropriately professional, clear language.</li>\n<li><strong>Double-check the dropdown selection</strong> before submitting, especially when adding a note quickly.</li>\n</ol>\n<p>Need order communication workflows set up properly for your team? See <a href=\"../../../../services/woocommerce-fix/\">WooCommerce fixes</a>.</p>",
+  "hasCode": false
+}

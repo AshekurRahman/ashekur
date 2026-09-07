@@ -1,0 +1,17 @@
+{
+  "slug": "edit-items-after-payment",
+  "category": "woocommerce",
+  "subcategory": "orders",
+  "question": "Can I Edit an Order's Items After Payment Has Been Made?",
+  "metaDescription": "Only while the order is still Pending or On hold — once it's Processing or Completed, WooCommerce locks editing to protect the payment record.",
+  "readTime": "3 min read",
+  "datePublished": "2026-09-07",
+  "dateModified": "2026-09-07",
+  "shortAnswer": "<p>WooCommerce only allows editing an order's line items while it's in Pending payment or On hold status &mdash; once an order moves to Processing or Completed (meaning payment has been captured), the item-editing controls in admin are locked, since changing items on an already-charged order would create a mismatch between what was actually paid for and what the order record shows.</p>",
+  "image": {
+    "alt": "Order line items editable while payment is still pending, then locked once the order moves to a paid status",
+    "prompt": "Create a clean, professional technical illustration of an order's line items shown as editable in an early stage, then locked with a padlock icon once payment is captured. Dark navy background, red and indigo accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"why-this-happens\">Why This Restriction Exists</h2>\n<p>Once a customer has been charged a specific amount for specific items, silently changing those items afterward would break the connection between what was actually paid and what the order record represents, creating accounting and dispute-risk problems. WooCommerce's lock on editing paid orders is a deliberate safeguard against exactly that kind of mismatch, not an arbitrary limitation.</p>\n\n<h2 id=\"common-causes\">What to Do Instead</h2>\n<ul>\n<li><strong>Adding a refund for removed items</strong> is the correct way to handle removing something from a paid order &mdash; refund the specific amount, and add an order note explaining the adjustment, rather than trying to force an item-level edit.</li>\n<li><strong>Creating a new order for additional items</strong> a customer wants to add after their original order was already paid, rather than trying to append items to the existing paid order.</li>\n<li><strong>Using order notes to document any manual adjustment</strong> made outside the standard editing flow, so there's a clear record of what changed and why, even if the line items themselves can't be directly edited.</li>\n<li><strong>A custom development solution</strong> exists for stores with a genuine, recurring need to modify paid orders (some subscription or B2B account-management scenarios), but this needs careful handling of the accounting implications, not a simple settings change.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">Handling a Post-Payment Change Request</h2>\n<ol>\n<li><strong>Process a partial refund</strong> for anything being removed from the order.</li>\n<li><strong>Create a separate new order</strong> for anything being added.</li>\n<li><strong>Document the change clearly</strong> in order notes on both records for a clean audit trail.</li>\n</ol>\n<p>Need a custom order-modification workflow for a specific business need? See <a href=\"../../../../services/woocommerce-development/\">custom WooCommerce development</a>.</p>",
+  "hasCode": false
+}

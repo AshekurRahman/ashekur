@@ -1,0 +1,17 @@
+{
+  "slug": "add-tracking-number",
+  "category": "woocommerce",
+  "subcategory": "orders",
+  "question": "How Do I Add a Shipment Tracking Number to an Order?",
+  "metaDescription": "Not built into WooCommerce core — a dedicated shipment tracking plugin adds the field and automatically includes it in customer notification emails.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-07",
+  "dateModified": "2026-09-07",
+  "shortAnswer": "<p>WooCommerce core doesn't include a tracking number field by default &mdash; this needs a dedicated shipment tracking plugin (several free and premium options exist), which adds a tracking number and carrier field to each order, automatically includes a tracking link in the customer's shipping notification email, and often supports bulk tracking entry for stores processing many shipments at once.</p>",
+  "image": {
+    "alt": "A shipment tracking number and carrier added to an order, automatically included in the customer's shipping notification email",
+    "prompt": "Create a clean, professional technical illustration of a tracking number field attached to an order, flowing into a customer email with a tracking link included. Dark navy background, indigo and teal accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"why-this-happens\">Why This Needs a Plugin</h2>\n<p>Shipment tracking is inherently tied to whichever carrier or fulfillment method a specific store uses, and WooCommerce core deliberately stays carrier-agnostic rather than building in support for any specific tracking system. A dedicated tracking plugin fills this gap, typically supporting a wide range of common carriers with pre-built tracking URL formats, plus the ability to add a custom carrier if needed.</p>\n\n<h2 id=\"common-causes\">What to Look For in a Tracking Plugin</h2>\n<ul>\n<li><strong>Automatic inclusion in the shipping/completed order email,</strong> so customers get the tracking link without any extra manual step beyond entering it on the order.</li>\n<li><strong>Support for the specific carriers actually used</strong> by the store, or an easy way to add a custom carrier with its own tracking URL format if using a less common one.</li>\n<li><strong>Bulk entry support</strong> if the store processes many shipments daily, since entering tracking numbers one order at a time doesn't scale well for higher-volume stores.</li>\n<li><strong>Customer-facing tracking display</strong> in My Account order history, letting customers check status without needing to search back through email.</li>\n<li><strong>Integration with a fulfillment or shipping label service,</strong> if one is in use, which can sometimes auto-populate tracking numbers directly rather than requiring manual entry at all.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">Setting This Up</h2>\n<ol>\n<li><strong>Choose a shipment tracking plugin</strong> matching the store's carriers and volume needs.</li>\n<li><strong>Confirm tracking links appear correctly</strong> in customer emails and My Account after adding a test tracking number.</li>\n<li><strong>Consider a fulfillment integration</strong> that can auto-populate tracking if manual entry becomes a bottleneck at higher order volumes.</li>\n</ol>\n<p>Need shipment tracking integrated with your specific fulfillment process? See <a href=\"../../../../services/woocommerce-development/\">custom WooCommerce development</a>.</p>",
+  "hasCode": false
+}
