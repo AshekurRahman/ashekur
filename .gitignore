@@ -1,0 +1,4 @@
+# Local server secrets — never committed. Copy the .example.php file next
+# to it on the live server (via FTP/cPanel File Manager, not git) and fill
+# in real values there. See assets/php/inc/local-secrets.example.php.
+assets/php/inc/local-secrets.php
