@@ -1,0 +1,17 @@
+{
+  "slug": "early-renewal",
+  "category": "woocommerce",
+  "subcategory": "subscriptions",
+  "question": "Can a Customer Renew Their WooCommerce Subscription Early?",
+  "metaDescription": "Early renewal lets a customer pay before their next due date and pushes the whole billing schedule forward — here's how it works and when to enable it.",
+  "readTime": "3 min read",
+  "datePublished": "2026-09-10",
+  "dateModified": "2026-09-10",
+  "shortAnswer": "<p>Yes, if early renewal is enabled on the product (Product data &rarr; Subscription &rarr; Allow Early Renewal). A customer can then pay for the next period before it's actually due, and the subscription's whole schedule shifts forward from that new payment date &mdash; it doesn't just add a second charge on top of the existing schedule.</p>",
+  "image": {
+    "alt": "A subscription billing schedule shifting forward after an early renewal payment",
+    "prompt": "Create a clean, professional technical illustration of a billing timeline with a payment icon appearing before its expected marker, and the rest of the timeline's markers shifting to align with the new earlier date. Dark navy background, indigo and green accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"how-it-works\">How It Works</h2>\n<p>With early renewal enabled, a customer sees a \"Renew Now\" option in My Account before their subscription's actual due date. Paying through it processes a normal renewal order immediately and recalculates the next payment date from that new payment, rather than from the original schedule &mdash; the subscription effectively shifts forward rather than stacking an extra period on top.</p>\n\n<h2 id=\"common-causes\">Why Stores Use It</h2>\n<ul>\n<li><strong>Customers who want to \"lock in\" before a known upcoming price increase,</strong> paying at the current rate before it changes.</li>\n<li><strong>Gift or budget-planning purposes,</strong> where a customer wants to pay ahead of a specific date for their own reasons (before travel, before a budget cycle closes, and so on).</li>\n<li><strong>Reducing failed-renewal risk</strong> for customers who know their card details are about to change and want to get ahead of it manually.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">Things to Check</h2>\n<ol>\n<li><strong>Confirm early renewal is enabled</strong> on the specific product (or variation) if the option isn't showing up for customers who expect it.</li>\n<li><strong>Test the schedule shift explicitly</strong> before relying on it &mdash; renew early on a test subscription and confirm the next payment date moved correctly rather than a duplicate charge appearing on the original date too.</li>\n<li><strong>Consider whether early renewal fits products with a synced billing date</strong> (see subscription syncing) &mdash; the two features can interact in ways worth testing together, since a synced date might not shift the same way an unsynced one does.</li>\n<li><strong>Decide if a proration discount should apply</strong> for renewing early, if the intent is a smaller reward for paying ahead rather than the full recurring price &mdash; that's not automatic and needs custom logic if wanted.</li>\n</ol>\n<p>See <a href=\"../../../../services/woocommerce-development/\">custom WooCommerce development</a> for early-renewal incentives or discounts beyond what the built-in feature supports.</p>",
+  "hasCode": false
+}

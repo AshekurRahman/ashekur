@@ -1,0 +1,17 @@
+{
+  "slug": "revenue-reports",
+  "category": "woocommerce",
+  "subcategory": "subscriptions",
+  "question": "How Do I See Subscription Revenue Reports in WooCommerce?",
+  "metaDescription": "WooCommerce Subscriptions adds its own reports for renewal revenue, signups and retention — here's where to find them and what each one actually shows.",
+  "readTime": "3 min read",
+  "datePublished": "2026-09-10",
+  "dateModified": "2026-09-10",
+  "shortAnswer": "<p>WooCommerce Subscriptions adds dedicated reports under WooCommerce &rarr; Analytics (or the older Reports screen, depending on version), covering signups, renewals, and retention over a chosen date range &mdash; separate from the regular order/revenue reports, which don't distinguish a subscription renewal from a one-time sale.</p>",
+  "image": {
+    "alt": "A dashboard chart showing subscription signups and renewal revenue trending over time",
+    "prompt": "Create a clean, professional technical illustration of a simple line and bar chart combination showing an upward trend, with a small recurring-cycle icon marking the data as subscription-specific. Dark navy background, indigo and green accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"how-it-works\">Where to Find Them</h2>\n<p>Look under WooCommerce &rarr; Analytics &rarr; Subscriptions (or Reports &rarr; Subscriptions on older setups). The dedicated reports break out signups, renewals, and cancellations as distinct events, and calculate recurring-revenue figures specifically &mdash; something the regular WooCommerce order reports don't do, since to them a renewal order just looks like any other completed order.</p>\n\n<h2 id=\"common-causes\">What Each Report Actually Shows</h2>\n<ul>\n<li><strong>Signups</strong> &mdash; new subscriptions started in the selected period, useful for tracking acquisition trends separate from renewal revenue.</li>\n<li><strong>Renewals</strong> &mdash; recurring revenue collected in the period, distinguishing it from one-time purchase revenue mixed into it.</li>\n<li><strong>Cancellations and switches</strong> &mdash; useful for tracking churn and understanding whether customers are downgrading, upgrading, or leaving entirely.</li>\n<li><strong>Retention/renewal rate</strong> &mdash; the proportion of subscriptions that successfully renew versus those that fail or get cancelled, a core health metric for a subscription business.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">Getting More Out of It</h2>\n<ol>\n<li><strong>Use these reports instead of the regular order reports</strong> when the question is specifically about subscription health &mdash; mixing renewal revenue into general sales figures makes trends harder to read accurately.</li>\n<li><strong>Export the underlying data</strong> if a metric not directly shown (like revenue per specific product tier) needs its own custom breakdown, since the built-in reports cover the common cases but not every possible cut of the data.</li>\n<li><strong>For metrics beyond what's built in</strong> &mdash; cohort retention curves, lifetime value by acquisition channel, and similar &mdash; that typically needs either a dedicated analytics plugin or a custom reporting build against the REST API or database.</li>\n</ol>\n<p>See <a href=\"../../../../services/woocommerce-development/\">custom WooCommerce development</a> for subscription analytics beyond what the built-in reports cover.</p>",
+  "hasCode": false
+}

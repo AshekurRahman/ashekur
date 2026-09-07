@@ -1,0 +1,17 @@
+{
+  "slug": "shipping-cost-changed",
+  "category": "woocommerce",
+  "subcategory": "subscriptions",
+  "question": "Why Did My Subscription's Shipping Cost Change Between Renewals?",
+  "metaDescription": "Shipping is recalculated fresh on every renewal, not locked in at signup — here's why the amount can shift, and when that points to a real problem.",
+  "readTime": "3 min read",
+  "datePublished": "2026-09-10",
+  "dateModified": "2026-09-10",
+  "shortAnswer": "<p>Like tax, shipping is recalculated on every renewal order based on the shipping zones, methods, and rates currently configured on the store, plus the customer's current shipping address &mdash; it isn't locked in from the original order. If shipping rates changed, the customer's address changed, or the store's shipping zone configuration was edited, the renewal's shipping line can legitimately differ from previous charges.</p>",
+  "image": {
+    "alt": "A shipping cost line item recalculating differently on a later subscription renewal order",
+    "prompt": "Create a clean, professional technical illustration of a shipping/delivery box icon connected to two separate order receipts on a timeline, each showing a slightly different cost figure represented abstractly. Dark navy background, indigo and teal accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"why-this-happens\">Why This Happens</h2>\n<p>Each renewal order runs through WooCommerce's normal shipping calculation at the time it's created, the same as tax, using whatever zones and rates are active then and the customer's currently saved shipping address. Nothing about a subscription's shipping cost is fixed at signup and carried forward unchanged.</p>\n\n<h2 id=\"common-causes\">Common Causes</h2>\n<ul>\n<li><strong>A genuine shipping rate or zone change</strong> made on the store's side since the last renewal.</li>\n<li><strong>The customer's shipping address changed,</strong> moving them into a different shipping zone with different rates.</li>\n<li><strong>Free-shipping thresholds tied to order total,</strong> if the subscription's price changed (a price increase, a coupon expiring) and that pushed the order above or below a free-shipping cutoff.</li>\n<li><strong>A shipping plugin or carrier-rate integration updating its own rates independently</strong> of anything changed directly in WooCommerce settings.</li>\n<li><strong>Product weight or dimensions changed</strong> if the subscription includes a physical product and its shipping-relevant details were edited.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">How to Fix It</h2>\n<ol>\n<li><strong>Compare shipping zone/rate settings at each renewal's date</strong> against what's configured now, to confirm whether the change is expected.</li>\n<li><strong>Confirm the customer's saved shipping address</strong> matches what they expect &mdash; an address change explains a shipping difference that otherwise looks like an error.</li>\n<li><strong>Check any free-shipping threshold logic</strong> if the subscription's total changed for another reason (coupon expiry, price increase) and shipping shifted as a side effect.</li>\n<li><strong>For a live carrier-rate integration,</strong> check that service's own logs for the rate actually returned on the renewal in question.</li>\n</ol>\n<p>See <a href=\"../../../../services/woocommerce-fix/\">WooCommerce fixes</a> if shipping calculations on renewals need a proper audit against your actual shipping policy.</p>",
+  "hasCode": false
+}

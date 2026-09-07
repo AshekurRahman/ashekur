@@ -1,0 +1,17 @@
+{
+  "slug": "multisite-compatibility",
+  "category": "woocommerce",
+  "subcategory": "subscriptions",
+  "question": "Does WooCommerce Subscriptions Work on a WordPress Multisite Network?",
+  "metaDescription": "WooCommerce Subscriptions works on multisite, but each site's subscriptions, scheduler and payment gateway setup stay fully independent — here's what to know.",
+  "readTime": "3 min read",
+  "datePublished": "2026-09-10",
+  "dateModified": "2026-09-10",
+  "shortAnswer": "<p>Yes, WooCommerce Subscriptions is compatible with WordPress Multisite, but there's no shared or network-wide subscription pool &mdash; each site in the network runs its own completely independent WooCommerce install, subscriptions, payment gateway configuration, and scheduled renewal actions, just as if they were separate installs entirely.</p>",
+  "image": {
+    "alt": "Multiple independent WordPress sites in a network, each with its own separate subscription data",
+    "prompt": "Create a clean, professional technical illustration of several small site icons arranged under one network umbrella icon, each site connected to its own separate, self-contained subscription/database icon rather than a shared one. Dark navy background, indigo and teal accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"how-it-works\">How It Works</h2>\n<p>WordPress Multisite shares core files and, optionally, plugins and themes across a network, but each site's database tables (and therefore its WooCommerce orders, products, and subscriptions) stay separate by default. WooCommerce Subscriptions activated network-wide simply means the plugin is available to every site &mdash; it doesn't create any shared subscription data or cross-site billing relationship between them.</p>\n\n<h2 id=\"common-causes\">What This Means in Practice</h2>\n<ul>\n<li><strong>Each site needs its own payment gateway configuration,</strong> API keys included &mdash; nothing is inherited network-wide.</li>\n<li><strong>Action Scheduler runs independently per site,</strong> so renewal scheduling on one site has no bearing on another's.</li>\n<li><strong>A customer with accounts on multiple sites in the network</strong> has entirely separate subscriptions on each &mdash; there's no built-in concept of one subscription spanning multiple sites.</li>\n<li><strong>License and plugin updates</strong> for WooCommerce Subscriptions typically still need managing per-site if each site has its own active license key, depending on how the network is licensed.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">Things Worth Confirming</h2>\n<ol>\n<li><strong>Test the full checkout and renewal flow on each individual site</strong> in the network rather than assuming a working setup on one site guarantees the others work the same way.</li>\n<li><strong>Check performance implications</strong> if many sites in the network run active subscriptions &mdash; each one's scheduled actions add to the same shared server resources, even though the data itself is separate.</li>\n<li><strong>For a genuine cross-site subscription need</strong> (one payment granting access across multiple sites in the network), that's not supported out of the box and requires custom development connecting the sites explicitly.</li>\n</ol>\n<p>See <a href=\"../../../../services/woocommerce-development/\">custom WooCommerce development</a> for a multisite setup with subscription logic that needs to work across more than one site in the network.</p>",
+  "hasCode": false
+}
