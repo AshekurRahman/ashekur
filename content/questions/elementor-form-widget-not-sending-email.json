@@ -1,0 +1,16 @@
+{
+  "slug": "form-widget-not-sending-email",
+  "category": "elementor",
+  "question": "Why Isn't My Elementor Form Sending Email Notifications?",
+  "metaDescription": "Usually a server-level email deliverability issue (not Elementor itself) — check the form's Actions After Submit and set up proper SMTP sending.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-08",
+  "dateModified": "2026-09-08",
+  "shortAnswer": "<p>The Elementor Form widget submitting successfully but not delivering the expected email is most often a server-level email deliverability problem rather than a form configuration issue, since WordPress's default mail sending method is frequently flagged as spam or blocked outright by many hosts &mdash; a proper SMTP sending plugin, along with confirming the form's \"Email\" action is actually enabled, resolves the great majority of cases.</p>",
+  "image": {
+    "alt": "A form submission succeeding but its email notification failing to deliver because of a server-level deliverability issue",
+    "prompt": "Create a clean, professional technical illustration of a submitted form's confirmation message reaching the visitor, but its notification email failing partway through delivery. Dark navy background, red and indigo accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"why-this-happens\">Why This Happens</h2>\n<p>WordPress's default mail function relies on the server's own mail configuration, which many hosts either don't properly configure for reliable outbound delivery or which gets flagged as spam by receiving mail servers due to missing authentication (SPF, DKIM). This is a deliverability issue independent of Elementor itself &mdash; the form widget correctly triggers the send, but the actual email never reliably arrives.</p>\n\n<h2 id=\"common-causes\">Common Causes</h2>\n<ul>\n<li><strong>No SMTP plugin configured,</strong> leaving WordPress to rely on its unreliable default mail sending method.</li>\n<li><strong>The Email action missing or misconfigured</strong> in the form widget's Actions After Submit settings &mdash; this needs to be explicitly added, it isn't automatic.</li>\n<li><strong>The notification email landing in spam</strong> due to missing SPF/DKIM authentication for the sending domain.</li>\n<li><strong>A typo in the recipient email address</strong> configured in the form's Email action settings.</li>\n<li><strong>A conflicting security or firewall plugin</strong> blocking outbound mail-related requests at the server level.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">How to Fix It</h2>\n<ol>\n<li><strong>Confirm the Email action is added and correctly configured</strong> in the form's Actions After Submit settings, including the recipient address.</li>\n<li><strong>Install and configure a proper SMTP sending plugin,</strong> using a real transactional email service rather than the server's default method.</li>\n<li><strong>Check the spam folder</strong> and set up SPF/DKIM records for the sending domain.</li>\n<li><strong>Review the form's submission log</strong> (if available) to confirm submissions are actually being received server-side.</li>\n</ol>\n<p>Need form email delivery diagnosed and fixed properly? See <a href=\"../../../services/elementor-fix/\">Elementor bug fix</a>.</p>",
+  "hasCode": false
+}

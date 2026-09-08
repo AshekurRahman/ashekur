@@ -1,0 +1,16 @@
+{
+  "slug": "popup-builder-basics",
+  "category": "elementor",
+  "question": "How Do Elementor Popups Work and When Do They Display?",
+  "metaDescription": "A Pro feature: design a popup visually, then set triggers (time delay, exit intent, scroll) and conditions controlling exactly where it appears.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-08",
+  "dateModified": "2026-09-08",
+  "shortAnswer": "<p>Elementor's Popup Builder (an Elementor Pro feature) lets you design a popup visually using the same editor as regular pages, then separately configure when it should trigger &mdash; on page load after a delay, on exit intent, after scrolling a certain distance, or on a click &mdash; and where it should appear, using the same display-condition system as Theme Builder templates.</p>",
+  "image": {
+    "alt": "An Elementor popup designed visually and configured to trigger on specific conditions like exit intent, scroll depth, or a time delay",
+    "prompt": "Create a clean, professional technical illustration of a popup overlay appearing over a webpage based on a specific trigger condition. Dark navy background, indigo and teal accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"how-it-works\">How Popups Are Built and Triggered</h2>\n<p>A popup starts as its own template type under Templates &rarr; Popups, designed with the regular Elementor editor including any widgets, including the Form widget for capturing signups. Separately from the design, the popup's Settings panel controls its triggers (what causes it to appear) and its advanced rules (frequency, delay before it can reappear for the same visitor), while its display conditions control which pages or post types it's eligible to show on at all.</p>\n\n<h2 id=\"common-causes\">Common Trigger and Timing Options</h2>\n<ul>\n<li><strong>On page load,</strong> either immediately or after a configurable time delay, common for newsletter signup offers.</li>\n<li><strong>On exit intent,</strong> detecting when a visitor's cursor moves toward closing the tab or browser, often used for last-chance offers.</li>\n<li><strong>After scrolling a set distance</strong> down the page, useful for showing an offer once a visitor has engaged with content.</li>\n<li><strong>On click,</strong> triggered by a specific button or link elsewhere on the page rather than automatically.</li>\n<li><strong>Frequency and cookie-based rules</strong> prevent the same popup from reappearing too often for a visitor who already dismissed or converted on it.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">Setting Up a Popup</h2>\n<ol>\n<li><strong>Create a new popup template</strong> under Templates &rarr; Popups and design it visually.</li>\n<li><strong>Configure the trigger and advanced rules</strong> in the popup's settings to match the intended behavior.</li>\n<li><strong>Set display conditions</strong> to control exactly which pages the popup is eligible to appear on.</li>\n<li><strong>Test across devices,</strong> since a poorly timed popup can hurt mobile experience and search rankings if it's overly intrusive.</li>\n</ol>\n<p>Need a properly configured popup strategy set up? See <a href=\"../../../services/elementor-customization/\">Elementor customization</a>.</p>",
+  "hasCode": false
+}

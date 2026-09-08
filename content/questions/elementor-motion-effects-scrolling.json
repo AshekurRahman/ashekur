@@ -1,0 +1,16 @@
+{
+  "slug": "motion-effects-scrolling",
+  "category": "elementor",
+  "question": "What Do Elementor's Motion Effects and Scrolling Settings Do?",
+  "metaDescription": "Pro's Motion Effects add scroll-based transforms, entrance animations and mouse-tracking effects to individual elements through the Advanced tab.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-08",
+  "dateModified": "2026-09-08",
+  "shortAnswer": "<p>Motion Effects, found in an element's Advanced tab in Elementor Pro, add scroll-based and interaction-based animation to individual elements &mdash; scrolling effects (parallax-style vertical movement, rotation, or opacity changes tied to scroll position), entrance animations (fading or sliding in as the element scrolls into view), and mouse-track effects that respond to cursor movement, layered on top of a static design.</p>",
+  "image": {
+    "alt": "An element animating based on scroll position or mouse movement through Elementor Pro's Motion Effects settings",
+    "prompt": "Create a clean, professional technical illustration of a page element transforming and animating in response to scrolling and cursor movement. Dark navy background, indigo and teal accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"how-it-works\">How Motion Effects Are Applied</h2>\n<p>Motion Effects live under an element's Advanced tab and apply purely visually, without affecting the underlying layout or content structure. Scrolling effects tie a transformation to how far the page has been scrolled, entrance animations trigger once when the element first enters the viewport, and mouse-track effects respond continuously to cursor position while it's within or near the element.</p>\n\n<h2 id=\"common-causes\">Common Motion Effect Types</h2>\n<ul>\n<li><strong>Scrolling effects</strong> (vertical/horizontal scroll, transparency, blur, rotate, scale) creating parallax-style movement tied directly to scroll position.</li>\n<li><strong>Entrance animations,</strong> triggering a one-time fade, slide, or zoom effect as the element scrolls into the visible viewport, commonly used to add polish to landing pages.</li>\n<li><strong>Mouse track effects,</strong> subtly shifting an element's position or rotation based on cursor movement, mostly used for decorative visual interest.</li>\n<li><strong>Sticky positioning,</strong> a related Advanced tab setting keeping an element fixed in place as the page scrolls past it, often used for headers or call-to-action sidebars.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">Using Motion Effects Well</h2>\n<ol>\n<li><strong>Apply effects selectively,</strong> since overusing animation across many elements on one page can feel distracting rather than polished.</li>\n<li><strong>Test performance impact,</strong> particularly scroll-based effects, on lower-powered devices before finalizing.</li>\n<li><strong>Preview across breakpoints,</strong> since some effects may need to be disabled on mobile where they don't translate as smoothly.</li>\n</ol>\n<p>Need tasteful animation and motion effects added to your site? See <a href=\"../../../services/elementor-customization/\">Elementor customization</a>.</p>",
+  "hasCode": false
+}

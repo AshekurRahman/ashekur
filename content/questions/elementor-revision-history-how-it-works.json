@@ -1,0 +1,16 @@
+{
+  "slug": "revision-history-how-it-works",
+  "category": "elementor",
+  "question": "How Does Elementor's Revision History Work?",
+  "metaDescription": "Elementor saves its own autosave and revision snapshots per page, browsable and restorable from the editor's History panel, separate from WordPress's.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-08",
+  "dateModified": "2026-09-08",
+  "shortAnswer": "<p>Elementor keeps its own revision system, separate from WordPress's native post revisions, automatically saving periodic snapshots (and an autosave) of a page's design as you work. These are browsable and individually restorable through the editor's History panel, letting you step back to an earlier version of the design if a recent change needs undoing beyond what a simple undo/redo covers.</p>",
+  "image": {
+    "alt": "Elementor's own revision history panel storing browsable design snapshots separate from WordPress's native post revisions",
+    "prompt": "Create a clean, professional technical illustration of a timeline of saved design snapshots that can be browsed and restored. Dark navy background, indigo and amber accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"how-it-works\">How Elementor's Revisions Differ From WordPress's</h2>\n<p>WordPress's native revision system tracks changes to a post's raw content, while Elementor maintains its own parallel history specific to the visual design built with it, accessible from within the editor itself rather than the standard WordPress revisions panel. Elementor also autosaves periodically as you work, providing a safety net distinct from manually saved revisions.</p>\n\n<h2 id=\"common-causes\">What's Actually Stored</h2>\n<ul>\n<li><strong>Manual revisions,</strong> created each time the page is saved or updated, building a chronological history of deliberate save points.</li>\n<li><strong>Autosaves,</strong> created automatically at intervals while editing, useful for recovering unsaved work after an unexpected editor crash or connection loss.</li>\n<li><strong>A configurable revision limit</strong> (adjustable via a constant in <code>wp-config.php</code>, same mechanism WordPress itself uses for post revisions) controlling how many historical versions are retained before older ones are cleared out.</li>\n<li><strong>Revisions are page-specific,</strong> not shared across the whole site &mdash; each page's design history is tracked independently.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">Using Revision History</h2>\n<ol>\n<li><strong>Open the History icon</strong> in the editor's left panel to view available revisions and autosaves.</li>\n<li><strong>Preview a specific revision</strong> before restoring it, confirming it's actually the version wanted.</li>\n<li><strong>Restore the chosen revision,</strong> then save again to make it the current active version.</li>\n<li><strong>Adjust the revision limit</strong> in <code>wp-config.php</code> if more or fewer historical versions should be retained.</li>\n</ol>\n<p>Need help recovering a previous design or managing revisions? See <a href=\"../../../services/elementor-fix/\">Elementor bug fix</a>.</p>",
+  "hasCode": true
+}

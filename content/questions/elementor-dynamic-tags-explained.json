@@ -1,0 +1,16 @@
+{
+  "slug": "dynamic-tags-explained",
+  "category": "elementor",
+  "question": "What Are Elementor Dynamic Tags and What Are They For?",
+  "metaDescription": "A Pro feature pulling live values (post title, featured image, custom fields, product price) into a design instead of hardcoding static content.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-08",
+  "dateModified": "2026-09-08",
+  "shortAnswer": "<p>Dynamic Tags (an Elementor Pro feature) let a widget's content pull from a live data source &mdash; the current post's title, its featured image, a custom field value, or a WooCommerce product's price &mdash; instead of typing static text or uploading a fixed image directly into the widget. This is what makes Theme Builder templates actually work, since the same single template needs to display different, correct content for whichever specific post or product it's rendering.</p>",
+  "image": {
+    "alt": "A widget pulling live content through a dynamic tag instead of using static, hardcoded text or images",
+    "prompt": "Create a clean, professional technical illustration of a widget connected to a live data source feeding it dynamic content rather than fixed text. Dark navy background, indigo and teal accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"how-it-works\">Why Dynamic Tags Matter</h2>\n<p>A regular widget's content is fixed &mdash; typed or uploaded once, it stays the same everywhere that widget instance appears. A single template designed for \"all blog posts\" obviously can't use fixed content for the post title or featured image, since each post has its own. Dynamic Tags solve this by binding a field to a live source instead, so the same template automatically displays the correct title, image, or custom field value for whichever specific post is actually being viewed.</p>\n\n<h2 id=\"common-causes\">Common Dynamic Tag Sources</h2>\n<ul>\n<li><strong>Post/page fields</strong> like title, excerpt, featured image, author, and publish date, the most commonly used tags for single templates.</li>\n<li><strong>Custom fields,</strong> pulling values from ACF or native WordPress custom fields directly into a design without manual re-entry.</li>\n<li><strong>WooCommerce product data</strong> (price, SKU, stock status, add-to-cart button) for building custom single-product templates.</li>\n<li><strong>Site-wide data</strong> like the site logo, tagline, or a global custom field value, useful in header/footer templates.</li>\n<li><strong>Query-based dynamic content</strong> for archive templates, controlling how the loop pulls and displays each item's data.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">Using Dynamic Tags</h2>\n<ol>\n<li><strong>Click the small dynamic tag icon</strong> next to a supporting field (not every field supports dynamic tags) instead of typing static content.</li>\n<li><strong>Choose the appropriate data source</strong> from the available tag categories.</li>\n<li><strong>Use dynamic tags primarily within Theme Builder templates,</strong> where content genuinely needs to vary per post or product.</li>\n</ol>\n<p>Need dynamic, template-driven content built properly? See <a href=\"../../../services/elementor-customization/\">Elementor customization</a>.</p>",
+  "hasCode": false
+}
