@@ -252,8 +252,16 @@ function headerNav(prefix, activeIsQuestions) {
         </div>
       </div>
       <a href="${prefix}pricing/" class="nav-link">Pricing</a>
-      <a href="${prefix}portfolio/" class="nav-link">Portfolio</a>
-      <a href="${prefix}blog/" class="nav-link">Blog</a>
+      <div class="nav-item" data-dropdown>
+        <div class="nav-row">
+          <a href="${prefix}portfolio/" class="nav-link">More</a>
+          <button class="nav-caret" type="button" aria-label="More submenu" aria-expanded="false" aria-controls="navDrop-more" data-dropdown-toggle><i class="ri-arrow-down-s-line" aria-hidden="true"></i></button>
+        </div>
+        <div class="nav-panel" id="navDrop-more">
+          <a href="${prefix}portfolio/">Portfolio</a>
+          <a href="${prefix}blog/">Blog</a>
+        </div>
+      </div>
       <a href="${prefix}questions/" class="nav-link${qClass}">Questions</a>
       <a href="${prefix}contact/" class="btn btn-primary btn-sm nav-cta">Start a project</a>
     </nav>
@@ -297,8 +305,16 @@ function headerNav(prefix, activeIsQuestions) {
       </div>
     </div>
     <a href="${prefix}pricing/">Pricing</a>
-    <a href="${prefix}portfolio/">Portfolio</a>
-    <a href="${prefix}blog/">Blog</a>
+    <div class="nav-item" data-dropdown>
+      <div class="nav-row">
+        <a href="${prefix}portfolio/">More</a>
+        <button class="nav-caret" type="button" aria-label="More submenu" aria-expanded="false" aria-controls="navDropM-more" data-dropdown-toggle><i class="ri-arrow-down-s-line" aria-hidden="true"></i></button>
+      </div>
+      <div class="nav-panel" id="navDropM-more">
+        <a href="${prefix}portfolio/">Portfolio</a>
+        <a href="${prefix}blog/">Blog</a>
+      </div>
+    </div>
     <a href="${prefix}questions/">Questions</a>
     <a href="${prefix}contact/" class="btn btn-primary">Start a project</a>
   </nav>
