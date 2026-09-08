@@ -1,0 +1,17 @@
+{
+  "slug": "duplicate-product-feature",
+  "category": "woocommerce",
+  "subcategory": "products",
+  "question": "How Do I Duplicate an Existing Product to Use as a Template?",
+  "metaDescription": "Built into WooCommerce core via the \"Duplicate\" row action on the Products list — copies everything except the SKU, which must stay unique.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-08",
+  "dateModified": "2026-09-08",
+  "shortAnswer": "<p>This is a built-in feature, not something needing a plugin &mdash; hovering over a product in the Products admin list reveals a \"Duplicate\" quick action, which creates a full copy of that product (as a draft) including its description, images, attributes, and settings, ready to be adjusted and published as a new listing. The SKU is deliberately left blank on the copy, since SKUs must be unique.</p>",
+  "image": {
+    "alt": "A product being duplicated as a draft copy through a built-in quick action, ready to be customized and published as a new listing",
+    "prompt": "Create a clean, professional technical illustration of a product being copied into a new draft version through a simple duplicate action, ready for adjustment. Dark navy background, indigo and teal accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"how-it-works\">How to Duplicate a Product</h2>\n<p>On the Products admin list, hovering over any product reveals row actions including \"Duplicate\" alongside Edit and Trash &mdash; clicking it immediately creates a new draft product with (almost) everything copied from the original, ready to open and adjust before publishing.</p>\n\n<h2 id=\"common-causes\">What Carries Over and What Doesn't</h2>\n<ul>\n<li><strong>Description, short description, images, attributes, categories, and most settings</strong> all copy over directly, making this genuinely useful as a starting template for a similar new product.</li>\n<li><strong>The SKU is intentionally left blank</strong> on the duplicate, since SKUs must be unique and copying it directly would create a conflict &mdash; a new SKU needs to be manually assigned.</li>\n<li><strong>Reviews and sales/order history</strong> don't carry over, since the duplicate is a genuinely new, separate product with no history of its own.</li>\n<li><strong>The new product is created as a Draft,</strong> not automatically published, giving a chance to review and adjust everything (title, price, images, SKU) before it goes live.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">Using This Feature Well</h2>\n<ol>\n<li><strong>Use Duplicate as a starting point</strong> for a new product genuinely similar to an existing one, saving setup time.</li>\n<li><strong>Always assign a new, unique SKU</strong> to the duplicate before publishing.</li>\n<li><strong>Review every field carefully</strong> before publishing, since it's easy to overlook something that should differ from the original (a unique description detail, a different price).</li>\n</ol>\n<p>Need bulk product creation from templates handled efficiently? See <a href=\"../../../../services/woocommerce-development/\">custom WooCommerce development</a>.</p>",
+  "hasCode": false
+}

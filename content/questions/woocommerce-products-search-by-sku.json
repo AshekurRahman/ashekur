@@ -1,0 +1,17 @@
+{
+  "slug": "search-by-sku",
+  "category": "woocommerce",
+  "subcategory": "products",
+  "question": "Can Customers Search for Products by SKU Instead of Just by Name?",
+  "metaDescription": "Not by default in core search — a dedicated search plugin is needed to include SKU in the fields customer-facing search actually checks.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-08",
+  "dateModified": "2026-09-08",
+  "shortAnswer": "<p>WooCommerce's default frontend search checks product title, content, and short description, but not SKU by default &mdash; a customer typing an exact SKU into the standard search box generally won't find the matching product unless a dedicated search plugin (covered in more depth for general search relevance elsewhere) is configured to include SKU as a searchable field.</p>",
+  "image": {
+    "alt": "A product SKU included as a searchable field through a dedicated search plugin, since default search doesn't check it",
+    "prompt": "Create a clean, professional technical illustration of a search query matching a product's SKU code, connected through an enhanced search configuration rather than the basic default. Dark navy background, indigo and teal accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"why-this-happens\">Why This Isn't Included by Default</h2>\n<p>WooCommerce's core search relies on WordPress's underlying search mechanism, which checks a fairly narrow set of default fields not including custom fields like SKU (which is stored as post meta, not part of the main searchable content). This is a reasonable default for a typical consumer catalog, but becomes a real limitation for B2B customers, technical products, or any audience likely to search by exact product code rather than descriptive name.</p>\n\n<h2 id=\"common-causes\">Who Actually Needs This</h2>\n<ul>\n<li><strong>B2B or wholesale customers</strong> often already know the exact SKU or part number they need and would naturally search by that, rather than browsing by descriptive product name.</li>\n<li><strong>A large, technical, or highly similar-sounding catalog</strong> (many products with overlapping names but distinct SKUs) benefits significantly from SKU search, since name-based search alone may not distinguish between very similar listings.</li>\n<li><strong>A dedicated search plugin</strong> (the same class of tool recommended for improving general search relevance) typically supports configuring which fields, including SKU, are checked, addressing this directly.</li>\n<li><strong>A smaller snippet-based fix</strong> exists too, extending the default search query to include SKU, though a full search plugin generally handles this more robustly alongside other relevance improvements.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">Enabling SKU Search</h2>\n<ol>\n<li><strong>Install a dedicated search plugin</strong> configured to include SKU among its searchable fields.</li>\n<li><strong>Test with real SKU values</strong> to confirm matching works as expected.</li>\n<li><strong>Consider this alongside broader search relevance improvements</strong> if search quality is a recurring concern for the store.</li>\n</ol>\n<p>Need SKU-inclusive search set up for your catalog? See <a href=\"../../../../services/woocommerce-development/\">custom WooCommerce development</a>.</p>",
+  "hasCode": false
+}

@@ -1,0 +1,17 @@
+{
+  "slug": "import-images-missing",
+  "category": "woocommerce",
+  "subcategory": "products",
+  "question": "Why Are Images Missing After a Product CSV Import?",
+  "metaDescription": "The importer needs a publicly accessible image URL per row — a local file path, a broken link, or a hotlink-protected source will all fail silently.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-08",
+  "dateModified": "2026-09-08",
+  "shortAnswer": "<p>WooCommerce's CSV import expects a publicly accessible URL for each product image, which it then downloads and attaches during the import process &mdash; a local file path (rather than a real URL), a broken or unreachable link, or a source server blocking hotlinking/external requests will all cause that specific image to fail silently, leaving the product imported successfully but without its picture.</p>",
+  "image": {
+    "alt": "A product CSV import failing to attach an image because the referenced URL wasn't a valid, publicly accessible link",
+    "prompt": "Create a clean, professional technical illustration of a product import process failing to fetch an image from a broken or inaccessible URL reference. Dark navy background, red and indigo accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"why-this-happens\">Why This Happens</h2>\n<p>The import process doesn't accept image files directly within the CSV &mdash; it reads a URL string from the designated image column and makes an HTTP request to fetch that image during import, attaching it to the new product if successful. Anything preventing that fetch from succeeding (a bad URL, a source that blocks the request) means the image step fails, but the rest of the product import typically still completes, producing a product with no image and no obvious error unless the import log is checked.</p>\n\n<h2 id=\"common-causes\">Common Causes</h2>\n<ul>\n<li><strong>A local file path</strong> (like <code>C:\\Images\\product1.jpg</code>) instead of a real, publicly accessible URL &mdash; the importer has no way to reach a path on your own computer.</li>\n<li><strong>A broken or expired URL,</strong> particularly if the CSV was prepared some time before the actual import and the source images moved or were deleted in the meantime.</li>\n<li><strong>Hotlink protection on the source server,</strong> blocking the automated request WooCommerce's import process makes to fetch the image, even though the URL works fine when opened directly in a browser.</li>\n<li><strong>A very large image file</strong> exceeding a server timeout or memory limit during the fetch-and-process step, particularly on a shared hosting environment with tighter resource limits.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">How to Fix It</h2>\n<ol>\n<li><strong>Confirm every image URL in the CSV is a genuine, publicly accessible link,</strong> testing a sample directly in a browser.</li>\n<li><strong>Host images somewhere without hotlink protection</strong> if that's the issue, or adjust the source server's settings to allow the import request.</li>\n<li><strong>Check the import's completion log</strong> for specific errors related to image fetching, if available.</li>\n<li><strong>Re-run the import for affected products,</strong> or manually add images to the specific products that failed.</li>\n</ol>\n<p>Need help troubleshooting a bulk import with missing data? See <a href=\"../../../../services/woocommerce-development/\">custom WooCommerce development</a>.</p>",
+  "hasCode": false
+}

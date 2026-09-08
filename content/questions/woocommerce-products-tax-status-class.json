@@ -1,0 +1,17 @@
+{
+  "slug": "tax-status-class",
+  "category": "woocommerce",
+  "subcategory": "products",
+  "question": "What Does the Tax Status and Tax Class Setting on a Product Actually Do?",
+  "metaDescription": "Tax Status decides whether a product is taxed at all; Tax Class decides which specific rate applies among the different rate categories configured.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-08",
+  "dateModified": "2026-09-08",
+  "shortAnswer": "<p>Tax Status is a simple on/off-style setting: Taxable (normal, tax applies), Shipping only (tax applies only to the shipping cost, not the product itself, an edge case for specific tax scenarios), or None (no tax at all on this product). Tax Class determines which specific rate table applies when tax is charged, letting different product types (a Reduced Rate for certain goods, a Zero Rate for exempt categories) be taxed differently within the same store based on the specific tax rules configured for each class.</p>",
+  "image": {
+    "alt": "A product's tax status determining whether it's taxed at all, and its tax class determining which specific rate table applies",
+    "prompt": "Create a clean, professional technical illustration of a product connected to a tax status toggle and a specific tax rate class, determining its final tax treatment. Dark navy background, indigo and teal accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"how-it-works\">How These Two Settings Work Together</h2>\n<p>Tax Status is checked first &mdash; if set to None, no further tax calculation happens for that product regardless of Tax Class. If Taxable (or Shipping only), the Tax Class then determines which specific rate table (Standard, Reduced Rate, Zero Rate, or any custom class defined under Settings &rarr; Tax) actually applies, since different jurisdictions often tax different categories of goods at different rates.</p>\n\n<h2 id=\"common-causes\">Common Use Cases</h2>\n<ul>\n<li><strong>Most physical products</strong> use the default Standard tax class with Taxable status, applying whatever standard rate is configured for the customer's location.</li>\n<li><strong>Certain goods taxed at a reduced or zero rate</strong> in specific jurisdictions (some food items, children's products, digital books in some regions) need a matching custom tax class configured with the correct rate.</li>\n<li><strong>Tax-exempt products</strong> (in jurisdictions or categories genuinely exempt) use Tax Status: None, rather than trying to create a zero-percent tax class for the same effect.</li>\n<li><strong>Getting a product's tax classification wrong</strong> is a genuine compliance risk, not just a minor configuration detail &mdash; incorrect tax collection can create real problems worth taking seriously, especially at scale.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">Setting This Up Correctly</h2>\n<ol>\n<li><strong>Confirm the correct tax treatment</strong> for each product category in the relevant jurisdiction(s), ideally with proper tax/accounting advice.</li>\n<li><strong>Set up any needed custom tax classes</strong> under Settings &rarr; Tax with accurate rates.</li>\n<li><strong>Assign the correct Tax Status and Tax Class</strong> to each product accordingly.</li>\n</ol>\n<p>Need help configuring tax classes correctly for your product range? See <a href=\"../../../../services/woocommerce-development/\">custom WooCommerce development</a>.</p>",
+  "hasCode": false
+}

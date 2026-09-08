@@ -1,0 +1,17 @@
+{
+  "slug": "min-max-quantity",
+  "category": "woocommerce",
+  "subcategory": "products",
+  "question": "Can I Set a Minimum or Maximum Purchase Quantity for a Specific Product?",
+  "metaDescription": "Not through core product settings — a dedicated min/max quantity plugin, or a small custom validation snippet, handles this on a per-product basis.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-08",
+  "dateModified": "2026-09-08",
+  "shortAnswer": "<p>WooCommerce core doesn't include a per-product minimum or maximum purchase quantity setting &mdash; a dedicated quantity-rules plugin, or a small custom validation snippet checking the specific product's quantity at checkout, is needed to enforce something like \"minimum 3 per order\" or \"maximum 10 per customer\" for individual products.</p>",
+  "image": {
+    "alt": "A specific product enforcing a minimum or maximum purchase quantity at checkout through custom validation rather than a core setting",
+    "prompt": "Create a clean, professional technical illustration of a quantity selector with enforced minimum and maximum boundaries for one specific product. Dark navy background, indigo and amber accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"how-it-works\">How to Implement This</h2>\n<p>A dedicated quantity-rules plugin typically adds minimum/maximum (and sometimes \"step,\" like only allowing multiples of 5) fields directly to the product editor, then enforces those rules both on the frontend quantity selector and at checkout validation. For a simpler, single-product need, a small custom snippet can achieve the same result by checking the specific product's cart quantity during checkout validation.</p>\n\n<h2 id=\"common-causes\">Why Stores Need This</h2>\n<ul>\n<li><strong>Wholesale or bulk-only products</strong> often require a minimum order quantity to make the transaction worthwhile at the offered price point.</li>\n<li><strong>Limited or high-demand items</strong> sometimes need a maximum per-order cap to prevent one customer from buying out the entire available stock, giving more customers a fair chance.</li>\n<li><strong>A product sold in fixed multiples</strong> (a case of 6, for instance) may need quantity steps enforced rather than allowing any arbitrary number.</li>\n<li><strong>This is different from a store-wide minimum order value</strong> (covered elsewhere), which restricts the total cart amount rather than a specific product's quantity.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">Setting This Up</h2>\n<ol>\n<li><strong>Use a dedicated quantity-rules plugin</strong> for a flexible, product-by-product configuration without custom code.</li>\n<li><strong>For a simpler, one-off need,</strong> a small custom validation snippet checking the specific product and enforcing the rule at checkout works too.</li>\n<li><strong>Display the rule clearly on the product page</strong> so customers understand the requirement before reaching checkout.</li>\n</ol>\n<p>Need custom quantity rules built and properly tested? See <a href=\"../../../../services/woocommerce-development/\">custom WooCommerce development</a>.</p>",
+  "hasCode": false
+}

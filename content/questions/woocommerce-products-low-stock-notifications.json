@@ -1,0 +1,17 @@
+{
+  "slug": "low-stock-notifications",
+  "category": "woocommerce",
+  "subcategory": "products",
+  "question": "How Do Low Stock Threshold Notifications Actually Work?",
+  "metaDescription": "A store-wide (or per-product) threshold triggers an admin email once stock drops below it — a one-time alert per depletion, not a running reminder.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-08",
+  "dateModified": "2026-09-08",
+  "shortAnswer": "<p>WooCommerce's low stock notification compares a product's current stock against a threshold (set store-wide under Settings &rarr; Products &rarr; Inventory, or overridden per product) and sends an admin email once stock drops to or below that number after an order reduces it &mdash; this fires once per depletion event, not as a recurring reminder, so restocking above the threshold and then depleting again would trigger a fresh notification.</p>",
+  "image": {
+    "alt": "An admin notification email triggered once stock drops below a configured threshold after an order reduces available inventory",
+    "prompt": "Create a clean, professional technical illustration of a stock counter crossing below a threshold line, triggering a single notification email to the admin. Dark navy background, indigo and amber accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"how-it-works\">How the Notification Triggers</h2>\n<p>The check happens as part of the normal stock-reduction process when an order moves to a status that reduces stock (covered elsewhere) &mdash; if the resulting stock level is at or below the configured low-stock threshold, WooCommerce sends the configured admin notification email. This is threshold-crossing logic, not a periodic check, meaning it fires at the moment of the triggering order, not on some separate schedule.</p>\n\n<h2 id=\"common-causes\">Things Worth Knowing</h2>\n<ul>\n<li><strong>The store-wide threshold applies to every stock-managed product</strong> unless a specific product has its own override set individually, useful for products needing a different reorder lead time than the general default.</li>\n<li><strong>Notification emails go to the store's configured admin email address(es),</strong> not automatically to a specific inventory manager unless that's who the admin notification email is actually set to.</li>\n<li><strong>This is a one-time alert per depletion event,</strong> not a recurring reminder &mdash; if stock stays below the threshold without further orders, no additional notification repeats indefinitely.</li>\n<li><strong>A separate \"out of stock\" notification</strong> exists distinctly from the low-stock one, firing specifically when stock reaches zero, which is a different, later threshold than the low-stock warning.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">Configuring This Well</h2>\n<ol>\n<li><strong>Set a store-wide threshold</strong> reflecting a realistic reorder lead time for the business.</li>\n<li><strong>Override the threshold per product</strong> where a specific item has meaningfully different lead times or sales velocity.</li>\n<li><strong>Confirm the notification email address</strong> actually reaches whoever manages inventory day to day.</li>\n</ol>\n<p>Need a more sophisticated inventory alerting workflow built? See <a href=\"../../../../services/woocommerce-development/\">custom WooCommerce development</a>.</p>",
+  "hasCode": false
+}

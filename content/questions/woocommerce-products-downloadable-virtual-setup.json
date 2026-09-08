@@ -4,7 +4,7 @@
   "subcategory": "products",
   "question": "How Do I Set Up a Downloadable or Virtual Product Correctly?",
   "metaDescription": "Virtual disables shipping requirements; Downloadable adds a file delivered after payment — most digital products need both checked together.",
-  "readTime": "3 min read",
+  "readTime": "2 min read",
   "datePublished": "2026-09-08",
   "dateModified": "2026-09-08",
   "shortAnswer": "<p>\"Virtual\" and \"Downloadable\" are two separate checkboxes in the product's General tab, often used together but serving different purposes: Virtual tells WooCommerce this product needs no physical shipping (removing shipping fields from checkout for orders containing only virtual items), while Downloadable adds a file upload and delivers a secure download link to the customer after payment. Most genuine digital products (an ebook, a software license) need both checked.</p>",

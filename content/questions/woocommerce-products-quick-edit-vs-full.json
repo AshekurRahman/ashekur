@@ -1,0 +1,17 @@
+{
+  "slug": "quick-edit-vs-full",
+  "category": "woocommerce",
+  "subcategory": "products",
+  "question": "What's the Difference Between Quick Edit and Editing a Product Fully?",
+  "metaDescription": "Quick Edit covers only a handful of common fields inline in the list — anything beyond price, stock and basic details still needs the full editor.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-08",
+  "dateModified": "2026-09-08",
+  "shortAnswer": "<p>Quick Edit, accessed by hovering over a product in the admin list, opens an inline panel covering a limited set of commonly changed fields &mdash; price, stock, SKU, status, and a few others &mdash; letting fast, small updates happen without leaving the list view. The full product editor covers everything Quick Edit does plus the description, images, attributes, variations, shipping data, and every other product setting, needed for anything beyond the specific fields Quick Edit exposes.</p>",
+  "image": {
+    "alt": "Quick Edit covering a limited set of common fields inline, versus the full product editor covering every available setting",
+    "prompt": "Create a clean, professional technical illustration of a small inline edit panel with a few common fields, next to a much more complete full editing interface. Dark navy background, indigo and teal accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"how-it-works\">When to Use Each</h2>\n<p>Quick Edit exists specifically for speed on small, common changes &mdash; adjusting a price, updating stock, changing status &mdash; without the overhead of loading the full product editing screen. It deliberately doesn't expose everything, since doing so would defeat its purpose as a fast, lightweight tool; anything not in its limited field set requires opening the product fully.</p>\n\n<h2 id=\"common-causes\">What's Only Available in Full Edit</h2>\n<ul>\n<li><strong>Description and short description content</strong> aren't editable via Quick Edit, requiring the full editor's content areas.</li>\n<li><strong>Images and the product gallery</strong> can only be managed in the full editor, not through Quick Edit's limited field set.</li>\n<li><strong>Attributes and variations</strong> for a variable product need the full editor's dedicated tabs, well beyond what Quick Edit's inline panel could reasonably expose.</li>\n<li><strong>Shipping-specific data</strong> (weight, dimensions, shipping class) similarly lives only in the full editor.</li>\n<li><strong>Linked products</strong> (upsells, cross-sells, grouped product associations) require the full editor's Linked Products tab.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">Choosing the Right Tool</h2>\n<ol>\n<li><strong>Use Quick Edit for fast, common field changes</strong> across one or a few products.</li>\n<li><strong>Use bulk edit (covered elsewhere) for the same common fields across many products at once.</strong></li>\n<li><strong>Use the full editor for anything beyond Quick Edit's limited scope</strong> &mdash; content, images, variations, shipping data, linked products.</li>\n</ol>\n<p>Need efficient workflows for managing a large product catalog? See <a href=\"../../../../services/woocommerce-development/\">custom WooCommerce development</a>.</p>",
+  "hasCode": false
+}

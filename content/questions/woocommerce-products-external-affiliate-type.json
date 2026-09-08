@@ -1,0 +1,17 @@
+{
+  "slug": "external-affiliate-type",
+  "category": "woocommerce",
+  "subcategory": "products",
+  "question": "What Is an External/Affiliate Product, and When Would I Use One?",
+  "metaDescription": "A listing that sends customers to buy elsewhere entirely — no checkout, no payment on your site, just a \"Buy Now\" link to an external retailer.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-08",
+  "dateModified": "2026-09-08",
+  "shortAnswer": "<p>An External/Affiliate product is a listing that never actually gets purchased on your own site &mdash; instead of a normal Add to Cart button, it shows a customizable \"Buy Now\" (or similar) button linking directly to an external URL where the actual purchase happens, commonly used for affiliate marketing (earning a commission on sales referred elsewhere) or a curated catalog pointing to products sold by other retailers.</p>",
+  "image": {
+    "alt": "An external product listing linking customers directly to an outside retailer to complete their purchase, rather than checking out on the store itself",
+    "prompt": "Create a clean, professional technical illustration of a product listing with a button linking outward to a completely separate external retailer for the actual purchase. Dark navy background, indigo and teal accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"how-it-works\">How External/Affiliate Products Work</h2>\n<p>Setting a product's type to \"External/Affiliate\" replaces the normal checkout flow with a single configurable button and URL field &mdash; no cart, no payment processing, no order created on your own site for that purchase at all. The product page can still have full descriptions, images, and reviews like any other listing, but the actual transaction happens entirely on the linked external site.</p>\n\n<h2 id=\"common-causes\">Common Use Cases</h2>\n<ul>\n<li><strong>Affiliate marketing,</strong> where the store earns a commission for referring customers to a purchase completed on a partner or marketplace site, without handling payment or fulfillment itself.</li>\n<li><strong>A curated \"gift guide\" or comparison-style catalog</strong> pointing to products actually sold by various other retailers, common for content-focused or review-oriented sites.</li>\n<li><strong>A product not yet available for direct sale</strong> on the store itself but sold through a specific partner temporarily, using this as an interim listing type.</li>\n<li><strong>Not appropriate for anything meant to be sold directly through the store,</strong> since it bypasses the store's own checkout, order tracking, and payment processing entirely.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">Setting One Up</h2>\n<ol>\n<li><strong>Set the product type to \"External/Affiliate\"</strong> in the Product data dropdown.</li>\n<li><strong>Enter the external URL</strong> and customize the button text appropriately.</li>\n<li><strong>Disclose the affiliate relationship</strong> clearly if commission-based, per applicable disclosure regulations (FTC guidelines in the US, for instance).</li>\n</ol>\n<p>Need an affiliate or referral catalog set up properly? See <a href=\"../../../../services/woocommerce-development/\">custom WooCommerce development</a>.</p>",
+  "hasCode": false
+}

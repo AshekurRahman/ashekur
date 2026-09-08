@@ -1,0 +1,17 @@
+{
+  "slug": "add-ons-personalization",
+  "category": "woocommerce",
+  "subcategory": "products",
+  "question": "How Do I Let Customers Add Custom Options to a Product?",
+  "metaDescription": "Not a core feature — a dedicated product add-ons plugin adds text fields, dropdowns and file uploads with optional per-choice price adjustments.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-08",
+  "dateModified": "2026-09-08",
+  "shortAnswer": "<p>WooCommerce core doesn't include a way to add custom text fields, dropdowns, or file uploads to an individual product for personalization &mdash; a dedicated product add-ons plugin (several well-established options exist) handles this, letting you attach custom fields to specific products with optional price adjustments per selection, and having that data flow through to the cart, order, and any relevant fulfillment display.</p>",
+  "image": {
+    "alt": "A product with a custom personalization field added through a dedicated plugin, flowing through to the order for fulfillment",
+    "prompt": "Create a clean, professional technical illustration of a product page with an added custom text field for personalization, connected through to an order record. Dark navy background, indigo and teal accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"how-it-works\">Why This Needs a Plugin</h2>\n<p>Personalization needs vary enormously between stores &mdash; a text field for engraving, a dropdown for a custom color not modeled as a full variation, a file upload for a custom design &mdash; and core WooCommerce deliberately doesn't try to anticipate every possible customization need. A dedicated add-ons plugin provides a flexible field-building interface, letting different field types be attached to specific products (or product categories) as needed.</p>\n\n<h2 id=\"common-causes\">What to Look For in an Add-Ons Plugin</h2>\n<ul>\n<li><strong>Support for the specific field types actually needed</strong> &mdash; text input, dropdown, checkbox, file upload &mdash; not every plugin supports every type equally well.</li>\n<li><strong>Price adjustment per option or per character</strong> if personalization should affect the price (an engraving surcharge, for instance), which more capable add-ons plugins support directly.</li>\n<li><strong>Clear display of the customer's input</strong> on the order screen and in confirmation emails, so fulfillment staff can actually see and act on what was requested.</li>\n<li><strong>Validation rules</strong> (character limits, required fields) to prevent incomplete or unusably long personalization input from causing fulfillment problems.</li>\n<li><strong>Compatibility with variable products,</strong> if personalization needs to combine with existing size/color variations, which not every add-ons plugin handles equally smoothly.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">Setting This Up</h2>\n<ol>\n<li><strong>Choose an add-ons plugin</strong> supporting the specific field types and pricing logic needed.</li>\n<li><strong>Configure validation rules</strong> to prevent problematic input.</li>\n<li><strong>Test the full order flow,</strong> confirming personalization data displays clearly for fulfillment.</li>\n</ol>\n<p>Need custom product personalization built and integrated properly? See <a href=\"../../../../services/woocommerce-development/\">custom WooCommerce development</a>.</p>",
+  "hasCode": false
+}

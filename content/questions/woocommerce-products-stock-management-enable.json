@@ -1,0 +1,17 @@
+{
+  "slug": "stock-management-enable",
+  "category": "woocommerce",
+  "subcategory": "products",
+  "question": "Should I Enable Stock Management for Every Product?",
+  "metaDescription": "Only for products with a genuine, finite physical quantity — a digital or made-to-order product tracking stock artificially just adds admin overhead.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-08",
+  "dateModified": "2026-09-08",
+  "shortAnswer": "<p>Stock management makes sense for products with a genuinely finite, trackable physical quantity &mdash; enabling it lets WooCommerce automatically reduce available stock as orders come in and warn or block sales once depleted. For digital products, made-to-order items, or services with no real inventory constraint, enabling stock tracking artificially just adds administrative overhead (a number to keep updated) without a corresponding real-world benefit.</p>",
+  "image": {
+    "alt": "Stock management enabled for a product with genuine finite inventory, left disabled for a digital or made-to-order item with no real stock constraint",
+    "prompt": "Create a clean, professional technical illustration of a physical inventory counter tracking stock for one product, while a digital product icon nearby has no such tracking applied. Dark navy background, indigo and teal accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"how-it-works\">Why Stock Tracking Isn't Universal</h2>\n<p>Enabling \"Manage stock?\" on a product activates quantity tracking, automatic reduction on sale, and configurable out-of-stock behavior &mdash; genuinely useful for a physical product with limited inventory, where overselling is a real risk. For products without that constraint (a downloadable file that can be \"sold\" infinitely, a made-to-order service with no fixed quantity), this tracking adds a number that needs to be kept artificially updated with no actual inventory reality behind it.</p>\n\n<h2 id=\"common-causes\">When to Enable vs. Skip It</h2>\n<ul>\n<li><strong>Physical products with real, limited inventory</strong> should have stock management enabled, to accurately reflect availability and prevent overselling.</li>\n<li><strong>Digital/downloadable products</strong> generally don't need stock tracking, since there's no physical limit to how many copies can be \"sold.\"</li>\n<li><strong>Made-to-order or service-based products</strong> similarly don't have a meaningful stock quantity, and forcing one just creates a number that needs manual maintenance without reflecting anything real.</li>\n<li><strong>A product genuinely limited by capacity</strong> (a workshop with a maximum number of seats, for instance) can reasonably use stock tracking as a capacity-limiting mechanism even though it isn't a physical item, which is a legitimate creative use of the feature.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">Deciding Per Product</h2>\n<ol>\n<li><strong>Enable stock management for genuinely finite physical inventory.</strong></li>\n<li><strong>Skip it for digital products and open-ended services</strong> with no real quantity constraint.</li>\n<li><strong>Consider using it deliberately as a capacity limiter</strong> for a service with a genuine maximum, even if not physically stocked.</li>\n</ol>\n<p>Need inventory management set up correctly across a mixed catalog? See <a href=\"../../../../services/woocommerce-development/\">custom WooCommerce development</a>.</p>",
+  "hasCode": false
+}

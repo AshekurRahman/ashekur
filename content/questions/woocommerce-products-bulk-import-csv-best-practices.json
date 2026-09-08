@@ -4,7 +4,7 @@
   "subcategory": "products",
   "question": "What's the Best Way to Bulk Import Products via CSV?",
   "metaDescription": "Test with a small batch first, use UTF-8 encoding, and map columns carefully — WooCommerce's built-in importer handles most catalogs without a plugin.",
-  "readTime": "3 min read",
+  "readTime": "2 min read",
   "datePublished": "2026-09-08",
   "dateModified": "2026-09-08",
   "shortAnswer": "<p>WooCommerce's built-in product importer (under Products &rarr; Import) handles most bulk import needs directly, without requiring a separate plugin &mdash; the practical keys to a smooth import are testing with a small batch first (5-10 products) before running the full file, using UTF-8 encoding to avoid character corruption, and carefully reviewing the column-mapping step rather than trusting automatic detection blindly.</p>",

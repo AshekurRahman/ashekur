@@ -1,0 +1,17 @@
+{
+  "slug": "related-products-shown",
+  "category": "woocommerce",
+  "subcategory": "products",
+  "question": "How Does WooCommerce Decide Which Related Products to Show?",
+  "metaDescription": "By default, it matches on shared categories and tags — not purchase history or manual curation, unless a plugin or custom code overrides this logic.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-08",
+  "dateModified": "2026-09-08",
+  "shortAnswer": "<p>By default, WooCommerce's \"Related Products\" section pulls other products sharing the same category or tag as the one being viewed, selected somewhat randomly from that matching pool &mdash; it isn't based on purchase history, view history, or any manual curation unless a plugin or custom code specifically overrides this default behavior.</p>",
+  "image": {
+    "alt": "Related products selected automatically based on shared categories or tags, rather than purchase history or manual curation",
+    "prompt": "Create a clean, professional technical illustration of a product surrounded by other products sharing the same category tag, automatically selected as related suggestions. Dark navy background, indigo and teal accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"how-it-works\">How the Default Logic Works</h2>\n<p>WooCommerce's core related products query looks at the current product's assigned categories and tags, then pulls a random selection of other published products sharing at least one of those, excluding the current product itself. This is a reasonable, low-effort default, but it doesn't account for actual purchasing patterns (\"customers who bought X also bought Y\") the way a more sophisticated recommendation system would.</p>\n\n<h2 id=\"common-causes\">Why This Sometimes Produces Odd Results</h2>\n<ul>\n<li><strong>A very broad or loosely defined category</strong> can produce related products that feel only tangentially connected, since the matching logic is purely categorical, not based on deeper product similarity or actual customer behavior.</li>\n<li><strong>A product with unique categories/tags</strong> not shared by anything else in the catalog may show no related products at all, or fall back to a broader, less relevant match.</li>\n<li><strong>Cross-sells (covered elsewhere)</strong> are a separate, manually curated mechanism &mdash; if genuinely relevant, hand-picked suggestions matter, cross-sells (or upsells) offer more control than relying on the automatic related products logic.</li>\n<li><strong>Plugins exist specifically to improve this</strong> with behavior-based recommendations (actual co-purchase data) rather than the simple category/tag matching WooCommerce ships with by default.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">Improving Related Product Suggestions</h2>\n<ol>\n<li><strong>Review category/tag structure</strong> to ensure related products logic has meaningful groupings to draw from.</li>\n<li><strong>Use manually curated cross-sells or upsells</strong> where genuine control over specific suggestions matters more than automatic matching.</li>\n<li><strong>Consider a behavior-based recommendation plugin</strong> for a more sophisticated, purchase-pattern-driven approach.</li>\n</ol>\n<p>Need smarter product recommendations built for your store? See <a href=\"../../../../services/woocommerce-development/\">custom WooCommerce development</a>.</p>",
+  "hasCode": false
+}
