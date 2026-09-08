@@ -1,0 +1,16 @@
+{
+  "slug": "gravatar-profile-pictures",
+  "category": "wordpress",
+  "question": "Why Do Commenter Profile Pictures on My Site Come From Gravatar?",
+  "metaDescription": "Gravatar (Globally Recognized Avatar) is a core WordPress integration tied to a commenter's email — it can be disabled or replaced if not wanted.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-08",
+  "dateModified": "2026-09-08",
+  "shortAnswer": "<p>Gravatar (Globally Recognized Avatar) is a service, also run by Automattic (WordPress's creator), that associates a profile picture with an email address across any Gravatar-integrated site. WordPress core has built-in support for displaying a commenter's Gravatar automatically based on the email address they submit, which is why you'll see the same avatar for someone across many different WordPress sites without them uploading anything locally.</p>",
+  "image": {
+    "alt": "A commenter's Gravatar profile picture, tied to their email address, appearing consistently across any Gravatar-integrated WordPress site",
+    "prompt": "Create a clean, professional technical illustration of one profile picture linked to an email address, appearing consistently across several different website icons. Dark navy background, indigo and teal accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"how-it-works\">How Gravatar Integration Works</h2>\n<p>When a comment is submitted, WordPress checks Gravatar's service for an avatar registered to that commenter's email address and displays it if found, falling back to a generic default icon if the email has no registered Gravatar. This happens automatically without any site-specific configuration, since it's built into WordPress core's comment display logic.</p>\n\n<h2 id=\"common-causes\">Options If This Isn't Wanted</h2>\n<ul>\n<li><strong>Disabling avatars entirely</strong> under Settings &rarr; Discussion removes this feature sitewide, showing no avatar at all next to comments.</li>\n<li><strong>Choosing a different default avatar style</strong> (also under Settings &rarr; Discussion) for commenters without a registered Gravatar, without disabling the feature for those who do have one.</li>\n<li><strong>A privacy consideration worth being aware of:</strong> checking Gravatar involves sending the commenter's email (or a hash of it) to Gravatar's servers, which is relevant to disclose in a privacy policy if the site operates under GDPR or similar regulations.</li>\n<li><strong>A plugin-based alternative avatar system</strong> exists for stores wanting locally uploaded avatars instead of relying on the external Gravatar service.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">Configuring This to Your Preference</h2>\n<ol>\n<li><strong>Review Settings &rarr; Discussion</strong> to see and adjust the current avatar configuration.</li>\n<li><strong>Disable avatars entirely</strong> if not wanted, or choose a preferred default style.</li>\n<li><strong>Update the privacy policy</strong> to disclose Gravatar's use if comments are enabled and this data sharing applies.</li>\n</ol>\n<p>Need comment/avatar behavior customized further? See <a href=\"../../../services/wordpress-bug-fix/\">WordPress bug fix</a>.</p>",
+  "hasCode": false
+}
