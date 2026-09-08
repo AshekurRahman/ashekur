@@ -1,0 +1,17 @@
+{
+  "slug": "multiple-packages-split",
+  "category": "woocommerce",
+  "subcategory": "shipping",
+  "question": "Why Did My Order Split Into Multiple Shipping Packages?",
+  "metaDescription": "Usually different shipping classes on different items, a plugin adding its own package-splitting logic, or a size/weight limit forcing a split.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-08",
+  "dateModified": "2026-09-08",
+  "shortAnswer": "<p>An order splitting into multiple shipping packages at checkout, each priced separately, is typically caused by items in the cart having different shipping classes (which some shipping configurations handle by quoting each class as its own package), a shipping or fulfillment plugin implementing its own package-splitting logic based on weight or size limits, or a multi-vendor/marketplace setup shipping each vendor's items separately.</p>",
+  "image": {
+    "alt": "A single order splitting into multiple separately priced shipping packages because of different shipping classes or a plugin's logic",
+    "prompt": "Create a clean, professional technical illustration of one order splitting into two separate shipping packages, each with its own cost. Dark navy background, red and indigo accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"why-this-happens\">Why This Happens</h2>\n<p>WooCommerce's shipping calculation can, depending on configuration and any active plugins, group cart items into separate \"packages\" rather than always treating an entire order as a single shipment &mdash; each package is then quoted its own shipping cost independently, which can noticeably increase the total shipping charge compared to what a customer might expect from a single combined shipment.</p>\n\n<h2 id=\"common-causes\">Common Causes</h2>\n<ul>\n<li><strong>Different shipping classes on different cart items,</strong> where a specific shipping method configuration quotes each class separately rather than combining them into one calculation.</li>\n<li><strong>A shipping/fulfillment plugin's own package-splitting logic,</strong> commonly based on weight or size limits that a single package can't exceed according to carrier rules.</li>\n<li><strong>A multi-vendor marketplace setup,</strong> where items from different vendors are necessarily shipped (and charged) as separate packages since they ship from different locations.</li>\n<li><strong>A live-rate carrier integration</strong> automatically splitting a heavy or bulky order into multiple boxes to comply with the carrier's own per-package weight limits.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">How to Address This</h2>\n<ol>\n<li><strong>Review shipping class configuration</strong> to confirm whether class-based splitting is intentional or an unwanted side effect.</li>\n<li><strong>Check any active shipping/fulfillment plugin's settings</strong> for package-splitting rules and whether they can be adjusted.</li>\n<li><strong>Communicate package splitting clearly</strong> to customers at checkout if it's a genuine, unavoidable part of fulfillment (a marketplace, oversized items).</li>\n<li><strong>Consider consolidating shipping classes</strong> if the split isn't reflecting a genuine fulfillment necessity.</li>\n</ol>\n<p>Need unexpected package splitting diagnosed and fixed? See <a href=\"../../../../services/woocommerce-fix/\">WooCommerce Fixes</a>.</p>",
+  "hasCode": false
+}

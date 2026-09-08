@@ -1,0 +1,17 @@
+{
+  "slug": "multiple-zones-overlap",
+  "category": "woocommerce",
+  "subcategory": "shipping",
+  "question": "What Happens If a Customer's Address Matches Multiple Shipping Zones?",
+  "metaDescription": "Only the first matching zone, in top-to-bottom list order, is ever used — WooCommerce doesn't combine or choose between multiple matching zones.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-08",
+  "dateModified": "2026-09-08",
+  "shortAnswer": "<p>WooCommerce doesn't combine or offer a choice between multiple matching zones &mdash; it uses only the first zone matching the customer's address, in the top-to-bottom order zones are listed under Settings &rarr; Shipping. If two zones could technically both match the same address (a country-wide zone and a more specific state-level zone within that country, for instance), whichever is listed higher wins, regardless of which is actually more specific.</p>",
+  "image": {
+    "alt": "Only the first matching shipping zone in list order being used, even when a customer's address could match multiple zones",
+    "prompt": "Create a clean, professional technical illustration of an address matching several possible regions but only the topmost one being selected. Dark navy background, indigo and amber accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"how-it-works\">Why Order Determines the Outcome</h2>\n<p>WooCommerce evaluates the zone list from top to bottom and stops at the very first match, treating zone order as the sole tiebreaker rather than trying to determine which matching zone is \"more specific.\" This means a broad zone (an entire country) listed above a narrower one (a specific state within that country) will always win for any address in that state, even though the narrower zone was presumably meant to apply there instead.</p>\n\n<h2 id=\"common-causes\">Common Mistakes This Causes</h2>\n<ul>\n<li><strong>A country-wide zone listed above a state-specific zone</strong> meant to have different rates, silently preventing the state-specific zone from ever matching.</li>\n<li><strong>A catch-all \"Locations not covered\" zone</strong> accidentally placed above other specific zones, intercepting addresses meant to reach a more specific configuration.</li>\n<li><strong>Overlapping postcode ranges</strong> between two zones, where only the first listed actually applies to addresses in the overlap.</li>\n<li><strong>Reordering zones later</strong> (via drag-and-drop in the zones list) can unintentionally change which zone matches for addresses that overlap, worth testing after any reordering.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">Avoiding Zone Conflicts</h2>\n<ol>\n<li><strong>List more specific zones above broader ones</strong> that could otherwise overlap with them.</li>\n<li><strong>Keep the catch-all zone at the very bottom</strong> of the list, so it only applies when nothing more specific matches.</li>\n<li><strong>Test with addresses from the overlap region</strong> after any zone reordering to confirm the intended zone is actually being matched.</li>\n</ol>\n<p>Need overlapping or misconfigured shipping zones fixed properly? See <a href=\"../../../../services/woocommerce-development/\">custom WooCommerce development</a>.</p>",
+  "hasCode": false
+}

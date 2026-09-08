@@ -1,0 +1,17 @@
+{
+  "slug": "calculator-not-showing",
+  "category": "woocommerce",
+  "subcategory": "shipping",
+  "question": "Why Isn't the Shipping Calculator Showing on the Cart Page?",
+  "metaDescription": "Usually disabled under Settings > Shipping > Calculations, a theme not supporting the cart shortcode/block properly, or a caching issue.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-08",
+  "dateModified": "2026-09-08",
+  "shortAnswer": "<p>The cart page's \"Calculate shipping\" tool is controlled by a setting under Settings &rarr; Shipping &rarr; Calculations (specifically \"Enable the shipping calculator on the cart page\") that needs to be explicitly checked, since it's not always enabled by default depending on the WooCommerce version and setup history; a theme overriding the cart template incorrectly or aggressive caching can also cause it to appear missing even when properly enabled.</p>",
+  "image": {
+    "alt": "The shipping calculator missing from the cart page because of a disabled setting, theme override, or caching issue",
+    "prompt": "Create a clean, professional technical illustration of a cart page missing its expected shipping calculator tool. Dark navy background, red and indigo accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"why-this-happens\">Why This Happens</h2>\n<p>WooCommerce's shipping calculator is an optional feature specifically for the cart page (separate from the checkout page's own address-based shipping calculation), and its visibility is controlled by a dedicated setting rather than being tied directly to whether shipping zones are configured at all.</p>\n\n<h2 id=\"common-causes\">Common Causes</h2>\n<ul>\n<li><strong>The calculator setting simply disabled</strong> under Settings &rarr; Shipping &rarr; Calculations, the most direct and common cause.</li>\n<li><strong>A custom or heavily modified cart page template</strong> from the active theme not including the calculator's template hook or shortcode/block output correctly.</li>\n<li><strong>Page caching</strong> showing a stale version of the cart page from before the setting was enabled.</li>\n<li><strong>A cart page built with a page builder</strong> that replaced WooCommerce's default cart shortcode/block output with a custom layout missing the calculator entirely.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">How to Fix It</h2>\n<ol>\n<li><strong>Check Settings &rarr; Shipping &rarr; Calculations</strong> and confirm the cart page calculator is enabled.</li>\n<li><strong>Clear any caching</strong> after enabling the setting.</li>\n<li><strong>Confirm the cart page uses the standard WooCommerce cart shortcode or block,</strong> rather than a fully custom rebuild missing this feature.</li>\n<li><strong>Test with a default WordPress theme temporarily</strong> if a theme conflict is suspected.</li>\n</ol>\n<p>Need a missing cart or checkout feature diagnosed and fixed? See <a href=\"../../../../services/woocommerce-fix/\">WooCommerce Fixes</a>.</p>",
+  "hasCode": false
+}

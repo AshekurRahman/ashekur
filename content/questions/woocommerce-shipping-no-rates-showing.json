@@ -1,0 +1,17 @@
+{
+  "slug": "no-rates-showing",
+  "category": "woocommerce",
+  "subcategory": "shipping",
+  "question": "Why Isn't Any Shipping Rate Showing at Checkout?",
+  "metaDescription": "Usually no zone matches the customer's address, every method in the matching zone is disabled, or the cart contains an item marked as virtual.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-08",
+  "dateModified": "2026-09-08",
+  "shortAnswer": "<p>No shipping rate appearing at checkout is most often caused by the customer's address not matching any configured shipping zone, every shipping method within the matching zone being disabled, or the cart containing at least one product marked as Virtual (which WooCommerce assumes needs no shipping) alongside other physical items in a way that confuses the calculation.</p>",
+  "image": {
+    "alt": "No shipping rate appearing at checkout because the address doesn't match any configured zone or the zone's methods are disabled",
+    "prompt": "Create a clean, professional technical illustration of a checkout page with an empty shipping options area instead of available rates. Dark navy background, red and indigo accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"why-this-happens\">Why This Happens</h2>\n<p>WooCommerce only shows shipping options once it can match the customer's address to a configured zone and find at least one enabled method within it &mdash; any break in that chain (no matching zone, a disabled method, a shipping class with no rate defined for it) results in an empty shipping section rather than a helpful error message explaining why.</p>\n\n<h2 id=\"common-causes\">Common Causes</h2>\n<ul>\n<li><strong>No shipping zone matching the customer's address,</strong> including a missing catch-all zone for addresses outside the explicitly configured regions.</li>\n<li><strong>Every method in the matching zone disabled</strong> rather than actually configured and enabled.</li>\n<li><strong>A product assigned a shipping class</strong> that doesn't have a corresponding rate set for it within the matching zone's shipping method.</li>\n<li><strong>A cart containing a Virtual product</strong> mixed with physical products, occasionally causing unexpected shipping calculation behavior depending on the specific method configuration.</li>\n<li><strong>A shipping plugin or live-rate integration failing silently,</strong> returning no rates due to an API error or misconfiguration rather than a fallback rate.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">How to Fix It</h2>\n<ol>\n<li><strong>Confirm a shipping zone exists that matches the test address,</strong> including a catch-all zone as a fallback.</li>\n<li><strong>Check that at least one shipping method is enabled</strong> within the matching zone.</li>\n<li><strong>Verify shipping class rates are configured</strong> for any products using a custom shipping class.</li>\n<li><strong>Check for errors from any live-rate shipping plugin,</strong> testing its connection independently if used.</li>\n</ol>\n<p>Need a missing shipping rate issue diagnosed and fixed? See <a href=\"../../../../services/woocommerce-fix/\">WooCommerce Fixes</a>.</p>",
+  "hasCode": false
+}

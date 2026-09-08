@@ -1,0 +1,17 @@
+{
+  "slug": "based-on-weight",
+  "category": "woocommerce",
+  "subcategory": "shipping",
+  "question": "Can I Charge Shipping Based on Order Weight?",
+  "metaDescription": "Yes — using Flat Rate's cost formula referencing [weight], or a dedicated table rate plugin for more granular weight-based pricing tiers.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-08",
+  "dateModified": "2026-09-08",
+  "shortAnswer": "<p>The core Flat Rate shipping method's cost field accepts a formula referencing the cart's total weight (using the <code>[qty]</code>, <code>[cost]</code>, and similar placeholders alongside per-item weight-based math), letting a basic weight-scaled charge be configured without any additional plugin. For genuinely tiered pricing (a specific rate for 0-5kg, another for 5-10kg, and so on), a dedicated table rate shipping plugin handles this far more cleanly than trying to force it into a single formula.</p>",
+  "image": {
+    "alt": "Shipping cost calculated based on order weight through a flat rate formula or a dedicated table rate plugin",
+    "prompt": "Create a clean, professional technical illustration of a package on a scale connected to a corresponding shipping cost calculation. Dark navy background, indigo and amber accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"how-it-works\">How Weight-Based Charging Works</h2>\n<p>Flat Rate's cost field supports basic arithmetic and a small set of placeholders representing cart values, which can be combined into a formula approximating weight-based pricing for simpler needs. For real weight-tier pricing with multiple distinct bands and potentially different rates per shipping zone, a table rate plugin provides a proper interface for defining each tier explicitly, rather than maintaining an increasingly complex formula.</p>\n\n<h2 id=\"common-causes\">Choosing the Right Approach</h2>\n<ul>\n<li><strong>A simple, roughly linear weight-based charge</strong> can often be approximated well enough with Flat Rate's formula support, avoiding an extra plugin dependency.</li>\n<li><strong>Genuine tiered pricing</strong> (fixed rates per weight band) is much easier to manage and audit with a dedicated table rate plugin's explicit tier interface.</li>\n<li><strong>Accurate product weights</strong> are essential either way &mdash; weight-based shipping is only as accurate as the weight values entered on each product.</li>\n<li><strong>Combining weight-based rates with shipping classes</strong> is possible for products needing both weight scaling and a class-based surcharge, though this adds real configuration complexity worth planning carefully.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">Setting This Up</h2>\n<ol>\n<li><strong>Confirm accurate weight values</strong> are entered for every product in the catalog.</li>\n<li><strong>Use Flat Rate's formula field</strong> for a simple approximation, or install a table rate plugin for genuine tiered pricing.</li>\n<li><strong>Test with carts of varying weight</strong> to confirm the calculated cost behaves as expected.</li>\n</ol>\n<p>Need weight-based shipping calculated accurately for your store? See <a href=\"../../../../services/woocommerce-development/\">custom WooCommerce development</a>.</p>",
+  "hasCode": false
+}

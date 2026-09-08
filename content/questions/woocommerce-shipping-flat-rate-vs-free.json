@@ -1,0 +1,17 @@
+{
+  "slug": "flat-rate-vs-free",
+  "category": "woocommerce",
+  "subcategory": "shipping",
+  "question": "What's the Difference Between Flat Rate and Free Shipping Methods?",
+  "metaDescription": "Flat Rate charges a fixed (or calculated) cost every time; Free Shipping charges nothing, optionally requiring a coupon or minimum order amount.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-08",
+  "dateModified": "2026-09-08",
+  "shortAnswer": "<p>Flat Rate charges a defined cost for shipping within a zone &mdash; a single fixed amount, or one calculated from cart contents using its cost field's formula support &mdash; every time it's the selected method. Free Shipping charges nothing at all, and can be configured to always be available, require a specific coupon, or only appear once the cart reaches a minimum order amount.</p>",
+  "image": {
+    "alt": "Flat Rate shipping charging a fixed cost, compared to Free Shipping charging nothing under specific conditions",
+    "prompt": "Create a clean, professional technical illustration contrasting a shipping method with a fixed cost against one showing no cost at all. Dark navy background, indigo and amber accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"how-it-works\">How Each Method Works</h2>\n<p>Flat Rate's cost field accepts not just a plain number but a simple formula referencing cart totals, item counts, or per-item costs, letting it scale somewhat with order size while still being simpler to configure than full weight/dimension-based rating. Free Shipping's requirement setting controls exactly when it becomes available &mdash; always, only with a valid free-shipping coupon applied, only above a minimum spend, or a combination of coupon and minimum spend.</p>\n\n<h2 id=\"common-causes\">Common Configurations</h2>\n<ul>\n<li><strong>Flat Rate as the default paid option,</strong> often alongside Free Shipping conditioned on a minimum spend, encouraging customers to add more to their cart to qualify.</li>\n<li><strong>Multiple Flat Rate instances</strong> within one zone (labeled \"Standard\" and \"Express,\" for instance) giving customers a choice at different price points.</li>\n<li><strong>Free Shipping requiring a coupon</strong> as a promotional tool, rather than being a standing offer available to everyone.</li>\n<li><strong>Both methods can be enabled simultaneously</strong> within the same zone, letting WooCommerce display whichever ones currently qualify based on cart contents.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">Choosing and Configuring These Methods</h2>\n<ol>\n<li><strong>Add Flat Rate</strong> for a straightforward, predictable shipping charge, using its formula field if costs should scale with the order.</li>\n<li><strong>Add Free Shipping</strong> and configure its requirement (always, minimum spend, coupon) to match your promotional strategy.</li>\n<li><strong>Combine both within a zone</strong> to offer a paid option alongside a free-shipping incentive.</li>\n</ol>\n<p>Need shipping methods configured to match your pricing strategy? See <a href=\"../../../../services/woocommerce-development/\">custom WooCommerce development</a>.</p>",
+  "hasCode": false
+}

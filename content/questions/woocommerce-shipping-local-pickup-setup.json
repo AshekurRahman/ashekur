@@ -1,0 +1,17 @@
+{
+  "slug": "local-pickup-setup",
+  "category": "woocommerce",
+  "subcategory": "shipping",
+  "question": "How Do I Set Up Local Pickup as a Shipping Option?",
+  "metaDescription": "Add the Local Pickup method to a shipping zone, optionally set a cost, and it appears alongside other methods at checkout for customers to choose.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-08",
+  "dateModified": "2026-09-08",
+  "shortAnswer": "<p>Local Pickup is one of WooCommerce's core shipping methods, added to a specific shipping zone the same way any other method would be, with its own optional cost (typically left at zero, though a small handling fee can be set if needed). Once enabled, customers whose address matches that zone see Local Pickup as a selectable option alongside any other configured shipping methods.</p>",
+  "image": {
+    "alt": "Local Pickup added as a shipping method within a shipping zone, appearing as a selectable checkout option",
+    "prompt": "Create a clean, professional technical illustration of a local pickup location option displayed among a checkout's available shipping choices. Dark navy background, indigo and teal accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"how-it-works\">Setting Up Local Pickup</h2>\n<p>Since Local Pickup is added at the shipping zone level like any other method, it can be scoped to a specific zone (a local city or region, for instance) rather than being available to every customer regardless of location, which matters since pickup obviously only makes sense for genuinely local customers able to actually visit the pickup location.</p>\n\n<h2 id=\"common-causes\">Practical Considerations</h2>\n<ul>\n<li><strong>Scope Local Pickup to a genuinely local zone,</strong> rather than a broad or worldwide zone, since offering it to customers who can't realistically use it just adds checkout confusion.</li>\n<li><strong>Communicate the pickup location and hours clearly,</strong> either in the method's description field or through separate page content, since WooCommerce's core Local Pickup method doesn't include a built-in way to display an address or map.</li>\n<li><strong>Multiple pickup locations</strong> (for a business with more than one physical site) typically need a dedicated pickup-locations plugin, since core WooCommerce only supports a single generic Local Pickup method per zone.</li>\n<li><strong>Combine with in-person payment options</strong> (pay at pickup) if relevant, configured separately through payment gateway settings.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">Adding Local Pickup</h2>\n<ol>\n<li><strong>Go to the relevant shipping zone</strong> under Settings &rarr; Shipping and add the Local Pickup method.</li>\n<li><strong>Set a cost</strong> if a handling fee applies, or leave it at zero for free pickup.</li>\n<li><strong>Add clear pickup location and hours information</strong> in the method description or elsewhere on the site.</li>\n<li><strong>Consider a dedicated plugin</strong> if multiple pickup locations need to be supported.</li>\n</ol>\n<p>Need local pickup or multi-location fulfillment set up properly? See <a href=\"../../../../services/woocommerce-development/\">custom WooCommerce development</a>.</p>",
+  "hasCode": false
+}

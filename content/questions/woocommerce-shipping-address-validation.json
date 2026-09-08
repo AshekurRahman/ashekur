@@ -1,0 +1,17 @@
+{
+  "slug": "address-validation",
+  "category": "woocommerce",
+  "subcategory": "shipping",
+  "question": "Can WooCommerce Validate a Shipping Address Before Checkout?",
+  "metaDescription": "Not natively beyond basic required-field checks — genuine address verification and autocomplete need a dedicated address-validation plugin.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-08",
+  "dateModified": "2026-09-08",
+  "shortAnswer": "<p>Core WooCommerce checkout validation only confirms that required address fields are filled in and roughly formatted correctly (a postcode matching a general pattern, for instance) &mdash; it doesn't verify that an address is actually real or deliverable. A dedicated address-validation plugin, integrating with a postal or mapping service's API, is needed for genuine address verification, autocomplete suggestions, or catching typos before an order ships to an undeliverable address.</p>",
+  "image": {
+    "alt": "A dedicated address-validation plugin verifying a shipping address is real and deliverable beyond basic format checks",
+    "prompt": "Create a clean, professional technical illustration of an address field being verified against a real address database rather than a simple format check. Dark navy background, indigo and teal accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"how-it-works\">What Core Validation Actually Checks</h2>\n<p>WooCommerce's built-in checkout validation confirms required fields aren't empty and applies basic format rules (a postcode matching the expected pattern for the selected country, for instance), but has no way to confirm that a specific street address genuinely exists or is currently deliverable, since that requires cross-referencing an actual address database rather than just checking format.</p>\n\n<h2 id=\"common-causes\">What a Dedicated Plugin Adds</h2>\n<ul>\n<li><strong>Address autocomplete,</strong> suggesting real addresses as the customer types, reducing typos and speeding up checkout.</li>\n<li><strong>Genuine deliverability verification,</strong> checking the entered address against a real postal or mapping database rather than just format rules.</li>\n<li><strong>Reduced failed deliveries,</strong> catching an invalid or incomplete address before the order ships rather than after a costly delivery failure.</li>\n<li><strong>An added cost and dependency,</strong> since most genuine address-validation services are paid, usage-based APIs rather than a free built-in feature.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">Adding Address Validation</h2>\n<ol>\n<li><strong>Install a dedicated address-validation/autocomplete plugin</strong> integrating with a reputable address API.</li>\n<li><strong>Weigh the added cost</strong> against the actual rate of delivery failures currently experienced.</li>\n<li><strong>Test the checkout experience</strong> to confirm autocomplete and validation feel smooth rather than intrusive.</li>\n</ol>\n<p>Need address validation or checkout accuracy improved? See <a href=\"../../../../services/woocommerce-development/\">custom WooCommerce development</a>.</p>",
+  "hasCode": false
+}

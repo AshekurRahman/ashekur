@@ -1,0 +1,17 @@
+{
+  "slug": "table-rate-plugin",
+  "category": "woocommerce",
+  "subcategory": "shipping",
+  "question": "What Is Table Rate Shipping and When Do I Need It?",
+  "metaDescription": "A dedicated plugin defining explicit rate tiers by weight, price, or destination — needed once Flat Rate's simple formula field can't model your rules.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-08",
+  "dateModified": "2026-09-08",
+  "shortAnswer": "<p>Table rate shipping, provided by a dedicated third-party plugin rather than core WooCommerce, lets you define an explicit table of rate tiers based on conditions like weight ranges, cart total ranges, item count, or destination, each with its own specific cost &mdash; needed once shipping pricing genuinely requires multiple distinct tiers that a single Flat Rate formula can't cleanly represent.</p>",
+  "image": {
+    "alt": "A table rate shipping plugin defining explicit rate tiers by weight, price or destination beyond a simple flat rate formula",
+    "prompt": "Create a clean, professional technical illustration of a rate table with multiple defined pricing tiers based on different order conditions. Dark navy background, indigo and amber accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"how-it-works\">How Table Rate Shipping Works</h2>\n<p>Rather than writing a single formula attempting to cover every pricing scenario, a table rate plugin provides a dedicated interface for defining discrete tiers explicitly &mdash; \"0-2kg: $5,\" \"2-5kg: $8,\" \"5-10kg: $12,\" for instance &mdash; evaluated per zone and often combinable with additional conditions like destination or item count for genuinely complex, real-world shipping pricing structures.</p>\n\n<h2 id=\"common-causes\">When You Actually Need This</h2>\n<ul>\n<li><strong>Shipping costs that don't scale linearly,</strong> where a formula-based approach in Flat Rate would need increasingly convoluted math to approximate genuine tiered pricing.</li>\n<li><strong>Rates that vary by multiple factors simultaneously</strong> (weight and destination together, for instance), which quickly exceeds what a single Flat Rate cost formula can reasonably express.</li>\n<li><strong>A large, varied product catalog</strong> where shipping cost genuinely differs enough between product groups that explicit tiers, rather than one general formula, better reflect actual cost.</li>\n<li><strong>Simpler stores rarely need this</strong> &mdash; if a basic flat cost or a simple weight formula already models pricing well enough, adding a table rate plugin is unnecessary complexity.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">Setting Up Table Rate Shipping</h2>\n<ol>\n<li><strong>Confirm Flat Rate's formula genuinely can't model your needed pricing structure</strong> before adding a new plugin dependency.</li>\n<li><strong>Choose an established table rate plugin</strong> and define the needed tiers per shipping zone.</li>\n<li><strong>Test thoroughly across the tier boundaries,</strong> confirming carts near a tier edge calculate correctly.</li>\n</ol>\n<p>Need complex, tiered shipping pricing configured properly? See <a href=\"../../../../services/woocommerce-development/\">custom WooCommerce development</a>.</p>",
+  "hasCode": false
+}

@@ -1,0 +1,17 @@
+{
+  "slug": "international-setup",
+  "category": "woocommerce",
+  "subcategory": "shipping",
+  "question": "How Do I Set Up International Shipping Properly?",
+  "metaDescription": "Create dedicated zones per region with realistic rates, decide on customs/duty handling, and set clear delivery-time expectations for each zone.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-08",
+  "dateModified": "2026-09-08",
+  "shortAnswer": "<p>Proper international shipping setup means creating dedicated shipping zones for the specific countries or regions actually served (rather than one generic \"rest of world\" catch-all with a single guessed rate), setting realistic rates that account for the genuinely higher cost of international shipping, and deciding upfront how customs duties and import taxes will be handled and communicated to the customer.</p>",
+  "image": {
+    "alt": "Dedicated international shipping zones with realistic rates and clear customs duty handling for each region",
+    "prompt": "Create a clean, professional technical illustration of packages shipping to different international regions, each with its own configured rate and customs handling. Dark navy background, indigo and teal accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"how-it-works\">Key Decisions to Make Upfront</h2>\n<p>International shipping introduces cost and complexity domestic shipping doesn't have &mdash; customs duties, import taxes, longer and less predictable delivery times, and often significantly higher base shipping costs. Getting this right means treating international shipping as its own deliberate setup rather than an afterthought bolted onto the domestic configuration.</p>\n\n<h2 id=\"common-causes\">What a Proper Setup Includes</h2>\n<ul>\n<li><strong>Dedicated zones per region or country group,</strong> reflecting genuinely different shipping costs rather than one flat international rate covering wildly different actual costs.</li>\n<li><strong>A clear decision on duties and taxes:</strong> Delivered Duty Paid (charged upfront at checkout) versus Delivered Duty Unpaid (the customer pays customs on delivery), communicated clearly either way to avoid surprise charges.</li>\n<li><strong>Realistic delivery time estimates</strong> per region, since international shipping is far less predictable than domestic and setting expectations reduces support inquiries.</li>\n<li><strong>Restricted or excluded countries,</strong> if certain products or the business itself can't legally or practically ship to specific regions.</li>\n<li><strong>Customs documentation requirements,</strong> which vary significantly by product type and destination country.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">Setting This Up Properly</h2>\n<ol>\n<li><strong>Create dedicated zones for the specific international regions</strong> actually served, with realistic individual rates.</li>\n<li><strong>Decide and clearly communicate</strong> the duties/taxes handling approach for each region.</li>\n<li><strong>Set accurate delivery-time expectations</strong> and any necessary shipping restrictions per zone.</li>\n<li><strong>Review customs documentation needs</strong> for the specific products and destinations involved.</li>\n</ol>\n<p>Need international shipping configured properly for your store? See <a href=\"../../../../services/woocommerce-development/\">custom WooCommerce development</a>.</p>",
+  "hasCode": false
+}

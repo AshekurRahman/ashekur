@@ -1,0 +1,17 @@
+{
+  "slug": "per-item-vs-per-order",
+  "category": "woocommerce",
+  "subcategory": "shipping",
+  "question": "What's the Difference Between Per-Item and Per-Order Shipping Costs?",
+  "metaDescription": "Per-order charges one flat cost regardless of quantity; per-item multiplies a cost by how many units are in the cart, scaling with order size.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-08",
+  "dateModified": "2026-09-08",
+  "shortAnswer": "<p>A per-order shipping cost is charged once regardless of how many items or units are in the cart &mdash; a single $10 charge whether the customer buys one item or ten. A per-item cost, generally set using Flat Rate's per-item cost field, multiplies a defined amount by the total quantity of items in the cart, so shipping scales up as the customer buys more, better reflecting how shipping costs genuinely tend to increase with order volume.</p>",
+  "image": {
+    "alt": "A per-order flat shipping cost versus a per-item cost that scales with the quantity of items in the cart",
+    "prompt": "Create a clean, professional technical illustration contrasting one fixed shipping charge against a cost that multiplies with more items added. Dark navy background, indigo and amber accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"how-it-works\">How Each Is Configured</h2>\n<p>Flat Rate's cost fields distinguish between a base cost (applied once per order) and a per-class or per-item cost, which multiplies by the relevant quantity. Combining both lets a store charge a base handling fee plus an incremental amount per additional item, reflecting real-world shipping economics more accurately than either extreme alone.</p>\n\n<h2 id=\"common-causes\">Choosing the Right Model</h2>\n<ul>\n<li><strong>Per-order flat costs</strong> suit stores where shipping cost doesn't vary much regardless of quantity purchased, like most orders fitting comfortably in one standard package regardless of item count.</li>\n<li><strong>Per-item costs</strong> suit stores selling items that genuinely add meaningful weight or bulk per unit, where shipping cost realistically does scale with quantity.</li>\n<li><strong>A combined base-plus-per-item approach</strong> often models real shipping economics best, covering a fixed handling/packaging cost plus a smaller incremental amount per additional unit.</li>\n<li><strong>Overcharging on large orders</strong> is a common risk with a purely per-item model if the increment isn't tuned carefully, since actual shipping cost rarely scales perfectly linearly with quantity once multiple items fit in one box.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">Setting This Up</h2>\n<ol>\n<li><strong>Decide whether shipping cost should scale with quantity</strong> based on your actual product size and typical order patterns.</li>\n<li><strong>Configure Flat Rate's base and per-item cost fields</strong> accordingly, testing with carts of varying quantities.</li>\n<li><strong>Review actual shipping costs periodically</strong> against what's being charged, adjusting the formula as needed.</li>\n</ol>\n<p>Need shipping costs modeled accurately for your product range? See <a href=\"../../../../services/woocommerce-development/\">custom WooCommerce development</a>.</p>",
+  "hasCode": false
+}

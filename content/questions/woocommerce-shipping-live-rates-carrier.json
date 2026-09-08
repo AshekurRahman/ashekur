@@ -1,0 +1,17 @@
+{
+  "slug": "live-rates-carrier",
+  "category": "woocommerce",
+  "subcategory": "shipping",
+  "question": "What Are Live Shipping Rates and How Do They Work?",
+  "metaDescription": "A carrier-integration plugin queries the actual carrier's API in real time, returning exact current rates based on weight, dimensions and destination.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-08",
+  "dateModified": "2026-09-08",
+  "shortAnswer": "<p>Live shipping rates come from a dedicated carrier-integration plugin (for a specific postal service or courier) that queries that carrier's API in real time during checkout, sending the cart's weight, dimensions, and destination address, and returning the carrier's actual current rate for each available service level, rather than relying on a fixed or formula-based rate configured manually in WooCommerce.</p>",
+  "image": {
+    "alt": "A live shipping rate plugin querying a carrier's API in real time to return exact current rates at checkout",
+    "prompt": "Create a clean, professional technical illustration of a checkout process querying an external carrier service for a real-time exact shipping rate. Dark navy background, indigo and amber accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"how-it-works\">How Live Rates Differ From Flat Rates</h2>\n<p>A Flat Rate or table rate method estimates shipping cost using rules configured in advance, which can drift from the carrier's actual real-time pricing, especially as fuel surcharges and other variable factors change. A live-rate integration instead asks the carrier directly for the exact current cost for that specific shipment, trading simplicity and speed for pricing accuracy.</p>\n\n<h2 id=\"common-causes\">Trade-offs to Consider</h2>\n<ul>\n<li><strong>Pricing accuracy</strong> is the main benefit, since customers see (and the store charges) the carrier's real cost rather than an estimate that might undercharge or overcharge.</li>\n<li><strong>Accurate product weights and dimensions are essential,</strong> since the live rate calculation depends entirely on correct data being sent to the carrier's API.</li>\n<li><strong>An added dependency and potential point of failure,</strong> since the carrier's API being slow or unavailable can delay checkout or cause rates to fail to load if not handled gracefully.</li>\n<li><strong>Account setup with the specific carrier</strong> is generally required, including API credentials, before the integration can return real rates.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">Setting Up Live Rates</h2>\n<ol>\n<li><strong>Choose a live-rate plugin</strong> for the specific carrier(s) your store actually ships with.</li>\n<li><strong>Set up the carrier account and API credentials</strong> required by the plugin.</li>\n<li><strong>Ensure accurate weight and dimension data</strong> exists for every shippable product.</li>\n<li><strong>Test checkout thoroughly,</strong> including how the store behaves if the carrier's API is temporarily unavailable.</li>\n</ol>\n<p>Need live carrier rates integrated properly into your store? See <a href=\"../../../../services/woocommerce-development/\">custom WooCommerce development</a>.</p>",
+  "hasCode": false
+}

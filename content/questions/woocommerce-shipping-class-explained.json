@@ -1,0 +1,17 @@
+{
+  "slug": "class-explained",
+  "category": "woocommerce",
+  "subcategory": "shipping",
+  "question": "What Is a Shipping Class and When Do I Need One?",
+  "metaDescription": "A label assigned to products (heavy, fragile, oversized) that lets shipping methods charge a different rate specifically for that group of items.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-08",
+  "dateModified": "2026-09-08",
+  "shortAnswer": "<p>A shipping class is a label (\"Heavy,\" \"Fragile,\" \"Oversized,\" for instance) assigned to individual products, which a Flat Rate or other shipping method can then reference to charge a specific additional cost only for products carrying that class, rather than every product in the cart being charged the same base rate regardless of how it actually needs to be handled or shipped.</p>",
+  "image": {
+    "alt": "A shipping class assigned to specific products, letting a shipping method charge a different rate for that group of items",
+    "prompt": "Create a clean, professional technical illustration of certain products tagged with a special shipping classification affecting their shipping cost. Dark navy background, indigo and teal accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"how-it-works\">How Shipping Classes Work</h2>\n<p>Shipping classes are created under WooCommerce &rarr; Settings &rarr; Shipping &rarr; Classes, then assigned to individual products via their Shipping tab. A Flat Rate method's cost settings include per-shipping-class fields, letting a specific class add an extra charge, define a completely separate cost, or even be excluded from a rate entirely, independent of the base rate applied to standard products.</p>\n\n<h2 id=\"common-causes\">When Shipping Classes Are Worth Using</h2>\n<ul>\n<li><strong>Genuinely heavier or bulkier products</strong> that cost noticeably more to ship than the store's typical item, needing a surcharge rather than absorbing the extra cost.</li>\n<li><strong>Fragile items</strong> requiring special packaging, where the shipping class reflects that added handling cost.</li>\n<li><strong>Oversized items</strong> that may exceed a carrier's standard rate tier, needing a distinctly higher shipping charge.</li>\n<li><strong>A small, uniform catalog</strong> where every product ships similarly generally doesn't need shipping classes at all &mdash; they add configuration complexity that's only worthwhile once genuine cost variation exists between products.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">Setting Up Shipping Classes</h2>\n<ol>\n<li><strong>Create the needed shipping classes</strong> under Settings &rarr; Shipping &rarr; Classes.</li>\n<li><strong>Assign each class to the relevant products</strong> via their individual Shipping tab settings.</li>\n<li><strong>Configure per-class rates</strong> within each zone's shipping method settings.</li>\n</ol>\n<p>Need shipping classes and rates set up correctly for your catalog? See <a href=\"../../../../services/woocommerce-development/\">custom WooCommerce development</a>.</p>",
+  "hasCode": false
+}
