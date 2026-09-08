@@ -1,0 +1,17 @@
+{
+  "slug": "bulk-edit-prices",
+  "category": "woocommerce",
+  "subcategory": "products",
+  "question": "How Do I Bulk Edit Prices Across Many Products at Once?",
+  "metaDescription": "WooCommerce's built-in bulk edit supports flat and percentage price changes on selected products — no separate plugin needed for common scenarios.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-08",
+  "dateModified": "2026-09-08",
+  "shortAnswer": "<p>The Products admin screen's built-in bulk edit tool (select multiple products, choose \"Edit\" from Bulk Actions) supports adjusting regular and sale prices by a flat amount or a percentage across every selected product in one action, covering the most common bulk pricing scenarios &mdash; a sitewide markup change, a percentage discount &mdash; without needing a separate plugin.</p>",
+  "image": {
+    "alt": "Multiple products having their prices adjusted simultaneously by a flat amount or percentage through WooCommerce's built-in bulk edit tool",
+    "prompt": "Create a clean, professional technical illustration of several product price tags being adjusted simultaneously by a percentage change through one bulk action. Dark navy background, indigo and teal accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"how-it-works\">How to Use Bulk Edit</h2>\n<p>Selecting multiple products in the admin list and choosing \"Edit\" from the Bulk Actions dropdown opens a panel where regular price and sale price can each be adjusted by setting a new value, increasing/decreasing by a fixed amount, or increasing/decreasing by a percentage &mdash; applied uniformly to every selected product regardless of their current individual prices.</p>\n\n<h2 id=\"common-causes\">Things Worth Knowing</h2>\n<ul>\n<li><strong>Filtering the product list first</strong> (by category, tag, or a search term) before selecting makes it much easier to target exactly the right set of products for a specific price change.</li>\n<li><strong>Percentage-based changes</strong> apply relative to each product's own current price, which is usually what's wanted for a proportional markup or discount across a varied catalog.</li>\n<li><strong>Variable products' individual variations</strong> aren't necessarily updated the same way through the basic product-level bulk edit &mdash; a dedicated variation bulk-edit tool or a more advanced pricing plugin may be needed for catalogs with many variable products.</li>\n<li><strong>For very large catalogs or more complex pricing rules</strong> (different percentage changes for different product types simultaneously), a dedicated bulk pricing plugin offers more granular control than the built-in tool.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">Making a Bulk Price Change Safely</h2>\n<ol>\n<li><strong>Filter to the exact set of products</strong> the price change should apply to.</li>\n<li><strong>Use the built-in bulk edit</strong> for a straightforward flat or percentage adjustment.</li>\n<li><strong>Spot-check several updated products afterward</strong> to confirm the change applied as intended.</li>\n<li><strong>For variable products or more complex rules,</strong> consider a dedicated bulk pricing plugin.</li>\n</ol>\n<p>Need a complex bulk pricing update handled properly? See <a href=\"../../../../services/woocommerce-development/\">custom WooCommerce development</a>.</p>",
+  "hasCode": false
+}

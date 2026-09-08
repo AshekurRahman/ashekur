@@ -1,0 +1,17 @@
+{
+  "slug": "sale-price-scheduling",
+  "category": "woocommerce",
+  "subcategory": "products",
+  "question": "How Do I Schedule a Sale Price to Start and End Automatically?",
+  "metaDescription": "Built into the product's General tab — set a sale price and a date range, and WooCommerce activates and deactivates it automatically, no plugin needed.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-08",
+  "dateModified": "2026-09-08",
+  "shortAnswer": "<p>WooCommerce's core product editor includes a \"Schedule\" link next to the sale price field in the General tab, letting you set a specific start and end date &mdash; the sale price automatically activates at the start date and reverts to the regular price at the end date, with no plugin or manual intervention needed for the transition itself.</p>",
+  "image": {
+    "alt": "A sale price automatically activating and deactivating on a scheduled date range, without needing manual intervention",
+    "prompt": "Create a clean, professional technical illustration of a product price automatically switching to a sale price at a scheduled start date, then reverting at the end date. Dark navy background, indigo and teal accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"how-it-works\">How to Schedule a Sale</h2>\n<p>In the product's General tab, entering a sale price reveals a \"Schedule\" link, which expands to show start and end date fields. Once set, WooCommerce's own logic handles the transition automatically at the specified dates &mdash; the product shows its regular price outside that window and the sale price within it, without needing a scheduled task or manual price change on either end.</p>\n\n<h2 id=\"common-causes\">Things Worth Knowing</h2>\n<ul>\n<li><strong>The end date is exclusive of manual intervention needed</strong> &mdash; once it passes, the price reverts automatically, so there's no risk of a sale accidentally running longer than intended due to someone forgetting to remove it manually.</li>\n<li><strong>Scheduling relies on WordPress's own time settings,</strong> so confirming the site's timezone setting is correct (covered elsewhere) matters for the sale actually starting/ending at the intended local time.</li>\n<li><strong>Bulk scheduling across many products</strong> for a sitewide sale event can be done through the bulk edit tool, though the scheduling dates themselves may need setting per-product depending on the specific bulk edit capabilities available.</li>\n<li><strong>A sale price schedule doesn't automatically create any special sale-specific display</strong> (a \"Sale\" badge is a separate, automatic visual indicator WooCommerce adds based on whether a product currently has an active sale price, which does work automatically alongside the schedule).</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">Setting Up a Scheduled Sale</h2>\n<ol>\n<li><strong>Enter the sale price</strong> and click \"Schedule\" to reveal the date fields.</li>\n<li><strong>Set the correct start and end dates,</strong> confirming the site's timezone setting is accurate.</li>\n<li><strong>For a sitewide sale event,</strong> consider bulk-editing multiple products together if the scheduling need is the same across many items.</li>\n</ol>\n<p>Need a sitewide sale event or promotion set up efficiently? See <a href=\"../../../../services/woocommerce-development/\">custom WooCommerce development</a>.</p>",
+  "hasCode": false
+}

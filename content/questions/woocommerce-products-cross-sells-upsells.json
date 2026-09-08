@@ -1,0 +1,17 @@
+{
+  "slug": "cross-sells-upsells",
+  "category": "woocommerce",
+  "subcategory": "products",
+  "question": "What's the Difference Between Cross-Sells and Upsells in WooCommerce?",
+  "metaDescription": "Upsells suggest a better alternative on the product page itself; cross-sells suggest complementary add-ons at the cart page, after the choice is made.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-08",
+  "dateModified": "2026-09-08",
+  "shortAnswer": "<p>Upsells appear on the product page itself, suggesting a higher-value or better alternative to the product currently being viewed, before the customer has committed to a specific choice. Cross-sells appear on the cart page, suggesting complementary, related products to add alongside what's already been chosen &mdash; a genuinely different moment in the buying decision, after the primary choice is already made.</p>",
+  "image": {
+    "alt": "Upsells suggesting a better alternative on the product page, and cross-sells suggesting complementary add-ons on the cart page",
+    "prompt": "Create a clean, professional technical illustration of two suggestion moments: a better alternative shown on a product page, and a complementary add-on shown on a cart page. Dark navy background, indigo and teal accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"how-it-works\">Why the Timing Difference Matters</h2>\n<p>These aren't just two labels for similar functionality &mdash; they're deliberately placed at different points in the customer's decision process. An upsell on the product page tries to influence which specific item gets chosen in the first place (\"customers who viewed this also considered this better option\"), while a cross-sell on the cart page assumes the primary choice is settled and instead suggests something complementary to add to it (\"customers who bought this also bought this accessory\").</p>\n\n<h2 id=\"common-causes\">Setting Both Up Effectively</h2>\n<ul>\n<li><strong>Upsells work best genuinely offering something better</strong> &mdash; a higher-quality version, a bundle with more value &mdash; rather than just any other product, since the goal is influencing toward a better purchase, not just displaying more items.</li>\n<li><strong>Cross-sells work best as genuinely complementary items,</strong> things that naturally pair with what's already in the cart (batteries with an electronic device, a case with a phone), rather than unrelated products.</li>\n<li><strong>Both are manually configured per product</strong> in the Linked Products tab, meaning thoughtful curation matters more than simply linking as many products as possible.</li>\n<li><strong>Overloading either section with too many suggestions</strong> can overwhelm rather than helpfully guide the customer &mdash; a small, well-chosen set tends to perform better than an exhaustive list.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">Setting These Up</h2>\n<ol>\n<li><strong>Configure upsells with genuinely better alternatives</strong> in the product's Linked Products tab.</li>\n<li><strong>Configure cross-sells with genuinely complementary items</strong> for the cart page.</li>\n<li><strong>Keep both lists curated and relevant</strong> rather than exhaustive.</li>\n</ol>\n<p>Need help setting up a thoughtful upsell/cross-sell strategy? See <a href=\"../../../../services/woocommerce-development/\">custom WooCommerce development</a>.</p>",
+  "hasCode": false
+}

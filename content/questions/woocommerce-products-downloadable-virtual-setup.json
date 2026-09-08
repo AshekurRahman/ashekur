@@ -1,0 +1,17 @@
+{
+  "slug": "downloadable-virtual-setup",
+  "category": "woocommerce",
+  "subcategory": "products",
+  "question": "How Do I Set Up a Downloadable or Virtual Product Correctly?",
+  "metaDescription": "Virtual disables shipping requirements; Downloadable adds a file delivered after payment — most digital products need both checked together.",
+  "readTime": "3 min read",
+  "datePublished": "2026-09-08",
+  "dateModified": "2026-09-08",
+  "shortAnswer": "<p>\"Virtual\" and \"Downloadable\" are two separate checkboxes in the product's General tab, often used together but serving different purposes: Virtual tells WooCommerce this product needs no physical shipping (removing shipping fields from checkout for orders containing only virtual items), while Downloadable adds a file upload and delivers a secure download link to the customer after payment. Most genuine digital products (an ebook, a software license) need both checked.</p>",
+  "image": {
+    "alt": "A digital product marked both Virtual (no shipping required) and Downloadable (delivering a secure file link after payment)",
+    "prompt": "Create a clean, professional technical illustration of a digital product icon with two settings applied: no shipping requirement and a secure downloadable file delivery. Dark navy background, indigo and teal accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"how-it-works\">The Two Settings and Their Purposes</h2>\n<p>Virtual removes the product from shipping calculations entirely &mdash; an order containing only virtual products skips shipping method selection at checkout, since there's nothing to physically ship. Downloadable adds file management (uploading one or more files, setting download limits and expiry) and triggers WooCommerce's download-delivery system, giving the customer a secure link (visible in their account and included in the order confirmation email) once payment is confirmed.</p>\n\n<h2 id=\"common-causes\">Getting the Configuration Right</h2>\n<ul>\n<li><strong>A genuine digital product</strong> (software, an ebook, a digital template) almost always needs both Virtual and Downloadable checked together.</li>\n<li><strong>A virtual-but-not-downloadable product</strong> makes sense for a service or a digitally delivered item not literally a file &mdash; a consultation booking, an online course accessed through a separate membership system rather than a direct file download.</li>\n<li><strong>Download limits and expiry</strong> (how many times a file can be downloaded, and for how long) are worth configuring deliberately rather than leaving unlimited indefinitely, particularly for content with real resale value.</li>\n<li><strong>Download links only become active once the order reaches a status considered \"paid\"</strong> (Processing or Completed by default), consistent with WooCommerce's broader payment-status logic covered elsewhere.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">Setting This Up Properly</h2>\n<ol>\n<li><strong>Check Virtual and Downloadable</strong> as appropriate for the specific product type.</li>\n<li><strong>Upload the correct file(s)</strong> and set sensible download limits/expiry.</li>\n<li><strong>Test the full purchase flow</strong> with a real or test order to confirm the download link delivers correctly.</li>\n</ol>\n<p>Need a digital product delivery system set up and tested properly? See <a href=\"../../../../services/woocommerce-development/\">custom WooCommerce development</a>.</p>",
+  "hasCode": false
+}

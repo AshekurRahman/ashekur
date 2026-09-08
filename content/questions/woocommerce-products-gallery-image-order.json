@@ -1,0 +1,17 @@
+{
+  "slug": "gallery-image-order",
+  "category": "woocommerce",
+  "subcategory": "products",
+  "question": "How Do I Control the Order of Images in a Product Gallery?",
+  "metaDescription": "Drag and drop images in the Product Gallery field to set their order — the featured image always displays first regardless of gallery order.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-08",
+  "dateModified": "2026-09-08",
+  "shortAnswer": "<p>In the product editor's Product Gallery field, uploaded images can be freely reordered by dragging and dropping them into the desired sequence, which determines the order they appear in on the front-end product page. The featured image (set separately) always displays first in most themes' gallery implementations, regardless of how the gallery images themselves are ordered.</p>",
+  "image": {
+    "alt": "Product gallery images being reordered by drag and drop, determining the sequence they display in on the product page",
+    "prompt": "Create a clean, professional technical illustration of several product images being rearranged by drag and drop into a specific display sequence. Dark navy background, indigo and teal accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"how-it-works\">How Gallery Ordering Works</h2>\n<p>The Product Gallery meta box shows thumbnails of every added gallery image, and simply dragging a thumbnail to a new position within that field updates the stored order, which the theme then respects when rendering the gallery on the actual product page. This is a straightforward drag-and-drop interaction requiring no code for the basic reordering task.</p>\n\n<h2 id=\"common-causes\">Things Worth Knowing</h2>\n<ul>\n<li><strong>The featured image and gallery images are separate fields</strong> &mdash; the featured image (set via its own dedicated field) typically displays first in the gallery sequence on most themes, independent of the gallery's own internal order.</li>\n<li><strong>Some themes or page builders customize gallery display</strong> in ways that don't strictly follow the admin-set order, worth testing directly on the live product page rather than assuming the admin order always applies exactly as set.</li>\n<li><strong>Variation-specific images</strong> (set individually per variation for a variable product) can override the main gallery display when a specific variation is selected, which is separate from the main product gallery's own ordering.</li>\n<li><strong>A caching issue</strong> can occasionally show a stale gallery order after a recent change, worth clearing if the front-end doesn't immediately reflect an admin update.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">Setting the Order Correctly</h2>\n<ol>\n<li><strong>Drag and drop images in the Product Gallery field</strong> into the desired display sequence.</li>\n<li><strong>Confirm the featured image is set separately</strong> to whatever should display first overall.</li>\n<li><strong>Check the actual live product page</strong> to confirm the order displays as expected, clearing caches if needed.</li>\n</ol>\n<p>Need product gallery display customized further? See <a href=\"../../../../services/woocommerce-development/\">custom WooCommerce development</a>.</p>",
+  "hasCode": false
+}

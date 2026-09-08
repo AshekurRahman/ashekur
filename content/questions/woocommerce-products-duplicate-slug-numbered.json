@@ -1,0 +1,17 @@
+{
+  "slug": "duplicate-slug-numbered",
+  "category": "woocommerce",
+  "subcategory": "products",
+  "question": "Why Did WooCommerce Add a Number to My Product's URL Slug?",
+  "metaDescription": "WordPress requires unique slugs sitewide — a matching page, post, or another product with the same slug forces a numbered suffix automatically.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-08",
+  "dateModified": "2026-09-08",
+  "shortAnswer": "<p>WordPress requires every published item's slug to be unique across the relevant scope, and when a new product's title generates a slug matching something that already exists &mdash; another product, a page, or even a post &mdash; WordPress automatically appends a number (like <code>-2</code>) to keep the URL unique, rather than allowing a genuine collision. This is expected, automatic conflict-avoidance, not a bug.</p>",
+  "image": {
+    "alt": "A product's URL slug getting an automatic numbered suffix to avoid colliding with an existing page's identical slug",
+    "prompt": "Create a clean, professional technical illustration of two identical URL slugs colliding, with one automatically receiving a numbered suffix to stay unique. Dark navy background, indigo and amber accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"why-this-happens\">Why This Happens</h2>\n<p>Slugs form the actual URL path, and WordPress can't have two different pieces of content resolving to the identical URL &mdash; when a new product's automatically generated slug (from its title) matches something that already exists anywhere relevant in the site's URL structure, WordPress resolves the conflict automatically by appending a number, ensuring the new item still gets a valid, working URL rather than failing to publish.</p>\n\n<h2 id=\"common-causes\">Common Causes</h2>\n<ul>\n<li><strong>Two products with very similar or identical names,</strong> generating the same default slug from their titles.</li>\n<li><strong>A product name matching an existing page or post's slug,</strong> even if they're completely different types of content &mdash; slug uniqueness applies across content types in most default configurations.</li>\n<li><strong>A previously deleted (but not fully purged) product or page</strong> still holding a slug in the trash, which can sometimes still cause a conflict depending on how thoroughly it was removed.</li>\n<li><strong>Re-publishing a product</strong> after significant changes, if the system treats it as generating a new slug conflict against its own previous version in some edge cases.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">How to Fix It</h2>\n<ol>\n<li><strong>Manually edit the product's slug</strong> to something distinct and more specific, rather than relying on the auto-generated, numbered version.</li>\n<li><strong>Check whether the conflicting content</strong> (another page, post, or product) still needs its existing slug, or whether it could be adjusted instead if more appropriate.</li>\n<li><strong>Set up a redirect</strong> if the numbered slug was already live and indexed, and you're now changing it to something cleaner.</li>\n</ol>\n<p>Need help resolving URL structure conflicts across your catalog? See <a href=\"../../../../services/woocommerce-fix/\">WooCommerce fixes</a>.</p>",
+  "hasCode": false
+}

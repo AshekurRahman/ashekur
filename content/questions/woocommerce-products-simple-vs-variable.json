@@ -1,0 +1,17 @@
+{
+  "slug": "simple-vs-variable",
+  "category": "woocommerce",
+  "subcategory": "products",
+  "question": "What's the Difference Between a Simple and a Variable Product in WooCommerce?",
+  "metaDescription": "A simple product has one fixed price and stock level; a variable product offers customer-selectable options, each with its own price and stock.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-08",
+  "dateModified": "2026-09-08",
+  "shortAnswer": "<p>A simple product has one fixed price, one stock count, and no customer-selectable options &mdash; what you see is what you buy. A variable product offers one or more selectable attributes (size, color) that generate individual variations, each of which can have its own price, stock level, image, and SKU, letting a single product listing represent an entire family of purchasable options.</p>",
+  "image": {
+    "alt": "A simple product with one fixed price and stock level, compared to a variable product offering several selectable variations",
+    "prompt": "Create a clean, professional technical illustration of two product types: a single fixed item, and a product branching into several selectable variation options. Dark navy background, indigo and teal accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"how-it-works\">How Each Type Actually Works</h2>\n<p>A simple product is the default and most straightforward type &mdash; one price, one stock quantity, no customer decisions to make beyond quantity. A variable product starts from one or more attributes (defined at the product or global level) marked \"used for variations,\" and each combination of attribute values (a specific size and color pairing, for instance) becomes its own variation with independently configurable price, stock, weight, and image.</p>\n\n<h2 id=\"common-causes\">When to Use Each</h2>\n<ul>\n<li><strong>A simple product</strong> fits anything sold as-is, with no customer-facing options to choose between &mdash; a single-format book, a fixed-configuration item.</li>\n<li><strong>A variable product</strong> fits anything genuinely offered in multiple customer-selectable options with potentially different pricing or stock per option &mdash; apparel with size/color, a product available in multiple pack sizes.</li>\n<li><strong>Overusing variable products</strong> for something that doesn't actually need per-option pricing or stock tracking adds unnecessary admin complexity &mdash; if every variation has the same price and stock behaves identically, a simple product with a note, or attributes without variations, may be simpler.</li>\n<li><strong>A large number of variations</strong> (many attributes combined) can become unwieldy to manage manually, worth considering a bulk-variation-management plugin or tool for catalogs with many combinations.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">Choosing the Right Type</h2>\n<ol>\n<li><strong>Use simple products by default,</strong> reserving variable products for genuine customer-selectable options.</li>\n<li><strong>Define attributes clearly</strong> before generating variations, to avoid needing to restructure later.</li>\n<li><strong>Consider bulk-management tools</strong> for products with a large number of variation combinations.</li>\n</ol>\n<p>Need help structuring your product catalog properly? See <a href=\"../../../../services/woocommerce-development/\">custom WooCommerce development</a>.</p>",
+  "hasCode": false
+}

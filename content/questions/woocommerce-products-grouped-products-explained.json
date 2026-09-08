@@ -1,0 +1,17 @@
+{
+  "slug": "grouped-products-explained",
+  "category": "woocommerce",
+  "subcategory": "products",
+  "question": "What Are Grouped Products, and When Should I Use Them?",
+  "metaDescription": "A collection of separate, independently purchasable products shown together on one page — useful for a curated set without forcing a bundled purchase.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-08",
+  "dateModified": "2026-09-08",
+  "shortAnswer": "<p>A grouped product presents several separate, individually existing products together on one page, each still independently purchasable (with its own quantity selector), rather than combining them into a single bundled item with one price. This differs from a variable product, since the individual items in a group are genuinely separate products (each could also be sold on its own elsewhere), not variations of one underlying product.</p>",
+  "image": {
+    "alt": "Several independent products displayed together as a grouped product, each individually selectable and purchasable on its own",
+    "prompt": "Create a clean, professional technical illustration of several distinct, independently purchasable products displayed together under one grouped listing page. Dark navy background, indigo and teal accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"how-it-works\">How Grouped Products Work</h2>\n<p>Creating a grouped product involves selecting a set of existing, already-created products to associate together, and the resulting page displays all of them in a table-like layout, each with its own quantity field, letting a customer choose exactly which items (and how many of each) to add to their cart from that one page &mdash; genuinely different from a bundle where the whole set is purchased as a single line item.</p>\n\n<h2 id=\"common-causes\">Good Use Cases</h2>\n<ul>\n<li><strong>A curated collection</strong> (a set of related accessories, a themed product line) where customers benefit from seeing everything together, but should still choose individually which items they actually want.</li>\n<li><strong>A product family</strong> where each variant genuinely functions as its own standalone product elsewhere in the catalog too, rather than existing only as part of the group.</li>\n<li><strong>Not the right choice for a genuine bundle-at-a-discount offer,</strong> since grouped products don't apply special combined pricing &mdash; a dedicated bundle/kit plugin is the correct tool for that specific need instead.</li>\n<li><strong>Not the right choice for size/color-style variation,</strong> which is what variable products (covered elsewhere) are specifically built for.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">Setting Up a Grouped Product</h2>\n<ol>\n<li><strong>Create the individual products first,</strong> since a grouped product references existing product listings.</li>\n<li><strong>Create the grouped product</strong> and associate the relevant existing products with it.</li>\n<li><strong>Confirm this is the right tool for the actual goal</strong> &mdash; a curated collection versus a genuine discounted bundle need different WooCommerce approaches.</li>\n</ol>\n<p>Need help deciding the right product structure for your catalog? See <a href=\"../../../../services/woocommerce-development/\">custom WooCommerce development</a>.</p>",
+  "hasCode": false
+}

@@ -1,0 +1,17 @@
+{
+  "slug": "short-vs-full-description",
+  "category": "woocommerce",
+  "subcategory": "products",
+  "question": "What's the Difference Between the Short Description and the Full Description?",
+  "metaDescription": "The short description appears near the Add to Cart button as a quick summary; the full description sits in its own tab for detailed information.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-08",
+  "dateModified": "2026-09-08",
+  "shortAnswer": "<p>The short description displays prominently near the product title and Add to Cart button, meant as a quick, scannable summary a customer sees without any extra clicking. The full description appears in its own dedicated tab further down the page, intended for detailed information &mdash; specifications, extended features, sizing details &mdash; that a genuinely interested customer will seek out but that shouldn't clutter the immediate purchase decision area.</p>",
+  "image": {
+    "alt": "A short product summary displayed prominently near the purchase button, with detailed full description content in a separate tab below",
+    "prompt": "Create a clean, professional technical illustration of a product page with a brief summary near the top purchase area and a more detailed description in a separate tab further down. Dark navy background, indigo and teal accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"how-it-works\">Why This Split Exists</h2>\n<p>Ecommerce product pages balance two competing needs: giving a customer enough information to decide quickly (the short description's job) while also providing depth for those who want it before committing to a purchase (the full description's job). Separating these into distinct, purpose-built fields lets each serve its specific role rather than forcing one long block of text to do both jobs at once.</p>\n\n<h2 id=\"common-causes\">Writing Each Well</h2>\n<ul>\n<li><strong>The short description should be genuinely short</strong> &mdash; a few sentences or bullet points hitting the key selling points, written to be read in seconds without needing to scroll or click anything.</li>\n<li><strong>The full description can go into real depth</strong> &mdash; specifications, use cases, detailed features, sizing charts &mdash; content a customer actively seeks out rather than skims past.</li>\n<li><strong>Leaving the short description blank</strong> means customers see no summary at all near the purchase decision point, missing an opportunity to reinforce the buying decision right where it matters most.</li>\n<li><strong>Duplicating identical content in both fields</strong> defeats the purpose of having two distinct fields, and can look repetitive to a customer who reads both.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">Using Both Fields Effectively</h2>\n<ol>\n<li><strong>Write a genuinely brief, compelling short description</strong> for every product, rather than leaving it blank or duplicating the full description.</li>\n<li><strong>Use the full description for real depth and detail</strong> a genuinely interested customer would want.</li>\n<li><strong>Review both fields together</strong> to confirm they complement rather than repeat each other.</li>\n</ol>\n<p>Need product page copywriting or structure improved? See <a href=\"../../../../services/woocommerce-development/\">custom WooCommerce development</a>.</p>",
+  "hasCode": false
+}

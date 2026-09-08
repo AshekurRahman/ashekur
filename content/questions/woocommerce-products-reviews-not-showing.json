@@ -1,0 +1,17 @@
+{
+  "slug": "reviews-not-showing",
+  "category": "woocommerce",
+  "subcategory": "products",
+  "question": "Why Aren't Product Reviews Showing on My Product Pages?",
+  "metaDescription": "Reviews are enabled per-product and store-wide separately — check both settings, plus the theme's actual review tab display, before assuming a bug.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-08",
+  "dateModified": "2026-09-08",
+  "shortAnswer": "<p>Reviews need to be enabled at two levels: the store-wide setting under WooCommerce &rarr; Settings &rarr; Products (\"Enable product reviews\"), and the individual product's own review setting in its Publish/Discussion settings, which can override the store-wide default. If reviews genuinely exist but aren't displaying, the theme's specific review tab rendering, or a caching issue, are the next things to check.</p>",
+  "image": {
+    "alt": "Product reviews controlled by both a store-wide setting and an individual product-level setting, both needing to be enabled",
+    "prompt": "Create a clean, professional technical illustration of a two-level review setting: a store-wide toggle and an individual product-level toggle, both needing to align for reviews to display. Dark navy background, indigo and amber accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"why-this-happens\">Why This Happens</h2>\n<p>WooCommerce layers review settings at the store level and the individual product level, meaning a product can have reviews disabled even when the store-wide setting allows them, or vice versa depending on when the product was created relative to any settings change. This flexibility is useful (some products might genuinely not want reviews) but is also a common source of confusion when reviews unexpectedly don't appear.</p>\n\n<h2 id=\"common-causes\">Common Causes</h2>\n<ul>\n<li><strong>Store-wide reviews disabled</strong> under WooCommerce &rarr; Settings &rarr; Products, which would hide reviews across the entire catalog regardless of individual product settings.</li>\n<li><strong>The specific product's own comment/review setting disabled,</strong> found in the product editor's Discussion panel (sometimes hidden by default and needing to be enabled via Screen Options).</li>\n<li><strong>Existing reviews stuck in a pending moderation status,</strong> not yet approved and therefore not publicly visible, worth checking under Comments in the admin.</li>\n<li><strong>A theme not properly rendering the reviews tab,</strong> particularly after a theme change, if the new theme's product page template handles the reviews section differently or omits it.</li>\n<li><strong>A caching issue</strong> serving a stale product page from before reviews were enabled or submitted.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">How to Diagnose and Fix It</h2>\n<ol>\n<li><strong>Confirm the store-wide review setting</strong> is enabled first.</li>\n<li><strong>Check the specific product's own Discussion setting.</strong></li>\n<li><strong>Check for pending, unapproved reviews</strong> under Comments in admin.</li>\n<li><strong>Clear caching</strong> and test on a default theme temporarily if a theme-specific issue is suspected.</li>\n</ol>\n<p>Need help getting product reviews working and properly displayed? See <a href=\"../../../../services/woocommerce-fix/\">WooCommerce fixes</a>.</p>",
+  "hasCode": false
+}
