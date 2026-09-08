@@ -1,0 +1,17 @@
+{
+  "slug": "hide-method-conditionally",
+  "category": "woocommerce",
+  "subcategory": "shipping",
+  "question": "Can I Hide a Shipping Method Based on Cart Contents?",
+  "metaDescription": "Yes — using a small custom code snippet hooked into the shipping rates filter, or a dedicated shipping-conditional-logic plugin for a no-code option.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-08",
+  "dateModified": "2026-09-08",
+  "shortAnswer": "<p>Hiding a specific shipping method based on cart contents &mdash; showing only Local Pickup if the cart contains a particular product, or removing Free Shipping if a specific heavy item is present &mdash; isn't a built-in setting, but is achievable with a small custom code snippet hooked into WooCommerce's shipping rates filter, or through a dedicated shipping-conditional-logic plugin for a no-code option.</p>",
+  "image": {
+    "alt": "A shipping method conditionally hidden based on specific cart contents through custom code or a conditional shipping plugin",
+    "prompt": "Create a clean, professional technical illustration of a shipping option being filtered out based on what's actually in the shopping cart. Dark navy background, indigo and teal accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"how-it-works\">How This Is Achieved</h2>\n<p>WooCommerce provides a filter hook (<code>woocommerce_package_rates</code>) that runs after shipping rates are calculated but before they're displayed, letting custom code inspect the cart contents and remove specific rates from the array before it reaches the customer. A conditional-logic plugin essentially provides a user interface for building the same kind of rule without writing PHP directly.</p>\n\n<h2 id=\"common-causes\">Common Use Cases</h2>\n<ul>\n<li><strong>Hiding a shipping method entirely</strong> when a specific product (one requiring special freight handling, for instance) is present in the cart.</li>\n<li><strong>Restricting Local Pickup</strong> to only appear when the cart contains items actually stocked at the pickup location, if that distinction matters for a specific store's inventory setup.</li>\n<li><strong>Removing a cheaper shipping option</strong> when the cart total or weight exceeds a threshold that method genuinely can't reasonably cover.</li>\n<li><strong>Custom code needs to be maintained through updates,</strong> a real cost worth weighing against a dedicated plugin's more maintainable, update-safe interface for the same result.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">Setting This Up</h2>\n<ol>\n<li><strong>Define the exact condition</strong> that should hide a specific shipping method.</li>\n<li><strong>Use a conditional-shipping plugin</strong> for a maintainable no-code solution, or a custom snippet for a very specific one-off rule.</li>\n<li><strong>Test thoroughly with carts that should and shouldn't trigger the condition</strong> to confirm correct behavior.</li>\n</ol>\n<p>Need conditional shipping logic built and tested properly? See <a href=\"../../../../services/woocommerce-development/\">custom WooCommerce development</a>.</p>",
+  "hasCode": false
+}

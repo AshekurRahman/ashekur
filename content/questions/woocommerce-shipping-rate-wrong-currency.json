@@ -1,0 +1,17 @@
+{
+  "slug": "rate-wrong-currency",
+  "category": "woocommerce",
+  "subcategory": "shipping",
+  "question": "Why Is My Shipping Rate Showing in the Wrong Currency?",
+  "metaDescription": "Usually a live-rate carrier plugin returning its own default currency, a multi-currency plugin not converting shipping costs, or a hardcoded rate value.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-08",
+  "dateModified": "2026-09-08",
+  "shortAnswer": "<p>A shipping rate displaying in the wrong currency is typically caused by a live-rate carrier plugin returning a cost in its own default or account currency without converting it to the store's configured currency, a multi-currency plugin converting product prices but not applying the same conversion to shipping costs, or a manually configured Flat Rate cost that was entered assuming a different currency than the store actually uses.</p>",
+  "image": {
+    "alt": "A shipping rate displaying in the wrong currency because of a carrier plugin, currency converter gap, or a manual entry mistake",
+    "prompt": "Create a clean, professional technical illustration of a shipping cost figure showing an incorrect currency symbol at checkout. Dark navy background, red and indigo accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"why-this-happens\">Why This Happens</h2>\n<p>Currency handling for shipping costs generally isn't automatic across every plugin &mdash; core WooCommerce's own shipping methods use whatever currency the store is configured for by default, but a live-rate carrier integration querying an external API may return values in a currency tied to the connected carrier account rather than the store's storefront currency, requiring an explicit conversion step that isn't always handled correctly out of the box.</p>\n\n<h2 id=\"common-causes\">Common Causes</h2>\n<ul>\n<li><strong>A live carrier-rate plugin</strong> returning costs in the currency of the connected shipping account rather than converting to the store's display currency.</li>\n<li><strong>A multi-currency plugin</strong> converting product prices correctly but missing shipping cost conversion, a common gap depending on the specific plugin's implementation.</li>\n<li><strong>A Flat Rate cost entered manually</strong> in the wrong currency by mistake, especially after a store's default currency was changed at some point without revisiting existing shipping method costs.</li>\n<li><strong>Currency symbol display settings</strong> being separate from the actual currency the calculation is performed in, occasionally creating a mismatch between what's shown and what's actually charged.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">How to Fix It</h2>\n<ol>\n<li><strong>Confirm the store's actual default currency setting</strong> under Settings &rarr; General.</li>\n<li><strong>Check whether a multi-currency plugin's conversion covers shipping costs,</strong> not just product prices.</li>\n<li><strong>Review any live-rate carrier plugin's currency configuration,</strong> ensuring it converts to the store's display currency correctly.</li>\n<li><strong>Re-verify manually entered Flat Rate costs</strong> after any currency change to the store.</li>\n</ol>\n<p>Need a shipping or currency configuration issue diagnosed and fixed? See <a href=\"../../../../services/woocommerce-fix/\">WooCommerce Fixes</a>.</p>",
+  "hasCode": false
+}

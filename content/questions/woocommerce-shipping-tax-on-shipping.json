@@ -1,0 +1,17 @@
+{
+  "slug": "tax-on-shipping",
+  "category": "woocommerce",
+  "subcategory": "shipping",
+  "question": "Is Shipping Itself Taxed?",
+  "metaDescription": "Depends on the jurisdiction — WooCommerce's \"Calculate tax based on\" and a per-rate \"Shipping\" checkbox control whether shipping is taxed at all.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-08",
+  "dateModified": "2026-09-08",
+  "shortAnswer": "<p>Whether shipping is legally taxable depends entirely on the specific tax jurisdiction, since rules genuinely differ by country and even by state or region &mdash; WooCommerce itself doesn't decide this for you, but its tax rate settings include a specific \"Shipping\" checkbox per rate, controlling whether that particular tax rate applies to the shipping cost in addition to the product cost.</p>",
+  "image": {
+    "alt": "Shipping tax controlled by a per-rate setting in WooCommerce, applied or not depending on the specific jurisdiction's rules",
+    "prompt": "Create a clean, professional technical illustration of a shipping cost with a tax rule being applied or excluded depending on jurisdiction. Dark navy background, indigo and amber accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"how-it-works\">How WooCommerce Handles This</h2>\n<p>Under WooCommerce &rarr; Settings &rarr; Tax, each defined tax rate row includes a Shipping checkbox &mdash; checking it means that specific rate also applies to the shipping cost, not just the product subtotal. Since tax rules genuinely vary by jurisdiction, this needs to be configured correctly per rate to match the actual legal requirement for each region the store serves.</p>\n\n<h2 id=\"common-causes\">Why This Varies</h2>\n<ul>\n<li><strong>Some jurisdictions tax shipping as part of the total taxable sale,</strong> treating it no differently from the product cost itself.</li>\n<li><strong>Other jurisdictions exempt shipping from tax entirely,</strong> or apply a different rate specifically to shipping versus goods.</li>\n<li><strong>This is a genuine legal/compliance question,</strong> not just a technical setting &mdash; getting it wrong risks under- or over-collecting tax, both of which carry real consequences.</li>\n<li><strong>A tax automation plugin</strong> (calculating rates dynamically based on current, jurisdiction-specific rules) can handle this correctly without manual per-rate configuration, worth considering for stores selling across many tax jurisdictions.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">Getting This Configured Correctly</h2>\n<ol>\n<li><strong>Confirm the actual legal requirement</strong> for each tax jurisdiction the store serves, ideally with proper tax/accounting advice.</li>\n<li><strong>Set the Shipping checkbox correctly</strong> on each tax rate to match that requirement.</li>\n<li><strong>Consider a tax automation plugin</strong> if manually maintaining correct rates across many jurisdictions becomes impractical.</li>\n</ol>\n<p>Need tax settings configured correctly for your store? See <a href=\"../../../../services/woocommerce-development/\">custom WooCommerce development</a>.</p>",
+  "hasCode": false
+}

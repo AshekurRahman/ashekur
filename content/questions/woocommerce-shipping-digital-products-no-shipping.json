@@ -1,0 +1,17 @@
+{
+  "slug": "digital-products-no-shipping",
+  "category": "woocommerce",
+  "subcategory": "shipping",
+  "question": "Why Doesn't My Digital Product Show a Shipping Option?",
+  "metaDescription": "By design — a product marked Virtual is treated as needing no physical delivery, so it's excluded from shipping calculation entirely.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-08",
+  "dateModified": "2026-09-08",
+  "shortAnswer": "<p>This is expected, intentional behavior rather than a bug &mdash; a product checked as Virtual in its General settings tab is treated by WooCommerce as needing no physical shipping at all, so it's excluded from shipping weight/dimension calculations and, if it's the only item in the cart, the entire shipping step at checkout is skipped since there's genuinely nothing to ship.</p>",
+  "image": {
+    "alt": "A product marked Virtual being excluded from shipping calculation entirely by design, needing no physical delivery",
+    "prompt": "Create a clean, professional technical illustration of a digital product bypassing the physical shipping process entirely. Dark navy background, indigo and teal accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"why-this-happens\">Why This Happens</h2>\n<p>The Virtual checkbox exists specifically to tell WooCommerce a product doesn't need physical fulfillment &mdash; a service, a digital license key, a subscription to online content &mdash; and the system's shipping logic checks this flag to decide whether shipping fields and calculation apply at all. This is separate from the Downloadable checkbox, which additionally handles delivering an actual file, though the two are commonly used together for digital goods.</p>\n\n<h2 id=\"common-causes\">Common Related Scenarios</h2>\n<ul>\n<li><strong>A cart mixing virtual and physical products</strong> still shows shipping options, calculated based only on the physical items, since the virtual item correctly contributes nothing to that calculation.</li>\n<li><strong>A product accidentally marked Virtual</strong> when it actually needs physical shipping is a common cause of a product mysteriously missing from shipping calculations when it shouldn't be.</li>\n<li><strong>Downloadable without Virtual</strong> is possible but unusual &mdash; a physical product that also includes a downloadable component (a manual, for instance) alongside genuine physical shipping.</li>\n<li><strong>Order confirmation and email content</strong> often differs slightly for virtual products, typically emphasizing access/download instructions instead of shipping/tracking information.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">Confirming This Is Set Correctly</h2>\n<ol>\n<li><strong>Check the product's General tab</strong> and confirm the Virtual checkbox matches whether it actually needs physical shipping.</li>\n<li><strong>Uncheck Virtual</strong> if a product was mistakenly marked as needing no shipping.</li>\n<li><strong>Review order emails and confirmation content</strong> for virtual products to ensure they reflect the correct fulfillment type.</li>\n</ol>\n<p>Need digital product configuration reviewed and corrected? See <a href=\"../../../../services/woocommerce-development/\">custom WooCommerce development</a>.</p>",
+  "hasCode": false
+}

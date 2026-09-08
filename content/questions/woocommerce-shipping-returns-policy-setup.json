@@ -1,0 +1,17 @@
+{
+  "slug": "returns-policy-setup",
+  "category": "woocommerce",
+  "subcategory": "shipping",
+  "question": "Should I Have a Dedicated Shipping and Returns Policy Page?",
+  "metaDescription": "Yes — a clear, easy-to-find policy page reduces pre-purchase hesitation and support inquiries, and is required in some jurisdictions for consumer sales.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-08",
+  "dateModified": "2026-09-08",
+  "shortAnswer": "<p>A dedicated, easy-to-find shipping and returns policy page is genuinely worth having &mdash; it reduces pre-purchase hesitation for customers uncertain about delivery times or return options, cuts down on repetitive support inquiries asking questions the page already answers, and in some jurisdictions, clearly disclosing return rights and shipping terms is a legal requirement for consumer sales rather than just good practice.</p>",
+  "image": {
+    "alt": "A dedicated shipping and returns policy page reducing pre-purchase hesitation and repetitive customer support questions",
+    "prompt": "Create a clean, professional technical illustration of a clear policy document reassuring a customer before they complete a purchase. Dark navy background, indigo and amber accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"how-it-works\">Why This Page Matters</h2>\n<p>Uncertainty about shipping cost, delivery time, or whether a return is possible is a genuine cause of cart abandonment &mdash; a customer who can't quickly find this information may simply leave rather than commit to a purchase with unknown terms. A clear, linked policy page removes that friction and gives customer support a definitive reference to point to for repeated questions.</p>\n\n<h2 id=\"common-causes\">What a Good Policy Page Includes</h2>\n<ul>\n<li><strong>Shipping methods, costs, and estimated delivery times</strong> per region served, matching what's actually configured in the shipping zones.</li>\n<li><strong>Clear return eligibility rules</strong> &mdash; time window, product condition requirements, and any excluded categories (final sale items, for instance).</li>\n<li><strong>Who covers return shipping cost,</strong> a detail that significantly affects customer decision-making and is worth stating explicitly rather than leaving ambiguous.</li>\n<li><strong>Refund processing timeline,</strong> setting realistic expectations for how long a refund takes once a return is received.</li>\n<li><strong>Legal compliance requirements</strong> specific to the jurisdictions served, since consumer protection law in some regions mandates specific disclosures around returns and cancellation rights.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">Setting This Up</h2>\n<ol>\n<li><strong>Write clear shipping and return terms</strong> matching your actual configured policies.</li>\n<li><strong>Check jurisdiction-specific legal requirements</strong> for consumer disclosures, ideally with proper legal advice.</li>\n<li><strong>Link the page prominently</strong> from the footer, product pages, and checkout, not just buried in a menu.</li>\n</ol>\n<p>Need a shipping and returns policy page built and linked properly? See <a href=\"../../../../services/woocommerce-development/\">custom WooCommerce development</a>.</p>",
+  "hasCode": false
+}

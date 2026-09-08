@@ -1,0 +1,17 @@
+{
+  "slug": "estimated-delivery-dates",
+  "category": "woocommerce",
+  "subcategory": "shipping",
+  "question": "Can I Show Estimated Delivery Dates to Customers?",
+  "metaDescription": "Not through a core setting — needs a dedicated delivery-estimate plugin, or a live carrier integration that already returns transit-time data.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-08",
+  "dateModified": "2026-09-08",
+  "shortAnswer": "<p>Core WooCommerce doesn't include a native way to display an estimated delivery date range at checkout or on a shipping method's description &mdash; this needs either a dedicated delivery-estimate plugin (calculating a date range from processing time plus carrier transit time) or a live carrier-rate integration that already returns transit-time data as part of its rate quote, which can then be displayed alongside the cost.</p>",
+  "image": {
+    "alt": "An estimated delivery date range displayed at checkout through a dedicated plugin or a live carrier rate integration",
+    "prompt": "Create a clean, professional technical illustration of a shipping option showing a calculated estimated delivery date range. Dark navy background, indigo and teal accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"how-it-works\">How Delivery Estimates Are Calculated</h2>\n<p>A proper estimate needs two components: the store's own processing time (how long before an order actually ships) and the carrier's typical transit time for that shipping method and destination. A dedicated plugin lets both be configured manually per shipping zone or method, while a live carrier integration often already knows its own transit time and can surface it directly without manual configuration.</p>\n\n<h2 id=\"common-causes\">Why This Matters for Customers</h2>\n<ul>\n<li><strong>Reduces \"where's my order\" support inquiries,</strong> since customers who know roughly when to expect delivery are less likely to ask before it's genuinely overdue.</li>\n<li><strong>Improves checkout confidence,</strong> particularly for time-sensitive purchases like gifts, where knowing a delivery window matters to the purchase decision.</li>\n<li><strong>Needs to account for processing time separately from transit time,</strong> since a common mistake is displaying only carrier transit time and ignoring how long the order actually takes to leave the warehouse.</li>\n<li><strong>Estimates should be realistic and slightly conservative,</strong> since consistently missing a promised delivery date does more damage to trust than a vaguer but accurate range would.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">Setting This Up</h2>\n<ol>\n<li><strong>Determine accurate processing and transit times</strong> for each shipping method and zone.</li>\n<li><strong>Install a delivery-estimate plugin,</strong> or use transit-time data already provided by a live carrier integration.</li>\n<li><strong>Display the estimate clearly at checkout,</strong> keeping it realistic rather than overly optimistic.</li>\n</ol>\n<p>Need delivery estimates set up accurately for your store? See <a href=\"../../../../services/woocommerce-development/\">custom WooCommerce development</a>.</p>",
+  "hasCode": false
+}

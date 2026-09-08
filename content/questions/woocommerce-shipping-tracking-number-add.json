@@ -1,0 +1,17 @@
+{
+  "slug": "tracking-number-add",
+  "category": "woocommerce",
+  "subcategory": "shipping",
+  "question": "How Do I Add a Tracking Number to an Order?",
+  "metaDescription": "A dedicated shipment-tracking plugin adds a tracking field to the order screen and can automatically email the number and carrier link to the customer.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-08",
+  "dateModified": "2026-09-08",
+  "shortAnswer": "<p>Core WooCommerce doesn't include a built-in tracking number field &mdash; a dedicated shipment-tracking plugin adds one directly to the order edit screen, letting a tracking number and carrier be recorded per order (or per shipped item, for split shipments), and typically handles emailing that information to the customer automatically, along with a direct tracking link where the carrier supports it.</p>",
+  "image": {
+    "alt": "A tracking number and carrier added to an order through a dedicated shipment-tracking plugin, then emailed to the customer",
+    "prompt": "Create a clean, professional technical illustration of a tracking number being attached to an order and sent to a customer. Dark navy background, indigo and amber accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"how-it-works\">How Tracking Plugins Work</h2>\n<p>Once installed, a tracking plugin adds a field (or a dedicated meta box) to the order edit screen where staff enter the tracking number and select the carrier from a supported list. From there, the plugin generates the correct tracking URL format for that specific carrier and, depending on configuration, automatically includes it in the order's shipped/completed notification email without any manual email composition.</p>\n\n<h2 id=\"common-causes\">What to Look For in a Tracking Plugin</h2>\n<ul>\n<li><strong>Support for the specific carriers actually used,</strong> since tracking URL formats differ by carrier and a plugin needs to recognize each one to generate a working link.</li>\n<li><strong>Automatic customer notification,</strong> emailing the tracking number and link as soon as it's added, rather than requiring a separate manual step.</li>\n<li><strong>A customer-facing tracking page or account order view,</strong> letting a logged-in customer check tracking status without needing to dig through email.</li>\n<li><strong>Support for multiple tracking numbers per order,</strong> needed if an order ships as multiple separate packages.</li>\n<li><strong>Bulk tracking upload,</strong> useful for stores processing many orders daily, letting tracking numbers be added via a CSV import rather than one at a time.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">Setting This Up</h2>\n<ol>\n<li><strong>Install a shipment-tracking plugin</strong> supporting the carriers your store actually uses.</li>\n<li><strong>Configure automatic customer email notification</strong> once a tracking number is added.</li>\n<li><strong>Add tracking numbers as orders ship,</strong> using bulk upload if order volume warrants it.</li>\n</ol>\n<p>Need order tracking set up and automated properly? See <a href=\"../../../../services/woocommerce-development/\">custom WooCommerce development</a>.</p>",
+  "hasCode": false
+}

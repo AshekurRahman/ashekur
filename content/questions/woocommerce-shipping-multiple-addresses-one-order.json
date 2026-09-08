@@ -1,0 +1,17 @@
+{
+  "slug": "multiple-addresses-one-order",
+  "category": "woocommerce",
+  "subcategory": "shipping",
+  "question": "Can a Customer Ship to Multiple Addresses in One Order?",
+  "metaDescription": "Not through core checkout — needs a dedicated multi-address shipping plugin, letting different items in one cart be sent to different destinations.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-08",
+  "dateModified": "2026-09-08",
+  "shortAnswer": "<p>Standard WooCommerce checkout collects exactly one shipping address per order, applied to every item in the cart &mdash; shipping different items to different addresses within a single order needs a dedicated multi-address shipping plugin, which adds a per-item (or per-group) address assignment step to checkout and typically calculates shipping separately for each destination.</p>",
+  "image": {
+    "alt": "A dedicated multi-address shipping plugin letting different items in one order ship to different addresses",
+    "prompt": "Create a clean, professional technical illustration of one order splitting its items to ship toward several different destination addresses. Dark navy background, indigo and teal accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"how-it-works\">Why This Needs a Plugin</h2>\n<p>Core WooCommerce's data model and checkout flow are built around a single shipping address per order, which covers the overwhelming majority of typical purchases. A multi-address plugin fundamentally extends this, letting a customer assign individual cart items (or item groups) to different addresses, then calculating and often splitting shipping cost per destination rather than one blended total.</p>\n\n<h2 id=\"common-causes\">When This Capability Is Actually Needed</h2>\n<ul>\n<li><strong>Gift-giving scenarios,</strong> where a customer wants to send different items to different recipients in a single checkout session rather than placing separate orders.</li>\n<li><strong>Corporate or bulk-buying accounts</strong> distributing items to multiple office locations or employees from one purchase.</li>\n<li><strong>This adds real checkout complexity,</strong> so it's worth confirming customers actually need it rather than adding it speculatively &mdash; many stores serve this need well enough by simply having the customer place separate orders per address.</li>\n<li><strong>Order management and fulfillment</strong> need to account for the multi-address structure too, since packing and shipping logic typically assumes one address per order without this extension.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">Setting This Up</h2>\n<ol>\n<li><strong>Confirm genuine customer demand</strong> for shipping to multiple addresses in one order before adding this complexity.</li>\n<li><strong>Install a dedicated multi-address shipping plugin</strong> compatible with your current shipping setup.</li>\n<li><strong>Test the full order and fulfillment flow,</strong> confirming packing slips and shipping labels correctly reflect the split addresses.</li>\n</ol>\n<p>Need multi-address shipping or a similar complex checkout flow built properly? See <a href=\"../../../../services/woocommerce-development/\">custom WooCommerce development</a>.</p>",
+  "hasCode": false
+}

@@ -1,0 +1,17 @@
+{
+  "slug": "dimensions-not-used",
+  "category": "woocommerce",
+  "subcategory": "shipping",
+  "question": "Are Product Dimensions Actually Used in Shipping Calculations?",
+  "metaDescription": "Not by core Flat Rate or Free Shipping, which only use weight and cart totals — dimensions matter only to live carrier rates or dimensional-weight plugins.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-08",
+  "dateModified": "2026-09-08",
+  "shortAnswer": "<p>Core WooCommerce's built-in Flat Rate and Free Shipping methods don't factor in product dimensions at all &mdash; they work with weight and cart total/quantity values only. Length, width, and height only become relevant once a live carrier-rate integration is used (since carriers calculate dimensional weight for pricing) or a dedicated shipping plugin specifically designed to incorporate dimensions into its own rate logic is installed.</p>",
+  "image": {
+    "alt": "Product dimensions only affecting shipping cost through a live carrier rate or a dedicated dimensional-weight plugin",
+    "prompt": "Create a clean, professional technical illustration of a package's dimensions being measured and factored into a shipping cost calculation. Dark navy background, indigo and teal accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"how-it-works\">Why Dimensions Are Often Ignored</h2>\n<p>Weight-only shipping pricing is simpler to configure and understand, which is likely why WooCommerce's core Flat Rate method was built around it rather than dimensions. This works fine for stores selling reasonably uniform, dense products, but becomes inaccurate for lightweight-but-bulky items, where real-world carrier pricing (based on dimensional weight, effectively treating large-but-light packages as heavier than they actually are) diverges significantly from a weight-only calculation.</p>\n\n<h2 id=\"common-causes\">When Dimensions Actually Matter</h2>\n<ul>\n<li><strong>Live carrier-rate integrations</strong> generally do account for dimensions, since the carrier's own pricing already factors in dimensional weight as part of its real quote.</li>\n<li><strong>Lightweight but bulky products</strong> (large but light items like pillows or lampshades) are the clearest case where ignoring dimensions in a weight-only calculation results in charging noticeably less than the real shipping cost.</li>\n<li><strong>A dimensional-weight-aware shipping plugin</strong> can incorporate a dimensional weight formula into a Flat Rate-style calculation without needing a full live carrier integration.</li>\n<li><strong>Accurate dimension data on every product</strong> is a prerequisite regardless of which approach is used, since any dimension-aware calculation is only as good as the data entered.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">Addressing This</h2>\n<ol>\n<li><strong>Enter accurate dimensions</strong> for every product, not just weight, regardless of the current shipping setup.</li>\n<li><strong>Use a live carrier-rate integration</strong> if genuine dimensional accuracy matters for your product range.</li>\n<li><strong>Consider a dimensional-weight-aware plugin</strong> as a middle ground if a full live-rate integration isn't wanted.</li>\n</ol>\n<p>Need shipping cost accuracy improved for bulky or lightweight products? See <a href=\"../../../../services/woocommerce-development/\">custom WooCommerce development</a>.</p>",
+  "hasCode": false
+}
