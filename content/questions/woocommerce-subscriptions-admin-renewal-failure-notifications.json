@@ -2,7 +2,7 @@
   "slug": "admin-renewal-failure-notifications",
   "category": "woocommerce",
   "subcategory": "subscriptions",
-  "question": "How Do I Get Notified When a WooCommerce Subscription Renewal Fails?",
+  "question": "How Do I Get Notified When a Subscription Renewal Fails?",
   "metaDescription": "There's a built-in admin email for failed renewals, but it's easy to miss among general order notifications — here's how to make sure it's actually working.",
   "readTime": "3 min read",
   "datePublished": "2026-09-12",

@@ -2,7 +2,7 @@
   "slug": "elementor-checkout-compatibility",
   "category": "woocommerce",
   "subcategory": "subscriptions",
-  "question": "Does WooCommerce Subscriptions Work With Elementor's Checkout Widget?",
+  "question": "Does WooCommerce Subscriptions Work With Elementor Checkout?",
   "metaDescription": "Elementor Pro's WooCommerce checkout widget generally supports subscription products, but a few specific fields need checking before launch.",
   "readTime": "3 min read",
   "datePublished": "2026-09-10",

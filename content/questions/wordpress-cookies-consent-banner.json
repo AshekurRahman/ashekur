@@ -1,7 +1,7 @@
 {
   "slug": "cookies-consent-banner",
   "category": "wordpress",
-  "question": "What Cookies Does WordPress Set, and Do I Need a Cookie Consent Banner?",
+  "question": "What Cookies Does WordPress Set, and Do I Need a Banner?",
   "metaDescription": "Core sets a handful of functional cookies for login and comments — a consent banner's need depends on jurisdiction and other tracking used.",
   "readTime": "3 min read",
   "datePublished": "2026-09-08",

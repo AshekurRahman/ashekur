@@ -1,7 +1,7 @@
 {
   "slug": "plugin-repository-safety",
   "category": "wordpress",
-  "question": "How Do I Tell If a Plugin From the WordPress Repository Is Safe to Install?",
+  "question": "How Do I Tell If a WordPress Repository Plugin Is Safe?",
   "metaDescription": "Recent update date, active install count, review ratings, and support forum responsiveness together give a much clearer picture than any one alone.",
   "readTime": "3 min read",
   "datePublished": "2026-09-08",

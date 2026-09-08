@@ -2,7 +2,7 @@
   "slug": "wp-cli-management",
   "category": "woocommerce",
   "subcategory": "subscriptions",
-  "question": "Can I Manage WooCommerce Subscriptions From the Command Line With WP-CLI?",
+  "question": "Can I Manage WooCommerce Subscriptions From WP-CLI?",
   "metaDescription": "WooCommerce Subscriptions doesn't ship its own WP-CLI commands, but subscriptions are fully scriptable through WP-CLI's general WooCommerce/post commands.",
   "readTime": "3 min read",
   "datePublished": "2026-09-12",

@@ -1,7 +1,7 @@
 {
   "slug": "local-development-environment",
   "category": "wordpress",
-  "question": "What's the Right Way to Set Up a Local WordPress Development Environment?",
+  "question": "What's the Right Way to Set Up Local WordPress Development?",
   "metaDescription": "A dedicated local WordPress tool (Local, DevKinsta, or similar) beats a generic web server stack for matching real hosting behavior closely.",
   "readTime": "3 min read",
   "datePublished": "2026-09-08",

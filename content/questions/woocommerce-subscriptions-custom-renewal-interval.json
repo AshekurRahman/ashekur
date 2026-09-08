@@ -2,7 +2,7 @@
   "slug": "custom-renewal-interval",
   "category": "woocommerce",
   "subcategory": "subscriptions",
-  "question": "Can I Set a Custom Billing Interval Like Every 10 Days in WooCommerce Subscriptions?",
+  "question": "Can I Set a Custom Billing Interval, Like Every 10 Days?",
   "metaDescription": "Not through the standard product settings, which only offer fixed periods and simple multiples — a truly custom interval needs a small code addition.",
   "readTime": "3 min read",
   "datePublished": "2026-09-13",

@@ -2,7 +2,7 @@
   "slug": "account-deleted-subscription",
   "category": "woocommerce",
   "subcategory": "subscriptions",
-  "question": "What Happens to a Subscription If a Customer's Account Is Deleted?",
+  "question": "What Happens to a Subscription If the Account Is Deleted?",
   "metaDescription": "Deleting a WordPress user with an active subscription doesn't automatically cancel it — here's what actually happens and the right order of operations.",
   "readTime": "3 min read",
   "datePublished": "2026-09-10",

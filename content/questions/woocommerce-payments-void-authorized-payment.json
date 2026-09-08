@@ -2,7 +2,7 @@
   "slug": "void-authorized-payment",
   "category": "woocommerce",
   "subcategory": "payments",
-  "question": "How Do I Void an Authorized Payment That Hasn't Been Captured Yet?",
+  "question": "How Do I Void an Authorized but Uncaptured Payment?",
   "metaDescription": "Cancelling the order through WooCommerce typically triggers the gateway's void through the same integration used for authorize/capture, if supported.",
   "readTime": "2 min read",
   "datePublished": "2026-09-07",

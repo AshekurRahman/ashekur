@@ -2,7 +2,7 @@
   "slug": "privacy-policy-checkbox",
   "category": "woocommerce",
   "subcategory": "checkout",
-  "question": "Do I Need a Privacy Policy Checkbox at Checkout, and Is It Legally Required?",
+  "question": "Do I Need a Privacy Policy Checkbox at Checkout?",
   "metaDescription": "Requirements vary by jurisdiction (GDPR being the strictest), but WooCommerce includes a built-in privacy policy link and optional checkbox for this.",
   "readTime": "3 min read",
   "datePublished": "2026-09-07",

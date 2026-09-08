@@ -2,7 +2,7 @@
   "slug": "multiple-zones-overlap",
   "category": "woocommerce",
   "subcategory": "shipping",
-  "question": "What Happens If a Customer's Address Matches Multiple Shipping Zones?",
+  "question": "What Happens If an Address Matches Multiple Shipping Zones?",
   "metaDescription": "Only the first matching zone, in top-to-bottom list order, is ever used — WooCommerce doesn't combine or choose between multiple matching zones.",
   "readTime": "2 min read",
   "datePublished": "2026-09-08",

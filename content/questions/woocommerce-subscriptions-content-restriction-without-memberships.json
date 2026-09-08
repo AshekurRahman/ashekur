@@ -2,7 +2,7 @@
   "slug": "content-restriction-without-memberships",
   "category": "woocommerce",
   "subcategory": "subscriptions",
-  "question": "Can I Restrict Content to Subscribers Without Using WooCommerce Memberships?",
+  "question": "Can I Restrict Content to Subscribers Without Memberships?",
   "metaDescription": "Yes — a subscription's status can gate content through a lightweight custom check, without the full WooCommerce Memberships plugin.",
   "readTime": "3 min read",
   "datePublished": "2026-09-12",

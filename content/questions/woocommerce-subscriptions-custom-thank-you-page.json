@@ -2,7 +2,7 @@
   "slug": "custom-thank-you-page",
   "category": "woocommerce",
   "subcategory": "subscriptions",
-  "question": "Can I Customize the Thank You Page for a WooCommerce Subscription Purchase?",
+  "question": "Can I Customize the Thank You Page for a Subscription?",
   "metaDescription": "The order-received page can be customized for subscription purchases specifically, using a conditional check most theme edits skip by default.",
   "readTime": "3 min read",
   "datePublished": "2026-09-13",

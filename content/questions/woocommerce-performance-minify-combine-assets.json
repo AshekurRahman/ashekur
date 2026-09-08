@@ -2,7 +2,7 @@
   "slug": "minify-combine-assets",
   "category": "woocommerce",
   "subcategory": "performance",
-  "question": "Does Minifying CSS and JavaScript Actually Help a WooCommerce Store?",
+  "question": "Does Minifying CSS and JavaScript Actually Help a Store?",
   "metaDescription": "Yes, modestly — minification reduces file size directly, while combining files (once genuinely useful) matters less under modern HTTP/2 hosting.",
   "readTime": "2 min read",
   "datePublished": "2026-09-08",

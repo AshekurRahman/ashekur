@@ -2,7 +2,7 @@
   "slug": "test-mode-vs-live-mode",
   "category": "woocommerce",
   "subcategory": "payments",
-  "question": "How Do I Safely Test WooCommerce Payments Without Charging Real Cards?",
+  "question": "How Do I Test WooCommerce Payments Without Real Charges?",
   "metaDescription": "Every major gateway has a sandbox/test mode with its own dedicated test card numbers — the key is confirming the store is actually switched into it.",
   "readTime": "3 min read",
   "datePublished": "2026-09-07",

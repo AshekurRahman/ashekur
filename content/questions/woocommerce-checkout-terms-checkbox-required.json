@@ -2,7 +2,7 @@
   "slug": "terms-checkbox-required",
   "category": "woocommerce",
   "subcategory": "checkout",
-  "question": "How Do I Make the Terms and Conditions Checkbox Required at Checkout?",
+  "question": "How Do I Make the Terms Checkbox Required at Checkout?",
   "metaDescription": "It appears automatically once a Terms and Conditions page is set and selected under WooCommerce's Advanced settings — no separate plugin needed.",
   "readTime": "2 min read",
   "datePublished": "2026-09-07",

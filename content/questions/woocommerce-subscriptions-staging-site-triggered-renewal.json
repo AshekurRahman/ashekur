@@ -2,7 +2,7 @@
   "slug": "staging-site-triggered-renewal",
   "category": "woocommerce",
   "subcategory": "subscriptions",
-  "question": "Why Did My Staging Site Charge Real Customers for Subscription Renewals?",
+  "question": "Why Did My Staging Site Charge Real Subscription Renewals?",
   "metaDescription": "A staging copy of a WooCommerce site can trigger real subscription charges if it isn't properly isolated — here's why, and how to prevent it.",
   "readTime": "4 min read",
   "datePublished": "2026-09-09",

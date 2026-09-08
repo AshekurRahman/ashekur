@@ -2,7 +2,7 @@
   "slug": "ship-to-different-address",
   "category": "woocommerce",
   "subcategory": "checkout",
-  "question": "Can Customers Ship to a Different Address Than Their Billing Address?",
+  "question": "Can Customers Ship to a Different Address Than Billing?",
   "metaDescription": "Yes — a built-in \"ship to a different address\" checkbox handles this by default, though it can be hidden by a theme or checkout customization.",
   "readTime": "2 min read",
   "datePublished": "2026-09-07",

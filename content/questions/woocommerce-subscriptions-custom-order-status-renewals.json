@@ -2,7 +2,7 @@
   "slug": "custom-order-status-renewals",
   "category": "woocommerce",
   "subcategory": "subscriptions",
-  "question": "Can I Add a Custom Order Status for WooCommerce Subscription Renewals?",
+  "question": "Can I Add a Custom Order Status for Subscription Renewals?",
   "metaDescription": "Custom order statuses are supported, but a renewal order's status needs to interact correctly with the subscription's own separate status too.",
   "readTime": "3 min read",
   "datePublished": "2026-09-12",

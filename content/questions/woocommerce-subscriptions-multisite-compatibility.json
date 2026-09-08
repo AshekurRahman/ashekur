@@ -2,7 +2,7 @@
   "slug": "multisite-compatibility",
   "category": "woocommerce",
   "subcategory": "subscriptions",
-  "question": "Does WooCommerce Subscriptions Work on a WordPress Multisite Network?",
+  "question": "Does WooCommerce Subscriptions Work on WordPress Multisite?",
   "metaDescription": "WooCommerce Subscriptions works on multisite, but each site's subscriptions, scheduler and payment gateway setup stay fully independent — here's what to know.",
   "readTime": "3 min read",
   "datePublished": "2026-09-10",

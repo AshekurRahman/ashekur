@@ -2,7 +2,7 @@
   "slug": "page-builder-customization",
   "category": "woocommerce",
   "subcategory": "checkout",
-  "question": "Can I Fully Customize the Checkout Page Design With a Page Builder?",
+  "question": "Can I Customize the Checkout Page With a Page Builder?",
   "metaDescription": "Partially — most page builders can style around the checkout form, but the form's own fields and logic remain controlled by WooCommerce underneath.",
   "readTime": "3 min read",
   "datePublished": "2026-09-07",

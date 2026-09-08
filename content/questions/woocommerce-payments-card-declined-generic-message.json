@@ -2,7 +2,7 @@
   "slug": "card-declined-generic-message",
   "category": "woocommerce",
   "subcategory": "payments",
-  "question": "Why Do Declined Cards Show a Generic Error Instead of the Real Reason?",
+  "question": "Why Do Declined Cards Show a Generic Error, Not the Reason?",
   "metaDescription": "It's a deliberate security and UX choice by the gateway, not a bug — the specific decline code is still available to the store, just not the shopper.",
   "readTime": "2 min read",
   "datePublished": "2026-09-07",

@@ -2,7 +2,7 @@
   "slug": "blocks-vs-classic-shortcode",
   "category": "woocommerce",
   "subcategory": "checkout",
-  "question": "Should I Use the New Checkout Block or the Classic Shortcode Checkout?",
+  "question": "Checkout Block vs. Classic Shortcode: Which Should I Use?",
   "metaDescription": "The block checkout is where WooCommerce's active development is focused — worth adopting unless a specific customization depends on the classic version.",
   "readTime": "3 min read",
   "datePublished": "2026-09-07",

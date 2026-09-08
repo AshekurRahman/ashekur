@@ -2,7 +2,7 @@
   "slug": "guest-order-lookup",
   "category": "woocommerce",
   "subcategory": "orders",
-  "question": "Can a Guest Customer Look Up Their Order Without Creating an Account?",
+  "question": "Can a Guest Look Up an Order Without Creating an Account?",
   "metaDescription": "Yes — the order-received page's link, or a dedicated order tracking page using the order ID and billing email, both work without an account.",
   "readTime": "2 min read",
   "datePublished": "2026-09-07",

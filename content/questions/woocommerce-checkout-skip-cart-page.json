@@ -2,7 +2,7 @@
   "slug": "skip-cart-page",
   "category": "woocommerce",
   "subcategory": "checkout",
-  "question": "Should I Let Customers Skip the Cart Page and Go Straight to Checkout?",
+  "question": "Should Customers Be Able to Skip the Cart Page at Checkout?",
   "metaDescription": "Often worthwhile for single-product or simple-catalog stores — the cart page adds a review step that matters less when there's little to review.",
   "readTime": "3 min read",
   "datePublished": "2026-09-07",

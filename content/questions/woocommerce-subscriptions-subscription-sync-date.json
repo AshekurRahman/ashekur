@@ -2,7 +2,7 @@
   "slug": "subscription-sync-date",
   "category": "woocommerce",
   "subcategory": "subscriptions",
-  "question": "How Does Subscription Syncing to a Specific Date Work in WooCommerce?",
+  "question": "How Does Subscription Syncing to a Specific Date Work?",
   "metaDescription": "Subscription syncing bills every customer on the same fixed date instead of their signup anniversary — how it works, and how the first prorated charge behaves.",
   "readTime": "3 min read",
   "datePublished": "2026-09-09",

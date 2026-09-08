@@ -2,7 +2,7 @@
   "slug": "switch-payment-gateway",
   "category": "woocommerce",
   "subcategory": "subscriptions",
-  "question": "Can a Customer Switch Payment Gateways on an Existing WooCommerce Subscription?",
+  "question": "Can a Customer Switch Gateways on an Active Subscription?",
   "metaDescription": "Switching from one gateway to a completely different one on an active subscription is more involved than updating a card — here's what actually happens.",
   "readTime": "3 min read",
   "datePublished": "2026-09-13",

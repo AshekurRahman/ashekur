@@ -2,7 +2,7 @@
   "slug": "per-item-vs-per-order",
   "category": "woocommerce",
   "subcategory": "shipping",
-  "question": "What's the Difference Between Per-Item and Per-Order Shipping Costs?",
+  "question": "Per-Item vs. Per-Order Shipping Costs: The Difference?",
   "metaDescription": "Per-order charges one flat cost regardless of quantity; per-item multiplies a cost by how many units are in the cart, scaling with order size.",
   "readTime": "2 min read",
   "datePublished": "2026-09-08",

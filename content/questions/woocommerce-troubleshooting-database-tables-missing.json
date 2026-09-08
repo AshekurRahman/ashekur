@@ -2,7 +2,7 @@
   "slug": "database-tables-missing",
   "category": "woocommerce",
   "subcategory": "troubleshooting",
-  "question": "What Do I Do If WooCommerce Database Tables Are Missing or Corrupted?",
+  "question": "What Do I Do If WooCommerce Database Tables Go Missing?",
   "metaDescription": "Back up first, then run WooCommerce's own built-in database repair tool under Status → Tools before attempting anything more invasive.",
   "readTime": "3 min read",
   "datePublished": "2026-09-07",

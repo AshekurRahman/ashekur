@@ -2,7 +2,7 @@
   "slug": "refund-woocommerce-vs-gateway",
   "category": "woocommerce",
   "subcategory": "payments",
-  "question": "Should I Issue Refunds Through WooCommerce or Directly in the Gateway Dashboard?",
+  "question": "Should I Refund Through WooCommerce or the Gateway Dashboard?",
   "metaDescription": "Through WooCommerce, whenever possible — it keeps order status, stock, and reporting in sync automatically instead of drifting out of step.",
   "readTime": "3 min read",
   "datePublished": "2026-09-07",

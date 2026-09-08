@@ -2,7 +2,7 @@
   "slug": "switching-gateways-migration",
   "category": "woocommerce",
   "subcategory": "payments",
-  "question": "What Should I Check Before Switching WooCommerce Payment Gateways?",
+  "question": "What to Check Before Switching WooCommerce Payment Gateways?",
   "metaDescription": "Saved cards, active subscriptions, and webhook configuration are the three things most likely to break silently if a gateway switch isn't planned properly.",
   "readTime": "4 min read",
   "datePublished": "2026-09-07",

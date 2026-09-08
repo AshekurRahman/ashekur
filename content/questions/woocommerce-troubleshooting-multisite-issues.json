@@ -2,7 +2,7 @@
   "slug": "multisite-issues",
   "category": "woocommerce",
   "subcategory": "troubleshooting",
-  "question": "What Special Problems Come Up Running WooCommerce on WordPress Multisite?",
+  "question": "What Problems Come Up Running WooCommerce on Multisite?",
   "metaDescription": "Network-activated plugin conflicts, shared upload directories, and per-site licensing are the main friction points specific to a multisite setup.",
   "readTime": "3 min read",
   "datePublished": "2026-09-07",

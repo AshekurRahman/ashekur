@@ -2,7 +2,7 @@
   "slug": "express-checkout-button",
   "category": "woocommerce",
   "subcategory": "payments",
-  "question": "Should I Add an Express Checkout Button Above the Regular Payment Form?",
+  "question": "Should I Add an Express Checkout Button Above the Form?",
   "metaDescription": "Usually yes for mobile traffic specifically — express buttons (Apple Pay, Google Pay, PayPal) skip form-filling entirely and tend to lift conversion there.",
   "readTime": "3 min read",
   "datePublished": "2026-09-07",

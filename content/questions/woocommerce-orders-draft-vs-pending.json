@@ -2,7 +2,7 @@
   "slug": "draft-vs-pending",
   "category": "woocommerce",
   "subcategory": "orders",
-  "question": "What's the Difference Between a Draft Order and a Pending Payment Order?",
+  "question": "Draft Order vs. Pending Payment: What's the Difference?",
   "metaDescription": "Draft orders are typically created programmatically (by blocks checkout or an API) before checkout even starts — Pending means checkout was attempted.",
   "readTime": "2 min read",
   "datePublished": "2026-09-07",

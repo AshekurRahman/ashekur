@@ -2,7 +2,7 @@
   "slug": "role-based-pricing",
   "category": "woocommerce",
   "subcategory": "subscriptions",
-  "question": "Can I Offer Different Subscription Prices for Different Customer Roles?",
+  "question": "Can I Charge Different Subscription Prices by Customer Role?",
   "metaDescription": "Role-based subscription pricing needs a dedicated B2B/wholesale pricing plugin or custom logic — it isn't a setting inside WooCommerce Subscriptions itself.",
   "readTime": "3 min read",
   "datePublished": "2026-09-13",

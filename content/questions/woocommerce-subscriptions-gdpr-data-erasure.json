@@ -2,7 +2,7 @@
   "slug": "gdpr-data-erasure",
   "category": "woocommerce",
   "subcategory": "subscriptions",
-  "question": "What Happens to a WooCommerce Subscription When a Customer Requests Data Erasure?",
+  "question": "What Happens to a Subscription on a Data Erasure Request?",
   "metaDescription": "An active subscription complicates a GDPR erasure request — here's what WordPress's tools handle automatically, and what needs a manual decision.",
   "readTime": "3 min read",
   "datePublished": "2026-09-10",

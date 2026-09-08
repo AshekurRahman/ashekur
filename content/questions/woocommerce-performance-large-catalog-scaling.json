@@ -2,7 +2,7 @@
   "slug": "large-catalog-scaling",
   "category": "woocommerce",
   "subcategory": "performance",
-  "question": "How Do I Keep a Large Product Catalog From Slowing Down the Store?",
+  "question": "How Do I Stop a Large Catalog From Slowing the Store?",
   "metaDescription": "Object caching, a proper search/filter solution, optimized images at scale, and hosting sized for the catalog all matter more as product count grows.",
   "readTime": "2 min read",
   "datePublished": "2026-09-08",

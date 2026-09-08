@@ -2,7 +2,7 @@
   "slug": "duplicate-charge-double-click",
   "category": "woocommerce",
   "subcategory": "payments",
-  "question": "Can a Customer Be Charged Twice From Double-Clicking the Place Order Button?",
+  "question": "Can Double-Clicking Place Order Charge a Customer Twice?",
   "metaDescription": "WooCommerce disables the button after the first click specifically to prevent this, but a slow response or a JS conflict can occasionally let it through.",
   "readTime": "3 min read",
   "datePublished": "2026-09-07",

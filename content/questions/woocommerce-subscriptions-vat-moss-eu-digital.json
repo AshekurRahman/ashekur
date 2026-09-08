@@ -2,7 +2,7 @@
   "slug": "vat-moss-eu-digital",
   "category": "woocommerce",
   "subcategory": "subscriptions",
-  "question": "How Does WooCommerce Subscriptions Handle EU VAT for Digital Subscriptions?",
+  "question": "How Does WooCommerce Handle EU VAT on Digital Subscriptions?",
   "metaDescription": "WooCommerce Subscriptions doesn't calculate EU digital-VAT rules alone — that logic comes from a dedicated tax plugin, tested on renewals.",
   "readTime": "3 min read",
   "datePublished": "2026-09-12",

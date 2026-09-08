@@ -1,7 +1,7 @@
 {
   "slug": "version-eol-support",
   "category": "wordpress",
-  "question": "How Long Does WordPress Support Older Versions, and Should I Worry About EOL?",
+  "question": "How Long Does WordPress Support Older Versions Before EOL?",
   "metaDescription": "WordPress core still patches security issues in old versions surprisingly far back, but running one that far behind carries real, growing plugin risk.",
   "readTime": "3 min read",
   "datePublished": "2026-09-08",

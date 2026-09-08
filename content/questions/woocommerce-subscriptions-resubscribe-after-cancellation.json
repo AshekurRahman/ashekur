@@ -2,7 +2,7 @@
   "slug": "resubscribe-after-cancellation",
   "category": "woocommerce",
   "subcategory": "subscriptions",
-  "question": "Can a Customer Resubscribe After Cancelling a WooCommerce Subscription?",
+  "question": "Can a Customer Resubscribe After Cancelling a Subscription?",
   "metaDescription": "Yes — resubscribing creates a new subscription rather than reactivating the old one. Here's what that means for pricing, history and common issues.",
   "readTime": "3 min read",
   "datePublished": "2026-09-09",

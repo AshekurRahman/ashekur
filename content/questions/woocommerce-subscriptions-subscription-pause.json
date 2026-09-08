@@ -2,7 +2,7 @@
   "slug": "subscription-pause",
   "category": "woocommerce",
   "subcategory": "subscriptions",
-  "question": "Can a Customer Pause a WooCommerce Subscription Instead of Cancelling?",
+  "question": "Can a Customer Pause a Subscription Instead of Cancelling?",
   "metaDescription": "WooCommerce Subscriptions doesn't offer a true customer-facing pause by default — here's what's actually available and what a real pause needs.",
   "readTime": "3 min read",
   "datePublished": "2026-09-10",

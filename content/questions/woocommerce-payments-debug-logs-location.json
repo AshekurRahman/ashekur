@@ -2,7 +2,7 @@
   "slug": "debug-logs-location",
   "category": "woocommerce",
   "subcategory": "payments",
-  "question": "Where Do I Find Detailed Payment Gateway Debug Logs in WooCommerce?",
+  "question": "Where Do I Find Payment Gateway Debug Logs in WooCommerce?",
   "metaDescription": "WooCommerce → Status → Logs, but debug logging usually needs to be explicitly enabled in the gateway's own settings first, or nothing gets recorded.",
   "readTime": "2 min read",
   "datePublished": "2026-09-07",

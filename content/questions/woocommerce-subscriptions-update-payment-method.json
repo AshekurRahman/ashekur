@@ -2,7 +2,7 @@
   "slug": "update-payment-method",
   "category": "woocommerce",
   "subcategory": "subscriptions",
-  "question": "How Do Customers Update Their Payment Method on a WooCommerce Subscription?",
+  "question": "How Do Customers Update Payment Methods on a Subscription?",
   "metaDescription": "How the built-in payment method change flow works from My Account, and what to check when the option is missing or a new method won't save.",
   "readTime": "3 min read",
   "datePublished": "2026-09-07",

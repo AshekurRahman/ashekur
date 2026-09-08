@@ -2,7 +2,7 @@
   "slug": "htaccess-file-issues",
   "category": "woocommerce",
   "subcategory": "troubleshooting",
-  "question": "How Do I Fix a Broken or Missing .htaccess File Affecting WooCommerce?",
+  "question": "How Do I Fix a Broken or Missing .htaccess File?",
   "metaDescription": "WordPress regenerates the standard rewrite rules automatically on a Permalinks settings save — this alone fixes most missing .htaccess problems.",
   "readTime": "2 min read",
   "datePublished": "2026-09-07",

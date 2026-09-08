@@ -2,7 +2,7 @@
   "slug": "grace-period-failed-payment",
   "category": "woocommerce",
   "subcategory": "subscriptions",
-  "question": "What Is the Grace Period for a Failed WooCommerce Subscription Payment?",
+  "question": "What Is the Grace Period for a Failed Subscription Payment?",
   "metaDescription": "The grace period after a failed payment is the retry schedule itself, not a separate setting — here's how long a customer actually keeps access.",
   "readTime": "3 min read",
   "datePublished": "2026-09-11",

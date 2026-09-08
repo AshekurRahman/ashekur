@@ -1,7 +1,7 @@
 {
   "slug": "user-roles-capabilities-explained",
   "category": "wordpress",
-  "question": "What Do WordPress's Different User Roles Actually Allow Someone to Do?",
+  "question": "What Do WordPress's Different User Roles Actually Allow?",
   "metaDescription": "Each core role bundles a specific set of capabilities — from Subscriber's read-only access up to Administrator's full site control.",
   "readTime": "3 min read",
   "datePublished": "2026-09-07",

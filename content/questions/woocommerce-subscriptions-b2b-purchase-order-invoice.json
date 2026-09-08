@@ -2,7 +2,7 @@
   "slug": "b2b-purchase-order-invoice",
   "category": "woocommerce",
   "subcategory": "subscriptions",
-  "question": "Can a Business Customer Pay for a WooCommerce Subscription by Invoice Instead of a Card?",
+  "question": "Can a Business Pay for a Subscription by Invoice?",
   "metaDescription": "Invoice/purchase-order billing works for the first payment but breaks the automatic-renewal model — here's how B2B stores actually handle it.",
   "readTime": "3 min read",
   "datePublished": "2026-09-12",

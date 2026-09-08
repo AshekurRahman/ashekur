@@ -2,7 +2,7 @@
   "slug": "order-key-security",
   "category": "woocommerce",
   "subcategory": "orders",
-  "question": "What Is the Order Key in a WooCommerce Order URL, and Is It Secure?",
+  "question": "What Is the Order Key in a WooCommerce Order URL?",
   "metaDescription": "A long, randomly generated token that grants access to a specific order without a password — secure in practice, but not meant to be shared publicly.",
   "readTime": "2 min read",
   "datePublished": "2026-09-07",

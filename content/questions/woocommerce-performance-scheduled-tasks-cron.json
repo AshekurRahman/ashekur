@@ -2,7 +2,7 @@
   "slug": "scheduled-tasks-cron",
   "category": "woocommerce",
   "subcategory": "performance",
-  "question": "What Are WooCommerce's Scheduled Tasks and Can They Slow Down My Site?",
+  "question": "Can WooCommerce's Scheduled Tasks Slow Down My Site?",
   "metaDescription": "Background jobs (cleanup, emails, stock checks) run via WP-Cron, which piggybacks on visitor page loads by default and can add noticeable delay.",
   "readTime": "2 min read",
   "datePublished": "2026-09-08",

@@ -2,7 +2,7 @@
   "slug": "ssl-certificate-expiry",
   "category": "woocommerce",
   "subcategory": "subscriptions",
-  "question": "Can an Expired SSL Certificate Break WooCommerce Subscription Renewals?",
+  "question": "Can an Expired SSL Certificate Break Subscription Renewals?",
   "metaDescription": "Yes — most payment gateways refuse to complete a transaction against an invalid certificate, which silently fails every renewal until it's fixed.",
   "readTime": "3 min read",
   "datePublished": "2026-09-13",

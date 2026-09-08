@@ -2,7 +2,7 @@
   "slug": "after-server-migration",
   "category": "woocommerce",
   "subcategory": "subscriptions",
-  "question": "What Should I Check After Migrating a WooCommerce Subscriptions Site to a New Server?",
+  "question": "What to Check After Migrating Subscriptions to a New Server?",
   "metaDescription": "A server migration risks cron reliability, webhook URLs and outbound connections all at once — the checklist to confirm subscriptions still work correctly.",
   "readTime": "3 min read",
   "datePublished": "2026-09-13",

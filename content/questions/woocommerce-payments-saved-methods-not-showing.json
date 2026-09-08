@@ -2,7 +2,7 @@
   "slug": "saved-methods-not-showing",
   "category": "woocommerce",
   "subcategory": "payments",
-  "question": "Why Aren't a Customer's Saved Payment Methods Showing at Checkout?",
+  "question": "Why Aren't Saved Payment Methods Showing at Checkout?",
   "metaDescription": "Usually tokenization isn't enabled on the gateway, the customer isn't logged in, or the card was saved under a different gateway than the active one.",
   "readTime": "3 min read",
   "datePublished": "2026-09-07",

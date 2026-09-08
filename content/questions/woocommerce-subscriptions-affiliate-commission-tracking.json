@@ -2,7 +2,7 @@
   "slug": "affiliate-commission-tracking",
   "category": "woocommerce",
   "subcategory": "subscriptions",
-  "question": "Do Affiliate or Referral Plugins Track Commission on Subscription Renewals?",
+  "question": "Do Affiliate Plugins Track Commission on Renewals?",
   "metaDescription": "It depends entirely on the affiliate plugin's own recurring-commission support — most track only the first order unless built specifically for renewals.",
   "readTime": "3 min read",
   "datePublished": "2026-09-13",

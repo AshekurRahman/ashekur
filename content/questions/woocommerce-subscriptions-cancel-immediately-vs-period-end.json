@@ -2,7 +2,7 @@
   "slug": "cancel-immediately-vs-period-end",
   "category": "woocommerce",
   "subcategory": "subscriptions",
-  "question": "How Do I Cancel a WooCommerce Subscription Immediately Instead of at Period End?",
+  "question": "How Do I Cancel a Subscription Now Instead of at Period End?",
   "metaDescription": "The default customer-facing cancel keeps access until the paid period ends — here's how to force an immediate cancellation from the admin side instead.",
   "readTime": "3 min read",
   "datePublished": "2026-09-12",

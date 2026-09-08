@@ -1,7 +1,7 @@
 {
   "slug": "mobile-responsiveness-broken",
   "category": "wordpress",
-  "question": "Why Does My Site Look Broken on Mobile Even Though the Theme Says It's Responsive?",
+  "question": "Why Does My Site Look Broken on Mobile if It's Responsive?",
   "metaDescription": "A responsive theme handles its own default layout — custom content, embeds, or page-builder sections added afterward often aren't tested at every width.",
   "readTime": "3 min read",
   "datePublished": "2026-09-07",

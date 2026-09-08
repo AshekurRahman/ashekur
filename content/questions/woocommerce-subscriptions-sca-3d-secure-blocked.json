@@ -2,7 +2,7 @@
   "slug": "sca-3d-secure-blocked",
   "category": "woocommerce",
   "subcategory": "subscriptions",
-  "question": "Why Does 3D Secure Keep Blocking My WooCommerce Subscription Renewal?",
+  "question": "Why Does 3D Secure Keep Blocking My Subscription Renewal?",
   "metaDescription": "3D Secure exists to protect cardholders, and it can't always be bypassed for an automatic renewal — here's why, and how to actually resolve it.",
   "readTime": "3 min read",
   "datePublished": "2026-09-11",

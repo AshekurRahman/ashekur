@@ -2,7 +2,7 @@
   "slug": "hpos-migration-issues",
   "category": "woocommerce",
   "subcategory": "troubleshooting",
-  "question": "What Problems Can Come Up When Migrating to High-Performance Order Storage (HPOS)?",
+  "question": "What Problems Come Up Migrating to Order Storage (HPOS)?",
   "metaDescription": "Plugin incompatibility is the biggest risk — anything reading order data directly from post tables instead of WooCommerce's own APIs can break.",
   "readTime": "3 min read",
   "datePublished": "2026-09-07",

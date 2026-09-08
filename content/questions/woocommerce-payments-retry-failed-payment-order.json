@@ -2,7 +2,7 @@
   "slug": "retry-failed-payment-order",
   "category": "woocommerce",
   "subcategory": "payments",
-  "question": "Can a Customer Retry a Failed Payment Without Starting Checkout Over?",
+  "question": "Can a Customer Retry a Failed Payment Without a New Checkout?",
   "metaDescription": "Yes — WooCommerce's \"Pay for this order\" link on failed orders lets a customer retry with a different card without re-entering their whole cart.",
   "readTime": "2 min read",
   "datePublished": "2026-09-07",

@@ -1,7 +1,7 @@
 {
   "slug": "xml-sitemap-what-is-it",
   "category": "wordpress",
-  "question": "What Is an XML Sitemap, and Does WordPress Generate One Automatically?",
+  "question": "What Is an XML Sitemap, and Does WordPress Create One?",
   "metaDescription": "A structured list of a site's URLs that helps search engines discover content — WordPress core generates a basic one automatically since version 5.5.",
   "readTime": "2 min read",
   "datePublished": "2026-09-08",

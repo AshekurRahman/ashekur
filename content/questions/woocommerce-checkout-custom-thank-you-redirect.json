@@ -2,7 +2,7 @@
   "slug": "custom-thank-you-redirect",
   "category": "woocommerce",
   "subcategory": "checkout",
-  "question": "Can I Redirect Customers to a Custom Page After Checkout Completes?",
+  "question": "Can I Redirect Customers to a Custom Page After Checkout?",
   "metaDescription": "Yes, through a simple hook — useful for a custom upsell page, a survey, or tracking-pixel-heavy thank-you page not tied to the default template.",
   "readTime": "3 min read",
   "datePublished": "2026-09-07",

@@ -2,7 +2,7 @@
   "slug": "customer-add-instructions",
   "category": "woocommerce",
   "subcategory": "orders",
-  "question": "Can Customers Add Their Own Notes or Instructions to an Order After Placing It?",
+  "question": "Can Customers Add Notes to an Order After Placing It?",
   "metaDescription": "Not by default after checkout — the order notes field only accepts input at checkout; anything after that needs a support channel or custom addition.",
   "readTime": "2 min read",
   "datePublished": "2026-09-07",

@@ -2,7 +2,7 @@
   "slug": "min-max-quantity",
   "category": "woocommerce",
   "subcategory": "products",
-  "question": "Can I Set a Minimum or Maximum Purchase Quantity for a Specific Product?",
+  "question": "Can I Set a Min or Max Purchase Quantity for a Product?",
   "metaDescription": "Not through core product settings — a dedicated min/max quantity plugin, or a small custom validation snippet, handles this on a per-product basis.",
   "readTime": "2 min read",
   "datePublished": "2026-09-08",

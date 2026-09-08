@@ -2,7 +2,7 @@
   "slug": "scheduled-tasks-not-running",
   "category": "woocommerce",
   "subcategory": "troubleshooting",
-  "question": "Why Aren't WooCommerce's Scheduled Tasks (Action Scheduler) Running?",
+  "question": "Why Aren't WooCommerce's Action Scheduler Tasks Running?",
   "metaDescription": "WP-Cron only fires on page visits by default — a low-traffic store or a disabled WP-Cron setting can leave scheduled tasks piling up unprocessed.",
   "readTime": "3 min read",
   "datePublished": "2026-09-07",

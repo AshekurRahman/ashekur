@@ -1,7 +1,7 @@
 {
   "slug": "wp-config-what-is-it",
   "category": "wordpress",
-  "question": "What Is wp-config.php, and What Should I Never Put in It Publicly?",
+  "question": "What Is wp-config.php, and What Shouldn't Go in It?",
   "metaDescription": "It holds database credentials and security keys — never commit it to a public repository, and never share its contents when asking for help.",
   "readTime": "3 min read",
   "datePublished": "2026-09-07",

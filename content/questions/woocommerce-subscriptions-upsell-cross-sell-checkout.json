@@ -2,7 +2,7 @@
   "slug": "upsell-cross-sell-checkout",
   "category": "woocommerce",
   "subcategory": "subscriptions",
-  "question": "Can I Add an Upsell or Cross-Sell to a WooCommerce Subscription Checkout?",
+  "question": "Can I Add an Upsell to a Subscription Checkout?",
   "metaDescription": "Standard WooCommerce upsells work fine with subscriptions, but mixing recurring and one-time products in one order needs a clear checkout total.",
   "readTime": "3 min read",
   "datePublished": "2026-09-12",

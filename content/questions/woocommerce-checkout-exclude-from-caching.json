@@ -2,7 +2,7 @@
   "slug": "exclude-from-caching",
   "category": "woocommerce",
   "subcategory": "checkout",
-  "question": "Why Shouldn't the Checkout Page Be Cached, and How Do I Exclude It?",
+  "question": "Why Shouldn't the Checkout Page Be Cached?",
   "metaDescription": "A cached checkout can show one customer another's cart, expired security tokens, or stale totals — most caching plugins exclude it automatically.",
   "readTime": "3 min read",
   "datePublished": "2026-09-07",

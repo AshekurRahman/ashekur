@@ -2,7 +2,7 @@
   "slug": "gateway-native-recurring-vs-plugin",
   "category": "woocommerce",
   "subcategory": "subscriptions",
-  "question": "Do I Need WooCommerce Subscriptions If My Gateway Already Handles Recurring Billing?",
+  "question": "Do I Need Subscriptions If My Gateway Handles Billing?",
   "metaDescription": "A gateway's own recurring billing lives entirely outside WordPress — here's what that means for order history, access control and customer self-service.",
   "readTime": "3 min read",
   "datePublished": "2026-09-12",

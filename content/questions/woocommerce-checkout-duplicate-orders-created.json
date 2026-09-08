@@ -2,7 +2,7 @@
   "slug": "duplicate-orders-created",
   "category": "woocommerce",
   "subcategory": "checkout",
-  "question": "Why Are Duplicate Orders Being Created From the Same Checkout Attempt?",
+  "question": "Why Are Duplicate Orders Created From One Checkout Attempt?",
   "metaDescription": "Usually the Place Order button's disable-on-click behavior being broken by a JS conflict, letting a slow page allow a genuine second submission.",
   "readTime": "3 min read",
   "datePublished": "2026-09-07",

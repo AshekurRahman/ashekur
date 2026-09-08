@@ -108,14 +108,13 @@ function escapeAttr(s) {
   return escapeHtml(s);
 }
 
-// Google's SERP title display starts truncating well before 90 characters.
-// The site's own existing pages top out around 87 chars total, so past
-// that, drop the " | Ashekur Rahman" suffix rather than let it get cut off
-// mid-word — Google usually appends the site name in results on its own
-// once the title alone approaches this length anyway.
+// Google's SERP title display reliably starts truncating past ~65
+// characters. Past that, drop the " | Ashekur Rahman" suffix rather than
+// let it get cut off mid-word — Google usually appends the site name in
+// results on its own once the title alone approaches this length anyway.
 const SITE_TITLE_SUFFIX = ' | Ashekur Rahman';
 function pageTitle(base) {
-  return base.length + SITE_TITLE_SUFFIX.length > 87 ? base : `${base}${SITE_TITLE_SUFFIX}`;
+  return base.length + SITE_TITLE_SUFFIX.length > 65 ? base : `${base}${SITE_TITLE_SUFFIX}`;
 }
 
 function relPrefix(depth) {

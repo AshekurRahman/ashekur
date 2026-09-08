@@ -2,7 +2,7 @@
   "slug": "terms-conditions-renewal",
   "category": "woocommerce",
   "subcategory": "subscriptions",
-  "question": "Does a Customer Need to Re-Accept Terms and Conditions on Every Renewal?",
+  "question": "Does a Customer Re-Accept Terms on Every Renewal?",
   "metaDescription": "No — WooCommerce records acceptance once at the original checkout, and automatic renewals don't pass through checkout again to ask a second time.",
   "readTime": "2 min read",
   "datePublished": "2026-09-13",

@@ -2,7 +2,7 @@
   "slug": "chargeback-dispute",
   "category": "woocommerce",
   "subcategory": "subscriptions",
-  "question": "How Do I Handle a Chargeback on a WooCommerce Subscription Payment?",
+  "question": "How Do I Handle a Chargeback on a Subscription Payment?",
   "metaDescription": "A chargeback on a subscription renewal needs a deliberate decision about the subscription itself, not just a reply to the payment gateway's dispute form.",
   "readTime": "3 min read",
   "datePublished": "2026-09-13",

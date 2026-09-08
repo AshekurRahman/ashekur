@@ -2,7 +2,7 @@
   "slug": "tax-status-class",
   "category": "woocommerce",
   "subcategory": "products",
-  "question": "What Does the Tax Status and Tax Class Setting on a Product Actually Do?",
+  "question": "What Do a Product's Tax Status and Tax Class Actually Do?",
   "metaDescription": "Tax Status decides whether a product is taxed at all; Tax Class decides which specific rate applies among the different rate categories configured.",
   "readTime": "2 min read",
   "datePublished": "2026-09-08",

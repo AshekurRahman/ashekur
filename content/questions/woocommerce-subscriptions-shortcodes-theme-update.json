@@ -2,7 +2,7 @@
   "slug": "shortcodes-theme-update",
   "category": "woocommerce",
   "subcategory": "subscriptions",
-  "question": "Do Old WooCommerce Subscriptions Shortcodes Still Work After a Theme Update?",
+  "question": "Do Old Subscriptions Shortcodes Still Work After a Theme Update?",
   "metaDescription": "Usually yes, since shortcodes are registered by the plugin, not the theme — but a theme update can still break their styling or surrounding layout.",
   "readTime": "3 min read",
   "datePublished": "2026-09-13",

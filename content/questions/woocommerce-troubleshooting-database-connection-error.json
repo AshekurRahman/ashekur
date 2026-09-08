@@ -2,7 +2,7 @@
   "slug": "database-connection-error",
   "category": "woocommerce",
   "subcategory": "troubleshooting",
-  "question": "What Does Error Establishing a Database Connection Mean for a WooCommerce Store?",
+  "question": "What Does 'Error Establishing a Database Connection' Mean?",
   "metaDescription": "WordPress itself can't reach the database at all — this is a hosting/config-level failure, more fundamental than anything WooCommerce-specific.",
   "readTime": "3 min read",
   "datePublished": "2026-09-07",

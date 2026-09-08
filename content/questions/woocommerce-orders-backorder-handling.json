@@ -2,7 +2,7 @@
   "slug": "backorder-handling",
   "category": "woocommerce",
   "subcategory": "orders",
-  "question": "How Does WooCommerce Handle Orders That Include a Backordered Item?",
+  "question": "How Does WooCommerce Handle Orders With a Backordered Item?",
   "metaDescription": "The order still processes normally through checkout — WooCommerce flags the specific line item and stock goes negative, rather than blocking the order.",
   "readTime": "3 min read",
   "datePublished": "2026-09-07",

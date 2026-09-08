@@ -2,7 +2,7 @@
   "slug": "cart-checkout-blocks-compatibility",
   "category": "woocommerce",
   "subcategory": "subscriptions",
-  "question": "Does WooCommerce Subscriptions Work With the New Cart and Checkout Blocks?",
+  "question": "Does WooCommerce Subscriptions Work With Checkout Blocks?",
   "metaDescription": "WooCommerce Subscriptions supports the block-based checkout, but older payment gateway extensions and custom checkout code need checking first.",
   "readTime": "3 min read",
   "datePublished": "2026-09-12",

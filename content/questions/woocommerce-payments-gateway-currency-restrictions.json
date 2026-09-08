@@ -2,7 +2,7 @@
   "slug": "gateway-currency-restrictions",
   "category": "woocommerce",
   "subcategory": "payments",
-  "question": "Why Would a Payment Gateway Only Support Certain Store Currencies?",
+  "question": "Why Would a Gateway Only Support Certain Currencies?",
   "metaDescription": "Gateways settle funds into a bank account tied to a specific country and currency set, which limits which store currencies they can actually process.",
   "readTime": "2 min read",
   "datePublished": "2026-09-07",

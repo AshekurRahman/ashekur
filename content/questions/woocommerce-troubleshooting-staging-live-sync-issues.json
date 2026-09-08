@@ -2,7 +2,7 @@
   "slug": "staging-live-sync-issues",
   "category": "woocommerce",
   "subcategory": "troubleshooting",
-  "question": "Why Do Orders or Settings Get Mixed Up Between My Staging and Live Site?",
+  "question": "Why Do Orders or Settings Mix Up Between Staging and Live?",
   "metaDescription": "Usually a staging tool syncing the database in the wrong direction, or a shared API/webhook configuration pointing both environments at the same account.",
   "readTime": "3 min read",
   "datePublished": "2026-09-07",

@@ -2,7 +2,7 @@
   "slug": "subscription-database-tables",
   "category": "woocommerce",
   "subcategory": "subscriptions",
-  "question": "Where Does WooCommerce Subscriptions Store Its Data in the Database?",
+  "question": "Where Does WooCommerce Subscriptions Store Its Data?",
   "metaDescription": "WooCommerce Subscriptions stores subscriptions as a custom order type — here's exactly where that data lives, and how it differs under HPOS.",
   "readTime": "3 min read",
   "datePublished": "2026-09-09",

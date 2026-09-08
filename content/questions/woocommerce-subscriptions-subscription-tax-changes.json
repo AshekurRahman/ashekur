@@ -2,7 +2,7 @@
   "slug": "subscription-tax-changes",
   "category": "woocommerce",
   "subcategory": "subscriptions",
-  "question": "Why Did My WooCommerce Subscription's Tax Amount Change on Renewal?",
+  "question": "Why Did My Subscription's Tax Amount Change on Renewal?",
   "metaDescription": "Subscription renewals recalculate tax at the time of billing, not at signup — here's why the amount can shift between charges, and when that's a bug.",
   "readTime": "3 min read",
   "datePublished": "2026-09-09",

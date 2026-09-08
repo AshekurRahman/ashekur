@@ -2,7 +2,7 @@
   "slug": "increase-quantity-existing",
   "category": "woocommerce",
   "subcategory": "subscriptions",
-  "question": "Can a Customer Change the Quantity on an Existing WooCommerce Subscription?",
+  "question": "Can a Customer Change Quantity on an Active Subscription?",
   "metaDescription": "Quantity on an active WooCommerce subscription isn't self-service by default — an admin can edit it directly, but proration needs to be handled deliberately.",
   "readTime": "3 min read",
   "datePublished": "2026-09-11",

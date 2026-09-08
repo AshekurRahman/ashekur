@@ -2,7 +2,7 @@
   "slug": "testing-renewals-without-waiting",
   "category": "woocommerce",
   "subcategory": "subscriptions",
-  "question": "How Do I Test a WooCommerce Subscription Renewal Without Waiting for the Billing Date?",
+  "question": "How Do I Test a Subscription Renewal Without Waiting?",
   "metaDescription": "Testing a real renewal without waiting weeks for the billing date to arrive — the safe way, on staging, using the plugin's own manual renewal action.",
   "readTime": "3 min read",
   "datePublished": "2026-09-09",

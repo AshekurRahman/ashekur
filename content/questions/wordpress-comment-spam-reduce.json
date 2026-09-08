@@ -1,7 +1,7 @@
 {
   "slug": "comment-spam-reduce",
   "category": "wordpress",
-  "question": "How Do I Reduce Spam Comments Without Turning Comments Off Entirely?",
+  "question": "How Do I Reduce Spam Comments Without Disabling Comments?",
   "metaDescription": "A dedicated anti-spam plugin using pattern/reputation checking catches the vast majority automatically, without adding friction for real commenters.",
   "readTime": "2 min read",
   "datePublished": "2026-09-07",

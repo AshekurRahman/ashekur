@@ -2,7 +2,7 @@
   "slug": "failed-payment-retry",
   "category": "woocommerce",
   "subcategory": "subscriptions",
-  "question": "How Does WooCommerce Subscriptions Retry a Failed Renewal Payment?",
+  "question": "How Does WooCommerce Retry a Failed Renewal Payment?",
   "metaDescription": "How WooCommerce Subscriptions' automatic retry system works, what triggers it, and how to configure or manually retry a failed renewal.",
   "readTime": "3 min read",
   "datePublished": "2026-09-07",

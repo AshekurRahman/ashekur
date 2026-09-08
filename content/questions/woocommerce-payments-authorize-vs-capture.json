@@ -2,7 +2,7 @@
   "slug": "authorize-vs-capture",
   "category": "woocommerce",
   "subcategory": "payments",
-  "question": "What's the Difference Between Authorizing and Capturing a Payment in WooCommerce?",
+  "question": "Authorizing vs. Capturing a Payment: What's the Difference?",
   "metaDescription": "Authorization reserves funds on the customer's card without moving money; capture is the separate step that actually completes the charge.",
   "readTime": "3 min read",
   "datePublished": "2026-09-07",

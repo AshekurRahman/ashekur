@@ -2,7 +2,7 @@
   "slug": "hosted-checkout-vs-embedded",
   "category": "woocommerce",
   "subcategory": "payments",
-  "question": "What's the Difference Between a Hosted Checkout Page and an Embedded Payment Form?",
+  "question": "Hosted Checkout vs. Embedded Payment Form: The Difference?",
   "metaDescription": "A hosted page redirects to the gateway's own domain to collect card details; an embedded form keeps everything on your checkout page directly.",
   "readTime": "3 min read",
   "datePublished": "2026-09-07",

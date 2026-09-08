@@ -2,7 +2,7 @@
   "slug": "gateway-plugin-conflict-checkout-error",
   "category": "woocommerce",
   "subcategory": "payments",
-  "question": "A Payment Gateway Plugin Is Causing a Checkout Error — How Do I Diagnose It?",
+  "question": "A Gateway Plugin Is Breaking Checkout — How Do I Fix It?",
   "metaDescription": "Isolate it systematically on staging by disabling other plugins and switching to a default theme, rather than guessing which one is actually conflicting.",
   "readTime": "3 min read",
   "datePublished": "2026-09-07",

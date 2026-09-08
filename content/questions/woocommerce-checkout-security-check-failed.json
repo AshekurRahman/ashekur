@@ -2,7 +2,7 @@
   "slug": "security-check-failed",
   "category": "woocommerce",
   "subcategory": "checkout",
-  "question": "What Does a Security Check Failed Error at Checkout Actually Mean?",
+  "question": "What Does a 'Security Check Failed' Error at Checkout Mean?",
   "metaDescription": "It's a WordPress nonce (a short-lived security token) that expired — usually from the checkout page being left open too long before submitting.",
   "readTime": "3 min read",
   "datePublished": "2026-09-07",

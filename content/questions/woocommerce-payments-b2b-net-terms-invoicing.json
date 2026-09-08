@@ -2,7 +2,7 @@
   "slug": "b2b-net-terms-invoicing",
   "category": "woocommerce",
   "subcategory": "payments",
-  "question": "Can I Offer Net-30 Invoicing as a Payment Method for B2B Customers?",
+  "question": "Can I Offer Net-30 Invoicing for B2B Customers?",
   "metaDescription": "Yes, through a dedicated B2B/wholesale plugin — this isn't a standard gateway, since it defers payment rather than collecting it at checkout.",
   "readTime": "3 min read",
   "datePublished": "2026-09-07",

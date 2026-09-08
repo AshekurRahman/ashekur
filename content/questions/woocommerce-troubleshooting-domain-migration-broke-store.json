@@ -2,7 +2,7 @@
   "slug": "domain-migration-broke-store",
   "category": "woocommerce",
   "subcategory": "troubleshooting",
-  "question": "Why Did Moving to a New Domain Break Parts of My WooCommerce Store?",
+  "question": "Why Did a Domain Move Break Parts of My WooCommerce Store?",
   "metaDescription": "Hardcoded old-domain URLs left in the database, gateway/webhook configuration, and plugin licenses all need updating separately — none update automatically.",
   "readTime": "3 min read",
   "datePublished": "2026-09-07",

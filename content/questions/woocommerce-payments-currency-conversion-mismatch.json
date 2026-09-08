@@ -2,7 +2,7 @@
   "slug": "currency-conversion-mismatch",
   "category": "woocommerce",
   "subcategory": "payments",
-  "question": "Why Does the Charged Amount Not Match the Displayed Price After Currency Conversion?",
+  "question": "Why Doesn't the Charged Amount Match the Price Shown?",
   "metaDescription": "A small mismatch usually comes from the exchange rate used at display time differing from the one the gateway actually applies at the moment of charge.",
   "readTime": "3 min read",
   "datePublished": "2026-09-07",

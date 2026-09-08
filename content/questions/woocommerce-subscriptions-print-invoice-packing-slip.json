@@ -2,7 +2,7 @@
   "slug": "print-invoice-packing-slip",
   "category": "woocommerce",
   "subcategory": "subscriptions",
-  "question": "Can I Print Invoices or Packing Slips for WooCommerce Subscription Orders?",
+  "question": "Can I Print Invoices for WooCommerce Subscription Orders?",
   "metaDescription": "Yes — since renewal orders are regular WooCommerce orders, any PDF invoicing plugin generates one for them exactly as it would for any other order.",
   "readTime": "2 min read",
   "datePublished": "2026-09-13",

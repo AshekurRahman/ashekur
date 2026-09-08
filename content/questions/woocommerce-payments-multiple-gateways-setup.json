@@ -2,7 +2,7 @@
   "slug": "multiple-gateways-setup",
   "category": "woocommerce",
   "subcategory": "payments",
-  "question": "Can I Offer Multiple Payment Gateways at Checkout, and How Do I Prioritize Them?",
+  "question": "Can I Offer Multiple Payment Gateways, and Prioritize Them?",
   "metaDescription": "Yes — WooCommerce supports any number of active gateways, with display order set by a simple drag-and-drop list in Payments settings.",
   "readTime": "2 min read",
   "datePublished": "2026-09-07",

@@ -2,7 +2,7 @@
   "slug": "custom-fields-checkout",
   "category": "woocommerce",
   "subcategory": "subscriptions",
-  "question": "How Do I Add Custom Fields to a WooCommerce Subscription Checkout?",
+  "question": "How Do I Add Custom Fields to a Subscription Checkout?",
   "metaDescription": "Custom checkout fields work the same for subscription products, but the value needs to be saved somewhere accessible to every future renewal order too.",
   "readTime": "3 min read",
   "datePublished": "2026-09-12",

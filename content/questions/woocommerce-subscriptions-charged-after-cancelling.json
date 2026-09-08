@@ -2,7 +2,7 @@
   "slug": "charged-after-cancelling",
   "category": "woocommerce",
   "subcategory": "subscriptions",
-  "question": "Why Was a Customer Charged After Cancelling Their WooCommerce Subscription?",
+  "question": "Why Was a Customer Charged After Cancelling a Subscription?",
   "metaDescription": "A charge after cancellation almost always means the cancellation didn't actually save, or a renewal was already mid-process — here's how to trace which.",
   "readTime": "3 min read",
   "datePublished": "2026-09-10",

@@ -2,7 +2,7 @@
   "slug": "validation-error-wont-clear",
   "category": "woocommerce",
   "subcategory": "checkout",
-  "question": "Why Won't a Checkout Field Validation Error Go Away Even After Fixing It?",
+  "question": "Why Won't a Checkout Validation Error Clear After Fixing It?",
   "metaDescription": "The checkout fragment cache often needs a manual refresh trigger — the field re-validates visually only after the AJAX update cycle actually runs.",
   "readTime": "3 min read",
   "datePublished": "2026-09-07",

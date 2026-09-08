@@ -2,7 +2,7 @@
   "slug": "renewal-time-of-day",
   "category": "woocommerce",
   "subcategory": "subscriptions",
-  "question": "Why Does My WooCommerce Subscription Renew at a Strange Time of Day?",
+  "question": "Why Does My Subscription Renew at a Strange Time of Day?",
   "metaDescription": "A renewal firing at an odd hour is almost always a timezone setting or cron-timing issue, not a bug in the billing date itself.",
   "readTime": "3 min read",
   "datePublished": "2026-09-13",

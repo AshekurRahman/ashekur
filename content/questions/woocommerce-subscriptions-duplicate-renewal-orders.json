@@ -2,7 +2,7 @@
   "slug": "duplicate-renewal-orders",
   "category": "woocommerce",
   "subcategory": "subscriptions",
-  "question": "Why Did WooCommerce Create Two Renewal Orders for the Same Subscription?",
+  "question": "Why Did WooCommerce Create Duplicate Renewal Orders?",
   "metaDescription": "Duplicate renewal orders almost always point to the scheduler firing the same action twice — here's how to confirm that and stop it happening again.",
   "readTime": "3 min read",
   "datePublished": "2026-09-12",

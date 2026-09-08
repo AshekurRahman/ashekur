@@ -2,7 +2,7 @@
   "slug": "abandoned-cart-plugins",
   "category": "woocommerce",
   "subcategory": "subscriptions",
-  "question": "Do Abandoned Cart Plugins Work With WooCommerce Subscription Products?",
+  "question": "Do Abandoned Cart Plugins Work With Subscription Products?",
   "metaDescription": "Most abandoned-cart plugins can recover a subscription checkout, but the recovery link and messaging need to reflect the recurring total correctly.",
   "readTime": "3 min read",
   "datePublished": "2026-09-10",

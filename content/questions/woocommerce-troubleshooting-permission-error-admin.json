@@ -2,7 +2,7 @@
   "slug": "permission-error-admin",
   "category": "woocommerce",
   "subcategory": "troubleshooting",
-  "question": "Why Am I Getting a Permission Error Doing Normal WooCommerce Admin Actions?",
+  "question": "Why Am I Getting a Permission Error on Admin Actions?",
   "metaDescription": "Usually a WordPress user role/capability issue, not a WooCommerce bug — check the specific role's capabilities rather than assuming account access.",
   "readTime": "3 min read",
   "datePublished": "2026-09-07",

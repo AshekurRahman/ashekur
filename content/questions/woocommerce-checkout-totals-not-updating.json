@@ -2,7 +2,7 @@
   "slug": "totals-not-updating",
   "category": "woocommerce",
   "subcategory": "checkout",
-  "question": "Why Doesn't the Checkout Total Update When I Change Shipping or Apply a Coupon?",
+  "question": "Why Won't the Checkout Total Update After Shipping or a Coupon?",
   "metaDescription": "The AJAX update_order_review call that recalculates totals is likely failing silently — check the browser console and network tab for the real cause.",
   "readTime": "3 min read",
   "datePublished": "2026-09-07",

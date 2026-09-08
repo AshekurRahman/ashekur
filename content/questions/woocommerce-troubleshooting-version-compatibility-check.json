@@ -2,7 +2,7 @@
   "slug": "version-compatibility-check",
   "category": "woocommerce",
   "subcategory": "troubleshooting",
-  "question": "How Do I Check If a Plugin Is Actually Compatible With My WooCommerce Version?",
+  "question": "How Do I Check a Plugin's WooCommerce Compatibility?",
   "metaDescription": "The WordPress.org listing's \"tested up to\" field is a starting point, but recent reviews and changelog activity tell you more than that field alone.",
   "readTime": "3 min read",
   "datePublished": "2026-09-07",

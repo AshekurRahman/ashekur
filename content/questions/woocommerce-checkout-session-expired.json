@@ -2,7 +2,7 @@
   "slug": "session-expired",
   "category": "woocommerce",
   "subcategory": "checkout",
-  "question": "Why Does WooCommerce Say My Cart or Session Has Expired at Checkout?",
+  "question": "Why Does WooCommerce Say My Session Has Expired at Checkout?",
   "metaDescription": "WooCommerce sessions have a default expiry, but this message often points to a cookie problem rather than the customer genuinely waiting that long.",
   "readTime": "3 min read",
   "datePublished": "2026-09-07",

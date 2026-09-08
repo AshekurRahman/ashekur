@@ -2,7 +2,7 @@
   "slug": "wpml-multilingual",
   "category": "woocommerce",
   "subcategory": "subscriptions",
-  "question": "Is WooCommerce Subscriptions Compatible With WPML and Multilingual Sites?",
+  "question": "Is WooCommerce Subscriptions Compatible With WPML?",
   "metaDescription": "WooCommerce Subscriptions works with WPML, but translated product variations and renewal emails need specific setup to behave consistently.",
   "readTime": "3 min read",
   "datePublished": "2026-09-11",

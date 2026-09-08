@@ -2,7 +2,7 @@
   "slug": "order-attribution",
   "category": "woocommerce",
   "subcategory": "subscriptions",
-  "question": "What Is Order Attribution and Does It Work With Subscription Renewals?",
+  "question": "What Is Order Attribution, and Does It Track Renewals?",
   "metaDescription": "Order attribution tracks how a customer found the store on their first order — renewal orders inherit that original source rather than tracking anew.",
   "readTime": "3 min read",
   "datePublished": "2026-09-13",

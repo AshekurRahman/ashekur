@@ -2,7 +2,7 @@
   "slug": "backup-restore-checklist",
   "category": "woocommerce",
   "subcategory": "troubleshooting",
-  "question": "What Should I Check After Restoring a WooCommerce Site From Backup?",
+  "question": "What to Check After Restoring a Site From Backup?",
   "metaDescription": "Order data recorded after the backup was taken is genuinely gone — confirm the actual data gap first, then verify gateways, permalinks and emails.",
   "readTime": "3 min read",
   "datePublished": "2026-09-07",

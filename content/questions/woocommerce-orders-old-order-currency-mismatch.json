@@ -2,7 +2,7 @@
   "slug": "old-order-currency-mismatch",
   "category": "woocommerce",
   "subcategory": "orders",
-  "question": "Why Does an Old Order Show a Different Currency Than the Store Currently Uses?",
+  "question": "Why Does an Old Order Show a Different Currency Than Today?",
   "metaDescription": "This is correct, expected behavior — WooCommerce stores the currency active at the time of purchase on the order itself, permanently.",
   "readTime": "2 min read",
   "datePublished": "2026-09-07",
