@@ -1,0 +1,16 @@
+{
+  "slug": "color-picker-global-colors",
+  "category": "elementor",
+  "question": "What's the Point of Elementor's Global Colors and Fonts?",
+  "metaDescription": "Defining a color or font once as global and reusing it everywhere means a single future update changes it site-wide, instead of hunting element by element.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-08",
+  "dateModified": "2026-09-08",
+  "shortAnswer": "<p>Global Colors and Global Fonts, defined once under Site Settings, appear as quick-select options in every color and typography control across the whole editor &mdash; using them instead of manually picking the same color or font repeatedly means a future brand update (a refreshed primary color, a new heading font) only needs to change the single global definition, automatically updating every element that referenced it, rather than tracking down and editing each one individually.</p>",
+  "image": {
+    "alt": "A global color and font defined once and reused across the whole site, updating everywhere from a single change",
+    "prompt": "Create a clean, professional technical illustration of one central color and font definition connecting out to many different elements across a site. Dark navy background, indigo and teal accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"how-it-works\">How Global Styles Work</h2>\n<p>Site Settings under Global Colors and Global Fonts lets you define a named palette (Primary, Secondary, Text, Accent, and any custom additions) and a set of named typography styles, each appearing as a quick-select swatch or option at the top of every relevant control throughout the editor, ahead of the option to pick a fully custom one-off value instead.</p>\n\n<h2 id=\"common-causes\">Why This Matters for Consistency</h2>\n<ul>\n<li><strong>Design consistency</strong> is far easier to maintain when most colors and fonts trace back to a small set of global definitions rather than being individually picked (and inevitably drifting slightly) across dozens of pages.</li>\n<li><strong>Rebranding or refreshing a design</strong> becomes a single edit to the global definition instead of a page-by-page hunt for every place a color or font was used.</li>\n<li><strong>New team members</strong> building additional pages naturally stay on-brand by reaching for the existing global options rather than guessing at a matching custom value.</li>\n<li><strong>Custom, one-off values still have their place</strong> for genuinely unique design moments, but relying on them by default for routine elements undermines the whole point of having globals.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">Setting Up and Using Globals</h2>\n<ol>\n<li><strong>Define your palette and typography styles</strong> under Site Settings &rarr; Global Colors/Fonts early in a project.</li>\n<li><strong>Default to selecting a global option</strong> in color and typography controls rather than a custom one-off value.</li>\n<li><strong>Update the global definition</strong> whenever a brand-wide change is needed, letting it cascade automatically.</li>\n</ol>\n<p>Need a consistent global design system set up properly? See <a href=\"../../../services/elementor-customization/\">Elementor customization</a>.</p>",
+  "hasCode": false
+}

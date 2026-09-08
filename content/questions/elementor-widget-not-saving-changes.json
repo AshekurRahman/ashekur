@@ -1,0 +1,16 @@
+{
+  "slug": "widget-not-saving-changes",
+  "category": "elementor",
+  "question": "Why Do My Elementor Widget Changes Keep Reverting After I Save?",
+  "metaDescription": "Usually a caching layer serving the old version, a conflicting revision being restored automatically, or a save request silently failing server-side.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-08",
+  "dateModified": "2026-09-08",
+  "shortAnswer": "<p>Changes appearing to revert after saving are most commonly a caching layer (page cache, CDN, or browser cache) continuing to serve the pre-change version rather than the save genuinely failing, though a silently failing save request (a server timeout or permissions issue) or accidentally restoring an old revision can produce the same symptom and need to be ruled out separately.</p>",
+  "image": {
+    "alt": "Saved Elementor changes appearing to revert because a caching layer is serving the pre-change version of the page",
+    "prompt": "Create a clean, professional technical illustration of a saved change being overridden by an outdated cached version being served instead. Dark navy background, red and indigo accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"why-this-happens\">Why This Happens</h2>\n<p>The Elementor editor itself reads and writes directly to the database, so if a save genuinely succeeded there but the frontend still shows the old version, the actual save reached the database while everything downstream of it (page cache, a CDN, the visitor's browser cache) is what's actually serving stale content. Separately, if the save request itself failed (a timeout, a permissions issue, a plugin conflict), the editor may still show the change locally until refreshed, creating a similar-looking but different underlying problem.</p>\n\n<h2 id=\"common-causes\">Common Causes</h2>\n<ul>\n<li><strong>Page or site-wide caching</strong> serving a stored version of the page from before the save, the most common cause by far.</li>\n<li><strong>A CDN caching the page</strong> at the edge, requiring its own separate cache purge beyond just the site's own caching plugin.</li>\n<li><strong>Browser caching</strong> on the specific device used to check the result, masking a genuinely successful save.</li>\n<li><strong>A save request silently failing</strong> due to a server timeout, insufficient permissions, or Elementor's own regeneration process not completing.</li>\n<li><strong>An old revision being unintentionally restored,</strong> reverting content that appeared correctly saved moments earlier.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">How to Fix It</h2>\n<ol>\n<li><strong>Clear all caching layers</strong> &mdash; the caching plugin, any CDN, and the browser &mdash; before concluding the save actually failed.</li>\n<li><strong>Check the page's revision history</strong> to rule out an accidentally restored older version.</li>\n<li><strong>Re-save while watching for any error message</strong> or failed network request in the browser console.</li>\n<li><strong>Check server error logs</strong> if saves continue failing after ruling out caching.</li>\n</ol>\n<p>Need a persistent saving or caching issue diagnosed and fixed? See <a href=\"../../../services/elementor-fix/\">Elementor bug fix</a>.</p>",
+  "hasCode": false
+}

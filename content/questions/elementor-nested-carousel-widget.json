@@ -1,0 +1,16 @@
+{
+  "slug": "nested-carousel-widget",
+  "category": "elementor",
+  "question": "What's the Difference Between the Nested Carousel and the Basic Slider?",
+  "metaDescription": "Nested Carousel lets each slide hold any combination of widgets built visually; the basic Slider is limited to a fixed image-plus-caption format.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-08",
+  "dateModified": "2026-09-08",
+  "shortAnswer": "<p>The basic Slider widget is built around a fairly fixed format &mdash; an image with an optional heading, description, and button laid out in a predetermined way. The Nested Carousel widget instead treats each slide as its own mini-container, letting any combination of widgets (multiple images, custom layouts, forms, whatever's needed) be designed freely within each slide using the regular visual editor, rather than being limited to the basic Slider's fixed structure.</p>",
+  "image": {
+    "alt": "The Nested Carousel widget allowing freely designed slide content, compared to the basic Slider's fixed image-and-caption format",
+    "prompt": "Create a clean, professional technical illustration contrasting a rigid fixed-format slide with a freely designed, flexible carousel slide. Dark navy background, indigo and amber accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"how-it-works\">How Nested Carousel Differs</h2>\n<p>Each slide in a Nested Carousel functions like a small Container, meaning it accepts any widget combination just as a regular page section would, with the widget then handling the sliding/carousel mechanics and navigation around that freely designed content. The basic Slider, by contrast, offers a set of predefined fields per slide (background image, heading, text, button) without the ability to add arbitrary widgets inside a slide.</p>\n\n<h2 id=\"common-causes\">When to Use Each</h2>\n<ul>\n<li><strong>Use the basic Slider</strong> for a straightforward image-plus-caption hero banner, where its fixed format already covers what's needed without extra complexity.</li>\n<li><strong>Use Nested Carousel</strong> for anything more elaborate &mdash; a testimonial carousel with multiple text elements and an avatar image, a product carousel with custom layouts per slide, or any design the basic Slider's fixed fields can't accommodate.</li>\n<li><strong>Nested Carousel generally has a lighter, more modern implementation</strong> under the hood compared to the original Slider, in line with Elementor's broader move toward the Container-based \"Nested\" widget family (also seen in Nested Tabs and Nested Accordion).</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">Choosing the Right One</h2>\n<ol>\n<li><strong>Start with the basic Slider</strong> for simple, standard hero-banner-style carousels.</li>\n<li><strong>Switch to Nested Carousel</strong> as soon as a slide needs more than the Slider's fixed fields can offer.</li>\n<li><strong>Design each slide's content</strong> using the regular visual editor within the Nested Carousel's slide containers.</li>\n</ol>\n<p>Need a custom carousel or slider built to spec? See <a href=\"../../../services/elementor-customization/\">Elementor customization</a>.</p>",
+  "hasCode": false
+}
