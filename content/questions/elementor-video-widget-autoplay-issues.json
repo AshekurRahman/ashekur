@@ -1,0 +1,16 @@
+{
+  "slug": "video-widget-autoplay-issues",
+  "category": "elementor",
+  "question": "Why Won't My Elementor Video Widget Autoplay?",
+  "metaDescription": "Modern browsers block autoplay with sound by default — enabling Mute alongside Autoplay in the widget settings is required for it to reliably work.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-08",
+  "dateModified": "2026-09-08",
+  "shortAnswer": "<p>Most modern browsers block autoplaying video that has sound enabled by default, as a user-experience protection measure, regardless of what any specific website or plugin tries to configure &mdash; the Elementor video widget's Autoplay setting only reliably works in combination with Mute also enabled, since muted autoplay is generally still permitted by browser policy where autoplay with sound is not.</p>",
+  "image": {
+    "alt": "A video widget failing to autoplay because browsers block autoplay with sound, requiring mute to be enabled alongside it",
+    "prompt": "Create a clean, professional technical illustration of a video player being blocked from autoplaying because of sound, contrasted with a muted version playing successfully. Dark navy background, red and indigo accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"why-this-happens\">Why This Happens</h2>\n<p>This isn't an Elementor-specific limitation &mdash; it's a browser-level autoplay policy affecting essentially every website, implemented specifically to prevent unwanted sound from playing automatically when a page loads. Elementor's Autoplay setting sends the correct instruction to the browser, but the browser itself overrides it unless the video is also muted.</p>\n\n<h2 id=\"common-causes\">Other Contributing Factors</h2>\n<ul>\n<li><strong>Autoplay enabled without Mute,</strong> the primary cause, since browsers permit muted autoplay far more consistently than autoplay with sound.</li>\n<li><strong>Mobile browsers being even more restrictive,</strong> sometimes requiring an explicit user interaction (a tap) before any video, even muted, will play.</li>\n<li><strong>A hosted video source</strong> (YouTube, Vimeo) having its own separate autoplay and embedding restrictions layered on top of the browser's own policy.</li>\n<li><strong>Data saver or battery saver modes</strong> on some browsers and devices additionally restricting autoplay regardless of settings.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">How to Fix It</h2>\n<ol>\n<li><strong>Enable both Autoplay and Mute</strong> together in the video widget's settings, since this is the combination most reliably respected by browsers.</li>\n<li><strong>Add a visible unmute control</strong> if sound matters, since a muted-autoplay video with an easy way to enable sound is the most broadly compatible pattern.</li>\n<li><strong>Test on actual mobile devices,</strong> not just desktop browsers, given mobile's additional restrictions.</li>\n<li><strong>Accept that autoplay with sound simply isn't reliably achievable</strong> across all browsers, and design around that constraint rather than fighting it.</li>\n</ol>\n<p>Need video functionality set up and tested across browsers properly? See <a href=\"../../../services/elementor-fix/\">Elementor bug fix</a>.</p>",
+  "hasCode": false
+}

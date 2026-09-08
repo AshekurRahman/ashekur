@@ -1,0 +1,16 @@
+{
+  "slug": "widgets-not-showing-in-panel",
+  "category": "elementor",
+  "question": "Why Are Some Elementor Widgets Missing From the Widget Panel?",
+  "metaDescription": "Usually a Pro widget appearing without an active license, a disabled widget in Elementor's own settings, or a third-party plugin failing to register.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-08",
+  "dateModified": "2026-09-08",
+  "shortAnswer": "<p>Widgets missing from the panel are typically Pro-only widgets appearing grayed out or hidden entirely without an active Elementor Pro license, widgets manually disabled under Elementor &rarr; Settings &rarr; Widgets (an option for streamlining the panel), or a third-party widget plugin that failed to properly register its widgets, often due to a compatibility issue or the plugin itself not being fully activated.</p>",
+  "image": {
+    "alt": "Widgets missing from Elementor's panel because of a license issue, a disabled setting, or a plugin failing to register properly",
+    "prompt": "Create a clean, professional technical illustration of an incomplete widget panel with some slots missing or grayed out. Dark navy background, red and indigo accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"why-this-happens\">Why This Happens</h2>\n<p>Elementor's widget panel dynamically builds its list from core widgets, active Pro widgets (license-dependent), and any third-party widgets registered by other active plugins &mdash; if any of those sources isn't functioning correctly, its widgets simply won't appear, generally without an obvious error message pointing to the specific cause.</p>\n\n<h2 id=\"common-causes\">Common Causes</h2>\n<ul>\n<li><strong>An inactive or expired Elementor Pro license,</strong> hiding or graying out Pro-exclusive widgets even though the Pro plugin itself is still installed.</li>\n<li><strong>Widgets manually disabled</strong> under Elementor &rarr; Settings &rarr; Widgets, a feature meant to declutter the panel by hiding unused widget types.</li>\n<li><strong>A third-party widget plugin failing to load properly,</strong> whether from a compatibility conflict, being only partially activated, or a coding error preventing registration.</li>\n<li><strong>Browser or editor caching</strong> showing a stale widget panel from before a plugin was activated or a license was renewed.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">How to Fix It</h2>\n<ol>\n<li><strong>Confirm the Elementor Pro license</strong> is active and connected under Elementor &rarr; License.</li>\n<li><strong>Check Elementor &rarr; Settings &rarr; Widgets</strong> to confirm the missing widget hasn't been manually disabled.</li>\n<li><strong>Confirm the relevant third-party plugin is active</strong> and check its own settings for any additional activation step.</li>\n<li><strong>Clear all caching</strong> and refresh the editor after making changes.</li>\n</ol>\n<p>Need help getting missing widgets or a plugin conflict resolved? See <a href=\"../../../services/elementor-fix/\">Elementor bug fix</a>.</p>",
+  "hasCode": false
+}

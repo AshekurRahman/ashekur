@@ -1,0 +1,16 @@
+{
+  "slug": "template-kit-import-export",
+  "category": "elementor",
+  "question": "What Is an Elementor Template Kit and How Do I Use One?",
+  "metaDescription": "A packaged bundle of templates, site settings and content for an entire site design, importable in one step through Elementor's Kit Library.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-08",
+  "dateModified": "2026-09-08",
+  "shortAnswer": "<p>A Template Kit bundles an entire site's worth of design assets &mdash; page templates, Theme Builder templates, global colors and fonts, and sometimes demo content &mdash; into a single importable package, letting a complete site design be applied in one import step rather than building or copying each piece individually. Kits can come from Elementor's own Kit Library, a third-party theme/template marketplace, or be exported from an existing site for reuse elsewhere.</p>",
+  "image": {
+    "alt": "An Elementor Template Kit bundling page templates, site settings and content into one importable package",
+    "prompt": "Create a clean, professional technical illustration of a packaged bundle of design templates and settings being imported into a site in one step. Dark navy background, indigo and amber accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"how-it-works\">What's Actually in a Kit</h2>\n<p>A Kit typically includes page templates, Theme Builder templates (header, footer, archive designs), global site settings (colors, typography), and optionally demo content and any required plugins the design depends on. Importing one applies all of it at once, which can be a huge time-saver for a new site starting from a proven design, but also means reviewing carefully what will actually be overwritten before importing onto an existing, already-configured site.</p>\n\n<h2 id=\"common-causes\">Common Uses</h2>\n<ul>\n<li><strong>Starting a new site quickly</strong> from a professionally designed kit rather than building every template from scratch.</li>\n<li><strong>Applying a consistent design</strong> across multiple client sites built on a similar template as a starting point.</li>\n<li><strong>Exporting your own site's design</strong> as a kit, to reuse its templates and settings on a future project.</li>\n<li><strong>Selective import</strong> is usually available, letting you choose specific parts of a kit (just the templates, for instance, skipping demo content) rather than importing everything.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">Importing or Exporting a Kit</h2>\n<ol>\n<li><strong>Go to Templates &rarr; Kit Library</strong> to browse Elementor's own available kits, or use the Import/Export Kit tool for a custom kit file.</li>\n<li><strong>Review what the kit includes</strong> before importing, using selective import options on an existing site to avoid unwanted overwrites.</li>\n<li><strong>Export your own site's design as a kit</strong> through the same tool if you want to reuse it elsewhere.</li>\n</ol>\n<p>Need help importing, customizing, or building a Template Kit properly? See <a href=\"../../../services/elementor-customization/\">Elementor customization</a>.</p>",
+  "hasCode": false
+}

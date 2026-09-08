@@ -1,0 +1,16 @@
+{
+  "slug": "conditional-display-elements",
+  "category": "elementor",
+  "question": "Can I Show or Hide an Element Based on a Condition?",
+  "metaDescription": "Elementor Pro's Display Conditions widget setting hides/shows elements per user role, device, date, or a custom rule without duplicating pages.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-08",
+  "dateModified": "2026-09-08",
+  "shortAnswer": "<p>Elementor Pro includes Display Conditions at the individual widget level (found in an element's Advanced tab in current versions), letting an element show or hide based on rules like logged-in status, user role, device type, or date ranges, without needing to build entirely separate page versions for each scenario or rely on a general-purpose conditional logic plugin for simple cases.</p>",
+  "image": {
+    "alt": "An individual Elementor element shown or hidden based on a display condition like user role, device, or date",
+    "prompt": "Create a clean, professional technical illustration of a page element appearing or disappearing based on a specific condition being met. Dark navy background, indigo and teal accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"how-it-works\">How Conditional Display Works</h2>\n<p>Rather than duplicating a page for different audiences, a single element's visibility can be tied to a condition evaluated when the page loads &mdash; whether a visitor is logged in, belongs to a specific user role, is browsing on a specific device (handled separately through responsive visibility settings), or the current date falls within a set range. This keeps one page maintainable while still customizing what different visitors actually see.</p>\n\n<h2 id=\"common-causes\">Common Use Cases</h2>\n<ul>\n<li><strong>Showing different content to logged-in versus logged-out visitors,</strong> like a \"My Account\" link only for logged-in users.</li>\n<li><strong>Displaying a promotional banner only within a specific date range,</strong> automatically hiding it once the promotion ends without manual removal.</li>\n<li><strong>Role-specific content,</strong> showing wholesale pricing or specific messaging only to a particular customer group on a WooCommerce site.</li>\n<li><strong>More complex conditional logic</strong> (based on custom fields, specific query parameters, or other advanced rules) generally needs a dedicated conditional-logic plugin beyond what's built into core Elementor Pro.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">Setting Up Conditional Display</h2>\n<ol>\n<li><strong>Select the element</strong> and locate its display/visibility conditions setting.</li>\n<li><strong>Configure the specific condition</strong> (role, login status, date range) that should control visibility.</li>\n<li><strong>Test as different user types</strong> to confirm the element behaves as expected in each scenario.</li>\n<li><strong>Consider a dedicated conditional-logic plugin</strong> for rules beyond what's natively supported.</li>\n</ol>\n<p>Need conditional content logic set up correctly? See <a href=\"../../../services/elementor-customization/\">Elementor customization</a>.</p>",
+  "hasCode": false
+}

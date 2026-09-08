@@ -1,0 +1,16 @@
+{
+  "slug": "form-integrations-explained",
+  "category": "elementor",
+  "question": "What Third-Party Integrations Can an Elementor Form Connect To?",
+  "metaDescription": "Email marketing platforms, CRMs, webhooks, Zapier/Make and spreadsheet tools are all configurable through the form widget's Actions After Submit tab.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-08",
+  "dateModified": "2026-09-08",
+  "shortAnswer": "<p>Beyond sending a plain notification email, the Elementor Pro Form widget's Actions After Submit tab supports connecting directly to popular email marketing platforms, CRM tools, a generic webhook (useful for connecting to Zapier, Make, or any custom endpoint), and a few other built-in integrations, letting a submission automatically create a contact, trigger an automation, or log to an external system without custom development.</p>",
+  "image": {
+    "alt": "An Elementor form connecting to third-party email marketing and CRM integrations through its Actions After Submit settings",
+    "prompt": "Create a clean, professional technical illustration of a form submission branching out to connect with several external third-party services. Dark navy background, indigo and amber accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"how-it-works\">How Form Actions Work</h2>\n<p>Each Actions After Submit entry runs independently when a form is submitted, meaning a single form can simultaneously send a notification email, add the submitter to an email list, and log the submission to a CRM, all from one configured widget. Each integration typically needs its own API key or connection setup, done once per integration and then reusable across any form using that action.</p>\n\n<h2 id=\"common-causes\">Common Integration Types</h2>\n<ul>\n<li><strong>Email marketing platforms,</strong> automatically subscribing a form submitter to a mailing list as part of the submission.</li>\n<li><strong>CRM tools,</strong> creating or updating a contact record directly from a form submission.</li>\n<li><strong>Webhooks,</strong> sending the submission data to any custom endpoint, including automation platforms like Zapier or Make for connecting to tools without a native Elementor integration.</li>\n<li><strong>Google Sheets or similar,</strong> logging each submission as a new row for simple record-keeping without a full CRM.</li>\n<li><strong>Redirect and success message actions,</strong> controlling what the submitter sees or where they're sent after submitting, separate from the data-handling integrations.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">Setting Up an Integration</h2>\n<ol>\n<li><strong>Add the desired action</strong> under the form widget's Actions After Submit tab.</li>\n<li><strong>Connect the integration's API credentials</strong> where required, following that service's specific connection steps.</li>\n<li><strong>Test a real submission</strong> to confirm data actually flows through to the connected service correctly.</li>\n</ol>\n<p>Need a form connected to your specific marketing or CRM stack? See <a href=\"../../../services/elementor-customization/\">Elementor customization</a>.</p>",
+  "hasCode": false
+}

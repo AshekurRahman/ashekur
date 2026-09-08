@@ -1,0 +1,16 @@
+{
+  "slug": "sticky-header-setup",
+  "category": "elementor",
+  "question": "How Do I Make My Elementor Header Sticky?",
+  "metaDescription": "Enable Sticky under the header container's Advanced tab (Pro), choosing top or the whole page as the scope, then check for overlap on smaller screens.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-08",
+  "dateModified": "2026-09-08",
+  "shortAnswer": "<p>With a Theme Builder header template (an Elementor Pro feature), selecting the header's outer container or section and enabling the Sticky setting under its Advanced tab keeps that header fixed in place as the visitor scrolls, with options to control the scope (sticky on scroll up only, or always visible) and which devices it applies to.</p>",
+  "image": {
+    "alt": "An Elementor header set to sticky through its Advanced tab, remaining fixed in place as the page scrolls",
+    "prompt": "Create a clean, professional technical illustration of a header bar remaining fixed at the top of the screen as page content scrolls beneath it. Dark navy background, indigo and amber accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"how-it-works\">How Sticky Headers Work</h2>\n<p>The Sticky setting, found under the Advanced tab of the header's outer container or section within a Theme Builder header template, uses CSS positioning to keep that element fixed relative to the viewport once the page scrolls past its original position. Elementor's implementation includes options for effective range (the whole page or a set distance) and can be limited to specific devices if a sticky header isn't wanted on mobile.</p>\n\n<h2 id=\"common-causes\">Things to Check When Setting This Up</h2>\n<ul>\n<li><strong>Content overlap beneath the sticky header,</strong> since a fixed-position header can sit on top of content unless the page's top spacing accounts for the header's height.</li>\n<li><strong>Anchor links landing behind the sticky header,</strong> a common side effect requiring a scroll offset adjustment so jump links don't land with content hidden beneath the fixed header.</li>\n<li><strong>Sticky behavior on mobile</strong> may need to be disabled or configured differently, since a sticky header takes up permanent screen space that's more valuable on a small viewport.</li>\n<li><strong>This is a Pro-only, Theme Builder feature</strong> &mdash; free Elementor users would need a separate plugin or custom CSS/JS for equivalent sticky behavior.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">Setting Up a Sticky Header</h2>\n<ol>\n<li><strong>Select the header's outer container</strong> within its Theme Builder template and open the Advanced tab.</li>\n<li><strong>Enable Sticky</strong> and configure its effective range and device visibility.</li>\n<li><strong>Adjust top page spacing and anchor link offsets</strong> to account for the fixed header's height.</li>\n<li><strong>Test scrolling behavior across breakpoints,</strong> disabling sticky on mobile if it doesn't suit the design there.</li>\n</ol>\n<p>Need a sticky header or navigation feature built and tested properly? See <a href=\"../../../services/elementor-customization/\">Elementor customization</a>.</p>",
+  "hasCode": false
+}

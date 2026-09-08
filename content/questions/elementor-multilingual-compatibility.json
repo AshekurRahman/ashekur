@@ -1,0 +1,16 @@
+{
+  "slug": "multilingual-compatibility",
+  "category": "elementor",
+  "question": "Does Elementor Work With Multilingual Plugins Like WPML?",
+  "metaDescription": "Yes — Elementor has official WPML integration, translating page content while keeping the same visual design structure across each language.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-08",
+  "dateModified": "2026-09-08",
+  "shortAnswer": "<p>Elementor has official, documented integration with WPML (and works with several other multilingual plugins to varying degrees), letting a page built with Elementor be translated into additional languages while keeping the same underlying visual design and layout structure &mdash; the translation process handles the text content, while the Elementor-built design stays consistent across each language version.</p>",
+  "image": {
+    "alt": "An Elementor page translated into multiple languages through WPML while keeping the same underlying design structure",
+    "prompt": "Create a clean, professional technical illustration of a single page design being translated into multiple language versions while staying visually consistent. Dark navy background, indigo and amber accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"how-it-works\">How the Integration Works</h2>\n<p>WPML's Advanced Translation Editor recognizes Elementor's content structure, extracting the actual text strings from within widgets for translation while leaving the surrounding design and layout untouched. Once translated, each language version renders through the same Elementor-built template, just with the language-appropriate text substituted in.</p>\n\n<h2 id=\"common-causes\">Things Worth Knowing</h2>\n<ul>\n<li><strong>Theme Builder templates need separate consideration,</strong> since headers, footers, and other site-wide templates may need their own translation handling depending on the specific multilingual setup.</li>\n<li><strong>Dynamic content and custom fields</strong> used within Elementor designs need to be set up for translation at the custom-field level too, not just the visible widget text.</li>\n<li><strong>Layout differences between languages</strong> (some languages produce noticeably longer or shorter text) may need minor per-language design adjustments even though the base structure stays shared.</li>\n<li><strong>Other multilingual plugins</strong> vary in how well they integrate with Elementor specifically &mdash; checking current compatibility documentation for the specific plugin in question is worthwhile before committing to one.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">Setting Up Multilingual Elementor Content</h2>\n<ol>\n<li><strong>Install and configure WPML</strong> (or another Elementor-compatible multilingual plugin) alongside Elementor.</li>\n<li><strong>Translate page content</strong> through the plugin's translation editor, which recognizes Elementor's structure.</li>\n<li><strong>Review each language version</strong> for layout issues caused by differing text length.</li>\n</ol>\n<p>Need a multilingual Elementor site set up or fixed properly? See <a href=\"../../../services/elementor-customization/\">Elementor customization</a>.</p>",
+  "hasCode": false
+}

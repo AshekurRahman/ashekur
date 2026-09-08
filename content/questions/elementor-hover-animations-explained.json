@@ -1,0 +1,16 @@
+{
+  "slug": "hover-animations-explained",
+  "category": "elementor",
+  "question": "What Do Elementor's Hover Animation Settings Actually Do?",
+  "metaDescription": "A preset library of CSS-based transform and opacity effects (grow, shrink, float) triggered on mouse hover, applied without any custom code needed.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-08",
+  "dateModified": "2026-09-08",
+  "shortAnswer": "<p>Hover Animation, available on many widgets' Advanced tab, applies a preset CSS transform or opacity effect (grow, shrink, float, sink, and several others) the moment a visitor's cursor moves over that element, purely as a visual interaction cue &mdash; it doesn't require any custom CSS, since Elementor generates the underlying transition automatically from the selected preset.</p>",
+  "image": {
+    "alt": "An element transforming with a preset hover animation effect like grow or float when a visitor moves their cursor over it",
+    "prompt": "Create a clean, professional technical illustration of an element subtly transforming in response to a cursor hovering over it. Dark navy background, indigo and teal accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"how-it-works\">How Hover Animations Are Applied</h2>\n<p>Selecting a Hover Animation preset from an element's Advanced tab adds a small, automatically generated CSS transition to that element, triggered on the <code>:hover</code> state and reverting once the cursor moves away. Because it's purely a CSS effect, it works consistently on desktop but naturally doesn't apply the same way on touch devices, which don't have a persistent hover state.</p>\n\n<h2 id=\"common-causes\">Common Uses and Considerations</h2>\n<ul>\n<li><strong>Buttons and cards,</strong> the most common use, giving a clear, subtle interactive cue confirming an element is clickable.</li>\n<li><strong>Image widgets,</strong> often paired with a hover animation to add visual interest to a gallery or portfolio grid.</li>\n<li><strong>Touch device behavior</strong> is limited, since a phone or tablet doesn't have a true hover state before a tap &mdash; the effect either doesn't trigger meaningfully or briefly flashes on tap, worth keeping in mind for mobile-heavy audiences.</li>\n<li><strong>Overusing hover effects</strong> across too many elements on one page can feel distracting rather than polished, similar to overusing scroll-based motion effects.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">Applying Hover Animations Well</h2>\n<ol>\n<li><strong>Select a Hover Animation preset</strong> from the element's Advanced tab.</li>\n<li><strong>Apply it selectively</strong> to genuinely interactive elements like buttons and clickable cards.</li>\n<li><strong>Remember touch devices</strong> won't experience the effect the same way, and don't rely on it to convey essential information.</li>\n</ol>\n<p>Need tasteful interactive design added to your site? See <a href=\"../../../services/elementor-customization/\">Elementor customization</a>.</p>",
+  "hasCode": false
+}

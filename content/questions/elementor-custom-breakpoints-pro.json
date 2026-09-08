@@ -1,0 +1,16 @@
+{
+  "slug": "custom-breakpoints-pro",
+  "category": "elementor",
+  "question": "How Do I Add Extra Responsive Breakpoints Beyond the Default Three?",
+  "metaDescription": "Elementor Pro's Additional Custom Breakpoints setting adds up to several more device sizes for finer-grained control across a wider design range.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-08",
+  "dateModified": "2026-09-08",
+  "shortAnswer": "<p>Elementor Pro's Site Settings include an Additional Custom Breakpoints option (under Layout settings) letting you add extra breakpoints beyond the default desktop/tablet/mobile trio &mdash; a wide desktop, a smaller mobile size, or a specific tablet-portrait breakpoint, for instance &mdash; giving finer control for designs that need to adjust at more device sizes than the default three cover well.</p>",
+  "image": {
+    "alt": "Additional custom breakpoints added beyond Elementor's default desktop, tablet and mobile sizes for finer responsive control",
+    "prompt": "Create a clean, professional technical illustration of a design adapting across several additional device breakpoints beyond just three sizes. Dark navy background, indigo and teal accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"how-it-works\">How Custom Breakpoints Work</h2>\n<p>Once enabled and configured, each additional breakpoint becomes its own selectable option in the editor's device preview switcher, with its own independent settings for every element, following the same cascading override behavior as the default breakpoints. This is particularly useful for designs targeting a specific device category (a very large desktop monitor, a small older phone) where the default three-breakpoint system doesn't give enough granularity.</p>\n\n<h2 id=\"common-causes\">When Extra Breakpoints Are Worth Adding</h2>\n<ul>\n<li><strong>A design that looks noticeably different</strong> on very large versus standard desktop monitors, needing a dedicated wide-desktop breakpoint.</li>\n<li><strong>Content that breaks awkwardly</strong> specifically in the tablet-portrait range, needing its own adjustment separate from the general tablet breakpoint.</li>\n<li><strong>Supporting particularly small or old mobile devices</strong> distinctly from standard modern phone sizes.</li>\n<li><strong>Adding more breakpoints increases design maintenance overhead,</strong> since each one is another place settings can diverge and need reviewing after future changes &mdash; worth adding only where genuinely needed.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">Adding Custom Breakpoints</h2>\n<ol>\n<li><strong>Go to Elementor &rarr; Settings &rarr; Layout</strong> (in Pro) and enable Additional Custom Breakpoints.</li>\n<li><strong>Configure the specific device sizes</strong> needed for the design.</li>\n<li><strong>Adjust settings only where necessary</strong> at each new breakpoint, relying on the standard cascade elsewhere.</li>\n</ol>\n<p>Need finer responsive control set up across a complex design? See <a href=\"../../../services/elementor-customization/\">Elementor customization</a>.</p>",
+  "hasCode": false
+}
