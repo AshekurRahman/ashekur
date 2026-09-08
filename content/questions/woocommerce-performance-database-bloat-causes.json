@@ -1,0 +1,17 @@
+{
+  "slug": "database-bloat-causes",
+  "category": "woocommerce",
+  "subcategory": "performance",
+  "question": "What Causes WooCommerce Database Bloat?",
+  "metaDescription": "Mainly accumulated post revisions, expired transients, abandoned cart sessions, and orphaned order/session data that's never automatically cleaned up.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-08",
+  "dateModified": "2026-09-08",
+  "shortAnswer": "<p>Database bloat in a WooCommerce store typically accumulates from post revisions piling up on every product/page edit, expired transients that were never properly cleared, abandoned cart and session data left behind by customers who never completed checkout, and orphaned metadata left over from deleted products, orders, or uninstalled plugins that didn't clean up after themselves.</p>",
+  "image": {
+    "alt": "Database bloat accumulating from post revisions, expired transients, and abandoned cart session data",
+    "prompt": "Create a clean, professional technical illustration of a database gradually filling up with accumulated, unnecessary leftover data. Dark navy background, indigo and amber accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"why-this-happens\">Why This Accumulates</h2>\n<p>WordPress and WooCommerce both generate a fair amount of transient, temporary, or historical data as part of normal operation, and by default very little of it is automatically purged &mdash; revisions, expired transients, and abandoned sessions are all designed to be cleaned up eventually, but that cleanup often depends on a scheduled task or manual intervention that a store may never actually have configured.</p>\n\n<h2 id=\"common-causes\">Main Sources of Bloat</h2>\n<ul>\n<li><strong>Post revisions,</strong> since WordPress saves a new revision on nearly every edit to a product, page, or post, and without a revision limit configured, this can accumulate into a substantial volume of rarely-needed historical data.</li>\n<li><strong>Expired transients,</strong> WordPress's short-term caching mechanism, which are supposed to expire and clear automatically but frequently accumulate faster than they're cleaned up, especially with certain plugin combinations.</li>\n<li><strong>Abandoned cart and session data,</strong> generated for every visitor who adds items to a cart, whether or not they complete a purchase, and retained indefinitely without a cleanup routine.</li>\n<li><strong>Orphaned post meta and order meta</strong> left behind when a product, order, or plugin is deleted without properly cleaning up its associated database entries.</li>\n<li><strong>Spam or junk comments and their associated metadata,</strong> if comment moderation isn't actively maintained.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">Addressing Database Bloat</h2>\n<ol>\n<li><strong>Limit post revisions</strong> via a <code>wp-config.php</code> constant to prevent unlimited accumulation going forward.</li>\n<li><strong>Clean up expired transients</strong> periodically using a reputable cleanup tool or plugin.</li>\n<li><strong>Set up scheduled cleanup of abandoned cart/session data</strong> beyond WooCommerce's own default retention.</li>\n<li><strong>Run a database cleanup</strong> to remove orphaned meta after deleting a plugin, and always back up first.</li>\n</ol>\n<p>Need your database cleaned up and optimized properly? See <a href=\"../../../../services/wordpress-speed-optimization/\">WordPress speed optimization</a>.</p>",
+  "hasCode": false
+}

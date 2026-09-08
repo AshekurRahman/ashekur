@@ -1,0 +1,17 @@
+{
+  "slug": "caching-plugin-conflicts",
+  "category": "woocommerce",
+  "subcategory": "performance",
+  "question": "Can a Caching Plugin Break My WooCommerce Store?",
+  "metaDescription": "Yes, if dynamic pages like cart and checkout get cached too — proper WooCommerce-aware exclusions are essential, not optional, when configuring caching.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-08",
+  "dateModified": "2026-09-08",
+  "shortAnswer": "<p>A caching plugin can genuinely break a WooCommerce store if it caches pages that must stay dynamic per visitor &mdash; the cart, checkout, and My Account pages need to reflect each customer's own current cart contents and session, and caching them can show one customer another's cart, break the checkout flow, or serve stale account information, unless the caching plugin has correct WooCommerce-specific exclusions configured.</p>",
+  "image": {
+    "alt": "A caching plugin breaking WooCommerce checkout by caching dynamic per-customer pages without proper exclusions",
+    "prompt": "Create a clean, professional technical illustration of a cart page incorrectly served from cache, causing a mismatch with the actual current visitor's session. Dark navy background, red and indigo accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"why-this-happens\">Why This Happens</h2>\n<p>Most page caching works by storing a rendered copy of a page and serving that same copy to every visitor for a period of time, which works well for genuinely static content like a blog post or a product page's general details, but breaks down for anything showing visitor-specific data. Reputable caching plugins are generally WooCommerce-aware out of the box and exclude these pages automatically, but a misconfigured setup, an older plugin, or a caching layer outside the plugin's control (like a separate server-level or CDN cache) can bypass that protection.</p>\n\n<h2 id=\"common-causes\">Common Failure Points</h2>\n<ul>\n<li><strong>Cart, checkout, and My Account pages cached</strong> when they should always be excluded, the most damaging and visible type of caching mistake.</li>\n<li><strong>A server-level or CDN cache layer</strong> operating independently of the WordPress caching plugin's own exclusion rules, requiring its own separate configuration.</li>\n<li><strong>Cart fragments (the AJAX mechanism updating the mini-cart)</strong> being cached incorrectly, causing the displayed cart count or contents to appear stuck or wrong.</li>\n<li><strong>Fragment caching or object caching</strong> holding onto stale product stock or price data longer than intended, showing outdated information to customers.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">Configuring Caching Safely</h2>\n<ol>\n<li><strong>Use a caching plugin with proper, tested WooCommerce compatibility</strong> and confirm its default exclusions are actually active.</li>\n<li><strong>Explicitly verify cart, checkout, and account pages are excluded</strong> from every caching layer, including any CDN.</li>\n<li><strong>Test the full purchase flow</strong> as a real customer after any caching configuration change.</li>\n<li><strong>Clear all caching layers</strong> whenever product prices, stock, or store settings change.</li>\n</ol>\n<p>Need caching configured correctly without breaking your store? See <a href=\"../../../../services/wordpress-speed-optimization/\">WordPress speed optimization</a>.</p>",
+  "hasCode": false
+}

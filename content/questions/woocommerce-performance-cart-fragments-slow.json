@@ -1,0 +1,17 @@
+{
+  "slug": "cart-fragments-slow",
+  "category": "woocommerce",
+  "subcategory": "performance",
+  "question": "Why Do WooCommerce Cart Fragments Slow Down My Site?",
+  "metaDescription": "The AJAX request keeping the mini-cart updated runs on nearly every page load by default, adding overhead that compounds on a busy store.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-08",
+  "dateModified": "2026-09-08",
+  "shortAnswer": "<p>Cart Fragments is the AJAX mechanism WooCommerce uses to keep the mini-cart icon and count updated across pages without a full page reload, but by default it fires this request on nearly every page load site-wide, not just pages where the cart is actually relevant &mdash; on a busy store, this adds up to a meaningful and often unnecessary amount of extra server load and slightly delayed perceived page speed.</p>",
+  "image": {
+    "alt": "The Cart Fragments AJAX request running on nearly every page load by default, adding unnecessary overhead site-wide",
+    "prompt": "Create a clean, professional technical illustration of a small background request firing repeatedly across many pages to keep a cart icon updated. Dark navy background, red and indigo accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"why-this-happens\">Why This Happens by Default</h2>\n<p>WooCommerce needs the mini-cart to reflect the customer's current cart contents accurately even on pages that were served from cache, since a cached page can't know what's actually in a specific visitor's cart &mdash; Cart Fragments solves this by running a small AJAX request after page load to fetch and inject the correct current cart data, but this default behavior runs broadly rather than being scoped only to where it's genuinely needed.</p>\n\n<h2 id=\"common-causes\">When This Becomes a Real Problem</h2>\n<ul>\n<li><strong>A high-traffic store</strong> generates a correspondingly high volume of these AJAX requests, adding real cumulative server load even though each individual request is small.</li>\n<li><strong>Pages that don't actually display a mini-cart</strong> (a blog post, a static content page) still triggering the fragments request unnecessarily if it isn't scoped down.</li>\n<li><strong>Combined with other performance issues,</strong> the additional request can be the difference between a genuinely fast page and a merely acceptable one.</li>\n<li><strong>Disabling it entirely isn't always safe,</strong> since some cart-related functionality depends on it &mdash; this needs a considered approach rather than simply switching it off everywhere.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">Addressing Cart Fragments Overhead</h2>\n<ol>\n<li><strong>Limit Cart Fragments to only pages that actually display a mini-cart,</strong> rather than site-wide, using a targeted code adjustment or a plugin built for this.</li>\n<li><strong>Test the mini-cart and cart-related functionality thoroughly</strong> after any change, since disabling this incorrectly can break cart display.</li>\n<li><strong>Combine with broader caching and performance improvements</strong> rather than treating this as a standalone fix.</li>\n</ol>\n<p>Need Cart Fragments and broader checkout performance optimized properly? See <a href=\"../../../../services/wordpress-speed-optimization/\">WordPress speed optimization</a>.</p>",
+  "hasCode": false
+}

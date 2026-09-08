@@ -1,0 +1,17 @@
+{
+  "slug": "slow-admin-dashboard",
+  "category": "woocommerce",
+  "subcategory": "performance",
+  "question": "Why Is My WooCommerce Admin Dashboard So Slow?",
+  "metaDescription": "Usually a large orders table without proper indexing, too many active plugins hooking into admin pages, or insufficient PHP memory for the site's size.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-08",
+  "dateModified": "2026-09-08",
+  "shortAnswer": "<p>A slow WooCommerce admin, distinct from a slow storefront, is most often caused by a large, unoptimized orders table being queried inefficiently (a problem HPOS specifically addresses), too many active plugins each adding their own processing to admin page loads, or the server simply not having enough PHP memory or CPU headroom for a store that's grown well beyond its original hosting plan.</p>",
+  "image": {
+    "alt": "A slow WooCommerce admin dashboard caused by an unoptimized orders table, plugin overhead, or insufficient server resources",
+    "prompt": "Create a clean, professional technical illustration of an admin dashboard loading slowly under the weight of database queries and plugin overhead. Dark navy background, red and indigo accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"why-this-happens\">Why This Happens</h2>\n<p>The admin dashboard and order management screens run considerably more complex queries and processing than the average storefront page, since they're pulling and cross-referencing order, customer, and product data for internal use rather than serving a single cached page to a visitor. A store that's grown significantly since launch often outgrows the database structure and hosting resources originally sized for it, and this shows up first and most visibly in the admin.</p>\n\n<h2 id=\"common-causes\">Common Causes</h2>\n<ul>\n<li><strong>A large, legacy-structured orders table</strong> (orders stored as regular posts rather than using WooCommerce's newer High-Performance Order Storage) becoming genuinely slow to query as order volume grows into the tens of thousands.</li>\n<li><strong>Too many active plugins,</strong> particularly ones hooking into admin-wide actions or adding dashboard widgets, each contributing incremental overhead that adds up.</li>\n<li><strong>Insufficient PHP memory or CPU allocation</strong> for the store's actual current size, especially common on a shared hosting plan the store has since outgrown.</li>\n<li><strong>Missing or inefficient database indexes</strong> on frequently queried columns, forcing full table scans for common admin operations like order search or filtering.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">How to Fix It</h2>\n<ol>\n<li><strong>Enable High-Performance Order Storage</strong> if not already active, since it's specifically designed to address this exact problem.</li>\n<li><strong>Audit active plugins</strong> and deactivate any not genuinely needed, particularly ones known to add admin overhead.</li>\n<li><strong>Review hosting resources</strong> against the store's actual current size and traffic, upgrading if genuinely undersized.</li>\n<li><strong>Check for missing database indexes</strong> on frequently queried tables with a database administrator or performance specialist.</li>\n</ol>\n<p>Need your store's admin performance diagnosed and fixed? See <a href=\"../../../../services/wordpress-speed-optimization/\">WordPress speed optimization</a>.</p>",
+  "hasCode": false
+}

@@ -1,0 +1,17 @@
+{
+  "slug": "scheduled-tasks-cron",
+  "category": "woocommerce",
+  "subcategory": "performance",
+  "question": "What Are WooCommerce's Scheduled Tasks and Can They Slow Down My Site?",
+  "metaDescription": "Background jobs (cleanup, emails, stock checks) run via WP-Cron, which piggybacks on visitor page loads by default and can add noticeable delay.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-08",
+  "dateModified": "2026-09-08",
+  "shortAnswer": "<p>WooCommerce relies on a queue of scheduled background tasks (cleaning up expired sessions, sending certain emails, checking for low stock, and more) processed through WordPress's own WP-Cron system, which by default runs opportunistically whenever a visitor loads a page rather than on a genuinely independent schedule &mdash; on a busy site, this can occasionally cause a visitor's page load to be the one that triggers a batch of scheduled tasks, adding noticeable, unpredictable delay to that specific request.</p>",
+  "image": {
+    "alt": "WooCommerce scheduled background tasks piggybacking on visitor page loads through WP-Cron, occasionally adding delay",
+    "prompt": "Create a clean, professional technical illustration of background maintenance tasks running attached to a regular page visit, adding unexpected delay. Dark navy background, red and indigo accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"how-it-works\">Why WP-Cron Works This Way</h2>\n<p>Standard server cron jobs run on a fixed schedule independent of site traffic, but WordPress's built-in WP-Cron was designed for shared hosting environments without access to real server-level cron &mdash; it checks whether any scheduled task is due each time a page loads, and runs it if so, piggybacking on regular visitor traffic instead. This works reasonably well for a low-traffic site but can create noticeable, unpredictable slowdowns for whichever unlucky visitor's page load happens to trigger an expensive batch of overdue tasks.</p>\n\n<h2 id=\"common-causes\">Common WooCommerce Scheduled Tasks</h2>\n<ul>\n<li><strong>Cleaning up expired sessions and abandoned carts,</strong> a recurring maintenance task that can involve non-trivial database work.</li>\n<li><strong>Sending scheduled emails</strong> (certain notification types) that aren't sent immediately but queued for batch processing.</li>\n<li><strong>Stock level checks and low-stock notifications,</strong> run periodically rather than on every single stock change.</li>\n<li><strong>Report data recalculation,</strong> keeping analytics and dashboard figures up to date.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">Improving Scheduled Task Reliability</h2>\n<ol>\n<li><strong>Disable WordPress's default page-load-triggered cron</strong> and set up a genuine server-level cron job instead, running on a real, independent schedule.</li>\n<li><strong>Confirm the real cron job is actually running reliably</strong> by checking scheduled task logs periodically.</li>\n<li><strong>Monitor for a backlog of overdue tasks,</strong> which can indicate cron isn't running as expected.</li>\n</ol>\n<p>Need scheduled tasks and background processing configured reliably? See <a href=\"../../../../services/wordpress-speed-optimization/\">WordPress speed optimization</a>.</p>",
+  "hasCode": false
+}

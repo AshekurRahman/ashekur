@@ -1,0 +1,17 @@
+{
+  "slug": "plugin-bloat-audit",
+  "category": "woocommerce",
+  "subcategory": "performance",
+  "question": "How Do I Know Which Plugins Are Actually Slowing Down My Store?",
+  "metaDescription": "A dedicated performance-profiling plugin measures each active plugin's actual load-time and query impact, replacing guesswork with real data.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-08",
+  "dateModified": "2026-09-08",
+  "shortAnswer": "<p>Rather than guessing based on how many plugins are installed, a dedicated performance-profiling plugin measures each active plugin's actual contribution to page load time and database query count, giving concrete data on which specific plugins are genuinely expensive versus which ones (despite being numerous) barely register &mdash; plugin count alone is a poor proxy for actual performance impact, since one poorly coded plugin can outweigh a dozen lightweight ones combined.</p>",
+  "image": {
+    "alt": "A performance-profiling plugin measuring each active plugin's actual load-time and database query impact",
+    "prompt": "Create a clean, professional technical illustration of individual plugins being measured and ranked by their actual performance impact. Dark navy background, indigo and teal accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"how-it-works\">Why Guessing Doesn't Work</h2>\n<p>A store might have twenty active plugins where nineteen are lightweight and well-coded, with a single one responsible for the vast majority of measurable slowdown &mdash; without actual profiling data, it's genuinely difficult to identify which is the culprit just by looking at a plugin list or making assumptions based on a plugin's popularity or purpose.</p>\n\n<h2 id=\"common-causes\">What Profiling Reveals</h2>\n<ul>\n<li><strong>Per-plugin load time contribution,</strong> showing exactly how many milliseconds each active plugin adds to overall page generation time.</li>\n<li><strong>Database query count per plugin,</strong> since a plugin running many inefficient queries can be a bigger problem than its raw load time alone suggests.</li>\n<li><strong>Plugins that are heavy on every page</strong> versus ones only expensive on specific pages where their functionality is actually used, an important distinction for deciding whether to keep, replace, or conditionally load a plugin.</li>\n<li><strong>Genuinely unused or redundant plugins,</strong> sometimes uncovered during a profiling exercise simply because reviewing the full active plugin list prompts a closer look at what's actually still needed.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">Running a Plugin Performance Audit</h2>\n<ol>\n<li><strong>Install a reputable performance-profiling tool</strong> temporarily (ideally on staging first) to measure actual per-plugin impact.</li>\n<li><strong>Identify the specific highest-impact plugins</strong> from the profiling data, rather than guessing.</li>\n<li><strong>Replace, optimize, or remove</strong> the identified problem plugins where a lighter alternative or custom solution exists.</li>\n<li><strong>Re-profile after changes</strong> to confirm the improvement actually materialized.</li>\n</ol>\n<p>Need a proper plugin performance audit for your store? See <a href=\"../../../../services/wordpress-speed-optimization/\">WordPress speed optimization</a>.</p>",
+  "hasCode": false
+}

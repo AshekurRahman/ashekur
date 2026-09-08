@@ -6,7 +6,7 @@
 <title>WooCommerce Performance Questions &amp; Answers | Ashekur Rahman</title>
 <meta name="description" content="Store speed, database bloat and scaling a growing WooCommerce catalog." />
 <meta name="author" content="Ashekur Rahman" />
-<meta name="robots" content="noindex, follow" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
 <meta name="theme-color" content="#0F172A" />
 <link rel="canonical" href="https://ashekur.com/questions/woocommerce/performance/" />
 <link rel="icon" href="../../../assets/images/mark.png" type="image/png" />
@@ -245,7 +245,156 @@
   <section class="section section-white">
     <div class="container">
       <div data-anim="stagger" class="row row-cols-1 row-cols-md-2 g-4 blog-grid">
-        <div class="col-12"><p class="body-lg">More WooCommerce Performance questions are being added regularly &mdash; check back soon, or <a href="../../../contact/">ask yours directly</a>.</p></div>
+        <div class="col">
+          <article data-anim="item" class="post-card h-100">
+            <div class="post-card-body">
+              <p class="post-meta mono"><span class="post-cat">Performance</span><span>2 min read</span></p>
+              <h3><a href="../../../questions/woocommerce/performance/caching-plugin-conflicts/">Can a Caching Plugin Break My WooCommerce Store?</a></h3>
+              <p>Yes, if dynamic pages like cart and checkout get cached too — proper WooCommerce-aware exclusions are essential, not optional, when configuring caching.</p>
+              <a class="mono text-link" href="../../../questions/woocommerce/performance/caching-plugin-conflicts/">Read the answer &rarr;</a>
+            </div>
+          </article>
+        </div>
+        <div class="col">
+          <article data-anim="item" class="post-card h-100">
+            <div class="post-card-body">
+              <p class="post-meta mono"><span class="post-cat">Performance</span><span>2 min read</span></p>
+              <h3><a href="../../../questions/woocommerce/performance/cart-fragments-slow/">Why Do WooCommerce Cart Fragments Slow Down My Site?</a></h3>
+              <p>The AJAX request keeping the mini-cart updated runs on nearly every page load by default, adding overhead that compounds on a busy store.</p>
+              <a class="mono text-link" href="../../../questions/woocommerce/performance/cart-fragments-slow/">Read the answer &rarr;</a>
+            </div>
+          </article>
+        </div>
+        <div class="col">
+          <article data-anim="item" class="post-card h-100">
+            <div class="post-card-body">
+              <p class="post-meta mono"><span class="post-cat">Performance</span><span>2 min read</span></p>
+              <h3><a href="../../../questions/woocommerce/performance/cdn-for-woocommerce/">Does a CDN Actually Help a WooCommerce Store?</a></h3>
+              <p>Yes, particularly for static assets like images, CSS and JS — but dynamic pages like cart and checkout need the same careful exclusions as any caching.</p>
+              <a class="mono text-link" href="../../../questions/woocommerce/performance/cdn-for-woocommerce/">Read the answer &rarr;</a>
+            </div>
+          </article>
+        </div>
+        <div class="col">
+          <article data-anim="item" class="post-card h-100">
+            <div class="post-card-body">
+              <p class="post-meta mono"><span class="post-cat">Performance</span><span>2 min read</span></p>
+              <h3><a href="../../../questions/woocommerce/performance/checkout-page-slow/">Why Is My Checkout Page Slower Than the Rest of the Site?</a></h3>
+              <p>Checkout can't be page-cached since it's per-customer, so any plugin, gateway, or query overhead there shows up directly, uncushioned by caching.</p>
+              <a class="mono text-link" href="../../../questions/woocommerce/performance/checkout-page-slow/">Read the answer &rarr;</a>
+            </div>
+          </article>
+        </div>
+        <div class="col">
+          <article data-anim="item" class="post-card h-100">
+            <div class="post-card-body">
+              <p class="post-meta mono"><span class="post-cat">Performance</span><span>2 min read</span></p>
+              <h3><a href="../../../questions/woocommerce/performance/database-bloat-causes/">What Causes WooCommerce Database Bloat?</a></h3>
+              <p>Mainly accumulated post revisions, expired transients, abandoned cart sessions, and orphaned order/session data that's never automatically cleaned up.</p>
+              <a class="mono text-link" href="../../../questions/woocommerce/performance/database-bloat-causes/">Read the answer &rarr;</a>
+            </div>
+          </article>
+        </div>
+        <div class="col">
+          <article data-anim="item" class="post-card h-100">
+            <div class="post-card-body">
+              <p class="post-meta mono"><span class="post-cat">Performance</span><span>2 min read</span></p>
+              <h3><a href="../../../questions/woocommerce/performance/database-indexes/">Do Database Indexes Matter for WooCommerce Performance?</a></h3>
+              <p>Yes, significantly at scale — a missing index on a frequently queried column forces slow full-table scans instead of near-instant lookups.</p>
+              <a class="mono text-link" href="../../../questions/woocommerce/performance/database-indexes/">Read the answer &rarr;</a>
+            </div>
+          </article>
+        </div>
+        <div class="col">
+          <article data-anim="item" class="post-card h-100">
+            <div class="post-card-body">
+              <p class="post-meta mono"><span class="post-cat">Performance</span><span>2 min read</span></p>
+              <h3><a href="../../../questions/woocommerce/performance/hosting-requirements/">What Kind of Hosting Does a Growing WooCommerce Store Actually Need?</a></h3>
+              <p>Adequate PHP memory/version, SSD storage, and headroom that scales with traffic and catalog size — shared hosting eventually becomes a real ceiling.</p>
+              <a class="mono text-link" href="../../../questions/woocommerce/performance/hosting-requirements/">Read the answer &rarr;</a>
+            </div>
+          </article>
+        </div>
+        <div class="col">
+          <article data-anim="item" class="post-card h-100">
+            <div class="post-card-body">
+              <p class="post-meta mono"><span class="post-cat">Performance</span><span>2 min read</span></p>
+              <h3><a href="../../../questions/woocommerce/performance/large-catalog-scaling/">How Do I Keep a Large Product Catalog From Slowing Down the Store?</a></h3>
+              <p>Object caching, a proper search/filter solution, optimized images at scale, and hosting sized for the catalog all matter more as product count grows.</p>
+              <a class="mono text-link" href="../../../questions/woocommerce/performance/large-catalog-scaling/">Read the answer &rarr;</a>
+            </div>
+          </article>
+        </div>
+        <div class="col">
+          <article data-anim="item" class="post-card h-100">
+            <div class="post-card-body">
+              <p class="post-meta mono"><span class="post-cat">Performance</span><span>2 min read</span></p>
+              <h3><a href="../../../questions/woocommerce/performance/object-caching-explained/">What Is Object Caching and Does My Store Need It?</a></h3>
+              <p>A server-level cache (Redis or Memcached) storing database query results in memory — genuinely valuable once a store has meaningful traffic or catalog size.</p>
+              <a class="mono text-link" href="../../../questions/woocommerce/performance/object-caching-explained/">Read the answer &rarr;</a>
+            </div>
+          </article>
+        </div>
+        <div class="col">
+          <article data-anim="item" class="post-card h-100">
+            <div class="post-card-body">
+              <p class="post-meta mono"><span class="post-cat">Performance</span><span>2 min read</span></p>
+              <h3><a href="../../../questions/woocommerce/performance/order-table-optimization/">What Is HPOS and Does It Actually Improve Performance?</a></h3>
+              <p>High-Performance Order Storage moves orders to dedicated tables instead of the generic posts table, genuinely improving speed for stores with many orders.</p>
+              <a class="mono text-link" href="../../../questions/woocommerce/performance/order-table-optimization/">Read the answer &rarr;</a>
+            </div>
+          </article>
+        </div>
+        <div class="col">
+          <article data-anim="item" class="post-card h-100">
+            <div class="post-card-body">
+              <p class="post-meta mono"><span class="post-cat">Performance</span><span>2 min read</span></p>
+              <h3><a href="../../../questions/woocommerce/performance/plugin-bloat-audit/">How Do I Know Which Plugins Are Actually Slowing Down My Store?</a></h3>
+              <p>A dedicated performance-profiling plugin measures each active plugin's actual load-time and query impact, replacing guesswork with real data.</p>
+              <a class="mono text-link" href="../../../questions/woocommerce/performance/plugin-bloat-audit/">Read the answer &rarr;</a>
+            </div>
+          </article>
+        </div>
+        <div class="col">
+          <article data-anim="item" class="post-card h-100">
+            <div class="post-card-body">
+              <p class="post-meta mono"><span class="post-cat">Performance</span><span>2 min read</span></p>
+              <h3><a href="../../../questions/woocommerce/performance/product-images-optimization/">How Much Do Unoptimized Product Images Actually Slow Down a Store?</a></h3>
+              <p>Often the single biggest factor — a catalog full of large, unoptimized images can add several seconds of load time across category and product pages.</p>
+              <a class="mono text-link" href="../../../questions/woocommerce/performance/product-images-optimization/">Read the answer &rarr;</a>
+            </div>
+          </article>
+        </div>
+        <div class="col">
+          <article data-anim="item" class="post-card h-100">
+            <div class="post-card-body">
+              <p class="post-meta mono"><span class="post-cat">Performance</span><span>2 min read</span></p>
+              <h3><a href="../../../questions/woocommerce/performance/scheduled-tasks-cron/">What Are WooCommerce's Scheduled Tasks and Can They Slow Down My Site?</a></h3>
+              <p>Background jobs (cleanup, emails, stock checks) run via WP-Cron, which piggybacks on visitor page loads by default and can add noticeable delay.</p>
+              <a class="mono text-link" href="../../../questions/woocommerce/performance/scheduled-tasks-cron/">Read the answer &rarr;</a>
+            </div>
+          </article>
+        </div>
+        <div class="col">
+          <article data-anim="item" class="post-card h-100">
+            <div class="post-card-body">
+              <p class="post-meta mono"><span class="post-cat">Performance</span><span>2 min read</span></p>
+              <h3><a href="../../../questions/woocommerce/performance/slow-admin-dashboard/">Why Is My WooCommerce Admin Dashboard So Slow?</a></h3>
+              <p>Usually a large orders table without proper indexing, too many active plugins hooking into admin pages, or insufficient PHP memory for the site's size.</p>
+              <a class="mono text-link" href="../../../questions/woocommerce/performance/slow-admin-dashboard/">Read the answer &rarr;</a>
+            </div>
+          </article>
+        </div>
+        <div class="col">
+          <article data-anim="item" class="post-card h-100">
+            <div class="post-card-body">
+              <p class="post-meta mono"><span class="post-cat">Performance</span><span>2 min read</span></p>
+              <h3><a href="../../../questions/woocommerce/performance/transients-cleanup/">What Are WooCommerce Transients and Should I Clean Them Up?</a></h3>
+              <p>Short-term cached data (like shipping rates and reports) stored in the database — expired ones that failed to auto-clear are safe and worth removing.</p>
+              <a class="mono text-link" href="../../../questions/woocommerce/performance/transients-cleanup/">Read the answer &rarr;</a>
+            </div>
+          </article>
+        </div>
       </div>
     </div>
   </section>

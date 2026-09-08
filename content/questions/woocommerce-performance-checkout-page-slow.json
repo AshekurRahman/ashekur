@@ -1,0 +1,17 @@
+{
+  "slug": "checkout-page-slow",
+  "category": "woocommerce",
+  "subcategory": "performance",
+  "question": "Why Is My Checkout Page Slower Than the Rest of the Site?",
+  "metaDescription": "Checkout can't be page-cached since it's per-customer, so any plugin, gateway, or query overhead there shows up directly, uncushioned by caching.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-08",
+  "dateModified": "2026-09-08",
+  "shortAnswer": "<p>Checkout is one of the few pages that fundamentally can't be page-cached, since it must reflect each customer's own cart, session, and account details in real time &mdash; this means any inefficiency there (a slow payment gateway API call, an inefficient plugin hook, unnecessary database queries) shows up directly in load time, without page caching's usual cushioning effect masking the underlying cost.</p>",
+  "image": {
+    "alt": "The checkout page running slower because it can't be page-cached, exposing any underlying plugin or query inefficiency directly",
+    "prompt": "Create a clean, professional technical illustration of a checkout process running noticeably slower than the rest of a cached site. Dark navy background, red and indigo accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"why-this-happens\">Why Checkout Is Inherently Different</h2>\n<p>Every other page-caching win on the site is essentially invisible on checkout, since the page has to be generated fresh for every single visitor regardless of caching configuration. This makes checkout an honest reflection of the store's true underlying performance &mdash; every plugin hooked into the checkout process, every payment gateway API call, and every database query involved in calculating totals and taxes runs live, every time.</p>\n\n<h2 id=\"common-causes\">Common Sources of Checkout Slowness</h2>\n<ul>\n<li><strong>A slow-responding payment gateway API,</strong> since checkout often has to wait on an external service's response before proceeding.</li>\n<li><strong>Too many plugins hooking into the checkout process,</strong> each adding its own processing time to an already time-sensitive page.</li>\n<li><strong>Inefficient shipping or tax calculation queries,</strong> particularly with complex zone or tax rule configurations.</li>\n<li><strong>Cart Fragments and related AJAX overhead</strong> compounding on a page that's already inherently uncached.</li>\n<li><strong>Object caching not being leveraged,</strong> since checkout can still benefit from cached database query results even though the whole page itself can't be cached.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">Speeding Up Checkout</h2>\n<ol>\n<li><strong>Audit plugins active specifically on checkout</strong> for unnecessary overhead.</li>\n<li><strong>Set up object caching</strong> to reduce repeated database query cost even on this uncacheable page.</li>\n<li><strong>Monitor payment gateway response times,</strong> raising an issue with the provider if consistently slow.</li>\n<li><strong>Simplify checkout field and calculation logic</strong> where genuinely unnecessary complexity exists.</li>\n</ol>\n<p>Need checkout speed specifically diagnosed and improved? See <a href=\"../../../../services/wordpress-speed-optimization/\">WordPress speed optimization</a>.</p>",
+  "hasCode": false
+}

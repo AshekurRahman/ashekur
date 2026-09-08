@@ -1,0 +1,17 @@
+{
+  "slug": "transients-cleanup",
+  "category": "woocommerce",
+  "subcategory": "performance",
+  "question": "What Are WooCommerce Transients and Should I Clean Them Up?",
+  "metaDescription": "Short-term cached data (like shipping rates and reports) stored in the database — expired ones that failed to auto-clear are safe and worth removing.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-08",
+  "dateModified": "2026-09-08",
+  "shortAnswer": "<p>Transients are WordPress's built-in mechanism for caching data temporarily in the database with an expiration time &mdash; WooCommerce uses them for things like calculated shipping rates and report data to avoid recalculating on every page load. Cleaning up genuinely expired transients (ones that should have auto-cleared but didn't, a fairly common occurrence) is safe and can meaningfully reduce database size, though active, unexpired transients shouldn't be deleted since they're doing their intended job.</p>",
+  "image": {
+    "alt": "Expired WooCommerce transients accumulating in the database, safe to clean up since they've already outlived their purpose",
+    "prompt": "Create a clean, professional technical illustration of temporary cached data entries being cleared out after their expiration. Dark navy background, indigo and teal accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"how-it-works\">How Transients Are Supposed to Work</h2>\n<p>Each transient is stored with an expiration timestamp, and WordPress is supposed to automatically ignore (and eventually clean up) one once that time passes. In practice, this automatic cleanup doesn't always run reliably, especially on a site without WordPress's cron running consistently, leading to a database accumulating a large number of technically-expired transients that are just taking up space without providing any caching benefit.</p>\n\n<h2 id=\"common-causes\">What Transients Are Actually Used For</h2>\n<ul>\n<li><strong>Calculated shipping rates,</strong> cached briefly to avoid recalculating on every page load for the same cart and address combination.</li>\n<li><strong>Report and analytics data,</strong> cached since regenerating complex sales reports on every dashboard view would be unnecessarily slow.</li>\n<li><strong>External API responses,</strong> like currency conversion rates or third-party service data, cached to avoid excessive outbound requests.</li>\n<li><strong>Plugin-specific temporary data</strong> varying by what other active plugins choose to cache this way.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">Cleaning Up Transients Safely</h2>\n<ol>\n<li><strong>Use a reputable database cleanup tool</strong> specifically designed to identify and remove genuinely expired transients.</li>\n<li><strong>Avoid deleting all transients indiscriminately,</strong> since active ones are legitimately in use and deleting them just forces immediate recalculation.</li>\n<li><strong>Confirm WordPress's cron is running reliably,</strong> since that's what should be handling automatic transient expiration in the first place.</li>\n<li><strong>Back up the database</strong> before any bulk cleanup operation.</li>\n</ol>\n<p>Need database cleanup and optimization done safely? See <a href=\"../../../../services/wordpress-speed-optimization/\">WordPress speed optimization</a>.</p>",
+  "hasCode": false
+}

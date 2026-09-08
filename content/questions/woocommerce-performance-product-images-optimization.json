@@ -1,0 +1,17 @@
+{
+  "slug": "product-images-optimization",
+  "category": "woocommerce",
+  "subcategory": "performance",
+  "question": "How Much Do Unoptimized Product Images Actually Slow Down a Store?",
+  "metaDescription": "Often the single biggest factor — a catalog full of large, unoptimized images can add several seconds of load time across category and product pages.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-08",
+  "dateModified": "2026-09-08",
+  "shortAnswer": "<p>Product images are frequently the single largest contributor to page weight on a typical WooCommerce store, since a category page alone might load dozens of product thumbnails simultaneously &mdash; large, unoptimized originals (uncompressed, oversized, or in an inefficient format) can easily add several seconds of load time across category and product pages, directly affecting both user experience and search ranking factors tied to page speed.</p>",
+  "image": {
+    "alt": "Unoptimized product images being the single biggest factor slowing down category and product pages across a store",
+    "prompt": "Create a clean, professional technical illustration of oversized image files weighing down a page's loading speed. Dark navy background, red and indigo accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"why-this-happens\">Why Images Have Such Outsized Impact</h2>\n<p>Unlike most other page elements, images scale in both quantity and size with catalog growth &mdash; a category page showing 24 products loads 24 separate image files, and each one being even modestly oversized compounds quickly across the whole page. This is compounded further by product galleries showing multiple images per product, and by themes that don't properly serve appropriately sized images for each display context (showing a full-resolution original in a small thumbnail slot, for instance).</p>\n\n<h2 id=\"common-causes\">Common Image Performance Problems</h2>\n<ul>\n<li><strong>Uploading full-resolution camera or design-tool originals</strong> directly, far larger than any size actually needed for web display.</li>\n<li><strong>Using an inefficient file format</strong> (an uncompressed PNG for a photo, for instance) instead of a more appropriately compressed format for that specific image type.</li>\n<li><strong>Missing lazy loading,</strong> forcing every image on a long category page to load immediately rather than only as the visitor scrolls to it.</li>\n<li><strong>Themes serving oversized images</strong> in thumbnail contexts, rather than generating and serving properly sized versions per display location.</li>\n<li><strong>No modern format support</strong> (WebP or AVIF), missing meaningful additional compression available over older formats like JPEG.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">Optimizing Product Images</h2>\n<ol>\n<li><strong>Compress and appropriately resize images</strong> before uploading, or use an automated image optimization plugin.</li>\n<li><strong>Enable lazy loading</strong> for images below the initial viewport.</li>\n<li><strong>Serve modern formats like WebP</strong> where supported, with appropriate fallbacks.</li>\n<li><strong>Confirm the theme generates and serves correctly sized image variants</strong> rather than one oversized version everywhere.</li>\n</ol>\n<p>Need product images and overall site speed properly optimized? See <a href=\"../../../../services/wordpress-speed-optimization/\">WordPress speed optimization</a>.</p>",
+  "hasCode": false
+}
