@@ -1,0 +1,17 @@
+{
+  "slug": "related-products-query-cost",
+  "category": "woocommerce",
+  "subcategory": "performance",
+  "question": "Why Are Related and Upsell Products So Expensive to Query?",
+  "metaDescription": "Finding related products by shared categories/tags requires a genuinely complex query, which gets progressively slower as the catalog grows larger.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-08",
+  "dateModified": "2026-09-08",
+  "shortAnswer": "<p>Automatically calculated related products (based on shared categories and tags, when no manual upsell/cross-sell is explicitly set) require a genuinely complex database query comparing the current product against the entire rest of the catalog to find suitable matches, and this query's cost scales with catalog size &mdash; a store with a few hundred products barely notices it, but one with tens of thousands can see this become a genuinely measurable slowdown on every single product page.</p>",
+  "image": {
+    "alt": "Automatically calculated related products requiring an expensive query that scales with catalog size",
+    "prompt": "Create a clean, professional technical illustration of a product page searching across a large catalog to find related matching items. Dark navy background, red and indigo accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"why-this-happens\">Why This Query Is Expensive</h2>\n<p>Finding related products isn't a simple lookup &mdash; it requires comparing the current product's categories and tags against every other product in the catalog to identify overlaps, then ranking and selecting a suitable subset to display. Unlike a straightforward query filtering by a single indexed value, this comparison-based matching is inherently more computationally expensive, and that cost grows as the total number of products to compare against grows.</p>\n\n<h2 id=\"common-causes\">Ways to Reduce This Cost</h2>\n<ul>\n<li><strong>Manually setting upsells and cross-sells</strong> on key, high-traffic products bypasses the automatic calculation entirely for those specific products, since a manually curated list requires no expensive comparison query.</li>\n<li><strong>Object caching</strong> can cache the related products result for a given product, so the expensive calculation only runs once rather than on every single page view.</li>\n<li><strong>Reducing the number of related products shown</strong> slightly reduces query and rendering cost, though the underlying comparison cost is the bigger factor.</li>\n<li><strong>A dedicated recommendation engine or plugin</strong> designed for large catalogs can offer a more efficient (and often more relevant) alternative to core WooCommerce's built-in related-products logic at scale.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">Addressing This</h2>\n<ol>\n<li><strong>Manually curate upsells/cross-sells</strong> for your highest-traffic products where practical.</li>\n<li><strong>Enable object caching</strong> so the related-products calculation isn't repeated unnecessarily.</li>\n<li><strong>Consider a dedicated recommendation solution</strong> if the catalog is large enough that this remains a genuine bottleneck.</li>\n</ol>\n<p>Need product page performance optimized for a large catalog? See <a href=\"../../../../services/wordpress-speed-optimization/\">WordPress speed optimization</a>.</p>",
+  "hasCode": false
+}

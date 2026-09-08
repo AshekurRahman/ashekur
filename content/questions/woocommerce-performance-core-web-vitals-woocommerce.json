@@ -1,0 +1,17 @@
+{
+  "slug": "core-web-vitals-woocommerce",
+  "category": "woocommerce",
+  "subcategory": "performance",
+  "question": "How Do Core Web Vitals Apply Specifically to a WooCommerce Store?",
+  "metaDescription": "LCP is usually a hero image or product photo, CLS often comes from ads/dynamic content shifting layout, and INP from heavy checkout JavaScript.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-08",
+  "dateModified": "2026-09-08",
+  "shortAnswer": "<p>On a typical WooCommerce store, Largest Contentful Paint (LCP) is usually determined by a hero banner or the main product image loading, Cumulative Layout Shift (CLS) often comes from ads, dynamically injected content, or web fonts loading late and shifting text position, and Interaction to Next Paint (INP) is commonly affected by heavy JavaScript running during checkout or on pages with many interactive widgets.</p>",
+  "image": {
+    "alt": "Core Web Vitals metrics mapped to specific WooCommerce elements like hero images, dynamic content, and checkout JavaScript",
+    "prompt": "Create a clean, professional technical illustration of three key performance metrics each tied to a specific part of a storefront page. Dark navy background, indigo and teal accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"how-it-works\">How Each Metric Maps to Store Elements</h2>\n<p>Core Web Vitals measure real, specific aspects of perceived page experience rather than an abstract overall score, and each one tends to have a characteristic cause on an ecommerce site specifically, distinct from what typically affects a simpler blog or brochure site.</p>\n\n<h2 id=\"common-causes\">The Three Metrics on a WooCommerce Store</h2>\n<ul>\n<li><strong>Largest Contentful Paint (LCP)</strong> is most often the hero image on a homepage or the primary product image on a product page &mdash; optimizing that specific image's size and loading priority has an outsized effect on this metric.</li>\n<li><strong>Cumulative Layout Shift (CLS)</strong> commonly comes from ad units loading after the initial layout, web fonts causing a visible text reflow, or dynamically injected content (like a promotional banner) pushing existing content down after the page appears to have loaded.</li>\n<li><strong>Interaction to Next Paint (INP)</strong> measures how responsive the page feels to actual interaction, and on WooCommerce specifically, heavy JavaScript on checkout (multiple plugins hooking into form validation, live shipping calculation) is a common culprit.</li>\n<li><strong>These metrics directly factor into search ranking,</strong> making them worth treating as a genuine business priority, not just a technical curiosity.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">Improving Core Web Vitals</h2>\n<ol>\n<li><strong>Optimize the specific LCP element</strong> (hero or main product image) for fast loading and priority.</li>\n<li><strong>Reserve space for dynamic content and ads</strong> to prevent layout shift once they load.</li>\n<li><strong>Audit and reduce checkout-specific JavaScript</strong> to improve interaction responsiveness.</li>\n<li><strong>Measure with real user data,</strong> not just lab tests, since actual visitor experience is what search engines ultimately weigh.</li>\n</ol>\n<p>Need Core Web Vitals improved for your store specifically? See <a href=\"../../../../services/wordpress-speed-optimization/\">WordPress speed optimization</a>.</p>",
+  "hasCode": false
+}
