@@ -1,0 +1,16 @@
+{
+  "slug": "role-manager-restricting-access",
+  "category": "elementor",
+  "question": "Can I Restrict Which User Roles Can Edit With Elementor?",
+  "metaDescription": "Yes — Elementor's built-in Role Manager (under Settings) controls which user roles can access the Elementor editor at all, per role.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-08",
+  "dateModified": "2026-09-08",
+  "shortAnswer": "<p>Elementor includes a built-in Role Manager (Elementor &rarr; Role Manager in the admin) letting you control, per WordPress user role, whether that role can access and use the Elementor editor at all &mdash; useful for a site with multiple contributors or clients where only specific trusted roles should be able to make design changes, while others stick to plain content editing.</p>",
+  "image": {
+    "alt": "Elementor's Role Manager controlling which WordPress user roles can access the Elementor editor",
+    "prompt": "Create a clean, professional technical illustration of different user role icons with some granted and some denied access to an editing tool. Dark navy background, indigo and teal accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"how-it-works\">How Role Manager Works</h2>\n<p>The Role Manager screen lists every WordPress user role and lets you toggle Elementor editor access for each individually. A role denied access simply won't see the \"Edit with Elementor\" option at all, and attempting to access the editor URL directly redirects them back to the standard WordPress editor instead, without affecting that role's other normal WordPress permissions.</p>\n\n<h2 id=\"common-causes\">Common Reasons to Restrict Access</h2>\n<ul>\n<li><strong>Client sites with a Contributor or Author role</strong> intended only for writing blog content, not restructuring page designs.</li>\n<li><strong>Agency or team setups</strong> where junior team members shouldn't have unrestricted design access to production pages.</li>\n<li><strong>Preventing accidental layout changes</strong> from someone who only needs to update text content occasionally, reducing the risk of an unintended design break.</li>\n<li><strong>This controls editor access only,</strong> not finer-grained permissions like which specific pages a role can edit &mdash; that level of control needs a separate, more advanced permissions plugin.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">Setting This Up</h2>\n<ol>\n<li><strong>Go to Elementor &rarr; Role Manager</strong> in the WordPress admin.</li>\n<li><strong>Toggle Elementor editor access</strong> for each role according to who should actually have design-level control.</li>\n<li><strong>Consider a dedicated permissions plugin</strong> if finer-grained, per-page restriction is needed beyond role-level access.</li>\n</ol>\n<p>Need help setting up appropriate access controls for your team or clients? See <a href=\"../../../services/elementor-customization/\">Elementor customization</a>.</p>",
+  "hasCode": false
+}

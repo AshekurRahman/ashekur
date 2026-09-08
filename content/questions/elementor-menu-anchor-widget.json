@@ -1,0 +1,16 @@
+{
+  "slug": "menu-anchor-widget",
+  "category": "elementor",
+  "question": "How Do I Create a Jump Link to a Section on the Same Page?",
+  "metaDescription": "Add a Menu Anchor widget with a unique ID above the target section, then link any button or menu item to \"#\" plus that same ID.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-08",
+  "dateModified": "2026-09-08",
+  "shortAnswer": "<p>Elementor's Menu Anchor widget, placed at the top of the section you want to jump to, is given a unique ID in its settings; any button, link, or navigation menu item elsewhere on the page can then link to <code>#</code> followed by that same ID, smoothly scrolling the visitor to that exact anchor point when clicked, the same underlying behavior as a standard HTML anchor link.</p>",
+  "image": {
+    "alt": "A Menu Anchor widget marking a section, linked to from a button elsewhere on the page for a smooth-scrolling jump link",
+    "prompt": "Create a clean, professional technical illustration of a button link jumping down to a specific marked section on the same page. Dark navy background, indigo and amber accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"how-it-works\">How Menu Anchors Work</h2>\n<p>The Menu Anchor widget itself renders as an invisible marker with a specific ID attribute attached to the page's HTML at whatever position it's placed. Any link elsewhere on the page (or even on a different page, appending the anchor after the page URL) pointing to <code>#that-id</code> triggers the browser's native anchor-jump behavior, which Elementor enhances with smooth scrolling by default.</p>\n\n<h2 id=\"common-causes\">Common Uses</h2>\n<ul>\n<li><strong>A one-page site's navigation menu,</strong> jumping between sections like \"About,\" \"Services,\" and \"Contact\" all on a single long page.</li>\n<li><strong>A \"Jump to pricing\" or \"See features\" button</strong> at the top of a landing page, scrolling directly to the relevant section further down.</li>\n<li><strong>A table of contents</strong> for a long article-style page, jumping to specific headings.</li>\n<li><strong>Linking from a different page,</strong> using the format <code>page-url/#anchor-id</code> to land directly on a specific section after navigating there.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">Setting This Up</h2>\n<ol>\n<li><strong>Add a Menu Anchor widget</strong> at the top of the target section and give it a unique, descriptive ID.</li>\n<li><strong>Link any button, text link, or menu item</strong> to <code>#</code> plus that exact ID.</li>\n<li><strong>Test the jump,</strong> confirming it lands at the correct scroll position, adjusting for any sticky header offset if needed.</li>\n</ol>\n<p>Need a one-page site or in-page navigation built properly? See <a href=\"../../../services/elementor-customization/\">Elementor customization</a>.</p>",
+  "hasCode": true
+}

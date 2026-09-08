@@ -1,0 +1,16 @@
+{
+  "slug": "loop-grid-builder",
+  "category": "elementor",
+  "question": "What Is the Elementor Loop Grid and When Would I Use It?",
+  "metaDescription": "A Pro widget displaying a dynamic, filterable grid of posts, products, or any post type using a custom-designed template for each repeated item.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-08",
+  "dateModified": "2026-09-08",
+  "shortAnswer": "<p>The Loop Grid widget (an Elementor Pro feature) displays a repeating grid of items &mdash; blog posts, WooCommerce products, or any custom post type &mdash; where each item's layout is designed once as a Loop Item template, then applied to every matching item automatically, with query controls for filtering, sorting, and pagination, similar in purpose to a custom archive page but usable anywhere, including within a regular page.</p>",
+  "image": {
+    "alt": "The Elementor Loop Grid widget repeating a custom-designed item template across a filtered, queried set of posts or products",
+    "prompt": "Create a clean, professional technical illustration of a grid of repeated content cards generated from one template design and a data query. Dark navy background, indigo and teal accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"how-it-works\">How the Loop Grid Works</h2>\n<p>Setting up a Loop Grid starts with creating a Loop Item template, designed visually with Dynamic Tags representing whatever will vary per item (title, image, price, excerpt). The Loop Grid widget then queries a chosen post type according to configured filters (category, tag, custom taxonomy, order), and renders the Loop Item template once for each matching result, arranged in a responsive grid.</p>\n\n<h2 id=\"common-causes\">Common Use Cases</h2>\n<ul>\n<li><strong>A custom-designed blog listing</strong> embedded within a regular page, rather than relying on a full Theme Builder archive template.</li>\n<li><strong>A related-products or featured-products grid</strong> on a WooCommerce page, filtered by category or a specific product query.</li>\n<li><strong>A team members or portfolio grid</strong> built from a custom post type, each item using a consistently designed card template.</li>\n<li><strong>A filterable content section</strong> where visitors can narrow results by category or taxonomy directly on the page, using Loop Grid's built-in filter widget pairing.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">Setting One Up</h2>\n<ol>\n<li><strong>Create a Loop Item template</strong> and design it with Dynamic Tags for the fields that should vary per item.</li>\n<li><strong>Add the Loop Grid widget</strong> to a page and select the Loop Item template to use.</li>\n<li><strong>Configure the query</strong> &mdash; post type, filters, sorting, and how many items to show per page.</li>\n</ol>\n<p>Need a custom dynamic grid or listing built properly? See <a href=\"../../../services/elementor-customization/\">Elementor customization</a>.</p>",
+  "hasCode": false
+}

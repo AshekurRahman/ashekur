@@ -1,0 +1,16 @@
+{
+  "slug": "lightbox-not-working",
+  "category": "elementor",
+  "question": "Why Isn't the Elementor Image Lightbox Opening?",
+  "metaDescription": "Usually the lightbox setting is disabled globally or on the specific widget, or a JavaScript conflict from another plugin is blocking the popup script.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-08",
+  "dateModified": "2026-09-08",
+  "shortAnswer": "<p>Elementor's built-in image lightbox not opening on click is usually a settings issue &mdash; either the lightbox is disabled globally in Elementor's site settings, disabled specifically on that widget's Link setting, or a JavaScript conflict from another plugin (particularly another gallery or lightbox plugin) is intercepting the click before Elementor's own lightbox script can respond.</p>",
+  "image": {
+    "alt": "An image click failing to open Elementor's lightbox because of a disabled setting or a JavaScript conflict",
+    "prompt": "Create a clean, professional technical illustration of an image click failing to trigger an expanding lightbox popup. Dark navy background, red and indigo accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"why-this-happens\">Why This Happens</h2>\n<p>Elementor's lightbox behavior is controlled per-widget through the image or gallery widget's Link setting, which needs to be explicitly set to \"Lightbox\" (rather than \"None,\" \"File,\" or a custom URL) for the popup to trigger on click at all. Even correctly configured, a competing lightbox or gallery plugin can bind its own click handler to the same image, intercepting the click before Elementor's script runs.</p>\n\n<h2 id=\"common-causes\">Common Causes</h2>\n<ul>\n<li><strong>The widget's Link setting</strong> not set to \"Lightbox,\" the single most common cause &mdash; it defaults to \"None\" on many widgets.</li>\n<li><strong>Lightbox disabled globally</strong> under Elementor &rarr; Settings &rarr; Lightbox, overriding individual widget settings.</li>\n<li><strong>A conflicting third-party lightbox or gallery plugin</strong> capturing the same image click for its own popup behavior.</li>\n<li><strong>A JavaScript error elsewhere on the page</strong> stopping Elementor's own frontend scripts from initializing properly.</li>\n<li><strong>Aggressive JavaScript minification/combination</strong> from a performance plugin breaking the lightbox script during asset optimization.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">How to Fix It</h2>\n<ol>\n<li><strong>Check the widget's Link setting</strong> and confirm it's set to \"Lightbox.\"</li>\n<li><strong>Confirm the global lightbox setting</strong> under Elementor &rarr; Settings isn't disabled.</li>\n<li><strong>Deactivate other gallery/lightbox plugins temporarily</strong> to isolate a conflict.</li>\n<li><strong>Check the browser console</strong> for JavaScript errors, and exclude Elementor's scripts from aggressive minification if a performance plugin is involved.</li>\n</ol>\n<p>Need a lightbox or gallery issue diagnosed and fixed? See <a href=\"../../../services/elementor-fix/\">Elementor bug fix</a>.</p>",
+  "hasCode": false
+}

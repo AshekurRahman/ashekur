@@ -1,0 +1,16 @@
+{
+  "slug": "nested-tabs-accordion",
+  "category": "elementor",
+  "question": "What's the Difference Between Elementor's Tabs and Accordion Widgets?",
+  "metaDescription": "Tabs show one panel at a time side-by-side with labels, better for desktop; Accordion stacks vertically and suits mobile and longer FAQ-style content.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-08",
+  "dateModified": "2026-09-08",
+  "shortAnswer": "<p>Tabs display a horizontal row of labeled buttons, showing only one panel's content at a time while the others stay hidden until clicked &mdash; a layout that works well on wider desktop screens but becomes cramped with many tabs or long labels on mobile. Accordion stacks each item vertically, one below the other, expanding and collapsing individually, a pattern that adapts more naturally to narrow screens and suits longer, FAQ-style content better.</p>",
+  "image": {
+    "alt": "Tabs displaying one panel at a time side by side, compared to an accordion stacking expandable items vertically",
+    "prompt": "Create a clean, professional technical illustration contrasting a horizontal tabbed interface with a vertically stacked expandable accordion. Dark navy background, indigo and amber accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"how-it-works\">How Each Widget Behaves</h2>\n<p>Both widgets show and hide content sections, but their interaction model differs: Tabs rely on a persistent row of labels the user clicks between, always showing exactly one panel, while Accordion items can often be configured to allow multiple open simultaneously (or restrict to one at a time), stacked in a single vertical list rather than requiring a separate label row.</p>\n\n<h2 id=\"common-causes\">Choosing the Right One</h2>\n<ul>\n<li><strong>Use Tabs</strong> for a small number of clearly distinct sections (specifications, reviews, description) where seeing the available categories at a glance matters, typically on desktop-focused layouts.</li>\n<li><strong>Use Accordion</strong> for FAQ-style content, longer lists of items, or anything primarily viewed on mobile, where a horizontal tab row would need to wrap awkwardly or scroll.</li>\n<li><strong>Accordion generally handles many items better</strong> than Tabs, since a long row of tab labels becomes visually unwieldy well before a long vertical list of accordion items does.</li>\n<li><strong>Both support nested widgets</strong> within each panel in current Elementor versions (Nested Tabs/Accordion), not just plain text, allowing richer content inside each section.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">Setting Either Up</h2>\n<ol>\n<li><strong>Choose based on content length and target device</strong> &mdash; Tabs for a handful of desktop-viewed sections, Accordion for longer or mobile-heavy content.</li>\n<li><strong>Keep labels concise</strong> for Tabs specifically, since long labels are the most common cause of an awkward, wrapping tab row.</li>\n<li><strong>Test on mobile</strong> regardless of which is chosen, confirming the interaction still feels natural on a small screen.</li>\n</ol>\n<p>Need help choosing and building the right interactive layout? See <a href=\"../../../services/elementor-customization/\">Elementor customization</a>.</p>",
+  "hasCode": false
+}

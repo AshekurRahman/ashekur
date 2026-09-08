@@ -1,0 +1,16 @@
+{
+  "slug": "white-screen-after-update",
+  "category": "elementor",
+  "question": "Why Did My Site Show a White Screen After Updating Elementor?",
+  "metaDescription": "Almost always a fatal PHP error from a version conflict — usually an outdated theme, add-on plugin, or PHP version incompatible with the new release.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-08",
+  "dateModified": "2026-09-08",
+  "shortAnswer": "<p>A white screen (WordPress's \"White Screen of Death\") right after updating Elementor almost always means a fatal PHP error is being triggered, most commonly because a theme, an add-on widget plugin, or the server's PHP version hasn't caught up with a change introduced in the new Elementor release &mdash; enabling WordPress debug mode will typically reveal the exact conflicting file in the error log.</p>",
+  "image": {
+    "alt": "A white screen error after an Elementor update caused by a fatal PHP conflict with an outdated theme or plugin",
+    "prompt": "Create a clean, professional technical illustration of a page failing to render after an update, with a broken connection to an outdated component. Dark navy background, red and indigo accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"why-this-happens\">Why This Happens</h2>\n<p>Major Elementor releases occasionally change internal functions or class structures that other themes and add-on plugins directly hook into, and if one of those hasn't been updated to match, calling a function that no longer exists (or exists differently) triggers a fatal error, and WordPress often shows a blank white screen instead of the actual error unless debug mode is enabled.</p>\n\n<h2 id=\"common-causes\">Common Causes</h2>\n<ul>\n<li><strong>An outdated theme</strong> built around an older Elementor version, not yet updated for compatibility with the new release.</li>\n<li><strong>An outdated add-on widget plugin</strong> calling an Elementor function or class that changed or was removed.</li>\n<li><strong>A PHP version too old</strong> for the new Elementor release's minimum requirements.</li>\n<li><strong>A corrupted update</strong> from a connection interruption during the update process itself, leaving some files partially updated.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">How to Fix It</h2>\n<ol>\n<li><strong>Enable WordPress debug mode</strong> (or check the host's error log directly) to see the specific fatal error and the file it points to.</li>\n<li><strong>Access the site via FTP or file manager</strong> and rename the identified conflicting plugin's folder to deactivate it if the admin is inaccessible.</li>\n<li><strong>Update the conflicting theme or plugin</strong> to its latest version, or temporarily roll back Elementor to the prior working version if no fix is yet available.</li>\n<li><strong>Confirm the server's PHP version</strong> meets Elementor's current minimum requirement.</li>\n<li><strong>Re-download and reinstall Elementor</strong> if the update itself seems to have been corrupted.</li>\n</ol>\n<p>Need a white screen or fatal error fixed quickly? See <a href=\"../../../services/elementor-fix/\">Elementor bug fix</a>.</p>",
+  "hasCode": false
+}

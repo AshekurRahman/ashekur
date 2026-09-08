@@ -1,0 +1,16 @@
+{
+  "slug": "z-index-overlapping",
+  "category": "elementor",
+  "question": "Why Are My Elementor Elements Overlapping Incorrectly?",
+  "metaDescription": "Usually negative margins, absolute positioning, or a missing/incorrect z-index value under the Advanced tab controlling stacking order.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-08",
+  "dateModified": "2026-09-08",
+  "shortAnswer": "<p>Unwanted overlapping in Elementor is most often caused by negative margins or absolute/fixed positioning (both set under an element's Advanced tab) pulling an element out of its normal document flow and over another one, combined with an incorrect or missing z-index value determining which of the overlapping elements should visually sit on top.</p>",
+  "image": {
+    "alt": "Two Elementor elements overlapping incorrectly because of positioning and z-index settings under the Advanced tab",
+    "prompt": "Create a clean, professional technical illustration of two page elements incorrectly stacked on top of each other because of positioning settings. Dark navy background, red and indigo accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"why-this-happens\">Why This Happens</h2>\n<p>By default, elements stack in normal document flow and don't overlap unless something deliberately pulls one out of that flow &mdash; a negative margin, or a positioning value (Absolute, Fixed, Sticky) set under the Advanced tab's Position settings. Once an element is positioned this way, its stacking order relative to other overlapping elements is controlled by z-index, and two elements with the same or unset z-index can render in an unpredictable order.</p>\n\n<h2 id=\"common-causes\">Common Causes</h2>\n<ul>\n<li><strong>Negative top/bottom margins</strong> intentionally added to create a design effect (an image overlapping a section below it, for instance), but pushed too far or in an unexpected direction on smaller breakpoints.</li>\n<li><strong>Absolute or fixed positioning</strong> removing an element from normal flow entirely, causing it to overlap whatever content happens to occupy that same screen position.</li>\n<li><strong>Z-index not set, or set inconsistently</strong> between the overlapping elements, leaving stacking order to default browser behavior rather than an intentional value.</li>\n<li><strong>A parent element with its own positioning or overflow setting</strong> affecting how child elements' positioning actually resolves, especially with nested Containers.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">How to Fix It</h2>\n<ol>\n<li><strong>Check the Advanced tab's Position and Margin settings</strong> on the affected elements first.</li>\n<li><strong>Set explicit z-index values</strong> on the overlapping elements to control which should render on top.</li>\n<li><strong>Test across all breakpoints,</strong> since negative margins or positioning that work on desktop often need separate values for tablet and mobile.</li>\n<li><strong>Simplify positioning where possible,</strong> using normal flow and spacing rather than absolute positioning unless the overlap is genuinely intentional.</li>\n</ol>\n<p>Need a layout or overlapping issue fixed properly? See <a href=\"../../../services/elementor-fix/\">Elementor bug fix</a>.</p>",
+  "hasCode": false
+}

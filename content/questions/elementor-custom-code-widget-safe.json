@@ -1,0 +1,16 @@
+{
+  "slug": "custom-code-widget-safe",
+  "category": "elementor",
+  "question": "Is It Safe to Use the Custom Code Widget in Elementor Pro?",
+  "metaDescription": "Generally yes if the code itself is trusted and sanitized — the risk is entirely in what you paste into it, not in the widget mechanism itself.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-08",
+  "dateModified": "2026-09-08",
+  "shortAnswer": "<p>The Custom Code widget in Elementor Pro is itself just a mechanism for inserting arbitrary HTML, CSS, or JavaScript into a page &mdash; it doesn't introduce a vulnerability on its own, but the actual code pasted into it carries whatever risk that code itself has, whether that's an unsanitized script from an untrusted source, an outdated third-party embed, or a genuine security flaw in custom-written JavaScript.</p>",
+  "image": {
+    "alt": "The Custom Code widget inserting arbitrary code into a page, with risk depending entirely on the code's own trustworthiness",
+    "prompt": "Create a clean, professional technical illustration of a code snippet being inserted into a page through a dedicated widget slot. Dark navy background, indigo and amber accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"how-it-works\">What the Widget Actually Does</h2>\n<p>Custom Code simply outputs whatever's entered into it directly onto the rendered page, similar in effect to pasting the same code into a theme's template file. It runs with the same access and capability as any other code on the page &mdash; meaning it's exactly as safe (or unsafe) as the specific code entered, not inherently more or less risky because it went through this particular widget.</p>\n\n<h2 id=\"common-causes\">What Actually Introduces Risk</h2>\n<ul>\n<li><strong>Pasting code copied from an untrusted or unfamiliar source</strong> without reviewing what it actually does, the most common real risk regardless of where it's inserted.</li>\n<li><strong>Outdated third-party embed scripts</strong> (an old tracking pixel, an abandoned widget snippet) that may load from an insecure or no-longer-maintained external source.</li>\n<li><strong>Genuine bugs in custom-written code</strong> &mdash; an unescaped user input handled client-side, for instance &mdash; carrying the same risk it would anywhere else.</li>\n<li><strong>Who has access to edit the widget matters too,</strong> since anyone able to use it can insert arbitrary code, reinforcing the value of Role Manager restrictions covered elsewhere.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">Using It Safely</h2>\n<ol>\n<li><strong>Only paste code from trusted, reputable sources,</strong> reviewing it if there's any uncertainty about what it does.</li>\n<li><strong>Keep third-party embed scripts up to date</strong> rather than leaving old snippets untouched indefinitely.</li>\n<li><strong>Restrict who can access the Custom Code widget</strong> through Elementor's Role Manager, limiting it to trusted users.</li>\n</ol>\n<p>Need custom code integrated into your Elementor site safely? See <a href=\"../../../services/elementor-custom-widgets/\">Elementor custom widgets</a>.</p>",
+  "hasCode": false
+}

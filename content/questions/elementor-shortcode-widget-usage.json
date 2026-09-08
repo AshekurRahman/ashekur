@@ -1,0 +1,16 @@
+{
+  "slug": "shortcode-widget-usage",
+  "category": "elementor",
+  "question": "How Do I Add a Shortcode to an Elementor Page?",
+  "metaDescription": "Use the dedicated Shortcode widget, drag it in and paste the shortcode — it renders exactly as it would in the classic editor or a widget area.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-08",
+  "dateModified": "2026-09-08",
+  "shortAnswer": "<p>Elementor includes a dedicated Shortcode widget specifically for this &mdash; dragging it onto the page and pasting any shortcode (from a form plugin, a gallery, WooCommerce, or any other plugin providing one) into its field renders that shortcode's output exactly as it would appear if placed in the classic editor or a traditional widget area.</p>",
+  "image": {
+    "alt": "The Elementor Shortcode widget rendering a plugin's shortcode output directly within a page design",
+    "prompt": "Create a clean, professional technical illustration of a shortcode being placed into a dedicated widget slot and rendering its output on the page. Dark navy background, indigo and teal accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"how-it-works\">How the Shortcode Widget Works</h2>\n<p>The widget itself does nothing more than pass whatever's typed into its field through to WordPress's normal shortcode processing, the same mechanism used everywhere else on the site &mdash; it doesn't add any special Elementor-specific handling, meaning any shortcode already working elsewhere on the site should work identically here.</p>\n\n<h2 id=\"common-causes\">Common Situations This Solves</h2>\n<ul>\n<li><strong>A plugin providing only a shortcode</strong> for its output (a form, a gallery, a pricing table) with no dedicated Elementor widget of its own.</li>\n<li><strong>Custom shortcodes</strong> built specifically for a site, needing to appear within an otherwise fully Elementor-designed page.</li>\n<li><strong>WooCommerce shortcodes,</strong> like displaying a specific product or a cart total, in a custom location a native WooCommerce widget doesn't cover.</li>\n<li><strong>Styling limitations:</strong> the widget renders the shortcode's own output as-is, so any Elementor styling controls only wrap around it rather than restyle its internal markup, which still depends on the shortcode's own CSS.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">Adding a Shortcode</h2>\n<ol>\n<li><strong>Drag the Shortcode widget</strong> onto the page from the widget panel.</li>\n<li><strong>Paste the shortcode</strong> into its content field, exactly as it would be typed elsewhere.</li>\n<li><strong>Preview the result,</strong> checking that the shortcode's own plugin is active and configured correctly if nothing displays.</li>\n</ol>\n<p>Need shortcode-based content integrated cleanly into your design? See <a href=\"../../../services/elementor-customization/\">Elementor customization</a>.</p>",
+  "hasCode": false
+}

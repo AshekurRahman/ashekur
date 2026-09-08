@@ -1,0 +1,16 @@
+{
+  "slug": "navigator-panel",
+  "category": "elementor",
+  "question": "What Is the Elementor Navigator and What's It For?",
+  "metaDescription": "A tree view of every element on the page, letting you select, reorder, rename, hide or delete elements that are hard to click directly on canvas.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-08",
+  "dateModified": "2026-09-08",
+  "shortAnswer": "<p>The Navigator is a collapsible panel showing the full structural tree of a page's containers, sections, columns, and widgets, giving a bird's-eye view separate from the visual canvas. It's particularly useful for selecting an element that's hard to click directly (something very small, hidden behind another element, or with no visible content), reordering elements by dragging them within the tree, and renaming or temporarily hiding specific layers.</p>",
+  "image": {
+    "alt": "The Elementor Navigator showing a page's full structural tree, used to select and reorder elements hard to reach on canvas",
+    "prompt": "Create a clean, professional technical illustration of a collapsible tree-view panel listing a page's layout structure. Dark navy background, indigo and amber accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"how-it-works\">How the Navigator Works</h2>\n<p>Opened via the small icon at the bottom of the editor (or a keyboard shortcut), the Navigator mirrors the page's actual nesting structure as a collapsible tree, with each row representing one container, section, column, or widget. Clicking a row selects that element on the canvas and opens its settings panel, exactly as clicking it directly would, but without needing to locate and click the actual element visually first.</p>\n\n<h2 id=\"common-causes\">What It's Most Useful For</h2>\n<ul>\n<li><strong>Selecting elements that are difficult to click directly,</strong> such as an empty container, an element hidden behind another, or one with zero height/width currently.</li>\n<li><strong>Reordering elements</strong> by dragging rows within the tree, often more precise than dragging on the visual canvas for a complex nested structure.</li>\n<li><strong>Renaming elements</strong> to something more descriptive than the generic default, making a complex page's structure easier to navigate later.</li>\n<li><strong>Temporarily hiding an element</strong> during editing without deleting it, using the visibility toggle available on each row.</li>\n<li><strong>Understanding an unfamiliar page's structure</strong> quickly, especially useful when inheriting someone else's Elementor build.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">Using the Navigator Effectively</h2>\n<ol>\n<li><strong>Open the Navigator</strong> from its icon in the editor's bottom toolbar.</li>\n<li><strong>Rename key elements</strong> as you build, making later navigation and handoffs easier.</li>\n<li><strong>Use it to select and reorder</strong> elements that are awkward to work with directly on canvas.</li>\n</ol>\n<p>Need help navigating or restructuring a complex existing build? See <a href=\"../../../services/elementor-customization/\">Elementor customization</a>.</p>",
+  "hasCode": false
+}

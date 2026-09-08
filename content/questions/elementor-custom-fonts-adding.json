@@ -1,0 +1,16 @@
+{
+  "slug": "custom-fonts-adding",
+  "category": "elementor",
+  "question": "How Do I Add a Custom Font to My Elementor Site?",
+  "metaDescription": "Elementor Pro's Custom Fonts feature uploads font files directly; the free version relies on Google Fonts or a separate custom-fonts plugin.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-08",
+  "dateModified": "2026-09-08",
+  "shortAnswer": "<p>Elementor Pro includes a Custom Fonts panel (under Templates &rarr; Theme Builder area or Site Settings, depending on version) letting you upload font files directly and make them available throughout the typography controls across the editor. On free Elementor, custom fonts beyond the built-in Google Fonts library need a separate dedicated custom-fonts plugin, since the free version doesn't include direct font file uploads.</p>",
+  "image": {
+    "alt": "A custom font file uploaded through Elementor Pro's Custom Fonts feature, made available across the editor's typography controls",
+    "prompt": "Create a clean, professional technical illustration of a custom font file being uploaded and connected to a typography control panel. Dark navy background, indigo and teal accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"how-it-works\">How Custom Fonts Get Added</h2>\n<p>With Elementor Pro, the Custom Fonts feature accepts standard web font file formats (WOFF, WOFF2, TTF, and others), and once uploaded and named, the custom font appears as a selectable option in every typography control across the site, exactly alongside the built-in Google Fonts library. This avoids needing to manually enqueue font files through theme code.</p>\n\n<h2 id=\"common-causes\">Options at Each Tier</h2>\n<ul>\n<li><strong>Elementor Pro's native Custom Fonts feature</strong> is the most direct route, requiring only the font files themselves and no additional plugin.</li>\n<li><strong>Google Fonts</strong> (available in both free and Pro) cover a huge range of options without needing to source and upload font files at all.</li>\n<li><strong>A dedicated custom-fonts plugin</strong> is the practical route for free Elementor users needing a font not available through Google Fonts.</li>\n<li><strong>Font licensing</strong> matters regardless of method &mdash; confirm a purchased or downloaded font's license actually permits web embedding before uploading it anywhere.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">Adding a Custom Font</h2>\n<ol>\n<li><strong>Confirm your font's license</strong> permits web use before uploading it anywhere.</li>\n<li><strong>Upload the font files</strong> through Elementor Pro's Custom Fonts feature, or install a dedicated custom-fonts plugin on free Elementor.</li>\n<li><strong>Select the new font</strong> from any typography control across the editor once it's registered.</li>\n</ol>\n<p>Need custom typography set up properly across your site? See <a href=\"../../../services/elementor-customization/\">Elementor customization</a>.</p>",
+  "hasCode": false
+}

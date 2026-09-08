@@ -1,0 +1,16 @@
+{
+  "slug": "finder-tool",
+  "category": "elementor",
+  "question": "What Does Elementor's Finder Tool Do?",
+  "metaDescription": "A quick-access search launched with a keyboard shortcut, jumping straight to templates, settings, documentation and specific pages without menu digging.",
+  "readTime": "2 min read",
+  "datePublished": "2026-09-08",
+  "dateModified": "2026-09-08",
+  "shortAnswer": "<p>The Finder is a searchable command-style popup, opened with a keyboard shortcut from anywhere in the WordPress admin, that jumps directly to Elementor settings pages, saved templates, Theme Builder templates, popups, or documentation without navigating through menus manually &mdash; functioning similarly to a quick-launch search built specifically around Elementor's own admin areas.</p>",
+  "image": {
+    "alt": "Elementor's Finder tool providing quick keyboard-triggered search access to settings, templates and documentation",
+    "prompt": "Create a clean, professional technical illustration of a quick search popup providing instant access to various admin destinations. Dark navy background, indigo and teal accent colors, flat minimal geometric style, no text, no logos, no people."
+  },
+  "bodyHtml": "<h2 id=\"how-it-works\">How to Access and Use It</h2>\n<p>The Finder opens with a keyboard shortcut (by default Ctrl+E on Windows/Linux or Cmd+E on Mac) from most areas of the WordPress admin, presenting a text field where typing filters through a combined list of Elementor settings pages, saved templates, popups, Theme Builder templates, and recently edited content. Selecting a result navigates directly there, skipping whatever menu path would otherwise be needed.</p>\n\n<h2 id=\"common-causes\">What It Can Search</h2>\n<ul>\n<li><strong>Elementor settings pages,</strong> like general settings, the Experiments panel, or role manager, without remembering their exact menu location.</li>\n<li><strong>Saved templates and Theme Builder templates,</strong> letting you jump straight to editing a specific one by name.</li>\n<li><strong>Popups,</strong> useful once a site has accumulated several and locating a specific one by scrolling a list becomes tedious.</li>\n<li><strong>Documentation links,</strong> providing quick access to Elementor's own help resources for a specific feature.</li>\n<li><strong>Recently edited pages,</strong> speeding up returning to something worked on recently.</li>\n</ul>\n\n<h2 id=\"how-to-fix-it\">Using the Finder</h2>\n<ol>\n<li><strong>Press the keyboard shortcut</strong> (Ctrl/Cmd+E) from the WordPress admin or editor.</li>\n<li><strong>Type to filter</strong> the combined list down to the destination needed.</li>\n<li><strong>Select a result</strong> to navigate there directly.</li>\n</ol>\n<p>Need help navigating or organizing a large Elementor build? See <a href=\"../../../services/elementor-customization/\">Elementor customization</a>.</p>",
+  "hasCode": false
+}
